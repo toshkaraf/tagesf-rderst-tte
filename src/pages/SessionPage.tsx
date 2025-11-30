@@ -5,7 +5,7 @@ import SlideViewer from '../components/SlideViewer'
 import QuizViewer from '../components/QuizViewer'
 import MediaViewer from '../components/MediaViewer'
 import LargeButton from '../components/LargeButton'
-import { ArrowLeft, Play, Pause, SkipForward, SkipBack } from 'lucide-react'
+import { ArrowLeft, Play, SkipForward, SkipBack } from 'lucide-react'
 import './SessionPage.css'
 
 function SessionPage() {
@@ -15,7 +15,6 @@ function SessionPage() {
 
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
   const [showQuiz, setShowQuiz] = useState(false)
-  const [showMedia, setShowMedia] = useState(false)
 
   if (!session) {
     return (

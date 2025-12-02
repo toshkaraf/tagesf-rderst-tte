@@ -6,18 +6,18 @@ interface SlideViewerProps {
 }
 
 function SlideViewer({ slide }: SlideViewerProps) {
+  const paragraphs = slide.content ? slide.content.split('\n').filter(p => p.trim()) : []
+  const displayContent = paragraphs.length > 0 ? paragraphs : [slide.content || '']
+  
   return (
     <div className="slide-viewer">
       <div className="slide-content">
         <h2>{slide.title}</h2>
-        <div className="slide-text">
-          {slide.content.split('\n').map((paragraph, idx) => (
-            <p key={idx}>{paragraph}</p>
-          ))}
-        </div>
-        {slide.duration && (
-          <div className="slide-duration">
-            ⏱️ Примерное время: {slide.duration} минут
+        {slide.content && (
+          <div className="slide-text">
+            {displayContent.map((paragraph, idx) => (
+              <p key={idx}>{paragraph.trim()}</p>
+            ))}
           </div>
         )}
       </div>

@@ -1,51 +1,73 @@
 .home-page {
-  min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .home-header {
   text-align: center;
-  padding: calc(var(--spacing-large) * 2);
+  padding: var(--spacing-large);
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
+  flex-shrink: 0;
 }
 
 .home-header h1 {
   color: white;
-  font-size: 64px;
-  margin-bottom: 16px;
+  font-size: clamp(32px, 6vw, 48px);
+  margin-bottom: clamp(4px, 1vh, 8px);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  line-height: 1.2;
 }
 
 .subtitle {
-  font-size: 24px;
+  font-size: clamp(16px, 2.5vw, 20px);
   opacity: 0.9;
+  line-height: 1.3;
 }
 
 .home-main {
   max-width: 1400px;
   margin: 0 auto;
-  padding: calc(var(--spacing-large) * 2);
+  padding: clamp(12px, 2vh, 24px);
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .categories-section,
 .sessions-section {
-  margin-bottom: calc(var(--spacing-large) * 2);
+  margin-bottom: clamp(8px, 1.5vh, 16px);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.sessions-section {
+  flex: 2;
 }
 
 .categories-section h2,
 .sessions-section h2 {
   color: white;
-  margin-bottom: var(--spacing-large);
-  font-size: 36px;
+  margin-bottom: clamp(8px, 1.5vh, 16px);
+  font-size: clamp(24px, 4vw, 32px);
+  line-height: 1.2;
 }
 
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: var(--spacing-large);
-  margin-bottom: calc(var(--spacing-large) * 2);
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: clamp(8px, 1.5vh, 16px);
+  margin-bottom: clamp(8px, 1.5vh, 16px);
+  flex-shrink: 0;
 }
 
 .category-card {
@@ -69,8 +91,12 @@
 
 .sessions-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: var(--spacing-large);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: clamp(8px, 1.5vh, 16px);
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
 }
 
 .session-card {
@@ -83,7 +109,7 @@
   gap: var(--spacing-large);
   box-shadow: var(--shadow-lg);
   transition: all 0.2s ease;
-  min-height: 200px;
+  min-height: 150px;
 }
 
 .session-card:hover {
@@ -109,14 +135,16 @@
 
 .session-info h3 {
   color: var(--text-primary);
-  margin-bottom: 12px;
-  font-size: 24px;
+  margin-bottom: clamp(4px, 0.5vh, 8px);
+  font-size: clamp(18px, 3vw, 22px);
+  line-height: 1.3;
 }
 
 .session-description {
   color: var(--text-secondary);
-  margin-bottom: 16px;
-  line-height: 1.6;
+  margin-bottom: clamp(6px, 1vh, 12px);
+  line-height: 1.5;
+  font-size: clamp(14px, 2vw, 16px);
 }
 
 .session-meta {

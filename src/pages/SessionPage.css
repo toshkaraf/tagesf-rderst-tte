@@ -1,18 +1,22 @@
 .session-page {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   background: var(--background);
+  overflow: hidden;
+  position: relative;
 }
 
 .session-header {
   background: var(--surface);
-  padding: var(--spacing-large);
+  padding: clamp(8px, 1.5vh, 16px);
   box-shadow: var(--shadow);
   display: flex;
   align-items: center;
-  gap: var(--spacing-large);
+  gap: clamp(8px, 1.5vw, 16px);
   flex-wrap: wrap;
+  flex-shrink: 0;
+  min-height: fit-content;
 }
 
 .session-title {
@@ -21,74 +25,108 @@
 }
 
 .session-title h1 {
-  font-size: 32px;
-  margin-bottom: 8px;
+  font-size: clamp(20px, 3.5vw, 28px);
+  margin-bottom: clamp(2px, 0.5vh, 4px);
+  line-height: 1.2;
 }
 
 .session-title p {
   color: var(--text-secondary);
-  font-size: 18px;
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.3;
 }
 
 .session-progress {
   color: var(--text-secondary);
-  font-size: 18px;
+  font-size: clamp(14px, 2vw, 16px);
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .session-main {
   flex: 1;
-  padding: var(--spacing-large) * 2;
+  padding: clamp(12px, 2vh, 24px);
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.slide-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  gap: clamp(12px, 2vh, 20px);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .media-section,
 .questions-section {
-  margin-top: var(--spacing-large) * 2;
-  padding: var(--card-padding);
+  padding: clamp(12px, 2vh, 20px);
   background: var(--surface);
   border-radius: 16px;
   box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vh, 12px);
 }
 
 .media-section h3,
 .questions-section h3 {
-  margin-bottom: var(--spacing-large);
+  margin-bottom: clamp(12px, 2vh, 16px);
   color: var(--primary-color);
+  font-size: clamp(24px, 4vw, 30px);
+  line-height: 1.3;
+  flex-shrink: 0;
+  font-weight: 600;
 }
 
 .question-card {
-  padding: var(--spacing-large);
+  padding: clamp(8px, 1.5vh, 16px);
   background: var(--background);
   border-radius: 12px;
-  margin-bottom: var(--spacing-large);
+  margin-bottom: clamp(8px, 1.5vh, 16px);
+  flex-shrink: 0;
 }
 
 .question-text {
-  font-size: 24px;
-  margin-bottom: var(--spacing-large);
+  font-size: clamp(24px, 3.5vw, 28px);
+  margin-bottom: clamp(12px, 2vh, 16px);
   font-weight: 500;
+  line-height: 1.5;
 }
 
-.yes-no-buttons {
+.yes-no-buttons,
+.multiple-choice-buttons {
   display: flex;
   gap: var(--spacing-large);
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .session-structure {
   background: var(--surface);
-  padding: var(--card-padding);
+  padding: clamp(12px, 2vh, 24px);
   border-radius: 16px;
   box-shadow: var(--shadow);
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .structure-block {
-  margin-bottom: var(--spacing-large) * 2;
-  padding-bottom: var(--spacing-large);
+  margin-bottom: clamp(8px, 1.5vh, 16px);
+  padding-bottom: clamp(8px, 1.5vh, 16px);
   border-bottom: 2px solid var(--border-color);
+  flex-shrink: 0;
 }
 
 .structure-block:last-child {
@@ -97,25 +135,71 @@
 
 .structure-block h3 {
   color: var(--primary-color);
-  margin-bottom: 12px;
+  margin-bottom: clamp(6px, 1vh, 12px);
+  font-size: clamp(18px, 3vw, 24px);
 }
 
 .structure-block p {
-  font-size: 20px;
-  line-height: 1.8;
+  font-size: clamp(16px, 2.5vw, 20px);
+  line-height: 1.6;
   color: var(--text-secondary);
 }
 
 .session-footer {
   background: var(--surface);
-  padding: var(--spacing-large);
+  padding: clamp(12px, 2vh, 20px);
   box-shadow: var(--shadow-lg);
   display: flex;
-  gap: var(--spacing-large);
+  gap: clamp(8px, 1.5vw, 16px);
   justify-content: center;
   flex-wrap: wrap;
-  position: sticky;
-  bottom: 0;
+  flex-shrink: 0;
+  min-height: fit-content;
+}
+
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.image-modal img {
+  max-width: 95vw;
+  max-height: 95vh;
+  object-fit: contain;
+  border-radius: 8px;
+  cursor: default;
+  animation: zoomIn 0.2s ease-in;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .session-page.error {

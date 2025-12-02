@@ -1,23 +1,31 @@
 .quiz-viewer {
   background: var(--surface);
-  padding: var(--card-padding);
+  padding: clamp(12px, 2vh, 24px);
   border-radius: 16px;
   box-shadow: var(--shadow);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .quiz-header {
-  margin-bottom: var(--spacing-large) * 2;
-  padding-bottom: var(--spacing-large);
+  margin-bottom: clamp(8px, 1.5vh, 16px);
+  padding-bottom: clamp(8px, 1.5vh, 16px);
   border-bottom: 2px solid var(--border-color);
+  flex-shrink: 0;
 }
 
 .quiz-header h2 {
   color: var(--primary-color);
-  margin-bottom: 12px;
+  margin-bottom: clamp(6px, 1vh, 12px);
+  font-size: clamp(24px, 4vw, 32px);
+  line-height: 1.2;
 }
 
 .quiz-progress {
-  font-size: 20px;
+  font-size: clamp(16px, 2.5vw, 20px);
   color: var(--text-secondary);
   font-weight: 500;
 }
@@ -28,21 +36,29 @@
 }
 
 .quiz-question {
-  padding: var(--spacing-large);
+  padding: clamp(8px, 1.5vh, 16px);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  justify-content: space-between;
 }
 
 .quiz-question h3 {
-  font-size: 28px;
-  margin-bottom: var(--spacing-large) * 2;
+  font-size: clamp(20px, 3.5vw, 28px);
+  margin-bottom: clamp(8px, 1.5vh, 16px);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.4;
+  flex-shrink: 0;
 }
 
 .quiz-answers {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-large);
-  margin-bottom: var(--spacing-large) * 2;
+  gap: clamp(8px, 1.5vh, 16px);
+  margin-bottom: clamp(8px, 1.5vh, 16px);
+  flex-shrink: 0;
 }
 
 .quiz-answers.yes-no {
@@ -52,22 +68,24 @@
 
 .quiz-explanation {
   background: var(--background);
-  padding: var(--spacing-large);
+  padding: clamp(8px, 1.5vh, 16px);
   border-radius: 12px;
   border-left: 4px solid var(--primary-color);
-  margin-bottom: var(--spacing-large);
+  margin-bottom: clamp(8px, 1.5vh, 16px);
+  flex-shrink: 0;
 }
 
 .quiz-explanation p {
-  font-size: 20px;
-  line-height: 1.8;
+  font-size: clamp(16px, 2.5vw, 20px);
+  line-height: 1.6;
   color: var(--text-primary);
 }
 
 .quiz-actions {
   display: flex;
   justify-content: center;
-  margin-top: var(--spacing-large) * 2;
+  margin-top: clamp(8px, 1.5vh, 16px);
+  flex-shrink: 0;
 }
 
 .btn-error {

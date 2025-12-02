@@ -3,85 +3,51 @@
 }
 
 .media-viewer img,
-.media-viewer .video-player {
+.media-viewer video {
   width: 100%;
   max-width: 100%;
+  max-height: 30vh;
+  object-fit: contain;
   border-radius: 12px;
   box-shadow: var(--shadow);
 }
 
-/* Größere Video-Controls für Tablet */
-.media-viewer .video-player {
-  min-height: 400px;
+.media-image {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.5vh, 8px);
 }
 
-.media-viewer .video-player::-webkit-media-controls-panel {
-  background-color: rgba(0, 0, 0, 0.7);
+.media-viewer .clickable-image {
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.media-viewer .video-player::-webkit-media-controls-play-button,
-.media-viewer .video-player::-webkit-media-controls-volume-slider,
-.media-viewer .video-player::-webkit-media-controls-timeline {
-  min-width: 48px;
-  min-height: 48px;
+.media-viewer .clickable-image:hover {
+  transform: scale(1.02);
 }
 
-/* YouTube iframe */
-.media-youtube {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  height: 0;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
+.media-viewer .clickable-image:active {
+  transform: scale(0.98);
 }
 
-.youtube-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* Größere Audio-Controls für Tablet */
-.media-viewer .audio-player {
+.media-viewer audio {
   width: 100%;
   margin: var(--spacing-large) 0;
-  min-height: 80px;
-}
-
-.media-viewer .audio-player::-webkit-media-controls-panel {
-  background-color: var(--surface);
-  min-height: 80px;
-}
-
-.media-viewer .audio-player::-webkit-media-controls-play-button,
-.media-viewer .audio-player::-webkit-media-controls-volume-slider {
-  min-width: 48px;
-  min-height: 48px;
-}
-
-.media-loading {
-  padding: var(--spacing-large);
-  text-align: center;
-  color: var(--text-secondary);
-  font-size: 20px;
 }
 
 .media-title {
-  font-size: 22px;
+  font-size: clamp(20px, 3vw, 24px);
   font-weight: 600;
-  margin-top: 16px;
+  margin-top: clamp(8px, 1.5vh, 12px);
   color: var(--text-primary);
+  line-height: 1.4;
 }
 
 .media-description {
-  font-size: 20px;
+  font-size: clamp(18px, 2.5vw, 22px);
   color: var(--text-secondary);
-  margin-top: 12px;
+  margin-top: clamp(6px, 1vh, 10px);
   line-height: 1.6;
 }
 
@@ -92,20 +58,5 @@
   border-radius: 12px;
   color: var(--error-color);
   text-align: center;
-  font-size: 20px;
-}
-
-@media (max-width: 768px) {
-  .media-viewer .video-player {
-    min-height: 300px;
-  }
-  
-  .media-title {
-    font-size: 20px;
-  }
-  
-  .media-description {
-    font-size: 18px;
-  }
 }
 

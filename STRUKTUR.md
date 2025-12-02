@@ -298,3 +298,6 @@ Bei Fragen zur Struktur oder zum Hinzufügen neuer Features, konsultieren Sie:
 - `PROJECT_STRUCTURE.md` - Detaillierte Architektur
 - `QUICKSTART.md` - Schnellstart-Anleitung
 
+
+
+

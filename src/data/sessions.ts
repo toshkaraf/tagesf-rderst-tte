@@ -1,7 +1,9 @@
 import { Session } from '../types/session'
+import { getTranslatedSession } from '../i18n/sessionTranslations'
+import { Language } from '../i18n/translations'
 
 // Примеры занятий - здесь будут храниться все занятия
-export const sessions: Session[] = [
+const sessionsData: Session[] = [
   {
     id: 'romische-kaiser',
     title: 'Римские императоры: от Августа до Нерона',
@@ -1180,18 +1182,45 @@ export const sessions: Session[] = [
   }
 ]
 
+// Функция для применения переводов к сессии
+function applyTranslations(session: Session, language: Language): Session {
+  const translation = getTranslatedSession(session.id, language)
+  if (!translation) return session
+
+  return {
+    ...session,
+    title: translation.title,
+    description: translation.description,
+    category: translation.category,
+    structure: {
+      ...session.structure,
+      ...translation.structure
+    }
+  }
+}
+
+// Экспорт для обратной совместимости
+export const sessions = sessionsData
+
+// Функция для получения всех сессий с переводами
+export function getSessions(language: Language = 'de'): Session[] {
+  return sessionsData.map(session => applyTranslations(session, language))
+}
+
 // Функция для получения занятия по ID
-export function getSessionById(id: string): Session | undefined {
-  return sessions.find(session => session.id === id)
+export function getSessionById(id: string, language: Language = 'de'): Session | undefined {
+  const session = sessionsData.find(s => s.id === id)
+  if (!session) return undefined
+  return applyTranslations(session, language)
 }
 
 // Функция для получения занятий по категории
-export function getSessionsByCategory(category: string): Session[] {
-  return sessions.filter(session => session.category === category)
+export function getSessionsByCategory(category: string, language: Language = 'de'): Session[] {
+  return getSessions(language).filter(session => session.category === category)
 }
 
 // Функция для получения занятий по типу
-export function getSessionsByType(type: Session['type']): Session[] {
-  return sessions.filter(session => session.type === type)
+export function getSessionsByType(type: Session['type'], language: Language = 'de'): Session[] {
+  return getSessions(language).filter(session => session.type === type)
 }
 

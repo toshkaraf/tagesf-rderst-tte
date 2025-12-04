@@ -1,0 +1,38 @@
+========================================
+КОМАНДЫ ДЛЯ ЗАГРУЗКИ В GITHUB
+========================================
+
+Выполните эти команды в PowerShell в папке проекта:
+
+1. Перейдите в папку проекта:
+   cd c:\dev\projects\Tagesförderstätte
+
+2. Добавьте все файлы:
+   git add .
+
+3. Создайте коммит:
+   git commit -m "Translate tournaments topic"
+
+4. Настройте remote (если еще не настроен):
+   git remote add origin https://github.com/toshkaraf/tagesf-rderst-tte.git
+   
+   ИЛИ обновите существующий:
+   git remote set-url origin https://github.com/toshkaraf/tagesf-rderst-tte.git
+
+5. Переименуйте ветку в main (если нужно):
+   git branch -M main
+
+6. Загрузите в GitHub:
+   git push -u origin main
+
+========================================
+АЛЬТЕРНАТИВА: Запустите скрипт
+========================================
+
+Просто запустите файл:
+   do-commit-and-push.bat
+
+Или PowerShell скрипт:
+   .\PUSH_COMMANDS.ps1
+
+========================================

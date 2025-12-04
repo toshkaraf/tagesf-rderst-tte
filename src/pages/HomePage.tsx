@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
-import { sessions } from '../data/sessions'
+import { getSessions } from '../data/sessions'
 import { SessionType } from '../types/session'
+import { useLanguage } from '../i18n/LanguageContext'
 import { BookOpen, Map, Users, Music, Globe, Lightbulb, Languages, MessageCircle } from 'lucide-react'
 import './HomePage.css'
 
@@ -15,42 +16,33 @@ const typeIcons: Record<SessionType, React.ReactNode> = {
   discussion: <MessageCircle size={32} />
 }
 
-const typeLabels: Record<SessionType, string> = {
-  presentation: 'Презентация',
-  quiz: 'Викторина',
-  'virtual-tour': 'Виртуальное путешествие',
-  biography: 'Биография',
-  cultural: 'Культура',
-  science: 'Наука',
-  language: 'Языки',
-  discussion: 'Дискуссия'
-}
-
 function HomePage() {
+  const { t, language } = useLanguage()
+  const sessions = getSessions(language)
   const categories = Array.from(new Set(sessions.map(s => s.category)))
 
   return (
     <div className="home-page">
       <header className="home-header">
-        <h1>Tagesförderstätte</h1>
-        <p className="subtitle">Интерактивные занятия и образовательные программы</p>
+        <h1>{t.home.title}</h1>
+        <p className="subtitle">{t.home.subtitle}</p>
       </header>
 
       <main className="home-main">
         <section className="categories-section">
-          <h2>Категории</h2>
+          <h2>{t.home.categories}</h2>
           <div className="categories-grid">
             {categories.map(category => (
               <div key={category} className="category-card">
                 <h3>{category}</h3>
-                <p>{sessions.filter(s => s.category === category).length} занятий</p>
+                <p>{sessions.filter(s => s.category === category).length} {t.home.sessions}</p>
               </div>
             ))}
           </div>
         </section>
 
         <section className="sessions-section">
-          <h2>Доступные занятия</h2>
+          <h2>{t.home.availableSessions}</h2>
           <div className="sessions-grid">
             {sessions.map(session => (
               <Link 
@@ -65,8 +57,8 @@ function HomePage() {
                   <h3>{session.title}</h3>
                   <p className="session-description">{session.description}</p>
                   <div className="session-meta">
-                    <span className="session-type">{typeLabels[session.type]}</span>
-                    <span className="session-duration">{session.duration} мин</span>
+                    <span className="session-type">{t.types[session.type]}</span>
+                    <span className="session-duration">{session.duration} {t.common.minutes}</span>
                     <span className="session-category">{session.category}</span>
                   </div>
                 </div>

@@ -1,0 +1,48 @@
+.language-switcher {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-color);
+  box-shadow: var(--shadow);
+  transition: all 0.2s ease;
+  min-height: 48px;
+}
+
+.language-switcher:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: scale(1.05);
+}
+
+.language-switcher:active {
+  transform: scale(0.95);
+}
+
+.language-switcher span {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .language-switcher {
+    top: 12px;
+    right: 12px;
+    padding: 10px 14px;
+    font-size: 14px;
+    min-height: 44px;
+  }
+}
+
+
+

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { QuizBlock } from '../types/session'
+import { useLanguage } from '../i18n/LanguageContext'
 import LargeButton from './LargeButton'
 import './QuizViewer.css'
 
@@ -9,6 +10,7 @@ interface QuizViewerProps {
 }
 
 function QuizViewer({ quiz, onComplete }: QuizViewerProps) {
+  const { t } = useLanguage()
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<number | string | null>(null)
   const [showExplanation, setShowExplanation] = useState(false)
@@ -48,8 +50,8 @@ function QuizViewer({ quiz, onComplete }: QuizViewerProps) {
       <div className="quiz-header">
         <h2>{quiz.title}</h2>
         <div className="quiz-progress">
-          Вопрос {currentQuestionIndex + 1} из {quiz.questions.length}
-          {score > 0 && <span className="quiz-score"> | Правильных ответов: {score}</span>}
+          {t.quiz.question} {currentQuestionIndex + 1} {t.quiz.questionOf} {quiz.questions.length}
+          {score > 0 && <span className="quiz-score"> | {t.session.correctAnswers}: {score}</span>}
         </div>
       </div>
 
@@ -85,14 +87,14 @@ function QuizViewer({ quiz, onComplete }: QuizViewerProps) {
                     onClick={() => handleAnswer('yes')}
                     disabled={answered}
                   >
-                    Да
+                    {t.session.yes}
                   </LargeButton>
                   <LargeButton
                     className={noClass}
                     onClick={() => handleAnswer('no')}
                     disabled={answered}
                   >
-                    Нет
+                    {t.session.no}
                   </LargeButton>
                 </>
               )
@@ -137,7 +139,7 @@ function QuizViewer({ quiz, onComplete }: QuizViewerProps) {
         {answered && (
           <div className="quiz-actions">
             <LargeButton onClick={handleNext} className="btn-primary">
-              {isLastQuestion ? 'Завершить викторину' : 'Следующий вопрос'}
+              {isLastQuestion ? t.quiz.finishQuiz : t.quiz.nextQuestion}
             </LargeButton>
           </div>
         )}

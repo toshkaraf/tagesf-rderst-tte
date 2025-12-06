@@ -19,6 +19,7 @@
   min-height: 48px;
 }
 
+
 .language-switcher:hover {
   background: var(--primary-color);
   color: white;

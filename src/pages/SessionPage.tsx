@@ -6,18 +6,22 @@ import SlideViewer from '../components/SlideViewer'
 import QuizViewer from '../components/QuizViewer'
 import MediaViewer from '../components/MediaViewer'
 import LargeButton from '../components/LargeButton'
-import { ArrowLeft, Play, SkipForward, SkipBack } from 'lucide-react'
+import { ArrowLeft, Play, SkipForward, SkipBack, Languages, ZoomIn, ZoomOut } from 'lucide-react'
 import './SessionPage.css'
 
 function SessionPage() {
   const { sessionId } = useParams<{ sessionId: string }>()
   const navigate = useNavigate()
-  const { t, language } = useLanguage()
+  const { t, language, setLanguage } = useLanguage()
   const session = sessionId ? getSessionById(sessionId, language) : undefined
 
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
   const [showQuiz, setShowQuiz] = useState(false)
   const [expandedImage, setExpandedImage] = useState<string | null>(null)
+  const [fontScale, setFontScale] = useState(() => {
+    const saved = localStorage.getItem('slideFontScale')
+    return saved ? parseFloat(saved) : 1.0
+  })
 
   // Сбрасываем индекс слайда при изменении sessionId
   useEffect(() => {
@@ -76,10 +80,22 @@ function SessionPage() {
     }
   }
 
+  const increaseFont = () => {
+    const newScale = Math.min(fontScale + 0.1, 2.0)
+    setFontScale(newScale)
+    localStorage.setItem('slideFontScale', newScale.toString())
+  }
+
+  const decreaseFont = () => {
+    const newScale = Math.max(fontScale - 0.1, 0.7)
+    setFontScale(newScale)
+    localStorage.setItem('slideFontScale', newScale.toString())
+  }
+
   return (
     <div className="session-page">
       <header className="session-header">
-        <div className="header-top-buttons">
+        <div className="header-top-row">
           <button 
             onClick={() => navigate('/')} 
             className="header-button btn-outline"
@@ -97,18 +113,36 @@ function SessionPage() {
               <span className="header-button-text">{t.session.test}</span>
             </button>
           )}
+          <button 
+            onClick={decreaseFont}
+            className="header-button btn-outline"
+            title="Шрифт меньше"
+          >
+            <ZoomOut size={20} />
+          </button>
+          <button 
+            onClick={increaseFont}
+            className="header-button btn-outline"
+            title="Шрифт больше"
+          >
+            <ZoomIn size={20} />
+          </button>
+          <button 
+            onClick={() => setLanguage(language === 'de' ? 'ru' : 'de')}
+            className="header-button btn-outline"
+            title={language === 'de' ? 'Auf Russisch wechseln' : 'Switch to German'}
+          >
+            <Languages size={20} />
+            <span className="header-button-text">{language === 'de' ? 'RU' : 'DE'}</span>
+          </button>
+          {session.slides && (
+            <div className="header-progress">
+              {t.session.slideProgress} {safeSlideIndex + 1} {t.session.slideOf} {session.slides.length}
+            </div>
+          )}
         </div>
-        <div className="session-title-section">
-          <div className="session-title">
-            <h1>{session.title}</h1>
-          </div>
-          <div className="session-progress">
-            {session.slides && (
-              <span>
-                {t.session.slideProgress} {safeSlideIndex + 1} {t.session.slideOf} {session.slides.length}
-              </span>
-            )}
-          </div>
+        <div className="session-title">
+          <h1>{session.title}</h1>
         </div>
       </header>
 
@@ -145,7 +179,7 @@ function SessionPage() {
           </div>
         ) : currentSlide ? (
           <div className="slide-container">
-            <SlideViewer slide={currentSlide} />
+            <SlideViewer slide={currentSlide} fontScale={fontScale} />
             
             {currentSlide.media && currentSlide.media.length > 0 && (
               <div className="media-section">
@@ -173,7 +207,7 @@ function SessionPage() {
             )}
 
             {currentSlide.questions && currentSlide.questions.length > 0 && (
-              <div className="questions-section">
+              <div className="questions-section" style={{ '--font-scale': fontScale } as React.CSSProperties}>
                 {currentSlide.questions.map(q => (
                   <div key={q.id} className="question-card">
                     <p className="question-text">{q.text}</p>

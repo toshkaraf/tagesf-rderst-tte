@@ -10,8 +10,6 @@
 .session-header {
   background: var(--surface);
   padding: clamp(8px, 1.5vh, 16px);
-  padding-left: clamp(60px, 8vw, 80px); /* Отступ для кнопки языка */
-  padding-right: clamp(8px, 1.5vh, 16px);
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
@@ -21,11 +19,12 @@
   position: relative;
 }
 
-.header-top-buttons {
+.header-top-row {
   display: flex;
   align-items: center;
   gap: clamp(8px, 1.5vw, 12px);
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .header-button {
@@ -69,18 +68,18 @@
   display: inline;
 }
 
-.session-title-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: clamp(8px, 1.5vw, 16px);
-  flex-wrap: wrap;
-  width: 100%;
+.header-progress {
+  color: var(--text-secondary);
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: clamp(8px, 1.2vh, 12px) clamp(12px, 2vw, 16px);
 }
 
 .session-title {
-  flex: 1;
-  min-width: 300px;
+  width: 100%;
 }
 
 .session-title h1 {
@@ -89,17 +88,10 @@
   line-height: 1.2;
 }
 
-.session-progress {
-  color: var(--text-secondary);
-  font-size: clamp(14px, 2vw, 16px);
-  font-weight: 500;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
 .session-main {
   flex: 1;
   padding: clamp(12px, 2vh, 24px);
+  padding-bottom: clamp(100px, 15vh, 120px); /* Отступ для footer */
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -118,6 +110,7 @@
   gap: clamp(12px, 2vh, 20px);
   overflow-y: auto;
   overflow-x: hidden;
+  --font-scale: 1;
 }
 
 .media-section,
@@ -150,10 +143,14 @@
 }
 
 .question-text {
-  font-size: clamp(20px, 3vw, 24px);
+  font-size: calc(clamp(22px, 3vw, 26px) * var(--font-scale, 1));
   margin-bottom: clamp(8px, 1.5vh, 12px);
   font-weight: 500;
   line-height: 1.4;
+}
+
+.questions-section {
+  --font-scale: 1;
 }
 
 .question-btn {
@@ -223,6 +220,11 @@
   flex-wrap: nowrap;
   flex-shrink: 0;
   min-height: fit-content;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
 .image-modal {
@@ -287,27 +289,33 @@
 /* Планшет */
 @media (max-width: 1024px) and (min-width: 769px) {
   .session-header {
-    padding-left: clamp(60px, 7vw, 75px);
-    padding-right: clamp(8px, 1.5vh, 16px);
+    padding: clamp(8px, 1.5vh, 16px);
   }
   
   .session-main {
     padding: clamp(10px, 1.5vh, 20px);
+    padding-bottom: clamp(100px, 15vh, 120px);
+  }
+  
+  .header-top-row {
+    gap: clamp(8px, 1.5vw, 12px);
+  }
+  
+  .header-progress {
+    font-size: clamp(13px, 2vw, 15px);
   }
 }
 
 /* Мобильные устройства */
 @media (max-width: 768px) {
   .session-header {
-    padding-left: clamp(50px, 6vw, 60px);
-    padding-right: clamp(8px, 1.5vh, 12px);
-    padding-top: clamp(50px, 6vh, 60px);
-    padding-bottom: clamp(6px, 1vh, 10px);
+    padding: clamp(6px, 1vh, 12px);
     gap: clamp(6px, 1vh, 10px);
   }
   
-  .header-top-buttons {
+  .header-top-row {
     gap: clamp(6px, 1.2vw, 10px);
+    flex-wrap: wrap;
   }
   
   .header-button {
@@ -315,6 +323,7 @@
     font-size: clamp(12px, 2vw, 14px);
     min-height: 36px;
     gap: 4px;
+    flex-shrink: 0;
   }
   
   .header-button svg {
@@ -322,14 +331,14 @@
     height: 16px;
   }
   
-  .session-title-section {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: clamp(4px, 0.8vh, 8px);
+  .header-progress {
+    font-size: clamp(12px, 2vw, 14px);
+    padding: clamp(6px, 1vh, 10px) clamp(10px, 2vw, 14px);
+    margin-left: auto;
+    order: 10; /* Переместить в конец при переносе */
   }
   
   .session-title {
-    min-width: auto;
     width: 100%;
   }
   
@@ -338,13 +347,9 @@
     line-height: 1.3;
   }
   
-  .session-progress {
-    font-size: clamp(12px, 2vw, 14px);
-    width: 100%;
-  }
-  
   .session-main {
     padding: clamp(6px, 1.2vh, 12px);
+    padding-bottom: clamp(100px, 15vh, 120px);
   }
   
   .yes-no-buttons {
@@ -367,6 +372,10 @@
     flex-direction: row;
     gap: clamp(8px, 1.5vw, 12px);
     padding: clamp(10px, 1.5vh, 16px);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
   
   .session-footer button {
@@ -404,20 +413,33 @@
 /* Очень маленькие экраны */
 @media (max-width: 480px) {
   .session-header {
-    padding-left: clamp(45px, 5vw, 55px);
-    padding-top: clamp(45px, 5vh, 55px);
-    padding-bottom: clamp(6px, 1vh, 10px);
+    padding: clamp(6px, 1vh, 10px);
     gap: clamp(4px, 0.8vh, 8px);
+  }
+  
+  .header-top-row {
+    gap: clamp(4px, 1vw, 8px);
+    flex-wrap: wrap;
   }
   
   .header-button {
     padding: clamp(5px, 0.8vh, 8px) clamp(8px, 1.5vw, 12px);
     font-size: clamp(11px, 2vw, 13px);
     min-height: 32px;
+    flex-shrink: 0;
   }
   
   .header-button-text {
     display: none;
+  }
+  
+  .header-progress {
+    font-size: clamp(11px, 2vw, 13px);
+    padding: clamp(5px, 0.8vh, 8px) clamp(8px, 1.5vw, 12px);
+    margin-left: auto;
+    order: 10; /* Переместить в конец при переносе */
+    width: 100%; /* На новой строке на очень маленьких экранах */
+    text-align: center;
   }
   
   .session-title h1 {
@@ -425,12 +447,9 @@
     line-height: 1.3;
   }
   
-  .session-progress {
-    font-size: clamp(11px, 2vw, 13px);
-  }
-  
   .session-main {
     padding: clamp(4px, 1vh, 10px);
+    padding-bottom: clamp(90px, 14vh, 110px);
   }
   
   .slide-content h2 {

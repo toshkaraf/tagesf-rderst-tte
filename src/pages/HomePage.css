@@ -173,21 +173,169 @@
   color: var(--secondary-color);
 }
 
-@media (max-width: 768px) {
+/* Планшет */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .home-header {
+    padding: clamp(12px, 2vh, 20px);
+    padding-top: clamp(55px, 6vh, 65px); /* Отступ для кнопки языка */
+  }
+  
   .home-header h1 {
-    font-size: 48px;
+    font-size: clamp(28px, 5vw, 40px);
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+  
+  .sessions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  
+  .session-icon {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .home-header {
+    padding: clamp(10px, 1.5vh, 16px);
+    padding-top: clamp(50px, 6vh, 60px); /* Отступ для кнопки языка */
+  }
+  
+  .home-header h1 {
+    font-size: clamp(24px, 6vw, 36px);
+    line-height: 1.2;
   }
   
   .subtitle {
-    font-size: 20px;
+    font-size: clamp(14px, 3vw, 18px);
+    line-height: 1.4;
+  }
+  
+  .home-main {
+    padding: clamp(8px, 1.5vh, 16px);
+  }
+  
+  .categories-section h2,
+  .sessions-section h2 {
+    font-size: clamp(20px, 4vw, 28px);
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: clamp(6px, 1vh, 12px);
+  }
+  
+  .category-card {
+    padding: clamp(10px, 1.5vh, 16px);
+    min-height: 80px;
+  }
+  
+  .category-card h3 {
+    font-size: clamp(14px, 2.5vw, 16px);
   }
   
   .sessions-grid {
     grid-template-columns: 1fr;
+    gap: clamp(8px, 1.5vh, 14px);
+  }
+  
+  .session-card {
+    flex-direction: row;
+    padding: clamp(12px, 2vh, 20px);
+    min-height: 120px;
+  }
+  
+  .session-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .session-info h3 {
+    font-size: clamp(16px, 3.5vw, 20px);
+  }
+  
+  .session-description {
+    font-size: clamp(13px, 2.5vw, 15px);
+  }
+  
+  .session-meta {
+    gap: 8px;
+  }
+  
+  .session-meta span {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+  .home-header {
+    padding-top: clamp(45px, 5vh, 55px);
+    padding-left: clamp(50px, 6vw, 60px);
+    padding-right: clamp(8px, 1vw, 12px);
+    padding-bottom: clamp(8px, 1vh, 12px);
+  }
+  
+  .home-header h1 {
+    font-size: clamp(20px, 7vw, 28px);
+  }
+  
+  .subtitle {
+    font-size: clamp(12px, 3vw, 16px);
+  }
+  
+  .home-main {
+    padding: clamp(6px, 1vh, 12px);
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: clamp(6px, 1vh, 10px);
+  }
+  
+  .category-card {
+    padding: clamp(8px, 1.2vh, 12px);
+    min-height: 70px;
+  }
+  
+  .category-card h3 {
+    font-size: clamp(12px, 2.5vw, 14px);
   }
   
   .session-card {
     flex-direction: column;
+    padding: clamp(10px, 1.5vh, 16px);
+    min-height: auto;
+  }
+  
+  .session-icon {
+    width: 50px;
+    height: 50px;
+    align-self: center;
+  }
+  
+  .session-info h3 {
+    font-size: clamp(15px, 4vw, 18px);
+    text-align: center;
+  }
+  
+  .session-description {
+    font-size: clamp(12px, 2.5vw, 14px);
+    text-align: center;
+  }
+  
+  .session-meta {
+    justify-content: center;
+  }
+  
+  .session-meta span {
+    font-size: 11px;
+    padding: 4px 8px;
   }
 }
 

@@ -1,7 +1,7 @@
 .language-switcher {
   position: fixed;
   top: 16px;
-  right: 16px;
+  left: 16px;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -34,13 +34,48 @@
   letter-spacing: 1px;
 }
 
-@media (max-width: 768px) {
+/* Планшет */
+@media (max-width: 1024px) and (min-width: 769px) {
   .language-switcher {
     top: 12px;
-    right: 12px;
+    left: 12px;
     padding: 10px 14px;
+    font-size: 15px;
+    min-height: 46px;
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .language-switcher {
+    top: 8px;
+    left: 8px;
+    padding: 8px 12px;
     font-size: 14px;
-    min-height: 44px;
+    min-height: 40px;
+    gap: 6px;
+  }
+  
+  .language-switcher svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+  .language-switcher {
+    top: 6px;
+    left: 6px;
+    padding: 6px 10px;
+    font-size: 12px;
+    min-height: 36px;
+    gap: 4px;
+  }
+  
+  .language-switcher svg {
+    width: 16px;
+    height: 16px;
   }
 }
 

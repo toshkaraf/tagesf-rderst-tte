@@ -60,3 +60,40 @@
   text-align: center;
 }
 
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .media-viewer img,
+  .media-viewer video {
+    max-height: 25vh;
+  }
+  
+  .media-title {
+    font-size: clamp(18px, 3.5vw, 20px);
+  }
+  
+  .media-description {
+    font-size: clamp(16px, 2.5vw, 18px);
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+  .media-viewer img,
+  .media-viewer video {
+    max-height: 20vh;
+    border-radius: 8px;
+  }
+  
+  .media-title {
+    font-size: clamp(16px, 4vw, 18px);
+  }
+  
+  .media-description {
+    font-size: clamp(14px, 3vw, 16px);
+  }
+  
+  .media-viewer audio {
+    margin: clamp(8px, 1.5vh, 12px) 0;
+  }
+}
+

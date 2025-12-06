@@ -9,10 +9,45 @@
   min-height: var(--button-height);
 }
 
+/* Планшет */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .large-button {
+    min-width: 180px;
+    padding: 18px 36px;
+    font-size: clamp(16px, 2.5vw, 22px);
+    min-height: clamp(56px, 8vh, 70px);
+  }
+}
+
+/* Мобильные устройства */
 @media (max-width: 768px) {
   .large-button {
     width: 100%;
     min-width: auto;
+    padding: clamp(14px, 2vh, 18px) clamp(20px, 4vw, 32px);
+    font-size: clamp(16px, 3vw, 20px);
+    min-height: clamp(52px, 8vh, 64px);
+    gap: 10px;
+  }
+  
+  .large-button svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+  .large-button {
+    padding: clamp(12px, 1.5vh, 16px) clamp(16px, 3vw, 24px);
+    font-size: clamp(14px, 3vw, 18px);
+    min-height: clamp(48px, 7vh, 56px);
+    gap: 8px;
+  }
+  
+  .large-button svg {
+    width: 18px;
+    height: 18px;
   }
 }
 

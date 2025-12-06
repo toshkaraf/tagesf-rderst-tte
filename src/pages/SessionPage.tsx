@@ -79,19 +79,36 @@ function SessionPage() {
   return (
     <div className="session-page">
       <header className="session-header">
-        <LargeButton onClick={() => navigate('/')} className="btn-outline">
-          <ArrowLeft size={24} /> {t.common.back}
-        </LargeButton>
-        <div className="session-title">
-          <h1>{session.title}</h1>
-          <p>{session.description}</p>
-        </div>
-        <div className="session-progress">
-          {session.slides && (
-            <span>
-              {t.session.slideProgress} {safeSlideIndex + 1} {t.session.slideOf} {session.slides.length}
-            </span>
+        <div className="header-top-buttons">
+          <button 
+            onClick={() => navigate('/')} 
+            className="header-button btn-outline"
+            title={t.common.back}
+          >
+            <ArrowLeft size={20} />
+            <span className="header-button-text">{t.common.back}</span>
+          </button>
+          {session.quiz && !showQuiz && (
+            <button 
+              onClick={() => setShowQuiz(true)}
+              className="header-button btn-secondary"
+              title={t.session.test}
+            >
+              <span className="header-button-text">{t.session.test}</span>
+            </button>
           )}
+        </div>
+        <div className="session-title-section">
+          <div className="session-title">
+            <h1>{session.title}</h1>
+          </div>
+          <div className="session-progress">
+            {session.slides && (
+              <span>
+                {t.session.slideProgress} {safeSlideIndex + 1} {t.session.slideOf} {session.slides.length}
+              </span>
+            )}
+          </div>
         </div>
       </header>
 
@@ -157,24 +174,23 @@ function SessionPage() {
 
             {currentSlide.questions && currentSlide.questions.length > 0 && (
               <div className="questions-section">
-                <h3>{t.common.questions}</h3>
                 {currentSlide.questions.map(q => (
                   <div key={q.id} className="question-card">
                     <p className="question-text">{q.text}</p>
                     {q.type === 'yes-no' && (
                       <div className="yes-no-buttons">
-                        <LargeButton 
-                          className="btn-success"
+                        <button 
+                          className="btn-success question-btn"
                           onClick={() => alert(t.session.correct + ' ' + (q.explanation || ''))}
                         >
                           {t.session.yes}
-                        </LargeButton>
-                        <LargeButton 
-                          className="btn-outline"
+                        </button>
+                        <button 
+                          className="btn-outline question-btn"
                           onClick={() => alert(t.session.thinkMore + ' ' + (q.explanation || ''))}
                         >
                           {t.session.no}
-                        </LargeButton>
+                        </button>
                       </div>
                     )}
                     {q.type === 'multiple-choice' && q.options && (
@@ -251,16 +267,6 @@ function SessionPage() {
         >
           <SkipBack size={24} /> {t.common.previous}
         </LargeButton>
-        
-        {session.quiz && !showQuiz && (
-          <LargeButton 
-            onClick={() => setShowQuiz(true)}
-            className="btn-secondary"
-          >
-            {t.session.goToQuiz}
-          </LargeButton>
-        )}
-        
         <LargeButton 
           onClick={handleNext} 
           disabled={!hasNextSlide && !session.quiz}

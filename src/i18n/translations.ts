@@ -30,6 +30,7 @@ export interface Translations {
     startSession: string
     startQuiz: string
     goToQuiz: string
+    test: string
     quizComplete: string
     score: string
     correctAnswers: string
@@ -94,6 +95,7 @@ export const translations: Record<Language, Translations> = {
       startSession: 'Sitzung starten',
       startQuiz: 'Quiz starten',
       goToQuiz: 'Zum Quiz',
+      test: 'Test',
       quizComplete: 'Quiz abgeschlossen',
       score: 'Punkte',
       correctAnswers: 'Richtige Antworten',
@@ -156,6 +158,7 @@ export const translations: Record<Language, Translations> = {
       startSession: 'Начать занятие',
       startQuiz: 'Начать викторину',
       goToQuiz: 'Перейти к викторине',
+      test: 'Тест',
       quizComplete: 'Викторина завершена',
       score: 'Баллы',
       correctAnswers: 'Правильных ответов',

@@ -234,12 +234,20 @@ function SessionPage() {
                           return (
                             <LargeButton
                               key={idx}
-                              className={isCorrect ? 'btn-success' : 'btn-outline'}
-                              onClick={() => alert(
-                                isCorrect 
-                                  ? t.session.correct + ' ' + (q.explanation || '')
-                                  : t.session.incorrect + '. ' + (q.explanation || '')
-                              )}
+                              className="btn-outline"
+                              onClick={() => {
+                                const correct = isCorrect
+                                // Play sound
+                                const audio = new Audio(correct ? '/media/sounds/success.mp3' : '/media/sounds/error.mp3')
+                                audio.play().catch(() => {}) // Ignore errors if file doesn't exist
+                                
+                                // Show modal with answer
+                                const message = correct 
+                                  ? `✓ ${t.session.correct}\n\n${q.explanation || ''}`
+                                  : `✗ ${t.session.incorrect}\n\nПравильный ответ: ${q.options[q.correctAnswer]}\n\n${q.explanation || ''}`
+                                
+                                alert(message)
+                              }}
                             >
                               {option}
                             </LargeButton>

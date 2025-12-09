@@ -227,7 +227,7 @@ function SessionPage() {
                         </button>
                       </div>
                     )}
-                    {q.type === 'multiple-choice' && q.options && (() => {
+                    {q.type === 'multiple-choice' && q.options && typeof q.correctAnswer === 'number' && (() => {
                       const options = q.options
                       const correctAnswer = q.correctAnswer
                       return (

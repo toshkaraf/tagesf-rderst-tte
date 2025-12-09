@@ -48,3 +48,4 @@ Write-Host ""
 Write-Host "Speichern Sie alle Bilder in: $PSScriptRoot" -ForegroundColor Green
 
 
+

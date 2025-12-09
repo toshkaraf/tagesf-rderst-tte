@@ -77,3 +77,4 @@ Die beste Lösung ist, die Bilder manuell herunterzuladen:
 Sie können auch eine Browser-Erweiterung wie "Image Downloader" verwenden, um Bilder von Webseiten direkt herunterzuladen.
 
 
+

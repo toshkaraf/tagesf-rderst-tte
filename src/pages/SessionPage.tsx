@@ -227,34 +227,38 @@ function SessionPage() {
                         </button>
                       </div>
                     )}
-                    {q.type === 'multiple-choice' && q.options && (
-                      <div className="multiple-choice-buttons">
-                        {q.options.map((option, idx) => {
-                          const isCorrect = idx === q.correctAnswer
-                          return (
-                            <LargeButton
-                              key={idx}
-                              className="btn-outline"
-                              onClick={() => {
-                                const correct = isCorrect
-                                // Play sound
-                                const audio = new Audio(correct ? '/media/sounds/success.mp3' : '/media/sounds/error.mp3')
-                                audio.play().catch(() => {}) // Ignore errors if file doesn't exist
-                                
-                                // Show modal with answer
-                                const message = correct 
-                                  ? `✓ ${t.session.correct}\n\n${q.explanation || ''}`
-                                  : `✗ ${t.session.incorrect}\n\nПравильный ответ: ${q.options[q.correctAnswer]}\n\n${q.explanation || ''}`
-                                
-                                alert(message)
-                              }}
-                            >
-                              {option}
-                            </LargeButton>
-                          )
-                        })}
-                      </div>
-                    )}
+                    {q.type === 'multiple-choice' && q.options && (() => {
+                      const options = q.options
+                      const correctAnswer = q.correctAnswer
+                      return (
+                        <div className="multiple-choice-buttons">
+                          {options.map((option, idx) => {
+                            const isCorrect = idx === correctAnswer
+                            return (
+                              <LargeButton
+                                key={idx}
+                                className="btn-outline"
+                                onClick={() => {
+                                  const correct = isCorrect
+                                  // Play sound
+                                  const audio = new Audio(correct ? '/media/sounds/success.mp3' : '/media/sounds/error.mp3')
+                                  audio.play().catch(() => {}) // Ignore errors if file doesn't exist
+                                  
+                                  // Show modal with answer
+                                  const message = correct 
+                                    ? `✓ ${t.session.correct}\n\n${q.explanation || ''}`
+                                    : `✗ ${t.session.incorrect}\n\nПравильный ответ: ${options[correctAnswer]}\n\n${q.explanation || ''}`
+                                  
+                                  alert(message)
+                                }}
+                              >
+                                {option}
+                              </LargeButton>
+                            )
+                          })}
+                        </div>
+                      )
+                    })()}
                   </div>
                 ))}
               </div>

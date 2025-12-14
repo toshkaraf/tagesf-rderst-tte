@@ -6,6 +6,7 @@ import SlideViewer from '../components/SlideViewer'
 import QuizViewer from '../components/QuizViewer'
 import MediaViewer from '../components/MediaViewer'
 import LargeButton from '../components/LargeButton'
+import SpeechButton from '../components/SpeechButton'
 import { ArrowLeft, Play, SkipForward, SkipBack, Languages, ZoomIn, ZoomOut } from 'lucide-react'
 import './SessionPage.css'
 
@@ -17,6 +18,7 @@ function SessionPage() {
 
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
   const [showQuiz, setShowQuiz] = useState(false)
+  const [showInlineQuiz, setShowInlineQuiz] = useState(false)
   const [expandedImage, setExpandedImage] = useState<string | null>(null)
   const [fontScale, setFontScale] = useState(() => {
     const saved = localStorage.getItem('slideFontScale')
@@ -27,6 +29,7 @@ function SessionPage() {
   useEffect(() => {
     setCurrentSlideIndex(0)
     setShowQuiz(false)
+    setShowInlineQuiz(false)
     setExpandedImage(null)
   }, [sessionId])
 
@@ -63,9 +66,23 @@ function SessionPage() {
   const currentSlide = hasSlides && session.slides ? session.slides[safeSlideIndex] : undefined
   const hasNextSlide = session.slides && safeSlideIndex < session.slides.length - 1
   const hasPrevSlide = safeSlideIndex > 0
+  
+  // Prüfen, ob der aktuelle Slide ein Quiz enthält
+  const currentSlideHasQuiz = currentSlide?.questions && currentSlide.questions.length > 0
 
   const handleNext = () => {
-    if (hasNextSlide) {
+    if (showInlineQuiz) {
+      // Nach Inline-Quiz zum nächsten Slide
+      setShowInlineQuiz(false)
+      if (hasNextSlide) {
+        setCurrentSlideIndex(prev => prev + 1)
+      } else if (session.quiz && !showQuiz) {
+        setShowQuiz(true)
+      }
+    } else if (currentSlideHasQuiz) {
+      // Zeige das Inline-Quiz anstatt direkt zum nächsten Slide zu gehen
+      setShowInlineQuiz(true)
+    } else if (hasNextSlide) {
       setCurrentSlideIndex(prev => prev + 1)
     } else if (session.quiz && !showQuiz) {
       setShowQuiz(true)
@@ -75,8 +92,12 @@ function SessionPage() {
   const handlePrev = () => {
     if (showQuiz) {
       setShowQuiz(false)
+      setShowInlineQuiz(false)
+    } else if (showInlineQuiz) {
+      setShowInlineQuiz(false)
     } else if (hasPrevSlide) {
       setCurrentSlideIndex(prev => prev - 1)
+      setShowInlineQuiz(false)
     }
   }
 
@@ -135,6 +156,12 @@ function SessionPage() {
             <Languages size={20} />
             <span className="header-button-text">{language === 'de' ? 'RU' : 'DE'}</span>
           </button>
+          {currentSlide && !showQuiz && !showInlineQuiz && (
+            <SpeechButton 
+              text={`${currentSlide.title}. ${currentSlide.content}`}
+              title={language === 'de' ? 'Slide vorlesen' : 'Читать слайд'}
+            />
+          )}
           {session.slides && (
             <div className="header-progress">
               {t.session.slideProgress} {safeSlideIndex + 1} {t.session.slideOf} {session.slides.length}
@@ -149,6 +176,15 @@ function SessionPage() {
       <main className="session-main">
         {showQuiz && session.quiz ? (
           <QuizViewer quiz={session.quiz} onComplete={() => setShowQuiz(false)} />
+        ) : showInlineQuiz && currentSlide?.questions ? (
+          <QuizViewer 
+            quiz={{
+              id: currentSlide.id + '-quiz',
+              title: currentSlide.title,
+              questions: currentSlide.questions
+            }} 
+            onComplete={() => setShowInlineQuiz(false)} 
+          />
         ) : !hasSlides ? (
           <div className="session-structure">
             <h2>{t.session.structure}</h2>
@@ -205,64 +241,6 @@ function SessionPage() {
                 />
               </div>
             )}
-
-            {currentSlide.questions && currentSlide.questions.length > 0 && (
-              <div className="questions-section" style={{ '--font-scale': fontScale } as React.CSSProperties}>
-                {currentSlide.questions.map(q => (
-                  <div key={q.id} className="question-card">
-                    <p className="question-text">{q.text}</p>
-                    {q.type === 'yes-no' && (
-                      <div className="yes-no-buttons">
-                        <button 
-                          className="btn-success question-btn"
-                          onClick={() => alert(t.session.correct + ' ' + (q.explanation || ''))}
-                        >
-                          {t.session.yes}
-                        </button>
-                        <button 
-                          className="btn-outline question-btn"
-                          onClick={() => alert(t.session.thinkMore + ' ' + (q.explanation || ''))}
-                        >
-                          {t.session.no}
-                        </button>
-                      </div>
-                    )}
-                    {q.type === 'multiple-choice' && q.options && typeof q.correctAnswer === 'number' && (() => {
-                      const options = q.options
-                      const correctAnswer = q.correctAnswer
-                      return (
-                        <div className="multiple-choice-buttons">
-                          {options.map((option, idx) => {
-                            const isCorrect = idx === correctAnswer
-                            return (
-                              <LargeButton
-                                key={idx}
-                                className="btn-outline"
-                                onClick={() => {
-                                  const correct = isCorrect
-                                  // Play sound
-                                  const audio = new Audio(correct ? '/media/sounds/success.mp3' : '/media/sounds/error.mp3')
-                                  audio.play().catch(() => {}) // Ignore errors if file doesn't exist
-                                  
-                                  // Show modal with answer
-                                  const message = correct 
-                                    ? `✓ ${t.session.correct}\n\n${q.explanation || ''}`
-                                    : `✗ ${t.session.incorrect}\n\nПравильный ответ: ${options[correctAnswer]}\n\n${q.explanation || ''}`
-                                  
-                                  alert(message)
-                                }}
-                              >
-                                {option}
-                              </LargeButton>
-                            )
-                          })}
-                        </div>
-                      )
-                    })()}
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
         ) : (
           <div className="session-structure">
@@ -308,14 +286,14 @@ function SessionPage() {
       <footer className="session-footer">
         <LargeButton 
           onClick={handlePrev} 
-          disabled={!hasPrevSlide && !showQuiz}
+          disabled={!hasPrevSlide && !showQuiz && !showInlineQuiz}
           className="btn-outline"
         >
           <SkipBack size={24} /> {t.common.previous}
         </LargeButton>
         <LargeButton 
           onClick={handleNext} 
-          disabled={!hasNextSlide && !session.quiz}
+          disabled={(!hasNextSlide && !session.quiz) || showQuiz}
           className="btn-primary"
         >
           {t.common.next} <SkipForward size={24} />

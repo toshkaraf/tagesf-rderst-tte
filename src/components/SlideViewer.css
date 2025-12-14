@@ -26,8 +26,8 @@
 }
 
 .slide-text {
-  font-size: calc(clamp(20px, 3vw, 26px) * var(--font-scale, 1));
-  line-height: 1.5;
+  font-size: calc(clamp(24px, 3.5vw, 32px) * var(--font-scale, 1));
+  line-height: 1.6;
   color: var(--text-primary);
   display: flex;
   flex-direction: column;

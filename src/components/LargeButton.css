@@ -3,10 +3,10 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  min-width: 200px;
-  font-size: var(--button-font-size);
-  padding: 20px 40px;
-  min-height: var(--button-height);
+  width: 100%;
+  font-size: clamp(18px, 2.8vw, 24px);
+  padding: clamp(14px, 2vh, 18px) clamp(20px, 3vw, 32px);
+  min-height: clamp(54px, 8vh, 70px);
 }
 
 /* Планшет */

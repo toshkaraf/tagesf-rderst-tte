@@ -68,27 +68,27 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
   },
   'ritterturniere': {
     de: {
-      title: 'Ritterturniere: Sport oder Krieg?',
-      description: 'Untersuchung der Natur mittelalterlicher Ritterturniere: sportlicher Wettkampf oder Form militärischer Aktionen?',
+      title: 'Ritterturniere: Blut, Geld und Politik',
+      description: 'Eintauchen in die Welt mittelalterlicher Turniere durch überraschende Fakten über Geld, Todesfälle und politische Intrigen',
       category: 'Geschichte',
       structure: {
-        greeting: 'Willkommen zur Sitzung über Ritterturniere! Heute werden wir herausfinden: Waren sie Sport oder Krieg?',
+        greeting: 'Willkommen zur Sitzung über Ritterturniere!',
         mainContent: 'Studium der Geschichte der Turniere, ihrer Regeln, Ziele und Folgen',
-        interactive: 'Diskussion der Argumente "dafür" und "dagegen", Quiz',
-        additional: 'Betrachtung von Bildern und Videos über Ritterturniere',
-        closing: 'Zusammenfassung der Diskussion und Schlussfolgerungen'
+        interactive: 'Fragen und Abschlussquiz',
+        additional: 'Betrachtung von Bildern über Ritterturniere',
+        closing: 'Zusammenfassung und Schlussfolgerungen'
       }
     },
     ru: {
-      title: 'Рыцарские турниры: спорт или война?',
-      description: 'Исследование природы средневековых рыцарских турниров: спортивное состязание или форма военных действий?',
+      title: 'Рыцарские турниры: кровь, деньги и политика',
+      description: 'Погружение в мир средневековых турниров через неожиданные факты о деньгах, смертях и политических интригах',
       category: 'История',
       structure: {
-        greeting: 'Добро пожаловать на занятие о рыцарских турнирах! Сегодня мы разберемся: были ли они спортом или войной?',
+        greeting: 'Добро пожаловать на занятие о рыцарских турнирах!',
         mainContent: 'Изучение истории турниров, их правил, целей и последствий',
-        interactive: 'Обсуждение аргументов "за" и "против", викторина',
-        additional: 'Просмотр изображений и видео о рыцарских турнирах',
-        closing: 'Подведение итогов дискуссии и выводы'
+        interactive: 'Вопросы и итоговая викторина',
+        additional: 'Просмотр изображений о рыцарских турнирах',
+        closing: 'Подведение итогов и выводы'
       }
     }
   }

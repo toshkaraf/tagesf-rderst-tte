@@ -175,9 +175,14 @@ function SessionPage() {
 
       <main className="session-main">
         {showQuiz && session.quiz ? (
-          <QuizViewer quiz={session.quiz} onComplete={() => setShowQuiz(false)} />
+          <QuizViewer 
+            key={session.quiz.id} 
+            quiz={session.quiz} 
+            onComplete={() => setShowQuiz(false)} 
+          />
         ) : showInlineQuiz && currentSlide?.questions ? (
           <QuizViewer 
+            key={currentSlide.id + '-quiz'}
             quiz={{
               id: currentSlide.id + '-quiz',
               title: currentSlide.title,

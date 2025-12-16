@@ -33,6 +33,14 @@ function SessionPage() {
     setExpandedImage(null)
   }, [sessionId])
 
+  // Play new.mp3 when slide changes
+  useEffect(() => {
+    if (!showQuiz && !showInlineQuiz && currentSlide) {
+      const audio = new Audio('/media/sounds/new.mp3')
+      audio.play().catch(() => {})
+    }
+  }, [currentSlideIndex, showQuiz, showInlineQuiz, currentSlide])
+
   if (!session) {
     return (
       <div className="session-page error">
@@ -177,7 +185,8 @@ function SessionPage() {
         {showQuiz && session.quiz ? (
           <QuizViewer 
             key={session.quiz.id} 
-            quiz={session.quiz} 
+            quiz={session.quiz}
+            isFinalQuiz={true}
             onComplete={() => setShowQuiz(false)} 
           />
         ) : showInlineQuiz && currentSlide?.questions ? (
@@ -185,9 +194,10 @@ function SessionPage() {
             key={currentSlide.id + '-quiz'}
             quiz={{
               id: currentSlide.id + '-quiz',
-              title: currentSlide.title,
+              title: language === 'de' ? 'Fragen zur Festigung' : 'Вопросы для закрепления',
               questions: currentSlide.questions
-            }} 
+            }}
+            isFinalQuiz={false}
             onComplete={() => setShowInlineQuiz(false)} 
           />
         ) : !hasSlides ? (

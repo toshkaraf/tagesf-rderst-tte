@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { QuizBlock } from '../types/session'
 import { useLanguage } from '../i18n/LanguageContext'
 import LargeButton from './LargeButton'
@@ -6,19 +6,27 @@ import './QuizViewer.css'
 
 interface QuizViewerProps {
   quiz: QuizBlock
-  onComplete: () => void
+  onComplete: (score?: number, total?: number) => void
+  isFinalQuiz?: boolean
 }
 
-function QuizViewer({ quiz, onComplete }: QuizViewerProps) {
+function QuizViewer({ quiz, onComplete, isFinalQuiz = false }: QuizViewerProps) {
   const { t } = useLanguage()
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<number | string | null>(null)
   const [showExplanation, setShowExplanation] = useState(false)
   const [score, setScore] = useState(0)
   const [answered, setAnswered] = useState(false)
+  const [showResults, setShowResults] = useState(false)
 
   const currentQuestion = quiz.questions[currentQuestionIndex]
   const isLastQuestion = currentQuestionIndex === quiz.questions.length - 1
+
+  // Play quiz.mp3 when quiz starts
+  useEffect(() => {
+    const audio = new Audio('/media/sounds/quiz.mp3')
+    audio.play().catch(() => {})
+  }, [])
 
   const handleAnswer = (answer: number | string) => {
     if (answered) return
@@ -27,22 +35,81 @@ function QuizViewer({ quiz, onComplete }: QuizViewerProps) {
     setAnswered(true)
     setShowExplanation(true)
     
-    if (currentQuestion.correctAnswer !== undefined) {
-      if (answer === currentQuestion.correctAnswer) {
-        setScore(prev => prev + 1)
-      }
+    const isCorrect = answer === currentQuestion.correctAnswer
+    
+    // Play correct or incorrect sound
+    const soundFile = isCorrect ? '/media/sounds/correct.mp3' : '/media/sounds/incorrect.mp3'
+    const audio = new Audio(soundFile)
+    audio.play().catch(() => {})
+    
+    if (isCorrect) {
+      setScore(prev => prev + 1)
     }
   }
 
   const handleNext = () => {
     if (isLastQuestion) {
-      onComplete()
+      if (isFinalQuiz) {
+        setShowResults(true)
+        // Play victory sound
+        const audio = new Audio('/media/sounds/victory.mp3')
+        audio.play().catch(() => {})
+      } else {
+        onComplete(score, quiz.questions.length)
+      }
     } else {
       setCurrentQuestionIndex(prev => prev + 1)
       setSelectedAnswer(null)
       setShowExplanation(false)
       setAnswered(false)
     }
+  }
+
+  const handleFinish = () => {
+    onComplete(score, quiz.questions.length)
+  }
+
+  // Show results screen for final quiz
+  if (showResults) {
+    const percentage = Math.round((score / quiz.questions.length) * 100)
+    const getResultColor = () => {
+      if (percentage >= 80) return 'var(--success-color)'
+      if (percentage >= 60) return 'var(--warning-color)'
+      return 'var(--error-color)'
+    }
+    
+    const { language } = useLanguage()
+    const getResultMessage = () => {
+      if (language === 'de') {
+        if (percentage >= 80) return '🎉 Ausgezeichnet! Sie haben den Stoff hervorragend verstanden!'
+        if (percentage >= 60) return '👍 Gut! Aber es gibt noch Verbesserungspotenzial.'
+        return '📚 Es lohnt sich, das Material noch einmal zu wiederholen.'
+      } else {
+        if (percentage >= 80) return '🎉 Отлично! Вы отлично усвоили материал!'
+        if (percentage >= 60) return '👍 Хорошо! Но есть над чем поработать.'
+        return '📚 Стоит повторить материал еще раз.'
+      }
+    }
+    
+    return (
+      <div className="quiz-viewer">
+        <div className="quiz-results">
+          <h2>{t.quiz.results}</h2>
+          <div className="results-circle" style={{ borderColor: getResultColor() }}>
+            <div className="results-score" style={{ color: getResultColor() }}>
+              {score}/{quiz.questions.length}
+            </div>
+            <div className="results-percentage">{percentage}%</div>
+          </div>
+          <div className="results-message">
+            <p>{getResultMessage()}</p>
+          </div>
+          <LargeButton onClick={handleFinish} className="btn-primary">
+            {t.common.back}
+          </LargeButton>
+        </div>
+      </div>
+    )
   }
 
   return (

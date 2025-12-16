@@ -51,6 +51,7 @@ export interface Translations {
       correct: string
       incorrect: string
       explanation: string
+      results: string
     }
   types: {
     presentation: string
@@ -78,7 +79,7 @@ export const translations: Record<Language, Translations> = {
       minutes: 'Min.'
     },
     home: {
-      title: 'Tagesförderstätte',
+      title: 'Das unbekannte Bekannte',
       subtitle: 'Interaktive Sitzungen und Bildungsprogramme',
       categories: 'Kategorien',
       availableSessions: 'Verfügbare Sitzungen',
@@ -115,7 +116,8 @@ export const translations: Record<Language, Translations> = {
       finishQuiz: 'Quiz beenden',
       correct: 'Richtig!',
       incorrect: 'Falsch',
-      explanation: 'Erklärung'
+      explanation: 'Erklärung',
+      results: 'Ergebnisse'
     },
     types: {
       presentation: 'Präsentation',
@@ -141,7 +143,7 @@ export const translations: Record<Language, Translations> = {
       minutes: 'мин'
     },
     home: {
-      title: 'Tagesförderstätte',
+      title: 'Неизвестное известное',
       subtitle: 'Интерактивные занятия и образовательные программы',
       categories: 'Категории',
       availableSessions: 'Доступные занятия',
@@ -178,7 +180,8 @@ export const translations: Record<Language, Translations> = {
       finishQuiz: 'Завершить викторину',
       correct: 'Правильно!',
       incorrect: 'Неверно',
-      explanation: 'Объяснение'
+      explanation: 'Объяснение',
+      results: 'Результаты'
     },
     types: {
       presentation: 'Презентация',

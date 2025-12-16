@@ -33,14 +33,6 @@ function SessionPage() {
     setExpandedImage(null)
   }, [sessionId])
 
-  // Play new.mp3 when slide changes
-  useEffect(() => {
-    if (!showQuiz && !showInlineQuiz && currentSlide) {
-      const audio = new Audio('/media/sounds/new.mp3')
-      audio.play().catch(() => {})
-    }
-  }, [currentSlideIndex, showQuiz, showInlineQuiz, currentSlide])
-
   if (!session) {
     return (
       <div className="session-page error">
@@ -77,6 +69,14 @@ function SessionPage() {
   
   // Prüfen, ob der aktuelle Slide ein Quiz enthält
   const currentSlideHasQuiz = currentSlide?.questions && currentSlide.questions.length > 0
+
+  // Play new.mp3 when slide changes
+  useEffect(() => {
+    if (!showQuiz && !showInlineQuiz && currentSlide) {
+      const audio = new Audio('/media/sounds/new.mp3')
+      audio.play().catch(() => {})
+    }
+  }, [currentSlideIndex, showQuiz, showInlineQuiz, currentSlide])
 
   const handleNext = () => {
     if (showInlineQuiz) {

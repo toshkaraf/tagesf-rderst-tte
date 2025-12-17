@@ -91,6 +91,32 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
         closing: 'Подведение итогов и выводы'
       }
     }
+  },
+  'seven-wonders': {
+    de: {
+      title: 'Die Sieben Weltwunder: Ökonomie der Megaprojekte',
+      description: 'Eintauchen in die wirtschaftlichen, politischen und sozialen Aspekte des Baus und der Zerstörung der antiken Weltwunder',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über die Sieben Weltwunder!',
+        mainContent: 'Studium der Ökonomie antiker Megaprojekte, der Baukosten und Gründe für ihr Verschwinden',
+        interactive: 'Fragen und Abschlussquiz',
+        additional: 'Betrachtung von Bildern der antiken Weltwunder',
+        closing: 'Zusammenfassung und Schlussfolgerungen'
+      }
+    },
+    ru: {
+      title: 'Семь чудес света: экономика мегапроектов',
+      description: 'Погружение в экономические, политические и социальные аспекты строительства и разрушения древних чудес света',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о семи чудесах света!',
+        mainContent: 'Изучение экономики мегапроектов древности, стоимости строительства и причин исчезновения',
+        interactive: 'Вопросы и итоговая викторина',
+        additional: 'Просмотр изображений древних чудес',
+        closing: 'Подведение итогов и выводы'
+      }
+    }
   }
 }
 

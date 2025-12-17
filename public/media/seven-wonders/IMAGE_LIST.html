@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список изображений: Семь чудес света</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #6c757d;
+            margin-top: 5px;
+        }
+
+        .instructions {
+            padding: 30px 40px;
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            margin: 20px 40px;
+        }
+
+        .instructions h2 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+
+        .instructions ul {
+            list-style-position: inside;
+            color: #856404;
+        }
+
+        .instructions li {
+            margin: 8px 0;
+        }
+
+        .content {
+            padding: 20px 40px 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .image-item {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .image-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .image-item.checked {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+
+        .image-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .image-number {
+            background: #667eea;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .image-filename {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #212529;
+            flex: 1;
+        }
+
+        .image-description {
+            color: #495057;
+            margin-bottom: 10px;
+            margin-left: 74px;
+        }
+
+        .search-terms {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-left: 74px;
+            border: 1px solid #dee2e6;
+        }
+
+        .search-terms strong {
+            color: #667eea;
+        }
+
+        .search-links {
+            margin-left: 74px;
+            margin-top: 10px;
+        }
+
+        .search-link {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            margin-top: 5px;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+
+        .search-link:hover {
+            background: #5568d3;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: #e9ecef;
+            z-index: 1000;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #28a745, #20c997);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .action-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .action-btn {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .reset-btn {
+            background: #dc3545;
+            color: white;
+        }
+
+        .reset-btn:hover {
+            background: #c82333;
+            transform: scale(1.05);
+        }
+
+        .save-btn {
+            background: #28a745;
+            color: white;
+        }
+
+        .save-btn:hover {
+            background: #218838;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .instructions {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>📸 Семь чудес света: экономика мегапроектов</h1>
+            <p>Список необходимых изображений для темы</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalImages">40</div>
+                <div class="stat-label">Всего изображений</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="checkedImages">0</div>
+                <div class="stat-label">Загружено</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="remainingImages">40</div>
+                <div class="stat-label">Осталось</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="progressPercent">0%</div>
+                <div class="stat-label">Прогресс</div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Инструкции по поиску изображений</h2>
+            <ul>
+                <li><strong>Формат:</strong> JPG или PNG</li>
+                <li><strong>Разрешение:</strong> минимум 1200x800 px</li>
+                <li><strong>Лицензия:</strong> свободная (Public Domain, Creative Commons)</li>
+                <li><strong>Источники:</strong> Wikimedia Commons, Pixabay, Unsplash, Pexels</li>
+                <li><strong>Размер файла:</strong> не более 500 KB</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <!-- Введение -->
+            <div class="section">
+                <h2 class="section-title">🏛️ Введение (слайды 1-4)</h2>
+
+                <div class="image-item" data-index="0">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img0">
+                        <div class="image-number">1</div>
+                        <label for="img0" class="image-filename">ancient-list.jpg</label>
+                    </div>
+                    <div class="image-description">
+                        Античный папирус или свиток с греческим текстом, старинная карта Средиземноморья
+                    </div>
+                    <div class="search-terms">
+                        <strong>Поиск:</strong> "ancient greek papyrus list", "ancient mediterranean map"
+                    </div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+greek+papyrus" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient%20papyrus/" target="_blank" class="search-link">Pixabay</a>
+                        <a href="https://unsplash.com/s/photos/ancient-scroll" target="_blank" class="search-link">Unsplash</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="1">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img1">
+                        <div class="image-number">2</div>
+                        <label for="img1" class="image-filename">political-power.jpg</label>
+                    </div>
+                    <div class="image-description">
+                        Древний правитель, царь на троне, символы власти (скипетр, корона)
+                    </div>
+                    <div class="search-terms">
+                        <strong>Поиск:</strong> "ancient ruler throne", "pharaoh power", "ancient king statue"
+                    </div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+ruler+throne" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/pharaoh/" target="_blank" class="search-link">Pixabay</a>
+                        <a href="https://unsplash.com/s/photos/ancient-statue" target="_blank" class="search-link">Unsplash</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="2">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img2">
+                        <div class="image-number">3</div>
+                        <label for="img2" class="image-filename">ancient-tourism.jpg</label>
+                    </div>
+                    <div class="image-description">
+                        Античные путешественники, греческие туристы, древние корабли в порту
+                    </div>
+                    <div class="search-terms">
+                        <strong>Поиск:</strong> "ancient greek travelers", "ancient ship mediterranean"
+                    </div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+greek+ship" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient%20ship/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="3">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img3">
+                        <div class="image-number">4</div>
+                        <label for="img3" class="image-filename">only-one-left.jpg</label>
+                    </div>
+                    <div class="image-description">
+                        Пирамиды Гизы, контраст сохранившегося чуда и пустыни
+                    </div>
+                    <div class="search-terms">
+                        <strong>Поиск:</strong> "pyramids of giza desert", "great pyramid egypt landscape"
+                    </div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=pyramids+giza" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/pyramids%20giza/" target="_blank" class="search-link">Pixabay</a>
+                        <a href="https://unsplash.com/s/photos/pyramids-egypt" target="_blank" class="search-link">Unsplash</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Пирамида Хеопса -->
+            <div class="section">
+                <h2 class="section-title">🔺 Пирамида Хеопса (слайды 5-8)</h2>
+
+                <div class="image-item" data-index="4">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img4">
+                        <div class="image-number">5</div>
+                        <label for="img4" class="image-filename">pyramid-giza.jpg</label>
+                    </div>
+                    <div class="image-description">
+                        Пирамида Хеопса крупным планом, масштабная фотография
+                    </div>
+                    <div class="search-terms">
+                        <strong>Поиск:</strong> "great pyramid khufu closeup", "cheops pyramid egypt"
+                    </div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=great+pyramid+khufu" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://unsplash.com/s/photos/great-pyramid" target="_blank" class="search-link">Unsplash</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="5">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img5">
+                        <div class="image-number">6</div>
+                        <label for="img5" class="image-filename">pyramid-construction.jpg</label>
+                    </div>
+                    <div class="image-description">
+                        Реконструкция строительства пирамиды, рабочие с блоками
+                    </div>
+                    <div class="search-terms">
+                        <strong>Поиск:</strong> "pyramid construction ancient egypt", "building pyramids workers"
+                    </div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=pyramid+construction" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/pyramid%20construction/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="6">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img6">
+                        <div class="image-number">7</div>
+                        <label for="img6" class="image-filename">pyramid-workers.jpg</label>
+                    </div>
+                    <div class="image-description">
+                        Древнеегипетские рабочие, деревня строителей, археологические находки
+                    </div>
+                    <div class="search-terms">
+                        <strong>Поиск:</strong> "pyramid workers village", "ancient egyptian laborers"
+                    </div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+egyptian+workers" target="_blank" class="search-link">Wikimedia</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="7">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img7">
+                        <div class="image-number">8</div>
+                        <label for="img7" class="image-filename">pyramid-cost.jpg</label>
+                    </div>
+                    <div class="image-description">
+                        Золотые монеты, древние деньги, экономические документы Египта
+                    </div>
+                    <div class="search-terms">
+                        <strong>Поиск:</strong> "ancient egyptian gold", "pharaoh wealth treasury"
+                    </div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+egyptian+gold" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient%20coins/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Висячие сады -->
+            <div class="section">
+                <h2 class="section-title">🌳 Висячие сады Семирамиды (слайды 9-12)</h2>
+
+                <div class="image-item" data-index="8">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img8">
+                        <div class="image-number">9</div>
+                        <label for="img8" class="image-filename">hanging-gardens.jpg</label>
+                    </div>
+                    <div class="image-description">
+                        Художественная реконструкция висячих садов Вавилона
+                    </div>
+                    <div class="search-terms">
+                        <strong>Поиск:</strong> "hanging gardens babylon reconstruction"
+                    </div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=hanging+gardens+babylon" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/hanging%20gardens/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="9">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img9">
+                        <div class="image-number">10</div>
+                        <label for="img9" class="image-filename">gardens-engineering.jpg</label>
+                    </div>
+                    <div class="image-description">
+                        Древние водоподъемные механизмы, архимедов винт
+                    </div>
+                    <div class="search-terms">
+                        <strong>Поиск:</strong> "ancient water lifting device", "archimedes screw"
+                    </div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=archimedes+screw" target="_blank" class="search-link">Wikimedia</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="10">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img10">
+                        <div class="image-number">11</div>
+                        <label for="img10" class="image-filename">gardens-maintenance.jpg</label>
+                    </div>
+                    <div class="image-description">
+                        Древние работники с водой, орошение садов
+                    </div>
+                    <div class="search-terms">
+                        <strong>Поиск:</strong> "ancient irrigation system", "babylonian water workers"
+                    </div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+irrigation" target="_blank" class="search-link">Wikimedia</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="11">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img11">
+                        <div class="image-number">12</div>
+                        <label for="img11" class="image-filename">gardens-politics.jpg</label>
+                    </div>
+                    <div class="image-description">
+                        Царь Навуходоносор II, вавилонский дворец
+                    </div>
+                    <div class="search-terms">
+                        <strong>Поиск:</strong> "nebuchadnezzar II babylon", "babylonian palace"
+                    </div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=nebuchadnezzar" target="_blank" class="search-link">Wikimedia</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Продолжение для остальных секций... -->
+            <!-- Здесь добавлены остальные 28 изображений с аналогичной структурой -->
+
+            <div class="section">
+                <h2 class="section-title">⚡ Статуя Зевса (слайды 13-16)</h2>
+                <!-- Изображения 13-16 -->
+                <div class="image-item" data-index="12">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img12">
+                        <div class="image-number">13</div>
+                        <label for="img12" class="image-filename">zeus-statue.jpg</label>
+                    </div>
+                    <div class="image-description">Реконструкция статуи Зевса, храм в Олимпии</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "zeus statue olympia reconstruction"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=zeus+statue+olympia" target="_blank" class="search-link">Wikimedia</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="13">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img13">
+                        <div class="image-number">14</div>
+                        <label for="img13" class="image-filename">chryselephantine.jpg</label>
+                    </div>
+                    <div class="image-description">Слоновая кость и золото, драгоценные материалы</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ivory gold ancient"</div>
+                    <div class="search-links">
+                        <a href="https://pixabay.com/images/search/ivory%20gold/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="14">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img14">
+                        <div class="image-number">15</div>
+                        <label for="img14" class="image-filename">zeus-financing.jpg</label>
+                    </div>
+                    <div class="image-description">Античные военные трофеи, персидская добыча</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient greek war spoils"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+greek+treasure" target="_blank" class="search-link">Wikimedia</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="15">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img15">
+                        <div class="image-number">16</div>
+                        <label for="img15" class="image-filename">zeus-fate.jpg</label>
+                    </div>
+                    <div class="image-description">Пожар в древнем здании, разрушение</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient building fire"</div>
+                    <div class="search-links">
+                        <a href="https://pixabay.com/images/search/ancient%20fire/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Храм Артемиды -->
+            <div class="section">
+                <h2 class="section-title">🏛️ Храм Артемиды (слайды 17-20)</h2>
+
+                <div class="image-item" data-index="16">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img16">
+                        <div class="image-number">17</div>
+                        <label for="img16" class="image-filename">artemis-temple.jpg</label>
+                    </div>
+                    <div class="image-description">Реконструкция храма Артемиды в Эфесе, колонны</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "temple of artemis ephesus reconstruction", "artemis temple columns"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=temple+artemis+ephesus" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/artemis%20temple/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="17">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img17">
+                        <div class="image-number">18</div>
+                        <label for="img17" class="image-filename">herostratus.jpg</label>
+                    </div>
+                    <div class="image-description">Поджог храма, пожар в античном здании, драматическая сцена</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "temple fire ancient", "burning ancient temple", "herostratus fire"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=temple+fire+ancient" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/burning%20temple/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="18">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img18">
+                        <div class="image-number">19</div>
+                        <label for="img18" class="image-filename">artemis-bank.jpg</label>
+                    </div>
+                    <div class="image-description">Античный банк, золотые монеты, финансовые операции в храме</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient temple treasury", "ancient greek coins gold", "temple banking"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+greek+coins" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient%20coins/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="19">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img19">
+                        <div class="image-number">20</div>
+                        <label for="img19" class="image-filename">artemis-destruction.jpg</label>
+                    </div>
+                    <div class="image-description">Готские воины, разграбление храма, варвары</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "goths plunder temple", "ancient temple destruction", "barbarian invasion"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=barbarian+invasion" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/barbarian%20warriors/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Мавзолей -->
+            <div class="section">
+                <h2 class="section-title">🏛️ Мавзолей в Галикарнасе (слайды 21-24)</h2>
+
+                <div class="image-item" data-index="20">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img20">
+                        <div class="image-number">21</div>
+                        <label for="img20" class="image-filename">mausoleum.jpg</label>
+                    </div>
+                    <div class="image-description">Реконструкция мавзолея в Галикарнасе</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "mausoleum halicarnassus reconstruction", "mausolus tomb"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=mausoleum+halicarnassus" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/mausoleum/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="21">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img21">
+                        <div class="image-number">22</div>
+                        <label for="img21" class="image-filename">mausoleum-artists.jpg</label>
+                    </div>
+                    <div class="image-description">Античные скульпторы за работой, греческие мастера</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient greek sculptors working", "ancient artists marble", "classical sculpture"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+sculptor" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/sculptor%20marble/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="22">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img22">
+                        <div class="image-number">23</div>
+                        <label for="img22" class="image-filename">artemisia.jpg</label>
+                    </div>
+                    <div class="image-description">Царица Артемисия II, древняя правительница Карии</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "queen artemisia II caria", "ancient queen ruling", "artemisia mausolus"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=artemisia+caria" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient%20queen/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="23">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img23">
+                        <div class="image-number">24</div>
+                        <label for="img23" class="image-filename">mausoleum-stones.jpg</label>
+                    </div>
+                    <div class="image-description">Средневековая крепость из античных камней, рыцарская крепость</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "knights hospitaller fortress", "crusader castle bodrum", "medieval fortress stones"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=bodrum+castle" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/crusader%20fortress/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Колосс Родосский -->
+            <div class="section">
+                <h2 class="section-title">🗿 Колосс Родосский (слайды 25-28)</h2>
+
+                <div class="image-item" data-index="24">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img24">
+                        <div class="image-number">25</div>
+                        <label for="img24" class="image-filename">colossus-rhodes.jpg</label>
+                    </div>
+                    <div class="image-description">Реконструкция Колосса Родосского, бронзовая статуя в порту</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "colossus of rhodes reconstruction", "helios statue rhodes"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=colossus+rhodes" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/colossus%20rhodes/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="25">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img25">
+                        <div class="image-number">26</div>
+                        <label for="img25" class="image-filename">siege-equipment.jpg</label>
+                    </div>
+                    <div class="image-description">Античные осадные машины, осадные башни, военная техника</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient siege tower", "demetrius siege equipment", "ancient war machines"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+siege+tower" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/siege%20tower/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="26">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img26">
+                        <div class="image-number">27</div>
+                        <label for="img26" class="image-filename">colossus-construction.jpg</label>
+                    </div>
+                    <div class="image-description">Строительство гигантской статуи, строительные леса</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "building giant statue ancient", "colossus construction process"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+statue+construction" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/building%20statue/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="27">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img27">
+                        <div class="image-number">28</div>
+                        <label for="img27" class="image-filename">colossus-ruins.jpg</label>
+                    </div>
+                    <div class="image-description">Обломки бронзовой статуи, упавший колосс, руины</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "fallen bronze statue ancient", "colossus ruins earthquake", "broken statue debris"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=fallen+statue" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/broken%20statue/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Александрийский маяк -->
+            <div class="section">
+                <h2 class="section-title">💡 Александрийский маяк (слайды 29-32)</h2>
+
+                <div class="image-item" data-index="28">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img28">
+                        <div class="image-number">29</div>
+                        <label for="img28" class="image-filename">pharos-lighthouse.jpg</label>
+                    </div>
+                    <div class="image-description">Реконструкция Александрийского маяка, фаросский маяк</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "lighthouse of alexandria reconstruction", "pharos lighthouse ancient"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=pharos+lighthouse" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/lighthouse%20alexandria/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="29">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img29">
+                        <div class="image-number">30</div>
+                        <label for="img29" class="image-filename">pharos-technology.jpg</label>
+                    </div>
+                    <div class="image-description">Древние зеркала, система отражения света, античные технологии</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient lighthouse mirror system", "pharos light technology", "ancient light reflection"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+mirror+system" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient%20mirrors/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="30">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img30">
+                        <div class="image-number">31</div>
+                        <label for="img30" class="image-filename">pharos-maintenance.jpg</label>
+                    </div>
+                    <div class="image-description">Работники с дровами, обслуживание маяка, античные смотрители</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient lighthouse workers", "maintaining pharos", "lighthouse keeper ancient"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=lighthouse+keeper" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/lighthouse%20workers/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="31">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img31">
+                        <div class="image-number">32</div>
+                        <label for="img31" class="image-filename">pharos-destruction.jpg</label>
+                    </div>
+                    <div class="image-description">Землетрясение, разрушенный маяк, руины в море</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "pharos lighthouse ruins", "earthquake destruction ancient", "fallen lighthouse"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=lighthouse+ruins" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ruins%20earthquake/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Экономика разрушения -->
+            <div class="section">
+                <h2 class="section-title">💰 Экономика разрушения (слайды 33-36)</h2>
+
+                <div class="image-item" data-index="32">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img32">
+                        <div class="image-number">33</div>
+                        <label for="img32" class="image-filename">economics-destruction.jpg</label>
+                    </div>
+                    <div class="image-description">Разборка античных руин, добыча камня из древних зданий</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "dismantling ancient ruins", "quarrying ancient stones", "reusing ancient materials"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+ruins+stones" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient%20ruins/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="33">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img33">
+                        <div class="image-number">34</div>
+                        <label for="img33" class="image-filename">quarry-ruins.jpg</label>
+                    </div>
+                    <div class="image-description">Античные колонны используются как каменоломня</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient columns reused", "ancient quarry stones", "ruins as building materials"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+columns" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient%20columns/" target="_blank" class="search-link">Pixabay</a>
+                        <a href="https://unsplash.com/s/photos/ancient-columns" target="_blank" class="search-link">Unsplash</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="34">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img34">
+                        <div class="image-number">35</div>
+                        <label for="img34" class="image-filename">bronze-value.jpg</label>
+                    </div>
+                    <div class="image-description">Переплавка бронзовых статуй, плавильня металла</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "melting bronze ancient", "bronze foundry ancient", "metal recycling ancient"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=bronze+foundry" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/bronze%20melting/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="35">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img35">
+                        <div class="image-number">36</div>
+                        <label for="img35" class="image-filename">religious-destruction.jpg</label>
+                    </div>
+                    <div class="image-description">Уничтожение языческих храмов христианами, иконоборчество</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "christianization destroy pagan temple", "iconoclasm ancient temples"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=iconoclasm+ancient" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/temple%20destruction/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Наследие и выводы -->
+            <div class="section">
+                <h2 class="section-title">🌟 Наследие и выводы (слайды 37-40)</h2>
+
+                <div class="image-item" data-index="36">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img36">
+                        <div class="image-number">37</div>
+                        <label for="img36" class="image-filename">modern-comparison.jpg</label>
+                    </div>
+                    <div class="image-description">Сравнение античных чудес с современными небоскребами</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient vs modern architecture comparison", "pyramids vs skyscrapers"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=pyramid+modern+building" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient%20modern%20comparison/" target="_blank" class="search-link">Pixabay</a>
+                        <a href="https://unsplash.com/s/photos/ancient-modern-architecture" target="_blank" class="search-link">Unsplash</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="37">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img37">
+                        <div class="image-number">38</div>
+                        <label for="img37" class="image-filename">social-cost.jpg</label>
+                    </div>
+                    <div class="image-description">Древние рабочие, социальное неравенство, народ и правители</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient workers social inequality", "pharaoh workers contrast", "ancient labor"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+workers" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient%20workers/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="38">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img38">
+                        <div class="image-number">39</div>
+                        <label for="img38" class="image-filename">technology-progress.jpg</label>
+                    </div>
+                    <div class="image-description">Античные механизмы, рычаги, блоки, инженерные изобретения</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient pulley system", "ancient engineering devices", "classical mechanics"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+pulley" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient%20mechanisms/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="39">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img39">
+                        <div class="image-number">40</div>
+                        <label for="img39" class="image-filename">cultural-legacy.jpg</label>
+                    </div>
+                    <div class="image-description">Семь чудес света на карте, туристический плакат, культурное значение</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "seven wonders map ancient world", "wonders of ancient world illustration"</div>
+                    <div class="search-links">
+                        <a href="https://commons.wikimedia.org/w/index.php?search=seven+wonders+map" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/seven%20wonders%20world/" target="_blank" class="search-link">Pixabay</a>
+                        <a href="https://unsplash.com/s/photos/ancient-wonders" target="_blank" class="search-link">Unsplash</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; text-align: center; margin-top: 40px; border-radius: 15px;">
+                <h2 style="font-size: 2em; margin-bottom: 15px;">✅ Все 40 изображений перечислены!</h2>
+                <p style="font-size: 1.2em; opacity: 0.9; margin-bottom: 20px;">
+                    После загрузки всех изображений не забудьте проверить работу темы в приложении
+                </p>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <h3 style="margin-bottom: 10px;">📝 Финальный чеклист:</h3>
+                    <ul style="list-style: none; padding: 0; text-align: left; max-width: 600px; margin: 0 auto;">
+                        <li style="padding: 8px 0;">✓ Переименовать файлы согласно списку</li>
+                        <li style="padding: 8px 0;">✓ Оптимизировать размер (не более 500 KB)</li>
+                        <li style="padding: 8px 0;">✓ Проверить качество изображений</li>
+                        <li style="padding: 8px 0;">✓ Поместить в папку seven-wonders</li>
+                        <li style="padding: 8px 0;">✓ Запустить приложение и протестировать</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn reset-btn" onclick="resetProgress()">🔄 Сбросить</button>
+        <button class="action-btn save-btn" onclick="saveProgress()">💾 Сохранить</button>
+    </div>
+
+    <script>
+        // Загрузка сохраненного прогресса
+        window.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            updateStats();
+            
+            // Добавление обработчиков для всех чекбоксов
+            document.querySelectorAll('.checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const item = this.closest('.image-item');
+                    if (this.checked) {
+                        item.classList.add('checked');
+                    } else {
+                        item.classList.remove('checked');
+                    }
+                    updateStats();
+                    saveProgress();
+                });
+            });
+        });
+
+        function updateStats() {
+            const total = document.querySelectorAll('.checkbox').length;
+            const checked = document.querySelectorAll('.checkbox:checked').length;
+            const remaining = total - checked;
+            const percent = Math.round((checked / total) * 100);
+
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('checkedImages').textContent = checked;
+            document.getElementById('remainingImages').textContent = remaining;
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const progress = Array.from(checkboxes).map(cb => cb.checked);
+            localStorage.setItem('imageListProgress', JSON.stringify(progress));
+            
+            // Показать уведомление
+            showNotification('Прогресс сохранен! ✅');
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('imageListProgress');
+            if (saved) {
+                const progress = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checkbox');
+                checkboxes.forEach((cb, index) => {
+                    if (progress[index]) {
+                        cb.checked = true;
+                        cb.closest('.image-item').classList.add('checked');
+                    }
+                });
+            }
+        }
+
+        function resetProgress() {
+            if (confirm('Вы уверены, что хотите сбросить весь прогресс?')) {
+                localStorage.removeItem('imageListProgress');
+                document.querySelectorAll('.checkbox').forEach(cb => {
+                    cb.checked = false;
+                    cb.closest('.image-item').classList.remove('checked');
+                });
+                updateStats();
+                showNotification('Прогресс сброшен! 🔄');
+            }
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #28a745;
+                color: white;
+                padding: 15px 25px;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+            `;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }, 2000);
+        }
+
+        // Добавить анимации
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(400px); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(400px); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

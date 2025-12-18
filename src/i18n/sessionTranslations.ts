@@ -117,6 +117,58 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
         closing: 'Подведение итогов и выводы'
       }
     }
+  },
+  'alexander-empire': {
+    de: {
+      title: 'Alexander der Große: Der Preis des Imperiums',
+      description: 'Die wirtschaftlichen und logistischen Aspekte von Alexanders Eroberungen: von der Finanzierung der Armee bis zum Zusammenbruch des Imperiums',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über Alexander den Großen!',
+        mainContent: 'Studium der Ökonomie der Eroberungen, der Logistik einer 50.000-Mann-Armee und des finanziellen Zusammenbruchs nach dem Tod',
+        interactive: 'Fragen und Abschlussquiz',
+        additional: 'Betrachtung von Bildern über Alexanders Feldzüge',
+        closing: 'Zusammenfassung und Schlussfolgerungen'
+      }
+    },
+    ru: {
+      title: 'Александр Македонский: цена империи',
+      description: 'Экономические и логистические аспекты завоеваний Александра Великого: от финансирования армии до коллапса империи',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие об Александре Македонском!',
+        mainContent: 'Изучение экономики завоеваний, логистики армии в 50,000 человек и финансового коллапса после смерти',
+        interactive: 'Вопросы и итоговая викторина',
+        additional: 'Просмотр изображений о походах Александра',
+        closing: 'Подведение итогов и выводы'
+      }
+    }
+  },
+  'ancient-olympics': {
+    de: {
+      title: 'Olympische Spiele: Korruption und Doping in der Antike',
+      description: 'Die dunkle Seite des antiken Sports: Bestechung von Schiedsrichtern, Professionalisierung, Doping und politische Manipulationen bei den antiken Olympischen Spielen',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über die antiken Olympischen Spiele!',
+        mainContent: 'Studium von Korruption, Doping und Professionalisierung des Sports im antiken Griechenland',
+        interactive: 'Fragen und Abschlussquiz',
+        additional: 'Betrachtung von Bildern über die antiken Olympiaden',
+        closing: 'Zusammenfassung und Schlussfolgerungen'
+      }
+    },
+    ru: {
+      title: 'Олимпийские игры: коррупция и допинг в античности',
+      description: 'Темная сторона античного спорта: подкуп судей, профессионализация, допинг и политические манипуляции на древних Олимпийских играх',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие об античных Олимпийских играх!',
+        mainContent: 'Изучение коррупции, допинга и профессионализации спорта в Древней Греции',
+        interactive: 'Вопросы и итоговая викторина',
+        additional: 'Просмотр изображений об античных Олимпиадах',
+        closing: 'Подведение итогов и выводы'
+      }
+    }
   }
 }
 

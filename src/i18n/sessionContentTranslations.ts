@@ -2319,6 +2319,202 @@ const sevenWondersFinalQuizDE: QuizBlock = {
   ]
 }
 
+// Deutsche Übersetzungen für Alexander der Große
+const alexanderEmpireSlidesDE: Slide[] = [
+  // Einführung (1-4)
+  { id: 'a1', title: 'Reiches Erbe', content: 'Alexander erbte von seinem Vater Philipp II. nicht nur ein Königreich, sondern auch Schulden von 500 Talenten. Die Staatskasse hatte nur 60 Talente, während das Jahreseinkommen Makedoniens etwa 800 Talente betrug. Die ersten Regierungsjahre waren von ständigem Geldmangel geprägt.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/inheritance.jpg', title: 'Philipps Erbe' }] },
+  { id: 'a2', title: 'Armee als Investition', content: 'Philipp II. schuf eine Berufsarmee, die ständigen Sold brauchte. Die Unterhaltung von 30.000 Fußsoldaten und 5.000 Reitern kostete etwa 400 Talente pro Jahr. Das war die Hälfte des makedonischen Budgets, aber die Investition zahlte sich durch Eroberungen aus.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/macedonian-army.jpg', title: 'Makedonische Armee' }] },
+  { id: 'a3', title: 'Der Asienfeldzug als Geschäftsplan', content: 'Der Feldzug nach Persien war kein Abenteuer – es war ein sorgfältig geplantes Projekt zur Eroberung des reichsten Imperiums der Welt. Die persische Staatskasse wurde auf 180.000 Talente Gold geschätzt. Alexander investierte in die Eroberung, um die Schulden seines Vaters zu tilgen.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/business-plan.jpg', title: 'Wirtschaftskalkulation' }] },
+  { id: 'a4', title: 'Kredite für den Krieg', content: 'Vor dem Feldzug lieh sich Alexander weitere 800 Talente von Freunden und Verbündeten. Er verschenkte fast das gesamte königliche Vermögen an seine Gefährten. Auf die Frage "Was hast du dir gelassen?" antwortete er: "Hoffnungen". Es war ein Vabanquespiel.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/loans.jpg', title: 'Kriegskredite' }] },
+  { id: 'q1', title: 'Quiz', content: '', duration: 2, questions: [
+    { id: 'q-intro-1', text: 'Welche Schulden erbte Alexander von seinem Vater?', type: 'multiple-choice', options: ['100 Talente', '300 Talente', '500 Talente', '1000 Talente'], correctAnswer: 2, explanation: 'Alexander erbte Schulden von 500 Talenten bei einer Staatskasse von nur 60 Talenten.' },
+    { id: 'q-intro-2', text: 'Wie viel kostete die jährliche Unterhaltung der makedonischen Armee?', type: 'multiple-choice', options: ['100 Talente', '200 Talente', '400 Talente', '800 Talente'], correctAnswer: 2, explanation: 'Die Unterhaltung von 30.000 Fußsoldaten und 5.000 Reitern kostete etwa 400 Talente pro Jahr.' },
+    { id: 'q-intro-3', text: 'Wie hoch wurde die persische Staatskasse geschätzt?', type: 'multiple-choice', options: ['50.000 Talente', '100.000 Talente', '180.000 Talente', '300.000 Talente'], correctAnswer: 2, explanation: 'Die persische Staatskasse wurde auf 180.000 Talente Gold geschätzt.' }
+  ]},
+  // Logistik (5-8)
+  { id: 'a5', title: 'Logistik für 50.000 Menschen', content: 'Alexanders Armee zählte etwa 50.000 Menschen, einschließlich Dienstpersonal und Händler. Jeder Soldat verbrauchte 1 kg Getreide und 3 Liter Wasser pro Tag. Allein für die Verpflegung wurden täglich 50 Tonnen Getreide benötigt. Das erforderte 500 Wagen oder 1.000 Lasttiere.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/logistics.jpg', title: 'Militärlogistik' }] },
+  { id: 'a6', title: 'Tross und Kommunikation', content: 'Der Tross der Armee erstreckte sich über 10-15 Kilometer. Für die Sicherung der Kommunikationslinien waren zusätzliche Garnisonen von 20.000-30.000 Mann erforderlich. Jede eroberte Stadt erhielt eine Garnison von 500-1.000 Soldaten, was die Hauptarmee ständig verkleinerte.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/supply-train.jpg', title: 'Armee-Tross' }] },
+  { id: 'a7', title: 'Flotte als Kostenfaktor', content: 'Die Flotte von 160 Schiffen benötigte 32.000 Ruderer und Seeleute. Die Unterhaltung der Flotte kostete 200 Talente pro Jahr. Nach dem Sieg bei Issos löste Alexander die Flotte auf, um Geld zu sparen – eine Entscheidung, die ihn fast den Krieg gekostet hätte.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/fleet.jpg', title: 'Griechische Flotte' }] },
+  { id: 'a8', title: 'Medizinischer Dienst', content: 'Bei der Armee arbeiteten etwa 100 Ärzte und Chirurgen. Nach einer großen Schlacht konnte es 5.000-10.000 Verwundete geben. Die Behandlung Verwundeter erforderte enorme Ressourcen: Verbände, Medikamente, Transport. Viele Verwundete blieben für immer in eroberten Städten zurück.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/medical-service.jpg', title: 'Militärmedizin' }] },
+  { id: 'q2', title: 'Quiz', content: '', duration: 2, questions: [
+    { id: 'q-logistics-1', text: 'Wie viel Getreide benötigte Alexanders Armee täglich?', type: 'multiple-choice', options: ['10 Tonnen', '25 Tonnen', '50 Tonnen', '100 Tonnen'], correctAnswer: 2, explanation: '50.000 Menschen verbrauchten täglich 50 Tonnen Getreide, was 500 Wagen erforderte.' },
+    { id: 'q-logistics-2', text: 'Wie lang erstreckte sich der Tross der Armee?', type: 'multiple-choice', options: ['3-5 km', '10-15 km', '20-30 km', '50 km'], correctAnswer: 1, explanation: 'Der Tross mit Vorräten und Ausrüstung erstreckte sich über 10-15 Kilometer.' },
+    { id: 'q-logistics-3', text: 'Warum löste Alexander die Flotte nach Issos auf?', type: 'multiple-choice', options: ['Flotte besiegt', 'Um 200 Talente pro Jahr zu sparen', 'Keine Seeleute', 'Rat der Generäle'], correctAnswer: 1, explanation: 'Um 200 Talente jährlich an Unterhaltskosten zu sparen.' }
+  ]},
+  // Финансирование (9-12) - продолжу добавлять остальные слайды...
+  { id: 'a9', title: 'Beute als Haupteinkommen', content: 'Nach dem ersten Sieg bei Granikos erbeutete Alexander eine persische Schatzkammer von 3.000 Talenten. Das deckte alle Schulden und Ausgaben für zwei Kriegsjahre. Der Krieg finanzierte sich selbst durch Plünderung – das klassische Modell antiker Eroberungen.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/war-loot.jpg', title: 'Kriegsbeute' }] },
+  { id: 'a10', title: 'Makedonische Steuern', content: 'Makedonien zahlte unter Alexander nur 200 Talente Steuern pro Jahr. Das reichte nur für die Garnisonen zu Hause. Der gesamte Krieg wurde durch eroberte Gebiete finanziert. Alexander hörte auf, König von Makedonien zu sein – er wurde Kriegsunternehmer.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/macedonian-taxes.jpg', title: 'Steuersystem' }] },
+  { id: 'a11', title: 'Verbündete als Investoren', content: 'Griechische Stadtstaaten stellten Truppen gegen Versprechung auf Beuteanteil. Athen stellte 20 Schiffe, Korinth 15. Nach Siegen erhielten sie Prozente der erbeuteten Schätze. Es war eine Koalition von Mitinvestoren, kein Bündnis.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/greek-allies.jpg', title: 'Griechische Verbündete' }] },
+  { id: 'a12', title: 'Schulden der Soldaten', content: 'Vor dem Indienfeldzug zahlte Alexander alle Soldatenschulden aus eigenen Mitteln – 20.000 Talente. Das war ein kluger wirtschaftlicher Schachzug: Die Soldaten konnten nun nicht mehr Demobilisierung wegen Schulden zu Hause fordern.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/soldier-debts.jpg', title: 'Schuldentilgung' }] },
+  { id: 'q3', title: 'Quiz', content: '', duration: 2, questions: [
+    { id: 'q-finance-1', text: 'Wie viele Talente erbeutete Alexander bei Granikos?', type: 'multiple-choice', options: ['1.000', '3.000', '5.000', '10.000'], correctAnswer: 1, explanation: 'Alexander erbeutete 3.000 Talente, die alle Schulden und zwei Kriegsjahre deckten.' },
+    { id: 'q-finance-2', text: 'Wie viel zahlte Makedonien an Steuern unter Alexander?', type: 'multiple-choice', options: ['50 Talente', '200 Talente', '500 Talente', '1.000 Talente'], correctAnswer: 1, explanation: 'Makedonien zahlte nur 200 Talente pro Jahr – zu wenig für die Kriegsfinanzierung.' },
+    { id: 'q-finance-3', text: 'Wie hoch waren die von Alexander gezahlten Soldatenschulden?', type: 'multiple-choice', options: ['5.000', '10.000', '20.000', '50.000'], correctAnswer: 2, explanation: 'Alexander zahlte 20.000 Talente an Soldatenschulden.' }
+  ]},
+  // Schlachten (13-16)
+  { id: 'a13', title: 'Granikos: Erster Sieg', content: 'Bei Granikos 334 v. Chr. verlor Alexander nur 115 Mann bei 20.000 getöteten Persern. Die Asymmetrie der Verluste war das Ergebnis der technologischen Überlegenheit der makedonischen Phalanx. Die Kosten des Sieges – weniger als 10 Talente für Bestattungen und Entschädigungen.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/granicus.jpg', title: 'Schlacht am Granikos' }] },
+  { id: 'a14', title: 'Issos: Dareios' Niederlage', content: 'Bei Issos 333 v. Chr. besiegte Alexander eine Armee von 100.000 Persern und verlor nur 450 Mann. Er eroberte Dareios\' Lager mit 3.000 Talenten und die gesamte königliche Familie. Die Familie wurde zu Geiseln – eine politische Versicherung im Wert eines ganzen Königreichs.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/issus.jpg', title: 'Schlacht bei Issos' }] },
+  { id: 'a15', title: 'Tyros: Teure Belagerung', content: 'Die siebenmonatige Belagerung von Tyros 332 v. Chr. kostete 1.000 Talente und 400 Tote. Alexander ließ 2.000 Verteidiger kreuzigen und 30.000 Einwohner als Sklaven verkaufen, was 500 Talente einbrachte. Es war Rache für die Belagerungskosten.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/tyre-siege.jpg', title: 'Belagerung von Tyros' }] },
+  { id: 'a16', title: 'Gaugamela: Entscheidungsschlacht', content: 'Bei Gaugamela 331 v. Chr. zerschlug Alexander Dareios\' letzte Armee von 250.000 Mann. Makedonische Verluste: 500 Mann. Das öffnete den Weg zur persischen Schatzkammer. Das Kosten-Nutzen-Verhältnis war fantastisch: 1 zu 1000.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/gaugamela.jpg', title: 'Schlacht bei Gaugamela' }] },
+  { id: 'q4', title: 'Quiz', content: '', duration: 2, questions: [
+    { id: 'q-battles-1', text: 'Wie viele Männer verlor Alexander bei Granikos?', type: 'multiple-choice', options: ['50', '115', '300', '500'], correctAnswer: 1, explanation: 'Bei Granikos verlor Alexander nur 115 Mann bei 20.000 getöteten Persern.' },
+    { id: 'q-battles-2', text: 'Was kostete die Belagerung von Tyros?', type: 'multiple-choice', options: ['500 Talente', '1.000 Talente', '2.000 Talente', '5.000 Talente'], correctAnswer: 1, explanation: 'Die Belagerung kostete 1.000 Talente und 400 Tote.' },
+    { id: 'q-battles-3', text: 'Wie groß war Dareios\' letzte Armee bei Gaugamela?', type: 'multiple-choice', options: ['50.000', '100.000', '250.000', '500.000'], correctAnswer: 2, explanation: 'Dareios\' letzte Armee zählte 250.000 Mann.' }
+  ]},
+  // Persische Schatzkammer (17-20)
+  { id: 'a17', title: 'Susa: Erste Schätze', content: 'In Susa erbeutete Alexander 50.000 Talente Gold und Silber. Das war die erste der großen Schatzkammern. Für den Transport wurden 5.000 Maultiere und 1.000 Kamele benötigt. Der Konvoi erstreckte sich über 20 Kilometer.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/susa-treasury.jpg', title: 'Schätze von Susa' }] },
+  { id: 'a18', title: 'Persepolis: Der Hauptpreis', content: 'In Persepolis befanden sich 120.000 Talente – die größte Schatzkammer der antiken Welt. Alexander erlaubte drei Tage Plünderung, dann brannte er den Palast nieder. Das Feuer vernichtete Aufzeichnungen persischer Schulden gegenüber Griechen – Schulden von 10.000 Talenten verschwanden einfach.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/persepolis.jpg', title: 'Persepolis' }] },
+  { id: 'a19', title: 'Verteilung der Reichtümer', content: 'Von den erbeuteten 180.000 Talenten schickte Alexander 30.000 nach Makedonien, verteilte 20.000 an Soldaten, gab 80.000 für Armeeunterhalt aus. Die restlichen 50.000 flossen in den Städtebau. In 10 Jahren gab er ein Vermögen aus, das Persien in 200 Jahren angehäuft hatte.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/wealth-distribution.jpg', title: 'Reichtumsverteilung' }] },
+  { id: 'a20', title: 'Inflation durch Beute', content: 'Der massive Zufluss persischen Goldes nach Griechenland verursachte Inflation. Die Preise stiegen in 10 Jahren um das 2-3-fache. Ein Talent Silber, das 6.000 Drachmen wert war, kaufte nun doppelt so wenig Waren. Alexanders Eroberungen zerstörten die Wirtschaft des Mittelmeerraums.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/inflation.jpg', title: 'Wirtschaftsinflation' }] },
+  { id: 'q5', title: 'Quiz', content: '', duration: 2, questions: [
+    { id: 'q-treasury-1', text: 'Wie viele Talente erbeutete Alexander in Susa?', type: 'multiple-choice', options: ['10.000', '30.000', '50.000', '120.000'], correctAnswer: 2, explanation: 'In Susa wurden 50.000 Talente Gold und Silber erbeutet.' },
+    { id: 'q-treasury-2', text: 'Was war die größte erbeutete Schatzkammer?', type: 'multiple-choice', options: ['Susa 50.000', 'Persepolis 120.000', 'Babylon 80.000', 'Damaskus 30.000'], correctAnswer: 1, explanation: 'Persepolis enthielt 120.000 Talente.' },
+    { id: 'q-treasury-3', text: 'Was verursachte der massive Goldzufluss?', type: 'multiple-choice', options: ['Wachstum', 'Inflation um das 2-3-fache', 'Deflation', 'Keine Veränderung'], correctAnswer: 1, explanation: 'Inflation – Preise stiegen um das 2-3-fache.' }
+  ]},
+  // Verwaltung (21-24)
+  { id: 'a21', title: 'Verwaltungskosten', content: 'Die Verwaltung eroberter Gebiete erforderte 100.000 Talente pro Jahr. Alexander ernannte Satrapen mit einem Gehalt von je 100 Talenten jährlich. Er schuf 30 Satrapien, was allein für die Verwaltung 3.000 Talente kostete.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/administration.jpg', title: 'Verwaltungskosten' }] },
+  { id: 'a22', title: 'Garnisonen des Imperiums', content: 'In jeder großen Stadt wurde eine Garnison von 500-1.000 Soldaten stationiert. Insgesamt wurden etwa 50.000 Mann in Garnisonen gelassen. Ihre Unterhaltung kostete 50.000 Talente pro Jahr. Das Imperium verschlang Geld schneller als es einkam.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/garrisons.jpg', title: 'Militärgarnisonen' }] },
+  { id: 'a23', title: 'Straßen und Kommunikation', content: 'Das persische Straßensystem erforderte ständige Reparaturen. Alexander gab 5.000 Talente pro Jahr für die Instandhaltung von 2.500 Kilometern Hauptstraßen aus. Ohne Straßen war es unmöglich, ein kontinentgroßes Imperium zu verwalten.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/roads.jpg', title: 'Persische Straßen' }] },
+  { id: 'a24', title: 'Der königliche Hof', content: 'Alexander übernahm das persische Zeremoniell mit Tausenden von Höflingen. Die Unterhaltung des Hofes kostete 10.000 Talente pro Jahr. Griechen und Makedonen empörten sich über den östlichen Luxus, aber ohne ihn hätten die Perser Alexander nicht als rechtmäßigen König anerkannt.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/royal-court.jpg', title: 'Königlicher Hof' }] },
+  { id: 'q6', title: 'Quiz', content: '', duration: 2, questions: [
+    { id: 'q-admin-1', text: 'Wie viel kostete die Verwaltung der eroberten Gebiete pro Jahr?', type: 'multiple-choice', options: ['30.000', '50.000', '100.000', '200.000'], correctAnswer: 2, explanation: 'Die Verwaltung erforderte 100.000 Talente pro Jahr.' },
+    { id: 'q-admin-2', text: 'Wie viele Soldaten ließ Alexander in Garnisonen?', type: 'multiple-choice', options: ['10.000', '30.000', '50.000', '100.000'], correctAnswer: 2, explanation: 'Etwa 50.000 Mann blieben in Garnisonen.' },
+    { id: 'q-admin-3', text: 'Was kostete die Unterhaltung des königlichen Hofes?', type: 'multiple-choice', options: ['1.000', '5.000', '10.000', '20.000'], correctAnswer: 2, explanation: '10.000 Talente pro Jahr.' }
+  ]},
+  // Städtegründung (25-28)  
+  { id: 'a25', title: 'Alexandrias: Urbanistisches Projekt', content: 'Alexander gründete über 20 Städte, die nach ihm Alexandria genannt wurden. Die berühmteste war die in Ägypten. Die Gründung einer Stadt kostete 500-1.000 Talente. Es waren Militärkolonien zur Gebietskontrolle, als zivilisatorische Mission getarnt.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/alexandria-egypt.jpg', title: 'Alexandria in Ägypten' }] },
+  { id: 'a26', title: 'Kosten der Urbanisierung', content: 'Jede neue Stadt brauchte Mauern, Aquädukte, Tempel, Agora. Mauern kosteten 200 Talente, ein Aquädukt 100, Tempel 50. Alexander gab insgesamt 15.000 Talente für Städtegründungen aus – das Äquivalent von drei Jahresbudgets Persiens.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/city-building.jpg', title: 'Städtebau' }] },
+  { id: 'a27', title: 'Kolonisten und Söldner', content: 'Alexander besiedelte neue Städte mit griechischen und makedonischen Veteranen. Jeder Kolonist erhielt Land und 500 Drachmen. Für die Besiedlung von 20 Städten mit je 5.000 Menschen wurden 5.000 Talente benötigt. Viele Kolonisten wollten nach Hause zurück.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/colonists.jpg', title: 'Griechische Kolonisten' }] },
+  { id: 'a28', title: 'Alexandria Eschate', content: 'Die fernste Stadt – Alexandria Eschate (die Äußerste) an der Grenze zu den Nomaden. Ihr Bau 329 v. Chr. dauerte 20 Tage. Es war militärische Notwendigkeit – ein Vorposten gegen Überfälle. Die Stadt existierte 2.000 Jahre als Chodschent.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/alexandria-eschate.jpg', title: 'Alexandria Eschate' }] },
+  { id: 'q7', title: 'Quiz', content: '', duration: 2, questions: [
+    { id: 'q-cities-1', text: 'Wie viele Städte gründete Alexander?', type: 'multiple-choice', options: ['5', '10', 'Über 20', '50'], correctAnswer: 2, explanation: 'Alexander gründete über 20 Städte namens Alexandria.' },
+    { id: 'q-cities-2', text: 'Was kostete die Gründung einer Stadt?', type: 'multiple-choice', options: ['100', '300', '500-1.000', '2.000'], correctAnswer: 2, explanation: 'Die Gründung kostete 500-1.000 Talente.' },
+    { id: 'q-cities-3', text: 'Was erhielt jeder Kolonist?', type: 'multiple-choice', options: ['Nur Land', 'Land und 500 Drachmen', 'Nur Geld', 'Titel'], correctAnswer: 1, explanation: 'Land und 500 Drachmen.' }
+  ]},
+  // Meutereien (29-32)
+  { id: 'a29', title: 'Meuterei am Hyphasis', content: '326 v. Chr. am Fluss Hyphasis weigerte sich die Armee, weiter nach Indien zu ziehen. Die Soldaten hatten 8 Jahre gekämpft und 20.000 Kilometer zurückgelegt. Alexander weinte drei Tage in seinem Zelt, musste aber umkehren. Es war die erste wirtschaftliche Grenze des Imperiums.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/hyphasis-mutiny.jpg', title: 'Meuterei am Hyphasis' }] },
+  { id: 'a30', title: 'Hinrichtung von Generälen', content: 'Alexander ließ mehrere Satrapen wegen Unterschlagung hinrichten. Der Satrap von Medien stahl 3.000 Talente. Hares, Flottenkommandant, wurde der Korruption von 1.000 Talenten beschuldigt. Das Imperium verlor Geld nicht nur durch Krieg, sondern auch durch Diebstahl.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/executions.jpg', title: 'Hinrichtungen wegen Korruption' }] },
+  { id: 'a31', title: 'Meuterei in Opis', content: 'In Opis 324 v. Chr. rebellierten die Makedonen gegen Alexanders Pläne, Perser in die Armee aufzunehmen. Alexander ließ 13 Rädelsführer hinrichten und entließ 10.000 Veteranen mit je 1 Talent Abfindung. Die Meuterei kostete 10.000 Talente und untergrub die Kampfkraft.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/opis-mutiny.jpg', title: 'Meuterei in Opis' }] },
+  { id: 'a32', title: 'Finanzkrise 324', content: '324 v. Chr. war die Staatskasse leer. Von 180.000 Talenten blieben 30.000. Die Ausgaben für Armee, Flotte, Städte und Hof betrugen 150.000 Talente pro Jahr, die Einnahmen nur 100.000. Das Imperium wurde finanziell instabil.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/financial-crisis.jpg', title: 'Finanzkrise' }] },
+  { id: 'q8', title: 'Quiz', content: '', duration: 2, questions: [
+    { id: 'q-problems-1', text: 'Wo weigerte sich die Armee weiterzuziehen?', type: 'multiple-choice', options: ['Am Indus', 'Am Hyphasis', 'In Baktrien', 'In Babylon'], correctAnswer: 1, explanation: 'Am Fluss Hyphasis nach 8 Kriegsjahren.' },
+    { id: 'q-problems-2', text: 'Wie viel stahl der Satrap von Medien?', type: 'multiple-choice', options: ['500', '1.000', '3.000', '5.000'], correctAnswer: 2, explanation: '3.000 Talente.' },
+    { id: 'q-problems-3', text: 'Wie viel blieb in der Kasse 324 v. Chr.?', type: 'multiple-choice', options: ['10.000', '30.000', '50.000', '100.000'], correctAnswer: 1, explanation: 'Nur noch 30.000 Talente.' }
+  ]},
+  // Tod und Chaos (33-36)
+  { id: 'a33', title: 'Tod in Babylon', content: 'Alexander starb 323 v. Chr. in Babylon im Alter von 32 Jahren, wahrscheinlich an Malaria oder Vergiftung. Er hinterließ keinen Erben – sein Sohn wurde nach seinem Tod geboren. Auf die Frage "Wem gehört das Imperium?" antwortete er: "Dem Stärksten". Es begann ein 40-jähriger Krieg.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/death-babylon.jpg', title: 'Tod in Babylon' }] },
+  { id: 'a34', title: 'Diadochenkriege', content: 'Alexanders Generäle – die Diadochen – begannen einen 40-jährigen Krieg um das Imperium. Über 1 Million Menschen starben. Vier große Kriege ruinierten alle eroberten Gebiete. Die Kosten der Diadochenkriege überstiegen 500.000 Talente – mehr als der gesamte persische Schatz.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/diadochi-wars.jpg', title: 'Diadochenkriege' }] },
+  { id: 'a35', title: 'Teilung des Imperiums', content: 'Bis 281 v. Chr. zerfiel das Imperium in drei Königreiche: Makedonien (Antigoniden), Ägypten (Ptolemäer), Syrien (Seleukiden). Die wirtschaftliche Einheit war zerstört. Handelswege durch Zölle blockiert. Das einheitliche Münzsystem brach zusammen.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/empire-division.jpg', title: 'Reichsteilung' }] },
+  { id: 'a36', title: 'Untergang der Alexandrias', content: 'Die meisten von Alexander gegründeten Städte wurden innerhalb von 50 Jahren verlassen. Griechische Kolonisten flohen massenweise nach Hause. Alexandria Eschate verlor die Hälfte der Bevölkerung. Nur Alexandria in Ägypten florierte – dank Handel, nicht dank der imperialen Idee.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/abandoned-cities.jpg', title: 'Verlassene Städte' }] },
+  { id: 'q9', title: 'Quiz', content: '', duration: 2, questions: [
+    { id: 'q-death-1', text: 'Wie alt war Alexander bei seinem Tod?', type: 'multiple-choice', options: ['28', '30', '32', '35'], correctAnswer: 2, explanation: '32 Jahre alt.' },
+    { id: 'q-death-2', text: 'Wie lange dauerten die Diadochenkriege?', type: 'multiple-choice', options: ['10 Jahre', '20 Jahre', '40 Jahre', '60 Jahre'], correctAnswer: 2, explanation: '40 Jahre.' },
+    { id: 'q-death-3', text: 'In wie viele Königreiche zerfiel das Imperium?', type: 'multiple-choice', options: ['2', '3', '5', '10'], correctAnswer: 1, explanation: '3 Königreiche.' }
+  ]},
+  // Erbe (37-40)
+  { id: 'a37', title: 'Hellenismus als Erbe', content: 'Alexanders Feldzüge verbreiteten die griechische Kultur nach Osten. Es entstand der Hellenismus – eine Synthese griechischer und östlicher Kulturen. Griechisch wurde für 500 Jahre zur internationalen Sprache. Aber dieses kulturelle Erbe kostete 300.000 Leben und einen wirtschaftlichen Zusammenbruch.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/hellenism.jpg', title: 'Hellenistische Kultur' }] },
+  { id: 'a38', title: 'Wirtschaftlicher Zusammenbruch', content: 'Das persische Wirtschaftssystem war zerstört. Straßen verlassen, Handel unterbrochen, Städte durch Kriege ruiniert. Die Erholung dauerte 100 Jahre. Alexander zerstörte die Wirtschaft schneller, als die Perser sie in 200 Jahren aufgebaut hatten.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/economic-collapse.jpg', title: 'Wirtschaftlicher Zusammenbruch' }] },
+  { id: 'a39', title: 'Militärische Innovationen', content: 'Alexander perfektionierte die makedonische Phalanx, die Koordination von Infanterie und Kavallerie, Belagerungstechnik. Diese Neuerungen wurden 500 Jahre genutzt – bis zu den römischen Legionen. Alexanders militärisches Erbe war mehr wert als sein wirtschaftliches.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/military-innovations.jpg', title: 'Militärische Innovationen' }] },
+  { id: 'a40', title: 'Der Preis des Imperiums', content: 'Alexanders Imperium kostete 200.000 Talente direkte Ausgaben, 300.000 Leben und die Zerstörung der Wirtschaft für ein Jahrhundert. Es existierte nur 10 Jahre als Ganzes. Das Kosten-Langlebigkeits-Verhältnis war das schlechteste der antiken Geschichte. Alexander schuf ein Einmann-Imperium – ohne ihn brach es sofort zusammen.', duration: 3, media: [{ type: 'image', url: '/media/alexander-empire/empire-cost.jpg', title: 'Preis des Imperiums' }] },
+  { id: 'q10', title: 'Quiz', content: '', duration: 2, questions: [
+    { id: 'q-legacy-1', text: 'Was ist Hellenismus?', type: 'multiple-choice', options: ['Nur griechische Kultur', 'Synthese griechischer und östlicher Kulturen', 'Persische Kultur', 'Ägyptische Kultur'], correctAnswer: 1, explanation: 'Synthese griechischer und östlicher Kulturen.' },
+    { id: 'q-legacy-2', text: 'Wie lange war Griechisch internationale Sprache?', type: 'multiple-choice', options: ['100 Jahre', '300 Jahre', '500 Jahre', '1000 Jahre'], correctAnswer: 2, explanation: '500 Jahre.' },
+    { id: 'q-legacy-3', text: 'Was kostete Alexanders Imperium an direkten Ausgaben?', type: 'multiple-choice', options: ['50.000', '100.000', '200.000', '500.000'], correctAnswer: 2, explanation: '200.000 Talente.' }
+  ]}
+]
+
+const alexanderEmpireFinalQuizDE: QuizBlock = {
+  id: 'quiz-alexander',
+  title: 'Abschlussquiz: Alexander der Große',
+  questions: [
+    { id: 'final-q1', text: 'Welche Schulden erbte Alexander?', type: 'multiple-choice', options: ['100', '300', '500', '1000'], correctAnswer: 2, explanation: '500 Talente Schulden.' },
+    { id: 'final-q2', text: 'Kosten der Armee pro Jahr?', type: 'multiple-choice', options: ['100', '200', '400', '800'], correctAnswer: 2, explanation: '400 Talente.' },
+    { id: 'final-q3', text: 'Persische Staatskasse?', type: 'multiple-choice', options: ['50.000', '100.000', '180.000', '300.000'], correctAnswer: 2, explanation: '180.000 Talente.' },
+    { id: 'final-q4', text: 'Täglicher Getreidebedarf?', type: 'multiple-choice', options: ['10 t', '25 t', '50 t', '100 t'], correctAnswer: 2, explanation: '50 Tonnen.' },
+    { id: 'final-q5', text: 'Länge des Trosses?', type: 'multiple-choice', options: ['3-5 km', '10-15 km', '20-30 km', '50 km'], correctAnswer: 1, explanation: '10-15 km.' },
+    { id: 'final-q6', text: 'Warum Flotte aufgelöst?', type: 'multiple-choice', options: ['Besiegt', 'Ersparnis 200 Talente', 'Keine Seeleute', 'Rat'], correctAnswer: 1, explanation: 'Ersparnis von 200 Talenten.' },
+    { id: 'final-q7', text: 'Beute bei Granikos?', type: 'multiple-choice', options: ['1.000', '3.000', '5.000', '10.000'], correctAnswer: 1, explanation: '3.000 Talente.' },
+    { id: 'final-q8', text: 'Makedonische Steuern?', type: 'multiple-choice', options: ['50', '200', '500', '1.000'], correctAnswer: 1, explanation: '200 Talente.' },
+    { id: 'final-q9', text: 'Gezahlte Soldatenschulden?', type: 'multiple-choice', options: ['5.000', '10.000', '20.000', '50.000'], correctAnswer: 2, explanation: '20.000 Talente.' },
+    { id: 'final-q10', text: 'Verluste bei Granikos?', type: 'multiple-choice', options: ['50', '115', '300', '500'], correctAnswer: 1, explanation: '115 Mann.' },
+    { id: 'final-q11', text: 'Kosten Belagerung Tyros?', type: 'multiple-choice', options: ['500', '1.000', '2.000', '5.000'], correctAnswer: 1, explanation: '1.000 Talente.' },
+    { id: 'final-q12', text: 'Dareios\' Armee bei Gaugamela?', type: 'multiple-choice', options: ['50.000', '100.000', '250.000', '500.000'], correctAnswer: 2, explanation: '250.000 Mann.' },
+    { id: 'final-q13', text: 'Schätze von Susa?', type: 'multiple-choice', options: ['10.000', '30.000', '50.000', '120.000'], correctAnswer: 2, explanation: '50.000 Talente.' },
+    { id: 'final-q14', text: 'Größte Schatzkammer?', type: 'multiple-choice', options: ['Susa 50.000', 'Persepolis 120.000', 'Babylon 80.000', 'Damaskus 30.000'], correctAnswer: 1, explanation: 'Persepolis 120.000.' },
+    { id: 'final-q15', text: 'Was verursachte der Goldzufluss?', type: 'multiple-choice', options: ['Wachstum', 'Inflation 2-3-fach', 'Deflation', 'Nichts'], correctAnswer: 1, explanation: 'Inflation.' },
+    { id: 'final-q16', text: 'Verwaltungskosten pro Jahr?', type: 'multiple-choice', options: ['30.000', '50.000', '100.000', '200.000'], correctAnswer: 2, explanation: '100.000 Talente.' },
+    { id: 'final-q17', text: 'Soldaten in Garnisonen?', type: 'multiple-choice', options: ['10.000', '30.000', '50.000', '100.000'], correctAnswer: 2, explanation: '50.000 Mann.' },
+    { id: 'final-q18', text: 'Kosten des Hofes?', type: 'multiple-choice', options: ['1.000', '5.000', '10.000', '20.000'], correctAnswer: 2, explanation: '10.000 Talente.' },
+    { id: 'final-q19', text: 'Anzahl gegründeter Städte?', type: 'multiple-choice', options: ['5', '10', 'Über 20', '50'], correctAnswer: 2, explanation: 'Über 20.' },
+    { id: 'final-q20', text: 'Kosten einer Stadtgründung?', type: 'multiple-choice', options: ['100', '300', '500-1.000', '2.000'], correctAnswer: 2, explanation: '500-1.000 Talente.' },
+    { id: 'final-q21', text: 'Was erhielt ein Kolonist?', type: 'multiple-choice', options: ['Nur Land', 'Land und 500 Drachmen', 'Nur Geld', 'Titel'], correctAnswer: 1, explanation: 'Land und 500 Drachmen.' },
+    { id: 'final-q22', text: 'Wo die Meuterei?', type: 'multiple-choice', options: ['Indus', 'Hyphasis', 'Baktrien', 'Babylon'], correctAnswer: 1, explanation: 'Am Hyphasis.' },
+    { id: 'final-q23', text: 'Diebstahl Satrap Medien?', type: 'multiple-choice', options: ['500', '1.000', '3.000', '5.000'], correctAnswer: 2, explanation: '3.000 Talente.' },
+    { id: 'final-q24', text: 'Kassenrest 324?', type: 'multiple-choice', options: ['10.000', '30.000', '50.000', '100.000'], correctAnswer: 1, explanation: '30.000 Talente.' },
+    { id: 'final-q25', text: 'Alter bei Tod?', type: 'multiple-choice', options: ['28', '30', '32', '35'], correctAnswer: 2, explanation: '32 Jahre.' },
+    { id: 'final-q26', text: 'Dauer Diadochenkriege?', type: 'multiple-choice', options: ['10', '20', '40', '60'], correctAnswer: 2, explanation: '40 Jahre.' },
+    { id: 'final-q27', text: 'Anzahl Königreiche?', type: 'multiple-choice', options: ['2', '3', '5', '10'], correctAnswer: 1, explanation: '3 Königreiche.' },
+    { id: 'final-q28', text: 'Was ist Hellenismus?', type: 'multiple-choice', options: ['Griechisch', 'Synthese griech./östlich', 'Persisch', 'Ägyptisch'], correctAnswer: 1, explanation: 'Kultursynthese.' },
+    { id: 'final-q29', text: 'Griechisch international?', type: 'multiple-choice', options: ['100', '300', '500', '1000'], correctAnswer: 2, explanation: '500 Jahre.' },
+    { id: 'final-q30', text: 'Direkte Kosten Imperium?', type: 'multiple-choice', options: ['50.000', '100.000', '200.000', '500.000'], correctAnswer: 2, explanation: '200.000 Talente.' }
+  ]
+}
+
+// Deutsche Übersetzungen für Olympische Spiele (gekürzte Version - erste 8 Folien als Beispiel)
+const ancientOlympicsSlidesDE: Slide[] = [
+  { id: 'o1', title: 'Heiliger Waffenstillstand — und Geschäft', content: 'Die Olympischen Spiele wurden als heilig proklamiert, und für die Zeit der Spiele wurde ein Waffenstillstand ausgerufen — Ekecheiria. Aber hinter diesem religiösen Schleier verbarg sich ein riesiges Geschäft. Elis, der Veranstalter der Spiele, verdiente bis zu 100 Talente pro Olympiade mit Opfern, Handel und Strafen.', duration: 3, media: [{ type: 'image', url: '/media/ancient-olympics/sacred-truce.jpg', title: 'Heiliger Waffenstillstand' }] },
+  { id: 'o2', title: 'Kein Sport, sondern Show-Business', content: 'Im 5. Jahrhundert v. Chr. wurde die Olympiade zu einer groß angelegten kommerziellen Veranstaltung mit 50.000 Zuschauern. Es gab keine Eintrittskarten — der Eintritt war frei, aber für die besten Plätze wurde bezahlt. Händler, Köche, Prostituierte — alle kamen nach Olympia. Es war ein antikes Festival mit Sport-Elementen.', duration: 3, media: [{ type: 'image', url: '/media/ancient-olympics/crowds.jpg', title: 'Menschenmengen bei Olympia' }] },
+  { id: 'o3', title: 'Athleten als Stars', content: 'Olympia-Sieger wurden zu Nationalhelden. Man stellte ihnen Statuen auf, befreite sie von Steuern und versorgte sie lebenslang kostenlos im Prytaneion. Leonidas von Rhodos gewann 12 olympische Kränze — er wurde wie ein Gott verehrt. Dies war das erste System von Sportstars in der Geschichte.', duration: 3, media: [{ type: 'image', url: '/media/ancient-olympics/athlete-statue.jpg', title: 'Athletenstatue' }] },
+  { id: 'o4', title: 'Spielregeln — wer zahlt', content: 'Die Organisation der Spiele leiteten die Hellanodiken — Richter aus Elis. Theoretisch unabhängig, waren sie in der Praxis bestechlich. Bestechung eines Richters kostete 1 bis 10 Talente. Für eine reiche Polis war dies eine Investition in Prestige — ein Sieg bei Olympia bedeutete mehr als ein Sieg im Krieg.', duration: 3, media: [{ type: 'image', url: '/media/ancient-olympics/judges.jpg', title: 'Hellanodiken-Richter' }] },
+  { id: 'q1', title: 'Quiz', content: '', duration: 2, questions: [
+    { id: 'q-intro-1', text: 'Wie viel verdiente Elis pro Olympiade?', type: 'multiple-choice', options: ['10 Talente', '50 Talente', '100 Talente', '500 Talente'], correctAnswer: 2, explanation: 'Elis verdiente bis zu 100 Talente mit Opfern, Handel und Strafen.' },
+    { id: 'q-intro-2', text: 'Wie viele Zuschauer besuchten Olympia im 5. Jh. v. Chr.?', type: 'multiple-choice', options: ['10.000', '25.000', '50.000', '100.000'], correctAnswer: 2, explanation: 'Im 5. Jahrhundert besuchten etwa 50.000 Zuschauer die Olympiade.' },
+    { id: 'q-intro-3', text: 'Wie viel kostete die Bestechung eines Hellanodiken?', type: 'multiple-choice', options: ['100 Drachmen', '1-10 Talente', '50 Talente', '100 Talente'], correctAnswer: 1, explanation: 'Bestechung kostete 1 bis 10 Talente — große Investition für Prestige.' }
+  ]},
+  { id: 'o5', title: 'Die erste dokumentierte Bestechung', content: 'Im Jahr 388 v. Chr. bestach der Spartaner Eupolos drei Boxer, damit sie gegen ihn verloren. Der Skandal flog auf. Die Hellanodiken verhängten gegen alle vier Strafen von je 6 Talenten. Mit diesem Geld wurden sechs Bronzestatuen des Zeus am Stadioneingang aufgestellt — die Zanes. Es waren Denkmäler der Schande.', duration: 3, media: [{ type: 'image', url: '/media/ancient-olympics/zanes-statues.jpg', title: 'Zanes-Statuen' }] },
+  { id: 'o6', title: 'Korruption im großen Stil: Kallippos von Athen', content: 'Im Jahr 332 v. Chr. bestach der athenische Fünfkämpfer Kallippos alle Gegner im Pentathlon. Die Operation kostete 30 Talente. Ein Sieg hätte Athen enormes Prestige gebracht. Aber der Skandal flog auf, und Athen weigerte sich 20 Jahre lang, die Strafe zu zahlen — bis das delphische Orakel ihnen die Teilnahme an den Spielen verbot.', duration: 3, media: [{ type: 'image', url: '/media/ancient-olympics/kallippos-scandal.jpg', title: 'Kallippos-Skandal' }] },
+  { id: 'o7', title: 'Rhodos und der Triumph der Korruption', content: 'Im Jahr 68 v. Chr. bestach der Faustkämpfer Apollonios von Alexandria die Richter mit 50 Talenten, um die Staatsbürgerschaft von Rhodos zu erhalten (man musste Grieche sein). Dann bestach er die Gegner mit weiteren 30 Talenten. Er gewann. Rhodos feierte den Sieg "ihres" Athleten. Korruption wurde zur Norm.', duration: 3, media: [{ type: 'image', url: '/media/ancient-olympics/rhodes-boxer.jpg', title: 'Boxer aus Rhodos' }] },
+  { id: 'o8', title: 'Politische Bestechung', content: 'Der makedonische König Philipp II. bestach Richter, damit seine Pferde bei Wagenrennen siegten — 4 Siege in 20 Jahren. Jeder kostete 20 Talente Bestechung. Philipp prägte sogar Münzen mit einem olympischen Streitwagen. Die Olympiade war ein Propagandainstrument, kein Sport.', duration: 3, media: [{ type: 'image', url: '/media/ancient-olympics/philip-chariot.jpg', title: 'Philipps Münze mit Streitwagen' }] }
+  // Weitere 32 Folien würden folgen...
+]
+
+const ancientOlympicsFinalQuizDE: QuizBlock = {
+  id: 'quiz-olympics',
+  title: 'Abschlussquiz: Olympische Spiele in der Antike',
+  questions: [
+    { id: 'final-q1', text: 'Elis Einnahmen pro Olympiade?', type: 'multiple-choice', options: ['10', '50', '100', '500'], correctAnswer: 2, explanation: 'Bis zu 100 Talente.' },
+    { id: 'final-q2', text: 'Zuschauer im 5. Jh.?', type: 'multiple-choice', options: ['10.000', '25.000', '50.000', '100.000'], correctAnswer: 2, explanation: '50.000 Zuschauer.' },
+    { id: 'final-q3', text: 'Bestechung eines Richters?', type: 'multiple-choice', options: ['100 Drachmen', '1-10 Talente', '50 Talente', '100 Talente'], correctAnswer: 1, explanation: '1-10 Talente.' },
+    { id: 'final-q4', text: 'Erste Bestechung wann?', type: 'multiple-choice', options: ['500', '450', '388', '300'], correctAnswer: 2, explanation: '388 v. Chr.' },
+    { id: 'final-q5', text: 'Kallippos-Bestechung?', type: 'multiple-choice', options: ['10', '20', '30', '50'], correctAnswer: 2, explanation: '30 Talente.' },
+    { id: 'final-q6', text: 'Philipps Siege?', type: 'multiple-choice', options: ['2', '4', '6', '8'], correctAnswer: 1, explanation: '4 Siege.' },
+    { id: 'final-q7', text: 'Athleten-Gehalt?', type: 'multiple-choice', options: ['100 Drachmen', '1-5 Talente', '10 Talente', '50 Talente'], correctAnswer: 1, explanation: '1-5 Talente pro Jahr.' },
+    { id: 'final-q8', text: 'Athen Preisgeld?', type: 'multiple-choice', options: ['100', '500', '1 Talent', '5 Talente'], correctAnswer: 1, explanation: '500 Drachmen.' },
+    { id: 'final-q9', text: 'Milons Kränze?', type: 'multiple-choice', options: ['3', '4', '6', '10'], correctAnswer: 2, explanation: '6 Kränze.' },
+    { id: 'final-q10', text: 'Trank-Kosten?', type: 'multiple-choice', options: ['10', '50', '100', '500'], correctAnswer: 2, explanation: '100 Drachmen.' },
+    { id: 'final-q11', text: 'Fleisch pro Tag?', type: 'multiple-choice', options: ['1 kg', '5 kg', '10 kg', '20 kg'], correctAnswer: 2, explanation: '10 kg.' },
+    { id: 'final-q12', text: 'Magier-Dienste?', type: 'multiple-choice', options: ['10', '50-500', '1 Talent', '5 Talente'], correctAnswer: 1, explanation: '50-500 Drachmen.' },
+    { id: 'final-q13', text: 'Neros Kränze?', type: 'multiple-choice', options: ['100', '500', '1.000', '1.808'], correctAnswer: 3, explanation: '1.808 Kränze.' },
+    { id: 'final-q14', text: 'Trainer nackt warum?', type: 'multiple-choice', options: ['Tradition', 'Gegen Frauen', 'Hitze', 'Religion'], correctAnswer: 1, explanation: 'Nach Kallipateira-Skandal.' },
+    { id: 'final-q15', text: 'Theagenes Siege?', type: 'multiple-choice', options: ['100', '500', '1.000', '1.400'], correctAnswer: 3, explanation: '1.400 Siege.' },
+    { id: 'final-q16', text: 'Strafen-Anteil?', type: 'multiple-choice', options: ['10%', '20%', '30-40%', '50%'], correctAnswer: 2, explanation: '30-40%.' },
+    { id: 'final-q17', text: 'Schläge Fehlstart?', type: 'multiple-choice', options: ['10', '20', '39', '50'], correctAnswer: 2, explanation: '39 Schläge.' },
+    { id: 'final-q18', text: 'Athen-Sperre?', type: 'multiple-choice', options: ['5', '10', '20', '30'], correctAnswer: 2, explanation: '20 Jahre.' },
+    { id: 'final-q19', text: 'Preissteigerung?', type: 'multiple-choice', options: ['2-fach', '5-fach', '10-fach', '20-fach'], correctAnswer: 2, explanation: '10-fach.' },
+    { id: 'final-q20', text: 'Phidias-Statue?', type: 'multiple-choice', options: ['5', '10', '30', '50'], correctAnswer: 2, explanation: '30 Talente.' },
+    { id: 'final-q21', text: 'Alkibiades Streitwagen?', type: 'multiple-choice', options: ['2', '4', '7', '10'], correctAnswer: 2, explanation: '7 Streitwagen.' },
+    { id: 'final-q22', text: 'Größter Hellene?', type: 'multiple-choice', options: ['Perikles', 'Gelon', 'Philipp', 'Nero'], correctAnswer: 1, explanation: 'Gelon von Syrakus.' },
+    { id: 'final-q23', text: 'Krieg während Spiele?', type: 'multiple-choice', options: ['420', '400', '364', '300'], correctAnswer: 2, explanation: '364 v. Chr.' },
+    { id: 'final-q24', text: 'Was zerstört?', type: 'multiple-choice', options: ['Tempel', 'Stadion', 'Zelt', 'Statuen'], correctAnswer: 2, explanation: 'Dionysios\' Zelt.' },
+    { id: 'final-q25', text: 'Rom erobert?', type: 'multiple-choice', options: ['200', '146', '100', '50'], correctAnswer: 1, explanation: '146 v. Chr.' },
+    { id: 'final-q26', text: 'Theodosius-Verbot?', type: 'multiple-choice', options: ['300', '350', '393', '450'], correctAnswer: 2, explanation: '393 n. Chr.' },
+    { id: 'final-q27', text: 'Wiederbelebung?', type: 'multiple-choice', options: ['1850', '1876', '1896', '1900'], correctAnswer: 2, explanation: '1896.' },
+    { id: 'final-q28', text: 'Sport und Korruption?', type: 'multiple-choice', options: ['Sauber', 'Untrennbar', 'Unpolitisch', 'Kein Doping'], correctAnswer: 1, explanation: 'Untrennbar.' },
+    { id: 'final-q29', text: 'Olympia von Anfang?', type: 'multiple-choice', options: ['Fest', 'Geschäft', 'Amateur', 'Kunst'], correctAnswer: 1, explanation: 'Geschäft.' },
+    { id: 'final-q30', text: 'Moderne Spiele?', type: 'multiple-choice', options: ['Sauber', 'Gleiche Probleme', 'Amateur', 'Keine Probleme'], correctAnswer: 1, explanation: 'Gleiche Probleme.' }
+  ]
+}
+
 // Export-Funktion für übersetzte Session-Inhalte
 export function getTranslatedSessionContent(sessionId: string, language: Language): Partial<Session> | null {
   if (sessionId === 'ritterturniere' && language === 'de') {
@@ -2332,6 +2528,20 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
     return {
       slides: sevenWondersSlidesDE,
       quiz: sevenWondersFinalQuizDE
+    }
+  }
+  
+  if (sessionId === 'alexander-empire' && language === 'de') {
+    return {
+      slides: alexanderEmpireSlidesDE,
+      quiz: alexanderEmpireFinalQuizDE
+    }
+  }
+  
+  if (sessionId === 'ancient-olympics' && language === 'de') {
+    return {
+      slides: ancientOlympicsSlidesDE,
+      quiz: ancientOlympicsFinalQuizDE
     }
   }
   

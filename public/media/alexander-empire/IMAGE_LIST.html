@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список изображений: Александр Македонский</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2em; font-weight: bold; color: #f5576c; }
+        .stat-label { color: #6c757d; margin-top: 5px; }
+        .instructions {
+            padding: 30px 40px;
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            margin: 20px 40px;
+        }
+        .instructions h2 { color: #856404; margin-bottom: 15px; }
+        .instructions ul { list-style-position: inside; color: #856404; }
+        .instructions li { margin: 8px 0; }
+        .content { padding: 20px 40px 40px; }
+        .section { margin-bottom: 40px; }
+        .section-title {
+            font-size: 1.8em;
+            color: #f5576c;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #f5576c;
+        }
+        .image-item {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        .image-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        .image-item.checked { background: #d4edda; border-color: #28a745; }
+        .image-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .checkbox { width: 24px; height: 24px; margin-right: 15px; cursor: pointer; }
+        .image-number {
+            background: #f5576c;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .image-filename {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #212529;
+            flex: 1;
+        }
+        .image-description {
+            color: #495057;
+            margin-bottom: 10px;
+            margin-left: 74px;
+        }
+        .search-terms {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-left: 74px;
+            border: 1px solid #dee2e6;
+        }
+        .search-terms strong { color: #f5576c; }
+        .search-links { margin-left: 74px; margin-top: 10px; }
+        .search-link {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #f5576c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            margin-top: 5px;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+        .search-link:hover { background: #e04055; }
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: #e9ecef;
+            z-index: 1000;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #f093fb, #f5576c);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .action-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+        }
+        .action-btn {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .reset-btn { background: #dc3545; color: white; }
+        .reset-btn:hover { background: #c82333; transform: scale(1.05); }
+        .save-btn { background: #28a745; color: white; }
+        .save-btn:hover { background: #218838; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>🏛️ Александр Македонский: цена империи</h1>
+            <p>Список необходимых изображений для темы</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalImages">40</div>
+                <div class="stat-label">Всего изображений</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="checkedImages">0</div>
+                <div class="stat-label">Загружено</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="remainingImages">40</div>
+                <div class="stat-label">Осталось</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="progressPercent">0%</div>
+                <div class="stat-label">Прогресс</div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Инструкции по поиску изображений</h2>
+            <ul>
+                <li><strong>Формат:</strong> JPG или PNG</li>
+                <li><strong>Разрешение:</strong> минимум 1200x800 px</li>
+                <li><strong>Лицензия:</strong> свободная (Public Domain, Creative Commons)</li>
+                <li><strong>Источники:</strong> Wikimedia Commons, Pixabay, Unsplash, Pexels</li>
+                <li><strong>Размер файла:</strong> не более 500 KB</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <!-- Введение (1-4) -->
+            <div class="section">
+                <h2 class="section-title">👑 Введение: Наследство и амбиции (слайды 1-4)</h2>
+                
+                <div class="image-item" data-index="0">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img0">
+                        <div class="image-number">1</div>
+                        <label for="img0" class="image-filename">inheritance.jpg</label>
+                    </div>
+                    <div class="image-description">Филипп II Македонский, царь на троне, золотая корона</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "philip II macedon", "ancient macedonian king"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=philip+II+macedon&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=philip+II+macedon" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient%20king/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="1">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img1">
+                        <div class="image-number">2</div>
+                        <label for="img1" class="image-filename">macedonian-army.jpg</label>
+                    </div>
+                    <div class="image-description">Македонская фаланга, сариссы, тренировка воинов</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "macedonian phalanx", "sarissa spears"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=macedonian+phalanx&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=macedonian+phalanx" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/phalanx/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="2">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img2">
+                        <div class="image-number">3</div>
+                        <label for="img2" class="image-filename">business-plan.jpg</label>
+                    </div>
+                    <div class="image-description">Античная карта Персидской империи, стратегический план</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "persian empire map ancient", "alexander conquest route"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=persian+empire+map+ancient&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=persian+empire+map" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient%20map/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="3">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img3">
+                        <div class="image-number">4</div>
+                        <label for="img3" class="image-filename">loans.jpg</label>
+                    </div>
+                    <div class="image-description">Античные монеты, золото, договоры о займах</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient greek coins gold", "macedonian currency"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=ancient+greek+coins+gold&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+coins" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient%20coins/" target="_blank" class="search-link">Pixabay</a>
+                        <a href="https://unsplash.com/s/photos/ancient-coins" target="_blank" class="search-link">Unsplash</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Логистика (5-8) -->
+            <div class="section">
+                <h2 class="section-title">📦 Логистика 50,000 человек (слайды 5-8)</h2>
+                
+                <div class="image-item" data-index="4">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img4">
+                        <div class="image-number">5</div>
+                        <label for="img4" class="image-filename">logistics.jpg</label>
+                    </div>
+                    <div class="image-description">Военный обоз, повозки с припасами, вьючные животные</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient military supply train", "army baggage train"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=ancient+military+supply+train&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+supply+train" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/military%20supply/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="5">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img5">
+                        <div class="image-number">6</div>
+                        <label for="img5" class="image-filename">supply-train.jpg</label>
+                    </div>
+                    <div class="image-description">Колонна повозок, обоз армии, транспорт припасов</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient military convoy", "army supply wagons"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=ancient+military+convoy&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=army+convoy" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/wagon%20convoy/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="6">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img6">
+                        <div class="image-number">7</div>
+                        <label for="img6" class="image-filename">fleet.jpg</label>
+                    </div>
+                    <div class="image-description">Греческие триеры, военные корабли, античный флот</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "greek trireme", "ancient warship"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=greek+trireme+ancient+warship&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=greek+trireme" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient%20ship/" target="_blank" class="search-link">Pixabay</a>
+                        <a href="https://unsplash.com/s/photos/ancient-ship" target="_blank" class="search-link">Unsplash</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="7">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img7">
+                        <div class="image-number">8</div>
+                        <label for="img7" class="image-filename">medical-service.jpg</label>
+                    </div>
+                    <div class="image-description">Античные врачи, лечение раненых, военная медицина</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient greek medicine", "battlefield surgery ancient"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=ancient+greek+medicine&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+medicine" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient%20medicine/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Остальные секции будут добавлены... -->
+            <div style="text-align: center; padding: 40px; color: #6c757d;">
+                <p><em>Полный список всех 40 изображений доступен в IMAGE_LIST.md</em></p>
+                <p style="margin-top: 10px;"><strong>Используйте этот файл для отслеживания прогресса загрузки</strong></p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn reset-btn" onclick="resetProgress()">🔄 Сбросить</button>
+        <button class="action-btn save-btn" onclick="saveProgress()">💾 Сохранить</button>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            updateStats();
+            document.querySelectorAll('.checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const item = this.closest('.image-item');
+                    if (this.checked) {
+                        item.classList.add('checked');
+                    } else {
+                        item.classList.remove('checked');
+                    }
+                    updateStats();
+                    saveProgress();
+                });
+            });
+        });
+
+        function updateStats() {
+            const total = 40;
+            const checked = document.querySelectorAll('.checkbox:checked').length;
+            const remaining = total - checked;
+            const percent = Math.round((checked / total) * 100);
+
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('checkedImages').textContent = checked;
+            document.getElementById('remainingImages').textContent = remaining;
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const progress = Array.from(checkboxes).map(cb => cb.checked);
+            localStorage.setItem('alexanderImageProgress', JSON.stringify(progress));
+            showNotification('Прогресс сохранен! ✅');
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('alexanderImageProgress');
+            if (saved) {
+                const progress = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checkbox');
+                checkboxes.forEach((cb, index) => {
+                    if (progress[index]) {
+                        cb.checked = true;
+                        cb.closest('.image-item').classList.add('checked');
+                    }
+                });
+            }
+        }
+
+        function resetProgress() {
+            if (confirm('Вы уверены, что хотите сбросить весь прогресс?')) {
+                localStorage.removeItem('alexanderImageProgress');
+                document.querySelectorAll('.checkbox').forEach(cb => {
+                    cb.checked = false;
+                    cb.closest('.image-item').classList.remove('checked');
+                });
+                updateStats();
+                showNotification('Прогресс сброшен! 🔄');
+            }
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed; top: 20px; right: 20px;
+                background: #28a745; color: white;
+                padding: 15px 25px; border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                z-index: 10000; animation: slideIn 0.3s ease;
+            `;
+            document.body.appendChild(notification);
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }, 2000);
+        }
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(400px); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(400px); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

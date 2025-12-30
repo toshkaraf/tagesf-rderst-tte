@@ -2769,34 +2769,6 @@ const sessionsData: Session[] = [
       tags: ['древний мир', 'архитектура', 'экономика', 'история', 'мегапроекты', 'чудеса света'],
       difficulty: 'medium'
     }
-  }
-]
-
-// Функция для применения переводов к сессии
-function applyTranslations(session: Session, language: Language): Session {
-  const translation = getTranslatedSession(session.id, language)
-  const contentTranslation = getTranslatedSessionContent(session.id, language)
-  
-  if (!translation && !contentTranslation) return session
-
-  return {
-    ...session,
-    ...(translation && {
-      title: translation.title,
-      description: translation.description,
-      category: translation.category,
-      structure: {
-        ...session.structure,
-        ...translation.structure
-      }
-    }),
-    ...(contentTranslation && {
-      slides: contentTranslation.slides || session.slides,
-      quiz: contentTranslation.quiz || session.quiz
-    })
-  }
-}
-
   },
   {
     id: 'alexander-empire',
@@ -3495,9 +3467,6 @@ function applyTranslations(session: Session, language: Language): Session {
       tags: ['Александр Македонский', 'Древний мир', 'военная история', 'экономика', 'логистика'],
       difficulty: 'medium'
     }
-  }
-]
-
   },
   {
     id: 'ancient-olympics',
@@ -4183,6 +4152,31 @@ function applyTranslations(session: Session, language: Language): Session {
     }
   }
 ]
+
+// Функция для применения переводов к сессии
+function applyTranslations(session: Session, language: Language): Session {
+  const translation = getTranslatedSession(session.id, language)
+  const contentTranslation = getTranslatedSessionContent(session.id, language)
+  
+  if (!translation && !contentTranslation) return session
+
+  return {
+    ...session,
+    ...(translation && {
+      title: translation.title,
+      description: translation.description,
+      category: translation.category,
+      structure: {
+        ...session.structure,
+        ...translation.structure
+      }
+    }),
+    ...(contentTranslation && {
+      slides: contentTranslation.slides || session.slides,
+      quiz: contentTranslation.quiz || session.quiz
+    })
+  }
+}
 
 // Экспорт для обратной совместимости
 export const sessions = sessionsData

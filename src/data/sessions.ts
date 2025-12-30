@@ -2865,7 +2865,10 @@ const sessionsData: Session[] = [
         title: 'Граник: первая победа',
         content: 'При Гранике в 334 г. до н.э. Александр потерял всего 115 человек при 20,000 убитых персов. Асимметрия потерь была результатом технологического превосходства македонской фаланги. Стоимость победы — менее 10 талантов на похороны и компенсации семьям.',
         duration: 3,
-        media: [{ type: 'image', url: '/media/alexander-empire/granicus.jpg', title: 'Битва при Гранике' }]
+        media: [
+          { type: 'image', url: '/media/alexander-empire/granicus.jpg', title: 'Битва при Гранике' },
+          { type: 'video', url: 'https://www.youtube.com/watch?v=nWf2x7wj0_M', title: 'Видео: Битва при Гранике' }
+        ]
       },
       {
         id: 'a14',
@@ -2886,7 +2889,10 @@ const sessionsData: Session[] = [
         title: 'Гавгамелы: решающая битва',
         content: 'При Гавгамелах в 331 г. до н.э. Александр разгромил последнюю армию Дария — 250,000 человек. Потери македонцев — 500 человек. Это открыло путь к персидской казне. Соотношение цена/выгода было фантастическим: 1 к 1000.',
         duration: 3,
-        media: [{ type: 'image', url: '/media/alexander-empire/gaugamela.jpg', title: 'Битва при Гавгамелах' }]
+        media: [
+          { type: 'image', url: '/media/alexander-empire/gaugamela.jpg', title: 'Битва при Гавгамелах' },
+          { type: 'video', url: 'https://www.youtube.com/watch?v=PlfBGVv4mfY', title: 'Видео: Битва при Гавгамелах' }
+        ]
       },
       {
         id: 'q4',

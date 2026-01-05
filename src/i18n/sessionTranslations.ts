@@ -117,6 +117,32 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
         closing: 'Подведение итогов и выводы'
       }
     }
+  },
+  'mongol-empire': {
+    de: {
+      title: 'Das Mongolische Reich: Mythen über die Anzahl und Ökonomie der Eroberungen',
+      description: 'Entlarvung der Mythen über Millionen Mongolen und Studium der realen Ökonomie, Logistik und Gründe für den Erfolg des größten kontinentalen Imperiums der Geschichte',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über das Mongolische Reich!',
+        mainContent: 'Studium der Mythen über die Anzahl, der realen Ökonomie der Eroberungen und der Gründe für den Zusammenbruch des Imperiums',
+        interactive: 'Fragen und Abschlussquiz',
+        additional: 'Betrachtung von Bildern über mongolische Eroberungen',
+        closing: 'Zusammenfassung und Schlussfolgerungen'
+      }
+    },
+    ru: {
+      title: 'Монгольская империя: мифы о численности и экономика завоеваний',
+      description: 'Развенчание мифов о миллионах монголов и изучение реальной экономики, логистики и причин успеха самой большой континентальной империи в истории',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о Монгольской империи!',
+        mainContent: 'Изучение мифов о численности, реальной экономики завоеваний и причин распада империи',
+        interactive: 'Вопросы и итоговая викторина',
+        additional: 'Просмотр изображений о монгольских завоеваниях',
+        closing: 'Подведение итогов и выводы'
+      }
+    }
   }
 }
 

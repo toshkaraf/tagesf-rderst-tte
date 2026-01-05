@@ -2478,6 +2478,61 @@ const ancientOlympicsSlidesDE: Slide[] = [
   // Weitere 32 Folien würden folgen...
 ]
 
+// Deutsche Übersetzungen für Mongolische Reich (gekürzte Version - первые 8 Folien als Beispiel)
+const mongolEmpireSlidesDE: Slide[] = [
+  { id: 'm1', title: 'Mythos über Millionen', content: 'Europäische Chronisten schrieben von "Millionen" Mongolen, aber die reale Armee Dschingis Khans zählte 20.000-30.000 Reiter. Bei der Invasion in Europa 1241 waren es nur 50.000 Mongolen. Der Mythos über die Anzahl wurde von verängstigten Europäern geschaffen.', duration: 3, media: [{ type: 'image', url: '/media/mongol-empire/myth-millions.jpg', title: 'Mythos über Millionen Mongolen' }] },
+  { id: 'm2', title: 'Angst als Propaganda', content: 'Europäische Mönche übertrieben die Anzahl um das 10-100-fache, um Niederlagen zu rechtfertigen. "500.000 Mongolen" waren tatsächlich 50.000. Angst schuf den Mythos unbesiegbarer Horden. Die Realität war einfacher: Mongolen siegten durch Organisation, nicht durch Anzahl.', duration: 3, media: [{ type: 'image', url: '/media/mongol-empire/fear-propaganda.jpg', title: 'Europäische Angst vor Mongolen' }] },
+  { id: 'm3', title: 'Reale Anzahl', content: 'Unter Dschingis Khan zählte die mongolische Armee 95.000 Mann (129 Tumen). Bei der Invasion in Europa — 50.000. Bei der Eroberung Chinas — 100.000. Es gab nie "Millionen". Mongolen siegten durch Qualität, nicht Quantität.', duration: 3, media: [{ type: 'image', url: '/media/mongol-empire/real-numbers.jpg', title: 'Reale Armeestärke' }] },
+  { id: 'm4', title: 'Warum der Mythos lebt', content: 'Der Mythos über Millionen ist bequem: Er rechtfertigt europäische Niederlagen. Leichter zu sagen "wir waren weniger" als mongolische Taktiküberlegenheit anzuerkennen. Historiker wiederholen diese Zahlen bis heute, ohne Quellen zu prüfen.', duration: 3, media: [{ type: 'image', url: '/media/mongol-empire/myth-persists.jpg', title: 'Beständigkeit des Mythos' }] },
+  { id: 'q1', title: 'Quiz', content: '', duration: 2, questions: [
+    { id: 'q-myth-1', text: 'Wie viele Reiter hatte Dschingis Khans Armee?', type: 'multiple-choice', options: ['100.000', '500.000', '20.000-30.000', '1.000.000'], correctAnswer: 2, explanation: 'Die reale Armee hatte 20.000-30.000 Reiter, nicht Millionen.' },
+    { id: 'q-myth-2', text: 'Wie viele Mongolen fielen 1241 in Europa ein?', type: 'multiple-choice', options: ['100.000', '200.000', '50.000', '500.000'], correctAnswer: 2, explanation: 'Nur 50.000 Mongolen fielen ein, nicht Hunderttausende.' },
+    { id: 'q-myth-3', text: 'Warum übertrieben Europäer die Anzahl?', type: 'multiple-choice', options: ['Sie sahen mehr', 'Um Niederlagen zu rechtfertigen', 'Zählfehler', 'Mongolen täuschten'], correctAnswer: 1, explanation: 'Europäische Chronisten übertrieben um das 10-100-fache, um Niederlagen zu rechtfertigen.' }
+  ]},
+  { id: 'm5', title: 'Pferde als Nahrung', content: 'Ein mongolischer Reiter führte 3-5 Pferde mit. Eines zum Reiten, die anderen — Nahrungsreserve. Auf dem Feldzug tranken Mongolen Stutenmilch (Kumys) und aßen Pferdefleisch. Ein Pferd = 200 kg Fleisch. Das löste das Versorgungsproblem in der Steppe.', duration: 3, media: [{ type: 'image', url: '/media/mongol-empire/horses-food.jpg', title: 'Pferde als Proviant' }] },
+  { id: 'm6', title: 'Mobilität — Schlüssel zum Sieg', content: 'Mongolen legten 100-150 km pro Tag zurück. Europäische Armee — 20-30 km. Mongolen erschienen dort, wo man sie nicht erwartete. Geschwindigkeit war ihre Hauptwaffe. In 3 Tagen legten Mongolen zurück, wofür Europäer 2 Wochen brauchten.', duration: 3, media: [{ type: 'image', url: '/media/mongol-empire/mobility.jpg', title: 'Mongolische Mobilität' }] },
+  { id: 'm7', title: 'Versorgung ohne Tross', content: 'Mongolen zogen keine Trosse mit. Alles Notwendige wurde auf Pferden transportiert: Jurten, Waffen, Nahrung. Ein Reiter = 5 Pferde = 1 Tonne Fracht. Das ermöglichte schnelleres Vorrücken als jede Armee der Welt. Tross — Schwäche, die Mongolen nicht hatten.', duration: 3, media: [{ type: 'image', url: '/media/mongol-empire/no-supply-train.jpg', title: 'Armee ohne Tross' }] },
+  { id: 'm8', title: 'Ausdauer mongolischer Pferde', content: 'Mongolische Pferde weideten selbst, brauchten kein Getreide. Sie überlebten den Winter, gruben Schnee mit Hufen auf. Europäische Pferde brauchten Hafer und Heu — sie konnten in der Steppe nicht gefüttert werden. Das gab Mongolen enormen Vorteil.', duration: 3, media: [{ type: 'image', url: '/media/mongol-empire/mongolian-horses.jpg', title: 'Mongolische Pferde' }] }
+  // Weitere 32 Folien würden folgen...
+]
+
+const mongolEmpireFinalQuizDE: QuizBlock = {
+  id: 'quiz-mongols',
+  title: 'Abschlussquiz: Mongolische Reich',
+  questions: [
+    { id: 'final-q1', text: 'Wie viele Reiter hatte Dschingis Khans Armee?', type: 'multiple-choice', options: ['100.000', '500.000', '20.000-30.000', '1.000.000'], correctAnswer: 2, explanation: '20.000-30.000 Reiter, nicht Millionen.' },
+    { id: 'final-q2', text: 'Wie viele Mongolen fielen in Europa ein?', type: 'multiple-choice', options: ['100.000', '200.000', '50.000', '500.000'], correctAnswer: 2, explanation: '50.000 Mongolen, nicht Hunderttausende.' },
+    { id: 'final-q3', text: 'Warum übertrieben sie die Anzahl?', type: 'multiple-choice', options: ['Fehler', 'Um Niederlagen zu rechtfertigen', 'Mongolen täuschten', 'Nicht übertrieben'], correctAnswer: 1, explanation: 'Um europäische Niederlagen zu rechtfertigen.' },
+    { id: 'final-q4', text: 'Wie viele Pferde führte Reiter?', type: 'multiple-choice', options: ['1', '2', '3-5', '10'], correctAnswer: 2, explanation: '3-5 Pferde: eines zum Reiten, andere als Nahrung.' },
+    { id: 'final-q5', text: 'Wie viele km pro Tag?', type: 'multiple-choice', options: ['20-30', '50-70', '100-150', '200'], correctAnswer: 2, explanation: '100-150 km pro Tag dank Mobilität.' },
+    { id: 'final-q6', text: 'Wie wurden Feldzüge finanziert?', type: 'multiple-choice', options: ['Steuern', 'Plünderung', 'Handel', 'Kredite'], correctAnswer: 1, explanation: 'Durch Plünderung eroberter Städte.' },
+    { id: 'final-q7', text: 'Was ist profitabler: Steuern oder Plünderung?', type: 'multiple-choice', options: ['Plünderung', 'Steuern jährlich', 'Gleich', 'Hängt ab'], correctAnswer: 1, explanation: 'Steuern profitabler — Geld jedes Jahr.' },
+    { id: 'final-q8', text: 'Warum Handwerker erhalten?', type: 'multiple-choice', options: ['Mitleid', 'Produzierten 10 Talente jährlich', 'Für Bau nötig', 'Religion'], correctAnswer: 1, explanation: 'Handwerker produzierte Waren für 10 Talente jährlich.' },
+    { id: 'final-q9', text: 'Wie war Armee geteilt?', type: 'multiple-choice', options: ['Nach Stämmen', 'Dezimalsystem', 'Nach Clans', 'Zufällig'], correctAnswer: 1, explanation: 'Dezimalsystem: Zehner, Hunderter, Tausender.' },
+    { id: 'final-q10', text: 'Was ist Scheinrückzug?', type: 'multiple-choice', options: ['Flucht', 'Vorgetäuschter Rückzug mit Angriff', 'Belagerung', 'Verhandlungen'], correctAnswer: 1, explanation: 'Vorgetäuschter Rückzug mit nachfolgendem Angriff.' },
+    { id: 'final-q11', text: 'Wie erhielten sie Informationen?', type: 'multiple-choice', options: ['Im Kampf', 'Händler-Spione', 'Überläufer', 'Erhielten nicht'], correctAnswer: 1, explanation: 'Händler-Spione sammelten Informationen vorher.' },
+    { id: 'final-q12', text: 'Was ist Pax Mongolica?', type: 'multiple-choice', options: ['Krieg', 'Handelssicherheit auf 10.000 km', 'Religion', 'Steuern'], correctAnswer: 1, explanation: 'Sicherheit der Handelswege von China bis Europa.' },
+    { id: 'final-q13', text: 'Was kostete Yam-Post?', type: 'multiple-choice', options: ['10.000', '50.000', '100.000', '200.000'], correctAnswer: 1, explanation: '50.000 Talente jährlich, brachte aber 200.000.' },
+    { id: 'final-q14', text: 'Zollprozentsatz von Karawanen?', type: 'multiple-choice', options: ['1%', '3-5%', '10%', '20%'], correctAnswer: 1, explanation: '3-5% Zoll — viel weniger als Plünderung.' },
+    { id: 'final-q15', text: 'Wer führte Papiergeld ein?', type: 'multiple-choice', options: ['Chinesen', 'Araber', 'Mongolen', 'Europäer'], correctAnswer: 2, explanation: 'Mongolen führten erstmals Papiergeld im Reichsmaßstab ein.' },
+    { id: 'final-q16', text: 'Kreditzins?', type: 'multiple-choice', options: ['5%', '10-15%', '20%', '50%'], correctAnswer: 1, explanation: '10-15% jährlich für Kredite.' },
+    { id: 'final-q17', text: 'Einheitliche Steuer?', type: 'multiple-choice', options: ['5%', '10%', '20%', '30%'], correctAnswer: 1, explanation: '10% vom Einkommen — feste Steuer.' },
+    { id: 'final-q18', text: 'Wie viele Jahre Eroberung Chinas?', type: 'multiple-choice', options: ['5', '10', '20', '50'], correctAnswer: 2, explanation: '20 Jahre und 200.000 Leben.' },
+    { id: 'final-q19', text: 'Wie viele Jahre Eroberung Russlands?', type: 'multiple-choice', options: ['1', '3', '10', '20'], correctAnswer: 1, explanation: '3 Jahre (1237-1240).' },
+    { id: 'final-q20', text: 'Warum stoppten in Europa?', type: 'multiple-choice', options: ['Besiegt', 'Tod Ögedeis', 'Keine Kräfte', 'Vorräte'], correctAnswer: 1, explanation: 'Tod Khans Ögedei — zurück zur Khanwahl.' },
+    { id: 'final-q21', text: 'Warum zerfiel Imperium?', type: 'multiple-choice', options: ['Niederlagen', 'Ökonomie: Ausgaben 500.000, Einnahmen 400.000', 'Aufstände', 'Pest'], correctAnswer: 1, explanation: 'Ökonomie: Budgetdefizit.' },
+    { id: 'final-q22', text: 'In wie viele Ulus geteilt?', type: 'multiple-choice', options: ['2', '3', '4', '5'], correctAnswer: 2, explanation: '4 Ulus: Goldene Horde, Ilkhanat, Tschagatai, Yuan.' },
+    { id: 'final-q23', text: 'Wie viel Prozent tötete Pest?', type: 'multiple-choice', options: ['10-20%', '30-50%', '60-70%', '80-90%'], correctAnswer: 1, explanation: '30-50% der Bevölkerung.' },
+    { id: 'final-q24', text: 'Was gaben sie Europa?', type: 'multiple-choice', options: ['Gold', 'Schießpulver, Kompass, Papier', 'Seide', 'Nichts'], correctAnswer: 1, explanation: 'Schießpulver, Kompass, Papier aus China.' },
+    { id: 'final-q25', text: 'Nachkommen Dschingis Khans?', type: 'multiple-choice', options: ['1 Mio', '5 Mio', '16 Mio', '100 Mio'], correctAnswer: 2, explanation: '16 Millionen Menschen.' },
+    { id: 'final-q26', text: 'Wie änderten sie Russland?', type: 'multiple-choice', options: ['Gar nicht', 'Moskau wurde Zentrum', 'Nur zerstört', 'Kultur'], correctAnswer: 1, explanation: 'Moskau wurde Zentrum durch Tributsammlung.' },
+    { id: 'final-q27', text: 'Was wichtiger: Anzahl oder Organisation?', type: 'multiple-choice', options: ['Anzahl', 'Organisation', 'Gleich', 'Hängt ab'], correctAnswer: 1, explanation: 'Organisation wichtiger als Anzahl.' },
+    { id: 'final-q28', text: 'Worauf basierte Imperium?', type: 'multiple-choice', options: ['Kraft', 'Ökonomie', 'Religion', 'Ideologie'], correctAnswer: 1, explanation: 'Auf Ökonomie — als sie zusammenbrach, zerfiel Imperium.' },
+    { id: 'final-q29', text: 'Größe des Imperiums?', type: 'multiple-choice', options: ['10 Mio', '24 Mio', '50 Mio', '100 Mio'], correctAnswer: 1, explanation: '24 Millionen qkm — größtes kontinentales Imperium.' },
+    { id: 'final-q30', text: 'Wie viele Jahre wurde Imperium geschaffen?', type: 'multiple-choice', options: ['10', '25', '50', '100'], correctAnswer: 2, explanation: 'In 50 Jahren geschaffen, in 100 zerfallen.' }
+  ]
+}
+
 const ancientOlympicsFinalQuizDE: QuizBlock = {
   id: 'quiz-olympics',
   title: 'Abschlussquiz: Olympische Spiele in der Antike',
@@ -2542,6 +2597,13 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
     return {
       slides: ancientOlympicsSlidesDE,
       quiz: ancientOlympicsFinalQuizDE
+    }
+  }
+  
+  if (sessionId === 'mongol-empire' && language === 'de') {
+    return {
+      slides: mongolEmpireSlidesDE,
+      quiz: mongolEmpireFinalQuizDE
     }
   }
   

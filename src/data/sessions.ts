@@ -4495,7 +4495,10 @@ const sessionsData: Session[] = [
         title: 'Европа: остановка у границы',
         content: 'Монголы разгромили венгров и поляков в 1241 году, но не пошли дальше. Причина: смерть хана Угедея. Монголы вернулись выбирать нового хана. Европа была спасена случайностью, а не военной силой.',
         duration: 3,
-        media: [{ type: 'image', url: '/media/mongol-empire/europe-stop.jpg', title: 'Остановка в Европе' }]
+        media: [
+          { type: 'image', url: '/media/mongol-empire/europe-stop.jpg', title: 'Остановка в Европе' },
+          { type: 'video', url: 'https://www.youtube.com/watch?v=rquMERg5KO4', title: 'Монгольское нападение на Европу' }
+        ]
       },
       {
         id: 'm28',

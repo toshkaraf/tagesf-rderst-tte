@@ -2568,8 +2568,13 @@ const mongolEmpireSlidesDE: Slide[] = [
   { id: 'm5', title: 'Pferde als Nahrung', content: 'Ein mongolischer Reiter führte 3-5 Pferde mit. Eines zum Reiten, die anderen — Nahrungsreserve. Auf dem Feldzug tranken Mongolen Stutenmilch (Kumys) und aßen Pferdefleisch. Ein Pferd = 200 kg Fleisch. Das löste das Versorgungsproblem in der Steppe.', duration: 3, media: [{ type: 'image', url: '/media/mongol-empire/horses-food.jpg', title: 'Pferde als Proviant' }] },
   { id: 'm6', title: 'Mobilität — Schlüssel zum Sieg', content: 'Mongolen legten 100-150 km pro Tag zurück. Europäische Armee — 20-30 km. Mongolen erschienen dort, wo man sie nicht erwartete. Geschwindigkeit war ihre Hauptwaffe. In 3 Tagen legten Mongolen zurück, wofür Europäer 2 Wochen brauchten.', duration: 3, media: [{ type: 'image', url: '/media/mongol-empire/mobility.jpg', title: 'Mongolische Mobilität' }] },
   { id: 'm7', title: 'Versorgung ohne Tross', content: 'Mongolen zogen keine Trosse mit. Alles Notwendige wurde auf Pferden transportiert: Jurten, Waffen, Nahrung. Ein Reiter = 5 Pferde = 1 Tonne Fracht. Das ermöglichte schnelleres Vorrücken als jede Armee der Welt. Tross — Schwäche, die Mongolen nicht hatten.', duration: 3, media: [{ type: 'image', url: '/media/mongol-empire/no-supply-train.jpg', title: 'Armee ohne Tross' }] },
-  { id: 'm8', title: 'Ausdauer mongolischer Pferde', content: 'Mongolische Pferde weideten selbst, brauchten kein Getreide. Sie überlebten den Winter, gruben Schnee mit Hufen auf. Europäische Pferde brauchten Hafer und Heu — sie konnten in der Steppe nicht gefüttert werden. Das gab Mongolen enormen Vorteil.', duration: 3, media: [{ type: 'image', url: '/media/mongol-empire/mongolian-horses.jpg', title: 'Mongolische Pferde' }] }
-  // Weitere 32 Folien würden folgen...
+  { id: 'm8', title: 'Ausdauer mongolischer Pferde', content: 'Mongolische Pferde weideten selbst, brauchten kein Getreide. Sie überlebten den Winter, gruben Schnee mit Hufen auf. Europäische Pferde brauchten Hafer und Heu — sie konnten in der Steppe nicht gefüttert werden. Das gab Mongolen enormen Vorteil.', duration: 3, media: [{ type: 'image', url: '/media/mongol-empire/mongolian-horses.jpg', title: 'Mongolische Pferde' }] },
+  // Weitere Folien würden folgen...
+  // Слайд m27 добавлен для видео о нападении на Европу
+  { id: 'm27', title: 'Europa: Stopp an der Grenze', content: 'Mongolen schlugen Ungarn und Polen 1241, gingen aber nicht weiter. Grund: Tod Khans Ögedei. Mongolen kehrten zurück, um neuen Khan zu wählen. Europa wurde durch Zufall gerettet, nicht durch militärische Stärke.', duration: 3, media: [
+    { type: 'image', url: '/media/mongol-empire/europe-stop.jpg', title: 'Stopp in Europa' },
+    { type: 'video', url: 'https://www.youtube.com/watch?v=rquMERg5KO4', title: 'Mongolischer Angriff auf Europa' }
+  ]}
 ]
 
 const mongolEmpireFinalQuizDE: QuizBlock = {

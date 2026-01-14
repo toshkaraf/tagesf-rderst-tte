@@ -4370,7 +4370,10 @@ const sessionsData: Session[] = [
         title: 'Культурный обмен',
         content: 'Pax Mongolica позволил обмен технологиями. Китайский порох попал в Европу через монголов. Арабская математика — в Китай. Европейские ремесленники — в Азию. Монголы были мостом между цивилизациями.',
         duration: 3,
-        media: [{ type: 'image', url: '/media/mongol-empire/cultural-exchange.jpg', title: 'Культурный обмен' }]
+        media: [
+          { type: 'image', url: '/media/mongol-empire/cultural-exchange.jpg', title: 'Культурный обмен' },
+          { type: 'video', url: 'https://www.youtube.com/watch?v=DZ0K9TSS0xk', title: 'Pax Mongolica: мир и торговля' }
+        ]
       },
       {
         id: 'q5',
@@ -4798,6 +4801,40 @@ const sessionsData: Session[] = [
       created: '2024-12-18',
       tags: ['Монгольская империя', 'Чингисхан', 'завоевания', 'экономика', 'логистика'],
       difficulty: 'medium'
+    }
+  },
+  {
+    id: 'google-earth',
+    title: 'Google Earth: наша планета из космоса',
+    description: 'Практическое занятие: учимся исследовать Землю с помощью Google Earth и находим интересные точки на карте',
+    type: 'discussion',
+    category: 'География',
+    duration: 45,
+    structure: {
+      greeting: 'Добро пожаловать на занятие Google Earth!',
+      mainContent: 'Краткое знакомство с инструментом Google Earth и его возможностями для обучения',
+      interactive: 'Практическое задание: найти интересные места на планете',
+      additional: 'Работаем прямо в браузере с помощью Google Earth',
+      closing: 'Обсуждаем найденные места и впечатления'
+    },
+    slides: [
+      {
+        id: 'g1',
+        title: 'Исследуем Землю в Google Earth',
+        content: 'Откройте страницу Google Earth для образования (немецкая версия): https://www.google.com/intl/de_in/earth/education/explore-earth/  \nТам вы можете в интерактивном режиме изучать карту Земли, увеличивать интересующие регионы, искать города и природные объекты. Попробуйте найти три места, которые вы хотели бы посетить.',
+        duration: 5,
+        media: []
+      }
+    ],
+    quiz: {
+      id: 'quiz-google-earth',
+      title: 'Мини-викторина: Google Earth',
+      questions: []
+    },
+    metadata: {
+      created: '2025-01-05',
+      tags: ['Google Earth', 'география', 'карта', 'цифровые инструменты'],
+      difficulty: 'easy'
     }
   }
 ]

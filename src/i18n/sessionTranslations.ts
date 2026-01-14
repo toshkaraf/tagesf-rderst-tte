@@ -143,6 +143,32 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
         closing: 'Подведение итогов и выводы'
       }
     }
+  },
+  'google-earth': {
+    de: {
+      title: 'Google Earth: Unsere Erde aus dem All',
+      description: 'Praktische Sitzung: Wir lernen, die Erde mit Google Earth zu erkunden und interessante Orte auf der Karte zu finden',
+      category: 'Geografie',
+      structure: {
+        greeting: 'Willkommen zur Sitzung mit Google Earth!',
+        mainContent: 'Kurze Einführung in das Werkzeug Google Earth und seine Einsatzmöglichkeiten im Unterricht',
+        interactive: 'Praxisaufgabe: Finde spannende Orte auf dem Planeten',
+        additional: 'Wir arbeiten direkt im Browser mit Google Earth',
+        closing: 'Wir besprechen die gefundenen Orte und Eindrücke'
+      }
+    },
+    ru: {
+      title: 'Google Earth: наша планета из космоса',
+      description: 'Практическое занятие: учимся исследовать Землю с помощью Google Earth и находим интересные точки на карте',
+      category: 'География',
+      structure: {
+        greeting: 'Добро пожаловать на занятие Google Earth!',
+        mainContent: 'Краткое знакомство с инструментом Google Earth и его возможностями для обучения',
+        interactive: 'Практическое задание: найти интересные места на планете',
+        additional: 'Работаем прямо в браузере с помощью Google Earth',
+        closing: 'Обсуждаем найденные места и впечатления'
+      }
+    }
   }
 }
 

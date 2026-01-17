@@ -144,6 +144,32 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'spartan-terror': {
+    de: {
+      title: 'Spartaner: Staatsterror und Mythen über Krieger',
+      description: 'Die Realität der spartanischen Gesellschaft: Krypteia als systematischer Terror, Ökonomie des Sklavenstaates, Erziehung von Kriegern und Entlarvung der Mythen über "edle" Spartaner',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über Spartaner!',
+        mainContent: 'Studium des realen Sparta: Krypteia, Agoge, soziale Struktur und Ökonomie des Sklavenstaates',
+        interactive: 'Fragen und Abschlussquiz',
+        additional: 'Betrachtung von Bildern und Videos über die spartanische Gesellschaft',
+        closing: 'Zusammenfassung und Entlarvung der Mythen'
+      }
+    },
+    ru: {
+      title: 'Спартанцы: государственный террор и мифы о воинах',
+      description: 'Реальность спартанского общества: криптии как систематический террор, экономика рабовладельческого государства, воспитание воинов и развенчание мифов о "благородных" спартанцах',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о спартанцах!',
+        mainContent: 'Изучение реальной Спарты: криптии, агоге, социальная структура и экономика рабовладельческого государства',
+        interactive: 'Вопросы и итоговая викторина',
+        additional: 'Просмотр изображений и видео о спартанском обществе',
+        closing: 'Подведение итогов и развенчание мифов'
+      }
+    }
+  },
   'google-earth': {
     de: {
       title: 'Google Earth: Unsere Erde aus dem All',

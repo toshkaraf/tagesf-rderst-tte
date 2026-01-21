@@ -4961,10 +4961,7 @@ const sessionsData: Session[] = [
         title: 'Криптии: ночные убийства',
         content: 'Криптии — систематический террор против илотов. Молодые спартиаты (18-20 лет) ночью выходили в поля и убивали "подозрительных" илотов. Подозрительный = сильный, умный, потенциально опасный. Цель: держать илотов в страхе и уничтожать лидеров. Это была инициация и террор одновременно.',
         duration: 3,
-        media: [
-          { type: 'image', url: '/media/spartan-terror/krypteia.jpg', title: 'Криптии' },
-          { type: 'video', url: 'https://www.youtube.com/watch?v=8q4im4vZ_sk', title: 'Криптии и террор против илотов' }
-        ]
+        media: [{ type: 'image', url: '/media/spartan-terror/krypteia.jpg', title: 'Криптии' }]
       },
       {
         id: 's10',
@@ -4985,7 +4982,10 @@ const sessionsData: Session[] = [
         title: 'Террор как система управления',
         content: 'Криптии были не случайностью, а системой. Ежегодно убивали сотни илотов. Это держало 80% населения в постоянном страхе. Илоты не могли восстать — их убивали превентивно. Террор заменял законы. Спарта управляла страхом, а не справедливостью.',
         duration: 3,
-        media: [{ type: 'image', url: '/media/spartan-terror/terror-system.jpg', title: 'Террор как система' }]
+        media: [
+          { type: 'image', url: '/media/spartan-terror/terror-system.jpg', title: 'Террор как система' },
+          { type: 'video', url: 'https://www.youtube.com/watch?v=4zWNebr3iSc', title: 'Террор как система управления' }
+        ]
       },
       {
         id: 'q3',
@@ -5035,10 +5035,7 @@ const sessionsData: Session[] = [
         title: 'Агоге: система с 7 лет',
         content: 'Мальчики уходили из дома в 7 лет и жили в казармах до 30. Агоге — система военного воспитания. Голод, холод, побои — норма. Детей били за малейшую провинность. Смертность была высокой. Цель: выживут только самые сильные и жестокие.',
         duration: 3,
-        media: [
-          { type: 'image', url: '/media/spartan-terror/agoge-system.jpg', title: 'Агоге' },
-          { type: 'video', url: 'https://www.youtube.com/watch?v=M7V1a1I5BL0', title: 'Агоге: воспитание спартанских воинов' }
-        ]
+        media: [{ type: 'image', url: '/media/spartan-terror/agoge-system.jpg', title: 'Агоге' }]
       },
       {
         id: 's14',

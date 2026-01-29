@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список изображений: 3D-печать</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2em; font-weight: bold; color: #0066cc; }
+        .stat-label { color: #6c757d; margin-top: 5px; }
+        .instructions {
+            padding: 30px 40px;
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            margin: 20px 40px;
+        }
+        .instructions h2 { color: #856404; margin-bottom: 15px; }
+        .instructions ul { list-style-position: inside; color: #856404; }
+        .instructions li { margin: 8px 0; }
+        .content { padding: 20px 40px 40px; }
+        .section { margin-bottom: 40px; }
+        .section-title {
+            font-size: 1.8em;
+            color: #0066cc;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #0066cc;
+        }
+        .image-item {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        .image-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        .image-item.checked { background: #d4edda; border-color: #28a745; }
+        .image-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .checkbox { width: 24px; height: 24px; margin-right: 15px; cursor: pointer; }
+        .image-number {
+            background: #0066cc;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .image-filename {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #212529;
+            flex: 1;
+        }
+        .image-description {
+            color: #495057;
+            margin-bottom: 10px;
+            margin-left: 74px;
+        }
+        .search-terms {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-left: 74px;
+            border: 1px solid #dee2e6;
+        }
+        .search-terms strong { color: #0066cc; }
+        .search-links { margin-left: 74px; margin-top: 10px; }
+        .search-link {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            margin-top: 5px;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+        .search-link:hover { background: #004499; }
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: #e9ecef;
+            z-index: 1000;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #0066cc, #004499);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .action-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+        }
+        .action-btn {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .reset-btn { background: #dc3545; color: white; }
+        .reset-btn:hover { background: #c82333; transform: scale(1.05); }
+        .save-btn { background: #28a745; color: white; }
+        .save-btn:hover { background: #218838; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>🖨️ 3D-печать: от игрушек до человеческих органов</h1>
+            <p>Список необходимых изображений для темы</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalImages">40</div>
+                <div class="stat-label">Всего изображений</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="checkedImages">0</div>
+                <div class="stat-label">Загружено</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="remainingImages">40</div>
+                <div class="stat-label">Осталось</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="progressPercent">0%</div>
+                <div class="stat-label">Прогресс</div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Инструкции по поиску изображений</h2>
+            <ul>
+                <li><strong>Формат:</strong> JPG или PNG</li>
+                <li><strong>Разрешение:</strong> минимум 1200x800 px</li>
+                <li><strong>Лицензия:</strong> свободная (Public Domain, Creative Commons)</li>
+                <li><strong>Источники:</strong> Wikimedia Commons, Pixabay, Unsplash, Pexels</li>
+                <li><strong>Размер файла:</strong> не более 500 KB</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <!-- Введение (1-4) -->
+            <div class="section">
+                <h2 class="section-title">🚀 Введение: Что такое 3D-печать (слайды 1-4)</h2>
+                
+                <div class="image-item" data-index="0">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img0">
+                        <div class="image-number">1</div>
+                        <label for="img0" class="image-filename">3d-printing-revolution.jpg</label>
+                    </div>
+                    <div class="image-description">Революция 3D-печати, современный принтер</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printing revolution"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printing+revolution&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=3d+printing" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/3d%20printer/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="1">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img1">
+                        <div class="image-number">2</div>
+                        <label for="img1" class="image-filename">layer-by-layer.jpg</label>
+                    </div>
+                    <div class="image-description">Послойная печать, слои материала</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printing layers"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printing+layers&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=layer+printing" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/3d+printing+layers/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="2">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img2">
+                        <div class="image-number">3</div>
+                        <label for="img2" class="image-filename">prototype-to-production.jpg</label>
+                    </div>
+                    <div class="image-description">От прототипа к производству, готовые изделия</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printing production"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printing+production&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=3d+printed+objects" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/prototype/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="3">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img3">
+                        <div class="image-number">4</div>
+                        <label for="img3" class="image-filename">speed-precision.jpg</label>
+                    </div>
+                    <div class="image-description">Скорость и точность, сравнение методов</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printing precision"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printing+precision&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=3d+printing+accuracy" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/precision/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- История (5-8) -->
+            <div class="section">
+                <h2 class="section-title">📜 История и развитие (слайды 5-8)</h2>
+                
+                <div class="image-item" data-index="4">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img4">
+                        <div class="image-number">5</div>
+                        <label for="img4" class="image-filename">stereolithography-history.jpg</label>
+                    </div>
+                    <div class="image-description">История стереолитографии, первые принтеры</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "stereolithography history"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=stereolithography+history&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=stereolithography" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/SLA+printer/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="5">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img5">
+                        <div class="image-number">6</div>
+                        <label for="img5" class="image-filename">fdm-accessibility.jpg</label>
+                    </div>
+                    <div class="image-description">FDM доступность, домашние принтеры</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "FDM 3d printer"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=FDM+3d+printer&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=FDM+printer" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/home+3d+printer/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="6">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img6">
+                        <div class="image-number">7</div>
+                        <label for="img6" class="image-filename">2009-revolution.jpg</label>
+                    </div>
+                    <div class="image-description">Революция 2009 года, дешевые принтеры</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printing 2009"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printing+2009&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=reprap" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/makerbot/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="7">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img7">
+                        <div class="image-number">8</div>
+                        <label for="img7" class="image-filename">market-growth.jpg</label>
+                    </div>
+                    <div class="image-description">Рост рынка, статистика, графики</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printing market growth"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printing+market+growth&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=3d+printing+statistics" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/growth+chart/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Технологии (9-12) -->
+            <div class="section">
+                <h2 class="section-title">⚙️ Технологии: FDM, SLA, SLS (слайды 9-12)</h2>
+                
+                <div class="image-item" data-index="8">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img8">
+                        <div class="image-number">9</div>
+                        <label for="img8" class="image-filename">fdm-filament.jpg</label>
+                    </div>
+                    <div class="image-description">FDM пластиковая нить, экструдер</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "FDM filament"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=FDM+filament&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=3d+printer+filament" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/filament/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="9">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img9">
+                        <div class="image-number">10</div>
+                        <label for="img9" class="image-filename">sla-resin.jpg</label>
+                    </div>
+                    <div class="image-description">SLA смола, ультрафиолетовая печать</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "SLA resin 3d printing"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=SLA+resin+3d+printing&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=SLA+resin" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/resin+printer/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="10">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img10">
+                        <div class="image-number">11</div>
+                        <label for="img10" class="image-filename">sls-metal.jpg</label>
+                    </div>
+                    <div class="image-description">SLS металл, порошковая печать</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "SLS metal printing"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=SLS+metal+printing&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=metal+3d+printing" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/metal+3d+printing/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="11">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img11">
+                        <div class="image-number">12</div>
+                        <label for="img11" class="image-filename">methods-comparison.jpg</label>
+                    </div>
+                    <div class="image-description">Сравнение методов, таблица</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printing methods comparison"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printing+methods+comparison&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=3d+printing+technologies" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/comparison+table/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Материалы (13-16) -->
+            <div class="section">
+                <h2 class="section-title">🧪 Материалы (слайды 13-16)</h2>
+                
+                <div class="image-item" data-index="12">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img12">
+                        <div class="image-number">13</div>
+                        <label for="img12" class="image-filename">pla-plastic.jpg</label>
+                    </div>
+                    <div class="image-description">PLA пластик, экологичный материал</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "PLA plastic"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=PLA+plastic&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=PLA+biodegradable" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/PLA+plastic/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="13">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img13">
+                        <div class="image-number">14</div>
+                        <label for="img13" class="image-filename">abs-strong.jpg</label>
+                    </div>
+                    <div class="image-description">ABS прочный, термостойкий пластик</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ABS plastic"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=ABS+plastic&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ABS+thermoplastic" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ABS+plastic/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="14">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img14">
+                        <div class="image-number">15</div>
+                        <label for="img14" class="image-filename">metal-titanium.jpg</label>
+                    </div>
+                    <div class="image-description">Металлы титан, металлическая печать</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "titanium 3d printing"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=titanium+3d+printing&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=titanium+powder" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/titanium/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="15">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img15">
+                        <div class="image-number">16</div>
+                        <label for="img15" class="image-filename">bio-materials.jpg</label>
+                    </div>
+                    <div class="image-description">Биоматериалы, биопечать, клетки</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "bioprinting materials"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=bioprinting+materials&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=bioprinting" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/bioink/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Игрушки (17-20) -->
+            <div class="section">
+                <h2 class="section-title">🎮 Игрушки и прототипы (слайды 17-20)</h2>
+                
+                <div class="image-item" data-index="16">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img16">
+                        <div class="image-number">17</div>
+                        <label for="img16" class="image-filename">toys-personalization.jpg</label>
+                    </div>
+                    <div class="image-description">Игрушки персонализация, уникальные фигурки</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printed toys"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printed+toys&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=3d+printed+toys" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/3d+printed+toys/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="17">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img17">
+                        <div class="image-number">18</div>
+                        <label for="img17" class="image-filename">prototypes-testing.jpg</label>
+                    </div>
+                    <div class="image-description">Прототипы тестирование, проверка формы</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printing prototypes"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printing+prototypes&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=rapid+prototyping" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/prototype+testing/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="18">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img18">
+                        <div class="image-number">19</div>
+                        <label for="img18" class="image-filename">small-batches.jpg</label>
+                    </div>
+                    <div class="image-description">Малые партии, единичное производство</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "small batch production"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=small+batch+production&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=on+demand+manufacturing" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/small+batch/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="19">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img19">
+                        <div class="image-number">20</div>
+                        <label for="img19" class="image-filename">customization.jpg</label>
+                    </div>
+                    <div class="image-description">Кастомизация, индивидуальные изделия</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printing customization"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printing+customization&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=custom+3d+printing" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/personalized+products/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Промышленность (21-24) -->
+            <div class="section">
+                <h2 class="section-title">🏭 Промышленность (слайды 21-24)</h2>
+                
+                <div class="image-item" data-index="20">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img20">
+                        <div class="image-number">21</div>
+                        <label for="img20" class="image-filename">aerospace-lightweight.jpg</label>
+                    </div>
+                    <div class="image-description">Аэрокосмос легкие детали, самолеты</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "aerospace 3d printing"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=aerospace+3d+printing&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=aircraft+3d+printing" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/aircraft+parts/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="21">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img21">
+                        <div class="image-number">22</div>
+                        <label for="img21" class="image-filename">cars-customization.jpg</label>
+                    </div>
+                    <div class="image-description">Автомобили кастомизация, запчасти</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "automotive 3d printing"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=automotive+3d+printing&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=car+parts+3d+printing" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/BMW+3d+printing/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="22">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img22">
+                        <div class="image-number">23</div>
+                        <label for="img22" class="image-filename">architecture-models.jpg</label>
+                    </div>
+                    <div class="image-description">Архитектура модели, здания</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "architectural models 3d printing"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=architectural+models+3d+printing&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=building+models" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/architecture+model/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="23">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img23">
+                        <div class="image-number">24</div>
+                        <label for="img23" class="image-filename">tools-on-site.jpg</label>
+                    </div>
+                    <div class="image-description">Инструменты на месте, производство</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printing tools"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printing+tools&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=on+site+manufacturing" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/3d+printing+factory/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Медицина (25-28) -->
+            <div class="section">
+                <h2 class="section-title">🏥 Медицина: протезы и импланты (слайды 25-28)</h2>
+                
+                <div class="image-item" data-index="24">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img24">
+                        <div class="image-number">25</div>
+                        <label for="img24" class="image-filename">prosthetics-accessibility.jpg</label>
+                    </div>
+                    <div class="image-description">Протезы доступность, дешевые протезы</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printed prosthetics"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printed+prosthetics&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=affordable+prosthetics" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/prosthetic+hand/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="25">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img25">
+                        <div class="image-number">26</div>
+                        <label for="img25" class="image-filename">implants-precision.jpg</label>
+                    </div>
+                    <div class="image-description">Импланты точность, медицинские импланты</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printed implants"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printed+implants&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=medical+implants" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/custom+implants/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="26">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img26">
+                        <div class="image-number">27</div>
+                        <label for="img26" class="image-filename">dentistry-crowns.jpg</label>
+                    </div>
+                    <div class="image-description">Стоматология коронки, зубные протезы</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printing dentistry"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printing+dentistry&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=dental+crowns+3d+printing" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/dental+crowns/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="27">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img27">
+                        <div class="image-number">28</div>
+                        <label for="img27" class="image-filename">surgery-planning.jpg</label>
+                    </div>
+                    <div class="image-description">Хирургия планирование, модели органов</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "surgical planning 3d printing"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=surgical+planning+3d+printing&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=3d+printed+organ+models" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/surgery+models/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Биопечать (29-32) -->
+            <div class="section">
+                <h2 class="section-title">🧬 Биопечать: органы (слайды 29-32)</h2>
+                
+                <div class="image-item" data-index="28">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img28">
+                        <div class="image-number">29</div>
+                        <label for="img28" class="image-filename">bioprinting-how.jpg</label>
+                    </div>
+                    <div class="image-description">Биопечать как работает, процесс</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "bioprinting process"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=bioprinting+process&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=3d+bioprinting" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/tissue+engineering/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="29">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img29">
+                        <div class="image-number">30</div>
+                        <label for="img29" class="image-filename">cartilage-reality.jpg</label>
+                    </div>
+                    <div class="image-description">Хрящи реальность, напечатанные хрящи</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printed cartilage"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printed+cartilage&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=bioprinted+cartilage" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/cartilage+tissue/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="30">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img30">
+                        <div class="image-number">31</div>
+                        <label for="img30" class="image-filename">skin-burns.jpg</label>
+                    </div>
+                    <div class="image-description">Кожа ожоги, напечатанная кожа</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printed skin"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printed+skin&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=bioprinted+skin" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/skin+grafts/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="31">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img31">
+                        <div class="image-number">32</div>
+                        <label for="img31" class="image-filename">organs-future.jpg</label>
+                    </div>
+                    <div class="image-description">Органы будущее, исследования</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printed organs"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printed+organs&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=organ+printing" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/future+of+bioprinting/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Экономика (33-36) -->
+            <div class="section">
+                <h2 class="section-title">💰 Экономика и доступность (слайды 33-36)</h2>
+                
+                <div class="image-item" data-index="32">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img32">
+                        <div class="image-number">33</div>
+                        <label for="img32" class="image-filename">printer-costs.jpg</label>
+                    </div>
+                    <div class="image-description">Стоимость принтеров, разные модели</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printer prices"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printer+prices&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=cheap+3d+printer" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/professional+3d+printer/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="33">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img33">
+                        <div class="image-number">34</div>
+                        <label for="img33" class="image-filename">material-savings.jpg</label>
+                    </div>
+                    <div class="image-description">Экономия материалов, отходы</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printing waste"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printing+waste&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=material+efficiency" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/additive+manufacturing+waste/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="34">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img34">
+                        <div class="image-number">35</div>
+                        <label for="img34" class="image-filename">accessibility-masses.jpg</label>
+                    </div>
+                    <div class="image-description">Доступность массам, домашняя печать</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "home 3d printing"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=home+3d+printing&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=accessible+3d+printing" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/consumer+3d+printing/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="35">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img35">
+                        <div class="image-number">36</div>
+                        <label for="img35" class="image-filename">online-markets.jpg</label>
+                    </div>
+                    <div class="image-description">Онлайн рынки, модели для скачивания</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d model marketplace"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+model+marketplace&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=thingiverse" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/3d+printing+marketplace/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Будущее (37-40) -->
+            <div class="section">
+                <h2 class="section-title">🔮 Будущее и этика (слайды 37-40)</h2>
+                
+                <div class="image-item" data-index="36">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img36">
+                        <div class="image-number">37</div>
+                        <label for="img36" class="image-filename">personalized-medicine.jpg</label>
+                    </div>
+                    <div class="image-description">Персонализированная медицина, индивидуальное лечение</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "personalized medicine 3d printing"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=personalized+medicine+3d+printing&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=custom+medical+devices" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/patient+specific/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="37">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img37">
+                        <div class="image-number">38</div>
+                        <label for="img37" class="image-filename">ethics-copyright.jpg</label>
+                    </div>
+                    <div class="image-description">Этика авторское право, пиратство моделей</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printing copyright"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printing+copyright&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=intellectual+property+3d+printing" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/3d+printing+ethics/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="38">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img38">
+                        <div class="image-number">39</div>
+                        <label for="img38" class="image-filename">safety-weapons.jpg</label>
+                    </div>
+                    <div class="image-description">Безопасность оружие, печать оружия</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "3d printed weapons"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=3d+printed+weapons&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=gun+printing" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/3d+printing+safety/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item" data-index="39">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img39">
+                        <div class="image-number">40</div>
+                        <label for="img39" class="image-filename">future-everything.jpg</label>
+                    </div>
+                    <div class="image-description">Будущее все, дома, еда, электроника</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "future 3d printing"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=future+3d+printing&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=3d+printed+houses" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/3d+printed+food/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn reset-btn" onclick="resetProgress()">🔄 Сбросить</button>
+        <button class="action-btn save-btn" onclick="saveProgress()">💾 Сохранить</button>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            updateStats();
+            document.querySelectorAll('.checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const item = this.closest('.image-item');
+                    if (this.checked) {
+                        item.classList.add('checked');
+                    } else {
+                        item.classList.remove('checked');
+                    }
+                    updateStats();
+                    saveProgress();
+                });
+            });
+        });
+
+        function updateStats() {
+            const total = 40;
+            const checked = document.querySelectorAll('.checkbox:checked').length;
+            const remaining = total - checked;
+            const percent = Math.round((checked / total) * 100);
+
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('checkedImages').textContent = checked;
+            document.getElementById('remainingImages').textContent = remaining;
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const progress = Array.from(checkboxes).map(cb => cb.checked);
+            localStorage.setItem('3dPrintingImageProgress', JSON.stringify(progress));
+            showNotification('Прогресс сохранен! ✅');
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('3dPrintingImageProgress');
+            if (saved) {
+                const progress = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checkbox');
+                checkboxes.forEach((cb, index) => {
+                    if (progress[index]) {
+                        cb.checked = true;
+                        cb.closest('.image-item').classList.add('checked');
+                    }
+                });
+            }
+        }
+
+        function resetProgress() {
+            if (confirm('Вы уверены, что хотите сбросить весь прогресс?')) {
+                localStorage.removeItem('3dPrintingImageProgress');
+                document.querySelectorAll('.checkbox').forEach(cb => {
+                    cb.checked = false;
+                    cb.closest('.image-item').classList.remove('checked');
+                });
+                updateStats();
+                showNotification('Прогресс сброшен! 🔄');
+            }
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed; top: 20px; right: 20px;
+                background: #28a745; color: white;
+                padding: 15px 25px; border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                z-index: 10000; animation: slideIn 0.3s ease;
+            `;
+            document.body.appendChild(notification);
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }, 2000);
+        }
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(400px); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(400px); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

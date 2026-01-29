@@ -170,6 +170,32 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  '3d-printing-organs': {
+    de: {
+      title: '3D-Druck: Von Spielzeug bis zu menschlichen Organen',
+      description: 'Schichtweise Drucktechnologie: von einfachen Spielzeugen bis zur Bioprinting von Organen. Anwendung in Medizin, Industrie und Alltag. Ökonomie und Zugänglichkeit der Technologie',
+      category: 'Technologie',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über 3D-Druck!',
+        mainContent: 'Studium der schichtweisen Drucktechnologie: von Geschichte bis Bioprinting von Organen, Anwendung in Medizin und Industrie',
+        interactive: 'Fragen und Abschlussquiz',
+        additional: 'Betrachtung von Bildern und Beispielen des 3D-Drucks',
+        closing: 'Zusammenfassung und Diskussion über die Zukunft der Technologie'
+      }
+    },
+    ru: {
+      title: '3D-печать: от игрушек до человеческих органов',
+      description: 'Технология послойной печати: от простых игрушек до биопечати органов. Применение в медицине, промышленности и повседневной жизни. Экономика и доступность технологии',
+      category: 'Технологии',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о 3D-печати!',
+        mainContent: 'Изучение технологии послойной печати: от истории до биопечати органов, применение в медицине и промышленности',
+        interactive: 'Вопросы и итоговая викторина',
+        additional: 'Просмотр изображений и примеров 3D-печати',
+        closing: 'Подведение итогов и обсуждение будущего технологии'
+      }
+    }
+  },
   'google-earth': {
     de: {
       title: 'Google Earth: Unsere Erde aus dem All',

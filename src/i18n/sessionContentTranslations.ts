@@ -1,4 +1,4 @@
-мшimport { Language } from './translations'
+import { Language } from './translations'
 import { Session, Slide, QuizBlock } from '../types/session'
 
 // Deutsche Übersetzungen (B2-Niveau) für die Turnier-Session

@@ -5997,7 +5997,10 @@ const sessionsData: Session[] = [
         title: 'Биопечать: как это работает',
         content: 'Биопринтер печатает живые клетки слой за слоем. Клетки в геле (гидрогель) — питательная среда. Слой клеток = 0.1-0.5 мм. Орган = 100-1,000 слоев. После печати клетки растут и формируют ткань. Время роста: 2-4 недели. Пока печатают хрящи, кожу, сосуды. Полные органы (сердце, почка) — в разработке, первые испытания на животных.',
         duration: 3,
-        media: [{ type: 'image', url: '/media/3d-printing-organs/bioprinting-how.jpg', title: 'Биопечать как работает' }]
+        media: [
+          { type: 'image', url: '/media/3d-printing-organs/bioprinting-how.jpg', title: 'Биопечать как работает' },
+          { type: 'video', url: 'https://www.youtube.com/watch?v=ZZ8DWdxLrGQ', title: 'FÄKT: Органы из 3D-принтера (Инсбрук)' }
+        ]
       },
       {
         id: 'p30',
@@ -6140,7 +6143,10 @@ const sessionsData: Session[] = [
         title: 'Будущее: печать всего?',
         content: 'Сейчас печатают: пластик, металл, керамику, живые клетки. В разработке: еда (мясо из клеток), дома (бетонная печать), электроника (схемы). Дом на 3D-принтере: 50,000 евро вместо 200,000 евро. Время: 1-2 недели вместо 3-6 месяцев. Еда из принтера: пока дорого (100+ евро за порцию), но будущее. 3D-печать меняет все.',
         duration: 3,
-        media: [{ type: 'image', url: '/media/3d-printing-organs/future-everything.jpg', title: 'Будущее все' }]
+        media: [
+          { type: 'image', url: '/media/3d-printing-organs/future-everything.jpg', title: 'Будущее все' },
+          { type: 'video', url: 'https://www.youtube.com/watch?v=5OPWah7ebds', title: 'Будущее 3D-печати' }
+        ]
       },
       {
         id: 'q10',

@@ -1,5 +1,6 @@
 import { Language } from './translations'
 import { Session, Slide, QuizBlock } from '../types/session'
+import { romeInsulaeSlidesDE, romeInsulaeFinalQuizDE } from './rome-insulae-content-de'
 
 // Deutsche Übersetzungen (B2-Niveau) für die Turnier-Session
 const ritterturniereSlidesDE: Slide[] = [
@@ -3051,6 +3052,13 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
     return {
       slides: threeDPrintingSlidesDE,
       quiz: threeDPrintingFinalQuizDE
+    }
+  }
+  
+  if (sessionId === 'rome-insulae' && language === 'de') {
+    return {
+      slides: romeInsulaeSlidesDE,
+      quiz: romeInsulaeFinalQuizDE
     }
   }
   

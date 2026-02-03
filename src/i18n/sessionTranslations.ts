@@ -196,6 +196,32 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'rome-insulae': {
+    de: {
+      title: 'Alltag in Rom: Insulae und Armut',
+      description: 'Die Realität der römischen Stadt: Mietskasernen, Elend, soziale Ungleichheit — was Filme nicht zeigen',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über den Alltag im alten Rom!',
+        mainContent: 'Wir betrachten das Leben in den Insulae, die Armut der Plebejer und das soziale Gefälle',
+        interactive: 'Fragen und Abschlussquiz',
+        additional: 'Bilder von Insulae, Alltagsszenen und Überresten',
+        closing: 'Zusammenfassung und Bezug zur heutigen Stadtarmut'
+      }
+    },
+    ru: {
+      title: 'Повседневная жизнь в Риме: инсулы и нищета',
+      description: 'Реальность римского города: доходные трущобы, нищета, социальное неравенство — то, о чём молчат фильмы',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о повседневной жизни в Древнем Риме!',
+        mainContent: 'Изучаем жизнь в инсулах, нищету плебса и социальный разрыв',
+        interactive: 'Вопросы и итоговая викторина',
+        additional: 'Изображения инсул, бытовых сцен и сохранившихся остатков',
+        closing: 'Подведение итогов и связь с современной городской бедностью'
+      }
+    }
+  },
   'google-earth': {
     de: {
       title: 'Google Earth: Unsere Erde aus dem All',

@@ -2,6 +2,7 @@ import { Session } from '../types/session'
 import { getTranslatedSession } from '../i18n/sessionTranslations'
 import { getTranslatedSessionContent } from '../i18n/sessionContentTranslations'
 import { Language } from '../i18n/translations'
+import { romeInsulaeSessionRU } from './rome-insulae-session'
 
 // Примеры занятий - здесь будут храниться все занятия
 const sessionsData: Session[] = [
@@ -6223,6 +6224,7 @@ const sessionsData: Session[] = [
       difficulty: 'medium'
     }
   },
+  romeInsulaeSessionRU,
   {
     id: 'google-earth',
     title: 'Google Earth: наша планета из космоса',

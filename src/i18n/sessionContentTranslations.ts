@@ -1,6 +1,7 @@
 import { Language } from './translations'
 import { Session, Slide, QuizBlock } from '../types/session'
 import { romeInsulaeSlidesDE, romeInsulaeFinalQuizDE } from './rome-insulae-content-de'
+import { philosophyAthensSlidesDE, philosophyAthensFinalQuizDE } from './philosophy-athens-content-de'
 
 // Deutsche Übersetzungen (B2-Niveau) für die Turnier-Session
 const ritterturniereSlidesDE: Slide[] = [
@@ -3059,6 +3060,13 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
     return {
       slides: romeInsulaeSlidesDE,
       quiz: romeInsulaeFinalQuizDE
+    }
+  }
+  
+  if (sessionId === 'philosophy-athens' && language === 'de') {
+    return {
+      slides: philosophyAthensSlidesDE,
+      quiz: philosophyAthensFinalQuizDE
     }
   }
   

@@ -196,6 +196,32 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'philosophy-athens': {
+    de: {
+      title: 'Philosophie als Geschäft: Die Schulen Athens',
+      description: 'Die philosophischen Schulen Athens: wirtschaftliche Seite der Bildung, Konkurrenz, Honorare und interessante Momente aus dem Leben antiker Weiser',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über die philosophischen Schulen Athens!',
+        mainContent: 'Wir betrachten die wirtschaftliche Seite der antiken Philosophie, die Konkurrenz der Schulen und lebendige Geschichten',
+        interactive: 'Fragen und Abschlussquiz',
+        additional: 'Bilder von Schulen, Philosophen und antiken Szenen',
+        closing: 'Zusammenfassung'
+      }
+    },
+    ru: {
+      title: 'Философия как бизнес: школы Афин',
+      description: 'Философские школы Афин: экономическая сторона образования, конкуренция, гонорары и интересные моменты из жизни античных мудрецов',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о философских школах Афин!',
+        mainContent: 'Изучаем экономическую сторону античной философии, конкуренцию школ и живые истории',
+        interactive: 'Вопросы и итоговая викторина',
+        additional: 'Изображения школ, философов и античных сцен',
+        closing: 'Подведение итогов'
+      }
+    }
+  },
   'rome-insulae': {
     de: {
       title: 'Alltag in Rom: Insulae und Armut',

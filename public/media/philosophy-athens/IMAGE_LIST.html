@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список изображений: Философия как бизнес — школы Афин</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6fa5 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6fa5 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2em; font-weight: bold; color: #2c3e50; }
+        .stat-label { color: #6c757d; margin-top: 5px; }
+        .instructions {
+            padding: 30px 40px;
+            background: #e8f4fc;
+            border-left: 5px solid #4a6fa5;
+            margin: 20px 40px;
+        }
+        .instructions h2 { color: #2c3e50; margin-bottom: 15px; }
+        .instructions ul { list-style-position: inside; color: #2c3e50; }
+        .instructions li { margin: 8px 0; }
+        .content { padding: 20px 40px 40px; }
+        .section { margin-bottom: 40px; }
+        .section-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #4a6fa5;
+        }
+        .image-item {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        .image-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        .image-item.checked { background: #d4edda; border-color: #28a745; }
+        .image-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .checkbox { width: 24px; height: 24px; margin-right: 15px; cursor: pointer; }
+        .image-number {
+            background: #2c3e50;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .image-filename {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #212529;
+            flex: 1;
+        }
+        .image-description {
+            color: #495057;
+            margin-bottom: 10px;
+            margin-left: 74px;
+        }
+        .search-terms {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-left: 74px;
+            border: 1px solid #dee2e6;
+        }
+        .search-terms strong { color: #2c3e50; }
+        .search-links { margin-left: 74px; margin-top: 10px; }
+        .search-link {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #4a6fa5;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            margin-top: 5px;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+        .search-link:hover { background: #2c3e50; }
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: #e9ecef;
+            z-index: 1000;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4a6fa5, #2c3e50);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .action-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+        }
+        .action-btn {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .reset-btn { background: #dc3545; color: white; }
+        .reset-btn:hover { background: #c82333; transform: scale(1.05); }
+        .save-btn { background: #28a745; color: white; }
+        .save-btn:hover { background: #218838; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>🏛️ Философия как бизнес: школы Афин</h1>
+            <p>Список необходимых изображений для темы</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalImages">35</div>
+                <div class="stat-label">Всего изображений</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="checkedImages">0</div>
+                <div class="stat-label">Загружено</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="remainingImages">35</div>
+                <div class="stat-label">Осталось</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="progressPercent">0%</div>
+                <div class="stat-label">Прогресс</div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Инструкции по поиску изображений</h2>
+            <ul>
+                <li><strong>Формат:</strong> JPG или PNG</li>
+                <li><strong>Разрешение:</strong> минимум 1200x800 px</li>
+                <li><strong>Лицензия:</strong> свободная (Public Domain, Creative Commons)</li>
+                <li><strong>Источники:</strong> Wikimedia Commons, Pixabay, Unsplash, Pexels</li>
+                <li><strong>Размер файла:</strong> не более 500 KB</li>
+                <li><strong>Примечание:</strong> Слайды с подзаголовком «Юмор» (p8, p12, p16, p20, p32) — без изображений</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">🏛️ Школы и философы (слайды 1–7)</h2>
+                <div class="image-item" data-index="0">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img0">
+                        <div class="image-number">1</div>
+                        <label for="img0" class="image-filename">athens-schools.jpg</label>
+                    </div>
+                    <div class="image-description">Философские школы Афин — Академия, Ликей, Стоя; «Школа Афин» Рафаэля или античная агора</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "School of Athens Raphael", "ancient Athens agora", "philosophical schools Athens"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=School+of+Athens+Raphael&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=School+of+Athens" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+athens/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="1">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img1">
+                        <div class="image-number">2</div>
+                        <label for="img1" class="image-filename">socrates.jpg</label>
+                    </div>
+                    <div class="image-description">Сократ — бюст, скульптура или картина; философ на агоре</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Socrates bust", "Socrates ancient Greece", "Socrates statue"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Socrates+bust+ancient&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Socrates" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/socrates/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="2">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img2">
+                        <div class="image-number">3</div>
+                        <label for="img2" class="image-filename">sophists.jpg</label>
+                    </div>
+                    <div class="image-description">Софисты — Протагор, Горгий; оратор перед слушателями, античная риторика</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Protagoras", "ancient Greek orator", "sophists Greece"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Protagoras+ancient+Greece&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Protagoras" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+orator/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="3">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img3">
+                        <div class="image-number">4</div>
+                        <label for="img3" class="image-filename">academy.jpg</label>
+                    </div>
+                    <div class="image-description">Академия Платона — роща, античная школа, сад с колоннами</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Plato Academy Athens", "Academy grove ancient", "Plato school"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Plato+Academy+Athens&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Plato+Academy" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+academy/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="4">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img4">
+                        <div class="image-number">5</div>
+                        <label for="img4" class="image-filename">lyceum.jpg</label>
+                    </div>
+                    <div class="image-description">Ликей Аристотеля — перипатетики, прогулка философов, храм Аполлона Ликейского</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Aristotle Lyceum", "peripatetic school", "Lyceum Athens"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Aristotle+Lyceum+Athens&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Aristotle+Lyceum" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/aristotle/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="5">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img5">
+                        <div class="image-number">6</div>
+                        <label for="img5" class="image-filename">stoa.jpg</label>
+                    </div>
+                    <div class="image-description">Стоа Пойкиле (Расписная стоя) — портик на агоре, стоики</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stoa Poikile", "ancient Athens stoa", "Greek stoa agora"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stoa+Poikile+Athens&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stoa+Poikile" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+stoa/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="6">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img6">
+                        <div class="image-number">7</div>
+                        <label for="img6" class="image-filename">competition.jpg</label>
+                    </div>
+                    <div class="image-description">Конкуренция школ — философы в споре, дискуссия, агора с ораторами</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient Greek philosophers debate", "agora discussion", "philosophical debate ancient"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=ancient+Greek+philosophers+debate&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+philosophers+debate" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/philosophy+debate/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">💰 Гонорары и ученики (слайды 9–11)</h2>
+                <div class="image-item" data-index="7">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img7">
+                        <div class="image-number">8</div>
+                        <label for="img7" class="image-filename">fees.jpg</label>
+                    </div>
+                    <div class="image-description">Гонорары — древнегреческие монеты, плата за обучение</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient Greek coins", "Greek drachma", "ancient money education"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=ancient+Greek+coins+drachma&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+Greek+coins" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+coins/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="8">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img8">
+                        <div class="image-number">9</div>
+                        <label for="img8" class="image-filename">students.jpg</label>
+                    </div>
+                    <div class="image-description">Ученики философов — молодые греки, слушатели лекции</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient Greek students", "philosophy students Greece", "Greek youth learning"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=ancient+Greek+students+philosophy&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+Greek+students" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+students/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="9">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img9">
+                        <div class="image-number">10</div>
+                        <label for="img9" class="image-filename">protagoras.jpg</label>
+                    </div>
+                    <div class="image-description">Протагор — софист, оратор, учитель риторики</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Protagoras sophist", "Protagoras bust", "Protagoras portrait"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Protagoras+sophist&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Protagoras" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/protagoras/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">⚔️ Политика и дворы (слайды 13–15)</h2>
+                <div class="image-item" data-index="10">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img10">
+                        <div class="image-number">11</div>
+                        <label for="img10" class="image-filename">politics.jpg</label>
+                    </div>
+                    <div class="image-description">Философия и политика — Алкивиад, народное собрание, оратор</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient Athens assembly", "Greek orator", "Alcibiades"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=ancient+Athens+assembly&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Athens+assembly" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+assembly/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="11">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img11">
+                        <div class="image-number">12</div>
+                        <label for="img11" class="image-filename">exile.jpg</label>
+                    </div>
+                    <div class="image-description">Изгнание философов — Анаксагор, бегство, корабль</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient Greek exile", "philosopher exile", "Anaxagoras"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=ancient+Greek+philosopher+exile&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Anaxagoras" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/exile+ancient/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="12">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img12">
+                        <div class="image-number">13</div>
+                        <label for="img12" class="image-filename">court.jpg</label>
+                    </div>
+                    <div class="image-description">Философы при дворах — Платон в Сиракузах, Аристотель и Александр</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Aristotle Alexander", "Plato Syracuse", "philosopher at court"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Aristotle+Alexander+the+Great&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Aristotle+Alexander" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/alexander+aristotle/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">👩‍🏫 Женщины, библиотеки, конец (слайды 17–19)</h2>
+                <div class="image-item" data-index="13">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img13">
+                        <div class="image-number">14</div>
+                        <label for="img13" class="image-filename">women.jpg</label>
+                    </div>
+                    <div class="image-description">Женщины-философы — Гипатия, пифагорейки</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Hypatia", "Hypatia Alexandria", "ancient woman philosopher"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Hypatia+Alexandria&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Hypatia" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/hypatia/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="14">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img14">
+                        <div class="image-number">15</div>
+                        <label for="img14" class="image-filename">library.jpg</label>
+                    </div>
+                    <div class="image-description">Библиотека — античные свитки, Александрийская библиотека</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient library", "Alexandria library", "ancient scrolls"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Alexandria+library+ancient&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Alexandria+library" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+library/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="15">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img15">
+                        <div class="image-number">16</div>
+                        <label for="img15" class="image-filename">justinian.jpg</label>
+                    </div>
+                    <div class="image-description">Юстиниан — император, закрытие Академии в 529 году</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Justinian mosaic", "Emperor Justinian", "Byzantine emperor"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Justinian+mosaic+Ravenna&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Justinian+mosaic" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/justinian/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">📚 Лекции, меценатство, споры (слайды 21–24)</h2>
+                <div class="image-item" data-index="16">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img16">
+                        <div class="image-number">17</div>
+                        <label for="img16" class="image-filename">lecture.jpg</label>
+                    </div>
+                    <div class="image-description">Публичная лекция — философ перед слушателями</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient Greek lecture", "philosopher teaching", "Greek teacher students"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=ancient+Greek+philosopher+lecture&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+philosopher+teaching" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/philosophy+lecture/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="17">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img17">
+                        <div class="image-number">18</div>
+                        <label for="img17" class="image-filename">patronage.jpg</label>
+                    </div>
+                    <div class="image-description">Меценатство — дарение земли, богатый покровитель</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient patron", "Greek patronage", "Dion Syracuse"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=ancient+Greek+patronage&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+patronage" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/patron+ancient/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="18">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img18">
+                        <div class="image-number">19</div>
+                        <label for="img18" class="image-filename">debate.jpg</label>
+                    </div>
+                    <div class="image-description">Спор о «продажности» — Платон и софисты в диалоге</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Plato sophists", "philosophical debate", "Socrates sophists"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Plato+sophists+debate&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Plato+sophists" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/plato+debate/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="19">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img19">
+                        <div class="image-number">20</div>
+                        <label for="img19" class="image-filename">epicurus-garden.jpg</label>
+                    </div>
+                    <div class="image-description">Сад Эпикура — сад философа, эпикурейцы</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Epicurus garden", "Epicurean school", "Epicurus Athens"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Epicurus+garden+Athens&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Epicurus" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/epicurus/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🏺 Зенон, Пифагор, риторика (слайды 25–28)</h2>
+                <div class="image-item" data-index="20">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img20">
+                        <div class="image-number">21</div>
+                        <label for="img20" class="image-filename">zeno.jpg</label>
+                    </div>
+                    <div class="image-description">Зенон из Кития — основатель стоицизма</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Zeno of Citium", "Zeno Stoic", "Zeno philosopher"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Zeno+of+Citium+Stoic&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Zeno+of+Citium" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/zeno+stoic/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="21">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img21">
+                        <div class="image-number">22</div>
+                        <label for="img21" class="image-filename">pythagoras.jpg</label>
+                    </div>
+                    <div class="image-description">Пифагор — математик, основатель общины</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Pythagoras", "Pythagoras bust", "Pythagorean school"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Pythagoras+ancient+Greece&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Pythagoras" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/pythagoras/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="22">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img22">
+                        <div class="image-number">23</div>
+                        <label for="img22" class="image-filename">rhetoric.jpg</label>
+                    </div>
+                    <div class="image-description">Риторика — оратор в суде или на народном собрании</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient Greek orator", "Greek court speech", "rhetoric ancient"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=ancient+Greek+orator+court&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Greek+orator" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/orator+ancient/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="23">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img23">
+                        <div class="image-number">24</div>
+                        <label for="img23" class="image-filename">plato-sophists.jpg</label>
+                    </div>
+                    <div class="image-description">Платон и софисты — диалог, критика</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Plato Gorgias", "Plato Protagoras", "Plato dialogue"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Plato+Gorgias+dialogue&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Plato+Gorgias" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/plato+dialogue/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🌍 Афины, слава, наследие (слайды 29–31)</h2>
+                <div class="image-item" data-index="24">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img24">
+                        <div class="image-number">25</div>
+                        <label for="img24" class="image-filename">athens-center.jpg</label>
+                    </div>
+                    <div class="image-description">Афины — центр притяжения, агора, Акрополь</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient Athens agora", "Athens Acropolis", "classical Athens"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=ancient+Athens+agora&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Athens+agora" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/athens+ancient/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="25">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img25">
+                        <div class="image-number">26</div>
+                        <label for="img25" class="image-filename">celebrity.jpg</label>
+                    </div>
+                    <div class="image-description">Философ-знаменитость — философ и правитель</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "philosopher king", "ancient philosopher famous", "Greek philosopher portrait"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=philosopher+king+ancient&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=philosopher+portrait+ancient" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/philosopher+portrait/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="26">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img26">
+                        <div class="image-number">27</div>
+                        <label for="img26" class="image-filename">manuscripts.jpg</label>
+                    </div>
+                    <div class="image-description">Рукописи — античные свитки, переписывание текстов</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient manuscript", "Greek papyrus", "philosophy manuscript"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=ancient+Greek+manuscript+philosophy&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+Greek+manuscript" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+manuscript/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">📖 Скептики, Рим, образ жизни (слайды 33–36)</h2>
+                <div class="image-item" data-index="27">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img27">
+                        <div class="image-number">28</div>
+                        <label for="img27" class="image-filename">skeptics.jpg</label>
+                    </div>
+                    <div class="image-description">Скептики — Карнеад, Академия</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Carneades", "skeptic philosopher", "Academic skepticism"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Carneades+philosopher&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Carneades" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/skeptic+philosopher/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="28">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img28">
+                        <div class="image-number">29</div>
+                        <label for="img28" class="image-filename">cicero.jpg</label>
+                    </div>
+                    <div class="image-description">Цицерон — римский оратор, переводчик греческой философии</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Cicero bust", "Cicero Roman", "Cicero philosopher"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Cicero+bust+Roman&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Cicero" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/cicero/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="29">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img29">
+                        <div class="image-number">30</div>
+                        <label for="img29" class="image-filename">way-of-life.jpg</label>
+                    </div>
+                    <div class="image-description">Школа как образ жизни — киники, стоики, эпикурейцы</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Diogenes barrel", "Stoic philosopher", "philosophy way of life"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Diogenes+barrel+philosopher&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Diogenes+barrel" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/diogenes/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="30">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img30">
+                        <div class="image-number">31</div>
+                        <label for="img30" class="image-filename">balance.jpg</label>
+                    </div>
+                    <div class="image-description">Баланс идеала и реальности — философия и практика</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "philosophy practice", "ancient wisdom", "balance virtue"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=philosophy+practice+ancient&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=philosophy+virtue" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/philosophy+balance/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">🎓 Итог (слайды 37–40)</h2>
+                <div class="image-item" data-index="31">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img31">
+                        <div class="image-number">32</div>
+                        <label for="img31" class="image-filename">teacher-student.jpg</label>
+                    </div>
+                    <div class="image-description">Учитель и ученик — Аристотель и Александр, Платон и Аристотель</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Aristotle teaching", "Plato Aristotle", "teacher student ancient"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Aristotle+teaching+Alexander&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Aristotle+teaching" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/teacher+student+ancient/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="32">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img32">
+                        <div class="image-number">33</div>
+                        <label for="img32" class="image-filename">virtue.jpg</label>
+                    </div>
+                    <div class="image-description">Добродетель — Сократ, этика, «можно ли научить добродетели»</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Socrates virtue", "ancient ethics", "Greek virtue"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Socrates+virtue+ethics&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Socrates+virtue" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/virtue+ancient/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="33">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img33">
+                        <div class="image-number">34</div>
+                        <label for="img33" class="image-filename">modern.jpg</label>
+                    </div>
+                    <div class="image-description">Философия сегодня — университет, лекция, современное образование</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "philosophy university", "modern philosophy lecture", "university classroom"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=philosophy+university+lecture&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=philosophy+university" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/philosophy+university/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="34">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img34">
+                        <div class="image-number">35</div>
+                        <label for="img34" class="image-filename">summary.jpg</label>
+                    </div>
+                    <div class="image-description">Итог — многогранная картина, школы Афин</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "School of Athens", "ancient philosophy summary", "Greek schools"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=School+of+Athens+Raphael&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=School+of+Athens" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+philosophy/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn reset-btn" onclick="resetProgress()">🔄 Сбросить</button>
+        <button class="action-btn save-btn" onclick="saveProgress()">💾 Сохранить</button>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            updateStats();
+            document.querySelectorAll('.checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const item = this.closest('.image-item');
+                    if (this.checked) {
+                        item.classList.add('checked');
+                    } else {
+                        item.classList.remove('checked');
+                    }
+                    updateStats();
+                    saveProgress();
+                });
+            });
+        });
+
+        function updateStats() {
+            const total = 35;
+            const checked = document.querySelectorAll('.checkbox:checked').length;
+            const remaining = total - checked;
+            const percent = Math.round((checked / total) * 100);
+
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('checkedImages').textContent = checked;
+            document.getElementById('remainingImages').textContent = remaining;
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const progress = Array.from(checkboxes).map(cb => cb.checked);
+            localStorage.setItem('philosophyAthensImageProgress', JSON.stringify(progress));
+            showNotification('Прогресс сохранен! ✅');
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('philosophyAthensImageProgress');
+            if (saved) {
+                const progress = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checkbox');
+                checkboxes.forEach((cb, index) => {
+                    if (progress[index]) {
+                        cb.checked = true;
+                        cb.closest('.image-item').classList.add('checked');
+                    }
+                });
+            }
+        }
+
+        function resetProgress() {
+            if (confirm('Вы уверены, что хотите сбросить весь прогресс?')) {
+                localStorage.removeItem('philosophyAthensImageProgress');
+                document.querySelectorAll('.checkbox').forEach(cb => {
+                    cb.checked = false;
+                    cb.closest('.image-item').classList.remove('checked');
+                });
+                updateStats();
+                showNotification('Прогресс сброшен! 🔄');
+            }
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed; top: 20px; right: 20px;
+                background: #28a745; color: white;
+                padding: 15px 25px; border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                z-index: 10000; animation: slideIn 0.3s ease;
+            `;
+            document.body.appendChild(notification);
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }, 2000);
+        }
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(400px); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(400px); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

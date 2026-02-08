@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список изображений: Стоунхендж — астрономия и власть</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2d5a27 0%, #1a3d16 50%, #0d1f0a 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #2d5a27 0%, #1a3d16 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2em; font-weight: bold; color: #1a3d16; }
+        .stat-label { color: #6c757d; margin-top: 5px; }
+        .instructions {
+            padding: 30px 40px;
+            background: #e8f5e9;
+            border-left: 5px solid #2d5a27;
+            margin: 20px 40px;
+        }
+        .instructions h2 { color: #1a3d16; margin-bottom: 15px; }
+        .instructions ul { list-style-position: inside; color: #1a3d16; }
+        .instructions li { margin: 8px 0; }
+        .content { padding: 20px 40px 40px; }
+        .section { margin-bottom: 40px; }
+        .section-title {
+            font-size: 1.8em;
+            color: #1a3d16;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #2d5a27;
+        }
+        .image-item {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        .image-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        .image-item.checked { background: #d4edda; border-color: #28a745; }
+        .image-header { display: flex; align-items: center; margin-bottom: 10px; }
+        .checkbox { width: 24px; height: 24px; margin-right: 15px; cursor: pointer; }
+        .image-number {
+            background: #1a3d16;
+            color: white;
+            width: 35px; height: 35px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; margin-right: 15px;
+        }
+        .image-filename { font-size: 1.2em; font-weight: bold; color: #212529; flex: 1; }
+        .image-description { color: #495057; margin-bottom: 10px; margin-left: 74px; }
+        .search-terms {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-left: 74px;
+            border: 1px solid #dee2e6;
+        }
+        .search-terms strong { color: #1a3d16; }
+        .search-links { margin-left: 74px; margin-top: 10px; }
+        .search-link {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #1a3d16;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px; margin-top: 5px;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+        .search-link:hover { background: #0d1f0a; }
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: #e9ecef;
+            z-index: 1000;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2d5a27, #1a3d16);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .action-buttons {
+            position: fixed;
+            bottom: 30px; right: 30px;
+            display: flex; gap: 10px;
+        }
+        .action-btn {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .reset-btn { background: #dc3545; color: white; }
+        .reset-btn:hover { background: #c82333; transform: scale(1.05); }
+        .save-btn { background: #28a745; color: white; }
+        .save-btn:hover { background: #218838; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>🪨 Стоунхендж: астрономия и власть</h1>
+            <p>Список изображений для поиска в Google, Wikimedia, Pixabay</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalImages">35</div>
+                <div class="stat-label">Всего изображений</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="checkedImages">0</div>
+                <div class="stat-label">Загружено</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="remainingImages">35</div>
+                <div class="stat-label">Осталось</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="progressPercent">0%</div>
+                <div class="stat-label">Прогресс</div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Инструкции</h2>
+            <ul>
+                <li><strong>Формат:</strong> JPG или PNG, минимум 1200×800 px</li>
+                <li><strong>Лицензия:</strong> Public Domain, Creative Commons</li>
+                <li><strong>Источники:</strong> Google Images, Wikimedia Commons, Pixabay</li>
+                <li><strong>Слайды s5, s12, s19, s24, s32 (Юмор)</strong> — без изображений</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Введение и астрономия (s1–s4)</h2>
+                <div class="image-item" data-index="0">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img0">
+                        <div class="image-number">1</div>
+                        <label for="img0" class="image-filename">stonehenge-main.jpg</label>
+                    </div>
+                    <div class="image-description">Стоунхендж — общий вид, панорама, аэрофото</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge aerial", "Stonehenge view", "Stonehenge panorama"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+aerial+view&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stonehenge" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/stonehenge/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="1">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img1">
+                        <div class="image-number">2</div>
+                        <label for="img1" class="image-filename">solstice.jpg</label>
+                    </div>
+                    <div class="image-description">Солнцестояние, восход солнца в Стоунхендже, летнее солнцестояние</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge solstice sunrise", "summer solstice Stonehenge", "Stonehenge sun alignment"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+solstice+sunrise&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stonehenge+solstice" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/solstice/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="2">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img2">
+                        <div class="image-number">3</div>
+                        <label for="img2" class="image-filename">phases.jpg</label>
+                    </div>
+                    <div class="image-description">Фазы строительства Стоунхенджа, реконструкция, схемы</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge phases construction", "Stonehenge reconstruction", "Stonehenge building stages"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+construction+phases&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stonehenge+phases" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/stonehenge+construction/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="3">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img3">
+                        <div class="image-number">4</div>
+                        <label for="img3" class="image-filename">sarsens.jpg</label>
+                    </div>
+                    <div class="image-description">Сарсены — гигантские песчаники, внешний круг</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge sarsen stones", "sarsen stones", "Stonehenge megaliths"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+sarsen+stones&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=sarsen+stones" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/megalith/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Блаустоуны, транспорт, власть (s6–s11)</h2>
+                <div class="image-item" data-index="4">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img4">
+                        <div class="image-number">5</div>
+                        <label for="img4" class="image-filename">bluestones.jpg</label>
+                    </div>
+                    <div class="image-description">Блаустоуны, голубые камни, Preseli</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge bluestones", "Preseli bluestones", "Stonehenge inner circle"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+bluestones&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stonehenge+bluestones" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/stonehenge/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="5">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img5">
+                        <div class="image-number">6</div>
+                        <label for="img5" class="image-filename">transport.jpg</label>
+                    </div>
+                    <div class="image-description">Транспорт камней, катки, неолитическая логистика</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge stone transport", "neolithic stone moving", "ancient megalith transport"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+stone+transport+experiment&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=neolithic+stone+transport" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+construction/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="6">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img6">
+                        <div class="image-number">7</div>
+                        <label for="img6" class="image-filename">power.jpg</label>
+                    </div>
+                    <div class="image-description">Власть, жрецы, вожди неолита, социальная организация</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "neolithic chief", "ancient priest", "megalith builders"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=neolithic+chief+ancient&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=neolithic+ society" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+people/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="7">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img7">
+                        <div class="image-number">8</div>
+                        <label for="img7" class="image-filename">moon.jpg</label>
+                    </div>
+                    <div class="image-description">Луна, лунные циклы, затмения</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "full moon", "moon phases", "lunar eclipse"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=full+moon+night&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=full+moon" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/moon/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="8">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img8">
+                        <div class="image-number">9</div>
+                        <label for="img8" class="image-filename">aubrey.jpg</label>
+                    </div>
+                    <div class="image-description">Лунки Обри, Aubrey holes, план Стоунхенджа</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Aubrey holes Stonehenge", "Stonehenge plan", "Stonehenge circles"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Aubrey+holes+Stonehenge&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Aubrey+holes" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/stonehenge/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="9">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img9">
+                        <div class="image-number">10</div>
+                        <label for="img9" class="image-filename">burials.jpg</label>
+                    </div>
+                    <div class="image-description">Погребения, кремация, неолитическое кладбище</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Neolithic burial", "ancient cremation", "stone circle burial"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Neolithic+burial+britain&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Neolithic+burial" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+grave/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Дуррингтон, неолит, сеть (s13–s20)</h2>
+                <div class="image-item" data-index="10">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img10">
+                        <div class="image-number">11</div>
+                        <label for="img10" class="image-filename">durrington.jpg</label>
+                    </div>
+                    <div class="image-description">Дуррингтон-Уоллс, неолитическое поселение, реконструкция</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Durrington Walls", "Neolithic settlement Britain", "Stonehenge builders"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Durrington+Walls&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Durrington+Walls" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/neolithic+village/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="11">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img11">
+                        <div class="image-number">12</div>
+                        <label for="img11" class="image-filename">neolithic.jpg</label>
+                    </div>
+                    <div class="image-description">Неолит, земледелие, оседлость, древние общины</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Neolithic farming", "Neolithic Britain", "ancient agriculture"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Neolithic+farming+Britain&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Neolithic+farming" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+farming/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="12">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img12">
+                        <div class="image-number">13</div>
+                        <label for="img12" class="image-filename">network.jpg</label>
+                    </div>
+                    <div class="image-description">Сеть мегалитов, Эйвбери, Калланиш, Ньюгрейндж</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Avebury stone circle", "Callanish stones", "Newgrange Ireland"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Avebury+stone+circle&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Avebury" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/stone+circle/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="13">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img13">
+                        <div class="image-number">14</div>
+                        <label for="img13" class="image-filename">heel-stone.jpg</label>
+                    </div>
+                    <div class="image-description">Пяточный камень (Heel Stone), ось восхода</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge Heel Stone", "Stonehenge sunrise axis", "Heel Stone"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+Heel+Stone&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Heel+Stone" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/stonehenge/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="14">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img14">
+                        <div class="image-number">15</div>
+                        <label for="img14" class="image-filename">elite.jpg</label>
+                    </div>
+                    <div class="image-description">Элита неолита, вожди, богатые погребения</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Neolithic elite burial", "ancient chieftain", "Neolithic grave goods"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Neolithic+elite+burial&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Neolithic+burial" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+grave/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="15">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img15">
+                        <div class="image-number">16</div>
+                        <label for="img15" class="image-filename">metal.jpg</label>
+                    </div>
+                    <div class="image-description">Бронза, олово, медь — металлы эпохи</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Bronze Age metal", "ancient bronze", "copper tin bronze"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Bronze+Age+metal+Britain&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Bronze+Age+metal" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/bronze+age/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="16">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img16">
+                        <div class="image-number">17</div>
+                        <label for="img16" class="image-filename">abandoned.jpg</label>
+                    </div>
+                    <div class="image-description">Забвение, руины, Стоунхендж в истории</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge ruins", "Stonehenge history", "ancient monument abandoned"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+history+abandoned&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stonehenge+history" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/stonehenge/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Современность, наука, туризм (s21–s31)</h2>
+                <div class="image-item" data-index="17">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img17">
+                        <div class="image-number">18</div>
+                        <label for="img17" class="image-filename">modern-solstice.jpg</label>
+                    </div>
+                    <div class="image-description">Современное солнцестояние, люди, друиды, праздник</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge summer solstice celebration", "druids Stonehenge", "solstice celebration"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+solstice+celebration&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stonehenge+solstice" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/solstice+celebration/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="18">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img18">
+                        <div class="image-number">19</div>
+                        <label for="img18" class="image-filename">archaeoastronomy.jpg</label>
+                    </div>
+                    <div class="image-description">Археоастрономия, небо, древние наблюдения</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "archaeoastronomy", "ancient astronomy", "Stonehenge sky"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=archaeoastronomy+Stonehenge&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=archaeoastronomy" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/night+sky+stars/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="19">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img19">
+                        <div class="image-number">20</div>
+                        <label for="img19" class="image-filename">joinery.jpg</label>
+                    </div>
+                    <div class="image-description">Соединения камней, пружки и пазы, точная обработка</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge stone joints", "megalith joinery", "Stonehenge lintels"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+stone+joints&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stonehenge+lintels" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/stonehenge+detail/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="20">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img20">
+                        <div class="image-number">21</div>
+                        <label for="img20" class="image-filename">avebury.jpg</label>
+                    </div>
+                    <div class="image-description">Эйвбери — каменный круг</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Avebury stone circle", "Avebury England", "Avebury megaliths"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Avebury+stone+circle&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Avebury" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/avebury/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="21">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img21">
+                        <div class="image-number">22</div>
+                        <label for="img21" class="image-filename">barrows.jpg</label>
+                    </div>
+                    <div class="image-description">Курганы, могильные холмы, могилы элиты</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge barrows", "bell barrow Britain", "Neolithic burial mound"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+barrows&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stonehenge+barrows" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/burial+mound/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="22">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img22">
+                        <div class="image-number">23</div>
+                        <label for="img22" class="image-filename">experiment.jpg</label>
+                    </div>
+                    <div class="image-description">Эксперимент — как перевозили камни, реконструкция</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge experiment", "moving megalith experiment", "neolithic stone transport"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+stone+transport+experiment&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=megalith+transport+experiment" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+construction/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="23">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img23">
+                        <div class="image-number">24</div>
+                        <label for="img23" class="image-filename">location.jpg</label>
+                    </div>
+                    <div class="image-description">Место Стоунхенджа, ландшафт, Salisbury Plain</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge location", "Salisbury Plain", "Stonehenge landscape"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+Salisbury+Plain&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Salisbury+Plain" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/english+countryside/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="24">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img24">
+                        <div class="image-number">25</div>
+                        <label for="img24" class="image-filename">calendar.jpg</label>
+                    </div>
+                    <div class="image-description">Календарь, солнцестояние, сезоны, урожай</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ancient calendar", "solstice calendar", "harvest seasons"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=ancient+calendar+solstice&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+calendar" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/sun+calendar/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="25">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img25">
+                        <div class="image-number">26</div>
+                        <label for="img25" class="image-filename">purpose.jpg</label>
+                    </div>
+                    <div class="image-description">Назначение — храм, обсерватория, кладбище</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge purpose", "Stonehenge temple", "ancient observatory"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+purpose+temple&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stonehenge+purpose" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/stonehenge/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="26">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img26">
+                        <div class="image-number">27</div>
+                        <label for="img26" class="image-filename">tourism.jpg</label>
+                    </div>
+                    <div class="image-description">Туризм, посетители, сохранение</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge visitors", "Stonehenge tourism", "Stonehenge preservation"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+tourists+visitors&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stonehenge+visitors" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/stonehenge+people/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Культура, итог, заключение (s33–s40)</h2>
+                <div class="image-item" data-index="27">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img27">
+                        <div class="image-number">28</div>
+                        <label for="img27" class="image-filename">culture.jpg</label>
+                    </div>
+                    <div class="image-description">Стоунхендж в культуре, символ, искусство</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge art", "Stonehenge culture", "Stonehenge symbol"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+art+culture&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stonehenge+art" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/stonehenge+art/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="28">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img28">
+                        <div class="image-number">29</div>
+                        <label for="img28" class="image-filename">summary.jpg</label>
+                    </div>
+                    <div class="image-description">Итог — астрономия и власть</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge summary", "Stonehenge astronomy", "Stonehenge overview"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+astronomy+power&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stonehenge" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/stonehenge/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="29">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img29">
+                        <div class="image-number">30</div>
+                        <label for="img29" class="image-filename">lesson.jpg</label>
+                    </div>
+                    <div class="image-description">Урок, мегапроекты, социальная организация</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "megaproject", "ancient construction", "social organization"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=ancient+megaproject&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=ancient+construction" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+monument/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="30">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img30">
+                        <div class="image-number">31</div>
+                        <label for="img30" class="image-filename">conclusion.jpg</label>
+                    </div>
+                    <div class="image-description">Заключение — неолит, астрономия, власть</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge conclusion", "Neolithic Britain", "Stonehenge final"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+Neolithic+Britain&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stonehenge" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/stonehenge/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="31">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img31">
+                        <div class="image-number">32</div>
+                        <label for="img31" class="image-filename">science.jpg</label>
+                    </div>
+                    <div class="image-description">Наука, археология, современные методы</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge archaeology", "archaeological excavation", "Stonehenge research"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+archaeology+research&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stonehenge+archaeology" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/archaeology/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="32">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img32">
+                        <div class="image-number">33</div>
+                        <label for="img32" class="image-filename">myth-reality.jpg</label>
+                    </div>
+                    <div class="image-description">Миф и реальность — друиды vs неолит</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge myth reality", "Stonehenge druids", "Stonehenge facts"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+myth+vs+reality&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stonehenge+truth" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/stonehenge/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="33">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img33">
+                        <div class="image-number">34</div>
+                        <label for="img33" class="image-filename">5000-years.jpg</label>
+                    </div>
+                    <div class="image-description">5000 лет — смена эпох, выживание</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge 5000 years", "Stonehenge longevity", "ancient monument survival"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+5000+years&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stonehenge+age" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/stonehenge/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="34">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img34">
+                        <div class="image-number">35</div>
+                        <label for="img34" class="image-filename">final.jpg</label>
+                    </div>
+                    <div class="image-description">Финальное слово — сохранение, наследие</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Stonehenge UNESCO", "Stonehenge preservation", "Stonehenge heritage"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Stonehenge+UNESCO+heritage&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Stonehenge+UNESCO" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/stonehenge/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn reset-btn" onclick="resetProgress()">🔄 Сбросить</button>
+        <button class="action-btn save-btn" onclick="saveProgress()">💾 Сохранить</button>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            updateStats();
+            document.querySelectorAll('.checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const item = this.closest('.image-item');
+                    if (this.checked) item.classList.add('checked');
+                    else item.classList.remove('checked');
+                    updateStats();
+                    saveProgress();
+                });
+            });
+        });
+
+        function updateStats() {
+            const total = 35;
+            const checked = document.querySelectorAll('.checkbox:checked').length;
+            const remaining = total - checked;
+            const percent = Math.round((checked / total) * 100);
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('checkedImages').textContent = checked;
+            document.getElementById('remainingImages').textContent = remaining;
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const progress = Array.from(checkboxes).map(cb => cb.checked);
+            localStorage.setItem('stonehengeAstronomyImageProgress', JSON.stringify(progress));
+            showNotification('Прогресс сохранен! ✅');
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('stonehengeAstronomyImageProgress');
+            if (saved) {
+                const progress = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checkbox');
+                checkboxes.forEach((cb, index) => {
+                    if (progress[index]) {
+                        cb.checked = true;
+                        cb.closest('.image-item').classList.add('checked');
+                    }
+                });
+            }
+        }
+
+        function resetProgress() {
+            if (confirm('Сбросить весь прогресс?')) {
+                localStorage.removeItem('stonehengeAstronomyImageProgress');
+                document.querySelectorAll('.checkbox').forEach(cb => {
+                    cb.checked = false;
+                    cb.closest('.image-item').classList.remove('checked');
+                });
+                updateStats();
+                showNotification('Прогресс сброшен! 🔄');
+            }
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed; top: 20px; right: 20px;
+                background: #28a745; color: white;
+                padding: 15px 25px; border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                z-index: 10000;
+            `;
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 2000);
+        }
+    </script>
+</body>
+</html>

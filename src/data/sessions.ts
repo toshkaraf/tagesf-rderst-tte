@@ -4,6 +4,8 @@ import { getTranslatedSessionContent } from '../i18n/sessionContentTranslations'
 import { Language } from '../i18n/translations'
 import { romeInsulaeSessionRU } from './rome-insulae-session'
 import { philosophyAthensSessionRU } from './philosophy-athens-session'
+import { cleopatraEconomistSessionRU } from './cleopatra-economist-session'
+import { stonehengeAstronomySessionRU } from './stonehenge-astronomy-session'
 
 // Примеры занятий - здесь будут храниться все занятия
 const sessionsData: Session[] = [
@@ -6227,6 +6229,8 @@ const sessionsData: Session[] = [
   },
   romeInsulaeSessionRU,
   philosophyAthensSessionRU,
+  cleopatraEconomistSessionRU,
+  stonehengeAstronomySessionRU,
   {
     id: 'google-earth',
     title: 'Google Earth: наша планета из космоса',

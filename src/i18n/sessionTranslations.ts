@@ -222,6 +222,58 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'stonehenge-astronomy': {
+    de: {
+      title: 'Stonehenge: Astronomie und Macht',
+      description: 'Astronomische Präzision ohne Werkzeuge, soziale Organisation des Megaprojekts — wer hatte die Macht, solche Bauten zu koordinieren',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über Stonehenge!',
+        mainContent: 'Wir betrachten Astronomie, Bau und Macht im neolithischen Britannien',
+        interactive: 'Fragen und Abschlussquiz',
+        additional: 'Bilder von Stonehenge, Schemata und Rekonstruktionen',
+        closing: 'Zusammenfassung'
+      }
+    },
+    ru: {
+      title: 'Стоунхендж: астрономия и власть',
+      description: 'Астрономическая точность без инструментов, социальная организация мегапроекта, кто имел власть координировать такие стройки',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о Стоунхендже!',
+        mainContent: 'Изучаем астрономию, строительство и власть в неолитической Британии',
+        interactive: 'Вопросы и итоговая викторина',
+        additional: 'Изображения Стоунхенджа, схемы и реконструкции',
+        closing: 'Подведение итогов'
+      }
+    }
+  },
+  'cleopatra-economist': {
+    de: {
+      title: 'Kleopatra: Politikerin und Ökonomin',
+      description: 'Finanzierung der Armeen Caesars und Antonius\', Wirtschaftspolitik Ägyptens, Handelskontrolle — die echte Politik hinter der Romantik',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über Kleopatra!',
+        mainContent: 'Wir betrachten die wirtschaftliche Seite ihrer Herrschaft: Finanzen, Handel und politische Bündnisse',
+        interactive: 'Fragen und Abschlussquiz',
+        additional: 'Bilder von Ägypten, Kleopatra und antiken Szenen',
+        closing: 'Zusammenfassung'
+      }
+    },
+    ru: {
+      title: 'Клеопатра: политик и экономист',
+      description: 'Финансирование армий Цезаря и Антония, экономическая политика Египта, контроль торговли — реальная политика за романтикой',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о Клеопатре!',
+        mainContent: 'Изучаем экономическую сторону правления: финансы, торговлю и политические союзы',
+        interactive: 'Вопросы и итоговая викторина',
+        additional: 'Изображения Египта, Клеопатры и античных сцен',
+        closing: 'Подведение итогов'
+      }
+    }
+  },
   'rome-insulae': {
     de: {
       title: 'Alltag in Rom: Insulae und Armut',

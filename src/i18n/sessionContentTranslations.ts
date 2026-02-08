@@ -2,6 +2,8 @@ import { Language } from './translations'
 import { Session, Slide, QuizBlock } from '../types/session'
 import { romeInsulaeSlidesDE, romeInsulaeFinalQuizDE } from './rome-insulae-content-de'
 import { philosophyAthensSlidesDE, philosophyAthensFinalQuizDE } from './philosophy-athens-content-de'
+import { cleopatraEconomistSlidesDE, cleopatraEconomistFinalQuizDE } from './cleopatra-economist-content-de'
+import { stonehengeAstronomySlidesDE, stonehengeAstronomyFinalQuizDE } from './stonehenge-astronomy-content-de'
 
 // Deutsche Übersetzungen (B2-Niveau) für die Turnier-Session
 const ritterturniereSlidesDE: Slide[] = [
@@ -3067,6 +3069,20 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
     return {
       slides: philosophyAthensSlidesDE,
       quiz: philosophyAthensFinalQuizDE
+    }
+  }
+  
+  if (sessionId === 'cleopatra-economist' && language === 'de') {
+    return {
+      slides: cleopatraEconomistSlidesDE,
+      quiz: cleopatraEconomistFinalQuizDE
+    }
+  }
+
+  if (sessionId === 'stonehenge-astronomy' && language === 'de') {
+    return {
+      slides: stonehengeAstronomySlidesDE,
+      quiz: stonehengeAstronomyFinalQuizDE
     }
   }
   

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список изображений: Викинги — работорговля и серебро</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a4d6e 0%, #0f3952 50%, #0a2538 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a4d6e 0%, #0f3952 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2em; font-weight: bold; color: #0f3952; }
+        .stat-label { color: #6c757d; margin-top: 5px; }
+        .instructions {
+            padding: 30px 40px;
+            background: #e3f2fd;
+            border-left: 5px solid #1a4d6e;
+            margin: 20px 40px;
+        }
+        .instructions h2 { color: #0f3952; margin-bottom: 15px; }
+        .instructions ul { list-style-position: inside; color: #0f3952; }
+        .instructions li { margin: 8px 0; }
+        .content { padding: 20px 40px 40px; }
+        .section { margin-bottom: 40px; }
+        .section-title {
+            font-size: 1.8em;
+            color: #0f3952;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #1a4d6e;
+        }
+        .image-item {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        .image-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        .image-item.checked { background: #d4edda; border-color: #28a745; }
+        .image-header { display: flex; align-items: center; margin-bottom: 10px; }
+        .checkbox { width: 24px; height: 24px; margin-right: 15px; cursor: pointer; }
+        .image-number {
+            background: #0f3952;
+            color: white;
+            width: 35px; height: 35px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; margin-right: 15px;
+        }
+        .image-filename { font-size: 1.2em; font-weight: bold; color: #212529; flex: 1; }
+        .image-description { color: #495057; margin-bottom: 10px; margin-left: 74px; }
+        .search-terms {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-left: 74px;
+            border: 1px solid #dee2e6;
+        }
+        .search-terms strong { color: #0f3952; }
+        .search-links { margin-left: 74px; margin-top: 10px; }
+        .search-link {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #0f3952;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px; margin-top: 5px;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+        .search-link:hover { background: #0a2538; }
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: #e9ecef;
+            z-index: 1000;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #1a4d6e, #0f3952);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .action-buttons {
+            position: fixed;
+            bottom: 30px; right: 30px;
+            display: flex; gap: 10px;
+        }
+        .action-btn {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .reset-btn { background: #dc3545; color: white; }
+        .reset-btn:hover { background: #c82333; transform: scale(1.05); }
+        .save-btn { background: #28a745; color: white; }
+        .save-btn:hover { background: #218838; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>⚔️ Викинги: работорговля и серебро</h1>
+            <p>Список изображений для поиска в Google, Wikimedia, Pixabay</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalImages">30</div>
+                <div class="stat-label">Всего изображений</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="checkedImages">0</div>
+                <div class="stat-label">Загружено</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="remainingImages">30</div>
+                <div class="stat-label">Осталось</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="progressPercent">0%</div>
+                <div class="stat-label">Прогресс</div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Инструкции</h2>
+            <ul>
+                <li><strong>Формат:</strong> JPG или PNG, минимум 1200×800 px</li>
+                <li><strong>Лицензия:</strong> Public Domain, Creative Commons</li>
+                <li><strong>Источники:</strong> Google Images, Wikimedia Commons, Pixabay</li>
+                <li><strong>Слайды v5, v13, v19, v25, v30 (Юмор)</strong> — без изображений</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Введение и работорговля (v1–v4)</h2>
+                <div class="image-item" data-index="0">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img0">
+                        <div class="image-number">1</div>
+                        <label for="img0" class="image-filename">viking-ship.jpg</label>
+                    </div>
+                    <div class="image-description">Корабль викингов, драккар, ладья</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Viking ship", "longship", "Viking boat"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Viking+longship&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Viking+ship" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/viking+ship/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="1">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img1">
+                        <div class="image-number">2</div>
+                        <label for="img1" class="image-filename">slave-market.jpg</label>
+                    </div>
+                    <div class="image-description">Рынок рабов, средневековая работорговля</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval slave market", "Viking slave trade", "thrall market"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=medieval+slave+market&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=medieval+slave" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/medieval+market/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="2">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img2">
+                        <div class="image-number">3</div>
+                        <label for="img2" class="image-filename">etymology.jpg</label>
+                    </div>
+                    <div class="image-description">Этимология слова «раб», славяне, карта</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Slavs medieval", "Eastern Europe map medieval", "Slavic people"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Slavs+medieval+Europe&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Slavic+medieval" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/medieval+map/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="3">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img3">
+                        <div class="image-number">4</div>
+                        <label for="img3" class="image-filename">hedeby.jpg</label>
+                    </div>
+                    <div class="image-description">Хедебю, торговый город викингов, реконструкция</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Hedeby", "Haithabu Viking", "Viking trading town"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Hedeby+Haithabu&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Hedeby" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/viking+town/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Серебро и торговые пути (v6–v12)</h2>
+                <div class="image-item" data-index="4">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img4">
+                        <div class="image-number">5</div>
+                        <label for="img4" class="image-filename">silver.jpg</label>
+                    </div>
+                    <div class="image-description">Серебро викингов, весы, гири, дирхемы</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Viking silver", "Viking hoard", "medieval silver coins"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Viking+silver+hoard&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Viking+silver" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/silver+coins/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="5">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img5">
+                        <div class="image-number">6</div>
+                        <label for="img5" class="image-filename">volga-route.jpg</label>
+                    </div>
+                    <div class="image-description">Волжский путь, карта торговли, Каспий</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Volga trade route", "Viking trade routes", "Varangian route"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Viking+Volga+trade+route&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Volga+trade+route" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/trade+route+map/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="6">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img6">
+                        <div class="image-number">7</div>
+                        <label for="img6" class="image-filename">dirhems.jpg</label>
+                    </div>
+                    <div class="image-description">Арабские дирхемы, клад монет</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Arab dirhem", "Islamic coins", "Viking hoard dirhems"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Arab+dirhem+Viking&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Islamic+dirhem" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+coins/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="7">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img7">
+                        <div class="image-number">8</div>
+                        <label for="img7" class="image-filename">trade-route.jpg</label>
+                    </div>
+                    <div class="image-description">Торговые пути викингов, карта</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Viking trade routes map", "Norse trade", "Varangian routes"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Viking+trade+routes+map&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Viking+trade+routes" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/trade+map/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="8">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img8">
+                        <div class="image-number">9</div>
+                        <label for="img8" class="image-filename">dublin.jpg</label>
+                    </div>
+                    <div class="image-description">Дублин викингов, Ирландия, город</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Viking Dublin", "Dublin Norse", "Viking Ireland"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Viking+Dublin+Ireland&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Viking+Dublin" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/dublin/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="9">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img9">
+                        <div class="image-number">10</div>
+                        <label for="img9" class="image-filename">lindisfarne.jpg</label>
+                    </div>
+                    <div class="image-description">Монастырь Линдисфарн, набег 793 года</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Lindisfarne monastery", "Lindisfarne raid", "Holy Island"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Lindisfarne+monastery&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Lindisfarne" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/monastery/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="10">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img10">
+                        <div class="image-number">11</div>
+                        <label for="img10" class="image-filename">monastery.jpg</label>
+                    </div>
+                    <div class="image-description">Средневековый монастырь, сокровища, реликвии</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval monastery", "monastery treasure", "medieval relics"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=medieval+monastery+treasure&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=medieval+monastery" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/monastery/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Путь в греки и Византия (v14–v18)</h2>
+                <div class="image-item" data-index="11">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img11">
+                        <div class="image-number">12</div>
+                        <label for="img11" class="image-filename">route-greeks.jpg</label>
+                    </div>
+                    <div class="image-description">Путь из варяг в греки, карта, Днепр</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Varangians to Greeks route", "Dnieper trade route", "Kievan Rus trade"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Varangians+to+Greeks+route+map&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Varangian+route" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/trade+route/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="12">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img12">
+                        <div class="image-number">13</div>
+                        <label for="img12" class="image-filename">constantinople.jpg</label>
+                    </div>
+                    <div class="image-description">Константинополь, Византия, рынок</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Constantinople Byzantine", "Byzantine city", "Constantinople market"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Constantinople+Byzantine&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Constantinople" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/byzantine/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="13">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img13">
+                        <div class="image-number">14</div>
+                        <label for="img13" class="image-filename">varangian-guard.jpg</label>
+                    </div>
+                    <div class="image-description">Варяжская гвардия, византийские наёмники</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Varangian Guard", "Byzantine Varangians", "Viking guards Byzantium"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Varangian+Guard+Byzantine&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Varangian+Guard" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/byzantine+guard/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="14">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img14">
+                        <div class="image-number">15</div>
+                        <label for="img14" class="image-filename">thralls.jpg</label>
+                    </div>
+                    <div class="image-description">Трэлли, рабы викингов, работа на ферме</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Viking thrall", "Norse slave", "Viking farm workers"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Viking+thrall+slave&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Viking+thrall" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/viking+farm/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="15">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img15">
+                        <div class="image-number">16</div>
+                        <label for="img15" class="image-filename">prices.jpg</label>
+                    </div>
+                    <div class="image-description">Цены, серебро, весы, торговля</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Viking silver scales", "medieval trade", "Viking merchant"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Viking+silver+scales&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Viking+scales" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/scales/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Англия и Данелаг (v20–v22)</h2>
+                <div class="image-item" data-index="16">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img16">
+                        <div class="image-number">17</div>
+                        <label for="img16" class="image-filename">great-army.jpg</label>
+                    </div>
+                    <div class="image-description">Великая языческая армия, вторжение в Англию</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Great Heathen Army", "Viking invasion England", "Viking army"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Great+Heathen+Army+Vikings&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Viking+invasion" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/viking+warriors/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="17">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img17">
+                        <div class="image-number">18</div>
+                        <label for="img17" class="image-filename">danelaw.jpg</label>
+                    </div>
+                    <div class="image-description">Данелаг, карта викингов в Англии</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Danelaw map", "Viking England", "Anglo-Saxon Danelaw"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Danelaw+map&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Danelaw" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/england+map/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="18">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img18">
+                        <div class="image-number">19</div>
+                        <label for="img18" class="image-filename">york.jpg</label>
+                    </div>
+                    <div class="image-description">Йорк (Йорвик), викингский город</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Jorvik Viking", "York Viking", "Viking York reconstruction"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Jorvik+Viking+York&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Jorvik" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/viking+city/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Ибн Фадлан и ритуалы (v23–v28)</h2>
+                <div class="image-item" data-index="19">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img19">
+                        <div class="image-number">20</div>
+                        <label for="img19" class="image-filename">ibn-fadlan.jpg</label>
+                    </div>
+                    <div class="image-description">Ибн Фадлан, арабский путешественник</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Ibn Fadlan", "Arab traveler Vikings", "Volga Vikings"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Ibn+Fadlan+Vikings&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Ibn+Fadlan" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/arab+traveler/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="20">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img20">
+                        <div class="image-number">21</div>
+                        <label for="img20" class="image-filename">funeral.jpg</label>
+                    </div>
+                    <div class="image-description">Похороны викинга, ладья, ритуал</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Viking funeral", "Viking ship burial", "Norse funeral rite"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Viking+ship+funeral&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Viking+funeral" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/viking+burial/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="21">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img21">
+                        <div class="image-number">22</div>
+                        <label for="img21" class="image-filename">furs.jpg</label>
+                    </div>
+                    <div class="image-description">Меха, соболь, куница, торговля</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval furs", "fur trade", "sable marten"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=medieval+fur+trade&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=fur+trade" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/fur/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="22">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img22">
+                        <div class="image-number">23</div>
+                        <label for="img22" class="image-filename">amber.jpg</label>
+                    </div>
+                    <div class="image-description">Янтарь, украшения, Балтика</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "amber jewelry", "Baltic amber", "Viking amber"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Viking+amber+jewelry&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=amber+jewelry" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/amber/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="23">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img23">
+                        <div class="image-number">24</div>
+                        <label for="img23" class="image-filename">christianization.jpg</label>
+                    </div>
+                    <div class="image-description">Христианизация Скандинавии, крещение</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Viking christianization", "Norse conversion", "Viking baptism"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Viking+christianization&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Viking+conversion" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/baptism/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Наследие и итоги (v29–v35)</h2>
+                <div class="image-item" data-index="24">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img24">
+                        <div class="image-number">25</div>
+                        <label for="img24" class="image-filename">legacy.jpg</label>
+                    </div>
+                    <div class="image-description">Наследие викингов, слова, гены</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Viking legacy", "Norse heritage", "Viking influence"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Viking+legacy+heritage&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Viking+heritage" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/viking+culture/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="25">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img25">
+                        <div class="image-number">26</div>
+                        <label for="img25" class="image-filename">raid-economy.jpg</label>
+                    </div>
+                    <div class="image-description">Экономика набегов, риск и прибыль</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Viking raid", "Viking attack", "Viking warriors"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Viking+raid+attack&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Viking+raid" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/viking+battle/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="26">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img26">
+                        <div class="image-number">27</div>
+                        <label for="img26" class="image-filename">reasons.jpg</label>
+                    </div>
+                    <div class="image-description">Причины набегов, Скандинавия, география</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Scandinavia map", "Viking homeland", "Norse geography"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Scandinavia+Viking+age+map&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Scandinavia+map" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/scandinavia/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="27">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img27">
+                        <div class="image-number">28</div>
+                        <label for="img27" class="image-filename">summary.jpg</label>
+                    </div>
+                    <div class="image-description">Итог — работорговля и экономика</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Viking trade", "Norse commerce", "Viking economy"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Viking+trade+economy&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Viking+trade" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/viking/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="28">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img28">
+                        <div class="image-number">29</div>
+                        <label for="img28" class="image-filename">modern.jpg</label>
+                    </div>
+                    <div class="image-description">Викинги сегодня, романтика vs реальность</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Vikings TV show", "Viking popular culture", "Norse mythology modern"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Vikings+popular+culture&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Viking+culture" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/viking+art/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="29">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img29">
+                        <div class="image-number">30</div>
+                        <label for="img29" class="image-filename">conclusion.jpg</label>
+                    </div>
+                    <div class="image-description">Заключение — торговля, серебро, рабы</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Viking conclusion", "Norse traders", "Viking Age summary"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Viking+Age+trade&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Viking+Age" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/vikings/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn reset-btn" onclick="resetProgress()">🔄 Сбросить</button>
+        <button class="action-btn save-btn" onclick="saveProgress()">💾 Сохранить</button>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            updateStats();
+            document.querySelectorAll('.checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const item = this.closest('.image-item');
+                    if (this.checked) item.classList.add('checked');
+                    else item.classList.remove('checked');
+                    updateStats();
+                    saveProgress();
+                });
+            });
+        });
+
+        function updateStats() {
+            const total = 30;
+            const checked = document.querySelectorAll('.checkbox:checked').length;
+            const remaining = total - checked;
+            const percent = Math.round((checked / total) * 100);
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('checkedImages').textContent = checked;
+            document.getElementById('remainingImages').textContent = remaining;
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const progress = Array.from(checkboxes).map(cb => cb.checked);
+            localStorage.setItem('vikingsTradeImageProgress', JSON.stringify(progress));
+            showNotification('Прогресс сохранен! ✅');
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('vikingsTradeImageProgress');
+            if (saved) {
+                const progress = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checkbox');
+                checkboxes.forEach((cb, index) => {
+                    if (progress[index]) {
+                        cb.checked = true;
+                        cb.closest('.image-item').classList.add('checked');
+                    }
+                });
+            }
+        }
+
+        function resetProgress() {
+            if (confirm('Сбросить весь прогресс?')) {
+                localStorage.removeItem('vikingsTradeImageProgress');
+                document.querySelectorAll('.checkbox').forEach(cb => {
+                    cb.checked = false;
+                    cb.closest('.image-item').classList.remove('checked');
+                });
+                updateStats();
+                showNotification('Прогресс сброшен! 🔄');
+            }
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed; top: 20px; right: 20px;
+                background: #28a745; color: white;
+                padding: 15px 25px; border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                z-index: 10000;
+            `;
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 2000);
+        }
+    </script>
+</body>
+</html>

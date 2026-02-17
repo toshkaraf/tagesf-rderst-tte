@@ -4,6 +4,8 @@ import { romeInsulaeSlidesDE, romeInsulaeFinalQuizDE } from './rome-insulae-cont
 import { philosophyAthensSlidesDE, philosophyAthensFinalQuizDE } from './philosophy-athens-content-de'
 import { cleopatraEconomistSlidesDE, cleopatraEconomistFinalQuizDE } from './cleopatra-economist-content-de'
 import { stonehengeAstronomySlidesDE, stonehengeAstronomyFinalQuizDE } from './stonehenge-astronomy-content-de'
+import { castleWarfareSlidesDE, castleWarfareFinalQuizDE } from './castle-warfare-content-de'
+import { vikingsTradeSlidesDE, vikingsTradeFinalQuizDE } from './vikings-trade-content-de'
 
 // Deutsche Übersetzungen (B2-Niveau) für die Turnier-Session
 const ritterturniereSlidesDE: Slide[] = [
@@ -3083,6 +3085,20 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
     return {
       slides: stonehengeAstronomySlidesDE,
       quiz: stonehengeAstronomyFinalQuizDE
+    }
+  }
+
+  if (sessionId === 'castle-warfare' && language === 'de') {
+    return {
+      slides: castleWarfareSlidesDE,
+      quiz: castleWarfareFinalQuizDE
+    }
+  }
+
+  if (sessionId === 'vikings-trade' && language === 'de') {
+    return {
+      slides: vikingsTradeSlidesDE,
+      quiz: vikingsTradeFinalQuizDE
     }
   }
   

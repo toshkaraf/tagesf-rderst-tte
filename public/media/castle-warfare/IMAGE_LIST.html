@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список изображений: Замки — военная архитектура и разорение</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #5a4a3a 0%, #3d2f24 50%, #2b1f17 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #5a4a3a 0%, #3d2f24 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2em; font-weight: bold; color: #3d2f24; }
+        .stat-label { color: #6c757d; margin-top: 5px; }
+        .instructions {
+            padding: 30px 40px;
+            background: #fff5e6;
+            border-left: 5px solid #5a4a3a;
+            margin: 20px 40px;
+        }
+        .instructions h2 { color: #3d2f24; margin-bottom: 15px; }
+        .instructions ul { list-style-position: inside; color: #3d2f24; }
+        .instructions li { margin: 8px 0; }
+        .content { padding: 20px 40px 40px; }
+        .section { margin-bottom: 40px; }
+        .section-title {
+            font-size: 1.8em;
+            color: #3d2f24;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #5a4a3a;
+        }
+        .image-item {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        .image-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        .image-item.checked { background: #d4edda; border-color: #28a745; }
+        .image-header { display: flex; align-items: center; margin-bottom: 10px; }
+        .checkbox { width: 24px; height: 24px; margin-right: 15px; cursor: pointer; }
+        .image-number {
+            background: #3d2f24;
+            color: white;
+            width: 35px; height: 35px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; margin-right: 15px;
+        }
+        .image-filename { font-size: 1.2em; font-weight: bold; color: #212529; flex: 1; }
+        .image-description { color: #495057; margin-bottom: 10px; margin-left: 74px; }
+        .search-terms {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-left: 74px;
+            border: 1px solid #dee2e6;
+        }
+        .search-terms strong { color: #3d2f24; }
+        .search-links { margin-left: 74px; margin-top: 10px; }
+        .search-link {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #3d2f24;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px; margin-top: 5px;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+        .search-link:hover { background: #2b1f17; }
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: #e9ecef;
+            z-index: 1000;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #5a4a3a, #3d2f24);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .action-buttons {
+            position: fixed;
+            bottom: 30px; right: 30px;
+            display: flex; gap: 10px;
+        }
+        .action-btn {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .reset-btn { background: #dc3545; color: white; }
+        .reset-btn:hover { background: #c82333; transform: scale(1.05); }
+        .save-btn { background: #28a745; color: white; }
+        .save-btn:hover { background: #218838; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>🏰 Замки: военная архитектура и разорение</h1>
+            <p>Список изображений для поиска в Google, Wikimedia, Pixabay</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalImages">30</div>
+                <div class="stat-label">Всего изображений</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="checkedImages">0</div>
+                <div class="stat-label">Загружено</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="remainingImages">30</div>
+                <div class="stat-label">Осталось</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="progressPercent">0%</div>
+                <div class="stat-label">Прогресс</div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Инструкции</h2>
+            <ul>
+                <li><strong>Формат:</strong> JPG или PNG, минимум 1200×800 px</li>
+                <li><strong>Лицензия:</strong> Public Domain, Creative Commons</li>
+                <li><strong>Источники:</strong> Google Images, Wikimedia Commons, Pixabay</li>
+                <li><strong>Слайды c5, c14, c21, c28, c33 (Юмор)</strong> — без изображений</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Введение и стоимость (c1–c4)</h2>
+                <div class="image-item" data-index="0">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img0">
+                        <div class="image-number">1</div>
+                        <label for="img0" class="image-filename">castle-main.jpg</label>
+                    </div>
+                    <div class="image-description">Средневековый замок — общий вид, панорама</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval castle", "castle view", "European castle"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=medieval+castle+Europe&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=medieval+castle" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/castle/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="1">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img1">
+                        <div class="image-number">2</div>
+                        <label for="img1" class="image-filename">cost.jpg</label>
+                    </div>
+                    <div class="image-description">Стоимость строительства, монеты, бюджет</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval coins", "medieval money", "construction cost"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=medieval+coins+money&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=medieval+coins" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/ancient+coins/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="2">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img2">
+                        <div class="image-number">3</div>
+                        <label for="img2" class="image-filename">concentric.jpg</label>
+                    </div>
+                    <div class="image-description">Концентрический замок, две линии стен</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "concentric castle", "double walls castle", "castle plan"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=concentric+castle&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=concentric+castle" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/castle+walls/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="3">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img3">
+                        <div class="image-number">4</div>
+                        <label for="img3" class="image-filename">caerphilly.jpg</label>
+                    </div>
+                    <div class="image-description">Замок Кэрфилли, Уэльс</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Caerphilly Castle", "Welsh castle", "Caerphilly Wales"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Caerphilly+Castle+Wales&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Caerphilly+Castle" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/welsh+castle/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Строительство и гарнизоны (c6–c13)</h2>
+                <div class="image-item" data-index="4">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img4">
+                        <div class="image-number">5</div>
+                        <label for="img4" class="image-filename">wood-vs-stone.jpg</label>
+                    </div>
+                    <div class="image-description">Деревянная и каменная башни, сравнение</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "motte bailey", "stone keep", "wooden castle"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=motte+bailey+castle&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=motte+bailey" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/wooden+fort/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="5">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img5">
+                        <div class="image-number">6</div>
+                        <label for="img5" class="image-filename">workers.jpg</label>
+                    </div>
+                    <div class="image-description">Рабочие, каменщики, строительство замка</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval construction", "stonemasons medieval", "castle building"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=medieval+stonemasons+building&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=medieval+construction" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/medieval+workers/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="6">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img6">
+                        <div class="image-number">7</div>
+                        <label for="img6" class="image-filename">transport.jpg</label>
+                    </div>
+                    <div class="image-description">Транспорт камня, повозки, реки</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval transport stone", "stone quarry medieval", "medieval cart"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=medieval+stone+transport&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=medieval+transport" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/medieval+cart/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="7">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img7">
+                        <div class="image-number">8</div>
+                        <label for="img7" class="image-filename">garrison.jpg</label>
+                    </div>
+                    <div class="image-description">Гарнизон замка, солдаты, рыцари</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "castle garrison", "medieval soldiers", "castle guards"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=castle+garrison+medieval&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=medieval+soldiers" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/medieval+knight/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="8">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img8">
+                        <div class="image-number">9</div>
+                        <label for="img8" class="image-filename">siege.jpg</label>
+                    </div>
+                    <div class="image-description">Осада замка, лагерь осаждающих</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "castle siege", "medieval siege", "siege warfare"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=medieval+castle+siege&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=castle+siege" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/siege/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="9">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img9">
+                        <div class="image-number">10</div>
+                        <label for="img9" class="image-filename">trebuchet.jpg</label>
+                    </div>
+                    <div class="image-description">Требушет, катапульта, осадное орудие</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "trebuchet", "medieval catapult", "siege engine"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=trebuchet+medieval&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=trebuchet" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/catapult/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="10">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img10">
+                        <div class="image-number">11</div>
+                        <label for="img10" class="image-filename">undermining.jpg</label>
+                    </div>
+                    <div class="image-description">Подкоп под стену, инженеры-сапёры</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "castle undermining", "siege mine", "medieval sappers"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=castle+undermining+siege&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=siege+mine" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/medieval+siege/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="11">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img11">
+                        <div class="image-number">12</div>
+                        <label for="img11" class="image-filename">hunger.jpg</label>
+                    </div>
+                    <div class="image-description">Голод в замке и лагере, недостаток еды</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval famine", "siege hunger", "medieval food shortage"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=medieval+siege+hunger&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=medieval+famine" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/medieval+food/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Архитектура и защита (c15–c20)</h2>
+                <div class="image-item" data-index="12">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img12">
+                        <div class="image-number">13</div>
+                        <label for="img12" class="image-filename">tower-height.jpg</label>
+                    </div>
+                    <div class="image-description">Высокие башни замка, донжон</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "castle keep", "tall tower castle", "medieval donjon"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=castle+keep+tall+tower&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=castle+keep" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/castle+tower/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="13">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img13">
+                        <div class="image-number">14</div>
+                        <label for="img13" class="image-filename">concentric-walls.jpg</label>
+                    </div>
+                    <div class="image-description">Концентрические стены, двойная защита</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "concentric castle walls", "double walls", "castle fortification"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=concentric+castle+walls&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=concentric+walls" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/castle+fortification/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="14">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img14">
+                        <div class="image-number">15</div>
+                        <label for="img14" class="image-filename">moat.jpg</label>
+                    </div>
+                    <div class="image-description">Ров вокруг замка, подъёмный мост</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "castle moat", "drawbridge", "castle water defense"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=castle+moat+drawbridge&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=castle+moat" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/castle+moat/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="15">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img15">
+                        <div class="image-number">16</div>
+                        <label for="img15" class="image-filename">murder-holes.jpg</label>
+                    </div>
+                    <div class="image-description">Murder holes, отверстия над воротами</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "murder holes", "castle gate defense", "machicolations"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=murder+holes+castle&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=murder+holes" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/castle+gate/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="16">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img16">
+                        <div class="image-number">17</div>
+                        <label for="img16" class="image-filename">chateau-gaillard.jpg</label>
+                    </div>
+                    <div class="image-description">Замок Шато-Гайар, Нормандия</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Château Gaillard", "Richard Lionheart castle", "Normandy castle"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Chateau+Gaillard+castle&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Chateau+Gaillard" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/normandy+castle/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="17">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img17">
+                        <div class="image-number">18</div>
+                        <label for="img17" class="image-filename">fall-chateau.jpg</label>
+                    </div>
+                    <div class="image-description">Падение Шато-Гайар, осада, подкоп</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Château Gaillard siege", "castle siege fall", "castle captured"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Chateau+Gaillard+siege&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=castle+siege" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/castle+ruins/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Валлийские замки и конец эпохи (c22–c27)</h2>
+                <div class="image-item" data-index="18">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img18">
+                        <div class="image-number">19</div>
+                        <label for="img18" class="image-filename">edward-castles.jpg</label>
+                    </div>
+                    <div class="image-description">Замки Эдуарда I, карта валлийских замков</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Edward I castles Wales", "Welsh castles map", "Edwardian castles"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Edward+I+castles+Wales&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Edward+castles+Wales" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/welsh+castle/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="19">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img19">
+                        <div class="image-number">20</div>
+                        <label for="img19" class="image-filename">caernarfon.jpg</label>
+                    </div>
+                    <div class="image-description">Замок Кэрнарвон, Уэльс</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Caernarfon Castle", "Caernarfon Wales", "Welsh royal castle"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Caernarfon+Castle+Wales&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Caernarfon+Castle" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/caernarfon/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="20">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img20">
+                        <div class="image-number">21</div>
+                        <label for="img20" class="image-filename">welsh-revolt.jpg</label>
+                    </div>
+                    <div class="image-description">Валлийское восстание, Оуайн Глиндур</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Owain Glyndwr", "Welsh revolt", "Welsh rebellion"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=Owain+Glyndwr+Welsh+revolt&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=Owain+Glyndwr" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/medieval+rebellion/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="21">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img21">
+                        <div class="image-number">22</div>
+                        <label for="img21" class="image-filename">cannons.jpg</label>
+                    </div>
+                    <div class="image-description">Пушки, огнестрельное оружие, конец эры замков</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval cannon", "siege cannon", "early gunpowder"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=medieval+cannon+siege&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=medieval+cannon" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/cannon/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="22">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img22">
+                        <div class="image-number">23</div>
+                        <label for="img22" class="image-filename">cannon-impact.jpg</label>
+                    </div>
+                    <div class="image-description">Пушки пробивают стены, разрушение замка</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "cannon vs castle", "castle wall destroyed", "siege cannon damage"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=cannon+castle+wall+damage&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=cannon+damage" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/castle+ruins/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="23">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img23">
+                        <div class="image-number">24</div>
+                        <label for="img23" class="image-filename">palace.jpg</label>
+                    </div>
+                    <div class="image-description">Замок становится дворцом, резиденция</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "castle palace", "Renaissance palace", "castle converted"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=castle+palace+residence&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=palace+castle" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/palace/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Власть, туризм, наследие (c29–c35)</h2>
+                <div class="image-item" data-index="24">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img24">
+                        <div class="image-number">25</div>
+                        <label for="img24" class="image-filename">symbol-power.jpg</label>
+                    </div>
+                    <div class="image-description">Замок как символ власти, король и барон</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "castle power symbol", "medieval lord", "castle authority"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=castle+power+symbol+medieval&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=medieval+lord" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/medieval+king/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="25">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img25">
+                        <div class="image-number">26</div>
+                        <label for="img25" class="image-filename">competition.jpg</label>
+                    </div>
+                    <div class="image-description">Конкуренция баронов, соревнование замков</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval barons", "castle competition", "baronial power"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=medieval+barons+castle&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=medieval+baron" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/medieval+nobility/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="26">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img26">
+                        <div class="image-number">27</div>
+                        <label for="img26" class="image-filename">summary.jpg</label>
+                    </div>
+                    <div class="image-description">Итог — архитектура и разорение</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "castle architecture", "medieval fortification", "castle overview"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=castle+architecture+medieval&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=castle+architecture" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/castle/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="27">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img27">
+                        <div class="image-number">28</div>
+                        <label for="img27" class="image-filename">tourism.jpg</label>
+                    </div>
+                    <div class="image-description">Туризм, посетители замков, экскурсии</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "castle tourism", "castle visitors", "medieval castle tour"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=castle+tourism+visitors&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=castle+tourists" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/castle+visitors/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="28">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img28">
+                        <div class="image-number">29</div>
+                        <label for="img28" class="image-filename">culture.jpg</label>
+                    </div>
+                    <div class="image-description">Замки в культуре, фильмы, игры</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "castle culture", "medieval fantasy", "castle art"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=castle+fantasy+art&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=castle+art" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/fantasy+castle/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+                <div class="image-item" data-index="29">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img29">
+                        <div class="image-number">30</div>
+                        <label for="img29" class="image-filename">conclusion.jpg</label>
+                    </div>
+                    <div class="image-description">Заключение — военная архитектура = экономика</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "castle conclusion", "medieval architecture", "castle summary"</div>
+                    <div class="search-links">
+                        <a href="https://www.google.com/search?q=medieval+castle+architecture&tbm=isch" target="_blank" class="search-link">Google</a>
+                        <a href="https://commons.wikimedia.org/w/index.php?search=castle+architecture" target="_blank" class="search-link">Wikimedia</a>
+                        <a href="https://pixabay.com/images/search/castle/" target="_blank" class="search-link">Pixabay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn reset-btn" onclick="resetProgress()">🔄 Сбросить</button>
+        <button class="action-btn save-btn" onclick="saveProgress()">💾 Сохранить</button>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            updateStats();
+            document.querySelectorAll('.checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const item = this.closest('.image-item');
+                    if (this.checked) item.classList.add('checked');
+                    else item.classList.remove('checked');
+                    updateStats();
+                    saveProgress();
+                });
+            });
+        });
+
+        function updateStats() {
+            const total = 30;
+            const checked = document.querySelectorAll('.checkbox:checked').length;
+            const remaining = total - checked;
+            const percent = Math.round((checked / total) * 100);
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('checkedImages').textContent = checked;
+            document.getElementById('remainingImages').textContent = remaining;
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const progress = Array.from(checkboxes).map(cb => cb.checked);
+            localStorage.setItem('castleWarfareImageProgress', JSON.stringify(progress));
+            showNotification('Прогресс сохранен! ✅');
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('castleWarfareImageProgress');
+            if (saved) {
+                const progress = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checkbox');
+                checkboxes.forEach((cb, index) => {
+                    if (progress[index]) {
+                        cb.checked = true;
+                        cb.closest('.image-item').classList.add('checked');
+                    }
+                });
+            }
+        }
+
+        function resetProgress() {
+            if (confirm('Сбросить весь прогресс?')) {
+                localStorage.removeItem('castleWarfareImageProgress');
+                document.querySelectorAll('.checkbox').forEach(cb => {
+                    cb.checked = false;
+                    cb.closest('.image-item').classList.remove('checked');
+                });
+                updateStats();
+                showNotification('Прогресс сброшен! 🔄');
+            }
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed; top: 20px; right: 20px;
+                background: #28a745; color: white;
+                padding: 15px 25px; border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                z-index: 10000;
+            `;
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 2000);
+        }
+    </script>
+</body>
+</html>

@@ -222,6 +222,58 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'vikings-trade': {
+    de: {
+      title: 'Wikinger: Sklavenhandel und Silber',
+      description: 'Sklaven — Hauptware der Wikinger, wirtschaftliche Gründe der Raubzüge, Silberwege von Bagdad nach Skandinavien',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über Wikinger!',
+        mainContent: 'Wir betrachten Sklavenhandel, Silber und die Wirtschaft der Wikinger — das, worüber Filme schweigen',
+        interactive: 'Fragen und Abschlussquiz',
+        additional: 'Bilder von Wikingern, Handelswegkarten, Artefakte',
+        closing: 'Zusammenfassung'
+      }
+    },
+    ru: {
+      title: 'Викинги: работорговля и серебро',
+      description: 'Рабы — главный товар викингов, экономические причины набегов, серебряные пути от Багдада до Скандинавии',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о викингах!',
+        mainContent: 'Изучаем работорговлю, серебро и экономику викингов — то, о чём молчат фильмы',
+        interactive: 'Вопросы и итоговая викторина',
+        additional: 'Изображения викингов, карты торговых путей, артефакты',
+        closing: 'Подведение итогов'
+      }
+    }
+  },
+  'castle-warfare': {
+    de: {
+      title: 'Burgen: Kriegsarchitektur und Ruin',
+      description: 'Baukosten = Königreichsbudget, Belagerungskrieg — Preis monatelangen Wartens, wie Burgen die Besitzer ruinierten',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über Burgen!',
+        mainContent: 'Wir betrachten Baukosten, Belagerungskrieg und die Wirtschaft mittelalterlicher Burgen',
+        interactive: 'Fragen und Abschlussquiz',
+        additional: 'Bilder von Burgen, Pläne, Rekonstruktionen',
+        closing: 'Zusammenfassung'
+      }
+    },
+    ru: {
+      title: 'Замки: военная архитектура и разорение',
+      description: 'Стоимость строительства = бюджет королевства, осадная война — цена месяцев ожидания, как замки разоряли владельцев',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о замках!',
+        mainContent: 'Изучаем стоимость строительства, осадную войну и экономику средневековых замков',
+        interactive: 'Вопросы и итоговая викторина',
+        additional: 'Изображения замков, планы, реконструкции',
+        closing: 'Подведение итогов'
+      }
+    }
+  },
   'stonehenge-astronomy': {
     de: {
       title: 'Stonehenge: Astronomie und Macht',

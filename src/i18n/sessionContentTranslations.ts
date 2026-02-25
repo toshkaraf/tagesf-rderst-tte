@@ -6,6 +6,8 @@ import { cleopatraEconomistSlidesDE, cleopatraEconomistFinalQuizDE } from './cle
 import { stonehengeAstronomySlidesDE, stonehengeAstronomyFinalQuizDE } from './stonehenge-astronomy-content-de'
 import { castleWarfareSlidesDE, castleWarfareFinalQuizDE } from './castle-warfare-content-de'
 import { vikingsTradeSlidesDE, vikingsTradeFinalQuizDE } from './vikings-trade-content-de'
+import { crusadesFinanceSlidesDE, crusadesFinanceFinalQuizDE } from './crusades-finance-content-de'
+import { hansaMonopolySlidesDE, hansaMonopolyFinalQuizDE } from './hansa-monopoly-content-de'
 
 // Deutsche Übersetzungen (B2-Niveau) für die Turnier-Session
 const ritterturniereSlidesDE: Slide[] = [
@@ -3099,6 +3101,20 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
     return {
       slides: vikingsTradeSlidesDE,
       quiz: vikingsTradeFinalQuizDE
+    }
+  }
+
+  if (sessionId === 'crusades-finance' && language === 'de') {
+    return {
+      slides: crusadesFinanceSlidesDE,
+      quiz: crusadesFinanceFinalQuizDE
+    }
+  }
+
+  if (sessionId === 'hansa-monopoly' && language === 'de') {
+    return {
+      slides: hansaMonopolySlidesDE,
+      quiz: hansaMonopolyFinalQuizDE
     }
   }
   

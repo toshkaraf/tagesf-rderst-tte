@@ -8,6 +8,9 @@ import { cleopatraEconomistSessionRU } from './cleopatra-economist-session'
 import { stonehengeAstronomySessionRU } from './stonehenge-astronomy-session'
 import { castleWarfareSessionRU } from './castle-warfare-session'
 import { vikingsTradeSessionRU } from './vikings-trade-session'
+import { crusadesFinanceSessionRU } from './crusades-finance-session'
+import { hansaMonopolySessionRU } from './hansa-monopoly-session'
+import { blackDeathEconomySessionRU } from './black-death-economy-session'
 
 // Примеры занятий - здесь будут храниться все занятия
 const sessionsData: Session[] = [
@@ -6235,6 +6238,9 @@ const sessionsData: Session[] = [
   stonehengeAstronomySessionRU,
   castleWarfareSessionRU,
   vikingsTradeSessionRU,
+  crusadesFinanceSessionRU,
+  hansaMonopolySessionRU,
+  blackDeathEconomySessionRU,
   {
     id: 'google-earth',
     title: 'Google Earth: наша планета из космоса',

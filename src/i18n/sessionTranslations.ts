@@ -248,6 +248,84 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'crusades-finance': {
+    de: {
+      title: 'Kreuzzüge: Finanzielle Ruinierung',
+      description: 'Wie wurden Kreuzzüge finanziert, Landverkäufe, Venedig plünderte Konstantinopel für Geld, Schulden und Bankrotte der Kreuzfahrer',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über Kreuzzüge!',
+        mainContent: 'Wir untersuchen die Wirtschaft der Kreuzzüge — das, worüber Lehrbücher schweigen',
+        interactive: 'Fragen und Abschlussquiz',
+        additional: 'Bilder von Kreuzfahrern, Karten, Dokumente, Münzen',
+        closing: 'Zusammenfassung'
+      }
+    },
+    ru: {
+      title: 'Крестовые походы: финансовое разорение',
+      description: 'Как финансировались походы, продажа земель, Венеция разграбила Константинополь за деньги, долги и банкротства крестоносцев',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о крестовых походах!',
+        mainContent: 'Изучаем экономику крестовых походов — то, о чём молчат учебники',
+        interactive: 'Вопросы и итоговая викторина',
+        additional: 'Изображения крестоносцев, карты, документы, монеты',
+        closing: 'Подведение итогов'
+      }
+    }
+  },
+  'hansa-monopoly': {
+    de: {
+      title: 'Hanse: Kartell und Monopol',
+      description: 'Wie der Handelsbund Preise kontrollierte, Kriege um Monopole, Stadtblockaden, wirtschaftliche Herrschaft der Ostsee',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über die Hanse!',
+        mainContent: 'Wir studieren das erste Kartell Europas — ein Handelsimperium ohne Armee',
+        interactive: 'Fragen und Abschlussquiz',
+        additional: 'Bilder von Hansestädten, Karten, Dokumente, Siegel',
+        closing: 'Zusammenfassung'
+      }
+    },
+    ru: {
+      title: 'Ганза: картель и монополия',
+      description: 'Как торговый союз контролировал цены, войны за монополию, блокады городов, экономическое господство Балтики',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о Ганзе!',
+        mainContent: 'Изучаем первый картель Европы — торговую империю без армии',
+        interactive: 'Вопросы и итоговая викторина',
+        additional: 'Изображения городов Ганзы, карты, документы, печати',
+        closing: 'Подведение итогов'
+      }
+    }
+  },
+  'black-death-economy': {
+    de: {
+      title: 'Schwarzer Tod: Wirtschaftlicher Umbruch',
+      description: 'Arbeitermangel, Löhne stiegen um das Dreifache, Bauernaufstände wegen Lohnstopps, Ende des Feudalismus',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über den Schwarzen Tod!',
+        mainContent: 'Wir untersuchen die wirtschaftlichen Folgen der Pest — was Europa für immer veränderte',
+        interactive: 'Fragen und Abschlussquiz',
+        additional: 'Bilder der Pest, Dokumente, Lohngrafiken, Karten',
+        closing: 'Zusammenfassung'
+      }
+    },
+    ru: {
+      title: 'Чёрная смерть: экономический переворот',
+      description: 'Дефицит рабочих, рост зарплат в 3 раза, крестьянские восстания из-за попыток заморозить зарплаты, конец феодализма',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о Чёрной смерти!',
+        mainContent: 'Изучаем экономические последствия чумы — то, что изменило Европу навсегда',
+        interactive: 'Вопросы и итоговая викторина',
+        additional: 'Изображения чумы, документы, графики зарплат, карты',
+        closing: 'Подведение итогов'
+      }
+    }
+  },
   'castle-warfare': {
     de: {
       title: 'Burgen: Kriegsarchitektur und Ruin',

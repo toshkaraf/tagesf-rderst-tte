@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список изображений: Крестовые походы — финансовое разорение</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #8B4513 0%, #654321 50%, #3E2723 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #8B4513 0%, #654321 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2em; font-weight: bold; color: #654321; }
+        .stat-label { color: #6c757d; margin-top: 5px; }
+        .instructions {
+            padding: 30px 40px;
+            background: #fff3e0;
+            border-left: 5px solid #8B4513;
+            margin: 20px 40px;
+        }
+        .instructions h2 { color: #654321; margin-bottom: 15px; }
+        .instructions ul { list-style-position: inside; color: #654321; }
+        .instructions li { margin: 8px 0; }
+        .content { padding: 20px 40px 40px; }
+        .section { margin-bottom: 40px; }
+        .section-title {
+            font-size: 1.8em;
+            color: #654321;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #8B4513;
+        }
+        .image-item {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        .image-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        .image-item.checked { background: #d4edda; border-color: #28a745; }
+        .image-header { display: flex; align-items: center; margin-bottom: 10px; }
+        .checkbox { width: 24px; height: 24px; margin-right: 15px; cursor: pointer; }
+        .image-number {
+            background: #654321;
+            color: white;
+            width: 35px; height: 35px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; margin-right: 15px;
+        }
+        .image-filename { font-size: 1.2em; font-weight: bold; color: #212529; flex: 1; }
+        .image-description { color: #495057; margin-bottom: 10px; margin-left: 74px; }
+        .search-terms {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-left: 74px;
+            border: 1px solid #dee2e6;
+        }
+        .search-terms strong { color: #654321; }
+        .search-links { margin-left: 74px; margin-top: 10px; }
+        .search-link {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #654321;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px; margin-top: 5px;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+        .search-link:hover { background: #3E2723; }
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: #e9ecef;
+            z-index: 1000;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #8B4513, #654321);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .action-buttons {
+            position: fixed;
+            bottom: 30px; right: 30px;
+            display: flex; gap: 10px;
+        }
+        .action-btn {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .reset-btn { background: #dc3545; color: white; }
+        .reset-btn:hover { background: #c82333; transform: scale(1.05); }
+        .save-btn { background: #28a745; color: white; }
+        .save-btn:hover { background: #218838; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>⚔️ Крестовые походы: финансовое разорение</h1>
+            <p>Список изображений для поиска в Google, Wikimedia, Pixabay</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalImages">25</div>
+                <div class="stat-label">Всего изображений</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="checkedImages">0</div>
+                <div class="stat-label">Загружено</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="remainingImages">25</div>
+                <div class="stat-label">Осталось</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="progressPercent">0%</div>
+                <div class="stat-label">Прогресс</div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Инструкции</h2>
+            <ul>
+                <li><strong>Формат:</strong> JPG или PNG, минимум 1200×800 px</li>
+                <li><strong>Лицензия:</strong> Public Domain, Creative Commons</li>
+                <li><strong>Источники:</strong> Google Images, Wikimedia Commons, Pixabay</li>
+                <li><strong>Слайды cr4, cr10, cr14, cr19, cr24, cr28 (Юмор)</strong> — без изображений</li>
+            </ul>
+        </div>
+
+        <div class="content" id="imageList">
+            <!-- Будет заполнено JS -->
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn reset-btn" onclick="resetProgress()">🔄 Сбросить</button>
+        <button class="action-btn save-btn" onclick="saveProgress()">💾 Сохранить</button>
+    </div>
+
+    <script>
+        const images = [
+            { name: 'crusader-main.jpg', desc: 'Крестоносец, рыцарь в доспехах', search: '"crusader knight", "medieval crusader"' },
+            { name: 'cost.jpg', desc: 'Стоимость похода, деньги, монеты', search: '"medieval coins", "silver money medieval"' },
+            { name: 'land-sale.jpg', desc: 'Продажа земель, документ, сделка', search: '"medieval land sale", "feudal contract"' },
+            { name: 'debt.jpg', desc: 'Долги, ростовщик, деньги', search: '"medieval moneylender", "usurer medieval"' },
+            { name: 'godfrey.jpg', desc: 'Готфрид Бульонский', search: '"Godfrey of Bouillon", "Gottfried von Bouillon"' },
+            { name: 'venice.jpg', desc: 'Венеция, порт, корабли', search: '"Venice medieval", "Venetian ships"' },
+            { name: 'constantinople-sack.jpg', desc: 'Разграбление Константинополя 1204', search: '"Sack of Constantinople 1204", "Fourth Crusade"' },
+            { name: 'dandolo.jpg', desc: 'Энрико Дандоло, дож Венеции', search: '"Enrico Dandolo", "Doge Venice"' },
+            { name: 'loot.jpg', desc: 'Добыча, сокровища, награбленное', search: '"medieval treasure", "crusader loot"' },
+            { name: 'templars.jpg', desc: 'Тамплиеры, рыцари-монахи', search: '"Knights Templar", "Templar knights"' },
+            { name: 'templars-burn.jpg', desc: 'Казнь тамплиеров, костёр', search: '"Templars burned", "execution Templars 1307"' },
+            { name: 'saladin-tithe.jpg', desc: 'Саладинова десятина, налог', search: '"Saladin tithe", "medieval tax"' },
+            { name: 'richard.jpg', desc: 'Ричард Львиное Сердце', search: '"Richard Lionheart", "Richard I England"' },
+            { name: 'louis.jpg', desc: 'Людовик IX Святой', search: '"Louis IX France", "Saint Louis crusader"' },
+            { name: 'childrens-crusade.jpg', desc: 'Крестовый поход детей 1212', search: '"Children\'s Crusade 1212"' },
+            { name: 'indulgences.jpg', desc: 'Индульгенции, продажа прощения', search: '"medieval indulgence", "selling indulgences"' },
+            { name: 'genoa-venice.jpg', desc: 'Генуя и Венеция, торговая война', search: '"Genoa Venice rivalry", "Venetian Genoese war"' },
+            { name: 'crusader-states.jpg', desc: 'Крестоносные государства, карта', search: '"Crusader States map", "Kingdom of Jerusalem"' },
+            { name: 'acre-fall.jpg', desc: 'Падение Акры 1291', search: '"Fall of Acre 1291", "Siege of Acre"' },
+            { name: 'consequences.jpg', desc: 'Последствия крестовых походов', search: '"Crusades aftermath", "medieval economy crusades"' },
+            { name: 'church-wealth.jpg', desc: 'Богатство церкви, сокровищница', search: '"medieval church treasure", "ecclesiastical wealth"' },
+            { name: 'legacy.jpg', desc: 'Наследие крестовых походов', search: '"Crusades legacy", "medieval banking"' },
+            { name: 'comparison.jpg', desc: 'Сравнение с современностью', search: '"medieval trade", "historical economics"' },
+            { name: 'lessons.jpg', desc: 'Экономические уроки', search: '"economic lessons history"' },
+            { name: 'summary.jpg', desc: 'Итог крестовых походов', search: '"Crusades summary", "medieval warfare"' },
+            { name: 'conclusion.jpg', desc: 'Заключение', search: '"Crusades end", "medieval history conclusion"' }
+        ];
+
+        function renderImages() {
+            const container = document.getElementById('imageList');
+            let html = '<div class="section"><h2 class="section-title">Изображения</h2>';
+            images.forEach((img, index) => {
+                html += `
+                    <div class="image-item" data-index="${index}">
+                        <div class="image-header">
+                            <input type="checkbox" class="checkbox" id="img${index}">
+                            <div class="image-number">${index + 1}</div>
+                            <label for="img${index}" class="image-filename">${img.name}</label>
+                        </div>
+                        <div class="image-description">${img.desc}</div>
+                        <div class="search-terms"><strong>Поиск:</strong> ${img.search}</div>
+                        <div class="search-links">
+                            <a href="https://www.google.com/search?q=${encodeURIComponent(img.search)}&tbm=isch" target="_blank" class="search-link">Google</a>
+                            <a href="https://commons.wikimedia.org/w/index.php?search=${encodeURIComponent(img.search.replace(/"/g, ''))}" target="_blank" class="search-link">Wikimedia</a>
+                            <a href="https://pixabay.com/images/search/${encodeURIComponent(img.search.replace(/"/g, '').split(',')[0])}/" target="_blank" class="search-link">Pixabay</a>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            container.innerHTML = html;
+
+            document.querySelectorAll('.checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const item = this.closest('.image-item');
+                    if (this.checked) item.classList.add('checked');
+                    else item.classList.remove('checked');
+                    updateStats();
+                    saveProgress();
+                });
+            });
+        }
+
+        function updateStats() {
+            const total = images.length;
+            const checked = document.querySelectorAll('.checkbox:checked').length;
+            const remaining = total - checked;
+            const percent = Math.round((checked / total) * 100);
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('checkedImages').textContent = checked;
+            document.getElementById('remainingImages').textContent = remaining;
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const progress = Array.from(checkboxes).map(cb => cb.checked);
+            localStorage.setItem('crusadesFinanceImageProgress', JSON.stringify(progress));
+            showNotification('Прогресс сохранен! ✅');
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('crusadesFinanceImageProgress');
+            if (saved) {
+                const progress = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('.checkbox');
+                checkboxes.forEach((cb, index) => {
+                    if (progress[index]) {
+                        cb.checked = true;
+                        cb.closest('.image-item').classList.add('checked');
+                    }
+                });
+            }
+        }
+
+        function resetProgress() {
+            if (confirm('Сбросить весь прогресс?')) {
+                localStorage.removeItem('crusadesFinanceImageProgress');
+                document.querySelectorAll('.checkbox').forEach(cb => {
+                    cb.checked = false;
+                    cb.closest('.image-item').classList.remove('checked');
+                });
+                updateStats();
+                showNotification('Прогресс сброшен! 🔄');
+            }
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed; top: 20px; right: 20px;
+                background: #28a745; color: white;
+                padding: 15px 25px; border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                z-index: 10000;
+            `;
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 2000);
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            renderImages();
+            loadProgress();
+            updateStats();
+        });
+    </script>
+</body>
+</html>

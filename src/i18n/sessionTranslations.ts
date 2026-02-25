@@ -326,6 +326,32 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'universities-riots': {
+    de: {
+      title: 'Universitäten: Aufstände und Privilegien',
+      description: 'Studentengewalt, Massenschlägereien, wirtschaftliche Privilegien der Universitäten, Konflikte mit Bürgern, akademische Autonomie',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über Universitäten!',
+        mainContent: 'Wir untersuchen die dunkle Seite mittelalterlicher Universitäten — Gewalt, Privilegien und Macht',
+        interactive: 'Fragen und Abschlussquiz',
+        additional: 'Bilder von Universitäten, Dokumente, Karten, Siegel',
+        closing: 'Zusammenfassung'
+      }
+    },
+    ru: {
+      title: 'Университеты: бунты и привилегии',
+      description: 'Студенческое насилие, массовые драки, экономические привилегии университетов, конфликты с горожанами, академическая автономия',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие об университетах!',
+        mainContent: 'Изучаем темную сторону средневековых университетов — насилие, привилегии и власть',
+        interactive: 'Вопросы и итоговая викторина',
+        additional: 'Изображения университетов, документы, карты, печати',
+        closing: 'Подведение итогов'
+      }
+    }
+  },
   'castle-warfare': {
     de: {
       title: 'Burgen: Kriegsarchitektur und Ruin',

@@ -11,6 +11,7 @@ import { vikingsTradeSessionRU } from './vikings-trade-session'
 import { crusadesFinanceSessionRU } from './crusades-finance-session'
 import { hansaMonopolySessionRU } from './hansa-monopoly-session'
 import { blackDeathEconomySessionRU } from './black-death-economy-session'
+import { universitiesRiotsSessionRU } from './universities-riots-session'
 
 // Примеры занятий - здесь будут храниться все занятия
 const sessionsData: Session[] = [
@@ -6241,6 +6242,7 @@ const sessionsData: Session[] = [
   crusadesFinanceSessionRU,
   hansaMonopolySessionRU,
   blackDeathEconomySessionRU,
+  universitiesRiotsSessionRU,
   {
     id: 'google-earth',
     title: 'Google Earth: наша планета из космоса',

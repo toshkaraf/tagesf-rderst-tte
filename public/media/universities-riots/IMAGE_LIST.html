@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список изображений: Университеты — бунты и привилегии</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #283593 0%, #1a237e 50%, #0b1034 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #283593 0%, #1a237e 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.4em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.9; }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 18px 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 1.8em; font-weight: bold; color: #1a237e; }
+        .stat-label { color: #6c757d; margin-top: 4px; font-size: 0.9em; }
+        .instructions {
+            padding: 24px 36px;
+            background: #e8eaf6;
+            border-left: 5px solid #283593;
+            margin: 20px 36px;
+            border-radius: 10px;
+        }
+        .instructions h2 { color: #1a237e; margin-bottom: 10px; font-size: 1.3em; }
+        .instructions ul { list-style-position: inside; color: #1a237e; font-size: 0.95em; }
+        .instructions li { margin: 6px 0; }
+        .content { padding: 10px 36px 30px; }
+        .section { margin-bottom: 32px; }
+        .section-title {
+            font-size: 1.6em;
+            color: #1a237e;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #283593;
+        }
+        .image-item {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+            transition: all 0.25s ease;
+        }
+        .image-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            transform: translateY(-1px);
+        }
+        .image-item.checked { background: #d4edda; border-color: #28a745; }
+        .image-header { display: flex; align-items: center; margin-bottom: 8px; }
+        .checkbox { width: 22px; height: 22px; margin-right: 14px; cursor: pointer; }
+        .image-number {
+            background: #283593;
+            color: white;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; margin-right: 12px; font-size: 0.95em;
+        }
+        .image-filename { font-size: 1.05em; font-weight: bold; color: #212529; flex: 1; }
+        .image-description { color: #495057; margin-bottom: 8px; margin-left: 70px; font-size: 0.95em; }
+        .search-terms {
+            background: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-left: 70px;
+            border: 1px solid #dee2e6;
+            font-size: 0.9em;
+        }
+        .search-terms strong { color: #283593; }
+        .search-links { margin-left: 70px; margin-top: 8px; }
+        .search-link {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #283593;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 8px; margin-top: 4px;
+            font-size: 0.85em;
+            transition: background 0.25s ease;
+        }
+        .search-link:hover { background: #0b1034; }
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: #e9ecef;
+            z-index: 1000;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #283593, #42a5f5);
+            width: 0%;
+            transition: width 0.25s ease;
+        }
+        .action-buttons {
+            position: fixed;
+            bottom: 26px; right: 26px;
+            display: flex; gap: 10px;
+        }
+        .action-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+        .reset-btn { background: #dc3545; color: white; }
+        .reset-btn:hover { background: #c82333; transform: scale(1.04); }
+        .save-btn { background: #28a745; color: white; }
+        .save-btn:hover { background: #218838; transform: scale(1.04); }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>🎓 Университеты: бунты и привилегии</h1>
+            <p>Список изображений для поиска в Google, Wikimedia, Pixabay</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalImages">0</div>
+                <div class="stat-label">Всего изображений</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="checkedImages">0</div>
+                <div class="stat-label">Загружено</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="remainingImages">0</div>
+                <div class="stat-label">Осталось</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="progressPercent">0%</div>
+                <div class="stat-label">Прогресс</div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Инструкции</h2>
+            <ul>
+                <li><strong>Формат:</strong> JPG или PNG, минимум 1200×800 px</li>
+                <li><strong>Лицензия:</strong> Public Domain, Creative Commons</li>
+                <li><strong>Источники:</strong> Google Images, Wikimedia Commons, Pixabay</li>
+                <li><strong>Без изображений (юмор‑слайды):</strong> u4, u9, u13, u18, u21, u26</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Изображения</h2>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg0">
+                        <div class="image-number">1</div>
+                        <label for="uimg0" class="image-filename">university-main.jpg</label>
+                    </div>
+                    <div class="image-description">Общий вид средневекового университета / аудитории</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval university", "medieval lecture hall"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+university+lecture+hall&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+university+lecture">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/university%20hall/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg1">
+                        <div class="image-number">2</div>
+                        <label for="uimg1" class="image-filename">privileges.jpg</label>
+                    </div>
+                    <div class="image-description">Папская или королевская грамота о привилегиях университета</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "university charter medieval", "Statutes of the University of Paris"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=university+charter+medieval&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=University+of+Paris+statutes">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/parchment%20charter/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg2">
+                        <div class="image-number">3</div>
+                        <label for="uimg2" class="image-filename">paris.jpg</label>
+                    </div>
+                    <div class="image-description">Париж, Латинский квартал / старые улицы и церкви</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Paris Latin Quarter", "medieval Paris university"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Paris+Latin+Quarter&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Latin+Quarter+Paris">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/paris%20latin%20quarter/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg3">
+                        <div class="image-number">4</div>
+                        <label for="uimg3" class="image-filename">oxford-riot.jpg</label>
+                    </div>
+                    <div class="image-description">Резня в Оксфорде 1355 года: драка студентов и горожан</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "St Scholastica Day riot", "Oxford 1355 students"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=St+Scholastica+Day+riot&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=St+Scholastica+Day+riot">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/riot%20medieval/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg4">
+                        <div class="image-number">5</div>
+                        <label for="uimg4" class="image-filename">oxford-power.jpg</label>
+                    </div>
+                    <div class="image-description">Оксфордский университет и город: мэр приносит клятву / вид колледжей</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Oxford colleges medieval", "Oxford university and town"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Oxford+medieval+colleges&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Oxford+colleges">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/oxford%20university/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg5">
+                        <div class="image-number">6</div>
+                        <label for="uimg5" class="image-filename">bologna.jpg</label>
+                    </div>
+                    <div class="image-description">Болонья, аркады и улицы, связанные с университетом</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Bologna medieval university", "Bologna porticoes"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Bologna+medieval+university&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=University+of+Bologna+medieval">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/bologna%20italy/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg6">
+                        <div class="image-number">7</div>
+                        <label for="uimg6" class="image-filename">prague.jpg</label>
+                    </div>
+                    <div class="image-description">Пражский университет / Карлов университет</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Charles University Prague medieval", "Prague university courtyard"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Charles+University+Prague+medieval&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Charles+University+Prague">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/prague%20charles%20university/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg7">
+                        <div class="image-number">8</div>
+                        <label for="uimg7" class="image-filename">tax-exemption.jpg</label>
+                    </div>
+                    <div class="image-description">Сцена сбора городских налогов, но студенты освобождены</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval tax collector", "clergy tax exemption"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+tax+collector&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+tax+collector">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/tax%20collector/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg8">
+                        <div class="image-number">9</div>
+                        <label for="uimg8" class="image-filename">market-control.jpg</label>
+                    </div>
+                    <div class="image-description">Средневековый рынок, где студентам продают дешевле</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval market town", "students buying food medieval"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+market+scene&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+market+scene">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/medieval%20market/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg9">
+                        <div class="image-number">10</div>
+                        <label for="uimg9" class="image-filename">strike.jpg</label>
+                    </div>
+                    <div class="image-description">Пустой город / университет, ученики уезжают — забастовка</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval scholars leaving town", "university strike medieval"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+students+leaving+city&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+students+travel">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/students%20travel/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg10">
+                        <div class="image-number">11</div>
+                        <label for="uimg10" class="image-filename">cambridge-riot.jpg</label>
+                    </div>
+                    <div class="image-description">Бунт в Кембридже 1381 года: горожане нападают на университет</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Cambridge 1381 revolt university", "Peasants' Revolt Cambridge"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Cambridge+1381+revolt&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Cambridge+Peasants%27+Revolt">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/revolt%20medieval/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg11">
+                        <div class="image-number">12</div>
+                        <label for="uimg11" class="image-filename">vagrants.jpg</label>
+                    </div>
+                    <div class="image-description">Ваганты — бродячие студенты, с книгами и мешком за плечами</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "wandering scholars vagantes", "medieval wandering students"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=wandering+scholars+vagantes&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=wandering+scholars">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/traveling%20scholar/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg12">
+                        <div class="image-number">13</div>
+                        <label for="uimg12" class="image-filename">church-alliance.jpg</label>
+                    </div>
+                    <div class="image-description">Епископ и профессора, обсуждающие дела университета</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "bishop with scholars", "medieval university and church"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+bishop+with+scholars&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+bishop+scholars">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/bishop%20medieval/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg13">
+                        <div class="image-number">14</div>
+                        <label for="uimg13" class="image-filename">royal-support.jpg</label>
+                    </div>
+                    <div class="image-description">Король подписывает университетскую хартию</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "king granting charter", "medieval royal charter university"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=king+granting+charter&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=royal+charter+granting">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/king%20charter/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg14">
+                        <div class="image-number">15</div>
+                        <label for="uimg14" class="image-filename">academic-freedom.jpg</label>
+                    </div>
+                    <div class="image-description">Символ академической свободы: открытая книга и ключ / цепь</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "academic freedom illustration", "university autonomy symbol"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=academic+freedom+illustration&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=academic+freedom">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/academic%20freedom/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg15">
+                        <div class="image-number">16</div>
+                        <label for="uimg15" class="image-filename">faculty-conflict.jpg</label>
+                    </div>
+                    <div class="image-description">Спор богословов и юристов на университетском диспуте</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval university disputation", "scholastic debate"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+university+disputation&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=scholastic+debate">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/debate%20medieval/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg16">
+                        <div class="image-number">17</div>
+                        <label for="uimg16" class="image-filename">exams.jpg</label>
+                    </div>
+                    <div class="image-description">Экзамен: профессор на кафедре, студенты у доски / за столами</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval university exam", "scholastic examination"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+university+exam&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+examination+university">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/exam%20students/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg17">
+                        <div class="image-number">18</div>
+                        <label for="uimg17" class="image-filename">diplomas.jpg</label>
+                    </div>
+                    <div class="image-description">Вручение диплома / грамоты выпускнику</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval graduation ceremony", "university degree medieval"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+graduation+ceremony&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+graduation">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/graduation%20old/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg18">
+                        <div class="image-number">19</div>
+                        <label for="uimg18" class="image-filename">reformation.jpg</label>
+                    </div>
+                    <div class="image-description">Реформация: Лютер, гвоздящий тезисы / сцена религиозного спора</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Luther 95 theses", "Reformation woodcut"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Luther+95+theses&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Luther+95+theses+woodcut">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/reformation/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg19">
+                        <div class="image-number">20</div>
+                        <label for="uimg19" class="image-filename">autonomy.jpg</label>
+                    </div>
+                    <div class="image-description">Здание университета как «остров» автономии</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "university autonomy illustration", "university independence symbol"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=university+autonomy+illustration&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=university+autonomy">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/university%20building/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg20">
+                        <div class="image-number">21</div>
+                        <label for="uimg20" class="image-filename">summary.jpg</label>
+                    </div>
+                    <div class="image-description">Коллаж: студенты, город, церковь — итог привилегий и насилия</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval university collage", "students town church illustration"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+university+students+city&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+university+students">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/university%20collage/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg21">
+                        <div class="image-number">22</div>
+                        <label for="uimg21" class="image-filename">modern-comparison.jpg</label>
+                    </div>
+                    <div class="image-description">Современный кампус vs старый университет (сравнение)</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "modern university campus aerial", "old university courtyard"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=modern+university+campus+aerial&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=university+campus+aerial+view">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/university%20campus/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg22">
+                        <div class="image-number">23</div>
+                        <label for="uimg22" class="image-filename">conclusion.jpg</label>
+                    </div>
+                    <div class="image-description">Весы «власть / ответственность» — вывод о власти знания</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "scales power responsibility", "power responsibility illustration"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=scales+power+responsibility&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=scales+power+responsibility">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/scales%20power/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="uimg23">
+                        <div class="image-number">24</div>
+                        <label for="uimg23" class="image-filename">final.jpg</label>
+                    </div>
+                    <div class="image-description">Современный университет без романтики: серое здание, дождь</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "modern university building rain", "concrete university campus"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=modern+university+building+rain&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=modern+university+building+rain">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/university%20building/">Pixabay</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn reset-btn" onclick="resetProgress()">🔄 Сбросить</button>
+        <button class="action-btn save-btn" onclick="saveProgress()">💾 Сохранить</button>
+    </div>
+
+    <script>
+        function updateStats() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const total = checkboxes.length;
+            const checked = document.querySelectorAll('.checkbox:checked').length;
+            const remaining = total - checked;
+            const percent = total === 0 ? 0 : Math.round((checked / total) * 100);
+
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('checkedImages').textContent = checked;
+            document.getElementById('remainingImages').textContent = remaining;
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const progress = Array.from(checkboxes).map(cb => cb.checked);
+            localStorage.setItem('universitiesRiotsImageProgress', JSON.stringify(progress));
+            showNotification('Прогресс сохранён ✅');
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('universitiesRiotsImageProgress');
+            if (!saved) return;
+            const progress = JSON.parse(saved);
+            const checkboxes = document.querySelectorAll('.checkbox');
+            checkboxes.forEach((cb, index) => {
+                if (progress[index]) {
+                    cb.checked = true;
+                    cb.closest('.image-item').classList.add('checked');
+                }
+            });
+        }
+
+        function resetProgress() {
+            if (!confirm('Сбросить весь прогресс по картинкам для университетов?')) return;
+            localStorage.removeItem('universitiesRiotsImageProgress');
+            document.querySelectorAll('.checkbox').forEach(cb => {
+                cb.checked = false;
+                cb.closest('.image-item').classList.remove('checked');
+            });
+            updateStats();
+            showNotification('Прогресс сброшен 🔄');
+        }
+
+        function showNotification(message) {
+            const div = document.createElement('div');
+            div.textContent = message;
+            div.style.position = 'fixed';
+            div.style.top = '20px';
+            div.style.right = '20px';
+            div.style.background = '#28a745';
+            div.style.color = 'white';
+            div.style.padding = '10px 18px';
+            div.style.borderRadius = '8px';
+            div.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+            div.style.zIndex = '10000';
+            document.body.appendChild(div);
+            setTimeout(() => div.remove(), 2200);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadProgress();
+            document.querySelectorAll('.checkbox').forEach(cb => {
+                cb.addEventListener('change', () => {
+                    if (cb.checked) cb.closest('.image-item').classList.add('checked');
+                    else cb.closest('.image-item').classList.remove('checked');
+                    updateStats();
+                    saveProgress();
+                });
+            });
+            updateStats();
+        });
+    </script>
+</body>
+</html>
+

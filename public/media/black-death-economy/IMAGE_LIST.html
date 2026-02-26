@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список изображений: Чёрная смерть — экономический переворот</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #3b1026 0%, #220916 50%, #12040b 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #3b1026 0%, #220916 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.4em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.9; }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 18px 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 1.8em; font-weight: bold; color: #220916; }
+        .stat-label { color: #6c757d; margin-top: 4px; font-size: 0.9em; }
+        .instructions {
+            padding: 24px 36px;
+            background: #fbe9eb;
+            border-left: 5px solid #3b1026;
+            margin: 20px 36px;
+            border-radius: 10px;
+        }
+        .instructions h2 { color: #220916; margin-bottom: 10px; font-size: 1.3em; }
+        .instructions ul { list-style-position: inside; color: #220916; font-size: 0.95em; }
+        .instructions li { margin: 6px 0; }
+        .content { padding: 10px 36px 30px; }
+        .section { margin-bottom: 32px; }
+        .section-title {
+            font-size: 1.6em;
+            color: #220916;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #3b1026;
+        }
+        .image-item {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+            transition: all 0.25s ease;
+        }
+        .image-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            transform: translateY(-1px);
+        }
+        .image-item.checked { background: #d4edda; border-color: #28a745; }
+        .image-header { display: flex; align-items: center; margin-bottom: 8px; }
+        .checkbox { width: 22px; height: 22px; margin-right: 14px; cursor: pointer; }
+        .image-number {
+            background: #3b1026;
+            color: white;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; margin-right: 12px; font-size: 0.95em;
+        }
+        .image-filename { font-size: 1.05em; font-weight: bold; color: #212529; flex: 1; }
+        .image-description { color: #495057; margin-bottom: 8px; margin-left: 70px; font-size: 0.95em; }
+        .search-terms {
+            background: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-left: 70px;
+            border: 1px solid #dee2e6;
+            font-size: 0.9em;
+        }
+        .search-terms strong { color: #3b1026; }
+        .search-links { margin-left: 70px; margin-top: 8px; }
+        .search-link {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #3b1026;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 8px; margin-top: 4px;
+            font-size: 0.85em;
+            transition: background 0.25s ease;
+        }
+        .search-link:hover { background: #12040b; }
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: #e9ecef;
+            z-index: 1000;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3b1026, #e53935);
+            width: 0%;
+            transition: width 0.25s ease;
+        }
+        .action-buttons {
+            position: fixed;
+            bottom: 26px; right: 26px;
+            display: flex; gap: 10px;
+        }
+        .action-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+        .reset-btn { background: #dc3545; color: white; }
+        .reset-btn:hover { background: #c82333; transform: scale(1.04); }
+        .save-btn { background: #28a745; color: white; }
+        .save-btn:hover { background: #218838; transform: scale(1.04); }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>☠️ Чёрная смерть: экономический переворот</h1>
+            <p>Список изображений для поиска в Google, Wikimedia, Pixabay</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalImages">0</div>
+                <div class="stat-label">Всего изображений</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="checkedImages">0</div>
+                <div class="stat-label">Загружено</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="remainingImages">0</div>
+                <div class="stat-label">Осталось</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="progressPercent">0%</div>
+                <div class="stat-label">Прогресс</div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Инструкции</h2>
+            <ul>
+                <li><strong>Формат:</strong> JPG или PNG, минимум 1200×800 px</li>
+                <li><strong>Лицензия:</strong> Public Domain, Creative Commons</li>
+                <li><strong>Источники:</strong> Google Images, Wikimedia Commons, Pixabay</li>
+                <li><strong>Без изображений (юмор‑слайды):</strong> bd4, bd9, bd12, bd16, bd20, bd24, bd28</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Изображения</h2>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg0">
+                        <div class="image-number">1</div>
+                        <label for="bdimg0" class="image-filename">plague-main.jpg</label>
+                    </div>
+                    <div class="image-description">Общая сцена чумы: улица, мёртвые, врачи, телеги</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Black Death woodcut", "plague scene medieval"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Black+Death+woodcut&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Black+Death+plague+scene">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/black%20death/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg1">
+                        <div class="image-number">2</div>
+                        <label for="bdimg1" class="image-filename">before-plague.jpg</label>
+                    </div>
+                    <div class="image-description">Жизнь до чумы: крестьяне на поле, оживлённая деревня</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval peasants field", "medieval village life"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+peasants+field&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+peasants+field">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/medieval%20village/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg2">
+                        <div class="image-number">3</div>
+                        <label for="bdimg2" class="image-filename">after-plague.jpg</label>
+                    </div>
+                    <div class="image-description">Пустая деревня: заброшенные дома, пустые поля</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "abandoned medieval village", "deserted village plague"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=abandoned+medieval+village&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=abandoned+village+plague">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/abandoned%20village/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg3">
+                        <div class="image-number">4</div>
+                        <label for="bdimg3" class="image-filename">wages.jpg</label>
+                    </div>
+                    <div class="image-description">Монеты, весы, простая схема роста зарплат</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval coins wages", "medieval money scales"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+coins+wages&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+coins+scales">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/medieval%20coins/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg4">
+                        <div class="image-number">5</div>
+                        <label for="bdimg4" class="image-filename">statute-laborers.jpg</label>
+                    </div>
+                    <div class="image-description">Рукописный документ / парламент Англии, закон о рабочих 1351 года</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Statute of Labourers 1351", "medieval English parliament charter"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Statute+of+Labourers+1351&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Statute+of+Labourers">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/parchment%20charter/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg5">
+                        <div class="image-number">6</div>
+                        <label for="bdimg5" class="image-filename">peasants-flee.jpg</label>
+                    </div>
+                    <div class="image-description">Крестьяне уходят от поместья с узлами и скотом</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval peasants leaving manor", "runaway serfs"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+peasants+leaving+manor&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+peasants+leaving">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/peasants%20medieval/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg6">
+                        <div class="image-number">7</div>
+                        <label for="bdimg6" class="image-filename">jacquerie.jpg</label>
+                    </div>
+                    <div class="image-description">Французское крестьянское восстание (Жакерия), вооружённые крестьяне</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Jacquerie 1358", "French peasants revolt medieval"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Jacquerie+1358&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Jacquerie">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/peasants%20revolt/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg7">
+                        <div class="image-number">8</div>
+                        <label for="bdimg7" class="image-filename">wat-tyler.jpg</label>
+                    </div>
+                    <div class="image-description">Смерть Уота Тайлера или сцена восстания 1381 года</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Wat Tyler Peasants' Revolt", "death of Wat Tyler"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Wat+Tyler+Peasants%27+Revolt&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Peasants%27+Revolt+death+of+Wat+Tyler">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/middle%20ages%20revolt/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg8">
+                        <div class="image-number">9</div>
+                        <label for="bdimg8" class="image-filename">john-ball.jpg</label>
+                    </div>
+                    <div class="image-description">Проповедь Джона Болла перед крестьянами</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "John Ball sermon", "John Ball peasants medieval"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=John+Ball+sermon+peasants&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=John+Ball+sermon">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/sermon%20medieval/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg9">
+                        <div class="image-number">10</div>
+                        <label for="bdimg9" class="image-filename">land-prices.jpg</label>
+                    </div>
+                    <div class="image-description">Поля, дом и монеты — иллюстрация падения цен на землю</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval land rent", "feudal land price"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+land+rent&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+land+rent">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/farmland%20coins/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg10">
+                        <div class="image-number">11</div>
+                        <label for="bdimg10" class="image-filename">urbanization.jpg</label>
+                    </div>
+                    <div class="image-description">Растущий средневековый город, стены, дома</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval town growth", "medieval city skyline"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+town+illustration&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+city+view">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/medieval%20city/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg11">
+                        <div class="image-number">12</div>
+                        <label for="bdimg11" class="image-filename">craftsmen.jpg</label>
+                    </div>
+                    <div class="image-description">Ремесленники в мастерской: кузнец, плотник, каменщик</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval craftsmen workshop", "blacksmith medieval", "carpenter medieval"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+craftsmen+workshop&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+craftsmen">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/blacksmith%20medieval/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg12">
+                        <div class="image-number">13</div>
+                        <label for="bdimg12" class="image-filename">church-decline.jpg</label>
+                    </div>
+                    <div class="image-description">Готическая церковь с пустыми скамьями, мрачный интерьер</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval church interior dark", "empty gothic church"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+church+interior+dark&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=gothic+church+interior">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/gothic%20church%20interior/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg13">
+                        <div class="image-number">14</div>
+                        <label for="bdimg13" class="image-filename">jews.jpg</label>
+                    </div>
+                    <div class="image-description">Еврейская община или синагога (аккуратно, без стереотипов)</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval jewish community", "medieval synagogue interior"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+jewish+community&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+synagogue">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/synagogue/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg14">
+                        <div class="image-number">15</div>
+                        <label for="bdimg14" class="image-filename">flagellants.jpg</label>
+                    </div>
+                    <div class="image-description">Процессия флагеллантов: люди бьют себя кнутами</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "flagellants procession", "medieval flagellants 1349"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=flagellants+procession&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=flagellants+1349">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/flagellants/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg15">
+                        <div class="image-number">16</div>
+                        <label for="bdimg15" class="image-filename">technology.jpg</label>
+                    </div>
+                    <div class="image-description">Ветряная или водяная мельница, механизмы</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval watermill", "medieval windmill machinery"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+watermill&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+water+mill">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/watermill/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg16">
+                        <div class="image-number">17</div>
+                        <label for="bdimg16" class="image-filename">sheep.jpg</label>
+                    </div>
+                    <div class="image-description">Стадо овец на огороженных пастбищах — огораживание</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "sheep enclosure England", "enclosure movement sheep"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=enclosure+sheep+england&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=enclosure+sheep">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/sheep%20pasture/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg17">
+                        <div class="image-number">18</div>
+                        <label for="bdimg17" class="image-filename">inheritance.jpg</label>
+                    </div>
+                    <div class="image-description">Семья получает документ о наследстве</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval inheritance charter", "reading a will medieval"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+inheritance+charter&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+will+reading">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/reading%20document/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg18">
+                        <div class="image-number">19</div>
+                        <label for="bdimg18" class="image-filename">end-feudalism.jpg</label>
+                    </div>
+                    <div class="image-description">Схема или символический коллаж «конец феодализма»</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "end of feudalism illustration", "feudalism to capitalism diagram"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=end+of+feudalism+illustration&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=feudalism+capitalism+diagram">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/feudalism/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg19">
+                        <div class="image-number">20</div>
+                        <label for="bdimg19" class="image-filename">living-standards.jpg</label>
+                    </div>
+                    <div class="image-description">Богатый стол: мясо, хлеб, вино — рост уровня жизни</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval feast table", "medieval meat feast"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+feast+table&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+feast">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/medieval%20feast/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg20">
+                        <div class="image-number">21</div>
+                        <label for="bdimg20" class="image-filename">long-term.jpg</label>
+                    </div>
+                    <div class="image-description">Коллаж: город, книги, механизмы — долгосрочные последствия</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Renaissance prosperity", "medieval to renaissance collage"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Renaissance+prosperity+art&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=renaissance+city+and+books">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/renaissance%20city/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg21">
+                        <div class="image-number">22</div>
+                        <label for="bdimg21" class="image-filename">summary.jpg</label>
+                    </div>
+                    <div class="image-description">Сводка: график/схема «чёрная смерть и экономика»</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Black Death economic impact chart", "Black Death consequences diagram"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Black+Death+economic+impact+diagram&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Black+Death+economic+impact">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/economy%20diagram/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="bdimg22">
+                        <div class="image-number">23</div>
+                        <label for="bdimg22" class="image-filename">conclusion.jpg</label>
+                    </div>
+                    <div class="image-description">Абстрактная картинка «экономика сильнее идеологии» (весы: деньги против короны/креста)</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "scales money vs crown", "economy vs ideology illustration"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=scales+money+vs+crown&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=scales+money+power">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/scales%20justice%20money/">Pixabay</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn reset-btn" onclick="resetProgress()">🔄 Сбросить</button>
+        <button class="action-btn save-btn" onclick="saveProgress()">💾 Сохранить</button>
+    </div>
+
+    <script>
+        function updateStats() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const total = checkboxes.length;
+            const checked = document.querySelectorAll('.checkbox:checked').length;
+            const remaining = total - checked;
+            const percent = total === 0 ? 0 : Math.round((checked / total) * 100);
+
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('checkedImages').textContent = checked;
+            document.getElementById('remainingImages').textContent = remaining;
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const progress = Array.from(checkboxes).map(cb => cb.checked);
+            localStorage.setItem('blackDeathEconomyImageProgress', JSON.stringify(progress));
+            showNotification('Прогресс сохранён ✅');
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('blackDeathEconomyImageProgress');
+            if (!saved) return;
+            const progress = JSON.parse(saved);
+            const checkboxes = document.querySelectorAll('.checkbox');
+            checkboxes.forEach((cb, index) => {
+                if (progress[index]) {
+                    cb.checked = true;
+                    cb.closest('.image-item').classList.add('checked');
+                }
+            });
+        }
+
+        function resetProgress() {
+            if (!confirm('Сбросить весь прогресс по картинкам по Чёрной смерти?')) return;
+            localStorage.removeItem('blackDeathEconomyImageProgress');
+            document.querySelectorAll('.checkbox').forEach(cb => {
+                cb.checked = false;
+                cb.closest('.image-item').classList.remove('checked');
+            });
+            updateStats();
+            showNotification('Прогресс сброшен 🔄');
+        }
+
+        function showNotification(message) {
+            const div = document.createElement('div');
+            div.textContent = message;
+            div.style.position = 'fixed';
+            div.style.top = '20px';
+            div.style.right = '20px';
+            div.style.background = '#28a745';
+            div.style.color = 'white';
+            div.style.padding = '10px 18px';
+            div.style.borderRadius = '8px';
+            div.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+            div.style.zIndex = '10000';
+            document.body.appendChild(div);
+            setTimeout(() => div.remove(), 2200);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadProgress();
+            document.querySelectorAll('.checkbox').forEach(cb => {
+                cb.addEventListener('change', () => {
+                    if (cb.checked) cb.closest('.image-item').classList.add('checked');
+                    else cb.closest('.image-item').classList.remove('checked');
+                    updateStats();
+                    saveProgress();
+                });
+            });
+            updateStats();
+        });
+    </script>
+</body>
+</html>
+

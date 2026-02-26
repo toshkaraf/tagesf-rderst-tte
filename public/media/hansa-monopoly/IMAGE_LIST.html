@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список изображений: Ганза — картель и монополия</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f3b52 0%, #082433 50%, #031219 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #0f3b52 0%, #082433 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.4em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.9; }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 18px 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 1.8em; font-weight: bold; color: #082433; }
+        .stat-label { color: #6c757d; margin-top: 4px; font-size: 0.9em; }
+        .instructions {
+            padding: 24px 36px;
+            background: #e3f2fd;
+            border-left: 5px solid #0f3b52;
+            margin: 20px 36px;
+            border-radius: 10px;
+        }
+        .instructions h2 { color: #082433; margin-bottom: 10px; font-size: 1.3em; }
+        .instructions ul { list-style-position: inside; color: #082433; font-size: 0.95em; }
+        .instructions li { margin: 6px 0; }
+        .content { padding: 10px 36px 30px; }
+        .section { margin-bottom: 32px; }
+        .section-title {
+            font-size: 1.6em;
+            color: #082433;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #0f3b52;
+        }
+        .image-item {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+            transition: all 0.25s ease;
+        }
+        .image-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            transform: translateY(-1px);
+        }
+        .image-item.checked { background: #d4edda; border-color: #28a745; }
+        .image-header { display: flex; align-items: center; margin-bottom: 8px; }
+        .checkbox { width: 22px; height: 22px; margin-right: 14px; cursor: pointer; }
+        .image-number {
+            background: #0f3b52;
+            color: white;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; margin-right: 12px; font-size: 0.95em;
+        }
+        .image-filename { font-size: 1.05em; font-weight: bold; color: #212529; flex: 1; }
+        .image-description { color: #495057; margin-bottom: 8px; margin-left: 70px; font-size: 0.95em; }
+        .search-terms {
+            background: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-left: 70px;
+            border: 1px solid #dee2e6;
+            font-size: 0.9em;
+        }
+        .search-terms strong { color: #0f3b52; }
+        .search-links { margin-left: 70px; margin-top: 8px; }
+        .search-link {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #0f3b52;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 8px; margin-top: 4px;
+            font-size: 0.85em;
+            transition: background 0.25s ease;
+        }
+        .search-link:hover { background: #031219; }
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: #e9ecef;
+            z-index: 1000;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #0f3b52, #41b3d3);
+            width: 0%;
+            transition: width 0.25s ease;
+        }
+        .action-buttons {
+            position: fixed;
+            bottom: 26px; right: 26px;
+            display: flex; gap: 10px;
+        }
+        .action-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+        .reset-btn { background: #dc3545; color: white; }
+        .reset-btn:hover { background: #c82333; transform: scale(1.04); }
+        .save-btn { background: #28a745; color: white; }
+        .save-btn:hover { background: #218838; transform: scale(1.04); }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>⚓ Ганза: картель и монополия</h1>
+            <p>Список изображений для поиска в Google, Wikimedia, Pixabay</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalImages">0</div>
+                <div class="stat-label">Всего изображений</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="checkedImages">0</div>
+                <div class="stat-label">Загружено</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="remainingImages">0</div>
+                <div class="stat-label">Осталось</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="progressPercent">0%</div>
+                <div class="stat-label">Прогресс</div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Инструкции</h2>
+            <ul>
+                <li><strong>Формат:</strong> JPG или PNG, минимум 1200×800 px</li>
+                <li><strong>Лицензия:</strong> Public Domain, Creative Commons</li>
+                <li><strong>Источники:</strong> Google Images, Wikimedia Commons, Pixabay</li>
+                <li><strong>Без изображений (юмор‑слайды):</strong> h4, h9, h13, h17, h21, h24, h28</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Изображения</h2>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img0">
+                        <div class="image-number">1</div>
+                        <label for="img0" class="image-filename">hansa-main.jpg</label>
+                    </div>
+                    <div class="image-description">Общий вид ганзейского корабля или торгового города</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Hanseatic League", "Hanse ship", "Hanse port"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Hanseatic+League+ship&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Hanseatic+ship">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/hanseatic%20ship/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img1">
+                        <div class="image-number">2</div>
+                        <label for="img1" class="image-filename">lubeck.jpg</label>
+                    </div>
+                    <div class="image-description">Любек, средневековая ганзейская архитектура (Хольстентор, склады)</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Lübeck Holstentor", "Lübeck Altstadt", "Hanseatic city Lübeck"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=L%C3%BCbeck+Holstentor&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=L%C3%BCbeck+Holstentor">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/lubeck%20holstentor/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img2">
+                        <div class="image-number">3</div>
+                        <label for="img2" class="image-filename">monopoly.jpg</label>
+                    </div>
+                    <div class="image-description">Купцы за столом, карты, монополия на товары</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval merchants table", "Hanseatic merchants", "medieval trade negotiation"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+merchants+table&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+merchants">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/medieval%20merchant/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img3">
+                        <div class="image-number">4</div>
+                        <label for="img3" class="image-filename">kontor.jpg</label>
+                    </div>
+                    <div class="image-description">Ганзейская контора / двор в чужом городе</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Hanseatic kontor", "Hanse trading post", "Hanseatic warehouse"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Hanseatic+kontor&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Hanseatic+kontor">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/warehouse%20harbour/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img4">
+                        <div class="image-number">5</div>
+                        <label for="img4" class="image-filename">novgorod.jpg</label>
+                    </div>
+                    <div class="image-description">Новгород, набережная, торговый двор</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Novgorod medieval", "Hanse Novgorod", "Novgorod Hanseatic"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Novgorod+medieval+Hanse&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Novgorod+Hanseatic">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/novgorod/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img5">
+                        <div class="image-number">6</div>
+                        <label for="img5" class="image-filename">denmark-war.jpg</label>
+                    </div>
+                    <div class="image-description">Флот Ганзы и Дании, морское сражение / блокада</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Hanseatic fleet", "Hanse Denmark war", "medieval naval battle"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Hanseatic+fleet+Denmark&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Hanseatic+fleet">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/naval%20battle/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img6">
+                        <div class="image-number">7</div>
+                        <label for="img6" class="image-filename">herring.jpg</label>
+                    </div>
+                    <div class="image-description">Сельдь, бочки с рыбой, ярмарка</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval herring trade", "Hanse herring", "herring barrels"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+herring+trade&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=herring+barrels">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/herring/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img7">
+                        <div class="image-number">8</div>
+                        <label for="img7" class="image-filename">bruges.jpg</label>
+                    </div>
+                    <div class="image-description">Брюгге, каналы и дома «Венеции Севера»</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Bruges medieval city", "Bruges canals", "Hanse Bruges"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Bruges+medieval+city&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Bruges+canals">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/bruges/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img8">
+                        <div class="image-number">9</div>
+                        <label for="img8" class="image-filename">steelyard.jpg</label>
+                    </div>
+                    <div class="image-description">Стальной двор (Steelyard) в Лондоне, ганзейский квартал</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "London Steelyard", "Hanseatic Steelyard", "medieval London wharf"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=London+Steelyard&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Steelyard+London">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/london%20thames/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img9">
+                        <div class="image-number">10</div>
+                        <label for="img9" class="image-filename">bergen.jpg</label>
+                    </div>
+                    <div class="image-description">Берген, квартал Bryggen, ганзейские дома</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Bergen Bryggen", "Hanseatic wharf Bergen"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Bergen+Bryggen&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Bryggen+Bergen">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/bergen%20bryggen/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img10">
+                        <div class="image-number">11</div>
+                        <label for="img10" class="image-filename">pirates.jpg</label>
+                    </div>
+                    <div class="image-description">Пираты нападают на торговый корабль</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Vitalienbrüder", "Hanse pirates", "medieval pirate ship"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Vitalienbr%C3%BCder&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Vitalienbr%C3%BCder">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/pirate%20ship/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img11">
+                        <div class="image-number">12</div>
+                        <label for="img11" class="image-filename">salt.jpg</label>
+                    </div>
+                    <div class="image-description">Соляные копи и мешки с солью (Люнебург)</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Lüneburg salt mine", "German Salt Museum", "medieval salt works"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=L%C3%BCneburg+salt+mine&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=L%C3%BCneburg+Saltworks">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/salt%20mine/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img12">
+                        <div class="image-number">13</div>
+                        <label for="img12" class="image-filename">wax-furs.jpg</label>
+                    </div>
+                    <div class="image-description">Блоки воска, меха в тюках, торговля с Русью</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "medieval wax trade", "fur bales", "Hanseatic fur trade"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+wax+trade&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+fur+trade">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/fur/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img13">
+                        <div class="image-number">14</div>
+                        <label for="img13" class="image-filename">blockade.jpg</label>
+                    </div>
+                    <div class="image-description">Блокада порта: корабли перекрывают вход</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "naval blockade harbour", "medieval harbour blockade"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=naval+blockade+harbour&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=naval+blockade+harbour">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/blockade/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img14">
+                        <div class="image-number">15</div>
+                        <label for="img14" class="image-filename">amber.jpg</label>
+                    </div>
+                    <div class="image-description">Янтарь: сырьё и украшения</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Baltic amber raw", "amber jewellery medieval"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Baltic+amber+raw&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Baltic+amber">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/amber/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img15">
+                        <div class="image-number">16</div>
+                        <label for="img15" class="image-filename">teutonic.jpg</label>
+                    </div>
+                    <div class="image-description">Замок Тевтонского ордена или рыцари в белых плащах</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Teutonic Knights castle", "Marienburg Teutonic", "Teutonic knight"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Teutonic+Knights+castle&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Teutonic+castle">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/teutonic%20castle/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img16">
+                        <div class="image-number">17</div>
+                        <label for="img16" class="image-filename">decline.jpg</label>
+                    </div>
+                    <div class="image-description">Упадок: пустой порт, заброшенные склады</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "abandoned harbour", "old warehouses harbour", "Hanse decline"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=abandoned+harbour+warehouses&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=abandoned+harbour">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/old%20harbour/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img17">
+                        <div class="image-number">18</div>
+                        <label for="img17" class="image-filename">legacy.jpg</label>
+                    </div>
+                    <div class="image-description">Современные ганзейские города, карта или логотип Hanse</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Hanseatic towns map", "Hanse logo", "European Hansemuseum"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Hanseatic+towns+map&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Hanseatic+League+map">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/hanseatic%20city/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img18">
+                        <div class="image-number">19</div>
+                        <label for="img18" class="image-filename">summary.jpg</label>
+                    </div>
+                    <div class="image-description">Коллаж: карта Балтики, суда, города — обобщение темы</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Hanseatic League map Baltic", "Hanse trade routes map"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Hanseatic+League+trade+routes+map&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Extent+of+the+Hansa">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/trade%20routes%20map/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img19">
+                        <div class="image-number">20</div>
+                        <label for="img19" class="image-filename">comparison.jpg</label>
+                    </div>
+                    <div class="image-description">Сравнение картеля Ганзы с современными картелями (ОПЕК, корпорации)</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "cartel illustration", "monopoly concept art", "OPEC cartoon"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=cartel+illustration&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=cartel+monopoly+cartoon">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/monopoly%20illustration/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img20">
+                        <div class="image-number">21</div>
+                        <label for="img20" class="image-filename">lessons.jpg</label>
+                    </div>
+                    <div class="image-description">Абстрактное изображение «уроки экономики»</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "economic lessons illustration", "economics concept art"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=economic+lessons+illustration&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=economics+diagram">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/economics%20concept/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img21">
+                        <div class="image-number">22</div>
+                        <label for="img21" class="image-filename">conclusion.jpg</label>
+                    </div>
+                    <div class="image-description">Порт на закате — завершение истории Ганзы</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "harbour sunset", "old port sunset", "Hanseatic harbour evening"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=old+harbour+sunset&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=harbour+sunset">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/harbour%20sunset/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="img22">
+                        <div class="image-number">23</div>
+                        <label for="img22" class="image-filename">final.jpg</label>
+                    </div>
+                    <div class="image-description">Современный самолёт / небоскрёбы как отсылка к Lufthansa и современным монополиям</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Lufthansa plane", "Hanseatic modern city skyline"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Lufthansa+aircraft&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Lufthansa+aircraft">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/lufthansa/">Pixabay</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn reset-btn" onclick="resetProgress()">🔄 Сбросить</button>
+        <button class="action-btn save-btn" onclick="saveProgress()">💾 Сохранить</button>
+    </div>
+
+    <script>
+        function updateStats() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const total = checkboxes.length;
+            const checked = document.querySelectorAll('.checkbox:checked').length;
+            const remaining = total - checked;
+            const percent = total === 0 ? 0 : Math.round((checked / total) * 100);
+
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('checkedImages').textContent = checked;
+            document.getElementById('remainingImages').textContent = remaining;
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const progress = Array.from(checkboxes).map(cb => cb.checked);
+            localStorage.setItem('hansaMonopolyImageProgress', JSON.stringify(progress));
+            showNotification('Прогресс сохранён ✅');
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('hansaMonopolyImageProgress');
+            if (!saved) return;
+            const progress = JSON.parse(saved);
+            const checkboxes = document.querySelectorAll('.checkbox');
+            checkboxes.forEach((cb, index) => {
+                if (progress[index]) {
+                    cb.checked = true;
+                    cb.closest('.image-item').classList.add('checked');
+                }
+            });
+        }
+
+        function resetProgress() {
+            if (!confirm('Сбросить весь прогресс по картинкам Ганзы?')) return;
+            localStorage.removeItem('hansaMonopolyImageProgress');
+            document.querySelectorAll('.checkbox').forEach(cb => {
+                cb.checked = false;
+                cb.closest('.image-item').classList.remove('checked');
+            });
+            updateStats();
+            showNotification('Прогресс сброшен 🔄');
+        }
+
+        function showNotification(message) {
+            const div = document.createElement('div');
+            div.textContent = message;
+            div.style.position = 'fixed';
+            div.style.top = '20px';
+            div.style.right = '20px';
+            div.style.background = '#28a745';
+            div.style.color = 'white';
+            div.style.padding = '10px 18px';
+            div.style.borderRadius = '8px';
+            div.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+            div.style.zIndex = '10000';
+            document.body.appendChild(div);
+            setTimeout(() => div.remove(), 2200);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            // восстановить состояния чекбоксов
+            loadProgress();
+            // отметить уже отмеченные
+            document.querySelectorAll('.checkbox').forEach(cb => {
+                cb.addEventListener('change', () => {
+                    if (cb.checked) cb.closest('.image-item').classList.add('checked');
+                    else cb.closest('.image-item').classList.remove('checked');
+                    updateStats();
+                    saveProgress();
+                });
+            });
+            updateStats();
+        });
+    </script>
+</body>
+</html>
+

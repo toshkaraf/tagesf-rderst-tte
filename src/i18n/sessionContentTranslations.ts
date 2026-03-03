@@ -8,6 +8,8 @@ import { castleWarfareSlidesDE, castleWarfareFinalQuizDE } from './castle-warfar
 import { vikingsTradeSlidesDE, vikingsTradeFinalQuizDE } from './vikings-trade-content-de'
 import { crusadesFinanceSlidesDE, crusadesFinanceFinalQuizDE } from './crusades-finance-content-de'
 import { hansaMonopolySlidesDE, hansaMonopolyFinalQuizDE } from './hansa-monopoly-content-de'
+import { blackDeathEconomySlidesDE, blackDeathEconomyFinalQuizDE } from './black-death-economy-content-de'
+import { universitiesRiotsSlidesDE, universitiesRiotsFinalQuizDE } from './universities-riots-content-de'
 
 // Deutsche Übersetzungen (B2-Niveau) für die Turnier-Session
 const ritterturniereSlidesDE: Slide[] = [
@@ -3115,6 +3117,20 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
     return {
       slides: hansaMonopolySlidesDE,
       quiz: hansaMonopolyFinalQuizDE
+    }
+  }
+
+  if (sessionId === 'black-death-economy' && language === 'de') {
+    return {
+      slides: blackDeathEconomySlidesDE,
+      quiz: blackDeathEconomyFinalQuizDE
+    }
+  }
+
+  if (sessionId === 'universities-riots' && language === 'de') {
+    return {
+      slides: universitiesRiotsSlidesDE,
+      quiz: universitiesRiotsFinalQuizDE
     }
   }
   

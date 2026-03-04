@@ -687,121 +687,42 @@ export const blackDeathEconomyFinalQuizDE: QuizBlock = {
   id: 'quiz-black-death-economy-de',
   title: 'Abschlussquiz: Schwarzer Tod – wirtschaftliche Revolution',
   questions: [
-    {
-      id: 'final-bd-de-1',
-      text: 'Welcher Faktor veränderte die Wirtschaft nach der Pest am stärksten?',
-      type: 'multiple-choice',
-      options: ['Mehr Land', 'Weniger Menschen, Arbeitskräftemangel', 'Mehr Kriege', 'Mehr Kirchen'],
-      correctAnswer: 1,
-      explanation: 'Weniger Menschen machten Arbeit knapp und wertvoll.'
-    },
-    {
-      id: 'final-bd-de-2',
-      text: 'Was versuchte das englische „Statute of Labourers“?',
-      type: 'multiple-choice',
-      options: [
-        'Löhne zu erhöhen',
-        'Löhne zu senken',
-        'Löhne auf altem Niveau festzufrieren',
-        'Steuern abzuschaffen'
-      ],
-      correctAnswer: 2,
-      explanation: 'Das Gesetz wollte die alte Ordnung retten – es scheiterte weitgehend.'
-    },
-    {
-      id: 'final-bd-de-3',
-      text: 'Warum verloren Grundherren Macht?',
-      type: 'multiple-choice',
-      options: [
-        'Weil sie ärmer wurden',
-        'Weil Bauern fliehen und bessere Bedingungen suchen konnten',
-        'Weil sie zum König gingen',
-        'Weil sie alle starben'
-      ],
-      correctAnswer: 1,
-      explanation: 'Bauern hatten plötzlich Wahlmöglichkeiten.'
-    },
-    {
-      id: 'final-bd-de-4',
-      text: 'Welche Rolle spielten Bauernaufstände wie Jacquerie und Wat Tyler?',
-      type: 'multiple-choice',
-      options: [
-        'Sie hatten keinen Effekt',
-        'Sie zeigten, dass alte Strukturen nicht mehr akzeptiert wurden',
-        'Sie stärkten den Adel',
-        'Sie wurden sofort vergessen'
-      ],
-      correctAnswer: 1,
-      explanation: 'Sie machten deutlich, dass Zwangsarbeit nicht mehr selbstverständlich war.'
-    },
-    {
-      id: 'final-bd-de-5',
-      text: 'Warum sank die Autorität der Kirche?',
-      type: 'multiple-choice',
-      options: [
-        'Weil sie zu reich war',
-        'Weil sie die Pest nicht erklären oder stoppen konnte',
-        'Weil sie neue Kirchen baute',
-        'Weil sie zu viel predigte'
-      ],
-      correctAnswer: 1,
-      explanation: 'Wenn eine Institution in der größten Krise versagt, verliert sie Ansehen.'
-    },
-    {
-      id: 'final-bd-de-6',
-      text: 'Was sagen Pogrome gegen Juden über die Gesellschaft aus?',
-      type: 'multiple-choice',
-      options: [
-        'Sie waren rational',
-        'Sie zeigen, wie Angst und Unwissen Minderheiten gefährlich machen',
-        'Sie lösten die Pest',
-        'Sie waren medizinisch sinnvoll'
-      ],
-      correctAnswer: 1,
-      explanation: 'Jüdische Gemeinden wurden Opfer von Angst, nicht von Fakten.'
-    },
-    {
-      id: 'final-bd-de-7',
-      text: 'Was war eine typische wirtschaftliche Antwort auf hohe Löhne?',
-      type: 'multiple-choice',
-      options: ['Mehr Feste', 'Mehr Technik und Maschinen', 'Mehr Gebet', 'Mehr Burgen'],
-      correctAnswer: 1,
-      explanation: 'Investition in Technik sollte teure menschliche Arbeit ersetzen.'
-    },
-    {
-      id: 'final-bd-de-8',
-      text: 'Was kennzeichnet die „Enclosures“ in England?',
-      type: 'multiple-choice',
-      options: [
-        'Schutz der Bauern',
-        'Verwandlung von Feldern in Weiden für Schafe',
-        'Stärkung der Leibeigenschaft',
-        'Ende des Handels'
-      ],
-      correctAnswer: 1,
-      explanation: 'Ackerland wurde eingezäunt, Bauern vertrieben.'
-    },
-    {
-      id: 'final-bd-de-9',
-      text: 'Welche neue soziale Gruppe entstand nach der Pest?',
-      type: 'multiple-choice',
-      options: ['Nur Adlige', 'Ein Mittelstand aus Erben, Händlern und Handwerkern', 'Nur Mönche', 'Keine neue Gruppe'],
-      correctAnswer: 1,
-      explanation: 'Erbschaften und neue Chancen schufen einen Mittelstand.'
-    },
-    {
-      id: 'final-bd-de-10',
-      text: 'Was ist die wichtigste Lehre aus dem Schwarzen Tod für die Wirtschaftsgeschichte?',
-      type: 'multiple-choice',
-      options: [
-        'Religion bestimmt alles',
-        'Zufall ist wichtiger als Strukturen',
-        'Ökonomische Kräfte (Angebot/Nachfrage) können ganze Systeme umformen',
-        'Kriege sind das Wichtigste'
-      ],
-      correctAnswer: 2,
-      explanation: 'Die Pest war ein Schock, der ökonomische Grundstrukturen veränderte.'
-    }
+    { id: 'q-bd-1-1-de', text: 'Wie viele Menschen starben ungefähr am Schwarzen Tod?', type: 'multiple-choice', options: ['10 Mio.', '30 Mio.', '75–200 Mio.', '500 Mio.'], correctAnswer: 2, explanation: 'Schätzungen liegen zwischen 75 und 200 Millionen Toten.' },
+    { id: 'q-bd-2-1-de', text: 'Um wie viel stiegen die Löhne nach der Pest ungefähr?', type: 'multiple-choice', options: ['Sie sanken', 'Sie blieben gleich', '3–4 mal höher', '10 mal höher'], correctAnswer: 2, explanation: 'Weniger Arbeiter bedeuteten viel höhere Löhne.' },
+    { id: 'q-bd-3-1-de', text: 'Warum flohen viele Bauern von ihren Höfen?', type: 'multiple-choice', options: ['Aus Langeweile', 'Weil woanders mehr Lohn gezahlt wurde', 'Wegen des Wetters', 'Wegen Kriegen'], correctAnswer: 1, explanation: 'Sie suchten bessere Bedingungen – ein neuer Arbeitsmarkt entstand.' },
+    { id: 'q-bd-4-1-de', text: 'Wann fand der Aufstand unter Wat Tyler statt?', type: 'multiple-choice', options: ['1300', '1358', '1381', '1400'], correctAnswer: 2, explanation: 'Der englische Bauernaufstand war 1381.' },
+    { id: 'q-bd-5-1-de', text: 'Was geschah mit Wat Tyler?', type: 'multiple-choice', options: ['Er wurde König', 'Er wurde getötet', 'Er floh ins Ausland', 'Er wurde Priester'], correctAnswer: 1, explanation: 'Er wurde während Verhandlungen erstochen.' },
+    { id: 'q-bd-6-1-de', text: 'Was passierte mit Bodenpreisen nach der Pest?', type: 'multiple-choice', options: ['Sie stiegen', 'Sie fielen', 'Sie blieben gleich', 'Es gab keinen Boden mehr'], correctAnswer: 1, explanation: 'Viel Land, aber wenig Pächter – der Preis sank.' },
+    { id: 'q-bd-7-1-de', text: 'Was ersetzte vielerorts Frondienste?', type: 'multiple-choice', options: ['Sklaverei', 'Geldpacht', 'Mehr Kriege', 'Kirchenarbeit'], correctAnswer: 1, explanation: 'Bauern zahlten Pacht, statt umsonst zu arbeiten.' },
+    { id: 'q-bd-8-1-de', text: 'Warum verlor die Kirche an Autorität?', type: 'multiple-choice', options: ['Weil sie zu reich war', 'Weil ihre Gebete die Pest nicht stoppten', 'Weil sie keine Steuern zahlte', 'Weil sie keine Schulen baute'], correctAnswer: 1, explanation: 'Die Kirche konnte das zentrale Problem nicht lösen.' },
+    { id: 'q-bd-9-1-de', text: 'Was war eine indirekte Folge der Pest für die Religion?', type: 'multiple-choice', options: ['Stärkung des Papstes', 'Schwächung der Kirche und Weg zur Reformation', 'Ende aller Klöster', 'Mehr Kreuzzüge'], correctAnswer: 1, explanation: 'Vertrauensverlust bereitete den Boden für spätere Reformen.' },
+    { id: 'q-bd-10-1-de', text: 'Warum investierten Grundherren in Technik?', type: 'multiple-choice', options: ['Weil sie Technik liebten', 'Weil Arbeit billig war', 'Weil Arbeit teuer und knapp war', 'Weil Bauern Technik wollten'], correctAnswer: 2, explanation: 'Maschinen sollten teure Arbeitskraft ersetzen.' },
+    { id: 'q-bd-11-1-de', text: 'Was sind „Enclosures“?', type: 'multiple-choice', options: ['Ein Steuersystem', 'Ein Zaunsystem für bessere Gärten', 'Einhegung von Feldern und Vertreibung von Bauern', 'Religiöse Rituale'], correctAnswer: 2, explanation: 'Es handelte sich um die Einhegung von Land für Weiden.' },
+    { id: 'q-bd-12-1-de', text: 'Welches System wurde durch die Pest geschwächt?', type: 'multiple-choice', options: ['Kapitalismus', 'Feudalismus', 'Demokratie', 'Sklaverei'], correctAnswer: 1, explanation: 'Der Feudalismus verlor seine wirtschaftliche Basis.' },
+    { id: 'q-bd-1-2-de', text: 'Wie veränderte sich die Wirtschaft nach der Pest?', type: 'multiple-choice', options: ['Es passierte nichts', 'Es gab zu viele Arbeiter', 'Arbeitskräfte wurden knapp, Löhne stiegen', 'Land wurde knapp'], correctAnswer: 2, explanation: 'Weniger Menschen bedeuteten höhere Löhne und mehr Verhandlungsmacht.' },
+    { id: 'q-bd-2-2-de', text: 'Was versuchte das englische „Statute of Labourers“?', type: 'multiple-choice', options: ['Steuern zu senken', 'Löhne auf Vorkrisenniveau festzufrieren', 'Neue Felder zu öffnen', 'Sklaverei einzuführen'], correctAnswer: 1, explanation: 'Das Gesetz sollte hohe Löhne verbieten.' },
+    { id: 'q-bd-3-2-de', text: 'Wann kam es zur Jacquerie in Frankreich?', type: 'multiple-choice', options: ['1300', '1358', '1400', '1500'], correctAnswer: 1, explanation: 'Die Jacquerie fand 1358 statt.' },
+    { id: 'q-bd-4-2-de', text: 'Was kritisierte John Ball mit seinem Satz über Adam und Eva?', type: 'multiple-choice', options: ['Die Landwirtschaft', 'Die Idee, dass Adlige „besser“ sind', 'Die Kirche', 'Die Stadt'], correctAnswer: 1, explanation: 'Er stellte die natürliche Ungleichheit in Frage.' },
+    { id: 'q-bd-5-2-de', text: 'Hielt der König seine Versprechen?', type: 'multiple-choice', options: ['Ja', 'Nein, er brach sie schnell', 'Teilweise', 'Unklar'], correctAnswer: 1, explanation: 'Die Reformzusagen wurden zurückgenommen, die Führung hingerichtet.' },
+    { id: 'q-bd-6-2-de', text: 'Wohin zogen viele Bauern?', type: 'multiple-choice', options: ['In die Berge', 'In die Städte', 'Ins Ausland', 'In Klöster'], correctAnswer: 1, explanation: 'Städte boten Löhne und Freiheit.' },
+    { id: 'q-bd-7-2-de', text: 'Wer kontrollierte viele Städte nach der Pest?', type: 'multiple-choice', options: ['Könige', 'Gilden der Handwerker', 'Bauern', 'Bischöfe'], correctAnswer: 1, explanation: 'Gilden wurden zur politischen Kraft.' },
+    { id: 'q-bd-8-2-de', text: 'Wer wurde oft für die Pest verantwortlich gemacht?', type: 'multiple-choice', options: ['Könige', 'Bauern', 'Juden', 'Mönche'], correctAnswer: 2, explanation: 'Juden wurden zu Sündenböcken und Opfer von Pogromen.' },
+    { id: 'q-bd-9-2-de', text: 'Was beschreibt der Begriff „Sündenbock“ in diesem Kontext?', type: 'multiple-choice', options: ['Ein medizinischer Fachbegriff', 'Jemand, dem man die Schuld gibt, obwohl er unschuldig ist', 'Ein Beruf', 'Eine Krankheit'], correctAnswer: 1, explanation: 'Jüdische Gemeinden wurden fälschlich verantwortlich gemacht.' },
+    { id: 'q-bd-10-2-de', text: 'Was geschah bei den „Enclosures“ in England?', type: 'multiple-choice', options: ['Bauern bekamen Land geschenkt', 'Felder wurden eingezäunt, Bauern vertrieben, Schafe gezüchtet', 'Städte wurden kleiner', 'Kirchen wurden verkauft'], correctAnswer: 1, explanation: 'Ackerland wurde in Weideland für Schafe verwandelt.' },
+    { id: 'q-bd-11-2-de', text: 'Was passierte mit vielen vertriebenen Bauern?', type: 'multiple-choice', options: ['Sie wurden Ritter', 'Sie wanderten in Städte ab', 'Sie wurden Mönche', 'Sie wurden reich'], correctAnswer: 1, explanation: 'Sie suchten Lohnarbeit in Städten.' },
+    { id: 'q-bd-12-2-de', text: 'Wie änderte sich der Lebensstandard vieler Überlebender?', type: 'multiple-choice', options: ['Er sank stark', 'Er blieb gleich', 'Er stieg', 'Er verschwand'], correctAnswer: 2, explanation: 'Weniger Menschen teilten sich mehr Ressourcen.' },
+    { id: 'q-bd-1-3-de', text: 'Was wurde plötzlich „Gold“ der Wirtschaft?', type: 'multiple-choice', options: ['Land', 'Arbeitskraft', 'Waffen', 'Gold selbst'], correctAnswer: 1, explanation: 'Arbeitskraft wurde wertvoller als Land.' },
+    { id: 'q-bd-2-3-de', text: 'Warum funktionierte das Gesetz schlecht?', type: 'multiple-choice', options: ['Weil niemand davon wusste', 'Weil es zu viele Arbeiter gab', 'Weil Arbeiter knapp und begehrt waren', 'Weil der König dagegen war'], correctAnswer: 2, explanation: 'Hohe Nachfrage nach Arbeitern setzte sich gegen Verbote durch.' },
+    { id: 'q-bd-3-3-de', text: 'Wogegen richteten sich die Bauernaufstände?', type: 'multiple-choice', options: ['Gegen neue Steuern und alte Pflichten', 'Gegen Märkte', 'Gegen Kirchen', 'Gegen Nachbarn'], correctAnswer: 0, explanation: 'Bauern wehrten sich gegen Versuche, die alte Ordnung komplett zurückzubringen.' },
+    { id: 'q-bd-4-3-de', text: 'Was forderten die Aufständischen in England?', type: 'multiple-choice', options: ['Mehr Kriege', 'Abschaffung der Leibeigenschaft und niedrigere Steuern', 'Neue Burgen', 'Mehr Feiertage'], correctAnswer: 1, explanation: 'Sie kämpften für Freiheit und Entlastung der Armen.' },
+    { id: 'q-bd-5-3-de', text: 'Was passierte langfristig mit der Leibeigenschaft?', type: 'multiple-choice', options: ['Sie wurde sofort abgeschafft', 'Sie verschwand langsam', 'Sie wurde stärker', 'Sie blieb unverändert'], correctAnswer: 1, explanation: 'Ökonomische Kräfte lösten sie Schritt für Schritt auf.' },
+    { id: 'q-bd-6-3-de', text: 'Wer wurde nach der Pest politisch einflussreicher?', type: 'multiple-choice', options: ['Grundherren', 'Handwerker und Gilden', 'Bauern', 'Mönche'], correctAnswer: 1, explanation: 'Gilden kontrollierten viele Städte.' },
+    { id: 'q-bd-7-3-de', text: 'Was beschleunigte die Urbanisierung?', type: 'multiple-choice', options: ['Mehr Kriege', 'Höhere Löhne in Städten', 'Strengere Gesetze', 'Wetter'], correctAnswer: 1, explanation: 'Städte zogen Menschen mit Löhnen und Freiheit an.' },
+    { id: 'q-bd-8-3-de', text: 'Was taten Flagellanten?', type: 'multiple-choice', options: ['Sie predigten nur', 'Sie handelten mit Heilmitteln', 'Sie geißelten sich selbst als Buße', 'Sie waren Ärzte'], correctAnswer: 2, explanation: 'Sie hofften, durch Leiden Gottes Zorn zu mindern.' },
+    { id: 'q-bd-9-3-de', text: 'Warum verbot die Kirche die Flagellanten?', type: 'multiple-choice', options: ['Weil sie zu laut waren', 'Weil sie zu viel Geld hatten', 'Weil sie der Kontrolle der Kirche entglitten', 'Weil sie nur singen wollten'], correctAnswer: 2, explanation: 'Unkontrollierbare religiöse Bewegungen sind für Hierarchien gefährlich.' },
+    { id: 'q-bd-10-3-de', text: 'Wer profitierte manchmal unerwartet von Erbschaften?', type: 'multiple-choice', options: ['Nur Könige', 'Jüngere Söhne und Frauen', 'Nur Mönche', 'Niemand'], correctAnswer: 1, explanation: 'Die Pest veränderte Verteilungen und ermöglichte Aufstieg.' },
+    { id: 'q-bd-11-3-de', text: 'Warum waren Schafe für manche Herren „attraktiv“?', type: 'multiple-choice', options: ['Weil sie hübsch sind', 'Weil Wolle Gewinne brachte und keine Löhne gezahlt werden mussten', 'Weil sie beten konnten', 'Weil sie lesen konnten'], correctAnswer: 1, explanation: 'Reine Kosten-Nutzen-Rechnung ohne Moral.' },
+    { id: 'q-bd-12-3-de', text: 'Was entstand langfristig nach der Pest?', type: 'multiple-choice', options: ['Ein stärkerer Adel', 'Ein Mittelstand und ein Arbeitsmarkt', 'Weniger Handel', 'Weniger Städte'], correctAnswer: 1, explanation: 'Ein neuer Mittelstand und Lohnarbeit entstanden.' }
   ]
 }
 

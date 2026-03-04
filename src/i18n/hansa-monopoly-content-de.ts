@@ -588,142 +588,36 @@ export const hansaMonopolyFinalQuizDE: QuizBlock = {
   id: 'quiz-hansa-monopoly-de',
   title: 'Abschlussquiz: Hanse – Kartell und Monopol',
   questions: [
-    {
-      id: 'final-h-de-1',
-      text: 'Was war die Hanse im Kern?',
-      type: 'multiple-choice',
-      options: ['Ein Staat', 'Ein Städtebund und Kartell', 'Ein Ritterorden', 'Ein Klosterverbund'],
-      correctAnswer: 1,
-      explanation: 'Die Hanse war ein Bündnis von Städten, die gemeinsam Preise und Handel steuerten.'
-    },
-    {
-      id: 'final-h-de-2',
-      text: 'Warum fürchteten Könige die Hanse?',
-      type: 'multiple-choice',
-      options: [
-        'Wegen ihres Heeres',
-        'Wegen ihrer Seestreitkräfte',
-        'Weil sie Handel und Nachschub blockieren konnte',
-        'Wegen ihrer Religion'
-      ],
-      correctAnswer: 2,
-      explanation: 'Blockaden konnten Staaten wirtschaftlich lähmen.'
-    },
-    {
-      id: 'final-h-de-3',
-      text: 'Welche Stadt wurde „Königin der Hanse“ genannt?',
-      type: 'multiple-choice',
-      options: ['Hamburg', 'Lübeck', 'Brügge', 'London'],
-      correctAnswer: 1,
-      explanation: 'Lübeck war das politische Zentrum der Hanse.'
-    },
-    {
-      id: 'final-h-de-4',
-      text: 'Was war ein Kontor?',
-      type: 'multiple-choice',
-      options: [
-        'Ein Kriegsschiff',
-        'Ein abgeschlossenes Handelsviertel der Hanse im Ausland',
-        'Eine Steuer',
-        'Ein Marktplatz im Inland'
-      ],
-      correctAnswer: 1,
-      explanation: 'Kontore waren hanseatische „Kolonien“ in fremden Städten.'
-    },
-    {
-      id: 'final-h-de-5',
-      text: 'Welche vier Hauptkontore hatte die Hanse?',
-      type: 'multiple-choice',
-      options: [
-        'Lübeck, Hamburg, Bremen, Köln',
-        'Nowgorod, Brügge, London, Bergen',
-        'Paris, Rom, Wien, Prag',
-        'Kopenhagen, Stockholm, Oslo, Danzig'
-      ],
-      correctAnswer: 1,
-      explanation: 'Diese vier Kontore bildeten das Rückgrat des Fernhandels.'
-    },
-    {
-      id: 'final-h-de-6',
-      text: 'Wie setzte die Hanse ihre Interessen gegenüber Dänemark durch?',
-      type: 'multiple-choice',
-      options: ['Mit einem Kreuzzug', 'Mit einer Blockade', 'Mit einem Bündnis mit England', 'Mit Bestechung'],
-      correctAnswer: 1,
-      explanation: 'Die Blockade zwang Dänemark in den Frieden von Stralsund.'
-    },
-    {
-      id: 'final-h-de-7',
-      text: 'Warum nannte man Hering „Öl des Mittelalters“?',
-      type: 'multiple-choice',
-      options: [
-        'Weil er so teuer war',
-        'Weil er in Lampen verbrannt wurde',
-        'Weil er ein zentrales, strategisches Lebensmittel war',
-        'Weil er selten war'
-      ],
-      correctAnswer: 2,
-      explanation: 'Hering war Grundnahrung in der Fastenzeit und wirtschaftlich extrem wichtig.'
-    },
-    {
-      id: 'final-h-de-8',
-      text: 'Warum war Salz für die Hanse so wichtig?',
-      type: 'multiple-choice',
-      options: [
-        'Es wurde als Geld benutzt',
-        'Es war Dekoration',
-        'Es war nötig, um Fisch und Fleisch haltbar zu machen',
-        'Es zählte als Luxusgut ohne Funktion'
-      ],
-      correctAnswer: 2,
-      explanation: 'Ohne Salz funktionierte die Konservierung nicht – ganze Versorgungsketten hingen davon ab.'
-    },
-    {
-      id: 'final-h-de-9',
-      text: 'Was war das Hauptziel der Blockade von Brügge?',
-      type: 'multiple-choice',
-      options: [
-        'Die Stadt militärisch zu erobern',
-        'Neue Steuern durchzusetzen',
-        'Steuererhöhungen gegen Hansekaufleute zurückzunehmen',
-        'Den König abzusetzen'
-      ],
-      correctAnswer: 2,
-      explanation: 'Brügge musste seine Politik gegenüber der Hanse zurückdrehen.'
-    },
-    {
-      id: 'final-h-de-10',
-      text: 'Warum sank die Macht der Hanse im 16. Jahrhundert?',
-      type: 'multiple-choice',
-      options: [
-        'Weil alle Häfen versandeten',
-        'Weil der Papst sie verbot',
-        'Wegen neuer Atlantikmächte wie Niederlande und England',
-        'Wegen einer Seuche'
-      ],
-      correctAnswer: 2,
-      explanation: 'Der Schwerpunkt des Welthandels verlagerte sich in den Atlantik.'
-    },
-    {
-      id: 'final-h-de-11',
-      text: 'Welche moderne Organisation ähnelt der Hanse in ihrer Funktion am meisten?',
-      type: 'multiple-choice',
-      options: ['UNO', 'NATO', 'OPEC', 'Rotes Kreuz'],
-      correctAnswer: 2,
-      explanation: 'OPEC ist ebenfalls ein Kartell, das Preise und Mengen steuert.'
-    },
-    {
-      id: 'final-h-de-12',
-      text: 'Welche Lehre über Monopole zeigt die Geschichte der Hanse?',
-      type: 'multiple-choice',
-      options: [
-        'Monopole sind ewig stabil',
-        'Monopole sind für alle gut',
-        'Monopole funktionieren nur ohne Konkurrenz und neue Märkte',
-        'Monopole haben keine politischen Wirkungen'
-      ],
-      correctAnswer: 2,
-      explanation: 'Neue Märkte (Atlantik) und Konkurrenten zerstörten das Ostsee­kartell.'
-    }
+    { id: 'q-h-1-1-de', text: 'Was war die Hanse vor allem?', type: 'multiple-choice', options: ['Ein Staat', 'Ein Handelskartell von Städten', 'Ein Ritterorden', 'Ein Klosterbund'], correctAnswer: 1, explanation: 'Die Hanse war ein Bund von Städten mit gemeinsamem Handel und Preisen – ein Kartell.' },
+    { id: 'q-h-2-1-de', text: 'Was war ein hanseatisches Kontor?', type: 'multiple-choice', options: ['Ein Kriegsschiff', 'Ein Handelsviertel der Hanse in einer fremden Stadt', 'Eine Steuer', 'Ein Kloster'], correctAnswer: 1, explanation: 'Kontore waren geschlossene Handelshöfe mit eigenen Regeln.' },
+    { id: 'q-h-3-1-de', text: 'Wann blockierte die Hanse Dänemark?', type: 'multiple-choice', options: ['1200–1210', '1362–1370', '1400–1410', '1500–1510'], correctAnswer: 1, explanation: 'Die Blockade dauerte von 1362 bis 1370.' },
+    { id: 'q-h-4-1-de', text: 'Wie nannte man Brügge im Mittelalter?', type: 'multiple-choice', options: ['Rom des Nordens', 'Venedig des Nordens', 'Paris des Nordens', 'London des Nordens'], correctAnswer: 1, explanation: 'Brügge war reich und von Kanälen durchzogen – wie Venedig.' },
+    { id: 'q-h-5-1-de', text: 'Welches Produkt kontrollierte die Hanse in Bergen?', type: 'multiple-choice', options: ['Gold', 'Getrockneten Kabeljau (Stockfisch)', 'Wein', 'Getreide'], correctAnswer: 1, explanation: 'Stockfisch war Grundnahrung für Seeleute – und Hanseware.' },
+    { id: 'q-h-6-1-de', text: 'Wer waren die Vitalienbrüder?', type: 'multiple-choice', options: ['Mönche', 'Piraten', 'Könige', 'Bauern'], correctAnswer: 1, explanation: 'Sie überfielen Schiffe und wurden zeitweise von Städten unterstützt.' },
+    { id: 'q-h-7-1-de', text: 'Welche Waren kamen aus Nowgorod?', type: 'multiple-choice', options: ['Gold', 'Wachs und Felle', 'Wein', 'Gewürze'], correctAnswer: 1, explanation: 'Wachs und Felle waren die wichtigsten Exportgüter.' },
+    { id: 'q-h-8-1-de', text: 'Wie bestrafte die Hanse Brügge für neue Steuern?', type: 'multiple-choice', options: ['Mit einer Flotte', 'Mit einer Blockade', 'Mit einem Prozess', 'Mit einem Kreuzzug'], correctAnswer: 1, explanation: 'Blockade – die Stadt verlor Handel und musste nachgeben.' },
+    { id: 'q-h-9-1-de', text: 'Welche Strafe drohte bei illegalem Bernsteinabbau?', type: 'multiple-choice', options: ['Eine kleine Geldstrafe', 'Nichts', 'Gefängnis', 'Sogar die Todesstrafe'], correctAnswer: 3, explanation: 'Bernstein war so wertvoll, dass Verstöße hart bestraft wurden.' },
+    { id: 'q-h-10-1-de', text: 'Warum verlor die Hanse im 16. Jahrhundert Macht?', type: 'multiple-choice', options: ['Wegen eines Vulkans', 'Wegen neuer Konkurrenten und Atlantikhandel', 'Wegen des Klimas', 'Wegen der Reformation'], correctAnswer: 1, explanation: 'Niederländer und Engländer dominierten den Atlantik.' },
+    { id: 'q-h-1-2-de', text: 'Welche Stadt galt als „Königin der Hanse“?', type: 'multiple-choice', options: ['Hamburg', 'Lübeck', 'Berlin', 'Köln'], correctAnswer: 1, explanation: 'Lübeck war Zentrum und Symbol der Hanse.' },
+    { id: 'q-h-2-2-de', text: 'Wie hieß das Kontor in Nowgorod?', type: 'multiple-choice', options: ['Kreml', 'Peterhof', 'Markt', 'Zwinger'], correctAnswer: 1, explanation: 'Der „Peterhof“ war der Hof des heiligen Petrus.' },
+    { id: 'q-h-3-2-de', text: 'Was ist der Frieden von Stralsund (1370)?', type: 'multiple-choice', options: ['Ein Abkommen zwischen Papst und Kaiser', 'Kapitulaton Dänemarks vor der Hanse', 'Vertrag mit Nowgorod', 'Friedensschluss im Hundertjährigen Krieg'], correctAnswer: 1, explanation: 'Dänemark musste hanseatische Forderungen akzeptieren.' },
+    { id: 'q-h-4-2-de', text: 'Wie hieß das hanseatische Viertel in London?', type: 'multiple-choice', options: ['Goldhof', 'Steelyard (Stalhof)', 'Silberhof', 'Salzhof'], correctAnswer: 1, explanation: 'Der Steelyard war das geschlossene Viertel der Hanse an der Themse.' },
+    { id: 'q-h-5-2-de', text: 'Wie sollten die Kaufleute offiziell leben?', type: 'multiple-choice', options: ['Luxuriös', 'Ask­tisch wie Mönche', 'Wie Bauern', 'Wie Ritter'], correctAnswer: 1, explanation: 'Regeln forderten strenges Leben – die Realität war oft anders.' },
+    { id: 'q-h-6-2-de', text: 'Woher stammte das hanseatische Salz?', type: 'multiple-choice', options: ['Aus dem Meer', 'Aus den Salinen von Lüneburg', 'Aus Afrika', 'Aus Italien'], correctAnswer: 1, explanation: 'Lüneburg lieferte das „weiße Gold“ der Hanse.' },
+    { id: 'q-h-7-2-de', text: 'Warum verlor die Hanse den Handel im Osten?', type: 'multiple-choice', options: ['Wegen der Pest', 'Wegen eines Vulkanausbruchs', 'Weil Iwan III. das Kontor schloss', 'Weil die Felle ausgingen'], correctAnswer: 2, explanation: 'Die Schließung des Kontors kappte den Zugang zu diesen Waren.' },
+    { id: 'q-h-8-2-de', text: 'Woher kam der Bernstein der Hanse hauptsächlich?', type: 'multiple-choice', options: ['Aus Afrika', 'Aus Preußen an der Ostsee', 'Aus Italien', 'Aus Spanien'], correctAnswer: 1, explanation: 'Die baltischen Küsten waren das Zentrum des Bernsteins.' },
+    { id: 'q-h-9-2-de', text: 'Warum löste sich die Hanse vom Deutschen Orden?', type: 'multiple-choice', options: ['Religiöser Streit', 'Der Orden wurde schwach und war wirtschaftlich weniger nützlich', 'Krieg', 'Pest'], correctAnswer: 1, explanation: 'Das Bündnis war rein ökonomisch – wird es unprofitabel, endet es.' },
+    { id: 'q-h-10-2-de', text: 'Wann fand der letzte Hansetag statt?', type: 'multiple-choice', options: ['1500', '1600', '1669', '1700'], correctAnswer: 2, explanation: '1669 waren nur noch neun Städte vertreten – von einst rund 200.' },
+    { id: 'q-h-1-3-de', text: 'Wie bestrafte die Hanse ungehorsame Partner?', type: 'multiple-choice', options: ['Mit Armeen', 'Mit Blockaden', 'Mit Kirchenstrafen', 'Mit hohen Zöllen'], correctAnswer: 1, explanation: 'Blockaden – niemand durfte mehr mit der Stadt handeln.' },
+    { id: 'q-h-2-3-de', text: 'Was geschah 1494 mit dem Peterhof?', type: 'multiple-choice', options: ['Er wurde vergrößert', 'Er wurde von Piraten zerstört', 'Iwan III. schloss ihn und konfiszierte die Waren', 'Er brannte zufällig ab'], correctAnswer: 2, explanation: 'Der Zar beendete damit den hanseatischen Handel in Russland.' },
+    { id: 'q-h-3-3-de', text: 'Warum war Hering so wichtig?', type: 'multiple-choice', options: ['Es war Luxusware', 'Es war Fastennahrung und lange haltbar', 'Es war selten', 'Er wurde als Geld benutzt'], correctAnswer: 1, explanation: 'Hering war billige, haltbare Fastenspeise – Alltagsspeise für Millionen.' },
+    { id: 'q-h-4-3-de', text: 'Warum waren die Londoner Bürger wütend auf die Hanse?', type: 'multiple-choice', options: ['Wegen der Religion', 'Weil hanseatische Händler keine Zölle zahlten', 'Wegen der Sprache', 'Weil sie keine Häuser bauten'], correctAnswer: 1, explanation: 'Steuerprivilegien der Hanse bedeuteten höhere Lasten für Einheimische.' },
+    { id: 'q-h-5-3-de', text: 'Wie viele Hauptkontore hatte die Hanse?', type: 'multiple-choice', options: ['Zwei', 'Vier', 'Zehn', 'Zwanzig'], correctAnswer: 1, explanation: 'Nowgorod, Brügge, London und Bergen.' },
+    { id: 'q-h-6-3-de', text: 'Wie hoch waren die Aufschläge auf Felle aus dem Osten?', type: 'multiple-choice', options: ['10 %', '50 %', '200–300 %', '1000 %'], correctAnswer: 2, explanation: 'Die Hanse verdiente an der Preisdifferenz zwischen Ost und West.' },
+    { id: 'q-h-7-3-de', text: 'Warum war Salz so wichtig?', type: 'multiple-choice', options: ['Für Kerzen', 'Für den Bau', 'Für die Konservierung von Lebensmitteln', 'Für Münzen'], correctAnswer: 2, explanation: 'Ohne Salz verdarben Fisch und Fleisch schnell.' },
+    { id: 'q-h-8-3-de', text: 'Mit wem arbeitete die Hanse in Preußen zusammen?', type: 'multiple-choice', options: ['Mit dem Papst', 'Mit dem Deutschen Orden', 'Mit Bauern', 'Mit Piraten'], correctAnswer: 1, explanation: 'Der Deutsche Orden kontrollierte Land, die Hanse den Handel.' },
+    { id: 'q-h-9-3-de', text: 'Was war die „Waffe“ der Hanse im Hafen?', type: 'multiple-choice', options: ['Schwerter', 'Lizenzsystem und Konfiskation', 'Predigten', 'Feuer'], correctAnswer: 1, explanation: 'Ohne hanseatisches Siegel durfte niemand legal handeln.' },
+    { id: 'q-h-10-3-de', text: 'Was trägt heute den Namen „Hanse“ weiter?', type: 'multiple-choice', options: ['Eine Bank', 'Die Fluggesellschaft Lufthansa', 'Ein Orden', 'Ein Schloss'], correctAnswer: 1, explanation: 'Lufthansa erinnert bewusst an die hanseatischen Wurzeln.' }
   ]
 }
 

@@ -552,92 +552,33 @@ export const universitiesRiotsFinalQuizDE: QuizBlock = {
   id: 'quiz-universities-riots-de',
   title: 'Abschlussquiz: Universitäten – Aufstände und Privilegien',
   questions: [
-    {
-      id: 'final-u-de-1',
-      text: 'Warum konnten Studenten sich oft wie „unangreifbar“ verhalten?',
-      type: 'multiple-choice',
-      options: [
-        'Weil sie reich waren',
-        'Weil sie als Kleriker galten und Sonderrechte hatten',
-        'Weil sie bewaffnet waren',
-        'Weil Städte ängstlich waren'
-      ],
-      correctAnswer: 1,
-      explanation: 'Klerikerstatus und eigene Gerichtsbarkeit schützten sie.'
-    },
-    {
-      id: 'final-u-de-2',
-      text: 'Was war die häufigste Reaktion der Krone auf Konflikte zwischen Bürgern und Universitäten?',
-      type: 'multiple-choice',
-      options: [
-        'Sie schloss die Unis',
-        'Sie stellte sich auf die Seite der Bürger',
-        'Sie verteidigte meist die Universitäten',
-        'Sie ignorierte alles'
-      ],
-      correctAnswer: 2,
-      explanation: 'Gelehrte waren für die Verwaltung wichtiger als zufriedene Bürger.'
-    },
-    {
-      id: 'final-u-de-3',
-      text: 'Was beschreibt die „cessatio“?',
-      type: 'multiple-choice',
-      options: [
-        'Eine Prüfungsform',
-        'Einen Streik, bei dem die Uni die Stadt verlässt',
-        'Eine religiöse Feier',
-        'Ein Bauprojekt'
-      ],
-      correctAnswer: 1,
-      explanation: 'Die Stadt sollte ökonomisch unter Druck gesetzt werden.'
-    },
-    {
-      id: 'final-u-de-4',
-      text: 'Warum hassten viele Bürger die Universitäten?',
-      type: 'multiple-choice',
-      options: [
-        'Wegen der Architektur',
-        'Wegen Lärm und Gewalt',
-        'Wegen Steuerbefreiungen und wirtschaftlicher Dominanz',
-        'Weil sie Bücher mochten'
-      ],
-      correctAnswer: 2,
-      explanation: 'Bürger zahlten Steuern und litten, während Unis Privilegien genossen.'
-    },
-    {
-      id: 'final-u-de-5',
-      text: 'Was änderte sich mit der Reformation im Bildungsbereich?',
-      type: 'multiple-choice',
-      options: [
-        'Es gab keine Unis mehr',
-        'Nur eine Super-Uni blieb übrig',
-        'Protestanten gründeten eigene Unis, das Monopol brach',
-        'Nur Klosterschulen blieben'
-      ],
-      correctAnswer: 2,
-      explanation: 'Bildung wurde konfessionell vielfältiger.'
-    },
-    {
-      id: 'final-u-de-6',
-      text: 'Welches zentrale Erbe der mittelalterlichen Unis existiert heute noch?',
-      type: 'multiple-choice',
-      options: ['Gewalt', 'Steuerfreiheit', 'Autonomie und akademische Freiheit', 'Leibeigenschaft'],
-      correctAnswer: 2,
-      explanation: 'Autonomie blieb, wurde aber demokratisch eingehegt.'
-    },
-    {
-      id: 'final-u-de-7',
-      text: 'Welche zentrale Gefahr zeigen die mittelalterlichen Universitäten?',
-      type: 'multiple-choice',
-      options: [
-        'Dass Wissen nutzlos ist',
-        'Dass Macht ohne Verantwortung in Gewalt umschlagen kann',
-        'Dass Bürger gefährlich sind',
-        'Dass Bildung Armut erzeugt'
-      ],
-      correctAnswer: 1,
-      explanation: 'Privilegien ohne Kontrolle führten zu massiven Missbräuchen.'
-    }
+    { id: 'q-u-1-1-de', text: 'Welchen rechtlichen Status hatten viele Studenten?', type: 'multiple-choice', options: ['Bauern', 'Kleriker (Geistliche)', 'Ritter', 'Händler'], correctAnswer: 1, explanation: 'Als Kleriker genossen sie Schutz und Sonderrechte der Kirche.' },
+    { id: 'q-u-2-1-de', text: 'Wann ereignete sich das Scholastika-Massaker in Oxford?', type: 'multiple-choice', options: ['1200', '1300', '1355', '1400'], correctAnswer: 2, explanation: 'Der Konflikt eskalierte im Jahr 1355.' },
+    { id: 'q-u-3-1-de', text: 'Welche Universität gilt als älteste Europas?', type: 'multiple-choice', options: ['Paris', 'Oxford', 'Bologna (1088)', 'Prag'], correctAnswer: 2, explanation: 'Bologna wurde 1088 gegründet.' },
+    { id: 'q-u-4-1-de', text: 'Wer zahlte die meisten städtischen Steuern?', type: 'multiple-choice', options: ['Studenten', 'Professoren', 'Bürger', 'Kleriker'], correctAnswer: 2, explanation: 'Studenten und Kleriker waren oft befreit – Bürger mussten mehr tragen.' },
+    { id: 'q-u-5-1-de', text: 'Mit welchem Ereignis ist Cambridge 1381 verbunden?', type: 'multiple-choice', options: ['Gründung der Uni', 'Bau neuer Hörsäle', 'Bauernaufstand und Angriff auf die Uni', 'Ein Erdbeben'], correctAnswer: 2, explanation: 'Im Rahmen des Bauernaufstands wurde auch die Uni angegriffen.' },
+    { id: 'q-u-6-1-de', text: 'Warum schützte die Kirche die Universitäten?', type: 'multiple-choice', options: ['Aus reiner Nächstenliebe', 'Wegen der Einnahmen', 'Weil sie dort Personal ausbildete', 'Weil sie Angst hatte'], correctAnswer: 2, explanation: 'Universitäten lieferten Priester und Juristen für die Kirche.' },
+    { id: 'q-u-7-1-de', text: 'Was bedeutete „akademische Freiheit“ damals oft praktisch?', type: 'multiple-choice', options: ['Recht auf Forschung UND Verantwortung', 'Nur Freiheit ohne Verantwortung', 'Nur Verantwortung', 'Gar nichts'], correctAnswer: 1, explanation: 'Privilegien wurden selten mit echter Kontrolle verbunden.' },
+    { id: 'q-u-8-1-de', text: 'Wie wurden Prüfungen oft finanziert?', type: 'multiple-choice', options: ['Durch den Staat', 'Durch die Kirche', 'Durch Prüfungsgebühren der Studenten', 'Gar nicht'], correctAnswer: 2, explanation: 'Studierende zahlten für nahezu jeden Schritt.' },
+    { id: 'q-u-9-1-de', text: 'Was zerstörte das Bildungsmonopol der katholischen Universitäten?', type: 'multiple-choice', options: ['Die Pest', 'Die Reformation', 'Ein Krieg', 'Ein Erdbeben'], correctAnswer: 1, explanation: 'Protestantische Unis schufen Konkurrenz.' },
+    { id: 'q-u-1-2-de', text: 'Wer durfte Studenten in der Regel verurteilen?', type: 'multiple-choice', options: ['Der Stadtrat', 'Der König', 'Nur der Bischof', 'Niemand'], correctAnswer: 2, explanation: 'Die kirchliche Gerichtsbarkeit führte zu milderen Strafen.' },
+    { id: 'q-u-2-2-de', text: 'Wie lange mussten die Bürger Oxfords Sühne leisten?', type: 'multiple-choice', options: ['10 Jahre', '50 Jahre', '100 Jahre', 'Fast 470 Jahre'], correctAnswer: 3, explanation: 'Bis ins 19. Jahrhundert hinein.' },
+    { id: 'q-u-3-2-de', text: 'Was bezeichnete „Nation“ an mittelalterlichen Unis?', type: 'multiple-choice', options: ['Einen Staat', 'Eine Gruppe von Studenten nach Herkunft', 'Einen Fachbereich', 'Eine Religion'], correctAnswer: 1, explanation: 'Nationen waren Gruppen von Studenten aus derselben Region.' },
+    { id: 'q-u-4-2-de', text: 'Was ist eine „cessatio“?', type: 'multiple-choice', options: ['Ein Examen', 'Ein Universitätsstreik', 'Ein Feiertag', 'Eine Bibliothek'], correctAnswer: 1, explanation: 'Bei einer cessatio verließen Uniangehörige die Stadt.' },
+    { id: 'q-u-5-2-de', text: 'Wer waren Vaganten?', type: 'multiple-choice', options: ['Professoren', 'Wandernde Studenten, oft arme Dichter und Räuber', 'Könige', 'Mönche'], correctAnswer: 1, explanation: 'Vaganten verbanden Bildung, Armut und Kriminalität.' },
+    { id: 'q-u-6-2-de', text: 'Warum verteidigten Könige die Unis?', type: 'multiple-choice', options: ['Weil Studenten reich waren', 'Weil Städte es wollten', 'Weil sie gebildete Beamte brauchten', 'Weil es Mode war'], correctAnswer: 2, explanation: 'Juristen wurden im Staatsdienst gut bezahlt.' },
+    { id: 'q-u-7-2-de', text: 'Welche Fakultät hatte den höchsten Status?', type: 'multiple-choice', options: ['Jura', 'Medizin', 'Theologie', 'Arithmetik'], correctAnswer: 2, explanation: 'Theologie galt als „Königin der Wissenschaften“.' },
+    { id: 'q-u-8-2-de', text: 'War es möglich, ein Diplom zu kaufen?', type: 'multiple-choice', options: ['Nein, nie', 'Ja, mit Geld und Beziehungen', 'Nur beim König', 'Nur in Rom'], correctAnswer: 1, explanation: 'Korruption machte Abschlüsse zur Ware.' },
+    { id: 'q-u-9-2-de', text: 'Was blieb als zentrales Erbe der mittelalterlichen Unis?', type: 'multiple-choice', options: ['Gewalt', 'Steuerfreiheit', 'Autonomie und akademische Freiheit', 'Leibeigenschaft'], correctAnswer: 2, explanation: 'Autonomie wurde modernisiert, aber nicht abgeschafft.' },
+    { id: 'q-u-1-3-de', text: 'Wie viele Studenten hatte Paris ungefähr in der Blütezeit?', type: 'multiple-choice', options: ['1.000', '5.000', '20.000', '50.000'], correctAnswer: 2, explanation: 'Etwa 20.000 Studenten machten die Stadt zu einem Spannungsfeld.' },
+    { id: 'q-u-2-3-de', text: 'Wer kontrollierte nach dem Konflikt Märkte und Preise?', type: 'multiple-choice', options: ['Die Stadt', 'Die Universität', 'Die Kirche allein', 'Die Zünfte'], correctAnswer: 1, explanation: 'Die Universität nutzte den Sieg, um ökonomische Macht zu sichern.' },
+    { id: 'q-u-3-3-de', text: 'Was war eine Folge des Konflikts in Prag 1409?', type: 'multiple-choice', options: ['Gründung der Uni Prag', 'Gründung der Uni Leipzig durch ausgewanderte Deutsche', 'Schließung aller Unis', 'Ende des Studiums'], correctAnswer: 1, explanation: 'Deutsche Professoren und Studenten gründeten Leipzig.' },
+    { id: 'q-u-4-3-de', text: 'Wer diktierte in manchen Städten die Preise?', type: 'multiple-choice', options: ['Nur die Zünfte', 'Nur der König', 'Die Universität', 'Niemand'], correctAnswer: 2, explanation: 'Die Uni nutzte ihre Sonderstellung zur Marktkontrolle.' },
+    { id: 'q-u-5-3-de', text: 'Wie reagierte die Krone nach Aufständen gegen die Uni?', type: 'multiple-choice', options: ['Sie bestrafte die Universität', 'Sie schaffte Privilegien ab', 'Sie stellte Privilegien wieder her und bestrafte Bürger', 'Sie schloss alle Unis'], correctAnswer: 2, explanation: 'Die Krone stand meist auf der Seite der Unis.' },
+    { id: 'q-u-6-3-de', text: 'Wer trug bei Konflikten oft die Schuld?', type: 'multiple-choice', options: ['Student', 'Bürger', 'Professor', 'König'], correctAnswer: 1, explanation: 'Rechtlich war der Bürger meist der Unterlegene.' },
+    { id: 'q-u-7-3-de', text: 'Warum wurden Juristen oft beneidet?', type: 'multiple-choice', options: ['Sie arbeiteten wenig', 'Sie verdienten gut bei Königen und Fürsten', 'Sie hatten keine Prüfungen', 'Sie lebten im Luxus'], correctAnswer: 1, explanation: 'Juristen wurden im Staatsdienst gut bezahlt.' },
+    { id: 'q-u-8-3-de', text: 'Wer hatte bessere Chancen auf Bildung?', type: 'multiple-choice', options: ['Arme Bauern', 'Nur Reiche und Begünstigte', 'Alle gleich', 'Nur Mönche'], correctAnswer: 1, explanation: 'Bildung war ein klassisches Privileg der Oberschicht.' },
+    { id: 'q-u-9-3-de', text: 'Wer kontrolliert moderne Universitäten rechtlich?', type: 'multiple-choice', options: ['Nur die Kirche', 'Nur die Stadt', 'Der Staat (Gesetze)', 'Niemand'], correctAnswer: 2, explanation: 'Autonomie existiert innerhalb eines gesetzlichen Rahmens.' }
   ]
 }
 

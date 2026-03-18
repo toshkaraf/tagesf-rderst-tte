@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список изображений: История искусственного интеллекта</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #283593 0%, #1a237e 50%, #0b1034 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #283593 0%, #1a237e 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.4em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.9; }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 18px 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 1.8em; font-weight: bold; color: #1a237e; }
+        .stat-label { color: #6c757d; margin-top: 4px; font-size: 0.9em; }
+        .instructions {
+            padding: 24px 36px;
+            background: #e8eaf6;
+            border-left: 5px solid #283593;
+            margin: 20px 36px;
+            border-radius: 10px;
+        }
+        .instructions h2 { color: #1a237e; margin-bottom: 10px; font-size: 1.3em; }
+        .instructions ul { list-style-position: inside; color: #1a237e; font-size: 0.95em; }
+        .instructions li { margin: 6px 0; }
+        .content { padding: 10px 36px 30px; }
+        .section { margin-bottom: 32px; }
+        .section-title {
+            font-size: 1.6em;
+            color: #1a237e;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #283593;
+        }
+        .image-item {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+            transition: all 0.25s ease;
+        }
+        .image-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            transform: translateY(-1px);
+        }
+        .image-item.checked { background: #d4edda; border-color: #28a745; }
+        .image-header { display: flex; align-items: center; margin-bottom: 8px; }
+        .checkbox { width: 22px; height: 22px; margin-right: 14px; cursor: pointer; }
+        .image-number {
+            background: #283593;
+            color: white;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; margin-right: 12px; font-size: 0.95em;
+        }
+        .image-filename { font-size: 1.05em; font-weight: bold; color: #212529; flex: 1; }
+        .image-description { color: #495057; margin-bottom: 8px; margin-left: 70px; font-size: 0.95em; }
+        .search-terms {
+            background: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-left: 70px;
+            border: 1px solid #dee2e6;
+            font-size: 0.9em;
+        }
+        .search-terms strong { color: #283593; }
+        .search-links { margin-left: 70px; margin-top: 8px; }
+        .search-link {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #283593;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 8px; margin-top: 4px;
+            font-size: 0.85em;
+            transition: background 0.25s ease;
+        }
+        .search-link:hover { background: #0b1034; }
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: #e9ecef;
+            z-index: 1000;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #283593, #42a5f5);
+            width: 0%;
+            transition: width 0.25s ease;
+        }
+        .action-buttons {
+            position: fixed;
+            bottom: 26px; right: 26px;
+            display: flex; gap: 10px;
+        }
+        .action-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+        .reset-btn { background: #dc3545; color: white; }
+        .reset-btn:hover { background: #c82333; transform: scale(1.04); }
+        .save-btn { background: #28a745; color: white; }
+        .save-btn:hover { background: #218838; transform: scale(1.04); }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>🤖 История искусственного интеллекта</h1>
+            <p>Список изображений для поиска в Google, Wikimedia, Pixabay</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalImages">0</div>
+                <div class="stat-label">Всего изображений</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="checkedImages">0</div>
+                <div class="stat-label">Загружено</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="remainingImages">0</div>
+                <div class="stat-label">Осталось</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="progressPercent">0%</div>
+                <div class="stat-label">Прогресс</div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Инструкции</h2>
+            <ul>
+                <li><strong>Формат:</strong> JPG или PNG, минимум 1200×800 px</li>
+                <li><strong>Лицензия:</strong> Public Domain, Creative Commons</li>
+                <li><strong>Источники:</strong> Google Images, Wikimedia Commons, Pixabay</li>
+                <li><strong>Без изображений (юмор‑слайды):</strong> ai5, ai7, ai12, ai19, ai23, ai28</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Изображения</h2>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="aiimg0">
+                        <div class="image-number">1</div>
+                        <label for="aiimg0" class="image-filename">turing.jpg</label>
+                    </div>
+                    <div class="image-description">Алан Тьюринг, портрет или фото за работой</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Alan Turing portrait", "Alan Turing bombe machine"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Alan+Turing+portrait&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Alan+Turing">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/alan%20turing/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="aiimg1">
+                        <div class="image-number">2</div>
+                        <label for="aiimg1" class="image-filename">dartmouth.jpg</label>
+                    </div>
+                    <div class="image-description">Здание Дартмутского колледжа / историческое фото конференции</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Dartmouth College 1956 AI conference", "Dartmouth Summer Research Project on Artificial Intelligence"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Dartmouth+Summer+Research+Project+on+Artificial+Intelligence&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Dartmouth+AI+1956">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/dartmouth%20college/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="aiimg2">
+                        <div class="image-number">3</div>
+                        <label for="aiimg2" class="image-filename">logic-theorist.jpg</label>
+                    </div>
+                    <div class="image-description">Схема или скриншот программы «Logic Theorist» / ранний компьютер</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Logic Theorist Newell Simon", "early AI program logic theorist"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Logic+Theorist+Newell+Simon&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Logic+Theorist">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/vintage%20computer/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="aiimg3">
+                        <div class="image-number">4</div>
+                        <label for="aiimg3" class="image-filename">eliza.jpg</label>
+                    </div>
+                    <div class="image-description">ELIZA: терминал с диалогом человек–компьютер</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ELIZA chatbot Weizenbaum", "ELIZA psychotherapist program screenshot"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=ELIZA+chatbot+Weizenbaum&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=ELIZA+Weizenbaum">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/old%20terminal/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="aiimg4">
+                        <div class="image-number">5</div>
+                        <label for="aiimg4" class="image-filename">hal9000.jpg</label>
+                    </div>
+                    <div class="image-description">HAL 9000 из фильма «2001: Космическая одиссея»</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "HAL 9000 2001 A Space Odyssey", "HAL 9000 eye"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=HAL+9000+2001+A+Space+Odyssey&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=HAL+9000">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/hal%209000/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="aiimg5">
+                        <div class="image-number">6</div>
+                        <label for="aiimg5" class="image-filename">ai-winter.jpg</label>
+                    </div>
+                    <div class="image-description">Метафора «зимы ИИ»: замороженный компьютер / снежный ландшафт и роботы</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "AI winter illustration", "frozen computer winter art"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=AI+winter+illustration&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=AI+winter">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/frozen%20computer/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="aiimg6">
+                        <div class="image-number">7</div>
+                        <label for="aiimg6" class="image-filename">mycin.jpg</label>
+                    </div>
+                    <div class="image-description">Экспертная система MYCIN: старый компьютер и схема правил</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "MYCIN expert system", "MYCIN medical expert system interface"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=MYCIN+expert+system&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=MYCIN+expert+system">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/old%20computer%20screen/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="aiimg7">
+                        <div class="image-number">8</div>
+                        <label for="aiimg7" class="image-filename">deep-blue.jpg</label>
+                    </div>
+                    <div class="image-description">Матч Каспаров — Deep Blue: шахматная доска и компьютер</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Kasparov vs Deep Blue 1997", "Deep Blue chess match photo"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Kasparov+vs+Deep+Blue+1997&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Kasparov+Deep+Blue">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/chess%20computer/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="aiimg8">
+                        <div class="image-number">9</div>
+                        <label for="aiimg8" class="image-filename">smart-fridge.jpg</label>
+                    </div>
+                    <div class="image-description">«Умный» холодильник с экраном и интернетом</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "smart fridge screen internet", "LG smart refrigerator early models"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=smart+fridge+screen+internet&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=smart+refrigerator">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/smart%20fridge/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="aiimg9">
+                        <div class="image-number">10</div>
+                        <label for="aiimg9" class="image-filename">alexnet.jpg</label>
+                    </div>
+                    <div class="image-description">Схема архитектуры AlexNet / нейросети для распознавания изображений</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "AlexNet architecture diagram", "ImageNet AlexNet 2012"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=AlexNet+architecture+diagram&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=AlexNet">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/neural%20network%20diagram/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="aiimg10">
+                        <div class="image-number">11</div>
+                        <label for="aiimg10" class="image-filename">alphago.jpg</label>
+                    </div>
+                    <div class="image-description">Матч AlphaGo — Ли Седоль, доска для игры в Го</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "AlphaGo Lee Sedol match", "Go board AlphaGo match photo"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=AlphaGo+Lee+Sedol+match&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=AlphaGo+Lee+Sedol">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/go%20game/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="aiimg11">
+                        <div class="image-number">12</div>
+                        <label for="aiimg11" class="image-filename">chatgpt.jpg</label>
+                    </div>
+                    <div class="image-description">Интерфейс ChatGPT или абстрактное изображение чат‑бота</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "ChatGPT interface", "AI chatbot conversation abstract"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=ChatGPT+interface&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=ChatGPT">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/ai%20chatbot/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="aiimg12">
+                        <div class="image-number">13</div>
+                        <label for="aiimg12" class="image-filename">turing-trial.jpg</label>
+                    </div>
+                    <div class="image-description">Тьюринг и британский суд / мемориал Тьюрингу</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Alan Turing trial", "Alan Turing memorial Manchester"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Alan+Turing+memorial+Manchester&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Alan+Turing+memorial">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/memorial%20statue/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="aiimg13">
+                        <div class="image-number">14</div>
+                        <label for="aiimg13" class="image-filename">perceptron.jpg</label>
+                    </div>
+                    <div class="image-description">Франк Розенблатт и персептрон / схема персептрона</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Frank Rosenblatt perceptron", "perceptron diagram 1958"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Frank+Rosenblatt+perceptron&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=perceptron">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/neural%20network/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="aiimg14">
+                        <div class="image-number">15</div>
+                        <label for="aiimg14" class="image-filename">lighthill-report.jpg</label>
+                    </div>
+                    <div class="image-description">Доклад Лайтхилла / символ «крест» поверх слов Artificial Intelligence</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "Lighthill report 1973 AI", "James Lighthill artificial intelligence report"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=Lighthill+report+1973+AI&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Lighthill+AI+report">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/report%20document/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="aiimg15">
+                        <div class="image-number">16</div>
+                        <label for="aiimg15" class="image-filename">robot-cook.jpg</label>
+                    </div>
+                    <div class="image-description">Японский робот‑повар на кухне (иллюстрация)</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "robot cook kitchen illustration", "Japanese cooking robot 1980s"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=robot+cook+kitchen+illustration&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=cooking+robot">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/robot%20kitchen/">Pixabay</a>
+                    </div>
+                </div>
+
+                <div class="image-item">
+                    <div class="image-header">
+                        <input type="checkbox" class="checkbox" id="aiimg16">
+                        <div class="image-number">17</div>
+                        <label for="aiimg16" class="image-filename">ai-summary.jpg</label>
+                    </div>
+                    <div class="image-description">Коллаж: старые компьютеры, нейросеть, чат‑бот — итоговая картинка истории ИИ</div>
+                    <div class="search-terms"><strong>Поиск:</strong> "AI history collage", "artificial intelligence timeline illustration"</div>
+                    <div class="search-links">
+                        <a class="search-link" target="_blank" href="https://www.google.com/search?q=AI+history+collage&tbm=isch">Google</a>
+                        <a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=artificial+intelligence+timeline">Wikimedia</a>
+                        <a class="search-link" target="_blank" href="https://pixabay.com/images/search/artificial%20intelligence%20history/">Pixabay</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn reset-btn" onclick="resetProgress()">🔄 Сбросить</button>
+        <button class="action-btn save-btn" onclick="saveProgress()">💾 Сохранить</button>
+    </div>
+
+    <script>
+        function updateStats() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const total = checkboxes.length;
+            const checked = document.querySelectorAll('.checkbox:checked').length;
+            const remaining = total - checked;
+            const percent = total === 0 ? 0 : Math.round((checked / total) * 100);
+
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('checkedImages').textContent = checked;
+            document.getElementById('remainingImages').textContent = remaining;
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const progress = Array.from(checkboxes).map(cb => cb.checked);
+            localStorage.setItem('aiHistoryImageProgress', JSON.stringify(progress));
+            showNotification('Прогресс сохранён ✅');
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('aiHistoryImageProgress');
+            if (!saved) return;
+            const progress = JSON.parse(saved);
+            const checkboxes = document.querySelectorAll('.checkbox');
+            checkboxes.forEach((cb, index) => {
+                if (progress[index]) {
+                    cb.checked = true;
+                    cb.closest('.image-item').classList.add('checked');
+                }
+            });
+        }
+
+        function resetProgress() {
+            if (!confirm('Сбросить весь прогресс по картинкам для истории ИИ?')) return;
+            localStorage.removeItem('aiHistoryImageProgress');
+            document.querySelectorAll('.checkbox').forEach(cb => {
+                cb.checked = false;
+                cb.closest('.image-item').classList.remove('checked');
+            });
+            updateStats();
+            showNotification('Прогресс сброшен 🔄');
+        }
+
+        function showNotification(message) {
+            const div = document.createElement('div');
+            div.textContent = message;
+            div.style.position = 'fixed';
+            div.style.top = '20px';
+            div.style.right = '20px';
+            div.style.background = '#28a745';
+            div.style.color = 'white';
+            div.style.padding = '10px 18px';
+            div.style.borderRadius = '8px';
+            div.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+            div.style.zIndex = '10000';
+            document.body.appendChild(div);
+            setTimeout(() => div.remove(), 2200);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadProgress();
+            document.querySelectorAll('.checkbox').forEach(cb => {
+                cb.addEventListener('change', () => {
+                    if (cb.checked) cb.closest('.image-item').classList.add('checked');
+                    else cb.closest('.image-item').classList.remove('checked');
+                    updateStats();
+                    saveProgress();
+                });
+            });
+            updateStats();
+        });
+    </script>
+</body>
+</html>
+

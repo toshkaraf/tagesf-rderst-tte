@@ -481,6 +481,58 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
         closing: 'Обсуждаем найденные места и впечатления'
       }
     }
+  },
+  'ai-history': {
+    de: {
+      title: 'Geschichte der Künstlichen Intelligenz',
+      description: 'Von logischen Maschinen bis zu neuronalen Netzen – Schlüsselmomente, kluge Anekdoten und liebenswerte Fakten',
+      category: 'Wissenschaft',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über die Geschichte der KI!',
+        mainContent: 'Wir verfolgen den Weg von Turing und der Dartmouth‑Konferenz über ELIZA und Deep Blue bis zu AlphaGo und ChatGPT',
+        interactive: 'Fragen, Zwischen‑Quizze und Abschlussquiz',
+        additional: 'Historische Fotos, Diagramme und humorvolle Geschichten',
+        closing: 'Zusammenfassung und Diskussion: Was lernen wir aus 70 Jahren KI‑Geschichte?'
+      }
+    },
+    ru: {
+      title: 'История искусственного интеллекта',
+      description: 'От «логических машин» до нейросетей — ключевые вехи, умные анекдоты и любопытные факты',
+      category: 'Наука',
+      structure: {
+        greeting: 'Добро пожаловать на занятие об истории ИИ!',
+        mainContent: 'Проследим путь от Тьюринга и Дартмута до ELIZA, Deep Blue, AlphaGo и ChatGPT',
+        interactive: 'Вопросы, промежуточные викторины и итоговый тест',
+        additional: 'Исторические фото, схемы и забавные истории',
+        closing: 'Подведение итогов: какие уроки даёт нам история ИИ'
+      }
+    }
+  },
+  'ai-modern': {
+    de: {
+      title: 'Moderner KI: Fähigkeiten und Grenzen',
+      description: 'Was heutige KI wirklich kann, wo sie scheitert und wie sie Arbeit, Bildung und Kreativität verändert',
+      category: 'Wissenschaft',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über modernen KI!',
+        mainContent: 'Wir besprechen ChatGPT, Bildgeneratoren, reale Anwendungsfälle, Risiken und sinnvolle Einsatzregeln',
+        interactive: 'Diskussionen, Mini‑Umfragen und Quiz‑Blöcke',
+        additional: 'Beispiele für Prompts, typische Fehler und komische KI‑Pannen',
+        closing: 'Zusammenfassung: Wie nutzen wir KI als Werkzeug – nicht als Orakel?'
+      }
+    },
+    ru: {
+      title: 'Современный ИИ: возможности и ограничения',
+      description: 'Что реально умеет ИИ сегодня, где он ошибается и как меняет работу, образование и творчество',
+      category: 'Наука',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о современном ИИ!',
+        mainContent: 'Обсудим ChatGPT, генерацию изображений, реальные кейсы, риски и правила разумного использования',
+        interactive: 'Обсуждения, мини‑голосования и блоки викторин',
+        additional: 'Примеры запросов, типичные ошибки и забавные провалы ИИ',
+        closing: 'Подведение итогов: как использовать ИИ как инструмент, а не «оракул»'
+      }
+    }
   }
 }
 

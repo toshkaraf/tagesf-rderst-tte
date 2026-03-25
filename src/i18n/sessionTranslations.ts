@@ -510,11 +510,11 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
   },
   'ai-modern': {
     de: {
-      title: 'Moderner KI: Fähigkeiten und Grenzen',
+      title: 'Moderne KI: Fähigkeiten und Grenzen',
       description: 'Was heutige KI wirklich kann, wo sie scheitert und wie sie Arbeit, Bildung und Kreativität verändert',
       category: 'Wissenschaft',
       structure: {
-        greeting: 'Willkommen zur Sitzung über modernen KI!',
+        greeting: 'Willkommen zur Sitzung über moderne KI!',
         mainContent: 'Wir besprechen ChatGPT, Bildgeneratoren, reale Anwendungsfälle, Risiken und sinnvolle Einsatzregeln',
         interactive: 'Diskussionen, Mini‑Umfragen und Quiz‑Blöcke',
         additional: 'Beispiele für Prompts, typische Fehler und komische KI‑Pannen',

@@ -10,6 +10,8 @@ import { crusadesFinanceSlidesDE, crusadesFinanceFinalQuizDE } from './crusades-
 import { hansaMonopolySlidesDE, hansaMonopolyFinalQuizDE } from './hansa-monopoly-content-de'
 import { blackDeathEconomySlidesDE, blackDeathEconomyFinalQuizDE } from './black-death-economy-content-de'
 import { universitiesRiotsSlidesDE, universitiesRiotsFinalQuizDE } from './universities-riots-content-de'
+import { aiHistorySlidesDE, aiHistoryFinalQuizDE } from './ai-history-content-de'
+import { aiModernSlidesDE, aiModernFinalQuizDE } from './ai-modern-content-de'
 
 // Deutsche Übersetzungen (B2-Niveau) für die Turnier-Session
 const ritterturniereSlidesDE: Slide[] = [
@@ -3131,6 +3133,20 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
     return {
       slides: universitiesRiotsSlidesDE,
       quiz: universitiesRiotsFinalQuizDE
+    }
+  }
+
+  if (sessionId === 'ai-history' && language === 'de') {
+    return {
+      slides: aiHistorySlidesDE,
+      quiz: aiHistoryFinalQuizDE
+    }
+  }
+
+  if (sessionId === 'ai-modern' && language === 'de') {
+    return {
+      slides: aiModernSlidesDE,
+      quiz: aiModernFinalQuizDE
     }
   }
   

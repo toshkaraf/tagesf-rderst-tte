@@ -126,7 +126,7 @@ export const aiModernSessionRU: Session = {
   },
   metadata: {
     created: '2025-02-04',
-    tags: ['ИИ', 'современный ИИ', 'нейросети', 'ChatGPT'],
+    tags: ['KI', 'moderne KI', 'Neuronale Netze', 'ChatGPT'],
     difficulty: 'medium'
   }
 }

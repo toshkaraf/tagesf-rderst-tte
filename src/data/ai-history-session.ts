@@ -134,7 +134,7 @@ export const aiHistorySessionRU: Session = {
   },
   metadata: {
     created: '2025-02-04',
-    tags: ['ИИ', 'история', 'наука', 'Тьюринг', 'ChatGPT'],
+    tags: ['KI', 'Geschichte', 'Wissenschaft', 'Turing', 'ChatGPT'],
     difficulty: 'medium'
   }
 }

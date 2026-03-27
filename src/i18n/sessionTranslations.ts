@@ -508,6 +508,37 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'writing-control': {
+    de: {
+      title: 'Schrift: Kontrolle und Macht',
+      description:
+        'Wie Schrift Elite und Staat diente – vom sumerischen Tontafelbuch bis zu Kaiserprüfungen und Leseverboten; echte Geschichten und Dokumente, keine erfundenen «Witze».',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über Schrift und Macht!',
+        mainContent:
+          'Wir verfolgen, wer Zeichen beherrschte, wer «mündlich» blieb und wie Aufzeichnungen Zugang zu Ressourcen und Bedeutungen öffneten oder verschlossen',
+        interactive: 'Zwischenquizze und Abschlusstest mit 30 Fragen',
+        additional: 'Auf jedem Folienbild eine Illustration; Bilderliste unter IMAGE_LIST.html',
+        closing:
+          'Fazit: Alphabetisierung ist kein neutrales Handwerk, sondern ein Feld der Auseinandersetzung um Kontrolle'
+      }
+    },
+    ru: {
+      title: 'Письменность: контроль и власть',
+      description:
+        'Как письмо служило элите и государству: от шумерских табличек до имперских экзаменов и запретов; реальные истории и документы, а не выдуманные «анекдоты».',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о письменности и власти!',
+        mainContent:
+          'Проследим, кто владел знаками, кто оставался «у устной» правды и как записи открывали или закрывали доступ к ресурсам и смыслам',
+        interactive: 'Промежуточные викторины и итоговый тест из 30 вопросов',
+        additional: 'На каждом слайде — иллюстрация; подбор по списку IMAGE_LIST.html',
+        closing: 'Итог: грамотность — не нейтральный навык, а поле борьбы за контроль'
+      }
+    }
+  },
   'ai-modern': {
     de: {
       title: 'Moderne KI: Fähigkeiten und Grenzen',

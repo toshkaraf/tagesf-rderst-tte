@@ -12,6 +12,7 @@ import { blackDeathEconomySlidesDE, blackDeathEconomyFinalQuizDE } from './black
 import { universitiesRiotsSlidesDE, universitiesRiotsFinalQuizDE } from './universities-riots-content-de'
 import { aiHistorySlidesDE, aiHistoryFinalQuizDE } from './ai-history-content-de'
 import { aiModernSlidesDE, aiModernFinalQuizDE } from './ai-modern-content-de'
+import { writingControlSlidesDE, writingControlFinalQuizDE } from './writing-control-content-de'
 
 // Deutsche Übersetzungen (B2-Niveau) für die Turnier-Session
 const ritterturniereSlidesDE: Slide[] = [
@@ -3147,6 +3148,13 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
     return {
       slides: aiModernSlidesDE,
       quiz: aiModernFinalQuizDE
+    }
+  }
+
+  if (sessionId === 'writing-control' && language === 'de') {
+    return {
+      slides: writingControlSlidesDE,
+      quiz: writingControlFinalQuizDE
     }
   }
   

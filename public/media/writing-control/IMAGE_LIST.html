@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bildliste: Schrift — Kontrolle und Macht</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #3e2723 0%, #5d4037 45%, #1b100e 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fffef8;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #4e342e 0%, #3e2723 100%);
+            color: #fff8e1;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.2em; margin-bottom: 10px; }
+        .header p { font-size: 1.05em; opacity: 0.92; }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 18px 20px;
+            background: #efebe9;
+            border-bottom: 2px solid #d7ccc8;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 1.8em; font-weight: bold; color: #3e2723; }
+        .stat-label { color: #6d4c41; margin-top: 4px; font-size: 0.9em; }
+        .instructions {
+            padding: 24px 36px;
+            background: #efebe9;
+            border-left: 5px solid #5d4037;
+            margin: 20px 36px;
+            border-radius: 10px;
+        }
+        .instructions h2 { color: #3e2723; margin-bottom: 10px; font-size: 1.3em; }
+        .instructions ul { list-style-position: inside; color: #4e342e; font-size: 0.95em; }
+        .instructions li { margin: 6px 0; }
+        .content { padding: 10px 36px 30px; }
+        .section-title {
+            font-size: 1.6em;
+            color: #3e2723;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #795548;
+        }
+        .image-item {
+            background: #faf6ef;
+            border: 2px solid #d7ccc8;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+            transition: all 0.25s ease;
+        }
+        .image-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            transform: translateY(-1px);
+        }
+        .image-item.checked { background: #dcedc8; border-color: #689f38; }
+        .image-header { display: flex; align-items: center; margin-bottom: 8px; }
+        .checkbox { width: 22px; height: 22px; margin-right: 14px; cursor: pointer; }
+        .image-number {
+            background: #5d4037;
+            color: white;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; margin-right: 12px; font-size: 0.95em;
+        }
+        .image-filename { font-size: 1.05em; font-weight: bold; color: #212529; flex: 1; }
+        .image-description { color: #495057; margin-bottom: 8px; margin-left: 70px; font-size: 0.95em; }
+        .search-terms {
+            background: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-left: 70px;
+            border: 1px solid #bcaaa4;
+            font-size: 0.9em;
+        }
+        .search-terms strong { color: #5d4037; }
+        .search-links { margin-left: 70px; margin-top: 8px; }
+        .search-link {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #5d4037;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 8px; margin-top: 4px;
+            font-size: 0.85em;
+            transition: background 0.25s ease;
+        }
+        .search-link:hover { background: #3e2723; }
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: #d7ccc8;
+            z-index: 1000;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #6d4c41, #a1887f);
+            width: 0%;
+            transition: width 0.25s ease;
+        }
+        .action-buttons {
+            position: fixed;
+            bottom: 26px; right: 26px;
+            display: flex; gap: 10px;
+        }
+        .action-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+        .reset-btn { background: #c62828; color: white; }
+        .reset-btn:hover { background: #b71c1c; transform: scale(1.04); }
+        .save-btn { background: #558b2f; color: white; }
+        .save-btn:hover { background: #33691e; transform: scale(1.04); }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="container">
+        <div class="header">
+            <h1>Schrift: Kontrolle und Macht</h1>
+            <p>31 Dateien · Google / Wikimedia Commons / Pixabay · RU/DE-Session «writing-control»</p>
+        </div>
+        <div class="stats">
+            <div class="stat-item"><div class="stat-number" id="totalImages">0</div><div class="stat-label">Gesamt</div></div>
+            <div class="stat-item"><div class="stat-number" id="checkedImages">0</div><div class="stat-label">Erledigt</div></div>
+            <div class="stat-item"><div class="stat-number" id="remainingImages">0</div><div class="stat-label">Offen</div></div>
+            <div class="stat-item"><div class="stat-number" id="progressPercent">0%</div><div class="stat-label">Fortschritt</div></div>
+        </div>
+        <div class="instructions">
+            <h2>Anleitung</h2>
+            <ul>
+                <li><strong>Dateiname exakt:</strong> wie in der Liste (z.&nbsp;B. <code>01-sumer-tablets.jpg</code>) in <code>public/media/writing-control/</code> legen.</li>
+                <li><strong>Format:</strong> JPG oder PNG, ideal ≥ 1200×800 px.</li>
+                <li><strong>Lizenz:</strong> Public Domain oder CC (Quelle notieren).</li>
+                <li><strong>Quiz-Bild:</strong> <code>quiz-manuscript.jpg</code> — neutrales Manuskript / Feder / Pergament.</li>
+            </ul>
+        </div>
+        <div class="content">
+            <h2 class="section-title">Bilder</h2>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc0"><div class="image-number">1</div><label for="wc0" class="image-filename">01-sumer-tablets.jpg</label></div><div class="image-description">Sumerische / mesopotamische Tontafeln mit Keilschrift</div><div class="search-terms"><strong>Suche:</strong> "Sumerian clay tablets cuneiform" / «шумерские глиняные таблички»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=Sumerian+clay+tablets+cuneiform&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=cuneiform+clay+tablet">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/cuneiform/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc1"><div class="image-number">2</div><label for="wc1" class="image-filename">02-scribe-statuette.jpg</label></div><div class="image-description">Mesopotamischer oder ägyptischer sitzender Schreiber (Statuette / Relief)</div><div class="search-terms"><strong>Suche:</strong> "Mesopotamian scribe statuette Louvre" / «писец шумерский статуэтка»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=Mesopotamian+scribe+statue&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=scribe+statue">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/scribe+ancient/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc2"><div class="image-number">3</div><label for="wc2" class="image-filename">03-edubba-school.jpg</label></div><div class="image-description">Schule / Tafelhaus: Kinder oder Lehrerszene (historische Illustration oder Museum)</div><div class="search-terms"><strong>Suche:</strong> "edubba scribal school illustration" / «вавилонская школа писцов»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=Babylonian+scribal+school&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=scribal+school">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/ancient+school/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc3"><div class="image-number">4</div><label for="wc3" class="image-filename">04-school-days-tablet.jpg</label></div><div class="image-description">Babylonische Schul- oder literarische Tafel (Museum)</div><div class="search-terms"><strong>Suche:</strong> "school days tablet Babylonian" / «табличка школьные дни Вавилон»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=Babylonian+school+tablet&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Babylonian+literary+tablet">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/cuneiform+tablet/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc4"><div class="image-number">5</div><label for="wc4" class="image-filename">05-egyptian-scribe.jpg</label></div><div class="image-description">Ägyptischer Schreiber (Wandmalerei / Statue / Papyrus)</div><div class="search-terms"><strong>Suche:</strong> "Egyptian scribe statue" / «египетский писец»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=Egyptian+scribe+statue&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Egyptian+scribe">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/egyptian+scribe/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc5"><div class="image-number">6</div><label for="wc5" class="image-filename">06-satire-trades.jpg</label></div><div class="image-description">Papyrus mit Hieroglyphen oder Szene Schreibunterricht</div><div class="search-terms"><strong>Suche:</strong> "Book of the Dead papyrus British Museum" или «Satire of the Trades papyrus» (ähnliche Ästhetik)</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=Egyptian+papyrus+hieroglyphs&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Egyptian+papyrus">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/papyrus/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc6"><div class="image-number">7</div><label for="wc6" class="image-filename">07-rosetta-stone.jpg</label></div><div class="image-description">Stein von Rosette (British Museum oder freie Reproduktion)</div><div class="search-terms"><strong>Suche:</strong> "Rosetta Stone British Museum" / «камень Росетты»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=Rosetta+Stone&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Rosetta+Stone">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/rosetta/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc7"><div class="image-number">8</div><label for="wc7" class="image-filename">08-roman-tablet.jpg</label></div><div class="image-description">Römische Wachstafel (tabula cerata) oder Bronze-/Steininschrift</div><div class="search-terms"><strong>Suche:</strong> "Roman wax tablet writing" / «римская восковая табличка»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=Roman+wax+tablet&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Roman+wax+tablet">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/ancient+rome+writing/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc8"><div class="image-number">9</div><label for="wc8" class="image-filename">09-medieval-charter.jpg</label></div><div class="image-description">Mittelalterliche Urkunde / Pergament mit Siegel (Deko)</div><div class="search-terms"><strong>Suche:</strong> "medieval manuscript charter" / «средневековая грамота пергамент»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+charter+pergament&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=medieval+charter">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/parchment/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc9"><div class="image-number">10</div><label for="wc9" class="image-filename">10-charlemagne-manuscript.jpg</label></div><div class="image-description">Karolingische Handschrift / Evangeliar (Codex)</div><div class="search-terms"><strong>Suche:</strong> "Carolingian manuscript" / «каролингская миниатюра»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=Carolingian+manuscript&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Carolingian+manuscript">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/medieval+manuscript/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc10"><div class="image-number">11</div><label for="wc10" class="image-filename">11-seal-charter.jpg</label></div><div class="image-description">Wachssiegel an Dokument oder königliches Siegel</div><div class="search-terms"><strong>Suche:</strong> "medieval wax seal charter" / «средневековая печать грамота»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+wax+seal+document&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=wax+seal+medieval">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/wax+seal/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc11"><div class="image-number">12</div><label for="wc11" class="image-filename">12-council-books.jpg</label></div><div class="image-description">Kirchlicher Konzilssaal oder alte Folianten in der Bibliothek</div><div class="search-terms"><strong>Suche:</strong> "Council of Trent painting" / «церковный собор книги средневековье»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=Council+of+Trent+basilica&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=council+of+trent">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/church+books/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc12"><div class="image-number">13</div><label for="wc12" class="image-filename">13-gutenberg-press.jpg</label></div><div class="image-description">Nachbau der Gutenberg-Presse oder frühe Druckwerkstatt</div><div class="search-terms"><strong>Suche:</strong> "Gutenberg printing press replica" / «печатный станок Гутенберг»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=gutenberg+press&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Gutenberg+press">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/printing+press/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc13"><div class="image-number">14</div><label for="wc13" class="image-filename">14-luther-bible.jpg</label></div><div class="image-description">Lutherbibel (Ausgabe) oder Reformation-Druck</div><div class="search-terms"><strong>Suche:</strong> "Luther Bible 1545" / «библия Лютера»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=Luther+Bible+1545&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Luther+Bible">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/bible+old/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc14"><div class="image-number">15</div><label for="wc14" class="image-filename">15-index-librorum.jpg</label></div><div class="image-description">Historischer Index / päpstliche Dekrete / Vatikanische Bibliothek (ästhetisch passend)</div><div class="search-terms"><strong>Suche:</strong> "Index Librorum Prohibitorum" / «индекс запрещенных книг»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=Index+Librorum+Prohibitorum&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Index+librorum+prohibitorum">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/old+books/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc15"><div class="image-number">16</div><label for="wc15" class="image-filename">16-douglass.jpg</label></div><div class="image-description">Porträt Frederick Douglass (öffentliches Domain-Foto)</div><div class="search-terms"><strong>Suche:</strong> "Frederick Douglass portrait LOC" / «Фредерик Дуглас портрет»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=Frederick+Douglass+portrait+1860&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Frederick+Douglass">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/frederick+douglass/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc16"><div class="image-number">17</div><label for="wc16" class="image-filename">17-anti-literacy-laws.jpg</label></div><div class="image-description">Historische Gesetzestexte / Sklavenstaaten-Dokumente (Mikrofilm / Archivfoto)</div><div class="search-terms"><strong>Suche:</strong> "slave code anti-literacy law document" / «запрет обучения чтению рабов закон»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=anti-literacy+laws+slave+states+document&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=slave+code+document">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/historical+document/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc17"><div class="image-number">18</div><label for="wc17" class="image-filename">18-literacy-test.jpg</label></div><div class="image-description">US-Wahllokal 1960er oder historisches Wahlplakat (Bürgerrechte)</div><div class="search-terms"><strong>Suche:</strong> "literacy test voting rights civil rights" / «грамотность тест избиратели США»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=voting+literacy+test+civil+rights&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=voting+rights+1965">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/voting+ballot/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc18"><div class="image-number">19</div><label for="wc18" class="image-filename">19-imperial-examination.jpg</label></div><div class="image-description">Chinesische Kaiserprüfung (historische Darstellung / Palast)</div><div class="search-terms"><strong>Suche:</strong> "imperial examination China painting" / «императорские экзамены Китай»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=imperial+examination+china&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=imperial+examination+China">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/chinese+temple/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc19"><div class="image-number">20</div><label for="wc19" class="image-filename">20-book-burning.jpg</label></div><div class="image-description">Bücherverbrennung (historische Darstellung — Qin / Zensur)</div><div class="search-terms"><strong>Suche:</strong> "burning of books Qin illustration" / «сжигание книг Цинь Шихуанди»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=burning+books+Qin+Shi+Huang&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=book+burning+China">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/burning+books/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc20"><div class="image-number">21</div><label for="wc20" class="image-filename">21-ottoman-calligraphy.jpg</label></div><div class="image-description">Osmanische Kalligraphie / Ferman / Tughra</div><div class="search-terms"><strong>Suche:</strong> "Ottoman firman calligraphy" / «османская каллиграфия ферман»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=Ottoman+calligraphy+firman&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Ottoman+tughra">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/arabic+calligraphy/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc21"><div class="image-number">22</div><label for="wc21" class="image-filename">22-russian-gramota.jpg</label></div><div class="image-description">Birkenrindenbrief (Novgorod) oder alte slavische Handschrift</div><div class="search-terms"><strong>Suche:</strong> "Novgorod birch bark manuscript" / «берестяная грамота новгород»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=birch+bark+manuscript+Novgorod&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=birch+bark+letter">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/manuscript+old/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc22"><div class="image-number">23</div><label for="wc22" class="image-filename">23-likbez-poster.jpg</label></div><div class="image-description">Sowjetisches Plakat «Likbez» / Alphabetisierung 1920er</div><div class="search-terms"><strong>Suche:</strong> "Soviet likbez poster literacy" / «ликбез плакат»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=Soviet+literacy+poster+likbez&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Soviet+literacy+poster">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/propaganda+poster+vintage/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc23"><div class="image-number">24</div><label for="wc23" class="image-filename">24-pravda-newspaper.jpg</label></div><div class="image-description">Historische Ausgabe «Правда» / sowjetische Zeitungsständer</div><div class="search-terms"><strong>Suche:</strong> "Pravda newspaper USSR cover" / «газета Правда обложка»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=Pravda+newspaper+USSR&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Pravda+newspaper">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/newspaper+vintage/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc24"><div class="image-number">25</div><label for="wc24" class="image-filename">25-colonial-office.jpg</label></div><div class="image-description">Kolonialbüro / britische Verwaltung (Archivfoto oder Karte)</div><div class="search-terms"><strong>Suche:</strong> "British colonial office India document" / «колониальная канцелярия»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=colonial+administration+archive+photo&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=British+colonial+office">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/vintage+office/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc25"><div class="image-number">26</div><label for="wc25" class="image-filename">26-nippur-joke-tablet.jpg</label></div><div class="image-description">Sumerische Tafel — Museum (Penn Museum Nippur / ähnliche Keilschrift-Tafel)</div><div class="search-terms"><strong>Suche:</strong> "Nippur cuneiform tablet Penn Museum" / «Ниппур табличка музей»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=Nippur+cuneiform+tablet+Penn+Museum&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=Nippur+tablet">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/cuneiform/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc26"><div class="image-number">27</div><label for="wc26" class="image-filename">27-digital-contract.jpg</label></div><div class="image-description">Bildschirm mit AGB / Vertrag / Unterschrift digital</div><div class="search-terms"><strong>Suche:</strong> "terms of service screen laptop" / «пользовательское соглашение экран»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=terms+of+service+laptop&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=e-signature+digital+contract">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/contract+laptop/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc27"><div class="image-number">28</div><label for="wc27" class="image-filename">28-literacy-unesco.jpg</label></div><div class="image-description">Schule in Entwicklungsland / UNESCO-Lesekampagne (freie Stockfotos)</div><div class="search-terms"><strong>Suche:</strong> "UNESCO literacy school Nepal" / «школа непал дети учатся читать» (wie Folie RU)</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=literacy+school+children+UNESCO&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=literacy+school">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/school+children+reading/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc28"><div class="image-number">29</div><label for="wc28" class="image-filename">29-summary-writing-power.jpg</label></div><div class="image-description">Stapel Bücher + Feder / Symbol «Macht des Wortes»</div><div class="search-terms"><strong>Suche:</strong> "quill pen old books power of knowledge" / «книги перо власть знания»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=quill+pen+old+books&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=quill+books">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/quill+books/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc29"><div class="image-number">30</div><label for="wc29" class="image-filename">30-reading-future.jpg</label></div><div class="image-description">Moderne Bibliothek / E-Reader — Lesen heute</div><div class="search-terms"><strong>Suche:</strong> "public library reading modern" / «чтение библиотека современная»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=modern+library+reading&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=modern+library+interior">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/library+reading/">Pixabay</a></div></div>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="wc30"><div class="image-number">31</div><label for="wc30" class="image-filename">quiz-manuscript.jpg</label></div><div class="image-description">Neutral: offenes Manuskript / mittelalterliche Seite — nur für Quiz-Folien</div><div class="search-terms"><strong>Suche:</strong> "illuminated manuscript open book" / «пергамент рукопись открытая»</div><div class="search-links"><a class="search-link" target="_blank" href="https://www.google.com/search?q=medieval+manuscript+open&tbm=isch">Google</a><a class="search-link" target="_blank" href="https://commons.wikimedia.org/w/index.php?search=illuminated+manuscript">Wikimedia</a><a class="search-link" target="_blank" href="https://pixabay.com/images/search/manuscript/">Pixabay</a></div></div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn reset-btn" onclick="resetProgress()">Zurücksetzen</button>
+        <button class="action-btn save-btn" onclick="saveProgress()">Speichern</button>
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'writingControlImageProgress';
+        function updateStats() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const total = checkboxes.length;
+            const checked = document.querySelectorAll('.checkbox:checked').length;
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('checkedImages').textContent = checked;
+            document.getElementById('remainingImages').textContent = total - checked;
+            const percent = total === 0 ? 0 : Math.round((checked / total) * 100);
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(checkboxes).map(cb => cb.checked)));
+        }
+        function loadProgress() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (!saved) return;
+            const progress = JSON.parse(saved);
+            document.querySelectorAll('.checkbox').forEach((cb, index) => {
+                if (progress[index]) {
+                    cb.checked = true;
+                    cb.closest('.image-item').classList.add('checked');
+                }
+            });
+        }
+        function resetProgress() {
+            if (!confirm('Fortschritt für writing-control Bilder löschen?')) return;
+            localStorage.removeItem(STORAGE_KEY);
+            document.querySelectorAll('.checkbox').forEach(cb => {
+                cb.checked = false;
+                cb.closest('.image-item').classList.remove('checked');
+            });
+            updateStats();
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            loadProgress();
+            document.querySelectorAll('.checkbox').forEach(cb => {
+                cb.addEventListener('change', () => {
+                    if (cb.checked) cb.closest('.image-item').classList.add('checked');
+                    else cb.closest('.image-item').classList.remove('checked');
+                    updateStats();
+                    saveProgress();
+                });
+            });
+            updateStats();
+        });
+    </script>
+</body>
+</html>

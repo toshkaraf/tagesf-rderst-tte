@@ -13,6 +13,7 @@ import { universitiesRiotsSlidesDE, universitiesRiotsFinalQuizDE } from './unive
 import { aiHistorySlidesDE, aiHistoryFinalQuizDE } from './ai-history-content-de'
 import { aiModernSlidesDE, aiModernFinalQuizDE } from './ai-modern-content-de'
 import { writingControlSlidesDE, writingControlFinalQuizDE } from './writing-control-content-de'
+import { caesarAnecdotesSlidesDE, caesarAnecdotesFinalQuizDE } from './caesar-anecdotes-content-de'
 
 // Deutsche Übersetzungen (B2-Niveau) für die Turnier-Session
 const ritterturniereSlidesDE: Slide[] = [
@@ -3157,6 +3158,13 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
       quiz: writingControlFinalQuizDE
     }
   }
-  
+
+  if (sessionId === 'caesar-anecdotes' && language === 'de') {
+    return {
+      slides: caesarAnecdotesSlidesDE,
+      quiz: caesarAnecdotesFinalQuizDE
+    }
+  }
+
   return null
 }

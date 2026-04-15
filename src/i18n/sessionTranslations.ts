@@ -508,6 +508,38 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'caesar-anecdotes': {
+    de: {
+      title: 'Caesar: dreißig schlaue Geschichten',
+      description:
+        'Episoden aus dem Leben Gaius Iulius Caesars nach Sueton, Plutarch, Cicero u.a. — Witz, Mut und Charakter; mit Zwischenquizzen und Abschlusstest.',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Caesar-Sitzung!',
+        mainContent:
+          'Dreißig kurze Geschichten — von der Piratengefangenschaft bis zu den Iden des März — und die Frage, was Überlieferung, was literarische Pointe ist',
+        interactive: 'Zehn Mini-Quizze (je drei Fragen) und ein Abschlusstest mit 30 Fragen',
+        additional: 'Pro Erzählfolie ein Bild; Dateinamen siehe IMAGE_LIST.html',
+        closing:
+          'Fazit: antike Autoren formten Caesars Bild — Fakt, Gerücht und Kunstgriff zu unterscheiden bleibt nützlich'
+      }
+    },
+    ru: {
+      title: 'Цезарь: тридцать остроумных историй',
+      description:
+        'Эпизоды из жизни Гая Юлия Цезаря по Светонию, Плутарху, Цицерону и др.: остроумие, дерзость и характер — с промежуточными викторинами и итоговым тестом.',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о Цезаре!',
+        mainContent:
+          'Тридцать коротких историй — от пиратского плена до мартовских ид — и обсуждение, что в них достоверно, а что литературная полировка',
+        interactive: 'Десять мини-викторин по три вопроса и финальный тест на 30 вопросов',
+        additional: 'На каждом сюжетном слайде — иллюстрация; подбор по IMAGE_LIST.html',
+        closing:
+          'Итог: античные авторы создали образ Цезаря — различать факт, слух и художественный штрих полезно всегда'
+      }
+    }
+  },
   'writing-control': {
     de: {
       title: 'Schrift: Kontrolle und Macht',

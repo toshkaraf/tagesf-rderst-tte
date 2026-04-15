@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bildliste: Caesar — 30 Geschichten / Цезарь</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4a0f18 0%, #7a1f2e 45%, #1a0a0c 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fffef8;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #6d1f2e 0%, #4a0f18 100%);
+            color: #fff8e1;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.05em; margin-bottom: 10px; }
+        .header p { font-size: 1.02em; opacity: 0.92; }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 18px 20px;
+            background: #efebe9;
+            border-bottom: 2px solid #d7ccc8;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 1.8em; font-weight: bold; color: #4a0f18; }
+        .stat-label { color: #6d4c41; margin-top: 4px; font-size: 0.9em; }
+        .instructions {
+            padding: 24px 36px;
+            background: #efebe9;
+            border-left: 5px solid #6d1f2e;
+            margin: 20px 36px;
+            border-radius: 10px;
+        }
+        .instructions h2 { color: #4a0f18; margin-bottom: 10px; font-size: 1.3em; }
+        .instructions ul { list-style-position: inside; color: #4e342e; font-size: 0.95em; }
+        .instructions li { margin: 6px 0; }
+        .content { padding: 10px 36px 30px; }
+        .section-title {
+            font-size: 1.6em;
+            color: #4a0f18;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #8d4e5c;
+        }
+        .image-item {
+            background: #faf6ef;
+            border: 2px solid #d7ccc8;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+            transition: all 0.25s ease;
+        }
+        .image-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            transform: translateY(-1px);
+        }
+        .image-item.checked { background: #dcedc8; border-color: #689f38; }
+        .image-header { display: flex; align-items: center; margin-bottom: 8px; }
+        .checkbox { width: 22px; height: 22px; margin-right: 14px; cursor: pointer; }
+        .image-number {
+            background: #6d1f2e;
+            color: white;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; margin-right: 12px; font-size: 0.95em;
+        }
+        .image-filename { font-size: 1.05em; font-weight: bold; color: #212529; flex: 1; }
+        .image-description { color: #495057; margin-bottom: 8px; margin-left: 70px; font-size: 0.95em; }
+        .search-terms {
+            background: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-left: 70px;
+            border: 1px solid #bcaaa4;
+            font-size: 0.9em;
+        }
+        .search-terms strong { color: #6d1f2e; }
+        .search-links { margin-left: 70px; margin-top: 8px; }
+        .search-link {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #6d1f2e;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 8px; margin-top: 4px;
+            font-size: 0.85em;
+            transition: background 0.25s ease;
+        }
+        .search-link:hover { background: #4a0f18; }
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: #d7ccc8;
+            z-index: 1000;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #8d4e5c, #c9a227);
+            width: 0%;
+            transition: width 0.25s ease;
+        }
+        .action-buttons {
+            position: fixed;
+            bottom: 26px; right: 26px;
+            display: flex; gap: 10px;
+        }
+        .action-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+        .reset-btn { background: #c62828; color: white; }
+        .reset-btn:hover { background: #b71c1c; transform: scale(1.04); }
+        .save-btn { background: #558b2f; color: white; }
+        .save-btn:hover { background: #33691e; transform: scale(1.04); }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="container">
+        <div class="header">
+            <h1>Caesar: 30 Geschichten / Цезарь: 30 историй</h1>
+            <p>30 JPG · public/media/caesar-anecdotes/ · Session «caesar-anecdotes» (RU/DE) · Quiz-Folien ohne Bild</p>
+        </div>
+        <div class="stats">
+            <div class="stat-item"><div class="stat-number" id="totalImages">0</div><div class="stat-label">Gesamt / всего</div></div>
+            <div class="stat-item"><div class="stat-number" id="checkedImages">0</div><div class="stat-label">Erledigt / готово</div></div>
+            <div class="stat-item"><div class="stat-number" id="remainingImages">0</div><div class="stat-label">Offen / осталось</div></div>
+            <div class="stat-item"><div class="stat-number" id="progressPercent">0%</div><div class="stat-label">Fortschritt</div></div>
+        </div>
+        <div class="instructions">
+            <h2>Anleitung / Инструкция</h2>
+            <ul>
+                <li><strong>Dateiname exakt:</strong> wie in der Liste → <code>public/media/caesar-anecdotes/</code></li>
+                <li><strong>Format:</strong> JPG (oder PNG umbenennen), ideal ≥ 1200×800 px.</li>
+                <li><strong>Lizenz:</strong> Public Domain oder CC — Quelle notieren (viele Caesar-Gemälde sind urheberrechtlich jung).</li>
+                <li><strong>Quiz-Folien (q1–q10):</strong> keine Medien in der App — nur diese 30 Bilder.</li>
+            </ul>
+        </div>
+        <div class="content">
+            <h2 class="section-title">Bilder / Изображения</h2>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae0"><div class="image-number">1</div><label for="cae0" class="image-filename">01-pirate-ransom.jpg</label></div><div class="image-description"><strong>DE:</strong> Lösegeld / Piraten, antikes Mittelmeer<br><strong>RU:</strong> Выкуп: пираты, античное море</div><div class="search-terms"><strong>Suche / поиск:</strong> "ancient Mediterranean pirates ship"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=ancient%20Mediterranean%20pirates%20ship&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=pirate%20ship%20ancient%20rome">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/roman+ship+sea/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae1"><div class="image-number">2</div><label for="cae1" class="image-filename">02-pirate-crucifixion.jpg</label></div><div class="image-description"><strong>DE:</strong> Römische Marine / symbolische Szene (Museum)<br><strong>RU:</strong> Римский флот / казнь (символика)</div><div class="search-terms"><strong>Suche / поиск:</strong> "Roman navy trireme ancient"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Roman%20navy%20trireme%20ancient&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Roman%20trireme%20relief">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+rome+ship/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae2"><div class="image-number">3</div><label for="cae2" class="image-filename">03-pirate-silence.jpg</label></div><div class="image-description"><strong>DE:</strong> Piratendeck / antike Seeleute<br><strong>RU:</strong> Палуба корабля, моряки</div><div class="search-terms"><strong>Suche / поиск:</strong> "ancient ship deck sailors"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=ancient%20ship%20deck%20sailors&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=galley%20ship%20deck">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ship+deck+ancient/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae3"><div class="image-number">4</div><label for="cae3" class="image-filename">04-alps-first-village.jpg</label></div><div class="image-description"><strong>DE:</strong> Alpendorf / römische Straße<br><strong>RU:</strong> Альпийская деревня, римская дорога</div><div class="search-terms"><strong>Suche / поиск:</strong> "Roman road Alps village"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Roman%20road%20Alps%20village&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Alpine%20Roman%20road">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/mountain+village+europe/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae4"><div class="image-number">5</div><label for="cae4" class="image-filename">05-alexander-statue-tears.jpg</label></div><div class="image-description"><strong>DE:</strong> Alexander der Große Büste Museum<br><strong>RU:</strong> Александр Македонский статуя</div><div class="search-terms"><strong>Suche / поиск:</strong> "Alexander the Great bust statue"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Alexander%20the%20Great%20bust%20statue&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Alexander%20the%20Great%20Louvre">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/alexander+statue/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae5"><div class="image-number">6</div><label for="cae5" class="image-filename">06-laurel-baldness.jpg</label></div><div class="image-description"><strong>DE:</strong> Caesar-Büste mit Lorbeer<br><strong>RU:</strong> Цезарь бюст лавровый венок</div><div class="search-terms"><strong>Suche / поиск:</strong> "Julius Caesar bust laurel wreath"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Julius%20Caesar%20bust%20laurel%20wreath&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Julius%20Caesar%20marble%20bust">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/caesar+bust/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae6"><div class="image-number">7</div><label for="cae6" class="image-filename">07-triumph-soldiers-song.jpg</label></div><div class="image-description"><strong>DE:</strong> Römischer Triumphzug Relief<br><strong>RU:</strong> Римский триумф рельеф</div><div class="search-terms"><strong>Suche / поиск:</strong> "Roman triumph procession relief"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Roman%20triumph%20procession%20relief&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Roman%20triumph%20arch%20relief">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/roman+soldiers/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae7"><div class="image-number">8</div><label for="cae7" class="image-filename">08-caesar-hairstyle-wreath.jpg</label></div><div class="image-description"><strong>DE:</strong> Römischer Senat / Toga (histor. Gemälde)<br><strong>RU:</strong> Римский сенат, тога</div><div class="search-terms"><strong>Suche / поиск:</strong> "Roman senate toga painting"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Roman%20senate%20toga%20painting&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Curia%20Julia%20ancient%20rome">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/roman+senate/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae8"><div class="image-number">9</div><label for="cae8" class="image-filename">09-storm-ship-caesar.jpg</label></div><div class="image-description"><strong>DE:</strong> Kleines Boot, Sturm<br><strong>RU:</strong> Лодка, шторм</div><div class="search-terms"><strong>Suche / поиск:</strong> "small ancient boat storm sea"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=small%20ancient%20boat%20storm%20sea&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Mediterranean%20storm%20boat">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/fishing+boat+storm/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae9"><div class="image-number">10</div><label for="cae9" class="image-filename">10-africa-embrace.jpg</label></div><div class="image-description"><strong>DE:</strong> Römische Landung Nordafrika<br><strong>RU:</strong> Римляне, Африка, десант</div><div class="search-terms"><strong>Suche / поиск:</strong> "Roman legion North Africa landing"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Roman%20legion%20North%20Africa%20landing&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Roman%20army%20Africa%20ancient">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/roman+legion/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae10"><div class="image-number">11</div><label for="cae10" class="image-filename">11-alexandria-swim-documents.jpg</label></div><div class="image-description"><strong>DE:</strong> Hafen Alexandria Antike<br><strong>RU:</strong> Александрия гавань</div><div class="search-terms"><strong>Suche / поиск:</strong> "ancient Alexandria harbor Egypt"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=ancient%20Alexandria%20harbor%20Egypt&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Alexandria%20ancient%20Egypt%20harbor">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/egypt+harbor+ancient/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae11"><div class="image-number">12</div><label for="cae11" class="image-filename">12-alesia-double-siege.jpg</label></div><div class="image-description"><strong>DE:</strong> Alesia Belagerung Karte<br><strong>RU:</strong> Алезия осада</div><div class="search-terms"><strong>Suche / поиск:</strong> "Alesia siege fortifications map"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Alesia%20siege%20fortifications%20map&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Siege%20of%20Alesia">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+fortress/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae12"><div class="image-number">13</div><label for="cae12" class="image-filename">13-sulla-letters.jpg</label></div><div class="image-description"><strong>DE:</strong> Sulla Büste<br><strong>RU:</strong> Сулла бюст</div><div class="search-terms"><strong>Suche / поиск:</strong> "Lucius Cornelius Sulla bust"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Lucius%20Cornelius%20Sulla%20bust&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Sulla%20Roman%20bust">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/roman+general+bust/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae13"><div class="image-number">14</div><label for="cae13" class="image-filename">14-debts-politics.jpg</label></div><div class="image-description"><strong>DE:</strong> Römische Denare / Münzen<br><strong>RU:</strong> Римские монеты</div><div class="search-terms"><strong>Suche / поиск:</strong> "Roman denarii coins silver"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Roman%20denarii%20coins%20silver&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Roman%20republic%20coins">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/roman+coins/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae14"><div class="image-number">15</div><label for="cae14" class="image-filename">15-lupercalia-crown.jpg</label></div><div class="image-description"><strong>DE:</strong> Lupercalia / römisches Fest<br><strong>RU:</strong> Луперкалии</div><div class="search-terms"><strong>Suche / поиск:</strong> "Lupercalia Roman festival painting"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Lupercalia%20Roman%20festival%20painting&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Lupercalia%20ancient%20rome">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/roman+festival/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae15"><div class="image-number">16</div><label for="cae15" class="image-filename">16-pontius-aquila.jpg</label></div><div class="image-description"><strong>DE:</strong> Forum Romanum Versammlung<br><strong>RU:</strong> Римский форум</div><div class="search-terms"><strong>Suche / поиск:</strong> "Roman forum comitium assembly"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Roman%20forum%20comitium%20assembly&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Roman%20tribune%20forum">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+rome+forum/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae16"><div class="image-number">17</div><label for="cae16" class="image-filename">17-pompey-blame.jpg</label></div><div class="image-description"><strong>DE:</strong> Pompeius der Große Büste<br><strong>RU:</strong> Помпей бюст</div><div class="search-terms"><strong>Suche / поиск:</strong> "Pompey the Great bust statue"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Pompey%20the%20Great%20bust%20statue&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Pompeius%20Magnus%20bust">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/roman+bust/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae17"><div class="image-number">18</div><label for="cae17" class="image-filename">18-veni-vidi-vici.jpg</label></div><div class="image-description"><strong>DE:</strong> Zela / Pontus Feldzug<br><strong>RU:</strong> Зела Понт</div><div class="search-terms"><strong>Suche / поиск:</strong> "Battle of Zela Pharnaces"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Battle%20of%20Zela%20Pharnaces&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Pharnaces%20Pontus">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+battle+map/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae18"><div class="image-number">19</div><label for="cae18" class="image-filename">19-envy-reply.jpg</label></div><div class="image-description"><strong>DE:</strong> Römische Senatoren Debatte<br><strong>RU:</strong> Римские сенаторы</div><div class="search-terms"><strong>Suche / поиск:</strong> "Roman senators debate forum"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Roman%20senators%20debate%20forum&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Roman%20senate%20debate">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+debate/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae19"><div class="image-number">20</div><label for="cae19" class="image-filename">20-bad-poet-coins.jpg</label></div><div class="image-description"><strong>DE:</strong> Haufen römischer Münzen<br><strong>RU:</strong> Римские монеты</div><div class="search-terms"><strong>Suche / поиск:</strong> "Roman coins scattered table"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Roman%20coins%20scattered%20table&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Roman%20sestertius%20pile">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/roman+coins/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae20"><div class="image-number">21</div><label for="cae20" class="image-filename">21-cicero-speech.jpg</label></div><div class="image-description"><strong>DE:</strong> Cicero Büste / Redner<br><strong>RU:</strong> Цицерон бюст</div><div class="search-terms"><strong>Suche / поиск:</strong> "Cicero bust statue orator"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Cicero%20bust%20statue%20orator&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Marcus%20Tullius%20Cicero%20bust">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/cicero+statue/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae21"><div class="image-number">22</div><label for="cae21" class="image-filename">22-asparagus-myrrh.jpg</label></div><div class="image-description"><strong>DE:</strong> Römisches Bankett Fresko<br><strong>RU:</strong> Римский пир</div><div class="search-terms"><strong>Suche / поиск:</strong> "Roman banquet fresco Pompeii"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Roman%20banquet%20fresco%20Pompeii&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Roman%20symposium%20food%20fresco">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+feast/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae22"><div class="image-number">23</div><label for="cae22" class="image-filename">23-ides-march-spurinna.jpg</label></div><div class="image-description"><strong>DE:</strong> Caesar Idus März (Gemälde)<br><strong>RU:</strong> Иды марта убийство</div><div class="search-terms"><strong>Suche / поиск:</strong> "Ides of March Caesar assassination painting"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Ides%20of%20March%20Caesar%20assassination%20painting&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Assassination%20of%20Julius%20Caesar">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/caesar+death+painting/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae23"><div class="image-number">24</div><label for="cae23" class="image-filename">24-sudden-death.jpg</label></div><div class="image-description"><strong>DE:</strong> Römischer Dolch Pugio<br><strong>RU:</strong> Пугион</div><div class="search-terms"><strong>Suche / поиск:</strong> "Roman pugio dagger ancient"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Roman%20pugio%20dagger%20ancient&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Roman%20military%20dagger">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+dagger/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae24"><div class="image-number">25</div><label for="cae24" class="image-filename">25-death-toga-fall.jpg</label></div><div class="image-description"><strong>DE:</strong> Toga sterbend (Malerei)<br><strong>RU:</strong> Тога смерть</div><div class="search-terms"><strong>Suche / поиск:</strong> "Death of Caesar toga painting"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Death%20of%20Caesar%20toga%20painting&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Caesar%20assassination%20toga">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/roman+toga/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae25"><div class="image-number">26</div><label for="cae25" class="image-filename">26-caesar-will-people.jpg</label></div><div class="image-description"><strong>DE:</strong> Römisches Forum Menge<br><strong>RU:</strong> Форум толпа</div><div class="search-terms"><strong>Suche / поиск:</strong> "Roman forum crowd ancient"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Roman%20forum%20crowd%20ancient&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Roman%20plebs%20forum">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+crowd/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae26"><div class="image-number">27</div><label for="cae26" class="image-filename">27-seven-secretaries.jpg</label></div><div class="image-description"><strong>DE:</strong> Römische Schreiber / Schriftrollen<br><strong>RU:</strong> Писцы свитки</div><div class="search-terms"><strong>Suche / поиск:</strong> "Roman scribes writing scrolls"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Roman%20scribes%20writing%20scrolls&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=ancient%20Roman%20scriba">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/scribe+ancient/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae27"><div class="image-number">28</div><label for="cae27" class="image-filename">28-epilepsy.jpg</label></div><div class="image-description"><strong>DE:</strong> Antiker Arzt / Medizin (Symbolik)<br><strong>RU:</strong> Античная медицина</div><div class="search-terms"><strong>Suche / поиск:</strong> "ancient Roman medicine physician"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=ancient%20Roman%20medicine%20physician&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Asclepius%20staff%20ancient">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/roman+physician/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae28"><div class="image-number">29</div><label for="cae28" class="image-filename">29-superstition.jpg</label></div><div class="image-description"><strong>DE:</strong> Römische Auguren / Vogelschau<br><strong>RU:</strong> Аугуры птицы</div><div class="search-terms"><strong>Suche / поиск:</strong> "Roman augury birds auspices"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Roman%20augury%20birds%20auspices&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Roman%20haruspex%20ritual">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/augury+ancient/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="cae29"><div class="image-number">30</div><label for="cae29" class="image-filename">30-cleopatra-carpet.jpg</label></div><div class="image-description"><strong>DE:</strong> Cleopatra und Caesar (Gemälde)<br><strong>RU:</strong> Клеопатра Цезарь</div><div class="search-terms"><strong>Suche / поиск:</strong> "Cleopatra Caesar painting"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Cleopatra%20Caesar%20painting&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Cleopatra%20meeting%20Caesar">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/cleopatra+egypt/">Pixabay</a></div></div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn reset-btn" type="button" onclick="resetProgress()">Zurücksetzen</button>
+        <button class="action-btn save-btn" type="button" onclick="saveProgress()">Speichern</button>
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'caesarAnecdotesImageProgress';
+        function updateStats() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const total = checkboxes.length;
+            const checked = document.querySelectorAll('.checkbox:checked').length;
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('checkedImages').textContent = checked;
+            document.getElementById('remainingImages').textContent = total - checked;
+            const percent = total === 0 ? 0 : Math.round((checked / total) * 100);
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(checkboxes).map(cb => cb.checked)));
+        }
+        function loadProgress() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (!saved) return;
+            const progress = JSON.parse(saved);
+            document.querySelectorAll('.checkbox').forEach((cb, index) => {
+                if (progress[index]) {
+                    cb.checked = true;
+                    cb.closest('.image-item').classList.add('checked');
+                }
+            });
+        }
+        function resetProgress() {
+            if (!confirm('Fortschritt für caesar-anecdotes Bilder löschen? / Сбросить прогресс?')) return;
+            localStorage.removeItem(STORAGE_KEY);
+            document.querySelectorAll('.checkbox').forEach(cb => {
+                cb.checked = false;
+                cb.closest('.image-item').classList.remove('checked');
+            });
+            updateStats();
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            loadProgress();
+            document.querySelectorAll('.checkbox').forEach(cb => {
+                cb.addEventListener('change', () => {
+                    if (cb.checked) cb.closest('.image-item').classList.add('checked');
+                    else cb.closest('.image-item').classList.remove('checked');
+                    updateStats();
+                    saveProgress();
+                });
+            });
+            updateStats();
+        });
+    </script>
+</body>
+</html>

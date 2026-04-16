@@ -508,6 +508,38 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'alexander-anecdotes': {
+    de: {
+      title: 'Alexander der Große: dreißig schlaue Geschichten',
+      description:
+        'Episoden aus dem Leben Alexanders III. nach Plutarch, Arrian, Diodor, Curtius Rufus u.a. — Witz, Stolz und List; mit Zwischenquizzen und Abschlusstest.',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Alexander-Sitzung!',
+        mainContent:
+          'Dreißig kurze Geschichten — vom Fest Philipps bis zum Spiegel vor den Gesandten — und die Frage, was Überlieferung, was literarische Pointe ist',
+        interactive: 'Zehn Mini-Quizze (je drei Fragen) und ein Abschlusstest mit 30 Fragen',
+        additional: 'Pro Erzählfolie ein Bild; Dateinamen siehe IMAGE_LIST.html',
+        closing:
+          'Fazit: antike Autoren formten Alexanders Bild — Fakt, Gerücht und Kunstgriff zu unterscheiden bleibt nützlich'
+      }
+    },
+    ru: {
+      title: 'Александр Македонский: тридцать остроумных историй',
+      description:
+        'Эпизоды из жизни Александра III по Плутарху, Арриану, Диодору, Курцию Руфу и др.: остроумие, дерзость и характер — с промежуточными викторинами и итоговым тестом.',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие об Александре Македонском!',
+        mainContent:
+          'Тридцать коротких историй — от пира Филиппа до зеркала перед послами — и обсуждение, что в них достоверно, а что литературная полировка',
+        interactive: 'Десять мини-викторин по три вопроса и финальный тест на 30 вопросов',
+        additional: 'На каждом сюжетном слайде — иллюстрация; подбор по IMAGE_LIST.html',
+        closing:
+          'Итог: античные авторы создали образ Александра — различать факт, слух и художественный штрих полезно всегда'
+      }
+    }
+  },
   'caesar-anecdotes': {
     de: {
       title: 'Caesar: dreißig schlaue Geschichten',

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bildliste: Alexander — 30 Geschichten / Александр</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a237e 0%, #283593 45%, #0d1642 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fffef8;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #3949ab 0%, #1a237e 100%);
+            color: #fff8e1;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.05em; margin-bottom: 10px; }
+        .header p { font-size: 1.02em; opacity: 0.92; }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 18px 20px;
+            background: #e8eaf6;
+            border-bottom: 2px solid #c5cae9;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 1.8em; font-weight: bold; color: #1a237e; }
+        .stat-label { color: #5c6bc0; margin-top: 4px; font-size: 0.9em; }
+        .instructions {
+            padding: 24px 36px;
+            background: #e8eaf6;
+            border-left: 5px solid #3949ab;
+            margin: 20px 36px;
+            border-radius: 10px;
+        }
+        .instructions h2 { color: #1a237e; margin-bottom: 10px; font-size: 1.3em; }
+        .instructions ul { list-style-position: inside; color: #283593; font-size: 0.95em; }
+        .instructions li { margin: 6px 0; }
+        .content { padding: 10px 36px 30px; }
+        .section-title {
+            font-size: 1.6em;
+            color: #1a237e;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #5c6bc0;
+        }
+        .image-item {
+            background: #fafafa;
+            border: 2px solid #c5cae9;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+            transition: all 0.25s ease;
+        }
+        .image-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            transform: translateY(-1px);
+        }
+        .image-item.checked { background: #dcedc8; border-color: #689f38; }
+        .image-header { display: flex; align-items: center; margin-bottom: 8px; }
+        .checkbox { width: 22px; height: 22px; margin-right: 14px; cursor: pointer; }
+        .image-number {
+            background: #3949ab;
+            color: white;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; margin-right: 12px; font-size: 0.95em;
+        }
+        .image-filename { font-size: 1.05em; font-weight: bold; color: #212529; flex: 1; }
+        .image-description { color: #495057; margin-bottom: 8px; margin-left: 70px; font-size: 0.95em; }
+        .search-terms {
+            background: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-left: 70px;
+            border: 1px solid #9fa8da;
+            font-size: 0.9em;
+        }
+        .search-terms strong { color: #3949ab; }
+        .search-links { margin-left: 70px; margin-top: 8px; }
+        .search-link {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #3949ab;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 8px; margin-top: 4px;
+            font-size: 0.85em;
+            transition: background 0.25s ease;
+        }
+        .search-link:hover { background: #1a237e; }
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: #c5cae9;
+            z-index: 1000;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #5c6bc0, #7986cb);
+            width: 0%;
+            transition: width 0.25s ease;
+        }
+        .action-buttons {
+            position: fixed;
+            bottom: 26px; right: 26px;
+            display: flex; gap: 10px;
+        }
+        .action-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+        .reset-btn { background: #c62828; color: white; }
+        .reset-btn:hover { background: #b71c1c; transform: scale(1.04); }
+        .save-btn { background: #558b2f; color: white; }
+        .save-btn:hover { background: #33691e; transform: scale(1.04); }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="container">
+        <div class="header">
+            <h1>Alexander: 30 Geschichten / Александр: 30 историй</h1>
+            <p>30 JPG · public/media/alexander-anecdotes/ · Session «alexander-anecdotes» (RU/DE) · Quiz-Folien ohne Bild</p>
+        </div>
+        <div class="stats">
+            <div class="stat-item"><div class="stat-number" id="totalImages">0</div><div class="stat-label">Gesamt / всего</div></div>
+            <div class="stat-item"><div class="stat-number" id="checkedImages">0</div><div class="stat-label">Erledigt / готово</div></div>
+            <div class="stat-item"><div class="stat-number" id="remainingImages">0</div><div class="stat-label">Offen / осталось</div></div>
+            <div class="stat-item"><div class="stat-number" id="progressPercent">0%</div><div class="stat-label">Fortschritt</div></div>
+        </div>
+        <div class="instructions">
+            <h2>Anleitung / Инструкция</h2>
+            <ul>
+                <li><strong>Dateiname exakt:</strong> wie in der Liste → <code>public/media/alexander-anecdotes/</code></li>
+                <li><strong>Format:</strong> JPG (oder PNG umbenennen), ideal ≥ 1200×800 px.</li>
+                <li><strong>Lizenz:</strong> Public Domain oder CC — Quelle notieren.</li>
+                <li><strong>Quiz-Folien (q1–q10):</strong> keine Medien in der App — nur diese 30 Bilder.</li>
+            </ul>
+        </div>
+        <div class="content">
+            <h2 class="section-title">Bilder / Изображения</h2>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale0"><div class="image-number">1</div><label for="ale0" class="image-filename">01-philip-falls-sword.jpg</label></div><div class="image-description"><strong>DE:</strong> Philipp II. Bankett / Alexander Jugend (histor. Gemälde)<br><strong>RU:</strong> Филипп II пир Александр меч</div><div class="search-terms"><strong>Suche / поиск:</strong> "Alexander the Great Philip of Macedon banquet sword"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Alexander%20the%20Great%20Philip%20of%20Macedon%20banquet%20sword&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Alexander%20Philip%20Macedon%20mosaic">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+greek+banquet/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale1"><div class="image-number">2</div><label for="ale1" class="image-filename">02-attalus-toast.jpg</label></div><div class="image-description"><strong>DE:</strong> Antikes Symposion / Weinkelch (Museum)<br><strong>RU:</strong> Античный пир чаша тост</div><div class="search-terms"><strong>Suche / поиск:</strong> "ancient Greek symposium drinking cup"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=ancient%20Greek%20symposium%20drinking%20cup&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=symposium%20Greek%20vase">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/greek+banquet+ancient/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale2"><div class="image-number">3</div><label for="ale2" class="image-filename">03-egypt-beard.jpg</label></div><div class="image-description"><strong>DE:</strong> Nil / Sphinx / ägyptische Landschaft (frei)<br><strong>RU:</strong> Египет Нил Сфинкс</div><div class="search-terms"><strong>Suche / поиск:</strong> "Nile Egypt Sphinx ancient"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Nile%20Egypt%20Sphinx%20ancient&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Egypt%20Sphinx%20Giza">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/egypt+desert/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale3"><div class="image-number">4</div><label for="ale3" class="image-filename">04-cyrus-statue-tears.jpg</label></div><div class="image-description"><strong>DE:</strong> Kyros der Große Relief / Statue (Museum)<br><strong>RU:</strong> Кир Великий статуя рельеф</div><div class="search-terms"><strong>Suche / поиск:</strong> "Cyrus the Great statue relief"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Cyrus%20the%20Great%20statue%20relief&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Cyrus%20cylinder%20British%20Museum">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/persian+king+statue/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale4"><div class="image-number">5</div><label for="ale4" class="image-filename">05-diogenes-sun.jpg</label></div><div class="image-description"><strong>DE:</strong> Diogenes Tonne / Alexander (Gemälle Parhasios-Stil)<br><strong>RU:</strong> Диоген бочка Александр</div><div class="search-terms"><strong>Suche / поиск:</strong> "Diogenes barrel Alexander painting"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Diogenes%20barrel%20Alexander%20painting&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Diogenes%20and%20Alexander">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/diogenes+philosopher/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale5"><div class="image-number">6</div><label for="ale5" class="image-filename">06-anaximenes-oath.jpg</label></div><div class="image-description"><strong>DE:</strong> Antike Stadt Brand / Belagerung (histor. Darstellung)<br><strong>RU:</strong> античный город осада огонь</div><div class="search-terms"><strong>Suche / поиск:</strong> "ancient city siege fire painting"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=ancient%20city%20siege%20fire%20painting&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Alexander%20siege%20Miletus">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+city+ruins/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale6"><div class="image-number">7</div><label for="ale6" class="image-filename">07-not-steal-victory.jpg</label></div><div class="image-description"><strong>DE:</strong> Makedonische Phalanx / Nachtlager (Rekonstruktion)<br><strong>RU:</strong> македонская фаланга ночь</div><div class="search-terms"><strong>Suche / поиск:</strong> "Macedonian phalanx camp night"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Macedonian%20phalanx%20camp%20night&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Alexander%20army%20camp">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+army+camp/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale7"><div class="image-number">8</div><label for="ale7" class="image-filename">08-gaugamela-night-parminio.jpg</label></div><div class="image-description"><strong>DE:</strong> Schlacht Gaugamela Karte / Panorama<br><strong>RU:</strong> Гавгамелы битва</div><div class="search-terms"><strong>Suche / поиск:</strong> "Battle of Gaugamela map"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Battle%20of%20Gaugamela%20map&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Gaugamela%20Alexander">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+battle/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale8"><div class="image-number">9</div><label for="ale8" class="image-filename">09-gordian-knot.jpg</label></div><div class="image-description"><strong>DE:</strong> Gordium / Knoten-Symbolik / Schwert (Illustration)<br><strong>RU:</strong> Гордиев узел меч</div><div class="search-terms"><strong>Suche / поиск:</strong> "Gordian knot sword Alexander"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Gordian%20knot%20sword%20Alexander&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Gordium%20Alexander">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/sword+knot/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale9"><div class="image-number">10</div><label for="ale9" class="image-filename">10-hope-perdiccas.jpg</label></div><div class="image-description"><strong>DE:</strong> Makedonische Münzen / Gold (Museum)<br><strong>RU:</strong> македонские монеты золото</div><div class="search-terms"><strong>Suche / поиск:</strong> "Macedonian gold coins ancient"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Macedonian%20gold%20coins%20ancient&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Alexander%20coin%20tetradrachm">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+greek+coins/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale10"><div class="image-number">11</div><label for="ale10" class="image-filename">11-beggar-city.jpg</label></div><div class="image-description"><strong>DE:</strong> Antike Stadt Agora / Polis (Rekonstruktion)<br><strong>RU:</strong> полис древняя греция город</div><div class="search-terms"><strong>Suche / поиск:</strong> "ancient Greek polis city agora"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=ancient%20Greek%20polis%20city%20agora&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Greek%20city%20reconstruction">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+city+greece/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale11"><div class="image-number">12</div><label for="ale11" class="image-filename">12-ask-more.jpg</label></div><div class="image-description"><strong>DE:</strong> Makedonischer Soldat / Zelt (histor. Illustration)<br><strong>RU:</strong> македонский солдат палатка</div><div class="search-terms"><strong>Suche / поиск:</strong> "Macedonian soldier ancient Greek"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Macedonian%20soldier%20ancient%20Greek&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Alexander%20soldier%20helmet">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+soldier/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale12"><div class="image-number">13</div><label for="ale12" class="image-filename">13-sick-list-desert.jpg</label></div><div class="image-description"><strong>DE:</strong> Wüstenmarsch / Karawane antik (Stock)<br><strong>RU:</strong> пустыня поход армия</div><div class="search-terms"><strong>Suche / поиск:</strong> "ancient army desert march"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=ancient%20army%20desert%20march&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Alexander%20Gedrosia%20desert">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/desert+march+ancient/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale13"><div class="image-number">14</div><label for="ale13" class="image-filename">14-coward-name-alexander.jpg</label></div><div class="image-description"><strong>DE:</strong> Makedonische Rüstung / Helm<br><strong>RU:</strong> македонский шлем доспехи</div><div class="search-terms"><strong>Suche / поиск:</strong> "Macedonian helmet ancient"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Macedonian%20helmet%20ancient&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Greek%20hoplite%20helmet">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+helmet/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale14"><div class="image-number">15</div><label for="ale14" class="image-filename">15-physician-letter-poison.jpg</label></div><div class="image-description"><strong>DE:</strong> Antiker Arzt / Schriftrolle (Museum)<br><strong>RU:</strong> античный врач свиток</div><div class="search-terms"><strong>Suche / поиск:</strong> "ancient Greek physician scroll"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=ancient%20Greek%20physician%20scroll&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Hippocrates%20manuscript">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+medicine/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale15"><div class="image-number">16</div><label for="ale15" class="image-filename">16-sentry-cloak.jpg</label></div><div class="image-description"><strong>DE:</strong> Nachtwache / Fackel / römisches Lager (ähnliche Ästhetik)<br><strong>RU:</strong> ночной караул факел лагерь</div><div class="search-terms"><strong>Suche / поиск:</strong> "ancient sentry torch camp"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=ancient%20sentry%20torch%20camp&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Roman%20camp%20night%20watch">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/torch+night+ancient/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale16"><div class="image-number">17</div><label for="ale16" class="image-filename">17-gymnosophists-india.jpg</label></div><div class="image-description"><strong>DE:</strong> Indische Asketen / Miniatur / Felskunst<br><strong>RU:</strong> индийские философы аскеты</div><div class="search-terms"><strong>Suche / поиск:</strong> "Indian ascetics ancient painting"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Indian%20ascetics%20ancient%20painting&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Gymnosophists%20India">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/india+meditation+ancient/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale17"><div class="image-number">18</div><label for="ale17" class="image-filename">18-sage-life-death.jpg</label></div><div class="image-description"><strong>DE:</strong> Indischer Weiser / Gespräch (histor. Malerei)<br><strong>RU:</strong> индийский мудрец</div><div class="search-terms"><strong>Suche / поиск:</strong> "Indian sage philosopher ancient"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Indian%20sage%20philosopher%20ancient&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Alexander%20Indian%20philosophers">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/indian+sage/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale18"><div class="image-number">19</div><label for="ale18" class="image-filename">19-diogenes-good-evil.jpg</label></div><div class="image-description"><strong>DE:</strong> Diogenes Philosoph (Statue / Stich)<br><strong>RU:</strong> Диоген философ</div><div class="search-terms"><strong>Suche / поиск:</strong> "Diogenes philosopher statue"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Diogenes%20philosopher%20statue&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Diogenes%20Sinope">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/diogenes/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale19"><div class="image-number">20</div><label for="ale19" class="image-filename">20-homer-casket-darius.jpg</label></div><div class="image-description"><strong>DE:</strong> Ilias Handschrift / antiker Kodex + Goldschmuck<br><strong>RU:</strong> Илиада рукопись золото</div><div class="search-terms"><strong>Suche / поиск:</strong> "Iliad manuscript ancient gold"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Iliad%20manuscript%20ancient%20gold&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Homer%20Iliad%20codex">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+book+gold/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale20"><div class="image-number">21</div><label for="ale20" class="image-filename">21-hephaestion-sisygambis.jpg</label></div><div class="image-description"><strong>DE:</strong> Hephaistion / Alexander Mosaike<br><strong>RU:</strong> Гефестион Александр мозаика</div><div class="search-terms"><strong>Suche / поиск:</strong> "Hephaestion Alexander mosaic"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Hephaestion%20Alexander%20mosaic&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Alexander%20Hephaestion">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/alexander+mosaic/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale21"><div class="image-number">22</div><label for="ale21" class="image-filename">22-zeus-son-ammon.jpg</label></div><div class="image-description"><strong>DE:</strong> Siwa Ammon-Tempel / Oase Ägypten<br><strong>RU:</strong> Сива Амон храм Египет</div><div class="search-terms"><strong>Suche / поиск:</strong> "Temple of Amun Siwa Egypt"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Temple%20of%20Amun%20Siwa%20Egypt&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Oracle%20of%20Ammon%20Alexander">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/egypt+temple+desert/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale22"><div class="image-number">23</div><label for="ale22" class="image-filename">23-persepolis-fire.jpg</label></div><div class="image-description"><strong>DE:</strong> Persepolis Ruinen / Palast (Foto)<br><strong>RU:</strong> Персеполь дворец руины</div><div class="search-terms"><strong>Suche / поиск:</strong> "Persepolis palace ruins fire"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Persepolis%20palace%20ruins%20fire&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Persepolis%20Iran">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/persepolis/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale23"><div class="image-number">24</div><label for="ale23" class="image-filename">24-strongest-successor.jpg</label></div><div class="image-description"><strong>DE:</strong> Diadochen / Karte Nachfolgekriege<br><strong>RU:</strong> диадохи карта войны</div><div class="search-terms"><strong>Suche / поиск:</strong> "Wars of the Diadochi map"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Wars%20of%20the%20Diadochi%20map&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Diadochi%20ancient%20map">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+map+battle/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale24"><div class="image-number">25</div><label for="ale24" class="image-filename">25-last-nod-soldiers.jpg</label></div><div class="image-description"><strong>DE:</strong> Makedonische Phalanx Abschied (Illustration)<br><strong>RU:</strong> македонцы прощание</div><div class="search-terms"><strong>Suche / поиск:</strong> "Macedonian soldiers farewell"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Macedonian%20soldiers%20farewell&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Alexander%20army%20mourning">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+soldiers/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale25"><div class="image-number">26</div><label for="ale25" class="image-filename">26-not-ill-dying.jpg</label></div><div class="image-description"><strong>DE:</strong> Sterbendes Alexander-Mosaik / Fresko (Kopie)<br><strong>RU:</strong> Александр умирает мозаика</div><div class="search-terms"><strong>Suche / поиск:</strong> "Alexander the Great death mosaic"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Alexander%20the%20Great%20death%20mosaic&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Alexander%20death%20Babylon">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/alexander+death/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale26"><div class="image-number">27</div><label for="ale26" class="image-filename">27-sleep-before-gaugamela.jpg</label></div><div class="image-description"><strong>DE:</strong> Feldlager vor Schlacht / Dareios (histor. Gemälde)<br><strong>RU:</strong> Дарий лагерь битва</div><div class="search-terms"><strong>Suche / поиск:</strong> "Darius III camp ancient"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Darius%20III%20camp%20ancient&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Gaugamela%20Darius">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+persian+camp/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale27"><div class="image-number">28</div><label for="ale27" class="image-filename">28-body-scent-plutarch.jpg</label></div><div class="image-description"><strong>DE:</strong> Alexander Büste / Marmor (Museum)<br><strong>RU:</strong> Александр Македонский бюст</div><div class="search-terms"><strong>Suche / поиск:</strong> "Alexander the Great bust marble"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Alexander%20the%20Great%20bust%20marble&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Alexander%20bust%20museum">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/alexander+the+great+statue/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale28"><div class="image-number">29</div><label for="ale28" class="image-filename">29-bucephalus-shadow.jpg</label></div><div class="image-description"><strong>DE:</strong> Alexander und Bukephalas (Mosaik / Gemälde)<br><strong>RU:</strong> Буцефал Александр конь</div><div class="search-terms"><strong>Suche / поиск:</strong> "Alexander Bucephalus horse mosaic"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Alexander%20Bucephalus%20horse%20mosaic&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Bucephalus%20Alexander">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+horse+mosaic/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="ale29"><div class="image-number">30</div><label for="ale29" class="image-filename">30-mirror-negotiations.jpg</label></div><div class="image-description"><strong>DE:</strong> Antiker Bronzespiegel / persische Gesandte (Rekonstruktion)<br><strong>RU:</strong> зеркало античное персы</div><div class="search-terms"><strong>Suche / поиск:</strong> "ancient bronze mirror Greek"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=ancient%20bronze%20mirror%20Greek&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Persian%20embassy%20ancient">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/ancient+mirror/">Pixabay</a></div></div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn reset-btn" type="button" onclick="resetProgress()">Zurücksetzen</button>
+        <button class="action-btn save-btn" type="button" onclick="saveProgress()">Speichern</button>
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'alexanderAnecdotesImageProgress';
+        function updateStats() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const total = checkboxes.length;
+            const checked = document.querySelectorAll('.checkbox:checked').length;
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('checkedImages').textContent = checked;
+            document.getElementById('remainingImages').textContent = total - checked;
+            const percent = total === 0 ? 0 : Math.round((checked / total) * 100);
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(checkboxes).map(cb => cb.checked)));
+        }
+        function loadProgress() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (!saved) return;
+            const progress = JSON.parse(saved);
+            document.querySelectorAll('.checkbox').forEach((cb, index) => {
+                if (progress[index]) {
+                    cb.checked = true;
+                    cb.closest('.image-item').classList.add('checked');
+                }
+            });
+        }
+        function resetProgress() {
+            if (!confirm('Fortschritt für alexander-anecdotes Bilder löschen? / Сбросить прогресс?')) return;
+            localStorage.removeItem(STORAGE_KEY);
+            document.querySelectorAll('.checkbox').forEach(cb => {
+                cb.checked = false;
+                cb.closest('.image-item').classList.remove('checked');
+            });
+            updateStats();
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            loadProgress();
+            document.querySelectorAll('.checkbox').forEach(cb => {
+                cb.addEventListener('change', () => {
+                    if (cb.checked) cb.closest('.image-item').classList.add('checked');
+                    else cb.closest('.image-item').classList.remove('checked');
+                    updateStats();
+                    saveProgress();
+                });
+            });
+            updateStats();
+        });
+    </script>
+</body>
+</html>

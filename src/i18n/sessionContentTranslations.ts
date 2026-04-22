@@ -15,6 +15,7 @@ import { aiModernSlidesDE, aiModernFinalQuizDE } from './ai-modern-content-de'
 import { writingControlSlidesDE, writingControlFinalQuizDE } from './writing-control-content-de'
 import { caesarAnecdotesSlidesDE, caesarAnecdotesFinalQuizDE } from './caesar-anecdotes-content-de'
 import { alexanderAnecdotesSlidesDE, alexanderAnecdotesFinalQuizDE } from './alexander-anecdotes-content-de'
+import { napoleonAnecdotesSlidesDE, napoleonAnecdotesFinalQuizDE } from './napoleon-anecdotes-content-de'
 
 // Deutsche Übersetzungen (B2-Niveau) für die Turnier-Session
 const ritterturniereSlidesDE: Slide[] = [
@@ -3171,6 +3172,13 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
     return {
       slides: alexanderAnecdotesSlidesDE,
       quiz: alexanderAnecdotesFinalQuizDE
+    }
+  }
+
+  if (sessionId === 'napoleon-anecdotes' && language === 'de') {
+    return {
+      slides: napoleonAnecdotesSlidesDE,
+      quiz: napoleonAnecdotesFinalQuizDE
     }
   }
 

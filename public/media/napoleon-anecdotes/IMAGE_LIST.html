@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bildliste: Napoleon — 30 Geschichten / Наполеон</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0d1642 0%, #1a237e 45%, #0a0e1a 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fffef8;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a237e 0%, #0d1642 100%);
+            color: #fff8e1;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.05em; margin-bottom: 10px; }
+        .header p { font-size: 1.02em; opacity: 0.92; }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 18px 20px;
+            background: #e8eaf6;
+            border-bottom: 2px solid #c5cae9;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 1.8em; font-weight: bold; color: #1a237e; }
+        .stat-label { color: #3949ab; margin-top: 4px; font-size: 0.9em; }
+        .instructions {
+            padding: 24px 36px;
+            background: #e8eaf6;
+            border-left: 5px solid #c9a227;
+            margin: 20px 36px;
+            border-radius: 10px;
+        }
+        .instructions h2 { color: #1a237e; margin-bottom: 10px; font-size: 1.3em; }
+        .instructions ul { list-style-position: inside; color: #283593; font-size: 0.95em; }
+        .instructions li { margin: 6px 0; }
+        .content { padding: 10px 36px 30px; }
+        .section-title {
+            font-size: 1.6em;
+            color: #1a237e;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #c9a227;
+        }
+        .image-item {
+            background: #faf6ef;
+            border: 2px solid #c5cae9;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+            transition: all 0.25s ease;
+        }
+        .image-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            transform: translateY(-1px);
+        }
+        .image-item.checked { background: #e8f5e9; border-color: #43a047; }
+        .image-header { display: flex; align-items: center; margin-bottom: 8px; }
+        .checkbox { width: 22px; height: 22px; margin-right: 14px; cursor: pointer; }
+        .image-number {
+            background: #1a237e;
+            color: white;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; margin-right: 12px; font-size: 0.95em;
+        }
+        .image-filename { font-size: 1.05em; font-weight: bold; color: #212529; flex: 1; }
+        .image-description { color: #495057; margin-bottom: 8px; margin-left: 70px; font-size: 0.95em; }
+        .search-terms {
+            background: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-left: 70px;
+            border: 1px solid #9fa8da;
+            font-size: 0.9em;
+        }
+        .search-terms strong { color: #1a237e; }
+        .search-links { margin-left: 70px; margin-top: 8px; }
+        .search-link {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #1a237e;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 8px; margin-top: 4px;
+            font-size: 0.85em;
+            transition: background 0.25s ease;
+        }
+        .search-link:hover { background: #0d1642; }
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: #c5cae9;
+            z-index: 1000;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #c9a227, #ffd54f);
+            width: 0%;
+            transition: width 0.25s ease;
+        }
+        .action-buttons {
+            position: fixed;
+            bottom: 26px; right: 26px;
+            display: flex; gap: 10px;
+        }
+        .action-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+        .reset-btn { background: #c62828; color: white; }
+        .reset-btn:hover { background: #b71c1c; transform: scale(1.04); }
+        .save-btn { background: #558b2f; color: white; }
+        .save-btn:hover { background: #33691e; transform: scale(1.04); }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="container">
+        <div class="header">
+            <h1>Napoleon: 30 Geschichten / Наполеон: 30 историй</h1>
+            <p>30 JPG · public/media/napoleon-anecdotes/ · Session «napoleon-anecdotes» (RU/DE) · Quiz-Folien ohne Bild</p>
+        </div>
+        <div class="stats">
+            <div class="stat-item"><div class="stat-number" id="totalImages">0</div><div class="stat-label">Gesamt / всего</div></div>
+            <div class="stat-item"><div class="stat-number" id="checkedImages">0</div><div class="stat-label">Erledigt / готово</div></div>
+            <div class="stat-item"><div class="stat-number" id="remainingImages">0</div><div class="stat-label">Offen / осталось</div></div>
+            <div class="stat-item"><div class="stat-number" id="progressPercent">0%</div><div class="stat-label">Fortschritt</div></div>
+        </div>
+        <div class="instructions">
+            <h2>Anleitung / Инструкция</h2>
+            <ul>
+                <li><strong>Dateiname exakt:</strong> wie in der Liste → <code>public/media/napoleon-anecdotes/</code></li>
+                <li><strong>Format:</strong> JPG (oder PNG umbenennen), ideal ≥ 1200×800 px.</li>
+                <li><strong>Lizenz:</strong> Public Domain oder CC — Quelle notieren (viele Gemälde des 19. Jh. sind gemeinfrei).</li>
+                <li><strong>Quiz-Folien (q1–q10):</strong> keine Medien in der App — nur diese 30 Bilder.</li>
+            </ul>
+        </div>
+        <div class="content">
+            <h2 class="section-title">Bilder / Изображения</h2>
+
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap0"><div class="image-number">1</div><label for="nap0" class="image-filename">01-height-state-secret.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon Größe Karikatur Gillray / Garde<br><strong>RU:</strong> Наполеон рост, карикатура Гилрей, гвардия</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon Gillray caricature height"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20Gillray%20caricature%20height&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=James%20Gillray%20Napoleon">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+caricature/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap1"><div class="image-number">2</div><label for="nap1" class="image-filename">02-self-coronation.jpg</label></div><div class="image-description"><strong>DE:</strong> Krönung Notre-Dame Napoleon Krone Papst<br><strong>RU:</strong> Коронация Нотр-Дам Наполеон корона</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon coronation 1804 Notre Dame crown"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20coronation%201804%20Notre%20Dame%20crown&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Jacques-Louis%20David%20coronation%20Napoleon">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+coronation/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap2"><div class="image-number">3</div><label for="nap2" class="image-filename">03-laplace-exam.jpg</label></div><div class="image-description"><strong>DE:</strong> Laplace Mathematiker Portrait<br><strong>RU:</strong> Лаплас математик портрет</div><div class="search-terms"><strong>Suche / поиск:</strong> "Pierre-Simon Laplace mathematician portrait"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Pierre-Simon%20Laplace%20mathematician%20portrait&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Pierre%20Simon%20Laplace">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/laplace+portrait/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap3"><div class="image-number">4</div><label for="nap3" class="image-filename">04-impossible-not-french.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon Marschall Befehl Feldzug<br><strong>RU:</strong> Наполеон маршал приказ</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon marshals council war map"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20marshals%20council%20war%20map&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20military%20council">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+marshals/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap4"><div class="image-number">5</div><label for="nap4" class="image-filename">05-mirror-audience.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon Spiegel Uniform General<br><strong>RU:</strong> Наполеон зеркало униформа</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon mirror uniform painting"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20mirror%20uniform%20painting&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20portrait%20mirror">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+uniform/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap5"><div class="image-number">6</div><label for="nap5" class="image-filename">06-petit-caporal.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon bei Soldaten Lagerfeuer<br><strong>RU:</strong> Наполеон солдаты костёр</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon soldiers campfire camp"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20soldiers%20campfire%20camp&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20army%20camp%20painting">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+soldiers/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap6"><div class="image-number">7</div><label for="nap6" class="image-filename">07-names-parade.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon Parade Soldaten Revue<br><strong>RU:</strong> Наполеон парад смотр солдат</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon military parade soldiers review"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20military%20parade%20soldiers%20review&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20reviewing%20troops">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+parade/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap7"><div class="image-number">8</div><label for="nap7" class="image-filename">08-sentry-password.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon Wache Nacht Zelt<br><strong>RU:</strong> Наполеон часовой ночь палатка</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon sentry guard night camp"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20sentry%20guard%20night%20camp&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20bivouac%20guard">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+camp+night/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap8"><div class="image-number">9</div><label for="nap8" class="image-filename">09-marshal-baton-sack.jpg</label></div><div class="image-description"><strong>DE:</strong> Marschallstab Napoleon Marschälle<br><strong>RU:</strong> Маршальский жезл Наполеон</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon marshal baton"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20marshal%20baton&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=French%20marshal%20baton%20napoleonic">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/marshal+baton/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap9"><div class="image-number">10</div><label for="nap9" class="image-filename">10-remember-you.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon Soldat Blick ernst<br><strong>RU:</strong> Наполеон солдат взгляд</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon soldier stern look painting"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20soldier%20stern%20look%20painting&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20and%20soldier">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+soldier/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap10"><div class="image-number">11</div><label for="nap10" class="image-filename">11-breakfast-decision.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon Schreibtisch Papiere Diplomatie<br><strong>RU:</strong> Наполеон стол бумаги дипломатия</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon desk documents diplomacy"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20desk%20documents%20diplomacy&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20study%20Tuileries">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+desk/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap11"><div class="image-number">12</div><label for="nap11" class="image-filename">12-pamphlet-critic.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon liest Zeitung Paris<br><strong>RU:</strong> Наполеон читает газету</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon reading newspaper satire"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20reading%20newspaper%20satire&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20reading%20letter">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+reading/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap12"><div class="image-number">13</div><label for="nap12" class="image-filename">13-fear-boredom.jpg</label></div><div class="image-description"><strong>DE:</strong> St Helena Napoleon Langeweile<br><strong>RU:</strong> Святая Елена Наполеон скука</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon St Helena exile bored"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20St%20Helena%20exile%20bored&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Longwood%20House%20Napoleon">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/saint+helena+napoleon/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap13"><div class="image-number">14</div><label for="nap13" class="image-filename">14-talleyrand-silk.jpg</label></div><div class="image-description"><strong>DE:</strong> Talleyrand Portrait Diplomat<br><strong>RU:</strong> Талейран портрет</div><div class="search-terms"><strong>Suche / поиск:</strong> "Charles Maurice de Talleyrand portrait"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Charles%20Maurice%20de%20Talleyrand%20portrait&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Talleyrand%20Perigord%20portrait">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/talleyrand+portrait/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap14"><div class="image-number">15</div><label for="nap14" class="image-filename">15-luck-ready.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon Schlacht Pferd<br><strong>RU:</strong> Наполеон битва конь</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon battle horse painting"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20battle%20horse%20painting&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20on%20horseback%20battle">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+battle/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap15"><div class="image-number">16</div><label for="nap15" class="image-filename">16-egypt-jealousy.jpg</label></div><div class="image-description"><strong>DE:</strong> Ägyptenfeldzug Napoleon Pyramiden<br><strong>RU:</strong> Египетский поход Наполеон</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon Egypt campaign pyramids"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20Egypt%20campaign%20pyramids&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20Egyptian%20campaign">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+egypt/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap16"><div class="image-number">17</div><label for="nap16" class="image-filename">17-ball-too-long.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon Ball Hof Damen<br><strong>RU:</strong> Наполеон бал двор</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon imperial ball court ladies"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20imperial%20ball%20court%20ladies&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20court%20ball%20painting">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+ball/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap17"><div class="image-number">18</div><label for="nap17" class="image-filename">18-divorce-josephine.jpg</label></div><div class="image-description"><strong>DE:</strong> Scheidung Joséphine Napoleon Tränen<br><strong>RU:</strong> Развод Жозефина Наполеон</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon Joséphine divorce ceremony"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20Jos%C3%A9phine%20divorce%20ceremony&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20Josephine%20divorce">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/josephine+napoleon/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap18"><div class="image-number">19</div><label for="nap18" class="image-filename">19-revolution-over.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon Konsul Senat<br><strong>RU:</strong> Наполеон консул сенат</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon consul senate revolution"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20consul%20senate%20revolution&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20coup%2018%20brumaire">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+consul/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap19"><div class="image-number">20</div><label for="nap19" class="image-filename">20-civil-code.jpg</label></div><div class="image-description"><strong>DE:</strong> Code Napoleon Gesetzbuch Bücher<br><strong>RU:</strong> Кодекс Наполеона книги</div><div class="search-terms"><strong>Suche / поиск:</strong> "Code Napoleon civil law books"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Code%20Napoleon%20civil%20law%20books&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleonic%20code%20manuscript">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/code+napoleon/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap20"><div class="image-number">21</div><label for="nap20" class="image-filename">21-first-servant-state.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon Rede Staat<br><strong>RU:</strong> Наполеон речь государство</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon speech state servant"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20speech%20state%20servant&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20Tuileries%20throne">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+emperor/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap21"><div class="image-number">22</div><label for="nap21" class="image-filename">22-censorship-theater.jpg</label></div><div class="image-description"><strong>DE:</strong> Paris Theater Napoleon Zeit<br><strong>RU:</strong> Париж театр Наполеон</div><div class="search-terms"><strong>Suche / поиск:</strong> "Paris theater Napoleon era comedy"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Paris%20theater%20Napoleon%20era%20comedy&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Od%C3%A9on%20theater%20Paris%20napoleonic">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/paris+theater+1800/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap22"><div class="image-number">23</div><label for="nap22" class="image-filename">23-moscow-fire.jpg</label></div><div class="image-description"><strong>DE:</strong> Moskau Brand 1812 Napoleon<br><strong>RU:</strong> Москва пожар 1812 Наполеон</div><div class="search-terms"><strong>Suche / поиск:</strong> "Moscow fire 1812 Napoleon"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Moscow%20fire%201812%20Napoleon&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Burning%20of%20Moscow%201812">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/moscow+fire+1812/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap23"><div class="image-number">24</div><label for="nap23" class="image-filename">24-waterloo-fifteen.jpg</label></div><div class="image-description"><strong>DE:</strong> Schlacht Waterloo 1815<br><strong>RU:</strong> Битва Ватерлоо 1815</div><div class="search-terms"><strong>Suche / поиск:</strong> "Battle of Waterloo 1815 painting"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Battle%20of%20Waterloo%201815%20painting&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Waterloo%20battle%20panorama">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/waterloo+battle/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap24"><div class="image-number">25</div><label for="nap24" class="image-filename">25-chess-lowe.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon Schach St Helena Lowe<br><strong>RU:</strong> Наполеон шахматы Святая Елена</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon chess St Helena Lowe"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20chess%20St%20Helena%20Lowe&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20playing%20chess%20exile">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+chess/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap25"><div class="image-number">26</div><label for="nap25" class="image-filename">26-memoirs-propaganda.jpg</label></div><div class="image-description"><strong>DE:</strong> Las Cases Napoleon Memoiren<br><strong>RU:</strong> Лас-Каз мемуары Наполеон</div><div class="search-terms"><strong>Suche / поиск:</strong> "Las Cases Napoleon memoirs dictation"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Las%20Cases%20Napoleon%20memoirs%20dictation&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Memorial%20de%20Sainte-Helene">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/las+cases+napoleon/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap26"><div class="image-number">27</div><label for="nap26" class="image-filename">27-bath-cabinet.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon Badewanne historisch<br><strong>RU:</strong> Наполеон ванна</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon bath tub historical"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20bath%20tub%20historical&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20bathtub%20Malmaison">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/antique+bathtub+portrait/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap27"><div class="image-number">28</div><label for="nap27" class="image-filename">28-speed-reading.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon Bücher Bibliothek<br><strong>RU:</strong> Наполеон книги библиотека</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon books library reading"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20books%20library%20reading&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20study%20books">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+library/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap28"><div class="image-number">29</div><label for="nap28" class="image-filename">29-snuff-uniform.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon weißer Uniform Schnupftabak<br><strong>RU:</strong> Наполеон белый мундир табак</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon white coat uniform snuff"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20white%20coat%20uniform%20snuff&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20colonel%20uniform">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+uniform+white/">Pixabay</a></div></div>
+            <div class="image-item"><div class="image-header"><input type="checkbox" class="checkbox" id="nap29"><div class="image-number">30</div><label for="nap29" class="image-filename">30-last-words.jpg</label></div><div class="image-description"><strong>DE:</strong> Napoleon Sterbebett St Helena<br><strong>RU:</strong> Наполеон смерть кровать</div><div class="search-terms"><strong>Suche / поиск:</strong> "Napoleon deathbed St Helena"</div><div class="search-links"><a class="search-link" target="_blank" rel="noopener" href="https://www.google.com/search?q=Napoleon%20deathbed%20St%20Helena&tbm=isch">Google</a><a class="search-link" target="_blank" rel="noopener" href="https://commons.wikimedia.org/w/index.php?search=Napoleon%20last%20days%20Longwood">Wikimedia</a><a class="search-link" target="_blank" rel="noopener" href="https://pixabay.com/images/search/napoleon+death+painting/">Pixabay</a></div></div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn reset-btn" type="button" onclick="resetProgress()">Zurücksetzen</button>
+        <button class="action-btn save-btn" type="button" onclick="saveProgress()">Speichern</button>
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'napoleonAnecdotesImageProgress';
+        function updateStats() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const total = checkboxes.length;
+            const checked = document.querySelectorAll('.checkbox:checked').length;
+            document.getElementById('totalImages').textContent = total;
+            document.getElementById('checkedImages').textContent = checked;
+            document.getElementById('remainingImages').textContent = total - checked;
+            const percent = total === 0 ? 0 : Math.round((checked / total) * 100);
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(checkboxes).map(cb => cb.checked)));
+        }
+        function loadProgress() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (!saved) return;
+            const progress = JSON.parse(saved);
+            document.querySelectorAll('.checkbox').forEach((cb, index) => {
+                if (progress[index]) {
+                    cb.checked = true;
+                    cb.closest('.image-item').classList.add('checked');
+                }
+            });
+        }
+        function resetProgress() {
+            if (!confirm('Fortschritt für napoleon-anecdotes Bilder löschen? / Сбросить прогресс?')) return;
+            localStorage.removeItem(STORAGE_KEY);
+            document.querySelectorAll('.checkbox').forEach(cb => {
+                cb.checked = false;
+                cb.closest('.image-item').classList.remove('checked');
+            });
+            updateStats();
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            loadProgress();
+            document.querySelectorAll('.checkbox').forEach(cb => {
+                cb.addEventListener('change', () => {
+                    if (cb.checked) cb.closest('.image-item').classList.add('checked');
+                    else cb.closest('.image-item').classList.remove('checked');
+                    updateStats();
+                    saveProgress();
+                });
+            });
+            updateStats();
+        });
+    </script>
+</body>
+</html>

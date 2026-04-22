@@ -572,6 +572,38 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'napoleon-anecdotes': {
+    de: {
+      title: 'Napoleon: dreißig schlaue Geschichten',
+      description:
+        'Episoden zu Charakter, Armee, Witz, Joséphine, Politik, Niederlagen und Alltag — von der Krönung bis St. Helena; mit Zwischenquizzen und Abschlusstest.',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Napoleon-Sitzung!',
+        mainContent:
+          'Dreißig kurze Geschichten — von Größe und Laplace bis Waterloo und letzte Worte — und die Frage, was Überlieferung, was Anekdote ist',
+        interactive: 'Zehn Mini-Quizze (je drei Fragen) und ein Abschlusstest mit 30 Fragen',
+        additional: 'Pro Erzählfolie ein Bild; Dateinamen siehe IMAGE_LIST.html',
+        closing:
+          'Fazit: Napoleons Bild entstand aus Chroniken, Memoiren und Anekdoten — Ebenen der Glaubwürdigkeit zu unterscheiden bleibt nützlich'
+      }
+    },
+    ru: {
+      title: 'Наполеон: тридцать остроумных историй',
+      description:
+        'Эпизоды о характере, армии, остроумии, Жозефине, политике, поражениях и быте: от коронации до Святой Елены — с промежуточными викторинами и итоговым тестом.',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о Наполеоне!',
+        mainContent:
+          'Тридцать коротких историй — от роста и Лапласа до Ватерлоо и последних слов — и обсуждение, где факт, где литература и где устная традиция',
+        interactive: 'Десять мини-викторин по три вопроса и финальный тест на 30 вопросов',
+        additional: 'На каждом сюжетном слайде — иллюстрация; подбор по IMAGE_LIST.html',
+        closing:
+          'Итог: образ Наполеона сложился из хроник, мемуаров и анекдотов — различать уровни достоверности полезно всегда'
+      }
+    }
+  },
   'writing-control': {
     de: {
       title: 'Schrift: Kontrolle und Macht',

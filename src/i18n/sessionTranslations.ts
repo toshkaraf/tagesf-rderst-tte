@@ -14,6 +14,36 @@ export interface SessionTranslations {
 }
 
 export const sessionTranslations: Record<string, Record<Language, SessionTranslations>> = {
+  'ancient-battle-tactics': {
+    de: {
+      title: 'Geschichte antiker Schlachtordnungen und Taktiken',
+      description:
+        '30 Folien zu Schluesselmethoden der antiken Kriegsfuehrung: von Aegypten und Griechenland bis Rom, Persien, Indien und China.',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung ueber antike Schlachtordnungen!',
+        mainContent:
+          'Wir analysieren 30 taktische Beispiele und sehen, wie Formation, Tempo, Disziplin und Gelaende den Kampf entschieden',
+        interactive: 'Diskussionen waehrend der Folien und Fragen nach den Bloecken',
+        additional: 'Bildauswahl ueber IMAGE_LIST.html',
+        closing: 'Fazit: Antike Taktik war ein Zusammenspiel aus Ordnung, Timing und Psychologie'
+      }
+    },
+    ru: {
+      title: 'История боевых построений и тактик древнего мира',
+      description:
+        '30 слайдов о ключевых тактиках древности: Египет, Греция, Македония, Рим, Персия, Индия, Китай и степные народы.',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о боевых построениях древнего мира!',
+        mainContent:
+          'Разберем 30 тактических примеров: как строи, дисциплина, рельеф и координация решали исход боя',
+        interactive: 'Обсуждение по ходу слайдов и вопросы после блоков',
+        additional: 'Иллюстрации подбираются по файлу IMAGE_LIST.html',
+        closing: 'Итог: военная тактика древности строилась на сочетании строя, темпа и психологии'
+      }
+    }
+  },
   'ritterturniere': {
     de: {
       title: 'Ritterturniere: Blut, Geld und Politik',

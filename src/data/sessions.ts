@@ -18,6 +18,7 @@ import { writingControlSessionRU } from './writing-control-session'
 import { caesarAnecdotesSessionRU } from './caesar-anecdotes-session'
 import { alexanderAnecdotesSessionRU } from './alexander-anecdotes-session'
 import { napoleonAnecdotesSessionRU } from './napoleon-anecdotes-session'
+import { ancientBattleTacticsSessionRU } from './ancient-battle-tactics-session'
 
 // Примеры занятий - здесь будут храниться все занятия
 const sessionsData: Session[] = [
@@ -1366,6 +1367,7 @@ const sessionsData: Session[] = [
   caesarAnecdotesSessionRU,
   alexanderAnecdotesSessionRU,
   napoleonAnecdotesSessionRU,
+  ancientBattleTacticsSessionRU,
   {
     id: 'seven-wonders',
     title: 'Семь чудес света: экономика мегапроектов',

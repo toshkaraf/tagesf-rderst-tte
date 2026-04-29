@@ -44,6 +44,37 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'medieval-battle-tactics': {
+    de: {
+      title: 'Mittelalterliche Schlachtordnung und Taktik',
+      description:
+        '30 Folien zu Formation, Ritterkampf, Fernkampf, Schweizer Pike, Mongolen, Belagerung und Spaetmittelalter in Europa und der Steppe.',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung ueber mittelalterliche Schlachtordnung!',
+        mainContent:
+          'Wir gehen 30 Beispiele durch: Schildwand, Reiterkeil, Fernkampf, Hussiten und Pulver gegen Burgen',
+        interactive: 'Zehn Mini-Quizzes und ein Abschlussquiz mit 30 Fragen',
+        additional: 'Bildauswahl ueber IMAGE_LIST.html und IMAGE_LIST.md',
+        closing:
+          'Fazit: Mittelalterlicher Kampf verband Linie, Gelaende und Psychologie; Pulververaenderung brach die Festungslogik'
+      }
+    },
+    ru: {
+      title: 'Средневековые боевые построения и тактики',
+      description:
+        '30 слайдов о строе, кавалерии, лучниках, швейцарцах, монголах, осаде и позднесредневековой тактике в Европе и степи.',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о средневековых боевых построениях и тактике!',
+        mainContent:
+          'Разберём тридцать примеров: щитовые стены, рыцарский клин, лучники, пики, монгольская координация и осадная техника',
+        interactive: '10 мини-викторин по ходу занятия и итоговая викторина на 30 вопросов',
+        additional: 'Иллюстрации по файлам IMAGE_LIST.html и IMAGE_LIST.md',
+        closing: 'Итог: средневековый бой сочетал строй, рельеф, дисциплину и психологию; порох переломил роль замка'
+      }
+    }
+  },
   'ritterturniere': {
     de: {
       title: 'Ritterturniere: Blut, Geld und Politik',

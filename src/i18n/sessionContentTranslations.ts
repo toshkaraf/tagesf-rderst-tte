@@ -17,6 +17,7 @@ import { caesarAnecdotesSlidesDE, caesarAnecdotesFinalQuizDE } from './caesar-an
 import { alexanderAnecdotesSlidesDE, alexanderAnecdotesFinalQuizDE } from './alexander-anecdotes-content-de'
 import { napoleonAnecdotesSlidesDE, napoleonAnecdotesFinalQuizDE } from './napoleon-anecdotes-content-de'
 import { ancientBattleTacticsSlidesDE, ancientBattleTacticsFinalQuizDE } from './ancient-battle-tactics-content-de'
+import { medievalBattleTacticsSlidesDE, medievalBattleTacticsFinalQuizDE } from './medieval-battle-tactics-content-de'
 
 // Deutsche Übersetzungen (B2-Niveau) für die Turnier-Session
 const ritterturniereSlidesDE: Slide[] = [
@@ -3187,6 +3188,13 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
     return {
       slides: ancientBattleTacticsSlidesDE,
       quiz: ancientBattleTacticsFinalQuizDE
+    }
+  }
+
+  if (sessionId === 'medieval-battle-tactics' && language === 'de') {
+    return {
+      slides: medievalBattleTacticsSlidesDE,
+      quiz: medievalBattleTacticsFinalQuizDE
     }
   }
 

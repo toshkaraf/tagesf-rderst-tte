@@ -54,8 +54,8 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
         greeting: 'Willkommen zur Sitzung ueber mittelalterliche Schlachtordnung!',
         mainContent:
           'Wir gehen 30 Beispiele durch: Schildwand, Reiterkeil, Fernkampf, Hussiten und Pulver gegen Burgen',
-        interactive: 'Zehn Mini-Quizzes und ein Abschlussquiz mit 30 Fragen',
-        additional: 'Bildauswahl ueber IMAGE_LIST.html und IMAGE_LIST.md',
+        interactive: 'Zehn Mini-Quizzes und ein Abschlussquiz mit 30 Fragen (Deutsch B2)',
+        additional: 'Bildauswahl ueber IMAGE_LIST.html und IMAGE_LIST.md; Folientexte und Quiz in Deutsch B2',
         closing:
           'Fazit: Mittelalterlicher Kampf verband Linie, Gelaende und Psychologie; Pulververaenderung brach die Festungslogik'
       }

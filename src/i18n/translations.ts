@@ -33,6 +33,23 @@ export interface Translations {
     draw: string
     columnButtons: string
     columnPick: string
+    setupTitle: string
+    setupSubtitle: string
+    colsLabel: string
+    rowsLabel: string
+    modeLabel: string
+    modeTwoPlayer: string
+    modeVsBot: string
+    botLevelLabel: string
+    botEasy: string
+    botMedium: string
+    botHard: string
+    startGame: string
+    backToSetup: string
+    playerComputer: string
+    turnComputer: string
+    computerThinking: string
+    computerWon: string
   }
   session: {
     notFound: string
@@ -113,7 +130,24 @@ export const translations: Record<Language, Translations> = {
       won2: 'Spieler 2 hat gewonnen',
       draw: 'Unentschieden',
       columnButtons: 'Spaltenwahl',
-      columnPick: 'Spalte'
+      columnPick: 'Spalte',
+      setupTitle: 'Neue Partie',
+      setupSubtitle: 'Klassisch ist das Feld 7×6 („vier gewinnt“). Größe, Modus und ggf. KI‑Stärke wählen.',
+      colsLabel: 'Spalten (horizontal)',
+      rowsLabel: 'Reihen (vertical)',
+      modeLabel: 'Spielmodus',
+      modeTwoPlayer: 'Zwei Spielende',
+      modeVsBot: 'Gegen Computer',
+      botLevelLabel: 'KI‑Stärke',
+      botEasy: 'Einfach',
+      botMedium: 'Mittel',
+      botHard: 'Schwer',
+      startGame: 'Spiel starten',
+      backToSetup: 'Einstellungen',
+      playerComputer: 'Computer',
+      turnComputer: 'Computer ist dran',
+      computerThinking: 'Computer denkt…',
+      computerWon: 'Computer hat gewonnen'
     },
     session: {
       notFound: 'Sitzung nicht gefunden',
@@ -192,7 +226,24 @@ export const translations: Record<Language, Translations> = {
       won2: 'Победил игрок 2',
       draw: 'Ничья',
       columnButtons: 'Выбор столбца',
-      columnPick: 'Столбец'
+      columnPick: 'Столбец',
+      setupTitle: 'Новая партия',
+      setupSubtitle: 'Обычно поле 7×6 («четыре в ряд»). Выберите размер, режим и при игре с ботом сложность.',
+      colsLabel: 'Столбцы (по горизонтали)',
+      rowsLabel: 'Ряды (по вертикали)',
+      modeLabel: 'Режим',
+      modeTwoPlayer: 'Два игрока',
+      modeVsBot: 'Против компьютера',
+      botLevelLabel: 'Сложность бота',
+      botEasy: 'Легко',
+      botMedium: 'Средне',
+      botHard: 'Сложно',
+      startGame: 'Играть',
+      backToSetup: 'Настройки',
+      playerComputer: 'Компьютер',
+      turnComputer: 'Ход компьютера',
+      computerThinking: 'Компьютер думает…',
+      computerWon: 'Компьютер победил'
     },
     session: {
       notFound: 'Занятие не найдено',

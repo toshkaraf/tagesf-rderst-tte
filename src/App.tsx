@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { LanguageProvider } from './i18n/LanguageContext'
 import HomePage from './pages/HomePage'
 import SessionPage from './pages/SessionPage'
-import ConnectFourPage from './pages/ConnectFourPage'
+import ConnectFourSetupPage from './pages/ConnectFourSetupPage'
+import ConnectFourGamePage from './pages/ConnectFourGamePage'
 import LanguageSwitcher from './components/LanguageSwitcher'
 import './App.css'
 
@@ -17,7 +18,8 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/session/:sessionId" element={<SessionPage />} />
-        <Route path="/connect-four" element={<ConnectFourPage />} />
+        <Route path="/connect-four" element={<ConnectFourSetupPage />} />
+        <Route path="/connect-four/play" element={<ConnectFourGamePage />} />
       </Routes>
     </>
   )

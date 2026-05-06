@@ -166,7 +166,10 @@
 }
 
 .cf-board-stack {
-  width: min(96vw, calc((100vh - 220px) * 7 / 6));
+  width: min(
+    96vw,
+    calc((100vh - 220px) * var(--cf-cols, 7) / var(--cf-rows, 6))
+  );
   max-width: 100%;
   flex-shrink: 0;
 }
@@ -181,8 +184,12 @@
     inset 0 -6px 0 rgba(0, 0, 0, 0.15),
     0 16px 40px rgba(0, 0, 0, 0.35);
   width: 100%;
-  aspect-ratio: 7 / 6;
-  max-height: min(calc(100vh - 260px), calc(100dvh - 260px), 92vw * 6 / 7);
+  aspect-ratio: var(--cf-cols, 7) / var(--cf-rows, 6);
+  max-height: min(
+    calc(100vh - 260px),
+    calc(100dvh - 260px),
+    calc(92vw * var(--cf-rows, 6) / var(--cf-cols, 7))
+  );
   box-sizing: border-box;
 }
 
@@ -387,7 +394,7 @@
   .cf-board-stack {
     width: min(
       calc(100vw - clamp(200px, 28vw, 300px) - 48px),
-      calc((100dvh - 180px) * 7 / 6)
+      calc((100dvh - 180px) * var(--cf-cols, 7) / var(--cf-rows, 6))
     );
     max-width: 100%;
     height: 100%;
@@ -403,7 +410,7 @@
 
   .cf-board {
     width: 100%;
-    aspect-ratio: 7 / 6;
+    aspect-ratio: var(--cf-cols, 7) / var(--cf-rows, 6);
     flex: 0 0 auto;
     max-height: min(calc(100dvh - 180px), 85dvh);
     box-sizing: border-box;

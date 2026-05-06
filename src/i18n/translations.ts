@@ -18,6 +18,19 @@ export interface Translations {
     categories: string
     availableSessions: string
     sessions: string
+    openConnectFour: string
+  }
+  connectFour: {
+    title: string
+    newGame: string
+    again: string
+    player1: string
+    player2: string
+    turn1: string
+    turn2: string
+    won1: string
+    won2: string
+    draw: string
   }
   session: {
     notFound: string
@@ -83,7 +96,20 @@ export const translations: Record<Language, Translations> = {
       subtitle: 'Interaktive Sitzungen und Bildungsprogramme',
       categories: 'Kategorien',
       availableSessions: 'Verfügbare Sitzungen',
-      sessions: 'Sitzungen'
+      sessions: 'Sitzungen',
+      openConnectFour: '4 gewinnt'
+    },
+    connectFour: {
+      title: '4 gewinnt',
+      newGame: 'Neues Spiel',
+      again: 'Nochmal',
+      player1: 'Spieler 1',
+      player2: 'Spieler 2',
+      turn1: 'Spieler 1 ist am Zug',
+      turn2: 'Spieler 2 ist am Zug',
+      won1: 'Spieler 1 hat gewonnen',
+      won2: 'Spieler 2 hat gewonnen',
+      draw: 'Unentschieden'
     },
     session: {
       notFound: 'Sitzung nicht gefunden',
@@ -147,7 +173,20 @@ export const translations: Record<Language, Translations> = {
       subtitle: 'Интерактивные занятия и образовательные программы',
       categories: 'Категории',
       availableSessions: 'Доступные занятия',
-      sessions: 'занятий'
+      sessions: 'занятий',
+      openConnectFour: '4 в ряд'
+    },
+    connectFour: {
+      title: '4 в ряд',
+      newGame: 'Новая игра',
+      again: 'Заново',
+      player1: 'Игрок 1',
+      player2: 'Игрок 2',
+      turn1: 'Ход игрока 1',
+      turn2: 'Ход игрока 2',
+      won1: 'Победил игрок 1',
+      won2: 'Победил игрок 2',
+      draw: 'Ничья'
     },
     session: {
       notFound: 'Занятие не найдено',

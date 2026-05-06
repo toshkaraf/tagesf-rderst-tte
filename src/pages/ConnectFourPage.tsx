@@ -228,71 +228,97 @@ export default function ConnectFourPage() {
       </header>
 
       <div className="cf-safe">
-        <div className="cf-status">
-          <div className="cf-badges">
-            <span
-              className={`cf-badge cf-p1 ${
-                !winner && !boardFull && currentPlayer === 1 ? 'cf-active' : ''
-              } ${winner === 1 ? 'cf-won' : ''}`}
-            >
-              {t.connectFour.player1}
-            </span>
-            <span
-              className={`cf-badge cf-p2 ${
-                !winner && !boardFull && currentPlayer === 2 ? 'cf-active' : ''
-              } ${winner === 2 ? 'cf-won' : ''}`}
-            >
-              {t.connectFour.player2}
-            </span>
-          </div>
-          <p className="cf-status-text">{statusText()}</p>
-          <button type="button" className="cf-again-btn" onClick={resetGame}>
-            {t.connectFour.again}
-          </button>
-        </div>
-
-        <div className="cf-board-wrap">
-          <div className="cf-board">
-            {Array.from({ length: COLS }, (_, col) => (
-              <button
-                key={col}
-                type="button"
-                className="cf-column"
-                onClick={() => onColumnClick(col)}
-                disabled={animating || !!winner || boardFull}
-                aria-label={`Column ${col + 1}`}
-              >
-                <div className="cf-column-inner">
-                  {Array.from({ length: ROWS }, (_, rowIdx) => {
-                    const row = rowIdx
-                    const v = board[row][col]
-                    const hideDuringFall =
-                      animating && fallCol === col && fallTargetRow === row && v === 0
-                    const showVal = hideDuringFall ? 0 : v
-                    return (
-                      <div key={row} className="cf-cell">
-                        <div className="cf-hole">
-                          {showVal !== 0 && (
-                            <span className={`cf-disc cf-disc-p${showVal}`} />
-                          )}
+        <div className="cf-play-area">
+          <div className="cf-board-wrap">
+            <div className="cf-board-stack">
+              <div className="cf-board">
+              {Array.from({ length: COLS }, (_, col) => (
+                <button
+                  key={col}
+                  type="button"
+                  className="cf-column"
+                  onClick={() => onColumnClick(col)}
+                  disabled={animating || !!winner || boardFull}
+                  aria-label={`Column ${col + 1}`}
+                >
+                  <div className="cf-column-inner">
+                    {Array.from({ length: ROWS }, (_, rowIdx) => {
+                      const row = rowIdx
+                      const v = board[row][col]
+                      const hideDuringFall =
+                        animating && fallCol === col && fallTargetRow === row && v === 0
+                      const showVal = hideDuringFall ? 0 : v
+                      return (
+                        <div key={row} className="cf-cell">
+                          <div className="cf-hole">
+                            {showVal !== 0 && (
+                              <span className={`cf-disc cf-disc-p${showVal}`} />
+                            )}
+                          </div>
                         </div>
-                      </div>
-                    )
-                  })}
+                      )
+                    })}
 
-                  {animating && fallCol === col && fallPlayer != null && (
-                    <div
-                      className="cf-fall-layer"
-                      aria-hidden
-                      style={{ '--cf-center-y': `${centerPercent()}%` } as CSSProperties}
-                    >
-                      <span className={`cf-disc cf-falling cf-disc-p${fallPlayer}`} />
-                    </div>
-                  )}
+                    {animating && fallCol === col && fallPlayer != null && (
+                      <div
+                        className="cf-fall-layer"
+                        aria-hidden
+                        style={{ '--cf-center-y': `${centerPercent()}%` } as CSSProperties}
+                      >
+                        <span className={`cf-disc cf-falling cf-disc-p${fallPlayer}`} />
+                      </div>
+                    )}
+                  </div>
+                </button>
+              ))}
+              </div>
+
+              <div className="cf-column-buttons" role="group" aria-label={t.connectFour.columnButtons}>
+              {Array.from({ length: COLS }, (_, col) => (
+                <div key={`slot-${col}`} className="cf-col-ball-slot">
+                  <button
+                    type="button"
+                    className={`cf-col-ball ${
+                      winner || boardFull
+                        ? 'cf-col-ball-ended'
+                        : `cf-col-ball-p${animating && fallPlayer != null ? fallPlayer : currentPlayer}`
+                    }`}
+                    onClick={() => onColumnClick(col)}
+                    disabled={animating || !!winner || boardFull}
+                    aria-label={`${t.connectFour.columnPick} ${col + 1}`}
+                  >
+                    {col + 1}
+                  </button>
                 </div>
-              </button>
-            ))}
+              ))}
+              </div>
+            </div>
           </div>
+
+          <aside className="cf-sidebar">
+            <div className="cf-status">
+              <div className="cf-badges">
+                <span
+                  className={`cf-badge cf-p1 ${
+                    !winner && !boardFull && currentPlayer === 1 ? 'cf-active' : ''
+                  } ${winner === 1 ? 'cf-won' : ''}`}
+                >
+                  {t.connectFour.player1}
+                </span>
+                <span
+                  className={`cf-badge cf-p2 ${
+                    !winner && !boardFull && currentPlayer === 2 ? 'cf-active' : ''
+                  } ${winner === 2 ? 'cf-won' : ''}`}
+                >
+                  {t.connectFour.player2}
+                </span>
+              </div>
+              <p className="cf-status-text">{statusText()}</p>
+              <button type="button" className="cf-again-btn" onClick={resetGame}>
+                {t.connectFour.again}
+              </button>
+            </div>
+          </aside>
         </div>
       </div>
     </div>

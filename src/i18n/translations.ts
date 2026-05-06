@@ -31,6 +31,8 @@ export interface Translations {
     won1: string
     won2: string
     draw: string
+    columnButtons: string
+    columnPick: string
   }
   session: {
     notFound: string
@@ -109,7 +111,9 @@ export const translations: Record<Language, Translations> = {
       turn2: 'Spieler 2 ist am Zug',
       won1: 'Spieler 1 hat gewonnen',
       won2: 'Spieler 2 hat gewonnen',
-      draw: 'Unentschieden'
+      draw: 'Unentschieden',
+      columnButtons: 'Spaltenwahl',
+      columnPick: 'Spalte'
     },
     session: {
       notFound: 'Sitzung nicht gefunden',
@@ -186,7 +190,9 @@ export const translations: Record<Language, Translations> = {
       turn2: 'Ход игрока 2',
       won1: 'Победил игрок 1',
       won2: 'Победил игрок 2',
-      draw: 'Ничья'
+      draw: 'Ничья',
+      columnButtons: 'Выбор столбца',
+      columnPick: 'Столбец'
     },
     session: {
       notFound: 'Занятие не найдено',

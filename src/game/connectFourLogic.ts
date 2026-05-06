@@ -60,6 +60,44 @@ export function checkWin(
   return false
 }
 
+/** Все клетки непрерывной линии ≥4 через (row,col); отсортированы вдоль линии (концы — крайние фишки). */
+export function findWinningLine(
+  board: number[][],
+  rows: number,
+  cols: number,
+  row: number,
+  col: number,
+  player: number
+): [number, number][] | null {
+  for (const [dr, dc] of DIRS) {
+    const cells: [number, number][] = [[row, col]]
+    let r = row - dr
+    let c = col - dc
+    while (r >= 0 && r < rows && c >= 0 && c < cols && board[r][c] === player) {
+      cells.push([r, c])
+      r -= dr
+      c -= dc
+    }
+    r = row + dr
+    c = col + dc
+    while (r >= 0 && r < rows && c >= 0 && c < cols && board[r][c] === player) {
+      cells.push([r, c])
+      r += dr
+      c += dc
+    }
+    if (cells.length < LINE_LEN) continue
+
+    const seen = new Map<string, [number, number]>()
+    for (const p of cells) {
+      seen.set(`${p[0]},${p[1]}`, p)
+    }
+    const uniq = [...seen.values()]
+    uniq.sort((a, b) => a[0] * dr + a[1] * dc - (b[0] * dr + b[1] * dc))
+    return uniq
+  }
+  return null
+}
+
 export function isBoardFull(board: number[][], cols: number): boolean {
   for (let c = 0; c < cols; c++) {
     if (board[0][c] === 0) return false

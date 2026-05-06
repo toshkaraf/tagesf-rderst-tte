@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react'
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type CSSProperties
+} from 'react'
 import { Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
 import { ArrowLeft, RotateCcw } from 'lucide-react'
@@ -9,6 +16,7 @@ import { readStoredConfig, type ConnectFourConfig } from '../game/connectFourSet
 import {
   emptyBoard,
   checkWin,
+  findWinningLine,
   isBoardFull,
   landingRow
 } from '../game/connectFourLogic'
@@ -19,6 +27,9 @@ const CF_SOUND = {
   win: '/media/sounds/victory.mp3',
   draw: '/media/sounds/quiz.mp3'
 } as const
+
+/** После падения последней фишки: кадры отрисовки + «посадка» визуально, затем звук и подсветка линии */
+const WIN_FEEDBACK_DELAY_MS = 320
 
 function playSound(url: string) {
   const audio = new Audio(url)
@@ -89,6 +100,18 @@ function ConnectFourGameInner({ cfg }: { cfg: ConnectFourConfig }) {
 
   const rafRef = useRef<number | null>(null)
   const animRunRef = useRef<{ start: number; duration: number } | null>(null)
+  const boardPanelRef = useRef<HTMLDivElement>(null)
+  const winFeedbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const [winningLine, setWinningLine] = useState<[number, number][] | null>(null)
+  const [winLineGeom, setWinLineGeom] = useState<{
+    w: number
+    h: number
+    x1: number
+    y1: number
+    x2: number
+    y2: number
+  } | null>(null)
 
   const stopAnimation = useCallback(() => {
     if (rafRef.current != null) {
@@ -104,15 +127,124 @@ function ConnectFourGameInner({ cfg }: { cfg: ConnectFourConfig }) {
   }, [])
 
   const resetGame = useCallback(() => {
+    if (winFeedbackTimerRef.current !== null) {
+      clearTimeout(winFeedbackTimerRef.current)
+      winFeedbackTimerRef.current = null
+    }
     stopAnimation()
     setBoard(emptyBoard(ROWS, COLS))
     setCurrentPlayer(1)
     setWinner(null)
     setBoardFull(false)
     setBotThinking(false)
+    setWinningLine(null)
+    setWinLineGeom(null)
   }, [stopAnimation, ROWS, COLS])
 
   useEffect(() => () => stopAnimation(), [stopAnimation])
+
+  useEffect(
+    () => () => {
+      if (winFeedbackTimerRef.current !== null) clearTimeout(winFeedbackTimerRef.current)
+    },
+    []
+  )
+
+  useLayoutEffect(() => {
+    if (!winningLine || winningLine.length < 2 || !boardPanelRef.current) {
+      setWinLineGeom(null)
+      return
+    }
+
+    const boardEl = boardPanelRef.current
+    const b = boardEl.getBoundingClientRect()
+    const pad = Math.min(18, Math.max(b.width, b.height) * 0.03)
+
+    const centers: { x: number; y: number }[] = []
+    for (const [r, c] of winningLine) {
+      const cell = boardEl.querySelector(`[data-cf-cell="${r}-${c}"]`)
+      if (!cell) continue
+      const er = cell.getBoundingClientRect()
+      centers.push({
+        x: er.left + er.width / 2 - b.left,
+        y: er.top + er.height / 2 - b.top
+      })
+    }
+
+    if (centers.length < 2) {
+      setWinLineGeom(null)
+      return
+    }
+
+    let x1 = centers[0]!.x
+    let y1 = centers[0]!.y
+    let x2 = centers[centers.length - 1]!.x
+    let y2 = centers[centers.length - 1]!.y
+    const dx = x2 - x1
+    const dy = y2 - y1
+    const len = Math.hypot(dx, dy) || 1
+    const ex = (dx / len) * pad
+    const ey = (dy / len) * pad
+    x1 -= ex
+    y1 -= ey
+    x2 += ex
+    y2 += ey
+
+    const geom = { w: b.width, h: b.height, x1, y1, x2, y2 }
+    setWinLineGeom(prev =>
+      prev &&
+      prev.w === geom.w &&
+      prev.h === geom.h &&
+      prev.x1 === geom.x1 &&
+      prev.y1 === geom.y1 &&
+      prev.x2 === geom.x2 &&
+      prev.y2 === geom.y2
+        ? prev
+        : geom
+    )
+  }, [winningLine, board, ROWS, COLS, winner])
+
+  useEffect(() => {
+    if (!winningLine?.length || !boardPanelRef.current) return
+
+    const el = boardPanelRef.current
+    const ro = new ResizeObserver(() => {
+      requestAnimationFrame(() => {
+        if (!winningLine.length || !boardPanelRef.current) return
+        const boardEl = boardPanelRef.current
+        const b = boardEl.getBoundingClientRect()
+        const pad = Math.min(18, Math.max(b.width, b.height) * 0.03)
+        const centers: { x: number; y: number }[] = []
+        for (const [r, c] of winningLine) {
+          const cell = boardEl.querySelector(`[data-cf-cell="${r}-${c}"]`)
+          if (!cell) continue
+          const er = cell.getBoundingClientRect()
+          centers.push({
+            x: er.left + er.width / 2 - b.left,
+            y: er.top + er.height / 2 - b.top
+          })
+        }
+        if (centers.length < 2) return
+        let x1 = centers[0]!.x
+        let y1 = centers[0]!.y
+        let x2 = centers[centers.length - 1]!.x
+        let y2 = centers[centers.length - 1]!.y
+        const dx = x2 - x1
+        const dy = y2 - y1
+        const len = Math.hypot(dx, dy) || 1
+        const ex = (dx / len) * pad
+        const ey = (dy / len) * pad
+        x1 -= ex
+        y1 -= ey
+        x2 += ex
+        y2 += ey
+        setWinLineGeom({ w: b.width, h: b.height, x1, y1, x2, y2 })
+      })
+    })
+
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [winningLine])
 
   const commitMove = useCallback(
     (row: number, col: number, player: 1 | 2) => {
@@ -125,8 +257,17 @@ function ConnectFourGameInner({ cfg }: { cfg: ConnectFourConfig }) {
         Promise.resolve().then(() => {
           if (won) {
             setWinner(player)
-            playSound(CF_SOUND.win)
-            hapticHeavy()
+            if (winFeedbackTimerRef.current !== null) {
+              clearTimeout(winFeedbackTimerRef.current)
+              winFeedbackTimerRef.current = null
+            }
+            winFeedbackTimerRef.current = window.setTimeout(() => {
+              winFeedbackTimerRef.current = null
+              const line = findWinningLine(next, ROWS, COLS, row, col, player)
+              if (line?.length) setWinningLine(line)
+              playSound(CF_SOUND.win)
+              hapticHeavy()
+            }, WIN_FEEDBACK_DELAY_MS)
           } else if (full) {
             setBoardFull(true)
             playSound(CF_SOUND.draw)
@@ -166,12 +307,17 @@ function ConnectFourGameInner({ cfg }: { cfg: ConnectFourConfig }) {
         } else {
           rafRef.current = null
           animRunRef.current = null
-          commitMove(targetRow, col, player)
-          setAnimating(false)
-          setFallCol(null)
-          setFallTargetRow(null)
-          setFallPlayer(null)
-          setFallT(0)
+          setFallT(1)
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              commitMove(targetRow, col, player)
+              setAnimating(false)
+              setFallCol(null)
+              setFallTargetRow(null)
+              setFallPlayer(null)
+              setFallT(0)
+            })
+          })
         }
       }
 
@@ -264,7 +410,7 @@ function ConnectFourGameInner({ cfg }: { cfg: ConnectFourConfig }) {
         <div className="cf-play-area">
           <div className="cf-board-wrap">
             <div className="cf-board-stack">
-              <div className="cf-board">
+              <div className="cf-board" ref={boardPanelRef}>
                 {Array.from({ length: COLS }, (_, col) => (
                   <button
                     key={col}
@@ -282,7 +428,7 @@ function ConnectFourGameInner({ cfg }: { cfg: ConnectFourConfig }) {
                           animating && fallCol === col && fallTargetRow === row && v === 0
                         const showVal = hideDuringFall ? 0 : v
                         return (
-                          <div key={row} className="cf-cell">
+                          <div key={row} className="cf-cell" data-cf-cell={`${row}-${col}`}>
                             <div className="cf-hole">
                               {showVal !== 0 && (
                                 <span className={`cf-disc cf-disc-p${showVal}`} />
@@ -304,6 +450,34 @@ function ConnectFourGameInner({ cfg }: { cfg: ConnectFourConfig }) {
                     </div>
                   </button>
                 ))}
+
+                {winLineGeom && (
+                  <svg
+                    className="cf-win-line-svg"
+                    viewBox={`0 0 ${winLineGeom.w} ${winLineGeom.h}`}
+                    preserveAspectRatio="none"
+                    aria-hidden
+                  >
+                    <line
+                      className="cf-win-line-glow"
+                      x1={winLineGeom.x1}
+                      y1={winLineGeom.y1}
+                      x2={winLineGeom.x2}
+                      y2={winLineGeom.y2}
+                      strokeWidth={Math.min(22, Math.max(winLineGeom.w, winLineGeom.h) * 0.04)}
+                      strokeLinecap="round"
+                    />
+                    <line
+                      className="cf-win-line-main"
+                      x1={winLineGeom.x1}
+                      y1={winLineGeom.y1}
+                      x2={winLineGeom.x2}
+                      y2={winLineGeom.y2}
+                      strokeWidth={Math.min(11, Math.max(winLineGeom.w, winLineGeom.h) * 0.02)}
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                )}
               </div>
 
               <div className="cf-column-buttons" role="group" aria-label={t.connectFour.columnButtons}>

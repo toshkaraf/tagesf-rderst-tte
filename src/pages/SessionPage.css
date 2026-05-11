@@ -1,5 +1,6 @@
 .session-page {
   height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   background: var(--background);
@@ -233,6 +234,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   background: rgba(0, 0, 0, 0.95);
   display: flex;
   align-items: center;
@@ -278,6 +280,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  min-height: 100dvh;
   padding: var(--spacing-large) * 2;
 }
 

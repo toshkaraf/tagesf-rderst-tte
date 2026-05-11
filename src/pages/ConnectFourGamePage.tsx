@@ -101,7 +101,7 @@ function ConnectFourGameInner({ cfg }: { cfg: ConnectFourConfig }) {
   const rafRef = useRef<number | null>(null)
   const animRunRef = useRef<{ start: number; duration: number } | null>(null)
   const boardPanelRef = useRef<HTMLDivElement>(null)
-  const winFeedbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const winFeedbackTimerRef = useRef<number | null>(null)
 
   const [winningLine, setWinningLine] = useState<[number, number][] | null>(null)
   const [winLineGeom, setWinLineGeom] = useState<{

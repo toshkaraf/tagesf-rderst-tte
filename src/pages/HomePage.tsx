@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { getSessions } from '../data/sessions'
 import { SessionType } from '../types/session'
 import { useLanguage } from '../i18n/LanguageContext'
-import { BookOpen, Map, Users, Music, Globe, Lightbulb, Languages, MessageCircle, Gamepad2 } from 'lucide-react'
+import { BookOpen, Map, Users, Music, Globe, Lightbulb, Languages, MessageCircle, ArrowLeft } from 'lucide-react'
 import './HomePage.css'
 
 const typeIcons: Record<SessionType, React.ReactNode> = {
@@ -24,20 +24,15 @@ function HomePage() {
   return (
     <div className="home-page">
       <header className="home-header">
+        <Link to="/" className="home-hub-link">
+          <ArrowLeft size={20} aria-hidden />
+          <span>{t.home.backToActivitySelect}</span>
+        </Link>
         <h1>{t.home.title}</h1>
         <p className="subtitle">{t.home.subtitle}</p>
       </header>
 
       <main className="home-main">
-        <section className="home-connect-four" aria-label={t.home.openConnectFour}>
-          <Link to="/connect-four" className="connect-four-launch">
-            <span className="connect-four-launch-icon" aria-hidden>
-              <Gamepad2 size={28} strokeWidth={2.25} />
-            </span>
-            <span className="connect-four-launch-label">{t.home.openConnectFour}</span>
-          </Link>
-        </section>
-
         <section className="categories-section">
           <h2>{t.home.categories}</h2>
           <div className="categories-grid">

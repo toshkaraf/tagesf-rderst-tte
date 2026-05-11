@@ -12,13 +12,22 @@ export interface Translations {
     duration: string
     minutes: string
   }
+  activitySelect: {
+    title: string
+    tileConnectFour: string
+    tileConnectFourSub: string
+    tileTopics: string
+    tileTopicsSub: string
+    tileKi: string
+    tileKiSub: string
+  }
   home: {
     title: string
     subtitle: string
     categories: string
     availableSessions: string
     sessions: string
-    openConnectFour: string
+    backToActivitySelect: string
   }
   connectFour: {
     title: string
@@ -110,13 +119,22 @@ export const translations: Record<Language, Translations> = {
       duration: 'Dauer',
       minutes: 'Min.'
     },
+    activitySelect: {
+      title: 'Aktivität wählen',
+      tileConnectFour: '4 gewinnt',
+      tileConnectFourSub: 'Zum Spiel',
+      tileTopics: 'Themenpräsentationen mit Quiz',
+      tileTopicsSub: 'Sitzungsliste',
+      tileKi: 'KI',
+      tileKiSub: 'Künstliche Intelligenz — KI-LASZLO'
+    },
     home: {
       title: 'Das unbekannte Bekannte',
       subtitle: 'Interaktive Sitzungen und Bildungsprogramme',
       categories: 'Kategorien',
       availableSessions: 'Verfügbare Sitzungen',
       sessions: 'Sitzungen',
-      openConnectFour: '4 gewinnt'
+      backToActivitySelect: 'Zur Aktivitätsauswahl'
     },
     connectFour: {
       title: '4 gewinnt',
@@ -151,7 +169,7 @@ export const translations: Record<Language, Translations> = {
     },
     session: {
       notFound: 'Sitzung nicht gefunden',
-      backToHome: 'Zurück zur Startseite',
+      backToHome: 'Zurück zur Übersicht',
       structure: 'Sitzungsstruktur',
       greeting: 'Begrüßung',
       mainContent: 'Hauptinhalt',
@@ -206,13 +224,22 @@ export const translations: Record<Language, Translations> = {
       duration: 'Длительность',
       minutes: 'мин'
     },
+    activitySelect: {
+      title: 'Выбор активности',
+      tileConnectFour: 'Игра 4 в ряд',
+      tileConnectFourSub: 'Перейти к игре',
+      tileTopics: 'Тематические презентации с викториной',
+      tileTopicsSub: 'Список занятий',
+      tileKi: 'KI',
+      tileKiSub: 'Künstliche Intelligenz — KI-LASZLO'
+    },
     home: {
       title: 'Неизвестное известное',
       subtitle: 'Интерактивные занятия и образовательные программы',
       categories: 'Категории',
       availableSessions: 'Доступные занятия',
       sessions: 'занятий',
-      openConnectFour: '4 в ряд'
+      backToActivitySelect: 'К выбору активности'
     },
     connectFour: {
       title: '4 в ряд',
@@ -247,7 +274,7 @@ export const translations: Record<Language, Translations> = {
     },
     session: {
       notFound: 'Занятие не найдено',
-      backToHome: 'Вернуться на главную',
+      backToHome: 'К списку занятий',
       structure: 'Структура занятия',
       greeting: 'Приветствие',
       mainContent: 'Основная часть',

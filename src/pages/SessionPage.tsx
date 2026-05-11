@@ -37,7 +37,7 @@ function SessionPage() {
     return (
       <div className="session-page error">
         <h2>{t.session.notFound}</h2>
-        <LargeButton onClick={() => navigate('/')}>
+        <LargeButton onClick={() => navigate('/topics')}>
           {t.session.backToHome}
         </LargeButton>
       </div>
@@ -126,7 +126,7 @@ function SessionPage() {
       <header className="session-header">
         <div className="header-top-row">
           <button 
-            onClick={() => navigate('/')} 
+            onClick={() => navigate('/topics')} 
             className="header-button btn-outline"
             title={t.common.back}
           >

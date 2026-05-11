@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
-import { Gamepad2, BookOpen, Sparkles } from 'lucide-react'
+import { Gamepad2, BookOpen, Sparkles, ScrollText } from 'lucide-react'
 import './ActivitySelectPage.css'
 
 function ActivitySelectPage() {
@@ -43,6 +43,17 @@ function ActivitySelectPage() {
               <span className="activity-tile-text">
                 <span className="activity-tile-label">{t.activitySelect.tileKi}</span>
                 <span className="activity-tile-sub">{t.activitySelect.tileKiSub}</span>
+              </span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/historical-quiz" className="activity-tile activity-tile--history-quiz">
+              <span className="activity-tile-icon" aria-hidden>
+                <ScrollText size={36} strokeWidth={2.25} />
+              </span>
+              <span className="activity-tile-text">
+                <span className="activity-tile-label">{t.activitySelect.tileHistoricalQuiz}</span>
+                <span className="activity-tile-sub">{t.activitySelect.tileHistoricalQuizSub}</span>
               </span>
             </Link>
           </li>

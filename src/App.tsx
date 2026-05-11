@@ -7,6 +7,7 @@ import ConnectFourSetupPage from './pages/ConnectFourSetupPage'
 import ConnectFourGamePage from './pages/ConnectFourGamePage'
 import LanguageSwitcher from './components/LanguageSwitcher'
 import KiPage from './pages/KiPage'
+import HistoricalQuizPage from './pages/HistoricalQuizPage'
 import './App.css'
 
 function AppContent() {
@@ -14,10 +15,11 @@ function AppContent() {
   const isSessionPage = location.pathname.startsWith('/session/')
   const isConnectFourPage = location.pathname.startsWith('/connect-four')
   const isKiPage = location.pathname.startsWith('/ki')
+  const isHistoricalQuizPage = location.pathname.startsWith('/historical-quiz')
 
   return (
     <>
-      {!isSessionPage && !isConnectFourPage && !isKiPage && <LanguageSwitcher />}
+      {!isSessionPage && !isConnectFourPage && !isKiPage && !isHistoricalQuizPage && <LanguageSwitcher />}
       <Routes>
         <Route path="/" element={<ActivitySelectPage />} />
         <Route path="/topics" element={<HomePage />} />
@@ -25,6 +27,7 @@ function AppContent() {
         <Route path="/connect-four" element={<ConnectFourSetupPage />} />
         <Route path="/connect-four/play" element={<ConnectFourGamePage />} />
         <Route path="/ki" element={<KiPage />} />
+        <Route path="/historical-quiz" element={<HistoricalQuizPage />} />
       </Routes>
     </>
   )

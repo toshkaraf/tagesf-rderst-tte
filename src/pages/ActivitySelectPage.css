@@ -120,6 +120,21 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+.activity-tile--history-quiz {
+  background: linear-gradient(145deg, #c67b4e 0%, #8d4e37 100%);
+  color: #fff8f0;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.activity-tile--history-quiz .activity-tile-icon {
+  background: rgba(0, 0, 0, 0.18);
+  color: #fff8f0;
+}
+
+.activity-tile--history-quiz .activity-tile-sub {
+  color: rgba(255, 248, 240, 0.92);
+}
+
 .activity-tile-icon {
   display: flex;
   align-items: center;

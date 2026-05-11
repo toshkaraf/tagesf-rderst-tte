@@ -20,6 +20,8 @@ export interface Translations {
     tileTopicsSub: string
     tileKi: string
     tileKiSub: string
+    tileHistoricalQuiz: string
+    tileHistoricalQuizSub: string
   }
   home: {
     title: string
@@ -126,7 +128,9 @@ export const translations: Record<Language, Translations> = {
       tileTopics: 'Themenpräsentationen mit Quiz',
       tileTopicsSub: 'Sitzungsliste',
       tileKi: 'KI',
-      tileKiSub: 'Künstliche Intelligenz — KI-LASZLO'
+      tileKiSub: 'Künstliche Intelligenz — KI-LASZLO',
+      tileHistoricalQuiz: 'Historisches Quiz',
+      tileHistoricalQuizSub: 'Geschichtsquiz zur Antike'
     },
     home: {
       title: 'Das unbekannte Bekannte',
@@ -231,7 +235,9 @@ export const translations: Record<Language, Translations> = {
       tileTopics: 'Тематические презентации с викториной',
       tileTopicsSub: 'Список занятий',
       tileKi: 'KI',
-      tileKiSub: 'Künstliche Intelligenz — KI-LASZLO'
+      tileKiSub: 'Künstliche Intelligenz — KI-LASZLO',
+      tileHistoricalQuiz: 'Исторический квиз',
+      tileHistoricalQuizSub: 'Интерактивное приложение по истории'
     },
     home: {
       title: 'Неизвестное известное',

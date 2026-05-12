@@ -483,7 +483,7 @@ export default function KiPage() {
   )
 
   return (
-    <div className="ki-page">
+    <div className={`ki-page ${inChat ? 'ki-page-chat' : ''}`}>
       <header className="ki-header" style={{ background: headerColor }}>
         <button type="button" className="ki-back" onClick={goBack} aria-label="Zurück">
           <ArrowLeft size={22} />
@@ -510,7 +510,7 @@ export default function KiPage() {
         )}
       </header>
 
-      <main className="ki-main">
+      <main className={`ki-main ${inChat ? 'ki-main-chat' : ''}`}>
         {!inChat && !showPicker && (
           <section className="ki-home">
             <div className="ki-hero">

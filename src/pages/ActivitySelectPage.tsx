@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
-import { Gamepad2 } from 'lucide-react'
+import { BookOpen, Gamepad2, ScrollText, Sparkles } from 'lucide-react'
 import './ActivitySelectPage.css'
 
 function ActivitySelectPage() {
@@ -26,13 +26,8 @@ function ActivitySelectPage() {
           </li>
           <li>
             <Link to="/topics" className="activity-tile activity-tile--topics">
-              <span className="activity-tile-visual" aria-hidden>
-                <img
-                  src="/media/activity-icons/quiz-wheel.webp"
-                  alt=""
-                  className="activity-tile-image"
-                  loading="eager"
-                />
+              <span className="activity-tile-icon" aria-hidden>
+                <BookOpen size={36} strokeWidth={2.25} />
               </span>
               <span className="activity-tile-text">
                 <span className="activity-tile-label">{t.activitySelect.tileTopics}</span>
@@ -42,13 +37,8 @@ function ActivitySelectPage() {
           </li>
           <li>
             <Link to="/ki" className="activity-tile activity-tile--ki">
-              <span className="activity-tile-visual" aria-hidden>
-                <img
-                  src="/media/activity-icons/ki-quiz.webp"
-                  alt=""
-                  className="activity-tile-image"
-                  loading="eager"
-                />
+              <span className="activity-tile-icon" aria-hidden>
+                <Sparkles size={36} strokeWidth={2.25} />
               </span>
               <span className="activity-tile-text">
                 <span className="activity-tile-label">{t.activitySelect.tileKi}</span>
@@ -58,6 +48,49 @@ function ActivitySelectPage() {
           </li>
           <li>
             <Link to="/historical-quiz" className="activity-tile activity-tile--history-quiz">
+              <span className="activity-tile-icon" aria-hidden>
+                <ScrollText size={36} strokeWidth={2.25} />
+              </span>
+              <span className="activity-tile-text">
+                <span className="activity-tile-label">{t.activitySelect.tileHistoricalQuiz}</span>
+                <span className="activity-tile-sub">{t.activitySelect.tileHistoricalQuizSub}</span>
+              </span>
+            </Link>
+          </li>
+          <li>
+            <button type="button" className="activity-tile activity-tile--placeholder" aria-disabled="true">
+              <span className="activity-tile-visual" aria-hidden>
+                <img
+                  src="/media/activity-icons/quiz-wheel.webp"
+                  alt=""
+                  className="activity-tile-image"
+                  loading="eager"
+                />
+              </span>
+              <span className="activity-tile-text">
+                <span className="activity-tile-label">Demnächst</span>
+                <span className="activity-tile-sub">Weitere Aktivität</span>
+              </span>
+            </button>
+          </li>
+          <li>
+            <button type="button" className="activity-tile activity-tile--placeholder" aria-disabled="true">
+              <span className="activity-tile-visual" aria-hidden>
+                <img
+                  src="/media/activity-icons/ki-quiz.webp"
+                  alt=""
+                  className="activity-tile-image"
+                  loading="eager"
+                />
+              </span>
+              <span className="activity-tile-text">
+                <span className="activity-tile-label">Demnächst</span>
+                <span className="activity-tile-sub">Weitere Aktivität</span>
+              </span>
+            </button>
+          </li>
+          <li>
+            <button type="button" className="activity-tile activity-tile--placeholder" aria-disabled="true">
               <span className="activity-tile-visual" aria-hidden>
                 <img
                   src="/media/activity-icons/quiz-menu.webp"
@@ -67,10 +100,10 @@ function ActivitySelectPage() {
                 />
               </span>
               <span className="activity-tile-text">
-                <span className="activity-tile-label">{t.activitySelect.tileHistoricalQuiz}</span>
-                <span className="activity-tile-sub">{t.activitySelect.tileHistoricalQuizSub}</span>
+                <span className="activity-tile-label">Demnächst</span>
+                <span className="activity-tile-sub">Weitere Aktivität</span>
               </span>
-            </Link>
+            </button>
           </li>
         </ul>
       </main>

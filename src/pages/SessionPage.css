@@ -84,15 +84,15 @@
 }
 
 .session-title h1 {
-  font-size: var(--touch-font-heading-sm);
+  font-size: var(--touch-font-heading);
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .session-main {
   flex: 1;
-  padding: clamp(12px, 2vh, 24px);
-  padding-bottom: clamp(100px, 15vh, 120px); /* Отступ для footer */
+  padding: clamp(8px, 1.4vh, 18px);
+  padding-bottom: clamp(88px, 12dvh, 112px); /* Отступ для footer */
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -108,7 +108,7 @@
   flex-direction: column;
   flex: 1;
   min-height: 0;
-  gap: clamp(12px, 2vh, 20px);
+  gap: clamp(6px, 1vh, 14px);
   overflow-y: auto;
   overflow-x: hidden;
   --font-scale: 1;
@@ -116,21 +116,21 @@
 
 .media-section,
 .questions-section {
-  padding: clamp(8px, 1.5vh, 16px);
+  padding: clamp(6px, 1.2vh, 14px);
   background: var(--surface);
-  border-radius: 16px;
+  border-radius: var(--touch-radius);
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  gap: clamp(6px, 1vh, 10px);
+  gap: clamp(4px, 0.8vh, 10px);
 }
 
 .media-section h3,
 .questions-section h3 {
-  margin-bottom: clamp(8px, 1.5vh, 12px);
+  margin-bottom: clamp(4px, 1vh, 10px);
   color: var(--primary-color);
-  font-size: var(--touch-font-heading-sm);
-  line-height: 1.3;
+  font-size: var(--touch-font-heading);
+  line-height: 1.2;
   flex-shrink: 0;
   font-weight: 600;
 }
@@ -144,10 +144,10 @@
 }
 
 .question-text {
-  font-size: calc(var(--touch-font-body) * var(--font-scale, 1));
-  margin-bottom: clamp(8px, 1.5vh, 12px);
+  font-size: calc(var(--touch-font-body) * var(--font-scale, 1) * 1.05);
+  margin-bottom: clamp(6px, 1vh, 10px);
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 1.38;
 }
 
 .questions-section {
@@ -178,8 +178,8 @@
 
 .session-structure {
   background: var(--surface);
-  padding: clamp(12px, 2vh, 24px);
-  border-radius: 16px;
+  padding: clamp(8px, 1.4vh, 18px);
+  border-radius: var(--touch-radius);
   box-shadow: var(--shadow);
   height: 100%;
   overflow: hidden;
@@ -201,13 +201,13 @@
 
 .structure-block h3 {
   color: var(--primary-color);
-  margin-bottom: clamp(6px, 1vh, 12px);
-  font-size: var(--touch-font-label);
+  margin-bottom: clamp(4px, 0.8vh, 10px);
+  font-size: var(--touch-font-heading-sm);
 }
 
 .structure-block p {
-  font-size: var(--touch-font-body);
-  line-height: 1.55;
+  font-size: calc(var(--touch-font-body) * 1.03);
+  line-height: 1.4;
   color: var(--text-secondary);
 }
 
@@ -226,6 +226,35 @@
   left: 0;
   right: 0;
   z-index: 100;
+}
+
+/* Финальный квиз и медиа на занятии: ещё крупнее текст при компактных полях */
+.session-page .media-title {
+  font-size: var(--touch-font-heading-sm);
+}
+
+.session-page .media-description {
+  font-size: calc(var(--touch-font-body) * 1.03);
+  line-height: 1.4;
+}
+
+.session-page .quiz-viewer {
+  padding: clamp(6px, 1.2vh, 16px);
+}
+
+.session-page .quiz-viewer .quiz-header h2 {
+  font-size: var(--touch-font-heading);
+  line-height: 1.2;
+}
+
+.session-page .quiz-viewer .quiz-question h3 {
+  font-size: calc(var(--touch-font-body) * 1.05);
+  line-height: 1.34;
+}
+
+.session-page .quiz-viewer .quiz-explanation p {
+  font-size: var(--touch-font-label);
+  line-height: 1.36;
 }
 
 .image-modal {
@@ -310,7 +339,7 @@
 
   .session-main {
     padding: clamp(10px, 1.8vh, 16px);
-    padding-bottom: clamp(100px, 15vh, 120px);
+    padding-bottom: clamp(88px, 12dvh, 112px);
   }
 
   .yes-no-buttons {

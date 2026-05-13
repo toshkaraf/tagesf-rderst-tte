@@ -14,6 +14,14 @@ export const CONNECT_FOUR_LS_KEY = 'connectFourConfig'
 export const BOARD_COL_OPTIONS = [5, 6, 7, 8, 9, 10, 11, 12] as const
 export const BOARD_ROW_OPTIONS = [4, 5, 6, 7, 8, 10] as const
 
+/** Настройки по умолчанию на экране выбора и при восстановлении неполного сохранения */
+export const DEFAULT_CONNECT_FOUR_CONFIG: ConnectFourConfig = {
+  cols: 7,
+  rows: 6,
+  mode: 'vsBot',
+  botLevel: 'easy'
+}
+
 function snapCol(cols: number): number {
   if ((BOARD_COL_OPTIONS as readonly number[]).includes(cols)) return cols
   return BOARD_COL_OPTIONS.reduce((best, x) =>
@@ -40,11 +48,11 @@ export function readStoredConfig(): ConnectFourConfig | null {
     if (typeof o.rows !== 'number' || typeof o.cols !== 'number') return null
     const { cols, rows } = normalizeDims(o.cols, o.rows)
     const mode =
-      o.mode === 'vsBot' || o.mode === 'twoPlayer' ? o.mode : 'twoPlayer'
+      o.mode === 'vsBot' || o.mode === 'twoPlayer' ? o.mode : DEFAULT_CONNECT_FOUR_CONFIG.mode
     const botLevel =
       o.botLevel === 'easy' || o.botLevel === 'medium' || o.botLevel === 'hard'
         ? o.botLevel
-        : 'medium'
+        : DEFAULT_CONNECT_FOUR_CONFIG.botLevel
     return { cols, rows, mode, botLevel }
   } catch {
     return null

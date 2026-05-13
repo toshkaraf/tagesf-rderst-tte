@@ -1,10 +1,11 @@
-import { FormEvent, useState } from 'react'
+import { FormEvent, useId, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
 import { ArrowLeft } from 'lucide-react'
 import {
   BOARD_COL_OPTIONS,
   BOARD_ROW_OPTIONS,
+  DEFAULT_CONNECT_FOUR_CONFIG,
   type BotLevel,
   type ConnectFourConfig,
   type ConnectFourMode,
@@ -12,26 +13,29 @@ import {
 } from '../game/connectFourSettings'
 import './ConnectFourSetupPage.css'
 
-const DEFAULT: ConnectFourConfig = {
-  cols: 7,
-  rows: 6,
-  mode: 'twoPlayer',
-  botLevel: 'medium'
-}
+const BOT_LEVELS: BotLevel[] = ['easy', 'medium', 'hard']
 
 export default function ConnectFourSetupPage() {
   const { t } = useLanguage()
   const navigate = useNavigate()
-  const [cols, setCols] = useState(DEFAULT.cols)
-  const [rows, setRows] = useState(DEFAULT.rows)
-  const [mode, setMode] = useState<ConnectFourMode>('twoPlayer')
-  const [botLevel, setBotLevel] = useState<BotLevel>('medium')
+  const baseId = useId()
+
+  const [cols, setCols] = useState(DEFAULT_CONNECT_FOUR_CONFIG.cols)
+  const [rows, setRows] = useState(DEFAULT_CONNECT_FOUR_CONFIG.rows)
+  const [mode, setMode] = useState<ConnectFourMode>(DEFAULT_CONNECT_FOUR_CONFIG.mode)
+  const [botLevel, setBotLevel] = useState<BotLevel>(DEFAULT_CONNECT_FOUR_CONFIG.botLevel)
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault()
     const cfg: ConnectFourConfig = { cols, rows, mode, botLevel }
     writeStoredConfig(cfg)
     navigate('/connect-four/play', { state: cfg })
+  }
+
+  const botLabel = (level: BotLevel) => {
+    if (level === 'easy') return t.connectFour.botEasy
+    if (level === 'medium') return t.connectFour.botMedium
+    return t.connectFour.botHard
   }
 
   return (
@@ -49,53 +53,103 @@ export default function ConnectFourSetupPage() {
           <p className="cf-setup-sub">{t.connectFour.setupSubtitle}</p>
 
           <form className="cf-setup-form" onSubmit={onSubmit}>
-            <label className="cf-setup-field">
-              <span>{t.connectFour.colsLabel}</span>
-              <select value={cols} onChange={e => setCols(Number(e.target.value))} name="cols">
-                {BOARD_COL_OPTIONS.map(c => (
-                  <option key={c} value={c}>
-                    {c}
-                  </option>
-                ))}
-              </select>
-            </label>
-
-            <label className="cf-setup-field">
-              <span>{t.connectFour.rowsLabel}</span>
-              <select value={rows} onChange={e => setRows(Number(e.target.value))} name="rows">
-                {BOARD_ROW_OPTIONS.map(r => (
-                  <option key={r} value={r}>
-                    {r}
-                  </option>
-                ))}
-              </select>
-            </label>
-
-            <label className="cf-setup-field">
-              <span>{t.connectFour.modeLabel}</span>
-              <select
-                value={mode}
-                onChange={e => setMode(e.target.value as ConnectFourMode)}
-                name="mode"
+            <div className="cf-setup-field">
+              <div className="cf-setup-field-label" id={`${baseId}-cols`}>
+                {t.connectFour.colsLabel}
+              </div>
+              <div
+                className="cf-setup-chip-grid"
+                role="group"
+                aria-labelledby={`${baseId}-cols`}
               >
-                <option value="twoPlayer">{t.connectFour.modeTwoPlayer}</option>
-                <option value="vsBot">{t.connectFour.modeVsBot}</option>
-              </select>
-            </label>
+                {BOARD_COL_OPTIONS.map(c => (
+                  <button
+                    key={c}
+                    type="button"
+                    className={`cf-setup-chip${cols === c ? ' cf-setup-chip--active' : ''}`}
+                    onClick={() => setCols(c)}
+                    aria-pressed={cols === c}
+                  >
+                    {c}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="cf-setup-field">
+              <div className="cf-setup-field-label" id={`${baseId}-rows`}>
+                {t.connectFour.rowsLabel}
+              </div>
+              <div
+                className="cf-setup-chip-grid"
+                role="group"
+                aria-labelledby={`${baseId}-rows`}
+              >
+                {BOARD_ROW_OPTIONS.map(r => (
+                  <button
+                    key={r}
+                    type="button"
+                    className={`cf-setup-chip${rows === r ? ' cf-setup-chip--active' : ''}`}
+                    onClick={() => setRows(r)}
+                    aria-pressed={rows === r}
+                  >
+                    {r}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="cf-setup-field">
+              <div className="cf-setup-field-label" id={`${baseId}-mode`}>
+                {t.connectFour.modeLabel}
+              </div>
+              <div
+                className="cf-setup-option-row cf-setup-option-row--2"
+                role="group"
+                aria-labelledby={`${baseId}-mode`}
+              >
+                <button
+                  type="button"
+                  className={`cf-setup-option-btn${mode === 'twoPlayer' ? ' cf-setup-option-btn--active' : ''}`}
+                  onClick={() => setMode('twoPlayer')}
+                  aria-pressed={mode === 'twoPlayer'}
+                >
+                  {t.connectFour.modeTwoPlayer}
+                </button>
+                <button
+                  type="button"
+                  className={`cf-setup-option-btn${mode === 'vsBot' ? ' cf-setup-option-btn--active' : ''}`}
+                  onClick={() => setMode('vsBot')}
+                  aria-pressed={mode === 'vsBot'}
+                >
+                  {t.connectFour.modeVsBot}
+                </button>
+              </div>
+            </div>
 
             {mode === 'vsBot' && (
-              <label className="cf-setup-field">
-                <span>{t.connectFour.botLevelLabel}</span>
-                <select
-                  value={botLevel}
-                  onChange={e => setBotLevel(e.target.value as BotLevel)}
-                  name="botLevel"
+              <div className="cf-setup-field">
+                <div className="cf-setup-field-label" id={`${baseId}-bot`}>
+                  {t.connectFour.botLevelLabel}
+                </div>
+                <div
+                  className="cf-setup-option-row cf-setup-option-row--3"
+                  role="group"
+                  aria-labelledby={`${baseId}-bot`}
                 >
-                  <option value="easy">{t.connectFour.botEasy}</option>
-                  <option value="medium">{t.connectFour.botMedium}</option>
-                  <option value="hard">{t.connectFour.botHard}</option>
-                </select>
-              </label>
+                  {BOT_LEVELS.map(level => (
+                    <button
+                      key={level}
+                      type="button"
+                      className={`cf-setup-option-btn${botLevel === level ? ' cf-setup-option-btn--active' : ''}`}
+                      onClick={() => setBotLevel(level)}
+                      aria-pressed={botLevel === level}
+                    >
+                      {botLabel(level)}
+                    </button>
+                  ))}
+                </div>
+              </div>
             )}
 
             <button type="submit" className="cf-setup-submit">

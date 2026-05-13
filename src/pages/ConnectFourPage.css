@@ -5,6 +5,15 @@
   flex-direction: column;
   background: linear-gradient(145deg, #5c6bc0 0%, #3949ab 38%, #283593 100%);
   color: #fff;
+  /*
+   * Вертикальный «хром» (аппбар, панель статуса, полоска выбора столбца):
+   * подбирается под iPad в портрете/альбоме, чтобы доска считалась от 100dvh.
+   */
+  --cf-chrome: clamp(248px, min(34dvh, 42vw), 400px);
+}
+
+.connect-four-game {
+  --cf-chrome: clamp(260px, min(32dvh, 38vw), 420px);
 }
 
 .cf-appbar {
@@ -13,10 +22,15 @@
   justify-content: space-between;
   gap: 12px;
   padding: clamp(10px, 2vh, 16px) clamp(12px, 3vw, 20px);
-  padding-top: clamp(48px, 7vh, 60px);
+  padding-top: max(clamp(10px, 2vh, 16px), env(safe-area-inset-top));
   background: rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(8px);
   flex-shrink: 0;
+}
+
+.cf-icon-btn svg {
+  width: clamp(24px, 5vmin, 36px);
+  height: clamp(24px, 5vmin, 36px);
 }
 
 .cf-title {
@@ -168,12 +182,14 @@
   justify-content: center;
   width: 100%;
   min-height: 0;
+  container-type: size;
+  container-name: cfboardwrap;
 }
 
 .cf-board-stack {
   width: min(
-    96vw,
-    calc((100vh - 220px) * var(--cf-cols, 7) / var(--cf-rows, 6))
+    94vw,
+    calc((100dvh - var(--cf-chrome)) * var(--cf-cols, 7) / var(--cf-rows, 6))
   );
   max-width: 100%;
   flex-shrink: 0;
@@ -182,19 +198,18 @@
 .cf-board {
   position: relative;
   display: flex;
-  gap: clamp(4px, 1.2vw, 8px);
+  gap: clamp(5px, 1.2cqmin, 12px);
   background: #1565c0;
-  padding: clamp(8px, 2vw, 14px);
-  border-radius: clamp(12px, 3vw, 18px);
+  padding: clamp(8px, 1.8cqmin, 18px);
+  border-radius: clamp(12px, 3vw, 22px);
   box-shadow:
     inset 0 -6px 0 rgba(0, 0, 0, 0.15),
     0 16px 40px rgba(0, 0, 0, 0.35);
   width: 100%;
   aspect-ratio: var(--cf-cols, 7) / var(--cf-rows, 6);
   max-height: min(
-    calc(100vh - 260px),
-    calc(100dvh - 260px),
-    calc(92vw * var(--cf-rows, 6) / var(--cf-cols, 7))
+    calc(100dvh - var(--cf-chrome)),
+    calc(94vw * var(--cf-rows, 6) / var(--cf-cols, 7))
   );
   box-sizing: border-box;
 }
@@ -232,8 +247,8 @@
 
 .cf-column-buttons {
   display: flex;
-  gap: clamp(4px, 1.2vw, 8px);
-  padding: clamp(12px, 2vh, 16px) clamp(8px, 2vw, 14px) 0;
+  gap: clamp(5px, 1.2cqmin, 12px);
+  padding: clamp(12px, 2.2cqmin, 22px) clamp(8px, 1.6cqmin, 16px) 0;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
@@ -250,7 +265,7 @@
 
 .cf-col-ball {
   width: 100%;
-  max-width: min(14vw, 72px);
+  max-width: min(22cqmin, 18vmin, 120px);
   aspect-ratio: 1;
   border: none;
   border-radius: 50%;
@@ -334,7 +349,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: clamp(3px, 0.8vw, 6px);
+  gap: clamp(4px, 0.9cqmin, 10px);
 }
 
 .cf-cell {
@@ -345,9 +360,11 @@
   justify-content: center;
 }
 
-.cf-hole {
-  width: 85%;
-  max-width: 56px;
+/* Ячейки и фишки масштабируются с доской (в т.ч. iPad в портрете) */
+.cf-board .cf-hole {
+  width: 88%;
+  width: min(92%, max(48px, 24cqmin));
+  max-width: none;
   aspect-ratio: 1;
   border-radius: 50%;
   background: #0d47a1;
@@ -356,6 +373,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  margin: auto;
 }
 
 .cf-disc {
@@ -386,8 +404,8 @@
   position: absolute;
   left: 50%;
   top: var(--cf-center-y, 8.333%);
-  width: min(11vmin, 48px);
-  height: min(11vmin, 48px);
+  width: min(78%, 22cqmin, 15vmin);
+  height: min(78%, 22cqmin, 15vmin);
   transform: translate(-50%, -50%);
 }
 
@@ -399,7 +417,7 @@
   }
 
   .cf-appbar {
-    padding-top: clamp(6px, 1.4vh, 12px);
+    padding-top: max(clamp(6px, 1.4vh, 12px), env(safe-area-inset-top));
     flex-shrink: 0;
   }
 
@@ -439,7 +457,7 @@
   }
 
   .cf-board-stack {
-    --cf-btn-strip: clamp(76px, 14cqh, 104px);
+    --cf-btn-strip: clamp(92px, 18cqh, 132px);
 
     flex: none;
     width: min(
@@ -474,9 +492,9 @@
   }
 
   .cf-sidebar {
-    flex: 0 0 clamp(180px, 22vw, 280px);
+    flex: 0 0 clamp(200px, 26vw, 360px);
     width: auto;
-    max-width: min(280px, 32vw);
+    max-width: min(360px, 36vw);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -509,27 +527,27 @@
     width: 100%;
   }
 
-  /* Фишки и «дыры» масштабируются с ячейкой, без жёсткого 56px */
+  /* Фишки и «дыры» масштабируются с ячейкой */
   .cf-board .cf-hole {
     max-width: none;
-    width: clamp(72%, 10vmin, 92%);
+    width: min(92%, max(44px, 24cqmin), 28vmin);
     max-height: none;
     margin: auto;
   }
 
   .cf-board .cf-falling {
-    width: min(12vmin, 72px);
-    height: min(12vmin, 72px);
+    width: min(78%, 26cqmin, 16vmin);
+    height: min(78%, 26cqmin, 16vmin);
   }
 
   .cf-column-buttons .cf-col-ball {
-    max-width: min(16vmin, 88px);
+    max-width: min(20cqmin, 20vmin, 128px);
   }
 }
 
 @media (max-width: 639px) {
   .cf-appbar {
-    padding-top: max(clamp(44px, 8vh, 56px), env(safe-area-inset-top));
+    padding-top: max(clamp(10px, 2vh, 14px), env(safe-area-inset-top));
   }
 
   .cf-status {

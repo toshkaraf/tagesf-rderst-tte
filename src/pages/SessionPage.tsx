@@ -22,7 +22,7 @@ function SessionPage() {
   const [expandedImage, setExpandedImage] = useState<string | null>(null)
   const [fontScale, setFontScale] = useState(() => {
     const saved = localStorage.getItem('slideFontScale')
-    return saved ? parseFloat(saved) : 1.0
+    return saved ? parseFloat(saved) : 1.15
   })
 
   // Сбрасываем индекс слайда при изменении sessionId

@@ -77,33 +77,33 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
   },
   'court-jesters': {
     de: {
-      title: 'Hofnarren: Rolle, Ruhm und scharfe Zunge',
+      title: 'Hofnarren: scharfe Zungen, echte Faelle',
       description:
-        '30 Folien zum Hofnarren als Spiegel der Macht, beruehmten Figuren in Europa, Russland und Asien, Anekdoten und Spuren in Literatur und Theater.',
+        '30 Folien mit Anekdoten von Triboulet bis Sommers, Russland und Westen, Shakespeare und Satire - pointiert, mit Fussnote zur Ueberlieferung, ohne Seminarstaub.',
       category: 'Geschichte',
       structure: {
-        greeting: 'Willkommen zur Sitzung ueber Narren und «Narren» an Hoefen!',
+        greeting: 'Willkommen: wir reden ueber Leute, die Lachen am Thron verkauften - mit Pointen, Fussnoten und ohne Seminarstaub.',
         mainContent:
-          'Wir klaeren die «Lizenz zum Lachen», Namen, die die Geschichte behaelt, und Fälle, in denen der Witz staerker war als das Memoirenbuch',
+          'Konkrete Szenen: Kassenbelege, Pamphlet-Prozesse, der Wunsch «durch Altersschwaeche zu sterben», Klaps-Sagen und wo Witz aufhoert',
         interactive: 'Zehn Mini-Quizzes mit je drei Fragen und ein Abschlussquiz mit 30 Fragen (Deutsch B2)',
         additional: 'Bildauswahl ueber IMAGE_LIST.html und IMAGE_LIST.md in public/media/court-jesters/',
         closing:
-          'Fazit: Der Narr hielt fuer die Macht das Ventil - und riskierte selbst, wenn die Macht nicht mehr lachen wollte'
+          'Fazit: nicht Spiegel-Mystik, sondern die Frage, wer heute zuletzt lachen darf und wo Schaerfe zur Buerde wird'
       }
     },
     ru: {
-      title: 'Шуты при дворе: роль, слава и острые слова',
+      title: 'Шуты при дворе: острые языки и тонкие границы',
       description:
-        'Тридцать слайдов о придворном шуте как зеркале власти, знаменитых персонажах Европы, Руси и Востока, анекдотах и следе в литературе и театре.',
+        'Тридцать слайдов: живые случаи от Трибулле до Соммерса, анекдоты и устные версии, Россия и Запад, Шекспир и сатира — с юмором и оговоркой «это пересказ, не протокол».',
       category: 'История',
       structure: {
-        greeting: 'Добро пожаловать на занятие о шутах и дураках при дворах!',
+        greeting: 'Занятие про тех, кто смехом кормился у трона — с анекдотами, сносками к источникам и без академической скуки.',
         mainContent:
-          'Разберём функцию «лицензии на смех», имена, которые помнит история, и случаи, когда шутка была сильнее мемуара',
+          'Пойдём по сценам: казна, памфлеты, «смерть от старости», городские легенды про дерзость к королеве и место, где шутка перестаёт быть услугой',
         interactive: '10 мини-викторин по три вопроса и итоговая викторина на 30 вопросов',
         additional: 'Иллюстрации по IMAGE_LIST.html и IMAGE_LIST.md в папке public/media/court-jesters/',
         closing:
-          'Итог: шут держал у власти ручку для клапана давления — и сам рисковал, когда власть переставала смеяться'
+          'На выходе — вопрос не про «зеркало власти», а про то, кому сегодня разрешено смеяться последним и где остроумие становится опасностью'
       }
     }
   },

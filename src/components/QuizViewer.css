@@ -20,12 +20,12 @@
 .quiz-header h2 {
   color: var(--primary-color);
   margin-bottom: clamp(4px, 0.8vh, 8px);
-  font-size: var(--touch-font-heading-sm);
+  font-size: calc(var(--touch-font-heading-sm) * 1.08);
   line-height: 1.2;
 }
 
 .quiz-progress {
-  font-size: var(--touch-font-caption);
+  font-size: calc(var(--touch-font-caption) * 1.12);
   color: var(--text-secondary);
   font-weight: 500;
 }
@@ -47,7 +47,7 @@
 }
 
 .quiz-question h3 {
-  font-size: var(--touch-font-label);
+  font-size: calc(var(--touch-font-label) * 1.1);
   margin-bottom: 0;
   color: var(--text-primary);
   line-height: 1.35;
@@ -76,7 +76,7 @@
 }
 
 .quiz-explanation p {
-  font-size: var(--touch-font-caption);
+  font-size: calc(var(--touch-font-caption) * 1.1);
   line-height: 1.45;
   color: var(--text-primary);
   margin: 0;
@@ -97,6 +97,17 @@
 
 .btn-error:hover:not(:disabled) {
   background-color: #dc2626;
+}
+
+.quiz-viewer .large-button {
+  font-size: calc(var(--button-font-size) * 1.1);
+  min-height: calc(var(--button-height) * 1.06);
+  padding: clamp(18px, 2.4vh, 28px) clamp(26px, 3.8vw, 44px);
+}
+
+.quiz-results .large-button {
+  font-size: calc(var(--button-font-size) * 1.08);
+  min-height: calc(var(--button-height) * 1.05);
 }
 
 .quiz-results {
@@ -146,7 +157,7 @@
 }
 
 .results-message p {
-  font-size: var(--touch-font-body);
+  font-size: calc(var(--touch-font-body) * 1.06);
   line-height: 1.5;
   color: var(--text-primary);
 }

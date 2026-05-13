@@ -20,7 +20,6 @@ function ActivitySelectPage() {
               </span>
               <span className="activity-tile-text">
                 <span className="activity-tile-label">{t.activitySelect.tileConnectFour}</span>
-                <span className="activity-tile-sub">{t.activitySelect.tileConnectFourSub}</span>
               </span>
             </Link>
           </li>
@@ -31,7 +30,6 @@ function ActivitySelectPage() {
               </span>
               <span className="activity-tile-text">
                 <span className="activity-tile-label">{t.activitySelect.tileTopics}</span>
-                <span className="activity-tile-sub">{t.activitySelect.tileTopicsSub}</span>
               </span>
             </Link>
           </li>
@@ -42,7 +40,6 @@ function ActivitySelectPage() {
               </span>
               <span className="activity-tile-text">
                 <span className="activity-tile-label">{t.activitySelect.tileKi}</span>
-                <span className="activity-tile-sub">{t.activitySelect.tileKiSub}</span>
               </span>
             </Link>
           </li>
@@ -53,7 +50,6 @@ function ActivitySelectPage() {
               </span>
               <span className="activity-tile-text">
                 <span className="activity-tile-label">{t.activitySelect.tileHistoricalQuiz}</span>
-                <span className="activity-tile-sub">{t.activitySelect.tileHistoricalQuizSub}</span>
               </span>
             </Link>
           </li>
@@ -69,7 +65,6 @@ function ActivitySelectPage() {
               </span>
               <span className="activity-tile-text">
                 <span className="activity-tile-label">Demnächst</span>
-                <span className="activity-tile-sub">Weitere Aktivität</span>
               </span>
             </button>
           </li>
@@ -85,7 +80,6 @@ function ActivitySelectPage() {
               </span>
               <span className="activity-tile-text">
                 <span className="activity-tile-label">Demnächst</span>
-                <span className="activity-tile-sub">Weitere Aktivität</span>
               </span>
             </button>
           </li>
@@ -101,7 +95,6 @@ function ActivitySelectPage() {
               </span>
               <span className="activity-tile-text">
                 <span className="activity-tile-label">Demnächst</span>
-                <span className="activity-tile-sub">Weitere Aktivität</span>
               </span>
             </button>
           </li>

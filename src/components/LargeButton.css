@@ -2,52 +2,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 14px;
   width: 100%;
-  font-size: clamp(18px, 2.8vw, 24px);
-  padding: clamp(14px, 2vh, 18px) clamp(20px, 3vw, 32px);
-  min-height: clamp(54px, 8vh, 70px);
+  font-size: var(--button-font-size);
+  padding: clamp(16px, 2.2vh, 24px) clamp(24px, 3.5vw, 40px);
+  min-height: var(--button-height);
+  border-radius: var(--touch-radius);
 }
 
-/* Планшет */
-@media (max-width: 1024px) and (min-width: 769px) {
-  .large-button {
-    min-width: 180px;
-    padding: 18px 36px;
-    font-size: clamp(16px, 2.5vw, 22px);
-    min-height: clamp(56px, 8vh, 70px);
-  }
+.large-button svg {
+  width: clamp(22px, 3.2vw, 30px);
+  height: clamp(22px, 3.2vw, 30px);
+  flex-shrink: 0;
 }
 
-/* Мобильные устройства */
-@media (max-width: 768px) {
+@media (max-width: 639px) {
   .large-button {
-    width: 100%;
-    min-width: auto;
-    padding: clamp(14px, 2vh, 18px) clamp(20px, 4vw, 32px);
-    font-size: clamp(16px, 3vw, 20px);
-    min-height: clamp(52px, 8vh, 64px);
-    gap: 10px;
+    gap: 12px;
   }
-  
+
   .large-button svg {
-    width: 20px;
-    height: 20px;
+    width: clamp(20px, 5vw, 26px);
+    height: clamp(20px, 5vw, 26px);
   }
 }
-
-/* Очень маленькие экраны */
-@media (max-width: 480px) {
-  .large-button {
-    padding: clamp(12px, 1.5vh, 16px) clamp(16px, 3vw, 24px);
-    font-size: clamp(14px, 3vw, 18px);
-    min-height: clamp(48px, 7vh, 56px);
-    gap: 8px;
-  }
-  
-  .large-button svg {
-    width: 18px;
-    height: 18px;
-  }
-}
-

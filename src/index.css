@@ -17,12 +17,25 @@
   --border-color: #e2e8f0;
   --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  
-  /* Адаптивные размеры для планшета */
-  --button-height: clamp(60px, 10vh, 80px);
-  --button-font-size: clamp(18px, 3vw, 24px);
-  --card-padding: clamp(16px, 3vh, 32px);
-  --spacing-large: clamp(12px, 2vh, 24px);
+
+  /* Единая шкала под iPad Pro и касание: крупные зоны нажатия и типографика */
+  --touch-target-min: 56px;
+  --touch-target-comfortable: 64px;
+  --touch-icon-btn-size: 56px;
+  --touch-font-caption: clamp(16px, 1.2vw + 0.4rem, 20px);
+  --touch-font-label: clamp(18px, 1.4vw + 0.45rem, 24px);
+  --touch-font-body: clamp(20px, 1.5vw + 0.5rem, 28px);
+  --touch-font-heading-sm: clamp(24px, 2vw + 0.55rem, 34px);
+  --touch-font-heading: clamp(30px, 2.4vw + 0.6rem, 42px);
+  --touch-font-display: clamp(36px, 3vw + 0.65rem, 52px);
+  --touch-radius: 16px;
+  --touch-gap: clamp(16px, 2.2vh, 28px);
+
+  /* Кнопки и отступы карточек (базово — крупно, как на планшете) */
+  --button-height: clamp(64px, 11vh, 92px);
+  --button-font-size: clamp(22px, 2.6vw, 30px);
+  --card-padding: clamp(20px, 3.2vh, 36px);
+  --spacing-large: clamp(16px, 2.2vh, 28px);
 }
 
 html, body {
@@ -40,7 +53,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background);
   color: var(--text-primary);
-  line-height: 1.6;
+  font-size: var(--touch-font-body);
+  line-height: 1.55;
 }
 
 #root {
@@ -126,19 +140,19 @@ button:disabled {
 
 /* Заголовки */
 h1 {
-  font-size: clamp(32px, 5vw, 48px);
+  font-size: var(--touch-font-display);
   margin-bottom: clamp(8px, 1.5vh, 16px);
   color: var(--text-primary);
 }
 
 h2 {
-  font-size: clamp(24px, 4vw, 36px);
+  font-size: var(--touch-font-heading);
   margin-bottom: clamp(8px, 1.5vh, 16px);
   color: var(--text-primary);
 }
 
 h3 {
-  font-size: clamp(20px, 3.5vw, 28px);
+  font-size: var(--touch-font-heading-sm);
   margin-bottom: clamp(6px, 1vh, 12px);
   color: var(--text-primary);
 }
@@ -158,25 +172,14 @@ img {
   margin: var(--spacing-large) 0;
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
+/* Узкий телефон: слегка уменьшаем, но остаёмся в зоне удобного касания */
+@media (max-width: 639px) {
   :root {
-    --button-height: 60px;
-    --button-font-size: 20px;
-    --card-padding: 20px;
-    --spacing-large: 16px;
-  }
-  
-  h1 {
-    font-size: 36px;
-  }
-  
-  h2 {
-    font-size: 28px;
-  }
-  
-  h3 {
-    font-size: 24px;
+    --button-height: clamp(56px, 12vw, 72px);
+    --button-font-size: clamp(20px, 4.2vw, 26px);
+    --card-padding: clamp(16px, 3vh, 24px);
+    --spacing-large: clamp(14px, 2vh, 22px);
+    --touch-icon-btn-size: 52px;
   }
 }
 

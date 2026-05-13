@@ -37,7 +37,7 @@
 }
 
 .media-title {
-  font-size: clamp(20px, 3vw, 24px);
+  font-size: var(--touch-font-heading-sm);
   font-weight: 600;
   margin-top: clamp(8px, 1.5vh, 12px);
   color: var(--text-primary);
@@ -45,10 +45,10 @@
 }
 
 .media-description {
-  font-size: clamp(18px, 2.5vw, 22px);
+  font-size: var(--touch-font-body);
   color: var(--text-secondary);
   margin-top: clamp(6px, 1vh, 10px);
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 .media-viewer.error {
@@ -60,40 +60,22 @@
   text-align: center;
 }
 
-/* Мобильные устройства */
-@media (max-width: 768px) {
+@media (max-width: 639px) {
   .media-viewer img,
   .media-viewer video {
-    max-height: 25vh;
-  }
-  
-  .media-title {
-    font-size: clamp(18px, 3.5vw, 20px);
-  }
-  
-  .media-description {
-    font-size: clamp(16px, 2.5vw, 18px);
+    max-height: 28vh;
   }
 }
 
-/* Очень маленькие экраны */
 @media (max-width: 480px) {
   .media-viewer img,
   .media-viewer video {
-    max-height: 20vh;
-    border-radius: 8px;
+    max-height: 24vh;
+    border-radius: var(--touch-radius);
   }
-  
-  .media-title {
-    font-size: clamp(16px, 4vw, 18px);
-  }
-  
-  .media-description {
-    font-size: clamp(14px, 3vw, 16px);
-  }
-  
+
   .media-viewer audio {
-    margin: clamp(8px, 1.5vh, 12px) 0;
+    margin: clamp(12px, 2vh, 18px) 0;
   }
 }
 

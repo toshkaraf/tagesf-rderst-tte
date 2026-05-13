@@ -1,22 +1,22 @@
 .language-switcher {
   position: fixed;
-  top: 16px;
-  left: 16px;
+  top: max(16px, env(safe-area-inset-top));
+  left: max(16px, env(safe-area-inset-left));
   z-index: 1000;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 16px;
+  gap: 10px;
+  padding: 14px 20px;
   background: var(--surface);
   border: 2px solid var(--primary-color);
-  border-radius: 12px;
+  border-radius: var(--touch-radius);
   cursor: pointer;
-  font-size: 16px;
+  font-size: var(--touch-font-label);
   font-weight: 600;
   color: var(--primary-color);
   box-shadow: var(--shadow);
   transition: all 0.2s ease;
-  min-height: 48px;
+  min-height: var(--touch-target-min);
 }
 
 
@@ -35,48 +35,17 @@
   letter-spacing: 1px;
 }
 
-/* Планшет */
-@media (max-width: 1024px) and (min-width: 769px) {
+@media (max-width: 639px) {
   .language-switcher {
-    top: 12px;
-    left: 12px;
-    padding: 10px 14px;
-    font-size: 15px;
-    min-height: 46px;
+    top: max(10px, env(safe-area-inset-top));
+    left: max(10px, env(safe-area-inset-left));
+    padding: 12px 16px;
+    gap: 8px;
   }
-}
 
-/* Мобильные устройства */
-@media (max-width: 768px) {
-  .language-switcher {
-    top: 8px;
-    left: 8px;
-    padding: 8px 12px;
-    font-size: 14px;
-    min-height: 40px;
-    gap: 6px;
-  }
-  
   .language-switcher svg {
-    width: 18px;
-    height: 18px;
-  }
-}
-
-/* Очень маленькие экраны */
-@media (max-width: 480px) {
-  .language-switcher {
-    top: 6px;
-    left: 6px;
-    padding: 6px 10px;
-    font-size: 12px;
-    min-height: 36px;
-    gap: 4px;
-  }
-  
-  .language-switcher svg {
-    width: 16px;
-    height: 16px;
+    width: 22px;
+    height: 22px;
   }
 }
 

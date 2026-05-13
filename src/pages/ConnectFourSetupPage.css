@@ -19,21 +19,25 @@
 .cf-setup-title {
   margin: 0;
   flex: 1;
-  font-size: clamp(1.1rem, 4vw, 1.45rem);
+  font-size: var(--touch-font-heading-sm);
   font-weight: 700;
 }
 
 .cf-setup-icon-btn {
-  width: 44px;
-  height: 44px;
+  width: var(--touch-icon-btn-size);
+  height: var(--touch-icon-btn-size);
+  min-width: var(--touch-icon-btn-size);
+  min-height: var(--touch-icon-btn-size);
   border: none;
-  border-radius: 12px;
+  border-radius: var(--touch-radius);
   background: rgba(255, 255, 255, 0.18);
   color: #fff;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+  font-size: inherit;
 }
 
 .cf-setup-main {
@@ -46,47 +50,48 @@
 
 .cf-setup-panel {
   width: 100%;
-  max-width: 440px;
+  max-width: min(560px, 92vw);
   background: rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
-  padding: clamp(20px, 4vw, 28px);
+  border-radius: var(--touch-radius);
+  padding: clamp(24px, 4vw, 36px);
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
 }
 
 .cf-setup-panel h2 {
-  margin: 0 0 8px;
-  font-size: clamp(1.2rem, 3.8vw, 1.45rem);
+  margin: 0 0 12px;
+  font-size: var(--touch-font-heading-sm);
 }
 
 .cf-setup-sub {
-  margin: 0 0 22px;
-  font-size: clamp(13px, 2.8vw, 15px);
-  line-height: 1.45;
+  margin: 0 0 26px;
+  font-size: var(--touch-font-body);
+  line-height: 1.5;
   opacity: 0.92;
 }
 
 .cf-setup-form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 22px;
 }
 
 .cf-setup-field {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   font-weight: 600;
-  font-size: clamp(13px, 2.8vw, 15px);
+  font-size: var(--touch-font-label);
 }
 
 .cf-setup-field select {
-  padding: 12px 14px;
-  border-radius: 12px;
+  padding: 16px 18px;
+  border-radius: var(--touch-radius);
   border: 2px solid rgba(255, 255, 255, 0.35);
   background: rgba(0, 0, 0, 0.2);
   color: #fff;
-  font-size: 16px;
+  font-size: var(--touch-font-label);
+  min-height: var(--touch-target-min);
   cursor: pointer;
 }
 
@@ -96,14 +101,15 @@
 }
 
 .cf-setup-submit {
-  margin-top: 8px;
-  padding: 14px 20px;
+  margin-top: 10px;
+  padding: 18px 24px;
   border: none;
-  border-radius: 14px;
+  border-radius: var(--touch-radius);
   background: linear-gradient(135deg, rgba(255, 193, 7, 0.95), rgba(255, 152, 0, 0.98));
   color: #4e342e;
   font-weight: 800;
-  font-size: clamp(15px, 3.2vw, 18px);
+  font-size: var(--touch-font-label);
+  min-height: var(--touch-target-comfortable);
   cursor: pointer;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
 }

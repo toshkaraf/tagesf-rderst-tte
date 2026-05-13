@@ -28,15 +28,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: var(--touch-icon-btn-size);
+  height: var(--touch-icon-btn-size);
+  min-width: var(--touch-icon-btn-size);
+  min-height: var(--touch-icon-btn-size);
   border: none;
-  border-radius: 12px;
+  border-radius: var(--touch-radius);
   background: rgba(0, 0, 0, 0.15);
   color: #fff;
   cursor: pointer;
   flex-shrink: 0;
   -webkit-tap-highlight-color: transparent;
+  padding: 0;
+  font-size: inherit;
 }
 
 .ki-back:active {
@@ -45,7 +49,7 @@
 
 .ki-header-title {
   margin: 0;
-  font-size: clamp(1rem, 4vw, 1.2rem);
+  font-size: var(--touch-font-heading-sm);
   font-weight: 700;
   line-height: 1.25;
   flex: 1;
@@ -59,22 +63,24 @@
 .ki-header-actions {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   flex-shrink: 0;
 }
 
 .ki-icon-action {
-  min-width: 40px;
-  height: 40px;
+  min-width: var(--touch-target-min);
+  min-height: var(--touch-target-min);
+  height: auto;
+  padding: 0 14px;
   border: none;
-  border-radius: 12px;
+  border-radius: var(--touch-radius);
   background: rgba(0, 0, 0, 0.15);
   color: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  font-size: 0.72rem;
+  gap: 8px;
+  font-size: var(--touch-font-caption);
   font-weight: 800;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -86,9 +92,9 @@
 
 .ki-main {
   flex: 1;
-  padding: 16px;
+  padding: var(--touch-gap);
   padding-bottom: max(24px, env(safe-area-inset-bottom));
-  max-width: 720px;
+  max-width: min(960px, 100%);
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
@@ -126,23 +132,23 @@
 }
 
 .ki-hero h2 {
-  margin: 0 0 10px;
-  font-size: 1.75rem;
+  margin: 0 0 12px;
+  font-size: var(--touch-font-heading);
   color: #2c3e50;
 }
 
 .ki-hero p {
   margin: 0;
   line-height: 1.55;
-  font-size: 1rem;
+  font-size: var(--touch-font-body);
   color: #5d6d7e;
 }
 
 .ki-primary-btn {
-  min-height: 56px;
+  min-height: var(--touch-target-comfortable);
   border: none;
-  border-radius: 16px;
-  font-size: 1.15rem;
+  border-radius: var(--touch-radius);
+  font-size: var(--touch-font-label);
   font-weight: 800;
   letter-spacing: 0.04em;
   color: #fff;
@@ -164,14 +170,14 @@
 
 .ki-section-title {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: var(--touch-font-heading-sm);
   color: #2c3e50;
 }
 
 .ki-hint {
   margin: -6px 0 4px;
   color: #7f8c8d;
-  font-size: 0.95rem;
+  font-size: var(--touch-font-caption);
 }
 
 .ki-tile-list {
@@ -190,12 +196,12 @@
   width: 100%;
   text-align: left;
   border: none;
-  border-radius: 16px;
-  padding: 18px 16px;
+  border-radius: var(--touch-radius);
+  padding: 22px 20px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   align-items: stretch;
   -webkit-tap-highlight-color: transparent;
 }
@@ -215,25 +221,25 @@
 .ki-suggest-tile {
   background: #27ae60;
   color: #fff;
-  font-size: 1.05rem;
+  font-size: var(--touch-font-label);
   font-weight: 700;
   box-shadow: 0 4px 14px rgba(39, 174, 96, 0.35);
 }
 
 .ki-tile-title {
-  font-size: 1.15rem;
+  font-size: var(--touch-font-label);
   font-weight: 800;
   line-height: 1.3;
 }
 
 .ki-tile-desc {
-  font-size: 0.95rem;
+  font-size: var(--touch-font-caption);
   opacity: 0.92;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .ki-tile-meta {
-  font-size: 0.85rem;
+  font-size: var(--touch-font-caption);
   font-style: italic;
   opacity: 0.9;
 }
@@ -265,10 +271,11 @@
 }
 
 .ki-retry {
-  min-height: 44px;
-  padding: 0 16px;
-  border-radius: 10px;
+  min-height: var(--touch-target-min);
+  padding: 0 20px;
+  border-radius: var(--touch-radius);
   border: none;
+  font-size: var(--touch-font-label);
   font-weight: 700;
   background: #3498db;
   color: #fff;
@@ -443,9 +450,9 @@
 }
 
 .ki-main-chat .ki-suggestions {
-  width: min(720px, 100%);
+  width: min(960px, 100%);
   margin: 0 auto;
-  padding: 16px;
+  padding: var(--touch-gap);
   padding-bottom: max(24px, env(safe-area-inset-bottom));
   box-sizing: border-box;
   overflow-y: auto;
@@ -453,13 +460,13 @@
 
 .ki-suggest-btn {
   width: 100%;
-  min-height: 52px;
-  padding: 12px 14px;
+  min-height: var(--touch-target-comfortable);
+  padding: 16px 18px;
   border: none;
-  border-radius: 12px;
+  border-radius: var(--touch-radius);
   background: #27ae60;
   color: #fff;
-  font-size: 1.02rem;
+  font-size: var(--touch-font-label);
   font-weight: 700;
   line-height: 1.35;
   cursor: pointer;
@@ -471,27 +478,19 @@
   transform: scale(0.99);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 639px) {
   .ki-header {
     gap: 8px;
+    padding: 12px 14px;
+    padding-top: max(12px, env(safe-area-inset-top));
   }
 
   .ki-header-actions {
-    gap: 4px;
-  }
-
-  .ki-icon-action {
-    min-width: 36px;
-    height: 36px;
-    border-radius: 10px;
-  }
-
-  .ki-icon-action span {
-    display: none;
+    gap: 8px;
   }
 
   .ki-main:not(.ki-main-chat) {
-    padding: 12px;
+    padding: 14px;
   }
 
   .ki-chat-stage,
@@ -501,14 +500,10 @@
   }
 
   .ki-thinking-panel {
-    padding: 12px;
+    padding: 16px;
   }
 
   .ki-answer-video {
     min-height: 0;
-  }
-
-  .ki-suggest-btn {
-    min-height: 56px;
   }
 }

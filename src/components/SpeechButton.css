@@ -1,16 +1,16 @@
 .speech-button {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: clamp(8px, 1.2vh, 12px) clamp(12px, 2vw, 16px);
+  gap: 8px;
+  padding: clamp(12px, 1.6vh, 16px) clamp(16px, 2.4vw, 22px);
   border: 2px solid var(--primary-color);
   background: var(--surface);
   color: var(--primary-color);
-  border-radius: 12px;
+  border-radius: var(--touch-radius);
   cursor: pointer;
-  font-size: clamp(14px, 2vw, 16px);
+  font-size: var(--touch-font-label);
   font-weight: 600;
-  min-height: 40px;
+  min-height: var(--touch-target-min);
   transition: all 0.2s ease;
   white-space: nowrap;
 }
@@ -46,25 +46,21 @@
   display: inline;
 }
 
-@media (max-width: 768px) {
-  .speech-button {
-    gap: 4px;
-  }
-  
+@media (max-width: 639px) {
   .speech-button svg {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 520px) {
   .speech-button-text {
     display: none;
   }
-  
+
   .speech-button {
-    padding: clamp(8px, 1.2vh, 12px);
-    min-width: 40px;
+    padding: clamp(12px, 1.6vh, 16px);
+    min-width: var(--touch-target-min);
     justify-content: center;
   }
 }

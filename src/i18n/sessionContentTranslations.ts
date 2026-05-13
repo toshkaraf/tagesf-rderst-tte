@@ -18,6 +18,7 @@ import { alexanderAnecdotesSlidesDE, alexanderAnecdotesFinalQuizDE } from './ale
 import { napoleonAnecdotesSlidesDE, napoleonAnecdotesFinalQuizDE } from './napoleon-anecdotes-content-de'
 import { ancientBattleTacticsSlidesDE, ancientBattleTacticsFinalQuizDE } from './ancient-battle-tactics-content-de'
 import { medievalBattleTacticsSlidesDE, medievalBattleTacticsFinalQuizDE } from './medieval-battle-tactics-content-de'
+import { courtJestersSlidesDE, courtJestersFinalQuizDE } from './court-jesters-content-de'
 
 // Deutsche Übersetzungen (B2-Niveau) für die Turnier-Session
 const ritterturniereSlidesDE: Slide[] = [
@@ -3195,6 +3196,13 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
     return {
       slides: medievalBattleTacticsSlidesDE,
       quiz: medievalBattleTacticsFinalQuizDE
+    }
+  }
+
+  if (sessionId === 'court-jesters' && language === 'de') {
+    return {
+      slides: courtJestersSlidesDE,
+      quiz: courtJestersFinalQuizDE
     }
   }
 

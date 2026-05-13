@@ -75,6 +75,38 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'court-jesters': {
+    de: {
+      title: 'Hofnarren: Rolle, Ruhm und scharfe Zunge',
+      description:
+        '30 Folien zum Hofnarren als Spiegel der Macht, beruehmten Figuren in Europa, Russland und Asien, Anekdoten und Spuren in Literatur und Theater.',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung ueber Narren und «Narren» an Hoefen!',
+        mainContent:
+          'Wir klaeren die «Lizenz zum Lachen», Namen, die die Geschichte behaelt, und Fälle, in denen der Witz staerker war als das Memoirenbuch',
+        interactive: 'Zehn Mini-Quizzes mit je drei Fragen und ein Abschlussquiz mit 30 Fragen (Deutsch B2)',
+        additional: 'Bildauswahl ueber IMAGE_LIST.html und IMAGE_LIST.md in public/media/court-jesters/',
+        closing:
+          'Fazit: Der Narr hielt fuer die Macht das Ventil - und riskierte selbst, wenn die Macht nicht mehr lachen wollte'
+      }
+    },
+    ru: {
+      title: 'Шуты при дворе: роль, слава и острые слова',
+      description:
+        'Тридцать слайдов о придворном шуте как зеркале власти, знаменитых персонажах Европы, Руси и Востока, анекдотах и следе в литературе и театре.',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о шутах и дураках при дворах!',
+        mainContent:
+          'Разберём функцию «лицензии на смех», имена, которые помнит история, и случаи, когда шутка была сильнее мемуара',
+        interactive: '10 мини-викторин по три вопроса и итоговая викторина на 30 вопросов',
+        additional: 'Иллюстрации по IMAGE_LIST.html и IMAGE_LIST.md в папке public/media/court-jesters/',
+        closing:
+          'Итог: шут держал у власти ручку для клапана давления — и сам рисковал, когда власть переставала смеяться'
+      }
+    }
+  },
   'ritterturniere': {
     de: {
       title: 'Ritterturniere: Blut, Geld und Politik',

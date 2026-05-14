@@ -14,6 +14,8 @@ export interface Translations {
   }
   activitySelect: {
     title: string
+    sectionYouMayLike: string
+    featuredSessionOpen: string
     tileConnectFour: string
     tileConnectFourSub: string
     tileTopics: string
@@ -123,6 +125,8 @@ export const translations: Record<Language, Translations> = {
     },
     activitySelect: {
       title: 'Aktivität wählen',
+      sectionYouMayLike: 'Das könnte Sie interessieren',
+      featuredSessionOpen: 'Zur Sitzung',
       tileConnectFour: '4 gewinnt',
       tileConnectFourSub: 'Zum Spiel',
       tileTopics: 'Themenpräsentationen mit Quiz',
@@ -230,6 +234,8 @@ export const translations: Record<Language, Translations> = {
     },
     activitySelect: {
       title: 'Выбор активности',
+      sectionYouMayLike: 'Вам может быть интересно',
+      featuredSessionOpen: 'Открыть занятие',
       tileConnectFour: 'Игра 4 в ряд',
       tileConnectFourSub: 'Перейти к игре',
       tileTopics: 'Тематические презентации с викториной',

@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
+import { getSessionById } from '../data/sessions'
 import { BookOpen, Gamepad2, ScrollText, Sparkles } from 'lucide-react'
 import './ActivitySelectPage.css'
 
+const FEATURED_SESSION_ID = 'ancient-comic-history'
+
 function ActivitySelectPage() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const featuredSession = getSessionById(FEATURED_SESSION_ID, language)
 
   return (
     <div className="activity-select-page">
@@ -12,6 +16,23 @@ function ActivitySelectPage() {
         <h1 className="activity-select-title">{t.activitySelect.title}</h1>
       </header>
       <main className="activity-select-main">
+        {featuredSession && (
+          <section className="activity-featured" aria-labelledby="activity-featured-heading">
+            <h2 id="activity-featured-heading" className="activity-featured-heading">
+              {t.activitySelect.sectionYouMayLike}
+            </h2>
+            <Link to={`/session/${FEATURED_SESSION_ID}`} className="activity-featured-card">
+              <span className="activity-featured-icon" aria-hidden>
+                <BookOpen size={32} strokeWidth={2.25} />
+              </span>
+              <span className="activity-featured-text">
+                <span className="activity-featured-title">{featuredSession.title}</span>
+                <span className="activity-featured-desc">{featuredSession.description}</span>
+              </span>
+              <span className="activity-featured-cta">{t.activitySelect.featuredSessionOpen}</span>
+            </Link>
+          </section>
+        )}
         <ul className="activity-tiles" role="list">
           <li>
             <Link to="/connect-four" className="activity-tile activity-tile--game">

@@ -202,7 +202,7 @@ export const aiModernSlidesDE: Slide[] = [
       },
       {
         id: 'q-am-4-2-de',
-        text: 'Warum kann KI bei aktuellen News irren?',
+        text: 'Warum kann KI bei aktüllen News irren?',
         type: 'multiple-choice',
         options: ['Aus Faulheit', 'Sie ignoriert News grundsätzlich', 'Trainings-Stichtag und Quellen', 'Sie wird durch Benachrichtigungen gestört'],
         correctAnswer: 2,

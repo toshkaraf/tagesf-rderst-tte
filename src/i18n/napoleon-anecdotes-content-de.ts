@@ -1,4 +1,4 @@
-import { QuizBlock, Slide } from '../types/session'
+﻿import { QuizBlock, Slide } from '../types/session'
 
 // Deutsch B2: Napoleon Bonaparte — dreißig Geschichten
 
@@ -19,7 +19,7 @@ export const napoleonAnecdotesSlidesDE: Slide[] = [
     { id: 'q-nap-2-2-de', text: "Was sagte Napoleon vor der Audienz zum Spiegel (Pointe)?", type: 'multiple-choice', options: ["«Ich bin zu klein»","«Genau das werden sie sehen»","«Wir verschieben»","«Wechselt die Gesandten»"], correctAnswer: 1, explanation: "Charisma vor Körpermaß." },
     { id: 'q-nap-2-3-de', text: "Wie nannten Soldaten Napoleon liebevoll («kleiner Korporal»)?", type: 'multiple-choice', options: ["le grand empereur","le petit général","le caporal noir","le petit caporal"], correctAnswer: 3, explanation: "Nähe zu den Mannschaften." }
     ] },
-  { id: 'np7', title: "Namen auswendig", content: "Vor der Parade paukte er Listen. Auf der Revue trat er an: «Dupont — Austerlitz, 2. Zug …» Der Mann erstarrte. Geheimnis: Gedächtnis und Vorbereitung — Wirkung: Zauber.", duration: 3, media: [{ type: 'image', url: '/media/napoleon-anecdotes/07-names-parade.jpg', title: "Namen auswendig" }] },
+  { id: 'np7', title: "Namen auswendig", content: "Vor der Parade paukte er Listen. Auf der Revü trat er an: «Dupont — Austerlitz, 2. Zug …» Der Mann erstarrte. Geheimnis: Gedächtnis und Vorbereitung — Wirkung: Zauber.", duration: 3, media: [{ type: 'image', url: '/media/napoleon-anecdotes/07-names-parade.jpg', title: "Namen auswendig" }] },
   { id: 'np8', title: "Die Wache und das Parole", content: "Nachts erkannte die Wache ihn nicht und forderte die Parole — ohne sie kein Durchlass. Am Morgen Lob und Beförderung: «So versteht man Dienst.»", duration: 3, media: [{ type: 'image', url: '/media/napoleon-anecdotes/08-sentry-password.jpg', title: "Die Wache und das Parole" }] },
   { id: 'np9', title: "Marschallstab im Tornister", content: "«In jedem Tornister steckt ein Marschallstab» — keine Floskel: Viele Marschälle stiegen vom Mannschaften auf — Murat, Ney, Lefebvre aus einfachen Verhältnissen.", duration: 3, media: [{ type: 'image', url: '/media/napoleon-anecdotes/09-marshal-baton-sack.jpg', title: "Marschallstab im Tornister" }] },
   { id: 'q3', title: 'Quiz', content: '', duration: 2, questions: [
@@ -33,7 +33,7 @@ export const napoleonAnecdotesSlidesDE: Slide[] = [
   { id: 'q4', title: 'Quiz', content: '', duration: 2, questions: [
     { id: 'q-nap-4-1-de', text: "Was sagte Napoleon zum Soldaten statt harter Strafe?", type: 'multiple-choice', options: ["«Erschießen morgen»","«Verziehen»","«Ich werde dich mir merken»","«Entlassen»"], correctAnswer: 2, explanation: "Psychologischer Druck." },
     { id: 'q-nap-4-2-de', text: "Wie reagierte Napoleon auf das dicke Memorandum des Gesandten?", type: 'multiple-choice', options: ["las nicht","Löst es beim Frühstück / sehr schnell","gab es Talleyrand ungelesen","ritt ins Feld"], correctAnswer: 1, explanation: "Schnelle Entscheidung." },
-    { id: 'q-nap-4-3-de', text: "Wie deutete Napoleon den gehässigen Pamphletisten?", type: 'multiple-choice', options: ["Autor ins Gefängnis","zum Duell","Auflage verbrennen","Feinde hassen — man tut etwas Richtiges"], correctAnswer: 3, explanation: "Gelassenheit als Stärke." }
+    { id: 'q-nap-4-3-de', text: "Wie deutete Napoleon den gehässigen Pamphletisten?", type: 'multiple-choice', options: ["Autor ins Gefängnis","Zum Duell","Auflage verbrennen","Feinde hassen — man tut etwas Richtiges"], correctAnswer: 3, explanation: "Gelassenheit als Stärke." }
     ] },
   { id: 'np13', title: "«Nur das fürchte ich»", content: "Auf die Frage nach dem Tod: Er fürchte nicht den Tod — nur Langeweile. Auf St. Helena wurde sie zur Qual, das wusste er.", duration: 3, media: [{ type: 'image', url: '/media/napoleon-anecdotes/13-fear-boredom.jpg', title: "«Nur das fürchte ich»" }] },
   { id: 'np14', title: "Talleyrand und die Seidenstrümpfe", content: "Nach neuem Verrat beschimpfte Napoleon Talleyrand öffentlich als «seidenen Strumpf voll Mist». Talleyrand im Gang: «Schade, dass so ein großer Mann so schlecht erzogen ist.»", duration: 3, media: [{ type: 'image', url: '/media/napoleon-anecdotes/14-talleyrand-silk.jpg', title: "Talleyrand und die Seidenstrümpfe" }] },
@@ -112,7 +112,7 @@ export const napoleonAnecdotesFinalQuizDE: QuizBlock = {
   { id: 'q-nap-1-3-de', text: "Mit wem verbindet die Anekdote die Mathematikprüfung in Brienne?", type: 'multiple-choice', options: ["mit Lagrange","mit Cauchy","mit Fourier","Mit Laplace"], correctAnswer: 3, explanation: "Der junge Napoleon und die Lösung." },
   { id: 'q-nap-2-3-de', text: "Wie nannten Soldaten Napoleon liebevoll («kleiner Korporal»)?", type: 'multiple-choice', options: ["le grand empereur","le petit général","le caporal noir","le petit caporal"], correctAnswer: 3, explanation: "Nähe zu den Mannschaften." },
   { id: 'q-nap-3-3-de', text: "Wo lag nach Napoleon-Metapher der Marschallstab beim Gemeinen?", type: 'multiple-choice', options: ["Im Tornister","in der Tasche","in der Kaserne","im Stab"], correctAnswer: 0, explanation: "Aufstieg aus der Reihe möglich." },
-  { id: 'q-nap-4-3-de', text: "Wie deutete Napoleon den gehässigen Pamphletisten?", type: 'multiple-choice', options: ["Autor ins Gefängnis","zum Duell","Auflage verbrennen","Feinde hassen — man tut etwas Richtiges"], correctAnswer: 3, explanation: "Gelassenheit als Stärke." },
+  { id: 'q-nap-4-3-de', text: "Wie deutete Napoleon den gehässigen Pamphletisten?", type: 'multiple-choice', options: ["Autor ins Gefängnis","Zum Duell","Auflage verbrennen","Feinde hassen — man tut etwas Richtiges"], correctAnswer: 3, explanation: "Gelassenheit als Stärke." },
   { id: 'q-nap-5-3-de', text: "Wie definierte Napoleon «Glück»?", type: 'multiple-choice', options: ["Religion","Größe","Vorbereitung, wenn der Moment kommt","Geld"], correctAnswer: 2, explanation: "Immer bereit — immer «Glück»." },
   { id: 'q-nap-6-3-de', text: "Von wem ließ sich Napoleon für eine politische Heirat scheiden?", type: 'multiple-choice', options: ["von Marie-Louise","Von Joséphine","von Maria Walewska","von Désirée Clary"], correctAnswer: 1, explanation: "Tränen bei der Scheidung." },
   { id: 'q-nap-7-3-de', text: "Wie nannte Napoleon seine Rolle zum Staat (Gegenstück zu «L’État, c’est moi»)?", type: 'multiple-choice', options: ["«Einziger Herr»","«Erster Diener des Staates»","«Über dem Staat»","«Außerhalb des Gesetzes»"], correctAnswer: 1, explanation: "Dienst-Rhetorik." },
@@ -121,4 +121,5 @@ export const napoleonAnecdotesFinalQuizDE: QuizBlock = {
   { id: 'q-nap-10-3-de', text: "Welche drei Wörter gelten als letzte (eine Version)?", type: 'multiple-choice', options: ["Europa… Ruhm… Frieden","Mutter… Vater… Sohn","Arzt… Wasser… Licht","Frankreich… Armee… Joséphine"], correctAnswer: 3, explanation: "Augenzeugenberichte." }
   ]
 }
+
 

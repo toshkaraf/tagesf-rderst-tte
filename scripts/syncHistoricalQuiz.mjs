@@ -22,8 +22,6 @@ execSync('flutter pub get', { cwd: quizRoot, stdio: 'inherit' })
 execSync('flutter build web --release --base-href /historical-quiz/', { cwd: quizRoot, stdio: 'inherit' })
 
 fs.rmSync(outDir, { recursive: true, force: true })
-fs.mkdirSync(outDir, { recursive: true })
-for (const name of fs.readdirSync(buildWeb)) {
-  fs.cpSync(path.join(buildWeb, name), path.join(outDir, name), { recursive: true })
-}
+// Copy entire build output (assets/, canvaskit/, icons/, …) in one tree copy.
+fs.cpSync(buildWeb, outDir, { recursive: true })
 console.log('Copied to', outDir)

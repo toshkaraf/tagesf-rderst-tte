@@ -18,14 +18,14 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
     de: {
       title: 'Geschichte antiker Schlachtordnungen und Taktiken',
       description:
-        '30 Folien zu Schluesselmethoden der antiken Kriegsfuehrung: von Aegypten und Griechenland bis Rom, Persien, Indien und China.',
+        '30 Folien zu Schlüsselmethoden der antiken Kriegsführung: von Ägypten und Griechenland bis Rom, Persien, Indien und China.',
       category: 'Geschichte',
       structure: {
-        greeting: 'Willkommen zur Sitzung ueber antike Schlachtordnungen!',
+        greeting: 'Willkommen zur Sitzung über antike Schlachtordnungen!',
         mainContent:
-          'Wir analysieren 30 taktische Beispiele und sehen, wie Formation, Tempo, Disziplin und Gelaende den Kampf entschieden',
-        interactive: 'Diskussionen waehrend der Folien und Fragen nach den Bloecken',
-        additional: 'Bildauswahl ueber IMAGE_LIST.html',
+          'Wir analysieren 30 taktische Beispiele und sehen, wie Formation, Tempo, Disziplin und Gelände den Kampf entschieden',
+        interactive: 'Diskussionen während der Folien und Fragen nach den Blöcken',
+        additional: 'Bildauswahl über IMAGE_LIST.html',
         closing: 'Fazit: Antike Taktik war ein Zusammenspiel aus Ordnung, Timing und Psychologie'
       }
     },
@@ -48,16 +48,16 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
     de: {
       title: 'Mittelalterliche Schlachtordnung und Taktik',
       description:
-        '30 Folien zu Formation, Ritterkampf, Fernkampf, Schweizer Pike, Mongolen, Belagerung und Spaetmittelalter in Europa und der Steppe.',
+        '30 Folien zu Formation, Ritterkampf, Fernkampf, Schweizer Pike, Mongolen, Belagerung und Spätmittelalter in Europa und der Steppe.',
       category: 'Geschichte',
       structure: {
-        greeting: 'Willkommen zur Sitzung ueber mittelalterliche Schlachtordnung!',
+        greeting: 'Willkommen zur Sitzung über mittelalterliche Schlachtordnung!',
         mainContent:
           'Wir gehen 30 Beispiele durch: Schildwand, Reiterkeil, Fernkampf, Hussiten und Pulver gegen Burgen',
         interactive: 'Zehn Mini-Quizzes und ein Abschlussquiz mit 30 Fragen (Deutsch B2)',
-        additional: 'Bildauswahl ueber IMAGE_LIST.html und IMAGE_LIST.md; Folientexte und Quiz in Deutsch B2',
+        additional: 'Bildauswahl über IMAGE_LIST.html und IMAGE_LIST.md; Folientexte und Quiz in Deutsch B2',
         closing:
-          'Fazit: Mittelalterlicher Kampf verband Linie, Gelaende und Psychologie; Pulververaenderung brach die Festungslogik'
+          'Fazit: Mittelalterlicher Kampf verband Linie, Gelände und Psychologie; Pulververänderung brach die Festungslogik'
       }
     },
     ru: {
@@ -77,18 +77,18 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
   },
   'court-jesters': {
     de: {
-      title: 'Hofnarren: scharfe Zungen, echte Faelle',
+      title: 'Hofnarren: scharfe Zungen, echte Fälle',
       description:
-        '30 Folien mit Anekdoten von Triboulet bis Sommers, Russland und Westen, Shakespeare und Satire - pointiert, mit Fussnote zur Ueberlieferung, ohne Seminarstaub.',
+        '30 Folien mit Anekdoten von Triboulet bis Sommers, Russland und Westen, Shakespeare und Satire - pointiert, mit Fussnote zur Überlieferung, ohne Seminarstaub.',
       category: 'Geschichte',
       structure: {
-        greeting: 'Willkommen: wir reden ueber Leute, die Lachen am Thron verkauften - mit Pointen, Fussnoten und ohne Seminarstaub.',
+        greeting: 'Willkommen: wir reden über Leute, die Lachen am Thron verkauften - mit Pointen, Fussnoten und ohne Seminarstaub.',
         mainContent:
-          'Konkrete Szenen: Kassenbelege, Pamphlet-Prozesse, der Wunsch «durch Altersschwaeche zu sterben», Klaps-Sagen und wo Witz aufhoert',
+          'Konkrete Szenen: Kassenbelege, Pamphlet-Prozesse, der Wunsch «durch Altersschwäche zu sterben», Klaps-Sagen und wo Witz aufhört',
         interactive: 'Zehn Mini-Quizzes mit je drei Fragen und ein Abschlussquiz mit 30 Fragen (Deutsch B2)',
-        additional: 'Bildauswahl ueber IMAGE_LIST.html und IMAGE_LIST.md in public/media/court-jesters/',
+        additional: 'Bildauswahl über IMAGE_LIST.html und IMAGE_LIST.md in public/media/court-jesters/',
         closing:
-          'Fazit: nicht Spiegel-Mystik, sondern die Frage, wer heute zuletzt lachen darf und wo Schaerfe zur Buerde wird'
+          'Fazit: nicht Spiegel-Mystik, sondern die Frage, wer heute zuletzt lachen darf und wo Schärfe zur Bürde wird'
       }
     },
     ru: {
@@ -104,6 +104,41 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
         additional: 'Иллюстрации по IMAGE_LIST.html и IMAGE_LIST.md в папке public/media/court-jesters/',
         closing:
           'На выходе — вопрос не про «зеркало власти», а про то, кому сегодня разрешено смеяться последним и где остроумие становится опасностью'
+      }
+    }
+  },
+  'ancient-comic-history': {
+    de: {
+      title: 'Die komischsten Fälle der alten Geschichte',
+      description:
+        'Dreißig Folien: Caligulas Pferd, Xerxes und das Meer, heilige Hennen, Diogenes, Bohnen und Mathematik, römische Latrinen, spartanisches «Wenn» — pointiert, mit dem Hinweis, dass manches als Anekdote, nicht als Senatsprotokoll zu lesen ist.',
+      category: 'Geschichte',
+      structure: {
+        greeting:
+          'Wir glauben oft, die Antike sei nur Toga und Weisheit. Hier geht es um lebendige, komische und mitunter absurde Episoden: vom symbolischen «Prügel» fürs Meer bis zur Henne als philosophischem Argument.',
+        mainContent:
+          'Wir folgen Persern und Römern, Kynikern, Ägypten, Alltag der Kaiser und ungewöhnlichen Todesfällen bei Verhandlungen — eine rote Linie: Geschichte kann Komödie sein.',
+        interactive: 'Zehn Mini-Quizzes mit je drei Fragen und ein Abschlussquiz mit dreißig Fragen (Deutsch B2).',
+        additional:
+          'Illustrationen nach IMAGE_LIST.html und IMAGE_LIST.md in public/media/ancient-comic-history/.',
+        closing:
+          'Fazit: Die Alten waren groß — und mitunter lachhaft menschlich. Wo verläuft die Grenze zwischen Fakt, Überlieferung und guter Pointe?'
+      }
+    },
+    ru: {
+      title: 'Самые комичные случаи в древней истории',
+      description:
+        'Тридцать слайдов: Калигула и море, куры и Пульхр, Диоген, Пифагор и бобы, римские туалеты, лаконичное «если» — с юмором и оговоркой, что часть сюжетов передана как анекдот, а не как протокол сената.',
+      category: 'История',
+      structure: {
+        greeting:
+          'Мы привыкли думать, что древние — это мудрецы в тогах. Здесь — живые, смешные и местами абсурдные эпизоды: от штрафа моря до курицы как философского аргумента.',
+        mainContent:
+          'Идём по сюжетам: персы и римляне, киники, Египет, имперский быт и «маленькие» смерти на переговорах — всё связано одной мыслью: история умеет быть комедией.',
+        interactive: 'Десять мини-викторин по три вопроса и итоговая викторина на тридцать вопросов.',
+        additional: 'Иллюстрации подбираются по файлам IMAGE_LIST.html и IMAGE_LIST.md в папке public/media/ancient-comic-history/.',
+        closing:
+          'Древние были великими — и иногда до смешного человеческими. Вопрос в конце: где граница между фактом, пересказом и удачной шуткой?'
       }
     }
   },
@@ -500,7 +535,7 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
   'cleopatra-economist': {
     de: {
       title: 'Kleopatra: Politikerin und Ökonomin',
-      description: 'Finanzierung der Armeen Caesars und Antonius\', Wirtschaftspolitik Ägyptens, Handelskontrolle — die echte Politik hinter der Romantik',
+      description: 'Finanzierung der Armeen Cäsars und Antonius\', Wirtschaftspolitik Ägyptens, Handelskontrolle — die echte Politik hinter der Romantik',
       category: 'Geschichte',
       structure: {
         greeting: 'Willkommen zur Sitzung über Kleopatra!',
@@ -635,18 +670,18 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
   },
   'caesar-anecdotes': {
     de: {
-      title: 'Caesar: dreißig schlaue Geschichten',
+      title: 'Cäsar: dreißig schlaue Geschichten',
       description:
-        'Episoden aus dem Leben Gaius Iulius Caesars nach Sueton, Plutarch, Cicero u.a. — Witz, Mut und Charakter; mit Zwischenquizzen und Abschlusstest.',
+        'Episoden aus dem Leben Gaius Iulius Cäsars nach Sueton, Plutarch, Cicero u.a. — Witz, Mut und Charakter; mit Zwischenquizzen und Abschlusstest.',
       category: 'Geschichte',
       structure: {
-        greeting: 'Willkommen zur Caesar-Sitzung!',
+        greeting: 'Willkommen zur Cäsar-Sitzung!',
         mainContent:
           'Dreißig kurze Geschichten — von der Piratengefangenschaft bis zu den Iden des März — und die Frage, was Überlieferung, was literarische Pointe ist',
         interactive: 'Zehn Mini-Quizze (je drei Fragen) und ein Abschlusstest mit 30 Fragen',
         additional: 'Pro Erzählfolie ein Bild; Dateinamen siehe IMAGE_LIST.html',
         closing:
-          'Fazit: antike Autoren formten Caesars Bild — Fakt, Gerücht und Kunstgriff zu unterscheiden bleibt nützlich'
+          'Fazit: antike Autoren formten Cäsars Bild — Fakt, Gerücht und Kunstgriff zu unterscheiden bleibt nützlich'
       }
     },
     ru: {

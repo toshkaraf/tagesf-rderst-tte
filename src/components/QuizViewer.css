@@ -1,6 +1,6 @@
 .quiz-viewer {
   background: var(--surface);
-  padding: clamp(8px, 1.5vh, 20px);
+  padding: clamp(6px, 1.2vh, 16px);
   border-radius: 16px;
   box-shadow: var(--shadow);
   height: 100%;
@@ -11,21 +11,21 @@
 }
 
 .quiz-header {
-  margin-bottom: clamp(6px, 1vh, 12px);
-  padding-bottom: clamp(6px, 1vh, 12px);
+  margin-bottom: clamp(4px, 0.7vh, 10px);
+  padding-bottom: clamp(4px, 0.7vh, 10px);
   border-bottom: 2px solid var(--border-color);
   flex-shrink: 0;
 }
 
 .quiz-header h2 {
   color: var(--primary-color);
-  margin-bottom: clamp(4px, 0.8vh, 8px);
-  font-size: calc(var(--touch-font-heading-sm) * 1.08);
-  line-height: 1.2;
+  margin-bottom: clamp(2px, 0.5vh, 6px);
+  font-size: calc(var(--touch-font-heading-sm) * 0.96);
+  line-height: 1.18;
 }
 
 .quiz-progress {
-  font-size: calc(var(--touch-font-caption) * 1.12);
+  font-size: calc(var(--touch-font-caption) * 1.02);
   color: var(--text-secondary);
   font-weight: 500;
 }
@@ -36,28 +36,28 @@
 }
 
 .quiz-question {
-  padding: clamp(6px, 1vh, 12px);
+  padding: clamp(4px, 0.8vh, 10px);
   flex: 1;
   display: flex;
   flex-direction: column;
   min-height: 0;
   overflow-y: auto;
   justify-content: flex-start;
-  gap: clamp(8px, 1.2vh, 14px);
+  gap: clamp(5px, 0.9vh, 10px);
 }
 
 .quiz-question h3 {
-  font-size: calc(var(--touch-font-label) * 1.1);
+  font-size: calc(var(--touch-font-label) * 0.98);
   margin-bottom: 0;
   color: var(--text-primary);
-  line-height: 1.35;
+  line-height: 1.3;
   flex-shrink: 0;
 }
 
 .quiz-answers {
   display: flex;
   flex-direction: column;
-  gap: clamp(8px, 1.5vh, 14px);
+  gap: clamp(5px, 1vh, 10px);
   margin-bottom: 0;
   flex-shrink: 0;
 }
@@ -68,16 +68,16 @@
 
 .quiz-explanation {
   background: var(--background);
-  padding: clamp(8px, 1.2vh, 14px);
-  border-radius: 12px;
-  border-left: 4px solid var(--primary-color);
+  padding: clamp(6px, 0.9vh, 11px);
+  border-radius: 10px;
+  border-left: 3px solid var(--primary-color);
   margin-bottom: 0;
   flex-shrink: 0;
 }
 
 .quiz-explanation p {
-  font-size: calc(var(--touch-font-caption) * 1.1);
-  line-height: 1.45;
+  font-size: calc(var(--touch-font-caption) * 0.98);
+  line-height: 1.38;
   color: var(--text-primary);
   margin: 0;
 }
@@ -85,9 +85,15 @@
 .quiz-actions {
   display: flex;
   justify-content: center;
-  margin-top: 0;
+  margin-top: auto;
   flex-shrink: 0;
-  padding-top: clamp(8px, 1.2vh, 14px);
+  padding-top: clamp(4px, 0.8vh, 10px);
+  padding-bottom: clamp(2px, 0.4vh, 6px);
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  background: var(--surface);
+  box-shadow: 0 -6px 14px -4px rgba(0, 0, 0, 0.08);
 }
 
 .btn-error {
@@ -100,9 +106,10 @@
 }
 
 .quiz-viewer .large-button {
-  font-size: calc(var(--button-font-size) * 1.1);
-  min-height: calc(var(--button-height) * 1.06);
-  padding: clamp(18px, 2.4vh, 28px) clamp(26px, 3.8vw, 44px);
+  font-size: calc(var(--button-font-size) * 0.96);
+  min-height: calc(var(--button-height) * 0.94);
+  padding: clamp(12px, 1.6vh, 20px) clamp(18px, 3vw, 36px);
+  line-height: 1.25;
 }
 
 .quiz-results .large-button {
@@ -164,7 +171,7 @@
 
 @media (max-width: 639px) {
   .quiz-viewer {
-    padding: clamp(12px, 2vh, 20px);
+    padding: clamp(8px, 1.5vh, 16px);
   }
 
   .quiz-answers.yes-no {
@@ -173,30 +180,50 @@
   }
 
   .quiz-answers {
-    gap: clamp(10px, 1.8vh, 16px);
+    gap: clamp(6px, 1.2vh, 12px);
   }
 }
 
 @media (max-width: 480px) {
   .quiz-viewer {
-    padding: clamp(10px, 1.8vh, 18px);
+    padding: clamp(8px, 1.5vh, 16px);
   }
 
   .quiz-header {
-    margin-bottom: clamp(8px, 1.2vh, 14px);
-    padding-bottom: clamp(8px, 1.2vh, 14px);
+    margin-bottom: clamp(6px, 1vh, 12px);
+    padding-bottom: clamp(6px, 1vh, 12px);
   }
 
   .quiz-question {
-    padding: clamp(8px, 1.2vh, 14px);
+    padding: clamp(6px, 1vh, 12px);
   }
 
   .quiz-explanation {
-    padding: clamp(10px, 1.4vh, 16px);
+    padding: clamp(8px, 1.2vh, 14px);
   }
 
   .quiz-actions {
-    margin-top: clamp(8px, 1.2vh, 14px);
+    padding-top: clamp(6px, 1vh, 12px);
+  }
+}
+
+@media (max-height: 900px) {
+  .quiz-viewer {
+    padding: clamp(6px, 1vh, 14px);
+  }
+
+  .quiz-question h3 {
+    font-size: calc(var(--touch-font-label) * 0.94);
+  }
+
+  .quiz-viewer .large-button {
+    font-size: calc(var(--button-font-size) * 0.92);
+    min-height: calc(var(--button-height) * 0.9);
+    padding: clamp(10px, 1.4vh, 16px) clamp(14px, 2.8vw, 28px);
+  }
+
+  .quiz-answers {
+    gap: clamp(4px, 0.85vh, 8px);
   }
 }
 

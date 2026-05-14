@@ -368,7 +368,7 @@ export const universitiesRiotsSlidesDE: Slide[] = [
     id: 'u20',
     title: 'Fakultäten im Streit: Theologen vs. Juristen',
     content:
-      'Innerhalb der Universitäten stritten sich Fakultäten um Status und Einfluss. Theologen galten als „höchstes Fach“ und sahen auf Juristen und Mediziner herab. Juristen verdienten als königliche Berater gut, was Neid auslöste. Sitzungen von Fakultäten endeten nicht selten in Schreiduellen – manchmal sogar in Prügeleien.',
+      'Innerhalb der Universitäten stritten sich Fakultäten um Status und Einfluss. Theologen galten als „höchstes Fach“ und sahen auf Juristen und Mediziner herab. Juristen verdienten als königliche Berater gut, was Neid auslöste. Sitzungen von Fakultäten endeten nicht selten in Schreidüllen – manchmal sogar in Prügeleien.',
     duration: 3,
     media: [{ type: 'image', url: '/media/universities-riots/faculty-conflict.jpg', title: 'Fakultätskonflikte' }]
   },

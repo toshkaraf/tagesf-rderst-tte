@@ -11,7 +11,7 @@ export const courtJestersSlidesDE: Slide[] = [
     duration: 2,
     questions: [
       { id: 'q-jst-1-1-de', text: 'Welche «technische» Hauptfunktion erfüllte der Hofnarr?', type: 'multiple-choice', options: ['Er führte Militärkarten', 'Er löste Spannung und gab ironisches Feedback', 'Er schrieb Gesetze', 'Er kommandierte die Garde'], correctAnswer: 1, explanation: 'Lachen wandelt Peinlichkeit in Spiel.' },
-      { id: 'q-jst-1-2-de', text: 'Was meint «Narrenlizenz» im Sinne des Brauchtums?', type: 'multiple-choice', options: ['Königliche Urkunde über Land', 'Das Recht, in Narrengestalt scharf zu sprechen ohne Ministerpflicht', 'Duellgenehmigung', 'Steuerbefreiung'], correctAnswer: 1, explanation: 'Soziale Vereinbarung, kein Paragraf.' },
+      { id: 'q-jst-1-2-de', text: 'Was meint «Narrenlizenz» im Sinne des Brauchtums?', type: 'multiple-choice', options: ['Königliche Urkunde über Land', 'Das Recht, in Narrengestalt scharf zu sprechen ohne Ministerpflicht', 'Düllgenehmigung', 'Steuerbefreiung'], correctAnswer: 1, explanation: 'Soziale Vereinbarung, kein Paragraf.' },
       { id: 'q-jst-1-3-de', text: 'Was ist eine Marotte?', type: 'multiple-choice', options: ['Lautentyp', 'Stab mit Puppenkopf, Narrenattribut', 'Narrenkrone', 'Weinsorte'], correctAnswer: 1, explanation: 'Requisit des Hofnarren.' }
     ]
   },
@@ -72,7 +72,7 @@ export const courtJestersSlidesDE: Slide[] = [
     questions: [
       { id: 'q-jst-5-1-de', text: 'Wie hießen in Russland wandernde Musiker-Satiriker, die die Kirche verurteilte?', type: 'multiple-choice', options: ['Bojaren', 'Skomorochi', 'Strelizen', 'Djaki'], correctAnswer: 1, explanation: 'Eigene kulturelle Schicht.' },
       { id: 'q-jst-5-2-de', text: 'Wie heißt die Gruppe von Vertrauten bei Iwan IV., die man im Alltag oft mit «Narren» verwechselt?', type: 'multiple-choice', options: ['Opritchniki', 'Domashnie', 'Posadniki', 'Strelizen-Häupter'], correctAnswer: 1, explanation: 'Begriff aus Quellen.' },
-      { id: 'q-jst-5-3-de', text: 'Wer malte den berühmten nachdenklichen Stanczyk mit Ball?', type: 'multiple-choice', options: ['Repin', 'Jan Matejko', 'Brjullov', 'Raffael'], correctAnswer: 1, explanation: 'Polnische Historienmalerei des 19. Jahrhunderts.' }
+      { id: 'q-jst-5-3-de', text: 'Wer malte den berühmten nachdenklichen Stanczyk mit Ball?', type: 'multiple-choice', options: ['Repin', 'Jan Matejko', 'Brjullov', 'Raffäl'], correctAnswer: 1, explanation: 'Polnische Historienmalerei des 19. Jahrhunderts.' }
     ]
   },
 
@@ -102,11 +102,11 @@ export const courtJestersSlidesDE: Slide[] = [
     questions: [
       { id: 'q-jst-7-1-de', text: 'Mit welchem chinesischen Hof verbindet man Dongfang Shuo?', type: 'multiple-choice', options: ['Ming', 'Han unter Wudi', 'Qin Shihuangdi', 'Tang Taizong'], correctAnswer: 1, explanation: 'Frühe Kaiserzeit der Han.' },
       { id: 'q-jst-7-2-de', text: 'Wer ist der Held orientalischer Anekdoten, funktional nah am Volksweisen-Narren?', type: 'multiple-choice', options: ['Zarathustra', 'Nasreddin Hodscha', 'Konfuzius', 'Solon'], correctAnswer: 1, explanation: 'Handlung mit Umkehr des Sinns.' },
-      { id: 'q-jst-7-3-de', text: 'Wie heißt Erasmus’ Satire, in der die allegorische Torheit spricht?', type: 'multiple-choice', options: ['«Utopia»', '«Lob der Torheit»', '«Sonnenstadt»', '«Candide»'], correctAnswer: 1, explanation: 'Moriae encomium.' }
+      { id: 'q-jst-7-3-de', text: 'Wie heißt Erasmus’ Satire, in der die allegorische Torheit spricht?', type: 'multiple-choice', options: ['«Utopia»', '«Lob der Torheit»', '«Sonnenstadt»', '«Candide»'], correctAnswer: 1, explanation: 'Moriä encomium.' }
     ]
   },
 
-  { id: 'jst22', title: 'Erasmus: Torheit redet selbst', content: 'In «Lob der Torheit» hält die Allegorie Krieg, Ehrgeiz und akademische Wichtigtuerei hin - kein Hofalltag, aber derselbe Trick: lachen und gleichzeitig rot werden.', duration: 3, media: [{ type: 'image', url: '/media/court-jesters/21-erasmus-praise-of-folly.jpg', title: 'Lob der Torheit' }] },
+  { id: 'jst22', title: 'Erasmus: Torheit redet selbst', content: 'In «Lob der Torheit» hält die Allegorie Krieg, Ehrgeiz und akademische Wichtigtürei hin - kein Hofalltag, aber derselbe Trick: lachen und gleichzeitig rot werden.', duration: 3, media: [{ type: 'image', url: '/media/court-jesters/21-erasmus-praise-of-folly.jpg', title: 'Lob der Torheit' }] },
   { id: 'jst23', title: 'Commedia dell’arte: Masken ohne Krone', content: 'Harlekin springt über Pantalone - der Hofgeist der Stichelei wandert auf den Jahrmarkt: das Publikum zahlt Eintritt statt monarchischer Gnade, die Pointe bleibt.', duration: 3, media: [{ type: 'image', url: '/media/court-jesters/22-commedia-dell-arte.jpg', title: 'Commedia dell’arte' }] },
   { id: 'jst24', title: 'Rigoletto: Narr ohne Schild', content: 'Bei Verdi dient Rigoletto dem Herzog und heizt die Menge mit Witzen an, bis der Preis fällt - die Tochter. Hier ist die Kappe kein Schutz, sondern Beruf des Volksverführers: Worte verkauft man für Applaus an Leute, denen man nicht klatschen sollte.', duration: 3, media: [{ type: 'image', url: '/media/court-jesters/23-rigoletto-verdi.jpg', title: 'Rigoletto' }] },
   {
@@ -122,7 +122,7 @@ export const courtJestersSlidesDE: Slide[] = [
   },
 
   { id: 'jst25', title: 'Velázquez: Porträt statt Menagerie', content: 'Der Spanier malt Hofmenschen untypischer Größe mit Namen und Haltung - und bricht die Gewohnheit, sie nur als «Thronspektakel» zu sehen.', duration: 3, media: [{ type: 'image', url: '/media/court-jesters/24-velazquez-court-dwarf.jpg', title: 'Velázquez' }] },
-  { id: 'jst26', title: 'Vom Fest zur Zeitungsbude', content: 'Politische Radierung des 18. Jahrhunderts trägt Schärfe aus dem Saal auf die Strasse: der «Narr» trägt jetzt den Namen des Zeichners, und Lachen trifft den Minister vor dem ganzen Quartier.', duration: 3, media: [{ type: 'image', url: '/media/court-jesters/25-political-cartoon-jester.jpg', title: 'Politische Karikatur' }] },
+  { id: 'jst26', title: 'Vom Fest zur Zeitungsbude', content: 'Politische Radierung des 18. Jahrhunderts trägt Schärfe aus dem Saal auf die Straße: der «Narr» trägt jetzt den Namen des Zeichners, und Lachen trifft den Minister vor dem ganzen Quartier.', duration: 3, media: [{ type: 'image', url: '/media/court-jesters/25-political-cartoon-jester.jpg', title: 'Politische Karikatur' }] },
   { id: 'jst27', title: 'Clown ohne Thron', content: 'Der Zirkusclown erbte Stürze und Schellen, nicht aber den Thron: das Publikum zahlt Ticket statt «Gnadenerlass», und für den Witz haftet der Künstler, nicht die institutionelle Lizenz des Monarchen.', duration: 3, media: [{ type: 'image', url: '/media/court-jesters/26-clown-versus-jester.jpg', title: 'Clown und Narr' }] },
   {
     id: 'q9',
@@ -157,7 +157,7 @@ export const courtJestersFinalQuizDE: QuizBlock = {
   title: 'Abschlussquiz: Hofnarren (Niveau B2)',
   questions: [
     { id: 'q-jst-f-1-de', text: 'Welche «technische» Hauptfunktion erfüllte der Hofnarr?', type: 'multiple-choice', options: ['Er führte Militärkarten', 'Er löste Spannung und gab ironisches Feedback', 'Er schrieb Gesetze', 'Er kommandierte die Garde'], correctAnswer: 1, explanation: 'Lachen wandelt Peinlichkeit in Spiel.' },
-    { id: 'q-jst-f-2-de', text: 'Was meint «Narrenlizenz» im Sinne des Brauchtums?', type: 'multiple-choice', options: ['Königliche Urkunde über Land', 'Das Recht, in Narrengestalt scharf zu sprechen ohne Ministerpflicht', 'Duellgenehmigung', 'Steuerbefreiung'], correctAnswer: 1, explanation: 'Soziale Vereinbarung, kein Paragraf.' },
+    { id: 'q-jst-f-2-de', text: 'Was meint «Narrenlizenz» im Sinne des Brauchtums?', type: 'multiple-choice', options: ['Königliche Urkunde über Land', 'Das Recht, in Narrengestalt scharf zu sprechen ohne Ministerpflicht', 'Düllgenehmigung', 'Steuerbefreiung'], correctAnswer: 1, explanation: 'Soziale Vereinbarung, kein Paragraf.' },
     { id: 'q-jst-f-3-de', text: 'Was ist eine Marotte?', type: 'multiple-choice', options: ['Lautentyp', 'Stab mit Puppenkopf, Narrenattribut', 'Narrenkrone', 'Weinsorte'], correctAnswer: 1, explanation: 'Requisit des Hofnarren.' },
     { id: 'q-jst-f-4-de', text: 'Wen stellt die Typologie der Narren oft einander gegenüber?', type: 'multiple-choice', options: ['Nur Kinder', '«Natur-Narr» und ernannten Hofnarren', 'Nur Mönche', 'Nur Bauern'], correctAnswer: 1, explanation: 'Unterschiedlicher Status, unterschiedliches Risiko.' },
     { id: 'q-jst-f-5-de', text: 'Wie hieß die bekannte Hofnarrin bei Heinrich VIII.?', type: 'multiple-choice', options: ['Maria Stuart', 'Jane Foole', 'Elisabeth Tudor', 'Anne Boleyn'], correctAnswer: 1, explanation: 'Zeilen in Garderobenbüchern.' },
@@ -170,13 +170,13 @@ export const courtJestersFinalQuizDE: QuizBlock = {
     { id: 'q-jst-f-12-de', text: 'Wo «arbeitete» der Hofnarr im Alltag am häufigsten?', type: 'multiple-choice', options: ['Auf dem Schlachtfeld', 'Bei Banketten und Schaustellungen', 'In der Klosterzelle', 'Im Hafen'], correctAnswer: 1, explanation: 'Fest als Bühne für Improvisation.' },
     { id: 'q-jst-f-13-de', text: 'Wie hießen in Russland wandernde Musiker-Satiriker, die die Kirche verurteilte?', type: 'multiple-choice', options: ['Bojaren', 'Skomorochi', 'Strelizen', 'Djaki'], correctAnswer: 1, explanation: 'Eigene kulturelle Schicht.' },
     { id: 'q-jst-f-14-de', text: 'Wie heißt die Gruppe von Vertrauten bei Iwan IV., die man im Alltag oft mit «Narren» verwechselt?', type: 'multiple-choice', options: ['Opritchniki', 'Domashnie', 'Posadniki', 'Strelizen-Häupter'], correctAnswer: 1, explanation: 'Begriff aus Quellen.' },
-    { id: 'q-jst-f-15-de', text: 'Wer malte den berühmten nachdenklichen Stanczyk mit Ball?', type: 'multiple-choice', options: ['Repin', 'Jan Matejko', 'Brjullov', 'Raffael'], correctAnswer: 1, explanation: 'Polnische Historienmalerei des 19. Jahrhunderts.' },
+    { id: 'q-jst-f-15-de', text: 'Wer malte den berühmten nachdenklichen Stanczyk mit Ball?', type: 'multiple-choice', options: ['Repin', 'Jan Matejko', 'Brjullov', 'Raffäl'], correctAnswer: 1, explanation: 'Polnische Historienmalerei des 19. Jahrhunderts.' },
     { id: 'q-jst-f-16-de', text: 'In welchem Shakespeare-Stück begleitet der Narr einen wahnsinnig werdenden König?', type: 'multiple-choice', options: ['«Othello»', '«König Lear»', '«Romeo und Julia»', '«Macbeth»'], correctAnswer: 1, explanation: 'Die Narrrolle ist strukturell tragisch.' },
     { id: 'q-jst-f-17-de', text: 'Wessen Schädel hält Hamlet in der berühmten Szene?', type: 'multiple-choice', options: ['Polonius', 'Den König', 'Den Narren Yorick', 'Rosenkranz'], correctAnswer: 2, explanation: 'Meditation über Tod und Lachen.' },
     { id: 'q-jst-f-18-de', text: 'Wie heißt der Narr in «Wie es euch gefällt»?', type: 'multiple-choice', options: ['Fest', 'Touchstone', 'Lavatch', 'Pistol'], correctAnswer: 1, explanation: 'Komische Ideenführung.' },
     { id: 'q-jst-f-19-de', text: 'Mit welchem chinesischen Hof verbindet man Dongfang Shuo?', type: 'multiple-choice', options: ['Ming', 'Han unter Wudi', 'Qin Shihuangdi', 'Tang Taizong'], correctAnswer: 1, explanation: 'Frühe Kaiserzeit der Han.' },
     { id: 'q-jst-f-20-de', text: 'Wer ist der Held orientalischer Anekdoten, funktional nah am Volksweisen-Narren?', type: 'multiple-choice', options: ['Zarathustra', 'Nasreddin Hodscha', 'Konfuzius', 'Solon'], correctAnswer: 1, explanation: 'Handlung mit Umkehr des Sinns.' },
-    { id: 'q-jst-f-21-de', text: 'Wie heißt Erasmus’ Satire, in der die allegorische Torheit spricht?', type: 'multiple-choice', options: ['«Utopia»', '«Lob der Torheit»', '«Sonnenstadt»', '«Candide»'], correctAnswer: 1, explanation: 'Moriae encomium.' },
+    { id: 'q-jst-f-21-de', text: 'Wie heißt Erasmus’ Satire, in der die allegorische Torheit spricht?', type: 'multiple-choice', options: ['«Utopia»', '«Lob der Torheit»', '«Sonnenstadt»', '«Candide»'], correctAnswer: 1, explanation: 'Moriä encomium.' },
     { id: 'q-jst-f-22-de', text: 'Mit welcher italienischen Theatertradition verbindet man Masken und Improvisation?', type: 'multiple-choice', options: ['Oper seria', 'Commedia dell’arte', 'No', 'Kabuki'], correctAnswer: 1, explanation: 'Harlekin, Pantalone u. a.' },
     { id: 'q-jst-f-23-de', text: 'Wie heißt der Narr in Verdis Oper über den Herzog von Mantua?', type: 'multiple-choice', options: ['Falstaff', 'Rigoletto', 'Nabucco', 'Otello'], correctAnswer: 1, explanation: 'Tragische Oper von 1851.' },
     { id: 'q-jst-f-24-de', text: 'Welcher spanische Maler ist für Portraits von Hofzwergen bekannt?', type: 'multiple-choice', options: ['Goya', 'Velázquez', 'El Greco', 'Murillo'], correctAnswer: 1, explanation: 'Diptychen und Einzelportraits.' },

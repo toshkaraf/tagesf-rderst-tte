@@ -8,7 +8,7 @@ export const hansaMonopolySlidesDE: Slide[] = [
     id: 'h1',
     title: 'Die Hanse – Kartell ohne Staat',
     content:
-      'Die Hanse (Hanseatic League) war ein Bund von rund 200 Städten in Nord­europa (13.–17. Jh.). Kein König, kein Kaiser – aber ein Kartell. Sie kontrollierte Handel von London bis Nowgorod: Fisch, Felle, Wachs, Getreide, Holz, Bernstein. Ohne Armee, aber mit Blockaden – der erste transnationale Wirtschaftskartell der Geschichte.',
+      'Die Hanse (Hanseatic Leagü) war ein Bund von rund 200 Städten in Nord­europa (13.–17. Jh.). Kein König, kein Kaiser – aber ein Kartell. Sie kontrollierte Handel von London bis Nowgorod: Fisch, Felle, Wachs, Getreide, Holz, Bernstein. Ohne Armee, aber mit Blockaden – der erste transnationale Wirtschaftskartell der Geschichte.',
     duration: 3,
     media: [{ type: 'image', url: '/media/hansa-monopoly/hansa-main.jpg', title: 'Hanse' }]
   },

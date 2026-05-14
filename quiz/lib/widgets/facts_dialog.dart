@@ -15,6 +15,7 @@ class FactsDialog extends StatefulWidget {
 
 class _FactsDialogState extends State<FactsDialog> {
   final FlutterTts _flutterTts = FlutterTts();
+  final ScrollController _scrollController = ScrollController();
   bool _isPlaying = false;
   bool _isPaused = false;
 
@@ -39,6 +40,7 @@ class _FactsDialogState extends State<FactsDialog> {
   @override
   void dispose() {
     _flutterTts.stop();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -68,8 +70,8 @@ class _FactsDialogState extends State<FactsDialog> {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     final pad = MediaQuery.paddingOf(context);
-    final maxW = math.min(520.0, size.width - 24);
-    final maxH = math.min(520.0, size.height * 0.78);
+    final maxW = math.min(560.0, size.width - 24);
+    final maxH = math.min(640.0, size.height * 0.82);
 
     return Dialog(
       insetPadding: EdgeInsets.fromLTRB(12, 16, 12, math.max(16, pad.bottom + 8)),
@@ -91,7 +93,7 @@ class _FactsDialogState extends State<FactsDialog> {
                       child: Text(
                         'Interessant, dass …',
                         style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                              fontSize: 22,
+                              fontSize: 26,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -115,15 +117,17 @@ class _FactsDialogState extends State<FactsDialog> {
                 const SizedBox(height: 6),
                 Expanded(
                   child: Scrollbar(
+                    controller: _scrollController,
                     thumbVisibility: true,
                     child: SingleChildScrollView(
+                      controller: _scrollController,
                       physics: const BouncingScrollPhysics(),
                       padding: const EdgeInsets.only(right: 6, bottom: 4),
                       child: Text(
                         widget.fact,
                         style: const TextStyle(
-                          fontSize: 17,
-                          height: 1.45,
+                          fontSize: 22,
+                          height: 1.42,
                         ),
                       ),
                     ),
@@ -136,7 +140,7 @@ class _FactsDialogState extends State<FactsDialog> {
                     minimumSize: const Size.fromHeight(54),
                     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
                     textStyle: const TextStyle(
-                      fontSize: 18,
+                      fontSize: 20,
                       fontWeight: FontWeight.w600,
                     ),
                     shape: RoundedRectangleBorder(

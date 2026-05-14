@@ -19,6 +19,7 @@ class ExplanationDialog extends StatefulWidget {
 
 class _ExplanationDialogState extends State<ExplanationDialog> {
   final FlutterTts _flutterTts = FlutterTts();
+  final ScrollController _scrollController = ScrollController();
   bool _isPlaying = false;
   bool _isPaused = false;
 
@@ -66,6 +67,7 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
   @override
   void dispose() {
     _flutterTts.stop();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -73,8 +75,8 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     final pad = MediaQuery.paddingOf(context);
-    final maxW = math.min(500.0, size.width - 24);
-    final maxH = math.min(560.0, size.height * 0.78);
+    final maxW = math.min(540.0, size.width - 24);
+    final maxH = math.min(640.0, size.height * 0.82);
 
     return Dialog(
       insetPadding: EdgeInsets.fromLTRB(12, 16, 12, math.max(16, pad.bottom + 8)),
@@ -96,7 +98,7 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
                       child: Text(
                         'Erklärung',
                         style: TextStyle(
-                          fontSize: 22,
+                          fontSize: 26,
                           fontWeight: FontWeight.bold,
                         ),
                         overflow: TextOverflow.ellipsis,
@@ -121,15 +123,17 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
                 const SizedBox(height: 8),
                 Expanded(
                   child: Scrollbar(
+                    controller: _scrollController,
                     thumbVisibility: true,
                     child: SingleChildScrollView(
+                      controller: _scrollController,
                       physics: const BouncingScrollPhysics(),
                       padding: const EdgeInsets.only(right: 6, bottom: 4),
                       child: Text(
                         currentExplanation,
                         style: const TextStyle(
-                          fontSize: 16,
-                          height: 1.5,
+                          fontSize: 22,
+                          height: 1.42,
                         ),
                       ),
                     ),
@@ -139,9 +143,10 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
                 FilledButton(
                   onPressed: () => Navigator.of(context).pop(),
                   style: FilledButton.styleFrom(
-                    minimumSize: const Size.fromHeight(52),
+                    minimumSize: const Size.fromHeight(54),
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
                     textStyle: const TextStyle(
-                      fontSize: 17,
+                      fontSize: 20,
                       fontWeight: FontWeight.w600,
                     ),
                     shape: RoundedRectangleBorder(

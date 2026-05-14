@@ -1,7 +1,7 @@
 /**
  * Converts kilaszlo lib/models/theme_data.dart → src/ki/theme/themeData.gen.ts
  * Usage: node scripts/kilaszlo-import-theme.mjs [path/to/theme_data.dart]
- * Default: ../kilaszlo/lib/models/theme_data.dart (sibling of this repo)
+ * Default: kilaszlo/ inside this repo if present, else ../kilaszlo/ (sibling).
  */
 import fs from 'node:fs'
 import path from 'node:path'
@@ -9,8 +9,11 @@ import { fileURLToPath } from 'node:url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const repoRoot = path.join(__dirname, '..')
-const defaultDart = path.resolve(repoRoot, '..', 'kilaszlo', 'lib', 'models', 'theme_data.dart')
-const dartPath = path.resolve(process.argv[2] || defaultDart)
+/** Monorepo: kilaszlo/ inside this repo. Override with argv or KILASZLO_THEME_DART */
+const defaultDart = fs.existsSync(path.join(repoRoot, 'kilaszlo', 'lib', 'models', 'theme_data.dart'))
+  ? path.join(repoRoot, 'kilaszlo', 'lib', 'models', 'theme_data.dart')
+  : path.resolve(repoRoot, '..', 'kilaszlo', 'lib', 'models', 'theme_data.dart')
+const dartPath = path.resolve(process.argv[2] || process.env.KILASZLO_THEME_DART || defaultDart)
 const outPath = path.join(repoRoot, 'src', 'ki', 'theme', 'themeData.gen.ts')
 
 function convertTopics(str) {

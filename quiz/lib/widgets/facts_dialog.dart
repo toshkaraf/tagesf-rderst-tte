@@ -93,7 +93,7 @@ class _FactsDialogState extends State<FactsDialog> {
                       child: Text(
                         'Interessant, dass …',
                         style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                              fontSize: 26,
+                              fontSize: 36,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
@@ -105,7 +105,7 @@ class _FactsDialogState extends State<FactsDialog> {
                         _isPlaying && !_isPaused
                             ? Icons.pause_circle_filled
                             : Icons.volume_up,
-                        size: 30,
+                        size: 38,
                         color: Colors.blue,
                       ),
                       onPressed: _togglePlayPause,
@@ -126,8 +126,8 @@ class _FactsDialogState extends State<FactsDialog> {
                       child: Text(
                         widget.fact,
                         style: const TextStyle(
-                          fontSize: 22,
-                          height: 1.42,
+                          fontSize: 34,
+                          height: 1.45,
                         ),
                       ),
                     ),
@@ -140,7 +140,7 @@ class _FactsDialogState extends State<FactsDialog> {
                     minimumSize: const Size.fromHeight(54),
                     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
                     textStyle: const TextStyle(
-                      fontSize: 20,
+                      fontSize: 26,
                       fontWeight: FontWeight.w600,
                     ),
                     shape: RoundedRectangleBorder(

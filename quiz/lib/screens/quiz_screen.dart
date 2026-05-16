@@ -124,9 +124,13 @@ class _QuizScreenState extends State<QuizScreen> {
       barrierDismissible: false,
       builder:
           (context) => AlertDialog(
-            title: const Text('Quiz beendet'),
+            title: const Text(
+              'Quiz beendet',
+              style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold),
+            ),
             content: const Text(
               'Für diese Auswahl gibt es keine freien Fragen mehr: nach richtiger Antwort mindestens einen Monat Sperre, nach falscher eine Woche.',
+              style: TextStyle(fontSize: 30, height: 1.45),
             ),
             actions: [
               TextButton(
@@ -136,6 +140,9 @@ class _QuizScreenState extends State<QuizScreen> {
                     Navigator.of(context).pop();
                   }
                 },
+                style: TextButton.styleFrom(
+                  textStyle: const TextStyle(fontSize: 26),
+                ),
                 child: const Text('OK'),
               ),
             ],

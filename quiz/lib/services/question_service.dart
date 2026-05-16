@@ -27,6 +27,16 @@ class QuestionService {
       'lib/data/Fragen/Detailed/detailed_401_450_complete.json',
       'lib/data/Fragen/Detailed/detailed_451_500_complete.json',
       'lib/data/Fragen/Detailed/detailed_501_550_greece_b2.json',
+      'lib/data/Fragen/Detailed/medieval_6001_6100.json',
+      'lib/data/Fragen/Detailed/medieval_6101_6200.json',
+      'lib/data/Fragen/Detailed/medieval_6201_6300.json',
+      'lib/data/Fragen/Detailed/medieval_6301_6400.json',
+      'lib/data/Fragen/Detailed/medieval_6401_6500.json',
+      'lib/data/Fragen/Detailed/medieval_6501_6600.json',
+      'lib/data/Fragen/Detailed/medieval_6601_6700.json',
+      'lib/data/Fragen/Detailed/medieval_6701_6800.json',
+      'lib/data/Fragen/Detailed/medieval_6801_6900.json',
+      'lib/data/Fragen/Detailed/medieval_6901_7000.json',
     ];
 
     for (final filePath in jsonFiles) {

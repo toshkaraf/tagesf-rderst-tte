@@ -98,7 +98,7 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
                       child: Text(
                         'Erklärung',
                         style: TextStyle(
-                          fontSize: 26,
+                          fontSize: 36,
                           fontWeight: FontWeight.bold,
                         ),
                         overflow: TextOverflow.ellipsis,
@@ -111,7 +111,7 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
                         _isPlaying && !_isPaused
                             ? Icons.pause_circle_filled
                             : Icons.volume_up,
-                        size: 30,
+                        size: 38,
                         color: Colors.blue,
                       ),
                       onPressed: _togglePlayPause,
@@ -132,8 +132,8 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
                       child: Text(
                         currentExplanation,
                         style: const TextStyle(
-                          fontSize: 22,
-                          height: 1.42,
+                          fontSize: 34,
+                          height: 1.45,
                         ),
                       ),
                     ),
@@ -146,7 +146,7 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
                     minimumSize: const Size.fromHeight(54),
                     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
                     textStyle: const TextStyle(
-                      fontSize: 20,
+                      fontSize: 26,
                       fontWeight: FontWeight.w600,
                     ),
                     shape: RoundedRectangleBorder(

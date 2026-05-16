@@ -1,0 +1,4022 @@
+[
+  {
+    "id": 6101,
+    "question_de": "Was bezeichnet der mittelalterliche Begriff «Quadrivium»?",
+    "question_ru": "Что обозначает средневековый термин «квадривиум»?",
+    "correct_answer_de": "Vier mathematische Künste",
+    "correct_answer_ru": "четыре математических искусства",
+    "wrong_answers_de": [
+      "Vasallentreue gegen Nutzungsrecht",
+      "Untergeordneter des Lehnsherrn",
+      "Lehnseid des Vasallen"
+    ],
+    "wrong_answers_ru": [
+      "вассальная верность против права пользования",
+      "подчинённый сеньора",
+      "вассальная присяга"
+    ],
+    "explanation_de": "«Quadrivium»: Vier mathematische Künste.",
+    "explanation_ru": "«квадривиум»: четыре математических искусства.",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "900 CE",
+    "tags": [
+      "Bildung",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Quadrivium» gehört zum Themenfeld Bildung.",
+        "ru": "Термин «квадривиум» относится к теме «образование»."
+      },
+      {
+        "de": "Im Unterricht wird Quadrivium oft mit dem Jahr 900 verknüpft.",
+        "ru": "В курсе «квадривиум» связывают с периодом около 900 года."
+      },
+      {
+        "de": "Wer Quadrivium kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «квадривиум» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6102,
+    "question_de": "Welche Aussage trifft auf Karl Martell zu?",
+    "question_ru": "Какое утверждение верно о Карл Мартелл?",
+    "correct_answer_de": "historische Persönlichkeit (Frankenreich)",
+    "correct_answer_ru": "историческая личность (Франкское государство)",
+    "wrong_answers_de": [
+      "historische Persönlichkeit (Ottonen)",
+      "historische Persönlichkeit (Kreuzzüge)",
+      "historische Persönlichkeit (Byzanz)"
+    ],
+    "wrong_answers_ru": [
+      "историческая личность (Венгрия)",
+      "историческая личность (Салии)",
+      "историческая личность (Гуситские войны)"
+    ],
+    "explanation_de": "Karl Martell steht im Zusammenhang mit «die Schlacht bei Tours/Poitiers» (um 732). Das Ereignis ist ein Schlüsselmoment für Frankenreich.",
+    "explanation_ru": "Карл Мартелл связан(а) с событием «битва при Пуатье» (около 732 г.). Это важный момент для темы «Франкское государство».",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "732 CE",
+    "tags": [
+      "Frankenreich"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Karl Martell gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Frankenreich. Schüler ordnen diese Person oft dem Jahr 732 zu.",
+        "ru": "Карл Мартелл — одно из известных имён Средневековья в теме «Франкское государство». Событие обычно датируют около 732 года."
+      },
+      {
+        "de": "Historisch wird «die Schlacht bei Tours/Poitiers» vor allem mit Tours verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «битва при Пуатье» связывают с регионом Тур. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Frankenreich lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Schlacht bei Tours/Poitiers». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Франкское государство» полезно сравнить причины, ход и последствия: «битва при Пуатье». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6103,
+    "question_de": "Welche Entwicklung gehört zum Umfeld von Ferdinand II. von Aragón?",
+    "question_ru": "Какое развитие относится к контексту Фердинанд Арагонский?",
+    "correct_answer_de": "prägende Wirkung auf Spanien und das europäische Mittelalter",
+    "correct_answer_ru": "заметное влияние на «Испания» и европейское Средневековье",
+    "wrong_answers_de": [
+      "prägende Wirkung auf Venedig und das europäische Mittelalter",
+      "prägende Wirkung auf Habsburg und das europäische Mittelalter",
+      "prägende Wirkung auf Russland und das europäische Mittelalter"
+    ],
+    "wrong_answers_ru": [
+      "заметное влияние на «Сицилия» и европейское Средневековье",
+      "заметное влияние на «Сербия» и европейское Средневековье",
+      "заметное влияние на «Франкское государство» и европейское Средневековье"
+    ],
+    "explanation_de": "Ferdinand II. von Aragón steht im Zusammenhang mit «die Vereinigung der Kronen» (um 1492). Das Ereignis ist ein Schlüsselmoment für Spanien.",
+    "explanation_ru": "Фердинанд Арагонский связан(а) с событием «объединение корон» (около 1492 г.). Это важный момент для темы «Испания».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1492 CE",
+    "tags": [
+      "Spanien"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Ferdinand II. von Aragón gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Spanien. Schüler ordnen diese Person oft dem Jahr 1492 zu.",
+        "ru": "Фердинанд Арагонский — одно из известных имён Средневековья в теме «Испания». Событие обычно датируют около 1492 года."
+      },
+      {
+        "de": "Historisch wird «die Vereinigung der Kronen» vor allem mit Granada verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «объединение корон» связывают с регионом Гранада. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Spanien lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Vereinigung der Kronen». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Испания» полезно сравнить причины, ход и последствия: «объединение корон». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6104,
+    "question_de": "Wer wird vor allem mit den Höhepunkt des Zweiten Bulgarischen Reiches in Verbindung gebracht?",
+    "question_ru": "Кто прежде всего связан с событием: расцвет Второго Болгарского царства?",
+    "correct_answer_de": "Ivan Asen II.",
+    "correct_answer_ru": "Иван Асен II",
+    "wrong_answers_de": [
+      "Maximilian I.",
+      "Hulagu Khan",
+      "Johannes Duns Scotus"
+    ],
+    "wrong_answers_ru": [
+      "Влад Цепеш",
+      "Данте Алигьери",
+      "Хулагу"
+    ],
+    "explanation_de": "Ivan Asen II. steht im Zusammenhang mit «den Höhepunkt des Zweiten Bulgarischen Reiches» (um 1230). Das Ereignis ist ein Schlüsselmoment für Bulgarien.",
+    "explanation_ru": "Иван Асен II связан(а) с событием «расцвет Второго Болгарского царства» (около 1230 г.). Это важный момент для темы «Болгария».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1230 CE",
+    "tags": [
+      "Bulgarien"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Ivan Asen II. gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Bulgarien. Schüler ordnen diese Person oft dem Jahr 1230 zu.",
+        "ru": "Иван Асен II — одно из известных имён Средневековья в теме «Болгария». Событие обычно датируют около 1230 года."
+      },
+      {
+        "de": "Historisch wird «den Höhepunkt des Zweiten Bulgarischen Reiches» vor allem mit Tarnowo verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «расцвет Второго Болгарского царства» связывают с регионом Тырново. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Bulgarien lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Höhepunkt des Zweiten Bulgarischen Reiches». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Болгария» полезно сравнить причины, ход и последствия: «расцвет Второго Болгарского царства». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6105,
+    "question_de": "Was war eine wichtige Folge von die Teilung des Frankenreichs?",
+    "question_ru": "Каким было важное следствие: раздел империи Карла?",
+    "correct_answer_de": "prägende Wirkung auf Frankenreich und das europäische Mittelalter",
+    "correct_answer_ru": "заметное влияние на «Франкское государство» и европейское Средневековье",
+    "wrong_answers_de": [
+      "prägende Wirkung auf Osmanen und das europäische Mittelalter",
+      "prägende Wirkung auf Klosterwesen und das europäische Mittelalter",
+      "prägende Wirkung auf Ottonen und das europäische Mittelalter"
+    ],
+    "wrong_answers_ru": [
+      "заметное влияние на «Салии» и европейское Средневековье",
+      "заметное влияние на «Сельджуки» и европейское Средневековье",
+      "укрепление связи церкви и власти в латинском Западе"
+    ],
+    "explanation_de": "Lothar I. steht im Zusammenhang mit «die Teilung des Frankenreichs» (um 843). Das Ereignis ist ein Schlüsselmoment für Frankenreich.",
+    "explanation_ru": "Лотарь I связан(а) с событием «раздел империи Карла» (около 843 г.). Это важный момент для темы «Франкское государство».",
+    "difficulty": "hard",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "843 CE",
+    "tags": [
+      "Frankenreich"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Lothar I. gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Frankenreich. Schüler ordnen diese Person oft dem Jahr 843 zu.",
+        "ru": "Лотарь I — одно из известных имён Средневековья в теме «Франкское государство». Событие обычно датируют около 843 года."
+      },
+      {
+        "de": "Historisch wird «die Teilung des Frankenreichs» vor allem mit Verdun verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «раздел империи Карла» связывают с регионом Верден. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Frankenreich lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Teilung des Frankenreichs». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Франкское государство» полезно сравнить причины, ход и последствия: «раздел империи Карла». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6106,
+    "question_de": "Wer wird vor allem mit die Rückeroberung Jerusalems in Verbindung gebracht?",
+    "question_ru": "Кто прежде всего связан с событием: возвращение Иерусалима?",
+    "correct_answer_de": "Saladin",
+    "correct_answer_ru": "Саладин",
+    "wrong_answers_de": [
+      "Balduin IV.",
+      "Harald Hardrada",
+      "Leo III."
+    ],
+    "wrong_answers_ru": [
+      "Изабелла Баварская",
+      "Михаил VIII Палеолог",
+      "Казимир III Великий"
+    ],
+    "explanation_de": "Saladin schlug 1187 die Kreuzfahrer bei Hattin und eroberte Jerusalem.",
+    "explanation_ru": "Саладин разбил крестоносцев при Хаттине (1187) и взял Иерусалим.",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1187 CE",
+    "tags": [
+      "Kreuzzüge"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Er galt auch bei Christen als ehrenhafter Gegner.",
+        "ru": "Даже у христиан его считали достойным противником."
+      },
+      {
+        "de": "Ayyubidische Herrschaft verband Ägypten und Syrien.",
+        "ru": "Власть айюбидов объединяла Египет и Сирию."
+      },
+      {
+        "de": "Schlacht bei Hattin",
+        "ru": "Хаттин"
+      }
+    ]
+  },
+  {
+    "id": 6107,
+    "question_de": "Welchem Bereich des Mittelalters ordnet man Konrad von Marburg vor allem zu?",
+    "question_ru": "К какой сфере Средневековья прежде всего относят Конрад Марбург?",
+    "correct_answer_de": "Inquisition",
+    "correct_answer_ru": "Инквизиция",
+    "wrong_answers_de": [
+      "Frankreich",
+      "Russland",
+      "Florenz"
+    ],
+    "wrong_answers_ru": [
+      "Чума",
+      "Литература",
+      "Столетняя война"
+    ],
+    "explanation_de": "Konrad von Marburg gehört zum Themenfeld Inquisition. Konrad von Marburg steht im Zusammenhang mit «die erste deutsche Inquisition» (um 1233). Das Ereignis ist ein Schlüsselmoment für Inquisition.",
+    "explanation_ru": "Конрад Марбург относится к теме «Инквизиция». Конрад Марбург связан(а) с событием «первая немецкая инквизиция» (около 1233 г.). Это важный момент для темы «Инквизиция».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "institution",
+    "period": "1233 CE",
+    "tags": [
+      "Inquisition"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Konrad von Marburg gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Inquisition. Schüler ordnen diese Person oft dem Jahr 1233 zu.",
+        "ru": "Конрад Марбург — одно из известных имён Средневековья в теме «Инквизиция». Событие обычно датируют около 1233 года."
+      },
+      {
+        "de": "Historisch wird «die erste deutsche Inquisition» vor allem mit Mainz verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «первая немецкая инквизиция» связывают с регионом Майнц. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Inquisition lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die erste deutsche Inquisition». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Инквизиция» полезно сравнить причины, ход и последствия: «первая немецкая инквизиция». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6108,
+    "question_de": "Welche Entwicklung gehört zum Umfeld von Robert the Bruce?",
+    "question_ru": "Какое развитие относится к контексту Роберт Брюс?",
+    "correct_answer_de": "prägende Wirkung auf Schottland und das europäische Mittelalter",
+    "correct_answer_ru": "заметное влияние на «Шотландия» и европейское Средневековье",
+    "wrong_answers_de": [
+      "prägende Wirkung auf Mongolen und das europäische Mittelalter",
+      "prägende Wirkung auf Humanismus und das europäische Mittelalter",
+      "prägende Wirkung auf Kunst und das europäische Mittelalter"
+    ],
+    "wrong_answers_ru": [
+      "заметное влияние на «Англия» и европейское Средневековье",
+      "заметное влияние на «Инвеститурная схватка» и европейское Средневековье",
+      "заметное влияние на «Викинги» и европейское Средневековье"
+    ],
+    "explanation_de": "Robert the Bruce steht im Zusammenhang mit «die Schlacht von Bannockburn» (um 1314). Das Ereignis ist ein Schlüsselmoment für Schottland.",
+    "explanation_ru": "Роберт Брюс связан(а) с событием «битва при Бэннокберне» (около 1314 г.). Это важный момент для темы «Шотландия».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1314 CE",
+    "tags": [
+      "Schottland"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Robert the Bruce gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Schottland. Schüler ordnen diese Person oft dem Jahr 1314 zu.",
+        "ru": "Роберт Брюс — одно из известных имён Средневековья в теме «Шотландия». Событие обычно датируют около 1314 года."
+      },
+      {
+        "de": "Historisch wird «die Schlacht von Bannockburn» vor allem mit Bannockburn verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «битва при Бэннокберне» связывают с регионом Бэннокберн. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Schottland lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Schlacht von Bannockburn». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Шотландия» полезно сравнить причины, ход и последствия: «битва при Бэннокберне». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6109,
+    "question_de": "In welchem Jahr fand den Ersten Kreuzzug statt?",
+    "question_ru": "В каком году произошло: первый крестовый поход?",
+    "correct_answer_de": "1099 n. Chr.",
+    "correct_answer_ru": "1099 г.",
+    "wrong_answers_de": [
+      "1397 CE",
+      "1341 CE",
+      "1046 CE"
+    ],
+    "wrong_answers_ru": [
+      "732 г.",
+      "1443 г.",
+      "1122 г."
+    ],
+    "explanation_de": "Raymond von Toulouse steht im Zusammenhang mit «den Ersten Kreuzzug» (um 1099). Das Ereignis ist ein Schlüsselmoment für Kreuzzüge. Das Ereignis datiert historisch in das Jahr 1099 n. Chr..",
+    "explanation_ru": "Раймунд Тулузский связан(а) с событием «первый крестовый поход» (около 1099 г.). Это важный момент для темы «Крестовые походы». Событие датируется 1099 г..",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "date",
+    "period": "1099 CE",
+    "tags": [
+      "Kreuzzüge"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Raymond von Toulouse gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Kreuzzüge. Schüler ordnen diese Person oft dem Jahr 1099 zu.",
+        "ru": "Раймунд Тулузский — одно из известных имён Средневековья в теме «Крестовые походы». Событие обычно датируют около 1099 года."
+      },
+      {
+        "de": "Historisch wird «den Ersten Kreuzzug» vor allem mit Jerusalem verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «первый крестовый поход» связывают с регионом Иерусалим. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Kreuzzüge lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Ersten Kreuzzug». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Крестовые походы» полезно сравнить причины, ход и последствия: «первый крестовый поход». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6110,
+    "question_de": "Wo spielte sich den Wat-Tyler-Aufstand hauptsächlich ab?",
+    "question_ru": "Где главным образом происходило: восстание Уота Тайлера?",
+    "correct_answer_de": "London",
+    "correct_answer_ru": "Лондон",
+    "wrong_answers_de": [
+      "Verdun",
+      "Konstantinopel",
+      "Clermont"
+    ],
+    "wrong_answers_ru": [
+      "Париж",
+      "Верден",
+      "Тырново"
+    ],
+    "explanation_de": "Der Schwerpunkt lag in London. Bauernaufstand von 1381 steht im Zusammenhang mit «den Wat-Tyler-Aufstand» (um 1381). Das Ereignis ist ein Schlüsselmoment für England.",
+    "explanation_ru": "Центр событий — Лондон. Крестьянское восстание 1381 связан(а) с событием «восстание Уота Тайлера» (около 1381 г.). Это важный момент для темы «Англия».",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "geography",
+    "period": "1381 CE",
+    "tags": [
+      "England"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Bauernaufstand von 1381 gehört zu den bekanntesten Namen des Mittelalters im Themenfeld England. Schüler ordnen diese Person oft dem Jahr 1381 zu.",
+        "ru": "Крестьянское восстание 1381 — одно из известных имён Средневековья в теме «Англия». Событие обычно датируют около 1381 года."
+      },
+      {
+        "de": "Historisch wird «den Wat-Tyler-Aufstand» vor allem mit London verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «восстание Уота Тайлера» связывают с регионом Лондон. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von England lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Wat-Tyler-Aufstand». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Англия» полезно сравнить причины, ход и последствия: «восстание Уота Тайлера». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6111,
+    "question_de": "Welcher historische Name passt zum Ereignis «die Rückeroberung Jerusalems»?",
+    "question_ru": "Какое имя соответствует событию «возвращение Иерусалима»?",
+    "correct_answer_de": "Saladin",
+    "correct_answer_ru": "Саладин",
+    "wrong_answers_de": [
+      "Philipp IV. der Schöne",
+      "Franz von Assisi",
+      "Owain Glyndŵr"
+    ],
+    "wrong_answers_ru": [
+      "Ягайло",
+      "Видукинд",
+      "Годфруа де Бульон"
+    ],
+    "explanation_de": "Saladin schlug 1187 die Kreuzfahrer bei Hattin und eroberte Jerusalem.",
+    "explanation_ru": "Саладин разбил крестоносцев при Хаттине (1187) и взял Иерусалим.",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1187 CE",
+    "tags": [
+      "Kreuzzüge"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Er galt auch bei Christen als ehrenhafter Gegner.",
+        "ru": "Даже у христиан его считали достойным противником."
+      },
+      {
+        "de": "Ayyubidische Herrschaft verband Ägypten und Syrien.",
+        "ru": "Власть айюбидов объединяла Египет и Сирию."
+      },
+      {
+        "de": "Schlacht bei Hattin",
+        "ru": "Хаттин"
+      }
+    ]
+  },
+  {
+    "id": 6112,
+    "question_de": "Was war eine wichtige Folge von den Fall Konstantinopels 1204?",
+    "question_ru": "Каким было важное следствие: падение Константинополя 1204?",
+    "correct_answer_de": "prägende Wirkung auf Byzanz und das europäische Mittelalter",
+    "correct_answer_ru": "заметное влияние на «Византия» и европейское Средневековье",
+    "wrong_answers_de": [
+      "prägende Wirkung auf Ungarn und das europäische Mittelalter",
+      "prägende Wirkung auf Wales und das europäische Mittelalter",
+      "prägende Wirkung auf Luxemburger und das europäische Mittelalter"
+    ],
+    "wrong_answers_ru": [
+      "заметное влияние на «Шотландия» и европейское Средневековье",
+      "заметное влияние на «Штауфены» и европейское Средневековье",
+      "заметное влияние на «Англия» и европейское Средневековье"
+    ],
+    "explanation_de": "Alexios V. Dukas steht im Zusammenhang mit «den Fall Konstantinopels 1204» (um 1204). Das Ereignis ist ein Schlüsselmoment für Byzanz.",
+    "explanation_ru": "Алексей V Дук связан(а) с событием «падение Константинополя 1204» (около 1204 г.). Это важный момент для темы «Византия».",
+    "difficulty": "hard",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1204 CE",
+    "tags": [
+      "Byzanz"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Alexios V. Dukas gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Byzanz. Schüler ordnen diese Person oft dem Jahr 1204 zu.",
+        "ru": "Алексей V Дук — одно из известных имён Средневековья в теме «Византия». Событие обычно датируют около 1204 года."
+      },
+      {
+        "de": "Historisch wird «den Fall Konstantinopels 1204» vor allem mit Konstantinopel verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «падение Константинополя 1204» связывают с регионом Константинополь. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Byzanz lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Fall Konstantinopels 1204». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Византия» полезно сравнить причины, ход и последствия: «падение Константинополя 1204». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6113,
+    "question_de": "Wer wird vor allem mit den Buchdruck mit beweglichen Lettern in Verbindung gebracht?",
+    "question_ru": "Кто прежде всего связан с событием: книгопечатание?",
+    "correct_answer_de": "Johannes Gutenberg",
+    "correct_answer_ru": "Иоганн Гутенберг",
+    "wrong_answers_de": [
+      "Ivan Kalita",
+      "Karl IV.",
+      "Wenzel von Böhmen"
+    ],
+    "wrong_answers_ru": [
+      "Чёрная смерть",
+      "Чингисхан",
+      "Карл VI"
+    ],
+    "explanation_de": "Johannes Gutenberg steht im Zusammenhang mit «den Buchdruck mit beweglichen Lettern» (um 1450). Das Ereignis ist ein Schlüsselmoment für Kultur.",
+    "explanation_ru": "Иоганн Гутенберг связан(а) с событием «книгопечатание» (около 1450 г.). Это важный момент для темы «Культура».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1450 CE",
+    "tags": [
+      "Kultur"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Johannes Gutenberg gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Kultur. Schüler ordnen diese Person oft dem Jahr 1450 zu.",
+        "ru": "Иоганн Гутенберг — одно из известных имён Средневековья в теме «Культура». Событие обычно датируют около 1450 года."
+      },
+      {
+        "de": "Historisch wird «den Buchdruck mit beweglichen Lettern» vor allem mit Mainz verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «книгопечатание» связывают с регионом Майнц. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Kultur lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Buchdruck mit beweglichen Lettern». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Культура» полезно сравнить причины, ход и последствия: «книгопечатание». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6114,
+    "question_de": "Welche Erklärung passt zu «Varjage»?",
+    "question_ru": "Какое объяснение подходит к «варяги»?",
+    "correct_answer_de": "Nordische Krieger in der Rus",
+    "correct_answer_ru": "скандинавские воины на Руси",
+    "wrong_answers_de": [
+      "Lehnseid des Vasallen",
+      "Untergeordneter des Lehnsherrn",
+      "Vasallentreue gegen Nutzungsrecht"
+    ],
+    "wrong_answers_ru": [
+      "вассальная присяга",
+      "подчинённый сеньора",
+      "вассальная верность против права пользования"
+    ],
+    "explanation_de": "Richtig ist: Nordische Krieger in der Rus.",
+    "explanation_ru": "Верно: скандинавские воины на Руси.",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "900 CE",
+    "tags": [
+      "Russland",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Varjage» gehört zum Themenfeld Russland.",
+        "ru": "Термин «варяги» относится к теме «Русь»."
+      },
+      {
+        "de": "Im Unterricht wird Varjage oft mit dem Jahr 900 verknüpft.",
+        "ru": "В курсе «варяги» связывают с периодом около 900 года."
+      },
+      {
+        "de": "Wer Varjage kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «варяги» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6115,
+    "question_de": "Wer wird vor allem mit die Eroberung Kiews in Verbindung gebracht?",
+    "question_ru": "Кто прежде всего связан с событием: разорение Киева?",
+    "correct_answer_de": "Batu Khan",
+    "correct_answer_ru": "Батый",
+    "wrong_answers_de": [
+      "Alexios V. Dukas",
+      "Malek-Schah I.",
+      "Innozenz III."
+    ],
+    "wrong_answers_ru": [
+      "Карл Лысый",
+      "Хайме I Завоеватель",
+      "Генрих V"
+    ],
+    "explanation_de": "Batu Khan steht im Zusammenhang mit «die Eroberung Kiews» (um 1240). Das Ereignis ist ein Schlüsselmoment für Mongolen.",
+    "explanation_ru": "Батый связан(а) с событием «разорение Киева» (около 1240 г.). Это важный момент для темы «Монголы».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1240 CE",
+    "tags": [
+      "Mongolen"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Batu Khan gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Mongolen. Schüler ordnen diese Person oft dem Jahr 1240 zu.",
+        "ru": "Батый — одно из известных имён Средневековья в теме «Монголы». Событие обычно датируют около 1240 года."
+      },
+      {
+        "de": "Historisch wird «die Eroberung Kiews» vor allem mit Kiew verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «разорение Киева» связывают с регионом Киев. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Mongolen lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Eroberung Kiews». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Монголы» полезно сравнить причины, ход и последствия: «разорение Киева». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6116,
+    "question_de": "Wer wird vor allem mit die Goldene Bulle in Verbindung gebracht?",
+    "question_ru": "Кто прежде всего связан с событием: Золотая булла?",
+    "correct_answer_de": "Karl IV.",
+    "correct_answer_ru": "Карл IV",
+    "wrong_answers_de": [
+      "Karl Martell",
+      "Kublai Khan",
+      "Johann I. von Portugal"
+    ],
+    "wrong_answers_ru": [
+      "Ибн Рушд",
+      "Михаил VIII Палеолог",
+      "Ян Гус"
+    ],
+    "explanation_de": "Karl IV. steht im Zusammenhang mit «die Goldene Bulle» (um 1356). Das Ereignis ist ein Schlüsselmoment für Luxemburger.",
+    "explanation_ru": "Карл IV связан(а) с событием «Золотая булла» (около 1356 г.). Это важный момент для темы «Люксембурги».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1356 CE",
+    "tags": [
+      "Luxemburger"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Karl IV. gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Luxemburger. Schüler ordnen diese Person oft dem Jahr 1356 zu.",
+        "ru": "Карл IV — одно из известных имён Средневековья в теме «Люксембурги». Событие обычно датируют около 1356 года."
+      },
+      {
+        "de": "Historisch wird «die Goldene Bulle» vor allem mit Nürnberg verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «Золотая булла» связывают с регионом Нюрнберг. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Luxemburger lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Goldene Bulle». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Люксембурги» полезно сравнить причины, ход и последствия: «Золотая булла». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6117,
+    "question_de": "Welche Erklärung passt zu «Ritterorden»?",
+    "question_ru": "Какое объяснение подходит к «рыцарский орден»?",
+    "correct_answer_de": "Geistlich-ritterliche Gemeinschaft",
+    "correct_answer_ru": "духовно-рыцарское объединение",
+    "wrong_answers_de": [
+      "Lehnseid des Vasallen",
+      "Untergeordneter des Lehnsherrn",
+      "Vasallentreue gegen Nutzungsrecht"
+    ],
+    "wrong_answers_ru": [
+      "вассальная присяга",
+      "подчинённый сеньора",
+      "вассальная верность против права пользования"
+    ],
+    "explanation_de": "Richtig ist: Geistlich-ritterliche Gemeinschaft.",
+    "explanation_ru": "Верно: духовно-рыцарское объединение.",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "1120 CE",
+    "tags": [
+      "Ordenswesen",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Ritterorden» gehört zum Themenfeld Ordenswesen.",
+        "ru": "Термин «рыцарский орден» относится к теме «монашество»."
+      },
+      {
+        "de": "Im Unterricht wird Ritterorden oft mit dem Jahr 1120 verknüpft.",
+        "ru": "В курсе «рыцарский орден» связывают с периодом около 1120 года."
+      },
+      {
+        "de": "Wer Ritterorden kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «рыцарский орден» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6118,
+    "question_de": "Welcher historische Name passt zum Ereignis «die Rückeroberung Konstantinopels»?",
+    "question_ru": "Какое имя соответствует событию «возвращение Константинополя»?",
+    "correct_answer_de": "Michael VIII. Palaiologos",
+    "correct_answer_ru": "Михаил VIII Палеолог",
+    "wrong_answers_de": [
+      "Cimabue",
+      "Heinrich III.",
+      "Mehmed II."
+    ],
+    "wrong_answers_ru": [
+      "Григорий XI",
+      "Филипп IV Красивый",
+      "Фридрих Барбаросса"
+    ],
+    "explanation_de": "Michael VIII. Palaiologos steht im Zusammenhang mit «die Rückeroberung Konstantinopels» (um 1261). Das Ereignis ist ein Schlüsselmoment für Byzanz.",
+    "explanation_ru": "Михаил VIII Палеолог связан(а) с событием «возвращение Константинополя» (около 1261 г.). Это важный момент для темы «Византия».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1261 CE",
+    "tags": [
+      "Byzanz"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Michael VIII. Palaiologos gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Byzanz. Schüler ordnen diese Person oft dem Jahr 1261 zu.",
+        "ru": "Михаил VIII Палеолог — одно из известных имён Средневековья в теме «Византия». Событие обычно датируют около 1261 года."
+      },
+      {
+        "de": "Historisch wird «die Rückeroberung Konstantinopels» vor allem mit Konstantinopel verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «возвращение Константинополя» связывают с регионом Константинополь. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Byzanz lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Rückeroberung Konstantinopels». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Византия» полезно сравнить причины, ход и последствия: «возвращение Константинополя». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6119,
+    "question_de": "Wo spielte sich die Regentschaft während des Wahnsinns Karls VI. hauptsächlich ab?",
+    "question_ru": "Где главным образом происходило: регентство при безумии Карла VI?",
+    "correct_answer_de": "Paris",
+    "correct_answer_ru": "Париж",
+    "wrong_answers_de": [
+      "Canossa",
+      "Wladimir",
+      "Isfahan"
+    ],
+    "wrong_answers_ru": [
+      "Краков",
+      "Алжубаррота",
+      "Грюнвальд"
+    ],
+    "explanation_de": "Der Schwerpunkt lag in Paris. Isabeau von Bayern steht im Zusammenhang mit «die Regentschaft während des Wahnsinns Karls VI.» (um 1420). Das Ereignis ist ein Schlüsselmoment für Frankreich.",
+    "explanation_ru": "Центр событий — Париж. Изабелла Баварская связан(а) с событием «регентство при безумии Карла VI» (около 1420 г.). Это важный момент для темы «Франция».",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "geography",
+    "period": "1420 CE",
+    "tags": [
+      "Frankreich"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Isabeau von Bayern gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Frankreich. Schüler ordnen diese Person oft dem Jahr 1420 zu.",
+        "ru": "Изабелла Баварская — одно из известных имён Средневековья в теме «Франция». Событие обычно датируют около 1420 года."
+      },
+      {
+        "de": "Historisch wird «die Regentschaft während des Wahnsinns Karls VI.» vor allem mit Paris verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «регентство при безумии Карла VI» связывают с регионом Париж. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Frankreich lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Regentschaft während des Wahnsinns Karls VI.». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Франция» полезно сравнить причины, ход и последствия: «регентство при безумии Карла VI». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6120,
+    "question_de": "Wo spielte sich die Taufe der Kiewer Rus hauptsächlich ab?",
+    "question_ru": "Где главным образом происходило: крещение Руси?",
+    "correct_answer_de": "Kiew",
+    "correct_answer_ru": "Киев",
+    "wrong_answers_de": [
+      "Reims",
+      "Konstantinopel",
+      "Rom"
+    ],
+    "wrong_answers_ru": [
+      "Прага",
+      "Падуя",
+      "Флоренция"
+    ],
+    "explanation_de": "Der Schwerpunkt lag in Kiew. Wladimir der Heilige steht im Zusammenhang mit «die Taufe der Kiewer Rus» (um 988). Das Ereignis ist ein Schlüsselmoment für Kiewer Rus.",
+    "explanation_ru": "Центр событий — Киев. Владимир Святой связан(а) с событием «крещение Руси» (около 988 г.). Это важный момент для темы «Киевская Русь».",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "geography",
+    "period": "988 CE",
+    "tags": [
+      "Kiewer Rus"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Wladimir der Heilige gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Kiewer Rus. Schüler ordnen diese Person oft dem Jahr 988 zu.",
+        "ru": "Владимир Святой — одно из известных имён Средневековья в теме «Киевская Русь». Событие обычно датируют около 988 года."
+      },
+      {
+        "de": "Historisch wird «die Taufe der Kiewer Rus» vor allem mit Kiew verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «крещение Руси» связывают с регионом Киев. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Kiewer Rus lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Taufe der Kiewer Rus». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Киевская Русь» полезно сравнить причины, ход и последствия: «крещение Руси». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6121,
+    "question_de": "Was gilt als wesentliche Ursache für die Renaissance-Hofhaltung in Buda?",
+    "question_ru": "Что считается важной причиной: ренессансный двор в Буде?",
+    "correct_answer_de": "Spannungen und Machtkämpfe im Bereich Ungarn",
+    "correct_answer_ru": "напряжённость и борьба за власть в сфере «Венгрия»",
+    "wrong_answers_de": [
+      "Schwäche der Kreuzfahrerstaaten nach der Schlacht bei Hattin",
+      "Spannungen und Machtkämpfe im Bereich Staufer",
+      "Spannungen und Machtkämpfe im Bereich Hundertjähriger Krieg"
+    ],
+    "wrong_answers_ru": [
+      "напряжённость и борьба за власть в сфере «Инквизиция»",
+      "напряжённость и борьба за власть в сфере «Викинги»",
+      "напряжённость и борьба за власть в сфере «Франция»"
+    ],
+    "explanation_de": "Matthias Corvinus steht im Zusammenhang mit «die Renaissance-Hofhaltung in Buda» (um 1458). Das Ereignis ist ein Schlüsselmoment für Ungarn.",
+    "explanation_ru": "Матьяш Корвин связан(а) с событием «ренессансный двор в Буде» (около 1458 г.). Это важный момент для темы «Венгрия».",
+    "difficulty": "hard",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1458 CE",
+    "tags": [
+      "Ungarn"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Matthias Corvinus gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Ungarn. Schüler ordnen diese Person oft dem Jahr 1458 zu.",
+        "ru": "Матьяш Корвин — одно из известных имён Средневековья в теме «Венгрия». Событие обычно датируют около 1458 года."
+      },
+      {
+        "de": "Historisch wird «die Renaissance-Hofhaltung in Buda» vor allem mit Buda verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «ренессансный двор в Буде» связывают с регионом Буда. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Ungarn lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Renaissance-Hofhaltung in Buda». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Венгрия» полезно сравнить причины, ход и последствия: «ренессансный двор в Буде». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6122,
+    "question_de": "Was gilt als wesentliche Ursache für die Eroberung Granadas?",
+    "question_ru": "Что считается важной причиной: завоевание Гранады?",
+    "correct_answer_de": "Spannungen und Machtkämpfe im Bereich Spanien",
+    "correct_answer_ru": "напряжённость и борьба за власть в сфере «Испания»",
+    "wrong_answers_de": [
+      "Spannungen und Machtkämpfe im Bereich Staufer",
+      "Spannungen und Machtkämpfe im Bereich Byzanz",
+      "Spannungen und Machtkämpfe im Bereich Wikinger"
+    ],
+    "wrong_answers_ru": [
+      "напряжённость и борьба за власть в сфере «Франция»",
+      "напряжённость и борьба за власть в сфере «Альбигойцы»",
+      "напряжённость и борьба за власть в сфере «Искусство»"
+    ],
+    "explanation_de": "Isabella I. von Kastilien steht im Zusammenhang mit «die Eroberung Granadas» (um 1492). Das Ereignis ist ein Schlüsselmoment für Spanien.",
+    "explanation_ru": "Изабелла I связан(а) с событием «завоевание Гранады» (около 1492 г.). Это важный момент для темы «Испания».",
+    "difficulty": "hard",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1492 CE",
+    "tags": [
+      "Spanien"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Isabella I. von Kastilien gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Spanien. Schüler ordnen diese Person oft dem Jahr 1492 zu.",
+        "ru": "Изабелла I — одно из известных имён Средневековья в теме «Испания». Событие обычно датируют около 1492 года."
+      },
+      {
+        "de": "Historisch wird «die Eroberung Granadas» vor allem mit Granada verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «завоевание Гранады» связывают с регионом Гранада. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Spanien lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Eroberung Granadas». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Испания» полезно сравнить причины, ход и последствия: «завоевание Гранады». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6123,
+    "question_de": "Welche Aussage trifft auf Stefan der Große zu?",
+    "question_ru": "Какое утверждение верно о Стефан Великий?",
+    "correct_answer_de": "historische Persönlichkeit (Moldawien)",
+    "correct_answer_ru": "историческая личность (Молдавия)",
+    "wrong_answers_de": [
+      "Bauernmädchen und Heerführerin",
+      "historische Persönlichkeit (Frankenreich)",
+      "historische Persönlichkeit (Hussitenkriege)"
+    ],
+    "wrong_answers_ru": [
+      "историческая личность (Англия)",
+      "историческая личность (Крестовые походы)",
+      "историческая личность (Византия)"
+    ],
+    "explanation_de": "Stefan der Große steht im Zusammenhang mit «die Stärkung der Moldau» (um 1457). Das Ereignis ist ein Schlüsselmoment für Moldawien.",
+    "explanation_ru": "Стефан Великий связан(а) с событием «укрепление Молдавии» (около 1457 г.). Это важный момент для темы «Молдавия».",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1457 CE",
+    "tags": [
+      "Moldawien"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Stefan der Große gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Moldawien. Schüler ordnen diese Person oft dem Jahr 1457 zu.",
+        "ru": "Стефан Великий — одно из известных имён Средневековья в теме «Молдавия». Событие обычно датируют около 1457 года."
+      },
+      {
+        "de": "Historisch wird «die Stärkung der Moldau» vor allem mit Suceava verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «укрепление Молдавии» связывают с регионом Сучава. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Moldawien lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Stärkung der Moldau». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Молдавия» полезно сравнить причины, ход и последствия: «укрепление Молдавии». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6124,
+    "question_de": "Welches Ereignis wird mit Bernhard von Clairvaux verbunden?",
+    "question_ru": "С каким событием связывают Бернард Клюнийский?",
+    "correct_answer_de": "den Aufruf zum Zweiten Kreuzzug",
+    "correct_answer_ru": "призыв ко второму походу",
+    "wrong_answers_de": [
+      "die Krönung zum polnischen König",
+      "die Krönung zum Zar der Serben",
+      "die Schlacht bei Tours/Poitiers"
+    ],
+    "wrong_answers_ru": [
+      "завоевание Валенсии",
+      "начало Каролингов",
+      "возвращение Константинополя"
+    ],
+    "explanation_de": "Bernhard von Clairvaux steht im Zusammenhang mit «den Aufruf zum Zweiten Kreuzzug» (um 1146). Das Ereignis ist ein Schlüsselmoment für Ordenswesen.",
+    "explanation_ru": "Бернард Клюнийский связан(а) с событием «призыв ко второму походу» (около 1146 г.). Это важный момент для темы «Монашество».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "military",
+    "period": "1146 CE",
+    "tags": [
+      "Ordenswesen"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Bernhard von Clairvaux gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Ordenswesen. Schüler ordnen diese Person oft dem Jahr 1146 zu.",
+        "ru": "Бернард Клюнийский — одно из известных имён Средневековья в теме «Монашество». Событие обычно датируют около 1146 года."
+      },
+      {
+        "de": "Historisch wird «den Aufruf zum Zweiten Kreuzzug» vor allem mit Clairvaux verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «призыв ко второму походу» связывают с регионом Клерво. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Ordenswesen lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Aufruf zum Zweiten Kreuzzug». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Монашество» полезно сравнить причины, ход и последствия: «призыв ко второму походу». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6125,
+    "question_de": "Welches Ereignis wird mit Karl Martell verbunden?",
+    "question_ru": "С каким событием связывают Карл Мартелл?",
+    "correct_answer_de": "die Schlacht bei Tours/Poitiers",
+    "correct_answer_ru": "битва при Пуатье",
+    "wrong_answers_de": [
+      "den Frieden von Wedmore",
+      "die Canterbury Tales",
+      "den Ausbruch des Hundertjährigen Krieges"
+    ],
+    "wrong_answers_ru": [
+      "начало Великой схизмы",
+      "участие в четвёртом походе",
+      "захват Сеуты"
+    ],
+    "explanation_de": "Karl Martell steht im Zusammenhang mit «die Schlacht bei Tours/Poitiers» (um 732). Das Ereignis ist ein Schlüsselmoment für Frankenreich.",
+    "explanation_ru": "Карл Мартелл связан(а) с событием «битва при Пуатье» (около 732 г.). Это важный момент для темы «Франкское государство».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "military",
+    "period": "732 CE",
+    "tags": [
+      "Frankenreich"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Karl Martell gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Frankenreich. Schüler ordnen diese Person oft dem Jahr 732 zu.",
+        "ru": "Карл Мартелл — одно из известных имён Средневековья в теме «Франкское государство». Событие обычно датируют около 732 года."
+      },
+      {
+        "de": "Historisch wird «die Schlacht bei Tours/Poitiers» vor allem mit Tours verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «битва при Пуатье» связывают с регионом Тур. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Frankenreich lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Schlacht bei Tours/Poitiers». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Франкское государство» полезно сравнить причины, ход и последствия: «битва при Пуатье». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6126,
+    "question_de": "Was bezeichnet der mittelalterliche Begriff «Landfriede»?",
+    "question_ru": "Что обозначает средневековый термин «земский мир»?",
+    "correct_answer_de": "Schutz des Reisens und Handels",
+    "correct_answer_ru": "охрана путей и торговли",
+    "wrong_answers_de": [
+      "Vasallentreue gegen Nutzungsrecht",
+      "Untergeordneter des Lehnsherrn",
+      "Lehnseid des Vasallen"
+    ],
+    "wrong_answers_ru": [
+      "вассальная верность против права пользования",
+      "подчинённый сеньора",
+      "вассальная присяга"
+    ],
+    "explanation_de": "«Landfriede»: Schutz des Reisens und Handels.",
+    "explanation_ru": "«земский мир»: охрана путей и торговли.",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "1103 CE",
+    "tags": [
+      "Reich",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Landfriede» gehört zum Themenfeld Reich.",
+        "ru": "Термин «земский мир» относится к теме «империя»."
+      },
+      {
+        "de": "Im Unterricht wird Landfriede oft mit dem Jahr 1103 verknüpft.",
+        "ru": "В курсе «земский мир» связывают с периодом около 1103 года."
+      },
+      {
+        "de": "Wer Landfriede kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «земский мир» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6127,
+    "question_de": "Was war eine wichtige Folge von den Wat-Tyler-Aufstand?",
+    "question_ru": "Каким было важное следствие: восстание Уота Тайлера?",
+    "correct_answer_de": "prägende Wirkung auf England und das europäische Mittelalter",
+    "correct_answer_ru": "заметное влияние на «Англия» и европейское Средневековье",
+    "wrong_answers_de": [
+      "prägende Wirkung auf Staufer und das europäische Mittelalter",
+      "prägende Wirkung auf Western Schisma und das europäische Mittelalter",
+      "prägende Wirkung auf Scholastik und das europäische Mittelalter"
+    ],
+    "wrong_answers_ru": [
+      "заметное влияние на «Сербия» и европейское Средневековье",
+      "заметное влияние на «Монастыри» и европейское Средневековье",
+      "заметное влияние на «Венгрия» и европейское Средневековье"
+    ],
+    "explanation_de": "Bauernaufstand von 1381 steht im Zusammenhang mit «den Wat-Tyler-Aufstand» (um 1381). Das Ereignis ist ein Schlüsselmoment für England.",
+    "explanation_ru": "Крестьянское восстание 1381 связан(а) с событием «восстание Уота Тайлера» (около 1381 г.). Это важный момент для темы «Англия».",
+    "difficulty": "hard",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1381 CE",
+    "tags": [
+      "England"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Bauernaufstand von 1381 gehört zu den bekanntesten Namen des Mittelalters im Themenfeld England. Schüler ordnen diese Person oft dem Jahr 1381 zu.",
+        "ru": "Крестьянское восстание 1381 — одно из известных имён Средневековья в теме «Англия». Событие обычно датируют около 1381 года."
+      },
+      {
+        "de": "Historisch wird «den Wat-Tyler-Aufstand» vor allem mit London verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «восстание Уота Тайлера» связывают с регионом Лондон. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von England lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Wat-Tyler-Aufstand». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Англия» полезно сравнить причины, ход и последствия: «восстание Уота Тайлера». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6128,
+    "question_de": "Welche Aussage trifft auf Friedrich I. Barbarossa zu?",
+    "question_ru": "Какое утверждение верно о Фридрих I Барбаросса?",
+    "correct_answer_de": "Kaiser des Heiligen Römischen Reiches",
+    "correct_answer_ru": "император Священной Римской империи",
+    "wrong_answers_de": [
+      "Ostfränkischer König und Kaiser",
+      "historische Persönlichkeit (Sizilien)",
+      "historische Persönlichkeit (Philosophie)"
+    ],
+    "wrong_answers_ru": [
+      "историческая личность (Франция)",
+      "историческая личность (Священная Римская империя)",
+      "историческая личность (Халифат)"
+    ],
+    "explanation_de": "Barbarossa führte 1189 den Dritten Kreuzzug an und ertrank 1190 im Saleph.",
+    "explanation_ru": "Барбаросса возглавил третий поход (1189) и утонул в 1190 году в реке Салеф.",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1189 CE",
+    "tags": [
+      "Staufer"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Seine Politik verband Reichsgewalt, Italiens Städte und die Kurie.",
+        "ru": "Его политика связывала империю, итальянские города и курию."
+      },
+      {
+        "de": "Mythen um Barbarossa prägten das deutsche Mittelalter bis in die Neuzeit.",
+        "ru": "Мифы о Барбароссе влияли на немецкую культуру до Нового времени."
+      },
+      {
+        "de": "Dritter Kreuzzug",
+        "ru": "Третий крестовый поход"
+      }
+    ]
+  },
+  {
+    "id": 6129,
+    "question_de": "Welches Ereignis wird mit El Cid verbunden?",
+    "question_ru": "С каким событием связывают Сид Кампеадор?",
+    "correct_answer_de": "die Eroberung von Valencia",
+    "correct_answer_ru": "завоевание Валенсии",
+    "wrong_answers_de": [
+      "den Aufruf zum Zweiten Kreuzzug",
+      "den Ersten Kreuzzug",
+      "die Schlacht von Manzikert"
+    ],
+    "wrong_answers_ru": [
+      "Золотая булла",
+      "основание Османской империи",
+      "подписание Великой хартии вольностей"
+    ],
+    "explanation_de": "El Cid steht im Zusammenhang mit «die Eroberung von Valencia» (um 1094). Das Ereignis ist ein Schlüsselmoment für Spanien.",
+    "explanation_ru": "Сид Кампеадор связан(а) с событием «завоевание Валенсии» (около 1094 г.). Это важный момент для темы «Испания».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "military",
+    "period": "1094 CE",
+    "tags": [
+      "Spanien"
+    ],
+    "interesting_facts": [
+      {
+        "de": "El Cid gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Spanien. Schüler ordnen diese Person oft dem Jahr 1094 zu.",
+        "ru": "Сид Кампеадор — одно из известных имён Средневековья в теме «Испания». Событие обычно датируют около 1094 года."
+      },
+      {
+        "de": "Historisch wird «die Eroberung von Valencia» vor allem mit Valencia verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «завоевание Валенсии» связывают с регионом Валенсия. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Spanien lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Eroberung von Valencia». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Испания» полезно сравнить причины, ход и последствия: «завоевание Валенсии». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6130,
+    "question_de": "Welche Erklärung passt zu «Humanismus»?",
+    "question_ru": "Какое объяснение подходит к «гуманизм»?",
+    "correct_answer_de": "Rückbesinnung auf antike Texte",
+    "correct_answer_ru": "обращение к античности",
+    "wrong_answers_de": [
+      "Lehnseid des Vasallen",
+      "Untergeordneter des Lehnsherrn",
+      "Vasallentreue gegen Nutzungsrecht"
+    ],
+    "wrong_answers_ru": [
+      "вассальная присяга",
+      "подчинённый сеньора",
+      "вассальная верность против права пользования"
+    ],
+    "explanation_de": "Richtig ist: Rückbesinnung auf antike Texte.",
+    "explanation_ru": "Верно: обращение к античности.",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "1400 CE",
+    "tags": [
+      "Renaissance",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Humanismus» gehört zum Themenfeld Renaissance.",
+        "ru": "Термин «гуманизм» относится к теме «Ренессанс»."
+      },
+      {
+        "de": "Im Unterricht wird Humanismus oft mit dem Jahr 1400 verknüpft.",
+        "ru": "В курсе «гуманизм» связывают с периодом около 1400 года."
+      },
+      {
+        "de": "Wer Humanismus kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «гуманизм» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6131,
+    "question_de": "In welchem Jahr fand die erste deutsche Inquisition statt?",
+    "question_ru": "В каком году произошло: первая немецкая инквизиция?",
+    "correct_answer_de": "1233 n. Chr.",
+    "correct_answer_ru": "1233 г.",
+    "wrong_answers_de": [
+      "1377 CE",
+      "1420 CE",
+      "1492 CE"
+    ],
+    "wrong_answers_ru": [
+      "1046 г.",
+      "1415 г.",
+      "1215 г."
+    ],
+    "explanation_de": "Konrad von Marburg steht im Zusammenhang mit «die erste deutsche Inquisition» (um 1233). Das Ereignis ist ein Schlüsselmoment für Inquisition. Das Ereignis datiert historisch in das Jahr 1233 n. Chr..",
+    "explanation_ru": "Конрад Марбург связан(а) с событием «первая немецкая инквизиция» (около 1233 г.). Это важный момент для темы «Инквизиция». Событие датируется 1233 г..",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "date",
+    "period": "1233 CE",
+    "tags": [
+      "Inquisition"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Konrad von Marburg gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Inquisition. Schüler ordnen diese Person oft dem Jahr 1233 zu.",
+        "ru": "Конрад Марбург — одно из известных имён Средневековья в теме «Инквизиция». Событие обычно датируют около 1233 года."
+      },
+      {
+        "de": "Historisch wird «die erste deutsche Inquisition» vor allem mit Mainz verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «первая немецкая инквизиция» связывают с регионом Майнц. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Inquisition lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die erste deutsche Inquisition». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Инквизиция» полезно сравнить причины, ход и последствия: «первая немецкая инквизиция». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6132,
+    "question_de": "Was war eine wichtige Folge von den Umzug der Kurie nach Avignon?",
+    "question_ru": "Каким было важное следствие: перенос курии в Авиньон?",
+    "correct_answer_de": "prägende Wirkung auf Avignon und das europäische Mittelalter",
+    "correct_answer_ru": "заметное влияние на «Авиньон» и европейское Средневековье",
+    "wrong_answers_de": [
+      "Auslöser des Dritten Kreuzzugs",
+      "prägende Wirkung auf Seldschuken und das europäische Mittelalter",
+      "prägende Wirkung auf Literatur und das europäische Mittelalter"
+    ],
+    "wrong_answers_ru": [
+      "заметное влияние на «Венеция» и европейское Средневековье",
+      "заметное влияние на «Русь» и европейское Средневековье",
+      "заметное влияние на «Франкское государство» и европейское Средневековье"
+    ],
+    "explanation_de": "Papst Clemens V. steht im Zusammenhang mit «den Umzug der Kurie nach Avignon» (um 1309). Das Ereignis ist ein Schlüsselmoment für Avignon.",
+    "explanation_ru": "Климент V связан(а) с событием «перенос курии в Авиньон» (около 1309 г.). Это важный момент для темы «Авиньон».",
+    "difficulty": "hard",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1309 CE",
+    "tags": [
+      "Avignon"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Papst Clemens V. gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Avignon. Schüler ordnen diese Person oft dem Jahr 1309 zu.",
+        "ru": "Климент V — одно из известных имён Средневековья в теме «Авиньон». Событие обычно датируют около 1309 года."
+      },
+      {
+        "de": "Historisch wird «den Umzug der Kurie nach Avignon» vor allem mit Avignon verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «перенос курии в Авиньон» связывают с регионом Авиньон. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Avignon lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Umzug der Kurie nach Avignon». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Авиньон» полезно сравнить причины, ход и последствия: «перенос курии в Авиньон». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6133,
+    "question_de": "Welche Erklärung passt zu «Vertrag von Verdun»?",
+    "question_ru": "Какое объяснение подходит к «Верденский договор»?",
+    "correct_answer_de": "Teilung des Frankenreichs",
+    "correct_answer_ru": "раздел Франкского государства",
+    "wrong_answers_de": [
+      "Lehnseid des Vasallen",
+      "Untergeordneter des Lehnsherrn",
+      "Vasallentreue gegen Nutzungsrecht"
+    ],
+    "wrong_answers_ru": [
+      "вассальная присяга",
+      "подчинённый сеньора",
+      "вассальная верность против права пользования"
+    ],
+    "explanation_de": "Richtig ist: Teilung des Frankenreichs.",
+    "explanation_ru": "Верно: раздел Франкского государства.",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "843 CE",
+    "tags": [
+      "Frankenreich",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Vertrag von Verdun» gehört zum Themenfeld Frankenreich.",
+        "ru": "Термин «Верденский договор» относится к теме «Франки»."
+      },
+      {
+        "de": "Im Unterricht wird Vertrag von Verdun oft mit dem Jahr 843 verknüpft.",
+        "ru": "В курсе «Верденский договор» связывают с периодом около 843 года."
+      },
+      {
+        "de": "Wer Vertrag von Verdun kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «Верденский договор» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6134,
+    "question_de": "Welches Ereignis wird mit Justinian I. verbunden?",
+    "question_ru": "С каким событием связывают Юстиниан I?",
+    "correct_answer_de": "den Codex Iustinianus",
+    "correct_answer_ru": "Кодекс Юстиниана",
+    "wrong_answers_de": [
+      "die Yuan-Dynastie in China",
+      "das Okkams Rasiermesser",
+      "die Roncevaux-Schlacht"
+    ],
+    "wrong_answers_ru": [
+      "завоевание Сицилии",
+      "поражение при Котроне",
+      "опыты с оптикой"
+    ],
+    "explanation_de": "Justinian I. steht im Zusammenhang mit «den Codex Iustinianus» (um 529). Das Ereignis ist ein Schlüsselmoment für Byzanz.",
+    "explanation_ru": "Юстиниан I связан(а) с событием «Кодекс Юстиниана» (около 529 г.). Это важный момент для темы «Византия».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "military",
+    "period": "529 CE",
+    "tags": [
+      "Byzanz"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Justinian I. gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Byzanz. Schüler ordnen diese Person oft dem Jahr 529 zu.",
+        "ru": "Юстиниан I — одно из известных имён Средневековья в теме «Византия». Событие обычно датируют около 529 года."
+      },
+      {
+        "de": "Historisch wird «den Codex Iustinianus» vor allem mit Konstantinopel verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «Кодекс Юстиниана» связывают с регионом Константинополь. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Byzanz lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Codex Iustinianus». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Византия» полезно сравнить причины, ход и последствия: «Кодекс Юстиниана». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6135,
+    "question_de": "Welche Erklärung passt zu «Homagium»?",
+    "question_ru": "Какое объяснение подходит к «оммаж»?",
+    "correct_answer_de": "Lehnseid des Vasallen",
+    "correct_answer_ru": "вассальная присяга",
+    "wrong_answers_de": [
+      "Höfische Liebeslyrik",
+      "Untergeordneter des Lehnsherrn",
+      "Vasallentreue gegen Nutzungsrecht"
+    ],
+    "wrong_answers_ru": [
+      "придворная любовная лирика",
+      "подчинённый сеньора",
+      "вассальная верность против права пользования"
+    ],
+    "explanation_de": "Richtig ist: Lehnseid des Vasallen.",
+    "explanation_ru": "Верно: вассальная присяга.",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "1100 CE",
+    "tags": [
+      "Feudalismus",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Homagium» gehört zum Themenfeld Feudalismus.",
+        "ru": "Термин «оммаж» относится к теме «феодализм»."
+      },
+      {
+        "de": "Im Unterricht wird Homagium oft mit dem Jahr 1100 verknüpft.",
+        "ru": "В курсе «оммаж» связывают с периодом около 1100 года."
+      },
+      {
+        "de": "Wer Homagium kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «оммаж» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6136,
+    "question_de": "Wer wird vor allem mit den Decamerone in Verbindung gebracht?",
+    "question_ru": "Кто прежде всего связан с событием: «Декамерон»?",
+    "correct_answer_de": "Boccaccio",
+    "correct_answer_ru": "Боккаччо",
+    "wrong_answers_de": [
+      "Wilhelm der Eroberer",
+      "Hildegard von Bingen",
+      "Maimonides"
+    ],
+    "wrong_answers_ru": [
+      "Фома Аквинский",
+      "Иннокентий III",
+      "Конрадин"
+    ],
+    "explanation_de": "Boccaccio steht im Zusammenhang mit «den Decamerone» (um 1353). Das Ereignis ist ein Schlüsselmoment für Literatur.",
+    "explanation_ru": "Боккаччо связан(а) с событием ««Декамерон»» (около 1353 г.). Это важный момент для темы «Литература».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1353 CE",
+    "tags": [
+      "Literatur"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Boccaccio gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Literatur. Schüler ordnen diese Person oft dem Jahr 1353 zu.",
+        "ru": "Боккаччо — одно из известных имён Средневековья в теме «Литература». Событие обычно датируют около 1353 года."
+      },
+      {
+        "de": "Historisch wird «den Decamerone» vor allem mit Florenz verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие ««Декамерон»» связывают с регионом Флоренция. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Literatur lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Decamerone». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Литература» полезно сравнить причины, ход и последствия: ««Декамерон»». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6137,
+    "question_de": "Wer wird vor allem mit die Schlacht von Aljubarrota in Verbindung gebracht?",
+    "question_ru": "Кто прежде всего связан с событием: битва при Алжубарроте?",
+    "correct_answer_de": "Johann I. von Portugal",
+    "correct_answer_ru": "Жуан I",
+    "wrong_answers_de": [
+      "Eleanor von Aquitaine",
+      "Ivan Asen II.",
+      "Michael VIII. Palaiologos"
+    ],
+    "wrong_answers_ru": [
+      "Филипп IV Красивый",
+      "Генрих II Плантагенет",
+      "Томас Бекет"
+    ],
+    "explanation_de": "Johann I. von Portugal steht im Zusammenhang mit «die Schlacht von Aljubarrota» (um 1385). Das Ereignis ist ein Schlüsselmoment für Portugal.",
+    "explanation_ru": "Жуан I связан(а) с событием «битва при Алжубарроте» (около 1385 г.). Это важный момент для темы «Португалия».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1385 CE",
+    "tags": [
+      "Portugal"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Johann I. von Portugal gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Portugal. Schüler ordnen diese Person oft dem Jahr 1385 zu.",
+        "ru": "Жуан I — одно из известных имён Средневековья в теме «Португалия». Событие обычно датируют около 1385 года."
+      },
+      {
+        "de": "Historisch wird «die Schlacht von Aljubarrota» vor allem mit Aljubarrota verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «битва при Алжубарроте» связывают с регионом Алжубаррота. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Portugal lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Schlacht von Aljubarrota». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Португалия» полезно сравнить причины, ход и последствия: «битва при Алжубарроте». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6138,
+    "question_de": "Welcher historische Name passt zum Ereignis «die Krönung in Reims»?",
+    "question_ru": "Какое имя соответствует событию «коронация в Реймсе»?",
+    "correct_answer_de": "Karl VII.",
+    "correct_answer_ru": "Карл VII",
+    "wrong_answers_de": [
+      "Heinrich IV.",
+      "Kasimir III. der Große",
+      "Wladimir der Heilige"
+    ],
+    "wrong_answers_ru": [
+      "Бернард Клюнийский",
+      "Филипп IV Красивый",
+      "Крестьянское восстание 1381"
+    ],
+    "explanation_de": "Karl VII. steht im Zusammenhang mit «die Krönung in Reims» (um 1429). Das Ereignis ist ein Schlüsselmoment für Hundertjähriger Krieg.",
+    "explanation_ru": "Карл VII связан(а) с событием «коронация в Реймсе» (около 1429 г.). Это важный момент для темы «Столетняя война».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1429 CE",
+    "tags": [
+      "Hundertjähriger Krieg"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Karl VII. gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Hundertjähriger Krieg. Schüler ordnen diese Person oft dem Jahr 1429 zu.",
+        "ru": "Карл VII — одно из известных имён Средневековья в теме «Столетняя война». Событие обычно датируют около 1429 года."
+      },
+      {
+        "de": "Historisch wird «die Krönung in Reims» vor allem mit Reims verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «коронация в Реймсе» связывают с регионом Реймс. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Hundertjähriger Krieg lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Krönung in Reims». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Столетняя война» полезно сравнить причины, ход и последствия: «коронация в Реймсе». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6139,
+    "question_de": "Ungefähr in welcher Zeit lebte oder wirkte Mehmed II.?",
+    "question_ru": "Примерно в какое время жил или действовал Мехмед II?",
+    "correct_answer_de": "1453 n. Chr.",
+    "correct_answer_ru": "1453 г.",
+    "wrong_answers_de": [
+      "1458 CE",
+      "1402 CE",
+      "1066 CE"
+    ],
+    "wrong_answers_ru": [
+      "1204 г.",
+      "1248 г.",
+      "1224 г."
+    ],
+    "explanation_de": "Mehmed II. steht im Zusammenhang mit «die Eroberung Konstantinopels» (um 1453). Das Ereignis ist ein Schlüsselmoment für Osmanen.",
+    "explanation_ru": "Мехмед II связан(а) с событием «падение Константинополя» (около 1453 г.). Это важный момент для темы «Османы».",
+    "difficulty": "hard",
+    "category": "Средневековье",
+    "type": "date",
+    "period": "1453 CE",
+    "tags": [
+      "Osmanen"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Mehmed II. gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Osmanen. Schüler ordnen diese Person oft dem Jahr 1453 zu.",
+        "ru": "Мехмед II — одно из известных имён Средневековья в теме «Османы». Событие обычно датируют около 1453 года."
+      },
+      {
+        "de": "Historisch wird «die Eroberung Konstantinopels» vor allem mit Konstantinopel verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «падение Константинополя» связывают с регионом Константинополь. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Osmanen lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Eroberung Konstantinopels». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Османы» полезно сравнить причины, ход и последствия: «падение Константинополя». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6140,
+    "question_de": "Mit welchem Ort verbindet man Bolesław Chrobry am häufigsten?",
+    "question_ru": "С каким местом чаще всего связывают Болеслав Храбрый?",
+    "correct_answer_de": "Gnesen",
+    "correct_answer_ru": "Гнезно",
+    "wrong_answers_de": [
+      "Ceuta",
+      "Canossa",
+      "Byzanz"
+    ],
+    "wrong_answers_ru": [
+      "Иерусалим",
+      "Креси",
+      "Флоренция"
+    ],
+    "explanation_de": "Bolesław Chrobry steht im Zusammenhang mit «die Krönung zum polnischen König» (um 1025). Das Ereignis ist ein Schlüsselmoment für Polen.",
+    "explanation_ru": "Болеслав Храбрый связан(а) с событием «коронация польского короля» (около 1025 г.). Это важный момент для темы «Польша».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "geography",
+    "period": "1025 CE",
+    "tags": [
+      "Polen"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Bolesław Chrobry gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Polen. Schüler ordnen diese Person oft dem Jahr 1025 zu.",
+        "ru": "Болеслав Храбрый — одно из известных имён Средневековья в теме «Польша». Событие обычно датируют около 1025 года."
+      },
+      {
+        "de": "Historisch wird «die Krönung zum polnischen König» vor allem mit Gnesen verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «коронация польского короля» связывают с регионом Гнезно. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Polen lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Krönung zum polnischen König». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Польша» полезно сравнить причины, ход и последствия: «коронация польского короля». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6141,
+    "question_de": "Welche Erklärung passt zu «Franziskaner»?",
+    "question_ru": "Какое объяснение подходит к «францисканцы»?",
+    "correct_answer_de": "Orden der Minderbrüder",
+    "correct_answer_ru": "орден меньших братьев",
+    "wrong_answers_de": [
+      "Lehnseid des Vasallen",
+      "Untergeordneter des Lehnsherrn",
+      "Vasallentreue gegen Nutzungsrecht"
+    ],
+    "wrong_answers_ru": [
+      "вассальная присяга",
+      "подчинённый сеньора",
+      "вассальная верность против права пользования"
+    ],
+    "explanation_de": "Richtig ist: Orden der Minderbrüder.",
+    "explanation_ru": "Верно: орден меньших братьев.",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "1209 CE",
+    "tags": [
+      "Ordenswesen",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Franziskaner» gehört zum Themenfeld Ordenswesen.",
+        "ru": "Термин «францисканцы» относится к теме «монашество»."
+      },
+      {
+        "de": "Im Unterricht wird Franziskaner oft mit dem Jahr 1209 verknüpft.",
+        "ru": "В курсе «францисканцы» связывают с периодом около 1209 года."
+      },
+      {
+        "de": "Wer Franziskaner kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «францисканцы» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6142,
+    "question_de": "Welcher historische Name passt zum Ereignis «die Schlacht auf dem Kulikowo-Feld»?",
+    "question_ru": "Какое имя соответствует событию «Куликовская битва»?",
+    "correct_answer_de": "Dmitri Donskoi",
+    "correct_answer_ru": "Дмитрий Донской",
+    "wrong_answers_de": [
+      "Johanna von Orléans",
+      "Kasimir III. der Große",
+      "Ludwig VII."
+    ],
+    "wrong_answers_ru": [
+      "Хубилай",
+      "Максимилиан I",
+      "Ролло"
+    ],
+    "explanation_de": "Dmitri Donskoi steht im Zusammenhang mit «die Schlacht auf dem Kulikowo-Feld» (um 1380). Das Ereignis ist ein Schlüsselmoment für Russland.",
+    "explanation_ru": "Дмитрий Донской связан(а) с событием «Куликовская битва» (около 1380 г.). Это важный момент для темы «Русь».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1380 CE",
+    "tags": [
+      "Russland"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Dmitri Donskoi gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Russland. Schüler ordnen diese Person oft dem Jahr 1380 zu.",
+        "ru": "Дмитрий Донской — одно из известных имён Средневековья в теме «Русь». Событие обычно датируют около 1380 года."
+      },
+      {
+        "de": "Historisch wird «die Schlacht auf dem Kulikowo-Feld» vor allem mit Kulikowo verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «Куликовская битва» связывают с регионом Куликово. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Russland lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Schlacht auf dem Kulikowo-Feld». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Русь» полезно сравнить причины, ход и последствия: «Куликовская битва». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6143,
+    "question_de": "Mit welchem Ort verbindet man Stefan der Große am häufigsten?",
+    "question_ru": "С каким местом чаще всего связывают Стефан Великий?",
+    "correct_answer_de": "Suceava",
+    "correct_answer_ru": "Сучава",
+    "wrong_answers_de": [
+      "Aquitaine",
+      "Frankreich",
+      "Granada"
+    ],
+    "wrong_answers_ru": [
+      "Констанц",
+      "Вормс",
+      "Прага"
+    ],
+    "explanation_de": "Stefan der Große steht im Zusammenhang mit «die Stärkung der Moldau» (um 1457). Das Ereignis ist ein Schlüsselmoment für Moldawien.",
+    "explanation_ru": "Стефан Великий связан(а) с событием «укрепление Молдавии» (около 1457 г.). Это важный момент для темы «Молдавия».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "geography",
+    "period": "1457 CE",
+    "tags": [
+      "Moldawien"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Stefan der Große gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Moldawien. Schüler ordnen diese Person oft dem Jahr 1457 zu.",
+        "ru": "Стефан Великий — одно из известных имён Средневековья в теме «Молдавия». Событие обычно датируют около 1457 года."
+      },
+      {
+        "de": "Historisch wird «die Stärkung der Moldau» vor allem mit Suceava verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «укрепление Молдавии» связывают с регионом Сучава. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Moldawien lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Stärkung der Moldau». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Молдавия» полезно сравнить причины, ход и последствия: «укрепление Молдавии». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6144,
+    "question_de": "Wo spielte sich den Wormser Konkordat hauptsächlich ab?",
+    "question_ru": "Где главным образом происходило: Вормсский конкордат?",
+    "correct_answer_de": "Worms",
+    "correct_answer_ru": "Вормс",
+    "wrong_answers_de": [
+      "Buda",
+      "Bursa",
+      "Pyrenäen"
+    ],
+    "wrong_answers_ru": [
+      "Иерусалим",
+      "Раннимид",
+      "Лангедок"
+    ],
+    "explanation_de": "Der Schwerpunkt lag in Worms. Heinrich V. steht im Zusammenhang mit «den Wormser Konkordat» (um 1122). Das Ereignis ist ein Schlüsselmoment für Salier.",
+    "explanation_ru": "Центр событий — Вормс. Генрих V связан(а) с событием «Вормсский конкордат» (около 1122 г.). Это важный момент для темы «Салии».",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "geography",
+    "period": "1122 CE",
+    "tags": [
+      "Salier"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Heinrich V. gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Salier. Schüler ordnen diese Person oft dem Jahr 1122 zu.",
+        "ru": "Генрих V — одно из известных имён Средневековья в теме «Салии». Событие обычно датируют около 1122 года."
+      },
+      {
+        "de": "Historisch wird «den Wormser Konkordat» vor allem mit Worms verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «Вормсский конкордат» связывают с регионом Вормс. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Salier lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Wormser Konkordat». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Салии» полезно сравнить причины, ход и последствия: «Вормсский конкордат». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6145,
+    "question_de": "Welchem Bereich des Mittelalters ordnet man Stefan der Große vor allem zu?",
+    "question_ru": "К какой сфере Средневековья прежде всего относят Стефан Великий?",
+    "correct_answer_de": "Moldawien",
+    "correct_answer_ru": "Молдавия",
+    "wrong_answers_de": [
+      "Sizilien",
+      "Krieg",
+      "Kreuzzüge"
+    ],
+    "wrong_answers_ru": [
+      "Франция",
+      "Византия",
+      "Франкское государство"
+    ],
+    "explanation_de": "Stefan der Große gehört zum Themenfeld Moldawien. Stefan der Große steht im Zusammenhang mit «die Stärkung der Moldau» (um 1457). Das Ereignis ist ein Schlüsselmoment für Moldawien.",
+    "explanation_ru": "Стефан Великий относится к теме «Молдавия». Стефан Великий связан(а) с событием «укрепление Молдавии» (около 1457 г.). Это важный момент для темы «Молдавия».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "institution",
+    "period": "1457 CE",
+    "tags": [
+      "Moldawien"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Stefan der Große gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Moldawien. Schüler ordnen diese Person oft dem Jahr 1457 zu.",
+        "ru": "Стефан Великий — одно из известных имён Средневековья в теме «Молдавия». Событие обычно датируют около 1457 года."
+      },
+      {
+        "de": "Historisch wird «die Stärkung der Moldau» vor allem mit Suceava verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «укрепление Молдавии» связывают с регионом Сучава. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Moldawien lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Stärkung der Moldau». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Молдавия» полезно сравнить причины, ход и последствия: «укрепление Молдавии». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6146,
+    "question_de": "Welchem Bereich des Mittelalters ordnet man Balduin IV. vor allem zu?",
+    "question_ru": "К какой сфере Средневековья прежде всего относят Балдуин IV?",
+    "correct_answer_de": "Kreuzzüge",
+    "correct_answer_ru": "Крестовые походы",
+    "wrong_answers_de": [
+      "Osmanen",
+      "Böhmen",
+      "Spanien"
+    ],
+    "wrong_answers_ru": [
+      "Штауфены",
+      "Штауфены",
+      "Монастыри"
+    ],
+    "explanation_de": "Balduin IV. gehört zum Themenfeld Kreuzzüge. Balduin IV. steht im Zusammenhang mit «die Herrschaft trotz Aussatz» (um 1187). Das Ereignis ist ein Schlüsselmoment für Kreuzzüge.",
+    "explanation_ru": "Балдуин IV относится к теме «Крестовые походы». Балдуин IV связан(а) с событием «правление при проказе» (около 1187 г.). Это важный момент для темы «Крестовые походы».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "institution",
+    "period": "1187 CE",
+    "tags": [
+      "Kreuzzüge"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Balduin IV. gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Kreuzzüge. Schüler ordnen diese Person oft dem Jahr 1187 zu.",
+        "ru": "Балдуин IV — одно из известных имён Средневековья в теме «Крестовые походы». Событие обычно датируют около 1187 года."
+      },
+      {
+        "de": "Historisch wird «die Herrschaft trotz Aussatz» vor allem mit Jerusalem verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «правление при проказе» связывают с регионом Иерусалим. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Kreuzzüge lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Herrschaft trotz Aussatz». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Крестовые походы» полезно сравнить причины, ход и последствия: «правление при проказе». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6147,
+    "question_de": "Welches Ereignis wird mit Johannes Duns Scotus verbunden?",
+    "question_ru": "С каким событием связывают Иоанн Дунс Скот?",
+    "correct_answer_de": "die Formaldistinktion",
+    "correct_answer_ru": "формальное различие",
+    "wrong_answers_de": [
+      "ihre Visionen und Schriften",
+      "den Untergang des Templerordens",
+      "den Siebten Kreuzzug"
+    ],
+    "wrong_answers_ru": [
+      "сопротивление Англии",
+      "Ледовое побоище",
+      "возвышение Москвы"
+    ],
+    "explanation_de": "Johannes Duns Scotus steht im Zusammenhang mit «die Formaldistinktion» (um 1308). Das Ereignis ist ein Schlüsselmoment für Scholastik.",
+    "explanation_ru": "Иоанн Дунс Скот связан(а) с событием «формальное различие» (около 1308 г.). Это важный момент для темы «Схоластика».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "military",
+    "period": "1308 CE",
+    "tags": [
+      "Scholastik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Johannes Duns Scotus gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Scholastik. Schüler ordnen diese Person oft dem Jahr 1308 zu.",
+        "ru": "Иоанн Дунс Скот — одно из известных имён Средневековья в теме «Схоластика». Событие обычно датируют около 1308 года."
+      },
+      {
+        "de": "Historisch wird «die Formaldistinktion» vor allem mit Köln verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «формальное различие» связывают с регионом Кёльн. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Scholastik lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Formaldistinktion». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Схоластика» полезно сравнить причины, ход и последствия: «формальное различие». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6148,
+    "question_de": "Was war eine wichtige Folge von die Eroberung von Schottland?",
+    "question_ru": "Каким было важное следствие: завоевание Шотландии?",
+    "correct_answer_de": "prägende Wirkung auf England und das europäische Mittelalter",
+    "correct_answer_ru": "заметное влияние на «Англия» и европейское Средневековье",
+    "wrong_answers_de": [
+      "prägende Wirkung auf Luxemburger und das europäische Mittelalter",
+      "prägende Wirkung auf Frankenreich und das europäische Mittelalter",
+      "prägende Wirkung auf Western Schisma und das europäische Mittelalter"
+    ],
+    "wrong_answers_ru": [
+      "заметное влияние на «Крестовые походы» и европейское Средневековье",
+      "заметное влияние на «Шотландия» и европейское Средневековье",
+      "заметное влияние на «Монголы» и европейское Средневековье"
+    ],
+    "explanation_de": "Edward I. Longshanks steht im Zusammenhang mit «die Eroberung von Schottland» (um 1296). Das Ereignis ist ein Schlüsselmoment für England.",
+    "explanation_ru": "Эдуард I Длинноногий связан(а) с событием «завоевание Шотландии» (около 1296 г.). Это важный момент для темы «Англия».",
+    "difficulty": "hard",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1296 CE",
+    "tags": [
+      "England"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Edward I. Longshanks gehört zu den bekanntesten Namen des Mittelalters im Themenfeld England. Schüler ordnen diese Person oft dem Jahr 1296 zu.",
+        "ru": "Эдуард I Длинноногий — одно из известных имён Средневековья в теме «Англия». Событие обычно датируют около 1296 года."
+      },
+      {
+        "de": "Historisch wird «die Eroberung von Schottland» vor allem mit Schottland verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «завоевание Шотландии» связывают с регионом Шотландия. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von England lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Eroberung von Schottland». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Англия» полезно сравнить причины, ход и последствия: «завоевание Шотландии». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6149,
+    "question_de": "Mit welchem Ort verbindet man Michael VIII. Palaiologos am häufigsten?",
+    "question_ru": "С каким местом чаще всего связывают Михаил VIII Палеолог?",
+    "correct_answer_de": "Konstantinopel",
+    "correct_answer_ru": "Константинополь",
+    "wrong_answers_de": [
+      "Ägypten",
+      "Jerusalem",
+      "Reims"
+    ],
+    "wrong_answers_ru": [
+      "Рим",
+      "Винланд",
+      "Пиренеи"
+    ],
+    "explanation_de": "Michael VIII. Palaiologos steht im Zusammenhang mit «die Rückeroberung Konstantinopels» (um 1261). Das Ereignis ist ein Schlüsselmoment für Byzanz.",
+    "explanation_ru": "Михаил VIII Палеолог связан(а) с событием «возвращение Константинополя» (около 1261 г.). Это важный момент для темы «Византия».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "geography",
+    "period": "1261 CE",
+    "tags": [
+      "Byzanz"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Michael VIII. Palaiologos gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Byzanz. Schüler ordnen diese Person oft dem Jahr 1261 zu.",
+        "ru": "Михаил VIII Палеолог — одно из известных имён Средневековья в теме «Византия». Событие обычно датируют около 1261 года."
+      },
+      {
+        "de": "Historisch wird «die Rückeroberung Konstantinopels» vor allem mit Konstantinopel verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «возвращение Константинополя» связывают с регионом Константинополь. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Byzanz lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Rückeroberung Konstantinopels». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Византия» полезно сравнить причины, ход и последствия: «возвращение Константинополя». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6150,
+    "question_de": "Welche Erklärung passt zu «Danelag»?",
+    "question_ru": "Какое объяснение подходит к «Денло»?",
+    "correct_answer_de": "Dänisches Recht in England",
+    "correct_answer_ru": "данская зона в Англии",
+    "wrong_answers_de": [
+      "Lehnseid des Vasallen",
+      "Untergeordneter des Lehnsherrn",
+      "Vasallentreue gegen Nutzungsrecht"
+    ],
+    "wrong_answers_ru": [
+      "вассальная присяга",
+      "подчинённый сеньора",
+      "вассальная верность против права пользования"
+    ],
+    "explanation_de": "Richtig ist: Dänisches Recht in England.",
+    "explanation_ru": "Верно: данская зона в Англии.",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "886 CE",
+    "tags": [
+      "England",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Danelag» gehört zum Themenfeld England.",
+        "ru": "Термин «Денло» относится к теме «Англия»."
+      },
+      {
+        "de": "Im Unterricht wird Danelag oft mit dem Jahr 886 verknüpft.",
+        "ru": "В курсе «Денло» связывают с периодом около 886 года."
+      },
+      {
+        "de": "Wer Danelag kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «Денло» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6151,
+    "question_de": "Welche Erklärung passt zu «Dschingis Khan»?",
+    "question_ru": "Какое объяснение подходит к «Чингисхан»?",
+    "correct_answer_de": "Vereinigung der Mongolen",
+    "correct_answer_ru": "объединение монголов",
+    "wrong_answers_de": [
+      "Lehnseid des Vasallen",
+      "Untergeordneter des Lehnsherrn",
+      "Vasallentreue gegen Nutzungsrecht"
+    ],
+    "wrong_answers_ru": [
+      "вассальная присяга",
+      "подчинённый сеньора",
+      "вассальная верность против права пользования"
+    ],
+    "explanation_de": "Richtig ist: Vereinigung der Mongolen.",
+    "explanation_ru": "Верно: объединение монголов.",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "1206 CE",
+    "tags": [
+      "Mongolen",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Dschingis Khan» gehört zum Themenfeld Mongolen.",
+        "ru": "Термин «Чингисхан» относится к теме «монголы»."
+      },
+      {
+        "de": "Im Unterricht wird Dschingis Khan oft mit dem Jahr 1206 verknüpft.",
+        "ru": "В курсе «Чингисхан» связывают с периодом около 1206 года."
+      },
+      {
+        "de": "Wer Dschingis Khan kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «Чингисхан» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6152,
+    "question_de": "Welche Entwicklung gehört zum Umfeld von Friedrich von Hohenstaufen?",
+    "question_ru": "Какое развитие относится к контексту Фридрих Барбаросса?",
+    "correct_answer_de": "prägende Wirkung auf Staufer und das europäische Mittelalter",
+    "correct_answer_ru": "заметное влияние на «Штауфены» и европейское Средневековье",
+    "wrong_answers_de": [
+      "prägende Wirkung auf Osmanen und das europäische Mittelalter",
+      "prägende Wirkung auf Hussitenkriege und das europäische Mittelalter",
+      "prägende Wirkung auf Russland und das europäische Mittelalter"
+    ],
+    "wrong_answers_ru": [
+      "заметное влияние на «Схоластика» и европейское Средневековье",
+      "заметное влияние на «Флоренция» и европейское Средневековье",
+      "ограничение королевской власти законом"
+    ],
+    "explanation_de": "Friedrich von Hohenstaufen steht im Zusammenhang mit «die Kaiserkrönung» (um 1155). Das Ereignis ist ein Schlüsselmoment für Staufer.",
+    "explanation_ru": "Фридрих Барбаросса связан(а) с событием «императорская коронация» (около 1155 г.). Это важный момент для темы «Штауфены».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1155 CE",
+    "tags": [
+      "Staufer"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Friedrich von Hohenstaufen gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Staufer. Schüler ordnen diese Person oft dem Jahr 1155 zu.",
+        "ru": "Фридрих Барбаросса — одно из известных имён Средневековья в теме «Штауфены». Событие обычно датируют около 1155 года."
+      },
+      {
+        "de": "Historisch wird «die Kaiserkrönung» vor allem mit Rom verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «императорская коронация» связывают с регионом Рим. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Staufer lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Kaiserkrönung». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Штауфены» полезно сравнить причины, ход и последствия: «императорская коронация». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6153,
+    "question_de": "Was gilt als wesentliche Ursache für den Höhepunkt des Zweiten Bulgarischen Reiches?",
+    "question_ru": "Что считается важной причиной: расцвет Второго Болгарского царства?",
+    "correct_answer_de": "Spannungen und Machtkämpfe im Bereich Bulgarien",
+    "correct_answer_ru": "напряжённость и борьба за власть в сфере «Болгария»",
+    "wrong_answers_de": [
+      "Spannungen und Machtkämpfe im Bereich Scholastik",
+      "Spannungen und Machtkämpfe im Bereich England",
+      "Spannungen und Machtkämpfe im Bereich Ungarn"
+    ],
+    "wrong_answers_ru": [
+      "напряжённость и борьба за власть в сфере «Саксония»",
+      "напряжённость и борьба за власть в сфере «Русь»",
+      "напряжённость и борьба за власть в сфере «Флоренция»"
+    ],
+    "explanation_de": "Ivan Asen II. steht im Zusammenhang mit «den Höhepunkt des Zweiten Bulgarischen Reiches» (um 1230). Das Ereignis ist ein Schlüsselmoment für Bulgarien.",
+    "explanation_ru": "Иван Асен II связан(а) с событием «расцвет Второго Болгарского царства» (около 1230 г.). Это важный момент для темы «Болгария».",
+    "difficulty": "hard",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1230 CE",
+    "tags": [
+      "Bulgarien"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Ivan Asen II. gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Bulgarien. Schüler ordnen diese Person oft dem Jahr 1230 zu.",
+        "ru": "Иван Асен II — одно из известных имён Средневековья в теме «Болгария». Событие обычно датируют около 1230 года."
+      },
+      {
+        "de": "Historisch wird «den Höhepunkt des Zweiten Bulgarischen Reiches» vor allem mit Tarnowo verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «расцвет Второго Болгарского царства» связывают с регионом Тырново. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Bulgarien lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Höhepunkt des Zweiten Bulgarischen Reiches». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Болгария» полезно сравнить причины, ход и последствия: «расцвет Второго Болгарского царства». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6154,
+    "question_de": "Wo spielte sich die Hussiten-Vorgeschichte hauptsächlich ab?",
+    "question_ru": "Где главным образом происходило: преддверие гуситских войн?",
+    "correct_answer_de": "Prag",
+    "correct_answer_ru": "Прага",
+    "wrong_answers_de": [
+      "Konstantinopel",
+      "Avignon",
+      "Córdoba"
+    ],
+    "wrong_answers_ru": [
+      "Англия",
+      "Куликово",
+      "Сергиев Посад"
+    ],
+    "explanation_de": "Der Schwerpunkt lag in Prag. Wenzel von Böhmen steht im Zusammenhang mit «die Hussiten-Vorgeschichte» (um 1400). Das Ereignis ist ein Schlüsselmoment für Böhmen.",
+    "explanation_ru": "Центр событий — Прага. Вацлав связан(а) с событием «преддверие гуситских войн» (около 1400 г.). Это важный момент для темы «Чехия».",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "geography",
+    "period": "1400 CE",
+    "tags": [
+      "Böhmen"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Wenzel von Böhmen gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Böhmen. Schüler ordnen diese Person oft dem Jahr 1400 zu.",
+        "ru": "Вацлав — одно из известных имён Средневековья в теме «Чехия». Событие обычно датируют около 1400 года."
+      },
+      {
+        "de": "Historisch wird «die Hussiten-Vorgeschichte» vor allem mit Prag verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «преддверие гуситских войн» связывают с регионом Прага. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Böhmen lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Hussiten-Vorgeschichte». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Чехия» полезно сравнить причины, ход и последствия: «преддверие гуситских войн». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6155,
+    "question_de": "Wo spielte sich die Teilung des Frankenreichs hauptsächlich ab?",
+    "question_ru": "Где главным образом происходило: раздел империи Карла?",
+    "correct_answer_de": "Verdun",
+    "correct_answer_ru": "Верден",
+    "wrong_answers_de": [
+      "Skopje",
+      "Wessex",
+      "Schottland"
+    ],
+    "wrong_answers_ru": [
+      "Флоренция",
+      "Москва",
+      "Иерусалим"
+    ],
+    "explanation_de": "Der Schwerpunkt lag in Verdun. Lothar I. steht im Zusammenhang mit «die Teilung des Frankenreichs» (um 843). Das Ereignis ist ein Schlüsselmoment für Frankenreich.",
+    "explanation_ru": "Центр событий — Верден. Лотарь I связан(а) с событием «раздел империи Карла» (около 843 г.). Это важный момент для темы «Франкское государство».",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "geography",
+    "period": "843 CE",
+    "tags": [
+      "Frankenreich"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Lothar I. gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Frankenreich. Schüler ordnen diese Person oft dem Jahr 843 zu.",
+        "ru": "Лотарь I — одно из известных имён Средневековья в теме «Франкское государство». Событие обычно датируют около 843 года."
+      },
+      {
+        "de": "Historisch wird «die Teilung des Frankenreichs» vor allem mit Verdun verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «раздел империи Карла» связывают с регионом Верден. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Frankenreich lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Teilung des Frankenreichs». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Франкское государство» полезно сравнить причины, ход и последствия: «раздел империи Карла». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6156,
+    "question_de": "Welchem Bereich des Mittelalters ordnet man Isabella I. von Kastilien vor allem zu?",
+    "question_ru": "К какой сфере Средневековья прежде всего относят Изабелла I?",
+    "correct_answer_de": "Spanien",
+    "correct_answer_ru": "Испания",
+    "wrong_answers_de": [
+      "Kultur",
+      "Kirche",
+      "Humanismus"
+    ],
+    "wrong_answers_ru": [
+      "Англия",
+      "Византия",
+      "Франкское государство"
+    ],
+    "explanation_de": "Isabella I. von Kastilien gehört zum Themenfeld Spanien. Isabella I. von Kastilien steht im Zusammenhang mit «die Eroberung Granadas» (um 1492). Das Ereignis ist ein Schlüsselmoment für Spanien.",
+    "explanation_ru": "Изабелла I относится к теме «Испания». Изабелла I связан(а) с событием «завоевание Гранады» (около 1492 г.). Это важный момент для темы «Испания».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "institution",
+    "period": "1492 CE",
+    "tags": [
+      "Spanien"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Isabella I. von Kastilien gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Spanien. Schüler ordnen diese Person oft dem Jahr 1492 zu.",
+        "ru": "Изабелла I — одно из известных имён Средневековья в теме «Испания». Событие обычно датируют около 1492 года."
+      },
+      {
+        "de": "Historisch wird «die Eroberung Granadas» vor allem mit Granada verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «завоевание Гранады» связывают с регионом Гранада. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Spanien lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Eroberung Granadas». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Испания» полезно сравнить причины, ход и последствия: «завоевание Гранады». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6157,
+    "question_de": "Welcher historische Name passt zum Ereignis «die Schlacht bei Hastings»?",
+    "question_ru": "Какое имя соответствует событию «битва при Гастингсе»?",
+    "correct_answer_de": "Wilhelm der Eroberer",
+    "correct_answer_ru": "Вильгельм Завоеватель",
+    "wrong_answers_de": [
+      "Johannes Duns Scotus",
+      "Edward III. von England",
+      "Heinrich I."
+    ],
+    "wrong_answers_ru": [
+      "Конрад II",
+      "Генрих II Плантагенет",
+      "Климент V"
+    ],
+    "explanation_de": "1066 besiegte Wilhelm bei Hastings König Harald II. und begründete die normannische Dynastie.",
+    "explanation_ru": "В 1066 году Вильгельм разбил Гарольда II при Гастингсе и основал нормандскую династию.",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1066 CE",
+    "tags": [
+      "England"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Das Domesday Book (1086) erfasste Besitz und Abgaben – frühe Form landesweiter Verwaltung.",
+        "ru": "«Книга Страшного суда» (1086) зафиксировала владения и подати — ранняя всеобщая перепись."
+      },
+      {
+        "de": "Normannische Adelige, Sprache und Recht veränderten England langfristig.",
+        "ru": "Нормандские аристократы, язык и право надолго изменили Англию."
+      },
+      {
+        "de": "Schlacht bei Hastings",
+        "ru": "Гастингс"
+      }
+    ]
+  },
+  {
+    "id": 6158,
+    "question_de": "Welches Ereignis wird mit Theodora verbunden?",
+    "question_ru": "С каким событием связывают Феодора?",
+    "correct_answer_de": "die Niederschlagung des Nika-Aufstands",
+    "correct_answer_ru": "подавление восстания «Ника»",
+    "wrong_answers_de": [
+      "die Zerstörung Bagdads",
+      "die Krönung in Jerusalem",
+      "den Aufstand der Jacquerie"
+    ],
+    "wrong_answers_ru": [
+      "коронация в Иерусалиме",
+      "возвышение Москвы",
+      "битва при Бувине"
+    ],
+    "explanation_de": "Theodora steht im Zusammenhang mit «die Niederschlagung des Nika-Aufstands» (um 532). Das Ereignis ist ein Schlüsselmoment für Byzanz.",
+    "explanation_ru": "Феодора связан(а) с событием «подавление восстания «Ника»» (около 532 г.). Это важный момент для темы «Византия».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "military",
+    "period": "532 CE",
+    "tags": [
+      "Byzanz"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Theodora gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Byzanz. Schüler ordnen diese Person oft dem Jahr 532 zu.",
+        "ru": "Феодора — одно из известных имён Средневековья в теме «Византия». Событие обычно датируют около 532 года."
+      },
+      {
+        "de": "Historisch wird «die Niederschlagung des Nika-Aufstands» vor allem mit Konstantinopel verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «подавление восстания «Ника»» связывают с регионом Константинополь. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Byzanz lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Niederschlagung des Nika-Aufstands». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Византия» полезно сравнить причины, ход и последствия: «подавление восстания «Ника»». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6159,
+    "question_de": "Welche Erklärung passt zu «Blutfehde»?",
+    "question_ru": "Какое объяснение подходит к «кровная месть»?",
+    "correct_answer_de": "Private Vergeltung im Adelsrecht",
+    "correct_answer_ru": "личная месть в праве знати",
+    "wrong_answers_de": [
+      "Lehnseid des Vasallen",
+      "Untergeordneter des Lehnsherrn",
+      "Vasallentreue gegen Nutzungsrecht"
+    ],
+    "wrong_answers_ru": [
+      "вассальная присяга",
+      "подчинённый сеньора",
+      "вассальная верность против права пользования"
+    ],
+    "explanation_de": "Richtig ist: Private Vergeltung im Adelsrecht.",
+    "explanation_ru": "Верно: личная месть в праве знати.",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "1100 CE",
+    "tags": [
+      "Recht",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Blutfehde» gehört zum Themenfeld Recht.",
+        "ru": "Термин «кровная месть» относится к теме «право»."
+      },
+      {
+        "de": "Im Unterricht wird Blutfehde oft mit dem Jahr 1100 verknüpft.",
+        "ru": "В курсе «кровная месть» связывают с периодом около 1100 года."
+      },
+      {
+        "de": "Wer Blutfehde kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «кровная месть» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6160,
+    "question_de": "Welche Erklärung passt zu «Gotik»?",
+    "question_ru": "Какое объяснение подходит к «готика»?",
+    "correct_answer_de": "Spitzbogenarchitektur",
+    "correct_answer_ru": "стрельчатая архитектура",
+    "wrong_answers_de": [
+      "Lehnseid des Vasallen",
+      "Untergeordneter des Lehnsherrn",
+      "Vasallentreue gegen Nutzungsrecht"
+    ],
+    "wrong_answers_ru": [
+      "вассальная присяга",
+      "подчинённый сеньора",
+      "вассальная верность против права пользования"
+    ],
+    "explanation_de": "Richtig ist: Spitzbogenarchitektur.",
+    "explanation_ru": "Верно: стрельчатая архитектура.",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "1250 CE",
+    "tags": [
+      "Architektur",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Gotik» gehört zum Themenfeld Architektur.",
+        "ru": "Термин «готика» относится к теме «архитектура»."
+      },
+      {
+        "de": "Im Unterricht wird Gotik oft mit dem Jahr 1250 verknüpft.",
+        "ru": "В курсе «готика» связывают с периодом около 1250 года."
+      },
+      {
+        "de": "Wer Gotik kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «готика» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6161,
+    "question_de": "Was war eine wichtige Folge von die Gründung des Franziskanerordens?",
+    "question_ru": "Каким было важное следствие: основание ордена францисканцев?",
+    "correct_answer_de": "prägende Wirkung auf Ordenswesen und das europäische Mittelalter",
+    "correct_answer_ru": "заметное влияние на «Монашество» и европейское Средневековье",
+    "wrong_answers_de": [
+      "prägende Wirkung auf Frankenreich und das europäische Mittelalter",
+      "prägende Wirkung auf Kultur und das europäische Mittelalter",
+      "prägende Wirkung auf Krieg und das europäische Mittelalter"
+    ],
+    "wrong_answers_ru": [
+      "заметное влияние на «Крестовые походы» и европейское Средневековье",
+      "заметное влияние на «Византия» и европейское Средневековье",
+      "заметное влияние на «Философия» и европейское Средневековье"
+    ],
+    "explanation_de": "Franz von Assisi steht im Zusammenhang mit «die Gründung des Franziskanerordens» (um 1224). Das Ereignis ist ein Schlüsselmoment für Ordenswesen.",
+    "explanation_ru": "Франциск Ассизский связан(а) с событием «основание ордена францисканцев» (около 1224 г.). Это важный момент для темы «Монашество».",
+    "difficulty": "hard",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1224 CE",
+    "tags": [
+      "Ordenswesen"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Franz von Assisi gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Ordenswesen. Schüler ordnen diese Person oft dem Jahr 1224 zu.",
+        "ru": "Франциск Ассизский — одно из известных имён Средневековья в теме «Монашество». Событие обычно датируют около 1224 года."
+      },
+      {
+        "de": "Historisch wird «die Gründung des Franziskanerordens» vor allem mit Assisi verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «основание ордена францисканцев» связывают с регионом Ассизи. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Ordenswesen lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Gründung des Franziskanerordens». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Монашество» полезно сравнить причины, ход и последствия: «основание ордена францисканцев». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6162,
+    "question_de": "Welche Erklärung passt zu «Jarltum»?",
+    "question_ru": "Какое объяснение подходит к «ярлство»?",
+    "correct_answer_de": "Herrscherstand in Skandinavien",
+    "correct_answer_ru": "власть ярла",
+    "wrong_answers_de": [
+      "Lehnseid des Vasallen",
+      "Untergeordneter des Lehnsherrn",
+      "Vasallentreue gegen Nutzungsrecht"
+    ],
+    "wrong_answers_ru": [
+      "вассальная присяга",
+      "подчинённый сеньора",
+      "вассальная верность против права пользования"
+    ],
+    "explanation_de": "Richtig ist: Herrscherstand in Skandinavien.",
+    "explanation_ru": "Верно: власть ярла.",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "950 CE",
+    "tags": [
+      "Wikinger",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Jarltum» gehört zum Themenfeld Wikinger.",
+        "ru": "Термин «ярлство» относится к теме «викинги»."
+      },
+      {
+        "de": "Im Unterricht wird Jarltum oft mit dem Jahr 950 verknüpft.",
+        "ru": "В курсе «ярлство» связывают с периодом около 950 года."
+      },
+      {
+        "de": "Wer Jarltum kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «ярлство» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6163,
+    "question_de": "Welches Ereignis wird mit Enrico Dandolo verbunden?",
+    "question_ru": "С каким событием связывают Энрико Дандоло?",
+    "correct_answer_de": "die Vierte Kreuzzug-Teilnahme",
+    "correct_answer_ru": "участие в четвёртом походе",
+    "wrong_answers_de": [
+      "das Vierte Laterankonzil",
+      "das Konstanzer Konzil",
+      "das Ende des Westlichen Schismas"
+    ],
+    "wrong_answers_ru": [
+      "императорская коронация",
+      "расцвет Флоренции",
+      "Гентский алтарь"
+    ],
+    "explanation_de": "Enrico Dandolo steht im Zusammenhang mit «die Vierte Kreuzzug-Teilnahme» (um 1204). Das Ereignis ist ein Schlüsselmoment für Venedig.",
+    "explanation_ru": "Энрико Дандоло связан(а) с событием «участие в четвёртом походе» (около 1204 г.). Это важный момент для темы «Венеция».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "military",
+    "period": "1204 CE",
+    "tags": [
+      "Venedig"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Enrico Dandolo gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Venedig. Schüler ordnen diese Person oft dem Jahr 1204 zu.",
+        "ru": "Энрико Дандоло — одно из известных имён Средневековья в теме «Венеция». Событие обычно датируют около 1204 года."
+      },
+      {
+        "de": "Historisch wird «die Vierte Kreuzzug-Teilnahme» vor allem mit Venedig verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «участие в четвёртом походе» связывают с регионом Венеция. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Venedig lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Vierte Kreuzzug-Teilnahme». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Венеция» полезно сравнить причины, ход и последствия: «участие в четвёртом походе». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6164,
+    "question_de": "Welche Aussage trifft auf Konrad II. zu?",
+    "question_ru": "Какое утверждение верно о Конрад II?",
+    "correct_answer_de": "historische Persönlichkeit (Salier)",
+    "correct_answer_ru": "историческая личность (Салии)",
+    "wrong_answers_de": [
+      "historische Persönlichkeit (England)",
+      "historische Persönlichkeit (Scholastik)",
+      "historische Persönlichkeit (Bulgarien)"
+    ],
+    "wrong_answers_ru": [
+      "историческая личность (Османы)",
+      "историческая личность (Философия)",
+      "историческая личность (Церковь)"
+    ],
+    "explanation_de": "Konrad II. steht im Zusammenhang mit «die Krönung zum Kaiser in Rom» (um 1027). Das Ereignis ist ein Schlüsselmoment für Salier.",
+    "explanation_ru": "Конрад II связан(а) с событием «императорская коронация» (около 1027 г.). Это важный момент для темы «Салии».",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1027 CE",
+    "tags": [
+      "Salier"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Konrad II. gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Salier. Schüler ordnen diese Person oft dem Jahr 1027 zu.",
+        "ru": "Конрад II — одно из известных имён Средневековья в теме «Салии». Событие обычно датируют около 1027 года."
+      },
+      {
+        "de": "Historisch wird «die Krönung zum Kaiser in Rom» vor allem mit Rom verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «императорская коронация» связывают с регионом Рим. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Salier lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Krönung zum Kaiser in Rom». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Салии» полезно сравнить причины, ход и последствия: «императорская коронация». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6165,
+    "question_de": "Welche Entwicklung gehört zum Umfeld von Vlad III. Drăculea?",
+    "question_ru": "Какое развитие относится к контексту Влад Цепеш?",
+    "correct_answer_de": "prägende Wirkung auf Walachei und das europäische Mittelalter",
+    "correct_answer_ru": "заметное влияние на «Валахия» и европейское Средневековье",
+    "wrong_answers_de": [
+      "prägende Wirkung auf Scholastik und das europäische Mittelalter",
+      "prägende Wirkung auf Humanismus und das europäische Mittelalter",
+      "prägende Wirkung auf Frankenreich und das europäische Mittelalter"
+    ],
+    "wrong_answers_ru": [
+      "заметное влияние на «Русь» и европейское Средневековье",
+      "заметное влияние на «Англия» и европейское Средневековье",
+      "заметное влияние на «Викинги» и европейское Средневековье"
+    ],
+    "explanation_de": "Vlad III. Drăculea steht im Zusammenhang mit «den Widerstand gegen die Osmanen» (um 1462). Das Ereignis ist ein Schlüsselmoment für Walachei.",
+    "explanation_ru": "Влад Цепеш связан(а) с событием «сопротивление османам» (около 1462 г.). Это важный момент для темы «Валахия».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1462 CE",
+    "tags": [
+      "Walachei"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Vlad III. Drăculea gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Walachei. Schüler ordnen diese Person oft dem Jahr 1462 zu.",
+        "ru": "Влад Цепеш — одно из известных имён Средневековья в теме «Валахия». Событие обычно датируют около 1462 года."
+      },
+      {
+        "de": "Historisch wird «den Widerstand gegen die Osmanen» vor allem mit Târgoviște verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «сопротивление османам» связывают с регионом Тырговиште. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Walachei lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Widerstand gegen die Osmanen». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Валахия» полезно сравнить причины, ход и последствия: «сопротивление османам». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6166,
+    "question_de": "In welchem Jahr fand den Umzug der Hauptstadt nach Wladimir statt?",
+    "question_ru": "В каком году произошло: столица во Владимире?",
+    "correct_answer_de": "1169 n. Chr.",
+    "correct_answer_ru": "1169 г.",
+    "wrong_answers_de": [
+      "786 CE",
+      "785 CE",
+      "1399 CE"
+    ],
+    "wrong_answers_ru": [
+      "843 г.",
+      "1280 г.",
+      "1347 г."
+    ],
+    "explanation_de": "Andrei Bogoljubski steht im Zusammenhang mit «den Umzug der Hauptstadt nach Wladimir» (um 1169). Das Ereignis ist ein Schlüsselmoment für Russland. Das Ereignis datiert historisch in das Jahr 1169 n. Chr..",
+    "explanation_ru": "Андрей Боголюбский связан(а) с событием «столица во Владимире» (около 1169 г.). Это важный момент для темы «Русь». Событие датируется 1169 г..",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "date",
+    "period": "1169 CE",
+    "tags": [
+      "Russland"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Andrei Bogoljubski gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Russland. Schüler ordnen diese Person oft dem Jahr 1169 zu.",
+        "ru": "Андрей Боголюбский — одно из известных имён Средневековья в теме «Русь». Событие обычно датируют около 1169 года."
+      },
+      {
+        "de": "Historisch wird «den Umzug der Hauptstadt nach Wladimir» vor allem mit Wladimir verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «столица во Владимире» связывают с регионом Владимир. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Russland lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Umzug der Hauptstadt nach Wladimir». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Русь» полезно сравнить причины, ход и последствия: «столица во Владимире». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6167,
+    "question_de": "Welche Entwicklung gehört zum Umfeld von William Wallace?",
+    "question_ru": "Какое развитие относится к контексту Уильям Уоллес?",
+    "correct_answer_de": "prägende Wirkung auf Schottland und das europäische Mittelalter",
+    "correct_answer_ru": "заметное влияние на «Шотландия» и европейское Средневековье",
+    "wrong_answers_de": [
+      "Begrenzung königlicher Macht durch Recht",
+      "prägende Wirkung auf Mongolen und das europäische Mittelalter",
+      "prägende Wirkung auf Ordenswesen und das europäische Mittelalter"
+    ],
+    "wrong_answers_ru": [
+      "заметное влияние на «Схоластика» и европейское Средневековье",
+      "заметное влияние на «Османы» и европейское Средневековье",
+      "массовое движение из Западной Европы к Иерусалиму"
+    ],
+    "explanation_de": "William Wallace steht im Zusammenhang mit «den Widerstand gegen England» (um 1297). Das Ereignis ist ein Schlüsselmoment für Schottland.",
+    "explanation_ru": "Уильям Уоллес связан(а) с событием «сопротивление Англии» (около 1297 г.). Это важный момент для темы «Шотландия».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1297 CE",
+    "tags": [
+      "Schottland"
+    ],
+    "interesting_facts": [
+      {
+        "de": "William Wallace gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Schottland. Schüler ordnen diese Person oft dem Jahr 1297 zu.",
+        "ru": "Уильям Уоллес — одно из известных имён Средневековья в теме «Шотландия». Событие обычно датируют около 1297 года."
+      },
+      {
+        "de": "Historisch wird «den Widerstand gegen England» vor allem mit Stirling verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «сопротивление Англии» связывают с регионом Стерлинг. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Schottland lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Widerstand gegen England». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Шотландия» полезно сравнить причины, ход и последствия: «сопротивление Англии». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6168,
+    "question_de": "Was gilt als wesentliche Ursache für die Eroberung von Schottland?",
+    "question_ru": "Что считается важной причиной: завоевание Шотландии?",
+    "correct_answer_de": "Spannungen und Machtkämpfe im Bereich England",
+    "correct_answer_ru": "напряжённость и борьба за власть в сфере «Англия»",
+    "wrong_answers_de": [
+      "Spannungen und Machtkämpfe im Bereich Seldschuken",
+      "Spannungen und Machtkämpfe im Bereich Investiturstreit",
+      "Spannungen und Machtkämpfe im Bereich Normannen"
+    ],
+    "wrong_answers_ru": [
+      "напряжённость и борьба за власть в сфере «Сицилия»",
+      "напряжённость и борьба за власть в сфере «Гуманизм»",
+      "напряжённость и борьба за власть в сфере «Крестовые походы»"
+    ],
+    "explanation_de": "Edward I. Longshanks steht im Zusammenhang mit «die Eroberung von Schottland» (um 1296). Das Ereignis ist ein Schlüsselmoment für England.",
+    "explanation_ru": "Эдуард I Длинноногий связан(а) с событием «завоевание Шотландии» (около 1296 г.). Это важный момент для темы «Англия».",
+    "difficulty": "hard",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1296 CE",
+    "tags": [
+      "England"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Edward I. Longshanks gehört zu den bekanntesten Namen des Mittelalters im Themenfeld England. Schüler ordnen diese Person oft dem Jahr 1296 zu.",
+        "ru": "Эдуард I Длинноногий — одно из известных имён Средневековья в теме «Англия». Событие обычно датируют около 1296 года."
+      },
+      {
+        "de": "Historisch wird «die Eroberung von Schottland» vor allem mit Schottland verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «завоевание Шотландии» связывают с регионом Шотландия. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von England lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Eroberung von Schottland». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Англия» полезно сравнить причины, ход и последствия: «завоевание Шотландии». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6169,
+    "question_de": "Was gilt als wesentliche Ursache für die Stärkung der Moldau?",
+    "question_ru": "Что считается важной причиной: укрепление Молдавии?",
+    "correct_answer_de": "Spannungen und Machtkämpfe im Bereich Moldawien",
+    "correct_answer_ru": "напряжённость и борьба за власть в сфере «Молдавия»",
+    "wrong_answers_de": [
+      "Spannungen und Machtkämpfe im Bereich Portugal",
+      "Spannungen und Machtkämpfe im Bereich Mongolen",
+      "Spannungen und Machtkämpfe im Bereich Humanismus"
+    ],
+    "wrong_answers_ru": [
+      "напряжённость и борьба за власть в сфере «Шотландия»",
+      "напряжённость и борьба за власть в сфере «Крестовые походы»",
+      "напряжённость и борьба за власть в сфере «Центральная Азия»"
+    ],
+    "explanation_de": "Stefan der Große steht im Zusammenhang mit «die Stärkung der Moldau» (um 1457). Das Ereignis ist ein Schlüsselmoment für Moldawien.",
+    "explanation_ru": "Стефан Великий связан(а) с событием «укрепление Молдавии» (около 1457 г.). Это важный момент для темы «Молдавия».",
+    "difficulty": "hard",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1457 CE",
+    "tags": [
+      "Moldawien"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Stefan der Große gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Moldawien. Schüler ordnen diese Person oft dem Jahr 1457 zu.",
+        "ru": "Стефан Великий — одно из известных имён Средневековья в теме «Молдавия». Событие обычно датируют около 1457 года."
+      },
+      {
+        "de": "Historisch wird «die Stärkung der Moldau» vor allem mit Suceava verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «укрепление Молдавии» связывают с регионом Сучава. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Moldawien lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Stärkung der Moldau». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Молдавия» полезно сравнить причины, ход и последствия: «укрепление Молдавии». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6170,
+    "question_de": "Ungefähr in welcher Zeit lebte oder wirkte Konrad III.?",
+    "question_ru": "Примерно в какое время жил или действовал Конрад III?",
+    "correct_answer_de": "1147 n. Chr.",
+    "correct_answer_ru": "1147 г.",
+    "wrong_answers_de": [
+      "1122 CE",
+      "800 CE",
+      "1170 CE"
+    ],
+    "wrong_answers_ru": [
+      "1094 г.",
+      "785 г.",
+      "1187 г."
+    ],
+    "explanation_de": "Konrad III. steht im Zusammenhang mit «den Zweiten Kreuzzug» (um 1147). Das Ereignis ist ein Schlüsselmoment für Heiliges Römisches Reich.",
+    "explanation_ru": "Конрад III связан(а) с событием «второй крестовый поход» (около 1147 г.). Это важный момент для темы «Священная Римская империя».",
+    "difficulty": "hard",
+    "category": "Средневековье",
+    "type": "date",
+    "period": "1147 CE",
+    "tags": [
+      "Heiliges Römisches Reich"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Konrad III. gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Heiliges Römisches Reich. Schüler ordnen diese Person oft dem Jahr 1147 zu.",
+        "ru": "Конрад III — одно из известных имён Средневековья в теме «Священная Римская империя». Событие обычно датируют около 1147 года."
+      },
+      {
+        "de": "Historisch wird «den Zweiten Kreuzzug» vor allem mit Konstantinopel verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «второй крестовый поход» связывают с регионом Константинополь. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Heiliges Römisches Reich lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Zweiten Kreuzzug». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Священная Римская империя» полезно сравнить причины, ход и последствия: «второй крестовый поход». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6171,
+    "question_de": "Was bezeichnet der mittelalterliche Begriff «Backstein gotik»?",
+    "question_ru": "Что обозначает средневековый термин «кирпичная готика»?",
+    "correct_answer_de": "Backsteinbau in Norddeutschland",
+    "correct_answer_ru": "кирпичное зодчество",
+    "wrong_answers_de": [
+      "Vasallentreue gegen Nutzungsrecht",
+      "Untergeordneter des Lehnsherrn",
+      "Lehnseid des Vasallen"
+    ],
+    "wrong_answers_ru": [
+      "вассальная верность против права пользования",
+      "подчинённый сеньора",
+      "вассальная присяга"
+    ],
+    "explanation_de": "«Backstein gotik»: Backsteinbau in Norddeutschland.",
+    "explanation_ru": "«кирпичная готика»: кирпичное зодчество.",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "1300 CE",
+    "tags": [
+      "Architektur",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Backstein gotik» gehört zum Themenfeld Architektur.",
+        "ru": "Термин «кирпичная готика» относится к теме «архитектура»."
+      },
+      {
+        "de": "Im Unterricht wird Backstein gotik oft mit dem Jahr 1300 verknüpft.",
+        "ru": "В курсе «кирпичная готика» связывают с периодом около 1300 года."
+      },
+      {
+        "de": "Wer Backstein gotik kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «кирпичная готика» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6172,
+    "question_de": "Mit welchem Ort verbindet man Balduin IV. am häufigsten?",
+    "question_ru": "С каким местом чаще всего связывают Балдуин IV?",
+    "correct_answer_de": "Jerusalem",
+    "correct_answer_ru": "Иерусалим",
+    "wrong_answers_de": [
+      "Moskau",
+      "Wien",
+      "Akkon"
+    ],
+    "wrong_answers_ru": [
+      "Круя",
+      "Неаполь",
+      "Куликово"
+    ],
+    "explanation_de": "Balduin IV. steht im Zusammenhang mit «die Herrschaft trotz Aussatz» (um 1187). Das Ereignis ist ein Schlüsselmoment für Kreuzzüge.",
+    "explanation_ru": "Балдуин IV связан(а) с событием «правление при проказе» (около 1187 г.). Это важный момент для темы «Крестовые походы».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "geography",
+    "period": "1187 CE",
+    "tags": [
+      "Kreuzzüge"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Balduin IV. gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Kreuzzüge. Schüler ordnen diese Person oft dem Jahr 1187 zu.",
+        "ru": "Балдуин IV — одно из известных имён Средневековья в теме «Крестовые походы». Событие обычно датируют около 1187 года."
+      },
+      {
+        "de": "Historisch wird «die Herrschaft trotz Aussatz» vor allem mit Jerusalem verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «правление при проказе» связывают с регионом Иерусалим. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Kreuzzüge lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Herrschaft trotz Aussatz». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Крестовые походы» полезно сравнить причины, ход и последствия: «правление при проказе». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6173,
+    "question_de": "Ungefähr in welcher Zeit lebte oder wirkte Eleanor von Aquitaine?",
+    "question_ru": "Примерно в какое время жил или действовал Алиенора Аквитанская?",
+    "correct_answer_de": "1152 n. Chr.",
+    "correct_answer_ru": "1152 г.",
+    "wrong_answers_de": [
+      "1215 CE",
+      "878 CE",
+      "1314 CE"
+    ],
+    "wrong_answers_ru": [
+      "1191 г.",
+      "1077 г.",
+      "1146 г."
+    ],
+    "explanation_de": "Eleanor von Aquitaine steht im Zusammenhang mit «die Heirat mit Heinrich II.» (um 1152). Das Ereignis ist ein Schlüsselmoment für Frankreich.",
+    "explanation_ru": "Алиенора Аквитанская связан(а) с событием «брак с Генрихом II» (около 1152 г.). Это важный момент для темы «Франция».",
+    "difficulty": "hard",
+    "category": "Средневековье",
+    "type": "date",
+    "period": "1152 CE",
+    "tags": [
+      "Frankreich"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Eleanor von Aquitaine gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Frankreich. Schüler ordnen diese Person oft dem Jahr 1152 zu.",
+        "ru": "Алиенора Аквитанская — одно из известных имён Средневековья в теме «Франция». Событие обычно датируют около 1152 года."
+      },
+      {
+        "de": "Historisch wird «die Heirat mit Heinrich II.» vor allem mit Aquitaine verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «брак с Генрихом II» связывают с регионом Аквитания. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Frankreich lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Heirat mit Heinrich II.». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Франция» полезно сравнить причины, ход и последствия: «брак с Генрихом II». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6174,
+    "question_de": "Welche Entwicklung gehört zum Umfeld von Karl Martell?",
+    "question_ru": "Какое развитие относится к контексту Карл Мартелл?",
+    "correct_answer_de": "prägende Wirkung auf Frankenreich und das europäische Mittelalter",
+    "correct_answer_ru": "заметное влияние на «Франкское государство» и европейское Средневековье",
+    "wrong_answers_de": [
+      "prägende Wirkung auf Frankreich und das europäische Mittelalter",
+      "prägende Wirkung auf Scholastik und das europäische Mittelalter",
+      "prägende Wirkung auf Philosophie und das europäische Mittelalter"
+    ],
+    "wrong_answers_ru": [
+      "заметное влияние на «Сельджуки» и европейское Средневековье",
+      "заметное влияние на «Инвеститурная схватка» и европейское Средневековье",
+      "заметное влияние на «Монголы» и европейское Средневековье"
+    ],
+    "explanation_de": "Karl Martell steht im Zusammenhang mit «die Schlacht bei Tours/Poitiers» (um 732). Das Ereignis ist ein Schlüsselmoment für Frankenreich.",
+    "explanation_ru": "Карл Мартелл связан(а) с событием «битва при Пуатье» (около 732 г.). Это важный момент для темы «Франкское государство».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "732 CE",
+    "tags": [
+      "Frankenreich"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Karl Martell gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Frankenreich. Schüler ordnen diese Person oft dem Jahr 732 zu.",
+        "ru": "Карл Мартелл — одно из известных имён Средневековья в теме «Франкское государство». Событие обычно датируют около 732 года."
+      },
+      {
+        "de": "Historisch wird «die Schlacht bei Tours/Poitiers» vor allem mit Tours verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «битва при Пуатье» связывают с регионом Тур. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Frankenreich lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Schlacht bei Tours/Poitiers». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Франкское государство» полезно сравнить причины, ход и последствия: «битва при Пуатье». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6175,
+    "question_de": "Welche Erklärung passt zu «Turnier»?",
+    "question_ru": "Какое объяснение подходит к «рыцарский турнир»?",
+    "correct_answer_de": "Ritterlicher Wettkampf",
+    "correct_answer_ru": "рыцарское состязание",
+    "wrong_answers_de": [
+      "Lehnseid des Vasallen",
+      "Untergeordneter des Lehnsherrn",
+      "Vasallentreue gegen Nutzungsrecht"
+    ],
+    "wrong_answers_ru": [
+      "вассальная присяга",
+      "подчинённый сеньора",
+      "вассальная верность против права пользования"
+    ],
+    "explanation_de": "Richtig ist: Ritterlicher Wettkampf.",
+    "explanation_ru": "Верно: рыцарское состязание.",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "1200 CE",
+    "tags": [
+      "Militär",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Turnier» gehört zum Themenfeld Militär.",
+        "ru": "Термин «рыцарский турнир» относится к теме «военное дело»."
+      },
+      {
+        "de": "Im Unterricht wird Turnier oft mit dem Jahr 1200 verknüpft.",
+        "ru": "В курсе «рыцарский турнир» связывают с периодом около 1200 года."
+      },
+      {
+        "de": "Wer Turnier kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «рыцарский турнир» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6176,
+    "question_de": "Was gilt als wesentliche Ursache für den Ersten Kreuzzug?",
+    "question_ru": "Что считается важной причиной: первый крестовый поход?",
+    "correct_answer_de": "Spannungen und Machtkämpfe im Bereich Kreuzzüge",
+    "correct_answer_ru": "напряжённость и борьба за власть в сфере «Крестовые походы»",
+    "wrong_answers_de": [
+      "Spannungen und Machtkämpfe im Bereich Italien",
+      "Spannungen und Machtkämpfe im Bereich Ottonen",
+      "Spannungen und Machtkämpfe im Bereich Russland"
+    ],
+    "wrong_answers_ru": [
+      "напряжённость и борьба за власть в сфере «Византия»",
+      "напряжённость и борьба за власть в сфере «Альбигойцы»",
+      "напряжённость и борьба за власть в сфере «Османы»"
+    ],
+    "explanation_de": "Raymond von Toulouse steht im Zusammenhang mit «den Ersten Kreuzzug» (um 1099). Das Ereignis ist ein Schlüsselmoment für Kreuzzüge.",
+    "explanation_ru": "Раймунд Тулузский связан(а) с событием «первый крестовый поход» (около 1099 г.). Это важный момент для темы «Крестовые походы».",
+    "difficulty": "hard",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1099 CE",
+    "tags": [
+      "Kreuzzüge"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Raymond von Toulouse gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Kreuzzüge. Schüler ordnen diese Person oft dem Jahr 1099 zu.",
+        "ru": "Раймунд Тулузский — одно из известных имён Средневековья в теме «Крестовые походы». Событие обычно датируют около 1099 года."
+      },
+      {
+        "de": "Historisch wird «den Ersten Kreuzzug» vor allem mit Jerusalem verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «первый крестовый поход» связывают с регионом Иерусалим. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Kreuzzüge lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Ersten Kreuzzug». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Крестовые походы» полезно сравнить причины, ход и последствия: «первый крестовый поход». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6177,
+    "question_de": "In welchem Jahr fand die Unterwerfung Bulgariens statt?",
+    "question_ru": "В каком году произошло: покорение Болгарии?",
+    "correct_answer_de": "1018 n. Chr.",
+    "correct_answer_ru": "1018 г.",
+    "wrong_answers_de": [
+      "1378 CE",
+      "1220 CE",
+      "1025 CE"
+    ],
+    "wrong_answers_ru": [
+      "1191 г.",
+      "1206 г.",
+      "1187 г."
+    ],
+    "explanation_de": "Basil II. steht im Zusammenhang mit «die Unterwerfung Bulgariens» (um 1018). Das Ereignis ist ein Schlüsselmoment für Byzanz. Das Ereignis datiert historisch in das Jahr 1018 n. Chr..",
+    "explanation_ru": "Василий II связан(а) с событием «покорение Болгарии» (около 1018 г.). Это важный момент для темы «Византия». Событие датируется 1018 г..",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "date",
+    "period": "1018 CE",
+    "tags": [
+      "Byzanz"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Basil II. gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Byzanz. Schüler ordnen diese Person oft dem Jahr 1018 zu.",
+        "ru": "Василий II — одно из известных имён Средневековья в теме «Византия». Событие обычно датируют около 1018 года."
+      },
+      {
+        "de": "Historisch wird «die Unterwerfung Bulgariens» vor allem mit Byzanz verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «покорение Болгарии» связывают с регионом Византия. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Byzanz lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Unterwerfung Bulgariens». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Византия» полезно сравнить причины, ход и последствия: «покорение Болгарии». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6178,
+    "question_de": "Welches Ereignis wird mit Franz von Assisi verbunden?",
+    "question_ru": "С каким событием связывают Франциск Ассизский?",
+    "correct_answer_de": "die Gründung des Franziskanerordens",
+    "correct_answer_ru": "основание ордена францисканцев",
+    "wrong_answers_de": [
+      "den Widerstand gegen die Osmanen",
+      "die Kaiserkrönung Ottos I. in Rom",
+      "die Thronbesteigung nach Richard II."
+    ],
+    "wrong_answers_ru": [
+      "северная морская империя",
+      "восстание Уота Тайлера",
+      "конец схизмы"
+    ],
+    "explanation_de": "Franz von Assisi steht im Zusammenhang mit «die Gründung des Franziskanerordens» (um 1224). Das Ereignis ist ein Schlüsselmoment für Ordenswesen.",
+    "explanation_ru": "Франциск Ассизский связан(а) с событием «основание ордена францисканцев» (около 1224 г.). Это важный момент для темы «Монашество».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "military",
+    "period": "1224 CE",
+    "tags": [
+      "Ordenswesen"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Franz von Assisi gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Ordenswesen. Schüler ordnen diese Person oft dem Jahr 1224 zu.",
+        "ru": "Франциск Ассизский — одно из известных имён Средневековья в теме «Монашество». Событие обычно датируют около 1224 года."
+      },
+      {
+        "de": "Historisch wird «die Gründung des Franziskanerordens» vor allem mit Assisi verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «основание ордена францисканцев» связывают с регионом Ассизи. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Ordenswesen lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Gründung des Franziskanerordens». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Монашество» полезно сравнить причины, ход и последствия: «основание ордена францисканцев». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6179,
+    "question_de": "Welche Entwicklung gehört zum Umfeld von Ludwig der Fromme?",
+    "question_ru": "Какое развитие относится к контексту Людовик Благочестивый?",
+    "correct_answer_de": "prägende Wirkung auf Frankenreich und das europäische Mittelalter",
+    "correct_answer_ru": "заметное влияние на «Франкское государство» и европейское Средневековье",
+    "wrong_answers_de": [
+      "prägende Wirkung auf Kreuzzüge und das europäische Mittelalter",
+      "prägende Wirkung auf Literatur und das europäische Mittelalter",
+      "prägende Wirkung auf Luxemburger und das europäische Mittelalter"
+    ],
+    "wrong_answers_ru": [
+      "заметное влияние на «Литература» и европейское Средневековье",
+      "заметное влияние на «Византия» и европейское Средневековье",
+      "перелом в пользу французского короля"
+    ],
+    "explanation_de": "Ludwig der Fromme steht im Zusammenhang mit «den Vertrag von Verdun» (um 843). Das Ereignis ist ein Schlüsselmoment für Frankenreich.",
+    "explanation_ru": "Людовик Благочестивый связан(а) с событием «Верденский договор» (около 843 г.). Это важный момент для темы «Франкское государство».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "843 CE",
+    "tags": [
+      "Frankenreich"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Ludwig der Fromme gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Frankenreich. Schüler ordnen diese Person oft dem Jahr 843 zu.",
+        "ru": "Людовик Благочестивый — одно из известных имён Средневековья в теме «Франкское государство». Событие обычно датируют около 843 года."
+      },
+      {
+        "de": "Historisch wird «den Vertrag von Verdun» vor allem mit Verdun verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «Верденский договор» связывают с регионом Верден. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Frankenreich lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Vertrag von Verdun». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Франкское государство» полезно сравнить причины, ход и последствия: «Верденский договор». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6180,
+    "question_de": "Wer wird vor allem mit die Schlacht bei Hastings in Verbindung gebracht?",
+    "question_ru": "Кто прежде всего связан с событием: битва при Гастингсе?",
+    "correct_answer_de": "Wilhelm der Eroberer",
+    "correct_answer_ru": "Вильгельм Завоеватель",
+    "wrong_answers_de": [
+      "Hulagu Khan",
+      "Ivan Kalita",
+      "Skanderbeg"
+    ],
+    "wrong_answers_ru": [
+      "Карл IV",
+      "Карл Великий",
+      "Филипп II Август"
+    ],
+    "explanation_de": "1066 besiegte Wilhelm bei Hastings König Harald II. und begründete die normannische Dynastie.",
+    "explanation_ru": "В 1066 году Вильгельм разбил Гарольда II при Гастингсе и основал нормандскую династию.",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1066 CE",
+    "tags": [
+      "England"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Das Domesday Book (1086) erfasste Besitz und Abgaben – frühe Form landesweiter Verwaltung.",
+        "ru": "«Книга Страшного суда» (1086) зафиксировала владения и подати — ранняя всеобщая перепись."
+      },
+      {
+        "de": "Normannische Adelige, Sprache und Recht veränderten England langfristig.",
+        "ru": "Нормандские аристократы, язык и право надолго изменили Англию."
+      },
+      {
+        "de": "Schlacht bei Hastings",
+        "ru": "Гастингс"
+      }
+    ]
+  },
+  {
+    "id": 6181,
+    "question_de": "Welche Erklärung passt zu «Aachen»?",
+    "question_ru": "Какое объяснение подходит к «Ахен»?",
+    "correct_answer_de": "Krönungsstadt Karls des Großen",
+    "correct_answer_ru": "коронационный город Карла",
+    "wrong_answers_de": [
+      "Lehnseid des Vasallen",
+      "Untergeordneter des Lehnsherrn",
+      "Vasallentreue gegen Nutzungsrecht"
+    ],
+    "wrong_answers_ru": [
+      "вассальная присяга",
+      "подчинённый сеньора",
+      "вассальная верность против права пользования"
+    ],
+    "explanation_de": "Richtig ist: Krönungsstadt Karls des Großen.",
+    "explanation_ru": "Верно: коронационный город Карла.",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "800 CE",
+    "tags": [
+      "Frankenreich",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Aachen» gehört zum Themenfeld Frankenreich.",
+        "ru": "Термин «Ахен» относится к теме «Франки»."
+      },
+      {
+        "de": "Im Unterricht wird Aachen oft mit dem Jahr 800 verknüpft.",
+        "ru": "В курсе «Ахен» связывают с периодом около 800 года."
+      },
+      {
+        "de": "Wer Aachen kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «Ахен» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6182,
+    "question_de": "Was bezeichnet der mittelalterliche Begriff «Städtebund»?",
+    "question_ru": "Что обозначает средневековый термин «городской союз»?",
+    "correct_answer_de": "Zusammenschluss für Selbstschutz",
+    "correct_answer_ru": "союз для самозащиты",
+    "wrong_answers_de": [
+      "Vasallentreue gegen Nutzungsrecht",
+      "Untergeordneter des Lehnsherrn",
+      "Lehnseid des Vasallen"
+    ],
+    "wrong_answers_ru": [
+      "вассальная верность против права пользования",
+      "подчинённый сеньора",
+      "вассальная присяга"
+    ],
+    "explanation_de": "«Städtebund»: Zusammenschluss für Selbstschutz.",
+    "explanation_ru": "«городской союз»: союз для самозащиты.",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "1300 CE",
+    "tags": [
+      "Städte",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Städtebund» gehört zum Themenfeld Städte.",
+        "ru": "Термин «городской союз» относится к теме «города»."
+      },
+      {
+        "de": "Im Unterricht wird Städtebund oft mit dem Jahr 1300 verknüpft.",
+        "ru": "В курсе «городской союз» связывают с периодом около 1300 года."
+      },
+      {
+        "de": "Wer Städtebund kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «городской союз» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6183,
+    "question_de": "Mit welchem Ort verbindet man Balduin I. von Konstantinopel am häufigsten?",
+    "question_ru": "С каким местом чаще всего связывают Балдуин I Константинопольский?",
+    "correct_answer_de": "Konstantinopel",
+    "correct_answer_ru": "Константинополь",
+    "wrong_answers_de": [
+      "Valencia",
+      "Ankara",
+      "Jerusalem"
+    ],
+    "wrong_answers_ru": [
+      "Киев",
+      "Сергиев Посад",
+      "Ассизи"
+    ],
+    "explanation_de": "Balduin I. von Konstantinopel steht im Zusammenhang mit «die Eroberung Konstantinopels im Vierten Kreuzzug» (um 1204). Das Ereignis ist ein Schlüsselmoment für Kreuzzüge.",
+    "explanation_ru": "Балдуин I Константинопольский связан(а) с событием «захват Константинополя в 1204» (около 1204 г.). Это важный момент для темы «Крестовые походы».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "geography",
+    "period": "1204 CE",
+    "tags": [
+      "Kreuzzüge"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Balduin I. von Konstantinopel gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Kreuzzüge. Schüler ordnen diese Person oft dem Jahr 1204 zu.",
+        "ru": "Балдуин I Константинопольский — одно из известных имён Средневековья в теме «Крестовые походы». Событие обычно датируют около 1204 года."
+      },
+      {
+        "de": "Historisch wird «die Eroberung Konstantinopels im Vierten Kreuzzug» vor allem mit Konstantinopel verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «захват Константинополя в 1204» связывают с регионом Константинополь. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Kreuzzüge lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Eroberung Konstantinopels im Vierten Kreuzzug». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Крестовые походы» полезно сравнить причины, ход и последствия: «захват Константинополя в 1204». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6184,
+    "question_de": "Welchem Bereich des Mittelalters ordnet man Alfred der Große vor allem zu?",
+    "question_ru": "К какой сфере Средневековья прежде всего относят Альфред Великий?",
+    "correct_answer_de": "England",
+    "correct_answer_ru": "Англия",
+    "wrong_answers_de": [
+      "Salier",
+      "Heiliges Römisches Reich",
+      "Philosophie"
+    ],
+    "wrong_answers_ru": [
+      "Монастыри",
+      "Франция",
+      "Франкское государство"
+    ],
+    "explanation_de": "Alfred der Große gehört zum Themenfeld England. Alfred der Große steht im Zusammenhang mit «den Frieden von Wedmore» (um 878). Das Ereignis ist ein Schlüsselmoment für England.",
+    "explanation_ru": "Альфред Великий относится к теме «Англия». Альфред Великий связан(а) с событием «мир в Ведморе» (около 878 г.). Это важный момент для темы «Англия».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "institution",
+    "period": "878 CE",
+    "tags": [
+      "England"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Alfred der Große gehört zu den bekanntesten Namen des Mittelalters im Themenfeld England. Schüler ordnen diese Person oft dem Jahr 878 zu.",
+        "ru": "Альфред Великий — одно из известных имён Средневековья в теме «Англия». Событие обычно датируют около 878 года."
+      },
+      {
+        "de": "Historisch wird «den Frieden von Wedmore» vor allem mit Wessex verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «мир в Ведморе» связывают с регионом Уэссекс. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von England lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Frieden von Wedmore». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Англия» полезно сравнить причины, ход и последствия: «мир в Ведморе». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6185,
+    "question_de": "Was bezeichnet der mittelalterliche Begriff «Hörigkeit»?",
+    "question_ru": "Что обозначает средневековый термин «подчинённость»?",
+    "correct_answer_de": "Abhängigkeit von Grundherrn",
+    "correct_answer_ru": "зависимость от сеньора",
+    "wrong_answers_de": [
+      "Vasallentreue gegen Nutzungsrecht",
+      "Untergeordneter des Lehnsherrn",
+      "Lehnseid des Vasallen"
+    ],
+    "wrong_answers_ru": [
+      "вассальная верность против права пользования",
+      "подчинённый сеньора",
+      "вассальная присяга"
+    ],
+    "explanation_de": "«Hörigkeit»: Abhängigkeit von Grundherrn.",
+    "explanation_ru": "«подчинённость»: зависимость от сеньора.",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "1200 CE",
+    "tags": [
+      "Gesellschaft",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Hörigkeit» gehört zum Themenfeld Gesellschaft.",
+        "ru": "Термин «подчинённость» относится к теме «общество»."
+      },
+      {
+        "de": "Im Unterricht wird Hörigkeit oft mit dem Jahr 1200 verknüpft.",
+        "ru": "В курсе «подчинённость» связывают с периодом около 1200 года."
+      },
+      {
+        "de": "Wer Hörigkeit kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «подчинённость» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6186,
+    "question_de": "Welche Aussage trifft auf Alfonso X. der Weise zu?",
+    "question_ru": "Какое утверждение верно о Альфонсо X Мудрый?",
+    "correct_answer_de": "historische Persönlichkeit (Spanien)",
+    "correct_answer_ru": "историческая личность (Испания)",
+    "wrong_answers_de": [
+      "historische Persönlichkeit (Schottland)",
+      "historische Persönlichkeit (Staufer)",
+      "historische Persönlichkeit (Italien)"
+    ],
+    "wrong_answers_ru": [
+      "историческая личность (Схоластика)",
+      "историческая личность (Габсбурги)",
+      "историческая личность (Уэльс)"
+    ],
+    "explanation_de": "Alfonso X. der Weise steht im Zusammenhang mit «die Alfonsinischen Gesetze» (um 1252). Das Ereignis ist ein Schlüsselmoment für Spanien.",
+    "explanation_ru": "Альфонсо X Мудрый связан(а) с событием ««Сетенарии» Альфонсо X» (около 1252 г.). Это важный момент для темы «Испания».",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1252 CE",
+    "tags": [
+      "Spanien"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Alfonso X. der Weise gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Spanien. Schüler ordnen diese Person oft dem Jahr 1252 zu.",
+        "ru": "Альфонсо X Мудрый — одно из известных имён Средневековья в теме «Испания». Событие обычно датируют около 1252 года."
+      },
+      {
+        "de": "Historisch wird «die Alfonsinischen Gesetze» vor allem mit Toledo verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие ««Сетенарии» Альфонсо X» связывают с регионом Толедо. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Spanien lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Alfonsinischen Gesetze». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Испания» полезно сравнить причины, ход и последствия: ««Сетенарии» Альфонсо X». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6187,
+    "question_de": "Welches Ereignis wird mit Simon de Montfort verbunden?",
+    "question_ru": "С каким событием связывают Симон де Монфор?",
+    "correct_answer_de": "den Albigenserkreuzzug",
+    "correct_answer_ru": "крестовый поход против альбигойцев",
+    "wrong_answers_de": [
+      "den Aufruf zum Zweiten Kreuzzug",
+      "die Einnahme Jerusalems",
+      "die Krönung zum Zar der Serben"
+    ],
+    "wrong_answers_ru": [
+      "открытие Винланда",
+      "призыв к первому крестовому походу в Клермоне",
+      "костёр пустоты"
+    ],
+    "explanation_de": "Simon de Montfort steht im Zusammenhang mit «den Albigenserkreuzzug» (um 1209). Das Ereignis ist ein Schlüsselmoment für Albigenser.",
+    "explanation_ru": "Симон де Монфор связан(а) с событием «крестовый поход против альбигойцев» (около 1209 г.). Это важный момент для темы «Альбигойцы».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "military",
+    "period": "1209 CE",
+    "tags": [
+      "Albigenser"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Simon de Montfort gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Albigenser. Schüler ordnen diese Person oft dem Jahr 1209 zu.",
+        "ru": "Симон де Монфор — одно из известных имён Средневековья в теме «Альбигойцы». Событие обычно датируют около 1209 года."
+      },
+      {
+        "de": "Historisch wird «den Albigenserkreuzzug» vor allem mit Languedoc verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «крестовый поход против альбигойцев» связывают с регионом Лангедок. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Albigenser lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Albigenserkreuzzug». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Альбигойцы» полезно сравнить причины, ход и последствия: «крестовый поход против альбигойцев». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6188,
+    "question_de": "Welches Ereignis wird mit Heinrich II. Plantagenet verbunden?",
+    "question_ru": "С каким событием связывают Генрих II Плантагенет?",
+    "correct_answer_de": "den Konflikt mit Thomas Becket",
+    "correct_answer_ru": "конфликт с Бекетом",
+    "wrong_answers_de": [
+      "die Herrschaft trotz Aussatz",
+      "die Schlacht bei Hastings",
+      "den Widerstand gegen Karl den Großen"
+    ],
+    "wrong_answers_ru": [
+      "битва при Манцикерте",
+      "возвращение Иерусалима",
+      "укрепление Молдавии"
+    ],
+    "explanation_de": "Heinrich II. Plantagenet steht im Zusammenhang mit «den Konflikt mit Thomas Becket» (um 1170). Das Ereignis ist ein Schlüsselmoment für England.",
+    "explanation_ru": "Генрих II Плантагенет связан(а) с событием «конфликт с Бекетом» (около 1170 г.). Это важный момент для темы «Англия».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "military",
+    "period": "1170 CE",
+    "tags": [
+      "England"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Heinrich II. Plantagenet gehört zu den bekanntesten Namen des Mittelalters im Themenfeld England. Schüler ordnen diese Person oft dem Jahr 1170 zu.",
+        "ru": "Генрих II Плантагенет — одно из известных имён Средневековья в теме «Англия». Событие обычно датируют около 1170 года."
+      },
+      {
+        "de": "Historisch wird «den Konflikt mit Thomas Becket» vor allem mit Canterbury verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «конфликт с Бекетом» связывают с регионом Кентербери. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von England lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «den Konflikt mit Thomas Becket». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Англия» полезно сравнить причины, ход и последствия: «конфликт с Бекетом». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6189,
+    "question_de": "Was war eine wichtige Folge von die Roncevaux-Schlacht?",
+    "question_ru": "Каким было важное следствие: Ронсевальское сражение?",
+    "correct_answer_de": "prägende Wirkung auf Frankenreich und das europäische Mittelalter",
+    "correct_answer_ru": "заметное влияние на «Франкское государство» и европейское Средневековье",
+    "wrong_answers_de": [
+      "Symbol staufischer Macht und Kreuzzugsideal",
+      "prägende Wirkung auf Byzanz und das europäische Mittelalter",
+      "prägende Wirkung auf Sizilien und das europäische Mittelalter"
+    ],
+    "wrong_answers_ru": [
+      "заметное влияние на «Столетняя война» и европейское Средневековье",
+      "заметное влияние на «Венгрия» и европейское Средневековье",
+      "заметное влияние на «Польша» и европейское Средневековье"
+    ],
+    "explanation_de": "Roland steht im Zusammenhang mit «die Roncevaux-Schlacht» (um 778). Das Ereignis ist ein Schlüsselmoment für Frankenreich.",
+    "explanation_ru": "Роланд связан(а) с событием «Ронсевальское сражение» (около 778 г.). Это важный момент для темы «Франкское государство».",
+    "difficulty": "hard",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "778 CE",
+    "tags": [
+      "Frankenreich"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Roland gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Frankenreich. Schüler ordnen diese Person oft dem Jahr 778 zu.",
+        "ru": "Роланд — одно из известных имён Средневековья в теме «Франкское государство». Событие обычно датируют около 778 года."
+      },
+      {
+        "de": "Historisch wird «die Roncevaux-Schlacht» vor allem mit Pyrenäen verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «Ронсевальское сражение» связывают с регионом Пиренеи. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Frankenreich lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Roncevaux-Schlacht». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Франкское государство» полезно сравнить причины, ход и последствия: «Ронсевальское сражение». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6190,
+    "question_de": "Mit welchem Ort verbindet man Friedrich von Hohenstaufen am häufigsten?",
+    "question_ru": "С каким местом чаще всего связывают Фридрих Барбаросса?",
+    "correct_answer_de": "Rom",
+    "correct_answer_ru": "Рим",
+    "wrong_answers_de": [
+      "Runnymede",
+      "Jerusalem",
+      "Wessex"
+    ],
+    "wrong_answers_ru": [
+      "Прага",
+      "Кведлинбург",
+      "Акра"
+    ],
+    "explanation_de": "Friedrich von Hohenstaufen steht im Zusammenhang mit «die Kaiserkrönung» (um 1155). Das Ereignis ist ein Schlüsselmoment für Staufer.",
+    "explanation_ru": "Фридрих Барбаросса связан(а) с событием «императорская коронация» (около 1155 г.). Это важный момент для темы «Штауфены».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "geography",
+    "period": "1155 CE",
+    "tags": [
+      "Staufer"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Friedrich von Hohenstaufen gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Staufer. Schüler ordnen diese Person oft dem Jahr 1155 zu.",
+        "ru": "Фридрих Барбаросса — одно из известных имён Средневековья в теме «Штауфены». Событие обычно датируют около 1155 года."
+      },
+      {
+        "de": "Historisch wird «die Kaiserkrönung» vor allem mit Rom verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «императорская коронация» связывают с регионом Рим. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Staufer lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Kaiserkrönung». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Штауфены» полезно сравнить причины, ход и последствия: «императорская коронация». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6191,
+    "question_de": "Wer wird vor allem mit die Kommentare zu Aristoteles in Verbindung gebracht?",
+    "question_ru": "Кто прежде всего связан с событием: комментарии к Аристотелю?",
+    "correct_answer_de": "Averroes",
+    "correct_answer_ru": "Ибн Рушд",
+    "wrong_answers_de": [
+      "Heinrich der Seefahrer",
+      "Murad II.",
+      "Dante Alighieri"
+    ],
+    "wrong_answers_ru": [
+      "Конрадин",
+      "Альп-Арслан",
+      "Конрад II"
+    ],
+    "explanation_de": "Averroes steht im Zusammenhang mit «die Kommentare zu Aristoteles» (um 1198). Das Ereignis ist ein Schlüsselmoment für Philosophie.",
+    "explanation_ru": "Ибн Рушд связан(а) с событием «комментарии к Аристотелю» (около 1198 г.). Это важный момент для темы «Философия».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1198 CE",
+    "tags": [
+      "Philosophie"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Averroes gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Philosophie. Schüler ordnen diese Person oft dem Jahr 1198 zu.",
+        "ru": "Ибн Рушд — одно из известных имён Средневековья в теме «Философия». Событие обычно датируют около 1198 года."
+      },
+      {
+        "de": "Historisch wird «die Kommentare zu Aristoteles» vor allem mit Córdoba verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «комментарии к Аристотелю» связывают с регионом Кордова. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Philosophie lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Kommentare zu Aristoteles». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Философия» полезно сравнить причины, ход и последствия: «комментарии к Аристотелю». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6192,
+    "question_de": "Mit welchem Ort verbindet man Edward I. Longshanks am häufigsten?",
+    "question_ru": "С каким местом чаще всего связывают Эдуард I Длинноногий?",
+    "correct_answer_de": "Schottland",
+    "correct_answer_ru": "Шотландия",
+    "wrong_answers_de": [
+      "Bouvines",
+      "Konstantinopel",
+      "Stirling"
+    ],
+    "wrong_answers_ru": [
+      "Флоренция",
+      "Йоркшир",
+      "Ассизи"
+    ],
+    "explanation_de": "Edward I. Longshanks steht im Zusammenhang mit «die Eroberung von Schottland» (um 1296). Das Ereignis ist ein Schlüsselmoment für England.",
+    "explanation_ru": "Эдуард I Длинноногий связан(а) с событием «завоевание Шотландии» (около 1296 г.). Это важный момент для темы «Англия».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "geography",
+    "period": "1296 CE",
+    "tags": [
+      "England"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Edward I. Longshanks gehört zu den bekanntesten Namen des Mittelalters im Themenfeld England. Schüler ordnen diese Person oft dem Jahr 1296 zu.",
+        "ru": "Эдуард I Длинноногий — одно из известных имён Средневековья в теме «Англия». Событие обычно датируют около 1296 года."
+      },
+      {
+        "de": "Historisch wird «die Eroberung von Schottland» vor allem mit Schottland verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «завоевание Шотландии» связывают с регионом Шотландия. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von England lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Eroberung von Schottland». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Англия» полезно сравнить причины, ход и последствия: «завоевание Шотландии». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6193,
+    "question_de": "Welche Entwicklung gehört zum Umfeld von Sergius von Radonezh?",
+    "question_ru": "Какое развитие относится к контексту Сергий Радонежский?",
+    "correct_answer_de": "prägende Wirkung auf Russland und das europäische Mittelalter",
+    "correct_answer_ru": "заметное влияние на «Русь» и европейское Средневековье",
+    "wrong_answers_de": [
+      "prägende Wirkung auf Kiewer Rus und das europäische Mittelalter",
+      "prägende Wirkung auf Kalifat und das europäische Mittelalter",
+      "prägende Wirkung auf Avignon und das europäische Mittelalter"
+    ],
+    "wrong_answers_ru": [
+      "заметное влияние на «Сицилия» и европейское Средневековье",
+      "заметное влияние на «Венгрия» и европейское Средневековье",
+      "заметное влияние на «Халифат» и европейское Средневековье"
+    ],
+    "explanation_de": "Sergius von Radonezh steht im Zusammenhang mit «die Gründung des Dreifaltigkeitsklosters» (um 1378). Das Ereignis ist ein Schlüsselmoment für Russland.",
+    "explanation_ru": "Сергий Радонежский связан(а) с событием «Троицкий монастырь» (около 1378 г.). Это важный момент для темы «Русь».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1378 CE",
+    "tags": [
+      "Russland"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Sergius von Radonezh gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Russland. Schüler ordnen diese Person oft dem Jahr 1378 zu.",
+        "ru": "Сергий Радонежский — одно из известных имён Средневековья в теме «Русь». Событие обычно датируют около 1378 года."
+      },
+      {
+        "de": "Historisch wird «die Gründung des Dreifaltigkeitsklosters» vor allem mit Sergijew Possad verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «Троицкий монастырь» связывают с регионом Сергиев Посад. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Russland lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Gründung des Dreifaltigkeitsklosters». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Русь» полезно сравнить причины, ход и последствия: «Троицкий монастырь». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6194,
+    "question_de": "Welche Erklärung passt zu «Universitas»?",
+    "question_ru": "Какое объяснение подходит к «университет»?",
+    "correct_answer_de": "Gelehrte Gemeinschaft mit Studienprivilegien",
+    "correct_answer_ru": "учёное сообщество с привилегиями",
+    "wrong_answers_de": [
+      "Lehnseid des Vasallen",
+      "Untergeordneter des Lehnsherrn",
+      "Vasallentreue gegen Nutzungsrecht"
+    ],
+    "wrong_answers_ru": [
+      "вассальная присяга",
+      "подчинённый сеньора",
+      "вассальная верность против права пользования"
+    ],
+    "explanation_de": "Richtig ist: Gelehrte Gemeinschaft mit Studienprivilegien.",
+    "explanation_ru": "Верно: учёное сообщество с привилегиями.",
+    "difficulty": "easy",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "1150 CE",
+    "tags": [
+      "Bildung",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Universitas» gehört zum Themenfeld Bildung.",
+        "ru": "Термин «университет» относится к теме «образование»."
+      },
+      {
+        "de": "Im Unterricht wird Universitas oft mit dem Jahr 1150 verknüpft.",
+        "ru": "В курсе «университет» связывают с периодом около 1150 года."
+      },
+      {
+        "de": "Wer Universitas kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «университет» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6195,
+    "question_de": "Wer wird vor allem mit die Wagenburg-Taktik in Verbindung gebracht?",
+    "question_ru": "Кто прежде всего связан с событием: тактика вагенбурга?",
+    "correct_answer_de": "Jan Žižka",
+    "correct_answer_ru": "Ян Жижка",
+    "wrong_answers_de": [
+      "Heinrich III.",
+      "Kublai Khan",
+      "Osman I."
+    ],
+    "wrong_answers_ru": [
+      "Раймунд VI Тулузский",
+      "Малик-Шах I",
+      "Казимир III Великий"
+    ],
+    "explanation_de": "Jan Žižka steht im Zusammenhang mit «die Wagenburg-Taktik» (um 1420). Das Ereignis ist ein Schlüsselmoment für Hussitenkriege.",
+    "explanation_ru": "Ян Жижка связан(а) с событием «тактика вагенбурга» (около 1420 г.). Это важный момент для темы «Гуситские войны».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1420 CE",
+    "tags": [
+      "Hussitenkriege"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Jan Žižka gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Hussitenkriege. Schüler ordnen diese Person oft dem Jahr 1420 zu.",
+        "ru": "Ян Жижка — одно из известных имён Средневековья в теме «Гуситские войны». Событие обычно датируют около 1420 года."
+      },
+      {
+        "de": "Historisch wird «die Wagenburg-Taktik» vor allem mit Tábor verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «тактика вагенбурга» связывают с регионом Табор. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Hussitenkriege lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Wagenburg-Taktik». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Гуситские войны» полезно сравнить причины, ход и последствия: «тактика вагенбурга». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6196,
+    "question_de": "Wer wird vor allem mit das Vierte Laterankonzil in Verbindung gebracht?",
+    "question_ru": "Кто прежде всего связан с событием: IV Латеранский собор?",
+    "correct_answer_de": "Innozenz III.",
+    "correct_answer_ru": "Иннокентий III",
+    "wrong_answers_de": [
+      "Maximilian I.",
+      "Giotto di Bondone",
+      "Robert the Bruce"
+    ],
+    "wrong_answers_ru": [
+      "Уильям Оккам",
+      "Фридрих II Сицилийский",
+      "Энрико Дандоло"
+    ],
+    "explanation_de": "Innozenz III. steht im Zusammenhang mit «das Vierte Laterankonzil» (um 1215). Das Ereignis ist ein Schlüsselmoment für Kirche.",
+    "explanation_ru": "Иннокентий III связан(а) с событием «IV Латеранский собор» (около 1215 г.). Это важный момент для темы «Церковь».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1215 CE",
+    "tags": [
+      "Kirche"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Innozenz III. gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Kirche. Schüler ordnen diese Person oft dem Jahr 1215 zu.",
+        "ru": "Иннокентий III — одно из известных имён Средневековья в теме «Церковь». Событие обычно датируют около 1215 года."
+      },
+      {
+        "de": "Historisch wird «das Vierte Laterankonzil» vor allem mit Rom verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «IV Латеранский собор» связывают с регионом Рим. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Kirche lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «das Vierte Laterankonzil». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Церковь» полезно сравнить причины, ход и последствия: «IV Латеранский собор». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6197,
+    "question_de": "Was gilt als wesentliche Ursache für die Kaiserkrönung?",
+    "question_ru": "Что считается важной причиной: императорская коронация?",
+    "correct_answer_de": "Spannungen und Machtkämpfe im Bereich Staufer",
+    "correct_answer_ru": "напряжённость и борьба за власть в сфере «Штауфены»",
+    "wrong_answers_de": [
+      "Spannungen und Machtkämpfe im Bereich Byzanz",
+      "Spannungen und Machtkämpfe im Bereich Hussitismus",
+      "Spannungen und Machtkämpfe im Bereich Portugal"
+    ],
+    "wrong_answers_ru": [
+      "напряжённость и борьба за власть в сфере «Крестовые походы»",
+      "напряжённость и борьба за власть в сфере «Монголы»",
+      "напряжённость и борьба за власть в сфере «Франция»"
+    ],
+    "explanation_de": "Friedrich von Hohenstaufen steht im Zusammenhang mit «die Kaiserkrönung» (um 1155). Das Ereignis ist ein Schlüsselmoment für Staufer.",
+    "explanation_ru": "Фридрих Барбаросса связан(а) с событием «императорская коронация» (около 1155 г.). Это важный момент для темы «Штауфены».",
+    "difficulty": "hard",
+    "category": "Средневековье",
+    "type": "cause_effect",
+    "period": "1155 CE",
+    "tags": [
+      "Staufer"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Friedrich von Hohenstaufen gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Staufer. Schüler ordnen diese Person oft dem Jahr 1155 zu.",
+        "ru": "Фридрих Барбаросса — одно из известных имён Средневековья в теме «Штауфены». Событие обычно датируют около 1155 года."
+      },
+      {
+        "de": "Historisch wird «die Kaiserkrönung» vor allem mit Rom verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «императорская коронация» связывают с регионом Рим. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Staufer lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Kaiserkrönung». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Штауфены» полезно сравнить причины, ход и последствия: «императорская коронация». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6198,
+    "question_de": "Was bezeichnet der mittelalterliche Begriff «Humanismus»?",
+    "question_ru": "Что обозначает средневековый термин «гуманизм»?",
+    "correct_answer_de": "Rückbesinnung auf antike Texte",
+    "correct_answer_ru": "обращение к античности",
+    "wrong_answers_de": [
+      "Vasallentreue gegen Nutzungsrecht",
+      "Untergeordneter des Lehnsherrn",
+      "Lehnseid des Vasallen"
+    ],
+    "wrong_answers_ru": [
+      "вассальная верность против права пользования",
+      "подчинённый сеньора",
+      "вассальная присяга"
+    ],
+    "explanation_de": "«Humanismus»: Rückbesinnung auf antike Texte.",
+    "explanation_ru": "«гуманизм»: обращение к античности.",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "definition",
+    "period": "1400 CE",
+    "tags": [
+      "Renaissance",
+      "Begriff"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Begriff «Humanismus» gehört zum Themenfeld Renaissance.",
+        "ru": "Термин «гуманизм» относится к теме «Ренессанс»."
+      },
+      {
+        "de": "Im Unterricht wird Humanismus oft mit dem Jahr 1400 verknüpft.",
+        "ru": "В курсе «гуманизм» связывают с периодом около 1400 года."
+      },
+      {
+        "de": "Wer Humanismus kennt, versteht Zusammenhänge im europäischen Mittelalter besser.",
+        "ru": "Знание «гуманизм» помогает понять европейское Средневековье."
+      }
+    ]
+  },
+  {
+    "id": 6199,
+    "question_de": "Welches Ereignis wird mit Isabella I. von Kastilien verbunden?",
+    "question_ru": "С каким событием связывают Изабелла I?",
+    "correct_answer_de": "die Eroberung Granadas",
+    "correct_answer_ru": "завоевание Гранады",
+    "wrong_answers_de": [
+      "ihre Visionen und Schriften",
+      "die Gründung des Osmanischen Reiches",
+      "die Reise nach China"
+    ],
+    "wrong_answers_ru": [
+      "разрушение Багдада",
+      "битва при Креси",
+      "конфликт с Бекетом"
+    ],
+    "explanation_de": "Isabella I. von Kastilien steht im Zusammenhang mit «die Eroberung Granadas» (um 1492). Das Ereignis ist ein Schlüsselmoment für Spanien.",
+    "explanation_ru": "Изабелла I связан(а) с событием «завоевание Гранады» (около 1492 г.). Это важный момент для темы «Испания».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "military",
+    "period": "1492 CE",
+    "tags": [
+      "Spanien"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Isabella I. von Kastilien gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Spanien. Schüler ordnen diese Person oft dem Jahr 1492 zu.",
+        "ru": "Изабелла I — одно из известных имён Средневековья в теме «Испания». Событие обычно датируют около 1492 года."
+      },
+      {
+        "de": "Historisch wird «die Eroberung Granadas» vor allem mit Granada verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «завоевание Гранады» связывают с регионом Гранада. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Spanien lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Eroberung Granadas». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Испания» полезно сравнить причины, ход и последствия: «завоевание Гранады». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  },
+  {
+    "id": 6200,
+    "question_de": "Welcher historische Name passt zum Ereignis «die Schlacht bei Bouvines»?",
+    "question_ru": "Какое имя соответствует событию «битва при Бувине»?",
+    "correct_answer_de": "Philipp II. August",
+    "correct_answer_ru": "Филипп II Август",
+    "wrong_answers_de": [
+      "Petrarca",
+      "Lothar I.",
+      "Malek-Schah I."
+    ],
+    "wrong_answers_ru": [
+      "Видукинд",
+      "Генрих I Птицелов",
+      "Раймунд Тулузский"
+    ],
+    "explanation_de": "Philipp II. August steht im Zusammenhang mit «die Schlacht bei Bouvines» (um 1214). Das Ereignis ist ein Schlüsselmoment für Frankreich.",
+    "explanation_ru": "Филипп II Август связан(а) с событием «битва при Бувине» (около 1214 г.). Это важный момент для темы «Франция».",
+    "difficulty": "medium",
+    "category": "Средневековье",
+    "type": "factual",
+    "period": "1214 CE",
+    "tags": [
+      "Frankreich"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Philipp II. August gehört zu den bekanntesten Namen des Mittelalters im Themenfeld Frankreich. Schüler ordnen diese Person oft dem Jahr 1214 zu.",
+        "ru": "Филипп II Август — одно из известных имён Средневековья в теме «Франция». Событие обычно датируют около 1214 года."
+      },
+      {
+        "de": "Historisch wird «die Schlacht bei Bouvines» vor allem mit Bouvines verbunden. Quellen und Chronisten betonen die politische und kulturelle Bedeutung.",
+        "ru": "Событие «битва при Бувине» связывают с регионом Бувин. Хроники подчёркивают политическое и культурное значение."
+      },
+      {
+        "de": "Für die Einordnung von Frankreich lohnt sich der Vergleich: Ursachen, Verlauf und Folgen von «die Schlacht bei Bouvines». So wird das Mittelalter greifbarer als bloße Jahreszahlen.",
+        "ru": "Для понимания «Франция» полезно сравнить причины, ход и последствия: «битва при Бувине». Так Средневековье становится понятнее, чем список дат."
+      }
+    ]
+  }
+]

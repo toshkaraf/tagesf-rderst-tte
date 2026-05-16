@@ -158,18 +158,65 @@ def build_auto_concepts() -> list[dict]:
         pool_ru = [a for a in all_ans_ru if a != ans_ru]
         wrong_de = (pool_de[:3] if len(pool_de) >= 3 else pool_de + ["Nur Neuzeit", "Nur Antike", "Nur Industrie"])[:3]
         wrong_ru = (pool_ru[:3] if len(pool_ru) >= 3 else pool_ru + ["Только Новое время", "Только античность", "Только индустрия"])[:3]
+        expl_de_1 = (
+            f"«{term_de}» bezeichnet im Mittelalter: {ans_de}. "
+            f"Der Begriff ist ein zentrales Konzept des Themenfelds {tag_de} und taucht besonders "
+            f"ab dem {year // 100 + 1}. Jahrhundert in Quellen auf."
+        )
+        expl_ru_1 = (
+            f"«{term_ru}» — средневековый термин, означающий: {ans_ru}. "
+            f"Это ключевое понятие темы «{tag_ru}», особенно активно встречается в источниках "
+            f"начиная с {year} года."
+        )
+        expl_de_2 = (
+            f"Der Fachbegriff «{term_de}» steht für: {ans_de}. "
+            f"Im Kontext des mittelalterlichen {tag_de} ist er unentbehrlich, "
+            f"um politische, religiöse oder soziale Prozesse zu verstehen."
+        )
+        expl_ru_2 = (
+            f"Термин «{term_ru}» обозначает: {ans_ru}. "
+            f"В контексте средневековой темы «{tag_ru}» без него невозможно понять "
+            f"политические, религиозные или социальные процессы."
+        )
         base_facts = [
-            {"de": f"Der Begriff «{term_de}» gehört zum Themenfeld {tag_de}.", "ru": f"Термин «{term_ru}» относится к теме «{tag_ru}»."},
-            {"de": f"Im Unterricht wird {term_de} oft mit dem Jahr {year} verknüpft.", "ru": f"В курсе «{term_ru}» связывают с периодом около {year} года."},
-            {"de": f"Wer {term_de} kennt, versteht Zusammenhänge im europäischen Mittelalter besser.", "ru": f"Знание «{term_ru}» помогает понять европейское Средневековье."},
+            {
+                "de": (
+                    f"«{term_de}» war im {tag_de} ein grundlegendes Konzept, das Zeitgenossen "
+                    f"täglich begegnete – in Verträgen, Urkunden und kirchlichen Texten."
+                ),
+                "ru": (
+                    f"«{term_ru}» было повседневным понятием в сфере «{tag_ru}»: "
+                    f"встречалось в договорах, грамотах и церковных текстах."
+                ),
+            },
+            {
+                "de": (
+                    f"Das Phänomen {term_de} entwickelte sich im Laufe des Mittelalters weiter: "
+                    f"Was um {year} galt, war im 15. Jahrhundert oft bereits verändert oder abgelöst."
+                ),
+                "ru": (
+                    f"Явление «{term_ru}» менялось на протяжении Средневековья: "
+                    f"то, что было нормой около {year} года, к XV веку нередко уже изменилось или исчезло."
+                ),
+            },
+            {
+                "de": (
+                    f"Historiker nutzen den Begriff {term_de} als Schlüsselkategorie, "
+                    f"um {tag_de} von anderen Epochen abzugrenzen und strukturell zu verstehen."
+                ),
+                "ru": (
+                    f"Историки используют «{term_ru}» как ключевую категорию, "
+                    f"чтобы отличить {tag_ru} от других эпох и структурно понять Средневековье."
+                ),
+            },
         ]
         out.append({
             "q_de": f"Was bezeichnet der mittelalterliche Begriff «{term_de}»?",
             "q_ru": f"Что обозначает средневековый термин «{term_ru}»?",
             "ans_de": ans_de, "ans_ru": ans_ru,
             "wrong_de": wrong_de, "wrong_ru": wrong_ru,
-            "expl_de": f"«{term_de}»: {ans_de}.",
-            "expl_ru": f"«{term_ru}»: {ans_ru}.",
+            "expl_de": expl_de_1,
+            "expl_ru": expl_ru_1,
             "year": year, "type": "definition", "difficulty": "medium",
             "tags": [tag_de, "Begriff"], "facts": base_facts,
         })
@@ -178,8 +225,8 @@ def build_auto_concepts() -> list[dict]:
             "q_ru": f"Какое объяснение подходит к «{term_ru}»?",
             "ans_de": ans_de, "ans_ru": ans_ru,
             "wrong_de": wrong_de[::-1], "wrong_ru": wrong_ru[::-1],
-            "expl_de": f"Richtig ist: {ans_de}.",
-            "expl_ru": f"Верно: {ans_ru}.",
+            "expl_de": expl_de_2,
+            "expl_ru": expl_ru_2,
             "year": year, "type": "definition", "difficulty": "easy",
             "tags": [tag_de, "Begriff"], "facts": base_facts,
         })

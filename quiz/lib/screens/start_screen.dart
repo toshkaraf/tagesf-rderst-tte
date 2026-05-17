@@ -3,8 +3,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import '../models/quiz_question.dart';
 import '../services/curriculum_structure_service.dart';
+import '../services/difficulty_tier.dart';
 import '../services/question_history_service.dart';
 import '../services/question_service.dart';
+import '../widgets/difficulty_tier_toggle.dart';
 import 'quiz_screen.dart';
 
 class StartScreen extends StatefulWidget {
@@ -17,6 +19,7 @@ class StartScreen extends StatefulWidget {
 class _StartScreenState extends State<StartScreen> {
   List<QuizQuestion> _allQuestions = [];
   bool _isLoading = true;
+  QuizDifficultyTier _difficultyTier = QuizDifficultyTier.easy;
 
   @override
   void initState() {
@@ -38,11 +41,16 @@ class _StartScreenState extends State<StartScreen> {
     }
   }
 
+  List<QuizQuestion> get _filteredByTier =>
+      DifficultyTierFilter.apply(_allQuestions, _difficultyTier);
+
   Future<void> _startQuizForSelection(List<QuizQuestion> selectedQuestions) async {
     if (selectedQuestions.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Für diesen Bereich sind keine Fragen vorhanden.'),
+        SnackBar(
+          content: Text(
+            'Für diesen Bereich (${_difficultyTier.labelDe}) sind keine Fragen vorhanden.',
+          ),
         ),
       );
       return;
@@ -77,8 +85,28 @@ class _StartScreenState extends State<StartScreen> {
     );
   }
 
+  void _openSectionSelection() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => SectionSelectionScreen(
+          allQuestions: _allQuestions,
+          initialTier: _difficultyTier,
+          onStartQuiz: _startQuizForSelection,
+          onTierChanged: (tier) {
+            setState(() => _difficultyTier = tier);
+          },
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    final easyCount = DifficultyTierFilter.count(_allQuestions, QuizDifficultyTier.easy);
+    final hardCount = DifficultyTierFilter.count(_allQuestions, QuizDifficultyTier.hard);
+    final tierCount = _filteredByTier.length;
+
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -91,66 +119,70 @@ class _StartScreenState extends State<StartScreen> {
             ],
           ),
         ),
-        child: Center(
+        child: SafeArea(
           child: _isLoading
-              ? const CircularProgressIndicator(color: Colors.white)
-              : Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(
-                      Icons.quiz,
-                      size: 100,
-                      color: Colors.white,
-                    ),
-                    const SizedBox(height: 32),
-                    const Text(
-                      'Geschichtsquiz',
-                      style: TextStyle(
-                        fontSize: 48,
-                        fontWeight: FontWeight.bold,
+              ? const Center(child: CircularProgressIndicator(color: Colors.white))
+              : SingleChildScrollView(
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                  child: Column(
+                    children: [
+                      DifficultyTierToggle(
+                        selected: _difficultyTier,
+                        easyCount: easyCount,
+                        hardCount: hardCount,
+                        onChanged: (tier) => setState(() => _difficultyTier = tier),
+                      ),
+                      const SizedBox(height: 32),
+                      const Icon(
+                        Icons.quiz,
+                        size: 100,
                         color: Colors.white,
                       ),
-                    ),
-                    const SizedBox(height: 64),
-                    ElevatedButton.icon(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SectionSelectionScreen(
-                              allQuestions: _allQuestions,
-                              onStartQuiz: _startQuizForSelection,
-                            ),
-                          ),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
-                        foregroundColor: Colors.blue.shade700,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 48,
-                          vertical: 16,
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        elevation: 8,
-                      ),
-                      icon: const Icon(Icons.history_edu),
-                      label: const Text(
-                        'Bereich wählen',
+                      const SizedBox(height: 24),
+                      const Text(
+                        'Geschichtsquiz',
                         style: TextStyle(
-                          fontSize: 22,
+                          fontSize: 48,
                           fontWeight: FontWeight.bold,
+                          color: Colors.white,
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 24),
-                    Text(
-                      'Fragen gesamt: ${_allQuestions.length}',
-                      style: const TextStyle(fontSize: 16, color: Colors.white70),
-                    ),
-                  ],
+                      const SizedBox(height: 48),
+                      ElevatedButton.icon(
+                        onPressed: tierCount > 0 ? _openSectionSelection : null,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.blue.shade700,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 48,
+                            vertical: 16,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          elevation: 8,
+                        ),
+                        icon: const Icon(Icons.history_edu),
+                        label: const Text(
+                          'Bereich wählen',
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      Text(
+                        '${_difficultyTier.labelDe}: $tierCount Fragen',
+                        style: const TextStyle(fontSize: 18, color: Colors.white),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Gesamt im Quiz: ${_allQuestions.length}',
+                        style: const TextStyle(fontSize: 14, color: Colors.white70),
+                      ),
+                    ],
+                  ),
                 ),
         ),
       ),
@@ -167,46 +199,120 @@ class _QuizScreenWrapper extends StatefulWidget {
   State<_QuizScreenWrapper> createState() => _QuizScreenWrapperState();
 }
 
-class SectionSelectionScreen extends StatelessWidget {
+class SectionSelectionScreen extends StatefulWidget {
   final List<QuizQuestion> allQuestions;
+  final QuizDifficultyTier initialTier;
   final Future<void> Function(List<QuizQuestion>) onStartQuiz;
+  final ValueChanged<QuizDifficultyTier>? onTierChanged;
 
   const SectionSelectionScreen({
     super.key,
     required this.allQuestions,
+    required this.initialTier,
     required this.onStartQuiz,
+    this.onTierChanged,
   });
 
   @override
+  State<SectionSelectionScreen> createState() => _SectionSelectionScreenState();
+}
+
+class _SectionSelectionScreenState extends State<SectionSelectionScreen> {
+  late QuizDifficultyTier _tier;
+
+  @override
+  void initState() {
+    super.initState();
+    _tier = widget.initialTier;
+  }
+
+  List<QuizQuestion> get _tierQuestions =>
+      DifficultyTierFilter.apply(widget.allQuestions, _tier);
+
+  void _setTier(QuizDifficultyTier tier) {
+    setState(() => _tier = tier);
+    widget.onTierChanged?.call(tier);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final sections = CurriculumStructureService.buildSchoolSections(allQuestions);
+    final tierQuestions = _tierQuestions;
+    final sections = CurriculumStructureService.buildSchoolSections(tierQuestions);
+    final easyCount =
+        DifficultyTierFilter.count(widget.allQuestions, QuizDifficultyTier.easy);
+    final hardCount =
+        DifficultyTierFilter.count(widget.allQuestions, QuizDifficultyTier.hard);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Bereich auswählen'),
       ),
-      body: ListView.builder(
-        padding: const EdgeInsets.all(16),
-        itemCount: sections.length,
-        itemBuilder: (context, index) {
-          final section = sections[index];
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          DifficultyTierToggleBar(
+            selected: _tier,
+            easyCount: easyCount,
+            hardCount: hardCount,
+            onChanged: _setTier,
+          ),
+          Expanded(
+            child: tierQuestions.isEmpty
+                ? Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(24),
+                      child: Text(
+                        'Keine ${_tier.labelDe.toLowerCase()}en Fragen in der Datenbank.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.grey.shade700,
+                        ),
+                      ),
+                    ),
+                  )
+                : ListView.builder(
+                    padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+                    itemCount: sections.length,
+                    itemBuilder: (context, index) {
+                      final section = sections[index];
+                      final count = section.questions.length;
+                      final enabled = count > 0;
 
-          return Card(
-            margin: const EdgeInsets.only(bottom: 12),
-            child: ListTile(
-              leading: CircleAvatar(
-                backgroundColor: Colors.blue.shade100,
-                child: Text('${index + 1}'),
-              ),
-              title: Text(section.titleDe, style: const TextStyle(fontWeight: FontWeight.bold)),
-              subtitle: Text('${section.subtitleDe}\nFragen: ${section.questions.length}'),
-              isThreeLine: true,
-              trailing: const Icon(Icons.play_circle_fill),
-              onTap: () async {
-                await onStartQuiz(section.questions);
-              },
-            ),
-          );
-        },
+                      return Card(
+                        margin: const EdgeInsets.only(bottom: 12),
+                        child: ListTile(
+                          enabled: enabled,
+                          leading: CircleAvatar(
+                            backgroundColor: enabled
+                                ? Colors.blue.shade100
+                                : Colors.grey.shade200,
+                            child: Text('${index + 1}'),
+                          ),
+                          title: Text(
+                            section.titleDe,
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          subtitle: Text(
+                            '${section.subtitleDe}\n'
+                            '${_tier.labelDe}: $count Fragen',
+                          ),
+                          isThreeLine: true,
+                          trailing: Icon(
+                            enabled ? Icons.play_circle_fill : Icons.block,
+                            color: enabled ? null : Colors.grey,
+                          ),
+                          onTap: enabled
+                              ? () async {
+                                  await widget.onStartQuiz(section.questions);
+                                }
+                              : null,
+                        ),
+                      );
+                    },
+                  ),
+          ),
+        ],
       ),
     );
   }
@@ -224,5 +330,3 @@ class _QuizScreenWrapperState extends State<_QuizScreenWrapper> {
     );
   }
 }
-
-

@@ -6,7 +6,8 @@ import {
   useState,
   type CSSProperties
 } from 'react'
-import { Navigate, useLocation, useNavigate } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
+import { useGoBack } from '../navigation/goBack'
 import { useLanguage } from '../i18n/LanguageContext'
 import { ArrowLeft, RotateCcw } from 'lucide-react'
 import './ConnectFourPage.css'
@@ -79,7 +80,7 @@ export default function ConnectFourGamePage() {
 }
 
 function ConnectFourGameInner({ cfg }: { cfg: ConnectFourConfig }) {
-  const navigate = useNavigate()
+  const goBack = useGoBack('/connect-four')
   const { t } = useLanguage()
 
   const ROWS = cfg.rows
@@ -395,7 +396,7 @@ function ConnectFourGameInner({ cfg }: { cfg: ConnectFourConfig }) {
         <button
           type="button"
           className="cf-icon-btn"
-          onClick={() => navigate('/connect-four')}
+          onClick={goBack}
           aria-label={t.connectFour.backToSetup}
         >
           <ArrowLeft size={24} />

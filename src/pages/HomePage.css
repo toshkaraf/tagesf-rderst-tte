@@ -33,6 +33,8 @@
   color: rgba(255, 255, 255, 0.95);
   font-size: var(--touch-font-label);
   font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
   background: rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.25);
   transition: background 0.15s ease, transform 0.15s ease;

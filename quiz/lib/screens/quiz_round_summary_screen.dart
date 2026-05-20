@@ -128,7 +128,7 @@ class QuizRoundSummaryScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 18),
                   ),
                   child: const Text(
-                    'Zurück zum Menü',
+                    'Zurück zur Bereichsauswahl',
                     style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.w600,

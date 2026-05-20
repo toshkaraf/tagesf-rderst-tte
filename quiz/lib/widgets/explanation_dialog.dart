@@ -101,7 +101,6 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
                           fontSize: 36,
                           fontWeight: FontWeight.bold,
                         ),
-                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                     IconButton(
@@ -135,6 +134,7 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
                           fontSize: 34,
                           height: 1.45,
                         ),
+                        softWrap: true,
                       ),
                     ),
                   ),

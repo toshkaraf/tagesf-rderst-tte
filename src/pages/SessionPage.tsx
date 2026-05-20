@@ -1,4 +1,5 @@
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import { useGoBack } from '../navigation/goBack'
 import { useState, useEffect } from 'react'
 import { getSessionById } from '../data/sessions'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -12,7 +13,7 @@ import './SessionPage.css'
 
 function SessionPage() {
   const { sessionId } = useParams<{ sessionId: string }>()
-  const navigate = useNavigate()
+  const goBack = useGoBack('/')
   const { t, language, setLanguage } = useLanguage()
   const session = sessionId ? getSessionById(sessionId, language) : undefined
 
@@ -37,7 +38,7 @@ function SessionPage() {
     return (
       <div className="session-page error">
         <h2>{t.session.notFound}</h2>
-        <LargeButton onClick={() => navigate('/topics')}>
+        <LargeButton onClick={goBack}>
           {t.session.backToHome}
         </LargeButton>
       </div>
@@ -121,12 +122,25 @@ function SessionPage() {
     localStorage.setItem('slideFontScale', newScale.toString())
   }
 
+  const handleHeaderBack = () => {
+    if (showQuiz) {
+      setShowQuiz(false)
+      setShowInlineQuiz(false)
+      return
+    }
+    if (showInlineQuiz) {
+      setShowInlineQuiz(false)
+      return
+    }
+    goBack()
+  }
+
   return (
     <div className="session-page">
       <header className="session-header">
         <div className="header-top-row">
           <button 
-            onClick={() => navigate('/topics')} 
+            onClick={handleHeaderBack} 
             className="header-button btn-outline"
             title={t.common.back}
           >

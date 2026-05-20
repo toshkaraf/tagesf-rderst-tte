@@ -1,5 +1,6 @@
 import { FormEvent, useId, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useGoBack } from '../navigation/goBack'
 import { useLanguage } from '../i18n/LanguageContext'
 import { ArrowLeft } from 'lucide-react'
 import {
@@ -18,6 +19,7 @@ const BOT_LEVELS: BotLevel[] = ['easy', 'medium', 'hard']
 export default function ConnectFourSetupPage() {
   const { t } = useLanguage()
   const navigate = useNavigate()
+  const goBack = useGoBack('/')
   const baseId = useId()
 
   const [cols, setCols] = useState(DEFAULT_CONNECT_FOUR_CONFIG.cols)
@@ -41,7 +43,7 @@ export default function ConnectFourSetupPage() {
   return (
     <div className="cf-setup-page">
       <header className="cf-setup-appbar">
-        <button type="button" className="cf-setup-icon-btn" onClick={() => navigate('/')} aria-label={t.common.back}>
+        <button type="button" className="cf-setup-icon-btn" onClick={goBack} aria-label={t.common.back}>
           <ArrowLeft size={24} />
         </button>
         <h1 className="cf-setup-title">{t.connectFour.title}</h1>

@@ -118,18 +118,18 @@ class QuestionService {
       if (json['interesting_facts'] != null && json['interesting_facts'] is List) {
         for (final fact in json['interesting_facts']) {
           if (fact is Map) {
-            factsDe.add(_toConciseText(fact['de'] ?? ''));
-            factsRu.add(_toConciseText(fact['ru'] ?? ''));
+            factsDe.add(_normalizeText(fact['de'] ?? ''));
+            factsRu.add(_normalizeText(fact['ru'] ?? ''));
           }
         }
       }
 
       // Объяснение
       final String? explanationDe = json['explanation_de'] != null
-          ? _toConciseText(json['explanation_de'])
+          ? _normalizeText(json['explanation_de'])
           : null;
       final String? explanationRu = json['explanation_ru'] != null
-          ? _toConciseText(json['explanation_ru'])
+          ? _normalizeText(json['explanation_ru'])
           : null;
 
       return QuizQuestion(
@@ -219,6 +219,14 @@ class QuestionService {
     return difficulties;
   }
 
+  /// Voller Text für Fakten/Erklärungen (nur Leerzeichen normalisieren).
+  static String _normalizeText(dynamic value) {
+    final text = (value ?? '').toString().trim();
+    if (text.isEmpty) return '';
+    return text.replaceAll(RegExp(r'\s+'), ' ').trim();
+  }
+
+  /// Kurzfassung für Antwortoptionen in der Auswahl.
   static String _toConciseText(
     dynamic value, {
     int maxSentences = 2,

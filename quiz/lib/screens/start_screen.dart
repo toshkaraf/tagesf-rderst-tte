@@ -19,7 +19,6 @@ class StartScreen extends StatefulWidget {
 class _StartScreenState extends State<StartScreen> {
   List<QuizQuestion> _allQuestions = [];
   bool _isLoading = true;
-  QuizDifficultyTier _difficultyTier = QuizDifficultyTier.easy;
 
   @override
   void initState() {
@@ -41,16 +40,11 @@ class _StartScreenState extends State<StartScreen> {
     }
   }
 
-  List<QuizQuestion> get _filteredByTier =>
-      DifficultyTierFilter.apply(_allQuestions, _difficultyTier);
-
   Future<void> _startQuizForSelection(List<QuizQuestion> selectedQuestions) async {
     if (selectedQuestions.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            'Für diesen Bereich (${_difficultyTier.labelDe}) sind keine Fragen vorhanden.',
-          ),
+        const SnackBar(
+          content: Text('Für diesen Bereich sind keine Fragen vorhanden.'),
         ),
       );
       return;
@@ -91,11 +85,7 @@ class _StartScreenState extends State<StartScreen> {
       MaterialPageRoute(
         builder: (context) => SectionSelectionScreen(
           allQuestions: _allQuestions,
-          initialTier: _difficultyTier,
           onStartQuiz: _startQuizForSelection,
-          onTierChanged: (tier) {
-            setState(() => _difficultyTier = tier);
-          },
         ),
       ),
     );
@@ -103,10 +93,6 @@ class _StartScreenState extends State<StartScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final easyCount = DifficultyTierFilter.count(_allQuestions, QuizDifficultyTier.easy);
-    final hardCount = DifficultyTierFilter.count(_allQuestions, QuizDifficultyTier.hard);
-    final tierCount = _filteredByTier.length;
-
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -122,17 +108,10 @@ class _StartScreenState extends State<StartScreen> {
         child: SafeArea(
           child: _isLoading
               ? const Center(child: CircularProgressIndicator(color: Colors.white))
-              : SingleChildScrollView(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+              : Center(
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      DifficultyTierToggle(
-                        selected: _difficultyTier,
-                        easyCount: easyCount,
-                        hardCount: hardCount,
-                        onChanged: (tier) => setState(() => _difficultyTier = tier),
-                      ),
-                      const SizedBox(height: 32),
                       const Icon(
                         Icons.quiz,
                         size: 100,
@@ -149,7 +128,8 @@ class _StartScreenState extends State<StartScreen> {
                       ),
                       const SizedBox(height: 48),
                       ElevatedButton.icon(
-                        onPressed: tierCount > 0 ? _openSectionSelection : null,
+                        onPressed:
+                            _allQuestions.isNotEmpty ? _openSectionSelection : null,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.white,
                           foregroundColor: Colors.blue.shade700,
@@ -173,13 +153,8 @@ class _StartScreenState extends State<StartScreen> {
                       ),
                       const SizedBox(height: 20),
                       Text(
-                        '${_difficultyTier.labelDe}: $tierCount Fragen',
+                        '${_allQuestions.length} Fragen',
                         style: const TextStyle(fontSize: 18, color: Colors.white),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        'Gesamt im Quiz: ${_allQuestions.length}',
-                        style: const TextStyle(fontSize: 14, color: Colors.white70),
                       ),
                     ],
                   ),
@@ -201,16 +176,12 @@ class _QuizScreenWrapper extends StatefulWidget {
 
 class SectionSelectionScreen extends StatefulWidget {
   final List<QuizQuestion> allQuestions;
-  final QuizDifficultyTier initialTier;
   final Future<void> Function(List<QuizQuestion>) onStartQuiz;
-  final ValueChanged<QuizDifficultyTier>? onTierChanged;
 
   const SectionSelectionScreen({
     super.key,
     required this.allQuestions,
-    required this.initialTier,
     required this.onStartQuiz,
-    this.onTierChanged,
   });
 
   @override
@@ -218,20 +189,13 @@ class SectionSelectionScreen extends StatefulWidget {
 }
 
 class _SectionSelectionScreenState extends State<SectionSelectionScreen> {
-  late QuizDifficultyTier _tier;
-
-  @override
-  void initState() {
-    super.initState();
-    _tier = widget.initialTier;
-  }
+  QuizDifficultyTier _tier = QuizDifficultyTier.easy;
 
   List<QuizQuestion> get _tierQuestions =>
       DifficultyTierFilter.apply(widget.allQuestions, _tier);
 
   void _setTier(QuizDifficultyTier tier) {
     setState(() => _tier = tier);
-    widget.onTierChanged?.call(tier);
   }
 
   @override

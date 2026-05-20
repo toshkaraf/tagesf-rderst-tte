@@ -22,6 +22,7 @@ import { ancientBattleTacticsSessionRU } from './ancient-battle-tactics-session'
 import { medievalBattleTacticsSessionRU } from './medieval-battle-tactics-session'
 import { courtJestersSessionRU } from './court-jesters-session'
 import { ancientComicHistorySessionRU } from './ancient-comic-history-session'
+import { coldWarEspionageSessionRU } from './cold-war-espionage-session'
 
 // Примеры занятий - здесь будут храниться все занятия
 const sessionsData: Session[] = [
@@ -1374,6 +1375,7 @@ const sessionsData: Session[] = [
   medievalBattleTacticsSessionRU,
   courtJestersSessionRU,
   ancientComicHistorySessionRU,
+  coldWarEspionageSessionRU,
   {
     id: 'seven-wonders',
     title: 'Семь чудес света: экономика мегапроектов',
@@ -6327,9 +6329,25 @@ function applyTranslations(session: Session, language: Language): Session {
 // Экспорт для обратной совместимости
 export const sessions = sessionsData
 
-// Функция для получения всех сессий с переводами
+function sessionSortKey(session: Session, indexInData: number): number {
+  const created = session.metadata?.created
+  if (created) {
+    const parsed = Date.parse(created)
+    if (!Number.isNaN(parsed)) return parsed
+  }
+  return indexInData
+}
+
+// Функция для получения всех сессий с переводами (новые презентации — выше в списке)
 export function getSessions(language: Language = 'de'): Session[] {
-  return sessionsData.map(session => applyTranslations(session, language))
+  return sessionsData
+    .map((session, index) => ({ session: applyTranslations(session, language), index }))
+    .sort((a, b) => {
+      const byDate = sessionSortKey(b.session, b.index) - sessionSortKey(a.session, a.index)
+      if (byDate !== 0) return byDate
+      return b.index - a.index
+    })
+    .map(({ session }) => session)
 }
 
 // Функция для получения занятия по ID

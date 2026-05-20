@@ -129,6 +129,7 @@ class _FactsDialogState extends State<FactsDialog> {
                           fontSize: 34,
                           height: 1.45,
                         ),
+                        softWrap: true,
                       ),
                     ),
                   ),

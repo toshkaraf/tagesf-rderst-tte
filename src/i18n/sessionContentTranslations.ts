@@ -20,6 +20,7 @@ import { ancientBattleTacticsSlidesDE, ancientBattleTacticsFinalQuizDE } from '.
 import { medievalBattleTacticsSlidesDE, medievalBattleTacticsFinalQuizDE } from './medieval-battle-tactics-content-de'
 import { courtJestersSlidesDE, courtJestersFinalQuizDE } from './court-jesters-content-de'
 import { ancientComicHistorySlidesDE, ancientComicHistoryFinalQuizDE } from './ancient-comic-history-content-de'
+import { coldWarEspionageSlidesDE, coldWarEspionageFinalQuizDE } from './cold-war-espionage-content-de'
 
 // Deutsche Übersetzungen (B2-Niveau) für die Turnier-Session
 const ritterturniereSlidesDE: Slide[] = [
@@ -3211,6 +3212,13 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
     return {
       slides: ancientComicHistorySlidesDE,
       quiz: ancientComicHistoryFinalQuizDE
+    }
+  }
+
+  if (sessionId === 'cold-war-espionage' && language === 'de') {
+    return {
+      slides: coldWarEspionageSlidesDE,
+      quiz: coldWarEspionageFinalQuizDE
     }
   }
 

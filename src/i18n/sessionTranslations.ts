@@ -107,6 +107,41 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'cold-war-espionage': {
+    de: {
+      title: 'Kalte Kriegsspionage: Irrtümer und Pannen',
+      description:
+        'Dreißig Folien über konkrete Episoden: Wanze im Wappen, Ziegel und Selectric in der Botschaft, Berliner Tunnel, Acoustic Kitty, Tauben, Tamarisk, Glienicker Brücke, bulgarischer Regenschirm und die «Blase» — pointiert, ohne Links im Text.',
+      category: 'Geschichte',
+      structure: {
+        greeting:
+          'Der Kalte Krieg war nicht nur Raketen, sondern auch Wanzen, Tunnel, verkleidete Gadgets und Operationen wie Schwarze Komödie.',
+        mainContent:
+          'Vierzehn lebendige Sujets: von The Thing und IBM Selectric bis zur Katze als Lauscher, Müllaufklärung und dem Moskauer Signal.',
+        interactive: 'Zehn Mini-Quizzes mit je drei Fragen und ein Abschlussquiz mit dreißig Fragen (Deutsch B2).',
+        additional:
+          'Illustrationen nach IMAGE_LIST.html und IMAGE_LIST.md in public/media/cold-war-espionage/.',
+        closing:
+          'Frage am Ende: Warum ist echte Spionage des Kalten Krieges oft seltsamer als jeder Agentenfilm?'
+      }
+    },
+    ru: {
+      title: 'Холодная война: как шпионы ошибались',
+      description:
+        'Тридцать слайдов о предметных эпизодах шпионажа: жучок в гербе, кирпичи и машинки в посольстве, берлинский тоннель, Acoustic Kitty, голуби, Tamarisk, мост Глинике, зонтик и «пузырь» — с юмором, без ссылок в тексте.',
+      category: 'История',
+      structure: {
+        greeting:
+          'Холодная война — это не только ракеты, но и жучки, тоннели, переодетые гаджеты и операции, которые звучат как чёрная комедия.',
+        mainContent:
+          'Четырнадцать ярких сюжетов: от The Thing и IBM Selectric до кота-шпиона, мусорной разведки и московского сигнала.',
+        interactive: 'Десять мини-викторин по три вопроса и итоговая викторина на тридцать вопросов.',
+        additional: 'Иллюстрации по IMAGE_LIST.html и IMAGE_LIST.md в public/media/cold-war-espionage/.',
+        closing:
+          'На выходе — вопрос: почему реальная разведка Холодной войны часто страннее любого шпионского фильма?'
+      }
+    }
+  },
   'ancient-comic-history': {
     de: {
       title: 'Die komischsten Fälle der alten Geschichte',

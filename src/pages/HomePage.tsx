@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useGoBack } from '../navigation/goBack'
 import { getSessions } from '../data/sessions'
 import { SessionType } from '../types/session'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -18,16 +19,17 @@ const typeIcons: Record<SessionType, React.ReactNode> = {
 
 function HomePage() {
   const { t, language } = useLanguage()
+  const goBack = useGoBack('/')
   const sessions = getSessions(language)
   const categories = Array.from(new Set(sessions.map(s => s.category)))
 
   return (
     <div className="home-page">
       <header className="home-header">
-        <Link to="/" className="home-hub-link">
+        <button type="button" className="home-hub-link" onClick={goBack}>
           <ArrowLeft size={20} aria-hidden />
           <span>{t.home.backToActivitySelect}</span>
-        </Link>
+        </button>
         <h1>{t.home.title}</h1>
         <p className="subtitle">{t.home.subtitle}</p>
       </header>

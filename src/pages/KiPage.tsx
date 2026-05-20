@@ -468,7 +468,7 @@ export default function KiPage() {
   const renderBackgroundVideo = (className: string) => (
     <video
       ref={videoRef}
-      className={className}
+      className={`ki-bg-video ${className}`}
       src={WAITING_VIDEO}
       muted
       loop

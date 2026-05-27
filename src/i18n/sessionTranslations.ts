@@ -107,6 +107,37 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'american-court-disorder': {
+    de: {
+      title: 'Chaos in amerikanischen Gerichten',
+      description:
+        'Neunzehn Folien: Einführung zum Buch und wörtliche Dialoge aus dem Gerichtssaal — ohne Quiz, mit Bildern nach IMAGE_LIST.',
+      category: 'Humor',
+      structure: {
+        greeting:
+          'Das Buch sammelt echte Sätze aus amerikanischen Gerichtssälen — so, wie Stenografen sie aufschrieben. Wir lesen ohne Änderungen.',
+        mainContent: 'Eine Folie — eine Szene: Frage, Antwort und das Missverständnis, das selbst zum Witz wird.',
+        interactive: 'Kein Quiz — nur lesen und diskutieren.',
+        additional:
+          'Bilder nach IMAGE_LIST.html und IMAGE_LIST.md in public/media/american-court-disorder/.',
+        closing: 'Wo endet die wörtliche Antwort und wo beginnt die Komödie?'
+      }
+    },
+    ru: {
+      title: 'Беспорядок в американских судах',
+      description:
+        'Девятнадцать слайдов: ввод о книге и дословные реплики из зала суда — без викторины, с иллюстрациями по IMAGE_LIST.',
+      category: 'Юмор',
+      structure: {
+        greeting:
+          'Книга собирает реальные фразы из американских залов суда — так, как их записали судебные секретари. Читаем без правок.',
+        mainContent: 'Один слайд — одна сцена: вопрос, ответ и недосказанность, которая сама становится шуткой.',
+        interactive: 'Викторины нет — только чтение вслух и обсуждение.',
+        additional: 'Иллюстрации по IMAGE_LIST.html и IMAGE_LIST.md в public/media/american-court-disorder/.',
+        closing: 'Где заканчивается буквальный ответ и начинается комедия несостыковки?'
+      }
+    }
+  },
   'cold-war-espionage': {
     de: {
       title: 'Kalte Kriegsspionage: Irrtümer und Pannen',

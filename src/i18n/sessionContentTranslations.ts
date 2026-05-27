@@ -21,6 +21,7 @@ import { medievalBattleTacticsSlidesDE, medievalBattleTacticsFinalQuizDE } from 
 import { courtJestersSlidesDE, courtJestersFinalQuizDE } from './court-jesters-content-de'
 import { ancientComicHistorySlidesDE, ancientComicHistoryFinalQuizDE } from './ancient-comic-history-content-de'
 import { coldWarEspionageSlidesDE, coldWarEspionageFinalQuizDE } from './cold-war-espionage-content-de'
+import { americanCourtDisorderSlidesDE } from './american-court-disorder-content-de'
 
 // Deutsche Übersetzungen (B2-Niveau) für die Turnier-Session
 const ritterturniereSlidesDE: Slide[] = [
@@ -3219,6 +3220,12 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
     return {
       slides: coldWarEspionageSlidesDE,
       quiz: coldWarEspionageFinalQuizDE
+    }
+  }
+
+  if (sessionId === 'american-court-disorder' && language === 'de') {
+    return {
+      slides: americanCourtDisorderSlidesDE
     }
   }
 

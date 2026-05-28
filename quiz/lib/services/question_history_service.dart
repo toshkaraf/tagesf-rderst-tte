@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
+import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// Speichert pro Frage das letzte Antwortdatum und Ergebnis.
@@ -7,6 +9,88 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// Nach falscher Antwort: Frage erst nach 7 Tagen wieder.
 /// Innerhalb des Abschnitts werden Fragen weiter per Zufall gewählt.
 class QuestionHistoryService {
+  static const String _apiBasePath = '/api/question-history';
+
+  static Future<bool> _tryMarkAnsweredRemote(int questionId, bool isCorrect) async {
+    if (!kIsWeb) return false;
+    try {
+      final uri = Uri.parse('$_apiBasePath?mode=mark');
+      final res = await http.post(
+        uri,
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({'questionId': questionId, 'isCorrect': isCorrect}),
+      );
+      return res.statusCode >= 200 && res.statusCode < 300;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  static Future<bool?> _tryCanShowRemote(int questionId) async {
+    if (!kIsWeb) return null;
+    try {
+      final uri = Uri.parse('$_apiBasePath?mode=can-show&id=$questionId');
+      final res = await http.get(uri);
+      if (res.statusCode < 200 || res.statusCode >= 300) return null;
+      final body = jsonDecode(res.body) as Map<String, dynamic>;
+      final v = body['canShow'];
+      if (v is bool) return v;
+      return null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  static Future<List<int>?> _tryFilterAvailableRemote(List<int> questionIds) async {
+    if (!kIsWeb) return null;
+    try {
+      final uri = Uri.parse('$_apiBasePath?mode=filter');
+      final res = await http.post(
+        uri,
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({'questionIds': questionIds}),
+      );
+      if (res.statusCode < 200 || res.statusCode >= 300) return null;
+      final body = jsonDecode(res.body) as Map<String, dynamic>;
+      final raw = body['availableIds'];
+      if (raw is! List) return null;
+      return raw.map((e) => e is int ? e : (e as num).toInt()).toList();
+    } catch (_) {
+      return null;
+    }
+  }
+
+  static Future<int?> _tryTakeFactIndexRemote(int questionId, int factCount) async {
+    if (!kIsWeb) return null;
+    try {
+      final uri = Uri.parse('$_apiBasePath?mode=fact-index');
+      final res = await http.post(
+        uri,
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({'questionId': questionId, 'factCount': factCount}),
+      );
+      if (res.statusCode < 200 || res.statusCode >= 300) return null;
+      final body = jsonDecode(res.body) as Map<String, dynamic>;
+      final index = body['index'];
+      if (index is int) return index;
+      if (index is num) return index.toInt();
+      return null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  static Future<bool> _tryClearRemote() async {
+    if (!kIsWeb) return false;
+    try {
+      final uri = Uri.parse('$_apiBasePath?mode=clear');
+      final res = await http.post(uri);
+      return res.statusCode >= 200 && res.statusCode < 300;
+    } catch (_) {
+      return false;
+    }
+  }
+
   static const String _outcomesKey = 'question_last_outcomes_v1';
   static const String _factRotationKey = 'question_fact_rotation_v1';
 
@@ -102,6 +186,10 @@ class QuestionHistoryService {
     int factCount,
   ) async {
     if (factCount <= 0) return 0;
+    final remote = await _tryTakeFactIndexRemote(questionId, factCount);
+    if (remote != null) {
+      return remote % factCount;
+    }
     await _ensureMigrated();
     final prefs = await SharedPreferences.getInstance();
     final m = _loadFactCounters(prefs);
@@ -121,6 +209,8 @@ class QuestionHistoryService {
 
   /// Ob die Frage wieder gezeigt werden darf (letztes Ergebnis entscheidet).
   static Future<bool> canShowQuestion(int questionId) async {
+    final remote = await _tryCanShowRemote(questionId);
+    if (remote != null) return remote;
     await _ensureMigrated();
     final prefs = await SharedPreferences.getInstance();
     final outcomes = _loadOutcomes(prefs);
@@ -158,6 +248,8 @@ class QuestionHistoryService {
     int questionId,
     bool isCorrect,
   ) async {
+    final remoteOk = await _tryMarkAnsweredRemote(questionId, isCorrect);
+    if (remoteOk) return;
     await _ensureMigrated();
     final prefs = await SharedPreferences.getInstance();
     final outcomes = _loadOutcomes(prefs);
@@ -173,6 +265,8 @@ class QuestionHistoryService {
   static Future<List<int>> filterAvailableQuestions(
     List<int> questionIds,
   ) async {
+    final remote = await _tryFilterAvailableRemote(questionIds);
+    if (remote != null) return remote;
     final availableQuestions = <int>[];
 
     for (final questionId in questionIds) {
@@ -191,6 +285,7 @@ class QuestionHistoryService {
 
   /// Alte Historie löschen (z. B. für Tests oder Option in Einstellungen).
   static Future<void> clearAll() async {
+    await _tryClearRemote();
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(_outcomesKey);
     await prefs.remove(_factRotationKey);

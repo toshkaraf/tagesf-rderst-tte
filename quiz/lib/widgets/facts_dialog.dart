@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// Ein einzelner Fakt; «Weiter» als breite FilledButton-Leiste unten (kein Text-Link).
 class FactsDialog extends StatefulWidget {
@@ -14,15 +15,54 @@ class FactsDialog extends StatefulWidget {
 }
 
 class _FactsDialogState extends State<FactsDialog> {
+  static const _autoReadPrefKey = 'quiz.auto_read_dialogs';
+
   final FlutterTts _flutterTts = FlutterTts();
   final ScrollController _scrollController = ScrollController();
   bool _isPlaying = false;
   bool _isPaused = false;
+  bool _autoReadEnabled = false;
 
   @override
   void initState() {
     super.initState();
     _initTts();
+    _loadAutoReadPreference();
+  }
+
+  Future<void> _loadAutoReadPreference() async {
+    final prefs = await SharedPreferences.getInstance();
+    final value = prefs.getBool(_autoReadPrefKey) ?? false;
+    if (!mounted) return;
+    setState(() {
+      _autoReadEnabled = value;
+    });
+    if (value) {
+      await _startPlayback();
+    }
+  }
+
+  Future<void> _setAutoReadEnabled(bool enabled) async {
+    setState(() {
+      _autoReadEnabled = enabled;
+    });
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_autoReadPrefKey, enabled);
+    if (enabled) {
+      await _startPlayback();
+    }
+  }
+
+  Future<void> _startPlayback() async {
+    final text = widget.fact;
+    await _flutterTts.stop();
+    await _flutterTts.setLanguage('de-DE');
+    await _flutterTts.speak(text);
+    if (!mounted) return;
+    setState(() {
+      _isPlaying = true;
+      _isPaused = false;
+    });
   }
 
   Future<void> _initTts() async {
@@ -45,24 +85,18 @@ class _FactsDialogState extends State<FactsDialog> {
   }
 
   Future<void> _togglePlayPause() async {
-    final text = widget.fact;
     if (_isPlaying && !_isPaused) {
       await _flutterTts.pause();
       setState(() {
         _isPaused = true;
       });
     } else if (_isPlaying && _isPaused) {
-      await _flutterTts.speak(text);
+      await _startPlayback();
       setState(() {
         _isPaused = false;
       });
     } else {
-      await _flutterTts.setLanguage('de-DE');
-      await _flutterTts.speak(text);
-      setState(() {
-        _isPlaying = true;
-        _isPaused = false;
-      });
+      await _startPlayback();
     }
   }
 
@@ -111,6 +145,24 @@ class _FactsDialogState extends State<FactsDialog> {
                       onPressed: _togglePlayPause,
                       tooltip:
                           _isPlaying && !_isPaused ? 'Pause' : 'Vorlesen',
+                    ),
+                    const SizedBox(width: 8),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        const Text(
+                          'Читать автоматически',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Switch(
+                          value: _autoReadEnabled,
+                          onChanged: _setAutoReadEnabled,
+                          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ],
                     ),
                   ],
                 ),

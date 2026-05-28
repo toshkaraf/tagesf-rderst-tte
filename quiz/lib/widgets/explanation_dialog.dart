@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ExplanationDialog extends StatefulWidget {
   final String explanation;
@@ -18,15 +19,53 @@ class ExplanationDialog extends StatefulWidget {
 }
 
 class _ExplanationDialogState extends State<ExplanationDialog> {
+  static const _autoReadPrefKey = 'quiz.auto_read_dialogs';
+
   final FlutterTts _flutterTts = FlutterTts();
   final ScrollController _scrollController = ScrollController();
   bool _isPlaying = false;
   bool _isPaused = false;
+  bool _autoReadEnabled = false;
 
   @override
   void initState() {
     super.initState();
     _initTts();
+    _loadAutoReadPreference();
+  }
+
+  Future<void> _loadAutoReadPreference() async {
+    final prefs = await SharedPreferences.getInstance();
+    final value = prefs.getBool(_autoReadPrefKey) ?? false;
+    if (!mounted) return;
+    setState(() {
+      _autoReadEnabled = value;
+    });
+    if (value) {
+      await _startPlayback();
+    }
+  }
+
+  Future<void> _setAutoReadEnabled(bool enabled) async {
+    setState(() {
+      _autoReadEnabled = enabled;
+    });
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_autoReadPrefKey, enabled);
+    if (enabled) {
+      await _startPlayback();
+    }
+  }
+
+  Future<void> _startPlayback() async {
+    await _flutterTts.stop();
+    await _flutterTts.setLanguage('de-DE');
+    await _flutterTts.speak(currentExplanation);
+    if (!mounted) return;
+    setState(() {
+      _isPlaying = true;
+      _isPaused = false;
+    });
   }
 
   Future<void> _initTts() async {
@@ -50,17 +89,9 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
         _isPaused = true;
       });
     } else if (_isPlaying && _isPaused) {
-      await _flutterTts.speak(currentExplanation);
-      setState(() {
-        _isPaused = false;
-      });
+      await _startPlayback();
     } else {
-      await _flutterTts.setLanguage('de-DE');
-      await _flutterTts.speak(currentExplanation);
-      setState(() {
-        _isPlaying = true;
-        _isPaused = false;
-      });
+      await _startPlayback();
     }
   }
 
@@ -116,6 +147,24 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
                       onPressed: _togglePlayPause,
                       tooltip:
                           _isPlaying && !_isPaused ? 'Pause' : 'Vorlesen',
+                    ),
+                    const SizedBox(width: 8),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        const Text(
+                          'Читать автоматически',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Switch(
+                          value: _autoReadEnabled,
+                          onChanged: _setAutoReadEnabled,
+                          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ],
                     ),
                   ],
                 ),

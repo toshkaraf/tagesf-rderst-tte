@@ -41,3 +41,6 @@ lerna-debug.log*
 # Flutter Geschichtsquiz when cloned at ./quiz (monorepo)
 /quiz/build/
 /quiz/.dart_tool/
+
+# Local quiz history fallback (when Supabase is not configured)
+/server-data/

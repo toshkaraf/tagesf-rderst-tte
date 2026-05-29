@@ -9,7 +9,8 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { readRequestBody, forwardGeminiGenerateContent } from './geminiProxyCore.mjs'
-import { createQuestionHistoryStore, readJsonBody } from './questionHistoryStore.mjs'
+import { createQuestionHistoryStore, handleQuestionHistoryRequest } from './questionHistoryStore.mjs'
+import { isSupabaseConfigured } from './questionHistorySupabase.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const envPath = path.join(__dirname, '..', '.env')
@@ -68,52 +69,12 @@ const server = http.createServer(async (req, res) => {
     }
     return
   }
-  if (rawUrl.startsWith('/api/question-history/')) {
-    try {
-      if (req.method === 'GET' && rawUrl.startsWith('/api/question-history/can-show')) {
-        const reqUrl = new URL(rawUrl, 'http://localhost')
-        const id = Number(reqUrl.searchParams.get('id'))
-        const canShow = Number.isFinite(id) ? historyStore.canShowQuestion(id) : true
-        res.writeHead(200, { 'Content-Type': 'application/json' })
-        res.end(JSON.stringify({ canShow }))
-        return
-      }
-      if (req.method === 'POST' && rawUrl.startsWith('/api/question-history/mark')) {
-        const body = await readJsonBody(req)
-        historyStore.markAnswered(Number(body.questionId), !!body.isCorrect)
-        res.writeHead(200, { 'Content-Type': 'application/json' })
-        res.end(JSON.stringify({ ok: true }))
-        return
-      }
-      if (req.method === 'POST' && rawUrl.startsWith('/api/question-history/filter')) {
-        const body = await readJsonBody(req)
-        const ids = Array.isArray(body.questionIds)
-          ? body.questionIds.map((x) => Number(x)).filter((x) => Number.isFinite(x))
-          : []
-        const availableIds = historyStore.filterAvailable(ids)
-        res.writeHead(200, { 'Content-Type': 'application/json' })
-        res.end(JSON.stringify({ availableIds }))
-        return
-      }
-      if (req.method === 'POST' && rawUrl.startsWith('/api/question-history/fact-index')) {
-        const body = await readJsonBody(req)
-        const index = historyStore.takeNextFactDisplayIndex(Number(body.questionId), Number(body.factCount))
-        res.writeHead(200, { 'Content-Type': 'application/json' })
-        res.end(JSON.stringify({ index }))
-        return
-      }
-      if (req.method === 'POST' && rawUrl.startsWith('/api/question-history/clear')) {
-        historyStore.clearAll()
-        res.writeHead(200, { 'Content-Type': 'application/json' })
-        res.end(JSON.stringify({ ok: true }))
-        return
-      }
-      res.writeHead(405, { Allow: 'GET, POST' })
-      res.end('Method Not Allowed')
-    } catch (e) {
-      res.writeHead(500, { 'Content-Type': 'application/json' })
-      res.end(JSON.stringify({ error: e instanceof Error ? e.message : 'history api error' }))
-    }
+  if (rawUrl.startsWith('/api/question-history')) {
+    const reqUrl = new URL(rawUrl, 'http://localhost')
+    await handleQuestionHistoryRequest(req, res, historyStore, {
+      queryMode: reqUrl.searchParams.get('mode') ?? '',
+      queryId: reqUrl.searchParams.get('id')
+    })
     return
   }
 
@@ -140,4 +101,9 @@ const server = http.createServer(async (req, res) => {
 server.listen(port, () => {
   console.log(`dist + Gemini proxy: http://localhost:${port}`)
   console.log('Set GEMINI_API_KEY in the environment before starting.')
+  if (isSupabaseConfigured()) {
+    console.log('Quiz history: Supabase (persistent).')
+  } else {
+    console.log('Quiz history: local file in server-data/question-history.json')
+  }
 })

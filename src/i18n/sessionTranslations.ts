@@ -107,6 +107,41 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'harari-future-theses': {
+    de: {
+      title: 'Sensationelle Thesen von Yuval Noah Harari über unsere nahe Zukunft',
+      description:
+        'Dreißig Folien: «nutzlose Klasse», Dataismus, hackbare Menschen, Zucker statt Schießpulver, biologische Spaltung und kollektive Fiktionen — mit zehn Mini-Quizzes und Abschlussquiz (Deutsch B2).',
+      category: 'Wissenschaft',
+      structure: {
+        greeting:
+          'Harari ist Historiker, kein Futurist — aber seine Warnungen über Technologie und Menschheit provozieren weltweit.',
+        mainContent:
+          'Acht große Thesen von «nutzloser Klasse» bis zu kollektiven Fiktionen in Sapiens — pointiert, ohne Links im Text.',
+        interactive: 'Zehn Mini-Quizzes mit je drei Fragen und ein Abschlussquiz mit dreißig Fragen (Deutsch B2).',
+        additional:
+          'Illustrationen nach IMAGE_LIST.html und IMAGE_LIST.md in public/media/harari-future-theses/.',
+        closing:
+          'Frage am Ende: Wer steuert die Zukunft — Mensch, Markt, Staat oder Algorithmus?'
+      }
+    },
+    ru: {
+      title: 'Несколько по-настоящему сенсационных тезисов Юваля Ноя Харари о нашем недалёком будущем',
+      description:
+        'Тридцать слайдов: «бесполезный класс», датаизм, «хакабельные» люди, сахар и порох, биологическое неравенство и коллективные вымыслы — с десятью мини-викторинами и итоговым тестом.',
+      category: 'Наука',
+      structure: {
+        greeting:
+          'Харари — историк, не футуролог, но его предупреждения о технологиях и человечестве вызывают споры по всему миру.',
+        mainContent:
+          'Восемь крупных тезисов: от «бесполезного класса» до коллективных вымыслов в Sapiens — коротко и без ссылок в тексте.',
+        interactive: 'Десять мини-викторин по три вопроса и итоговая викторина на тридцать вопросов.',
+        additional: 'Иллюстрации по IMAGE_LIST.html и IMAGE_LIST.md в public/media/harari-future-theses/.',
+        closing:
+          'На выходе — вопрос: кто будет управлять будущим — человек, рынок, государство или алгоритм?'
+      }
+    }
+  },
   'american-court-disorder': {
     de: {
       title: 'Chaos in amerikanischen Gerichten',

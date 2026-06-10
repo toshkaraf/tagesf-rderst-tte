@@ -22,6 +22,7 @@ import { courtJestersSlidesDE, courtJestersFinalQuizDE } from './court-jesters-c
 import { ancientComicHistorySlidesDE, ancientComicHistoryFinalQuizDE } from './ancient-comic-history-content-de'
 import { coldWarEspionageSlidesDE, coldWarEspionageFinalQuizDE } from './cold-war-espionage-content-de'
 import { americanCourtDisorderSlidesDE } from './american-court-disorder-content-de'
+import { harariFutureThesesSlidesDE, harariFutureThesesFinalQuizDE } from './harari-future-theses-content-de'
 
 // Deutsche Übersetzungen (B2-Niveau) für die Turnier-Session
 const ritterturniereSlidesDE: Slide[] = [
@@ -3226,6 +3227,13 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
   if (sessionId === 'american-court-disorder' && language === 'de') {
     return {
       slides: americanCourtDisorderSlidesDE
+    }
+  }
+
+  if (sessionId === 'harari-future-theses' && language === 'de') {
+    return {
+      slides: harariFutureThesesSlidesDE,
+      quiz: harariFutureThesesFinalQuizDE
     }
   }
 

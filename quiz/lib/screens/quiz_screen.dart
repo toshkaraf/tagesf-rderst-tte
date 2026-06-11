@@ -194,10 +194,28 @@ class _QuizScreenState extends State<QuizScreen> {
 
     await Future<void>.delayed(const Duration(milliseconds: 1000));
     if (!mounted) return;
-    await _showFactsAndContinue(_currentQuestion!);
+    await _showPostAnswerDialog(_currentQuestion!, isCorrect);
   }
 
-  Future<void> _showFactsAndContinue(QuizQuestion question) async {
+  Future<void> _showPostAnswerDialog(QuizQuestion question, bool isCorrect) async {
+    if (!isCorrect) {
+      final explanation = question.explanation?.trim() ?? '';
+      if (explanation.isEmpty) {
+        _goToNextAfterResult();
+        return;
+      }
+      if (!mounted) return;
+      await showDialog<void>(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => FactsDialog.explanation(text: explanation),
+      );
+      if (mounted) {
+        _goToNextAfterResult();
+      }
+      return;
+    }
+
     final facts =
         question.facts
             .map((s) => s.trim())
@@ -219,7 +237,7 @@ class _QuizScreenState extends State<QuizScreen> {
     await showDialog<void>(
       context: context,
       barrierDismissible: false,
-      builder: (context) => FactsDialog(fact: facts[idx]),
+      builder: (context) => FactsDialog.fact(text: facts[idx]),
     );
 
     if (mounted) {

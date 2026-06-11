@@ -101,7 +101,7 @@ class ResultScreen extends StatelessWidget {
                       await showDialog<void>(
                         context: context,
                         barrierDismissible: false,
-                        builder: (context) => FactsDialog(fact: facts[idx]),
+                        builder: (context) => FactsDialog.fact(text: facts[idx]),
                       );
                     },
                     tooltip: 'Interessante Fakten',

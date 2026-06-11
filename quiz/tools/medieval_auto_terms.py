@@ -4,6 +4,56 @@
 from __future__ import annotations
 
 
+def rich_facts_for_term(
+    term_de: str,
+    term_ru: str,
+    year: int,
+    ans_de: str,
+    ans_ru: str,
+    tag_de: str,
+    tag_ru: str,
+) -> list[dict[str, str]]:
+    century = year // 100 + 1
+    return [
+        {
+            "de": (
+                f"«{term_de}» ({tag_de}, etwa {year}): {ans_de}. "
+                f"In Urkunden, Chroniken und Rechtsquellen belegt der Begriff konkrete "
+                f"Macht- und Alltagspraxis – nicht nur abstrakte Theorie."
+            ),
+            "ru": (
+                f"«{term_ru}» («{tag_ru}», около {year}): {ans_ru}. "
+                f"В грамотах, хрониках и правовых источниках термин фиксирует "
+                f"конкретную властную и бытовую практику, а не одну лишь абстракцию."
+            ),
+        },
+        {
+            "de": (
+                f"Im {century}. Jahrhundert tauchte «{term_de}» in Lehenbriefen, "
+                f"Stadtregistern und kirchlichen Akten auf – oft mit leicht "
+                f"unterschiedlicher Bedeutung je nach Region und Stand."
+            ),
+            "ru": (
+                f"В {century}-м веке «{term_ru}» встречалось в ленных грамотах, "
+                f"городских реестрах и церковных актах — с разными оттенками "
+                f"в зависимости от региона и сословия."
+            ),
+        },
+        {
+            "de": (
+                f"Für die {tag_de}-Forschung ist «{term_de}» eine Leitkategorie: "
+                f"Sie hilft zu erklären, wie Menschen im Mittelalter Ordnung, "
+                f"Autorität und Konflikt verstanden – und was sich bis zum 15. Jahrhundert wandelte."
+            ),
+            "ru": (
+                f"Для изучения «{tag_ru}» «{term_ru}» — важная категория: "
+                f"через неё видно, как в Средневековье понимали порядок, власть и конфликт — "
+                f"и что изменилось к XV веку."
+            ),
+        },
+    ]
+
+
 def build_auto_concepts() -> list[dict]:
     terms: list[tuple[str, str, int, str, str, str, str]] = [
         ("Lehen", "лен", 1050, "Vasallentreue gegen Nutzungsrecht", "вассальная верность против права пользования", "Feudalismus", "феодализм"),
@@ -178,38 +228,9 @@ def build_auto_concepts() -> list[dict]:
             f"В контексте средневековой темы «{tag_ru}» без него невозможно понять "
             f"политические, религиозные или социальные процессы."
         )
-        base_facts = [
-            {
-                "de": (
-                    f"«{term_de}» war im {tag_de} ein grundlegendes Konzept, das Zeitgenossen "
-                    f"täglich begegnete – in Verträgen, Urkunden und kirchlichen Texten."
-                ),
-                "ru": (
-                    f"«{term_ru}» было повседневным понятием в сфере «{tag_ru}»: "
-                    f"встречалось в договорах, грамотах и церковных текстах."
-                ),
-            },
-            {
-                "de": (
-                    f"Das Phänomen {term_de} entwickelte sich im Laufe des Mittelalters weiter: "
-                    f"Was um {year} galt, war im 15. Jahrhundert oft bereits verändert oder abgelöst."
-                ),
-                "ru": (
-                    f"Явление «{term_ru}» менялось на протяжении Средневековья: "
-                    f"то, что было нормой около {year} года, к XV веку нередко уже изменилось или исчезло."
-                ),
-            },
-            {
-                "de": (
-                    f"Historiker nutzen den Begriff {term_de} als Schlüsselkategorie, "
-                    f"um {tag_de} von anderen Epochen abzugrenzen und strukturell zu verstehen."
-                ),
-                "ru": (
-                    f"Историки используют «{term_ru}» как ключевую категорию, "
-                    f"чтобы отличить {tag_ru} от других эпох и структурно понять Средневековье."
-                ),
-            },
-        ]
+        base_facts = rich_facts_for_term(
+            term_de, term_ru, year, ans_de, ans_ru, tag_de, tag_ru
+        )
         out.append({
             "q_de": f"Was bezeichnet der mittelalterliche Begriff «{term_de}»?",
             "q_ru": f"Что обозначает средневековый термин «{term_ru}»?",

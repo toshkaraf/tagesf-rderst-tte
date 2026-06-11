@@ -12,6 +12,7 @@ const List<String> kGermanEpochOrder = [
   'Römische Kaiserzeit',
   'Spätantike',
   'Mittelalter und Frühe Neuzeit',
+  'Frühe Neuzeit',
   '19. Jahrhundert',
   '20. Jahrhundert',
   'Neuzeit (sonstige)', // fallback for unparseable strings only
@@ -53,7 +54,8 @@ class PeriodEpochMapper {
     if (y < -27) return 'Hellenismus und Römische Republik';
     if (y < 284) return 'Römische Kaiserzeit';
     if (y < 600) return 'Spätantike';
-    if (y < 1700) return 'Mittelalter und Frühe Neuzeit';
+    if (y < 1450) return 'Mittelalter und Frühe Neuzeit';
+    if (y < 1815) return 'Frühe Neuzeit';
     // Späte Aufklärung / Altertumswissenschaft (z. B. Rosetta 1799, Champollion 1822)
     if (y < 1900) return '19. Jahrhundert';
     if (y < 2000) return '20. Jahrhundert';

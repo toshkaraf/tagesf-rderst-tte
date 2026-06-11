@@ -97,6 +97,8 @@ class CurriculumStructureService {
         return 'antiquity';
       case 'Mittelalter und Frühe Neuzeit':
         return 'middle_ages';
+      case 'Frühe Neuzeit':
+        return 'early_modern';
       case '19. Jahrhundert':
         return 'modern_19th';
       case '20. Jahrhundert':

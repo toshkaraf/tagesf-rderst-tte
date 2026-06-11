@@ -4,11 +4,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// Ein einzelner Fakt; «Weiter» als breite FilledButton-Leiste unten (kein Text-Link).
+/// Dialog mit scrollbarem Text, Vorlesen und optionalem Titel.
 class FactsDialog extends StatefulWidget {
-  final String fact;
+  final String text;
+  final String title;
 
-  const FactsDialog({super.key, required this.fact});
+  const FactsDialog({
+    super.key,
+    required this.text,
+    this.title = 'Interessant, dass …',
+  });
+
+  /// Kurzform für Fakten-Dialoge.
+  const FactsDialog.fact({
+    super.key,
+    required this.text,
+    this.title = 'Interessant, dass …',
+  });
+
+  /// Kurzform für Erklärungs-Dialoge nach falscher Antwort.
+  const FactsDialog.explanation({
+    super.key,
+    required this.text,
+  }) : title = 'Erklärung';
 
   @override
   State<FactsDialog> createState() => _FactsDialogState();
@@ -54,7 +72,7 @@ class _FactsDialogState extends State<FactsDialog> {
   }
 
   Future<void> _startPlayback() async {
-    final text = widget.fact;
+    final text = widget.text;
     await _flutterTts.stop();
     await _flutterTts.setLanguage('de-DE');
     await _flutterTts.speak(text);
@@ -125,7 +143,7 @@ class _FactsDialogState extends State<FactsDialog> {
                   children: [
                     Expanded(
                       child: Text(
-                        'Interessant, dass …',
+                        widget.title,
                         style: Theme.of(context).textTheme.titleLarge?.copyWith(
                               fontSize: 36,
                               fontWeight: FontWeight.bold,
@@ -176,7 +194,7 @@ class _FactsDialogState extends State<FactsDialog> {
                       physics: const BouncingScrollPhysics(),
                       padding: const EdgeInsets.only(right: 6, bottom: 4),
                       child: Text(
-                        widget.fact,
+                        widget.text,
                         style: const TextStyle(
                           fontSize: 34,
                           height: 1.45,

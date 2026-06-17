@@ -107,6 +107,41 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'medieval-noble-titles': {
+    de: {
+      title: 'Wie Adelstitel entstanden und wer diese Menschen ursprünglich waren',
+      description:
+        'Dreißig Folien: freier Diener, Ministeriale, Ritter, Baron bis Herzog, Peerage und Titelinflation — mit zehn Mini-Quizzes und Abschlussquiz (Deutsch B1–B2).',
+      category: 'Geschichte',
+      structure: {
+        greeting:
+          'Adel war im Mittelalter keine Romantik, sondern Dienst mit Waffe — und manchmal sogar unfreie Knechtschaft mit Burg.',
+        mainContent:
+          'Vom freien Vasallen über Ritter und Amtstitel bis zur britischen Peerage und Dumas-Verwirrung — kurz und ohne Links im Text.',
+        interactive: 'Zehn Mini-Quizzes mit je drei Fragen und ein Abschlussquiz mit dreißig Fragen (Deutsch B1–B2).',
+        additional:
+          'Illustrationen nach IMAGE_LIST.html und IMAGE_LIST.md in public/media/medieval-noble-titles/.',
+        closing:
+          'Frage am Ende: Wann wurde aus harter Arbeit ein schöner Titel ohne Funktion?'
+      }
+    },
+    ru: {
+      title: 'Как появились дворянские титулы и кем эти люди были изначально',
+      description:
+        'Тридцать слайдов: свободный слуга, министериалы, рыцарь, барон, граф, маркиз, герцог, пэры и инфляция титулов — с десятью мини-викторинами и итоговым тестом.',
+      category: 'История',
+      structure: {
+        greeting:
+          'Дворянство в Средневековье — не романтика, а служба с оружием в руках, а иногда и несвободная зависимость с замком.',
+        mainContent:
+          'От свободного вассала до британской peerage и путаницы у Дюма — коротко, без ссылок в тексте.',
+        interactive: 'Десять мини-викторин по три вопроса и итоговая викторина на тридцать вопросов.',
+        additional: 'Иллюстрации по IMAGE_LIST.html и IMAGE_LIST.md в public/media/medieval-noble-titles/.',
+        closing:
+          'На выходе — вопрос: когда из тяжёлой работы вырос красивый титул без функции?'
+      }
+    }
+  },
   'harari-future-theses': {
     de: {
       title: 'Sensationelle Thesen von Yuval Noah Harari über unsere nahe Zukunft',

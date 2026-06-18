@@ -142,9 +142,16 @@
   width: 100%;
   font: inherit;
   cursor: default;
+  justify-content: center;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(231, 238, 255, 0.98) 100%);
   color: #263238;
   border-color: rgba(255, 255, 255, 0.55);
+}
+
+.activity-tile--placeholder .activity-tile-visual {
+  margin-top: 0;
+  width: min(72%, 160px);
+  max-height: 72%;
 }
 
 .activity-tile--placeholder:active {

@@ -54,7 +54,11 @@ function ActivitySelectPage() {
             </Link>
           </li>
           <li>
-            <button type="button" className="activity-tile activity-tile--placeholder" aria-disabled="true">
+            <button
+              type="button"
+              className="activity-tile activity-tile--placeholder"
+              aria-disabled="true"
+            >
               <span className="activity-tile-visual" aria-hidden>
                 <img
                   src="/media/activity-icons/quiz-wheel.webp"
@@ -63,13 +67,14 @@ function ActivitySelectPage() {
                   loading="eager"
                 />
               </span>
-              <span className="activity-tile-text">
-                <span className="activity-tile-label">Demnächst</span>
-              </span>
             </button>
           </li>
           <li>
-            <button type="button" className="activity-tile activity-tile--placeholder" aria-disabled="true">
+            <button
+              type="button"
+              className="activity-tile activity-tile--placeholder"
+              aria-disabled="true"
+            >
               <span className="activity-tile-visual" aria-hidden>
                 <img
                   src="/media/activity-icons/ki-quiz.webp"
@@ -78,13 +83,14 @@ function ActivitySelectPage() {
                   loading="eager"
                 />
               </span>
-              <span className="activity-tile-text">
-                <span className="activity-tile-label">Demnächst</span>
-              </span>
             </button>
           </li>
           <li>
-            <button type="button" className="activity-tile activity-tile--placeholder" aria-disabled="true">
+            <button
+              type="button"
+              className="activity-tile activity-tile--placeholder"
+              aria-disabled="true"
+            >
               <span className="activity-tile-visual" aria-hidden>
                 <img
                   src="/media/activity-icons/quiz-menu.webp"
@@ -92,9 +98,6 @@ function ActivitySelectPage() {
                   className="activity-tile-image"
                   loading="eager"
                 />
-              </span>
-              <span className="activity-tile-text">
-                <span className="activity-tile-label">Demnächst</span>
               </span>
             </button>
           </li>

@@ -1,220 +1,744 @@
 import { Slide, QuizBlock } from '../types/session'
 
+const img = (file: string, title: string) => ({
+  type: 'image' as const,
+  url: `/media/medieval-noble-titles/${file}`,
+  title
+})
+
 export const medievalNobleTitlesSlidesDE: Slide[] = [
-  { id: 'ntl1', title: "Adeliger — freier Diener", content: "Heute ist Freiheit selbstverständlich — im Mittelalter war ein niemandem Gehörender ein Privileg. Der Adelige war ursprünglich eine persönlich freie Person, die nicht «arbeitet», sondern ihrem Lehnsherrn dient — meist mit Waffe in der Hand.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/01-noble-free-servant.jpg', title: "Freier Diener" }] },
-
-  { id: 'ntl2', title: "Aber auch adelige «Unfreie»", content: "Im mittelalterlichen Deutschland gab es Ministerialen: Ritter und Verwalter mit Waffen, Schlössern und Kriegsdienst — juristisch aber «unfrei», faktisch Leibeigene des Königs oder Bischofs.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/02-noble-serf-knights.jpg', title: "Ministerialen" }] },
-
-  { id: 'ntl3', title: "Ritter: Soldat, kein Romantiker", content: "«Ritter» (engl. knight, ahd. cniht — Diener, Junge) hatte zuerst nichts mit Turnieren und Damen zu tun. Es war ein schwerbewaffneter Berufsreiter, der für Offiziersdienst zugelassen wurde.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/03-knight-soldier-not-romantic.jpg', title: "Ritter als Soldat" }] },
-
-    {
-      id: 'q1',
-      title: 'Quiz',
-      content: '',
-      duration: 2,
-      questions: [
-      { id: 'q-ntl-1-1-de', text: "Wer war der Adelige im Mittelalter ursprünglich?", type: 'multiple-choice', options: ["Unabhängiger Handwerker","Persönlich freier Diener des Lehnsherrn, oft mit Waffe","Rechtlose*r Bauer","Nur Kirchenbeamte*r"], correctAnswer: 1, explanation: "Adel = frei und dienend — nicht «arbeiten» im modernen Sinn." },
-      { id: 'q-ntl-1-2-de', text: "Wer waren Ministerialen?", type: 'multiple-choice', options: ["Waffenlose Mönche","Ritter/Verwalter, juristisch «unfrei»","Nur Königssöhne","Italienische Kaufleute"], correctAnswer: 1, explanation: "Sie kämpften und hatten Burgen, blieben aber Leibeigene des Herrn." },
-      { id: 'q-ntl-1-3-de', text: "Was bedeutete «Ritter» ursprünglich?", type: 'multiple-choice', options: ["Hofdichter","Schwerbewaffneter Berufsreiter","Turnierorganisator für Damen","Richter ohne Waffe"], correctAnswer: 1, explanation: "Knight/cniht/Ritter — Diener, Junge, Reiter; Romantik kam später." }
-      ]
-    },
-
-  { id: 'ntl4', title: "Bachelor und Banneret", content: "Ein Bachelor ist ein einfacher Ritter (mit Dienern). Ein Banneret darf im Kampf sein eigenes Banner tragen — nicht Schau, sondern Funktion: ohne Funk dient es als Orientierung für die Soldaten.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/04-knight-bachelor-banneret.jpg', title: "Banner und Bachelor" }] },
-
-  { id: 'ntl5', title: "Woher kommen die Titel?", content: "Graf, Herzog, Baron — klingt nach Dumas-Roman. Frühmittelalterlich war alles utilitaristisch: konkrete Amtstitel und militärische Funktionen.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/05-where-titles-came-from.jpg', title: "Utilitaristische Titel" }] },
-
-  { id: 'ntl6', title: "Baron: Mann mit Land", content: "Baron kommt von lat. baro — «Mann», «Söldner». Ein Baron hält eine Baronie (Lehen) direkt vom König, nicht von einem anderen Vasallen.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/06-baron-landholder.jpg', title: "Baron und Baronie" }] },
-
-    {
-      id: 'q2',
-      title: 'Quiz',
-      content: '',
-      duration: 2,
-      questions: [
-      { id: 'q-ntl-2-1-de', text: "Wozu durfte ein Banneret sein Banner tragen?", type: 'multiple-choice', options: ["Nur für Paradeschönheit","Als Orientierung für Soldaten im Kampf","Für Markthandel","Um Bauern zu richten"], correctAnswer: 1, explanation: "Ohne Funk war das Banner der Anker in der Schlacht." },
-      { id: 'q-ntl-2-2-de', text: "Was waren Graf/Herzog/Baron frühmittelalterlich?", type: 'multiple-choice', options: ["Märchennamen ohne Funktion","Konkrete Ämter und militärische Funktionen","Nur Kirchenämter","Stadtnamen"], correctAnswer: 1, explanation: "Titel begannen utilitaristisch, nicht als Roman-Schmuck." },
-      { id: 'q-ntl-2-3-de', text: "Wer ist ein Baron im Feudalsinn?", type: 'multiple-choice', options: ["Lehenshalter direkt vom König","Landloser Bauer","Nur Stadtbürgermeister","Gesetzlicher Erbe eines Vizegrafen"], correctAnswer: 0, explanation: "Baron = Baronie direkt vom König, nicht vom Vasallen." }
-      ]
-    },
-
-  { id: 'ntl7', title: "Warum Barone Könige diktierten", content: "Bei Magna Carta wundern wir uns über «Barone». Damals bedeutete Baron: direkter königlicher Vasall — nur sie durften dem Monarchen Forderungen stellen.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/07-barons-dictated-to-kings.jpg', title: "Barone und König" }] },
-
-  { id: 'ntl8', title: "Graf: alter Buchhalter", content: "Graf (engl. count, lat. comes — Gefährte des Kaisers) war zuerst königlicher Statthalter: Steuerer, Richter, Verwalter einer Region.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/08-count-ancient-accountant.jpg', title: "Graf als Statthalter" }] },
-
-  { id: 'ntl9', title: "Englische Anomalie: Earl", content: "In England heißt der Graf Earl — von skandinav. jarl, Stammesführer. Die Ehefrau heißt Countess, weil es kein weibliches jarl gab.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/09-english-earl-anomaly.jpg', title: "Earl und Countess" }] },
-
-    {
-      id: 'q3',
-      title: 'Quiz',
-      content: '',
-      duration: 2,
-      questions: [
-      { id: 'q-ntl-3-1-de', text: "Warum diktierten «Barone» dem König in der Magna Carta?", type: 'multiple-choice', options: ["Weil Baron der niedrigste Titel war","Weil Baron damals direkter königlicher Vasall mit Status war","Weil der König Bauer war","Weil nur Barone Ritter waren"], correctAnswer: 1, explanation: "Nur direkte Vasallen durften Forderungen stellen." },
-      { id: 'q-ntl-3-2-de', text: "Wer war der Graf (comes) ursprünglich?", type: 'multiple-choice', options: ["Hofdichter","Königlicher Statthalter, Steuerer, Richter","Nur Flottenkommandant","Mönch-Schreiber"], correctAnswer: 1, explanation: "Comes = «Gefährte des Kaisers», regionaler Beamter." },
-      { id: 'q-ntl-3-3-de', text: "Was ist besonders am englischen Earl?", type: 'multiple-choice', options: ["Earl kommt von skandinav. jarl","Earl steht immer unter dem Baron","Earl ist nur ein Frauentitel","Earl hat keine Ehefrau"], correctAnswer: 0, explanation: "Earl statt Count; Ehefrau heißt Countess — kein weibl. jarl." }
-      ]
-    },
-
-  { id: 'ntl10', title: "Vielfalt der Grafen", content: "Pfalzgraf — Verwalter des Königspfalz. Landgraf — Provinzstatthalter. Burggraf — Kommandant einer befestigten Stadt. Alle im Staatsdienst.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/10-variety-of-counts.jpg', title: "Grafenarten" }] },
-
-  { id: 'ntl11', title: "Markgraf: Grenzer mit Extra-Power", content: "Markgraf/Marquis von «Mark» — gefährliche Grenzmark. Der Statthalter hatte mehr Truppen und Befugnisse als ein normaler Graf.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/11-marquis-border-guard.jpg', title: "Markgraf an der Grenze" }] },
-
-  { id: 'ntl12', title: "Vizegraf: einfach der Stellvertreter", content: "Vizegraf (viscount, lat. vice-comes) — «Stellvertreter des Grafen», der dessen Pflichten übernahm, während der Graf am Hof oder im Krieg war.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/12-viscount-deputy.jpg', title: "Vizegraf" }] },
-
-    {
-      id: 'q4',
-      title: 'Quiz',
-      content: '',
-      duration: 2,
-      questions: [
-      { id: 'q-ntl-4-1-de', text: "Wer ist ein Burggraf?", type: 'multiple-choice', options: ["Verwalter des Pfalz","Kommandant einer befestigten Stadt","Meeressteuerer","Herzogssohn ohne Titel"], correctAnswer: 1, explanation: "Burggraf = «Stadt-Kommandant» mit Befestigung." },
-      { id: 'q-ntl-4-2-de', text: "Wovon kommt «Markgraf/Marquis»?", type: 'multiple-choice', options: ["Vom Markt — Handelsplatz","Von der «Mark» — gefährlicher Grenzland","Vom Heiligen Markus","Vom franz. «marier» — heiraten"], correctAnswer: 1, explanation: "March = Grenzmark mit Extra-Truppen und Befugnissen." },
-      { id: 'q-ntl-4-3-de', text: "Wer war der Vizegraf ursprünglich?", type: 'multiple-choice', options: ["Stellvertreter des Grafen (vice-comes)","Sohn des Königs","Kirchenoberhaupt","Handelsschiff-Kapitän"], correctAnswer: 0, explanation: "Er übernahm, während der Graf am Hof oder im Krieg war." }
-      ]
-    },
-
-  { id: 'ntl13', title: "Herzog: ganz andere Kategorie", content: "Herzog (lat. dux — Heerführer) war kein ernannter Beamter, sondern alter germanischer Stammesführer. Könige kauften Loyalität mit höchstem Status.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/13-duke-different-breed.jpg', title: "Herzog als Führer" }] },
-
-  { id: 'ntl14', title: "Herzöge fast wie Könige", content: "Herzöge regierten riesige Gebiete (Bayern, Sachsen) weitgehend selbst. Erster englischer Herzog: Sohn Eduards III., 1337 — vorher gab es den Titel in England nicht.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/14-dukes-almost-kings.jpg', title: "Herzog und Territorium" }] },
-
-  { id: 'ntl15', title: "Prinz: erster unter Gleichen", content: "Prinz (lat. princeps — der Erste) hieß zuerst nicht «Sohn des Königs». In Rom der Kaiser; im Mittelalter jeder unabhängige Souverän.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/15-prince-first-among-equals.jpg', title: "Prinz als Souverän" }] },
-
-    {
-      id: 'q5',
-      title: 'Quiz',
-      content: '',
-      duration: 2,
-      questions: [
-      { id: 'q-ntl-5-1-de', text: "Wie unterschied sich der Herzog vom Grafen?", type: 'multiple-choice', options: ["Herzog = Beamter, Graf = Stammesführer","Herzog = alter Stammesführer, nicht nur Beamter","Herzog stand immer unter dem Baron","Herzog gab es nur in Frankreich"], correctAnswer: 1, explanation: "Dux = Heerführer; Könige kauften Loyalität mit Rang." },
-      { id: 'q-ntl-5-2-de', text: "Wann gab es den ersten englischen Herzog?", type: 'multiple-choice', options: ["1066","1337 — Sohn Eduards III.","1611","Nie"], correctAnswer: 1, explanation: "Vor 1337 existierte der Titel in England nicht." },
-      { id: 'q-ntl-5-3-de', text: "Wen nannte man im Mittelalter «Prinz»?", type: 'multiple-choice', options: ["Nur den Königssohn","Jeden unabhängigen Souverän","Nur den Bischof","Nur landlosen Ritter"], correctAnswer: 1, explanation: "Princeps = «Erster» — Souverän, dem niemand befiehlt." }
-      ]
-    },
-
-  { id: 'ntl16', title: "Warum Walisische Prinzen keine Ritter sind", content: "Adel (Geburt) und Rittertum (Beruf) waren getrennt. Selbst Königssöhne wurden adelig geboren — Ritter wurden sie erst durch Ausbildung und Weihe.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/16-welsh-princes-not-knights.jpg', title: "Geburt und Rittertum" }] },
-
-  { id: 'ntl17', title: "Squaire: Page mit Anspruch", content: "Squaire (lat. scutarius — Schildträger) — Waffenknecht eines Ritters. Ritterung wurde teuer; viele reiche Grundbesitzer blieben lebenslang Squaire.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/17-squire-ambitious-page.jpg', title: "Squaire" }] },
-
-  { id: 'ntl18', title: "Yeomen: frei, aber nicht adelig", content: "In England Yeomen — freie Bauern mit Land. Sie pflügten, waren unabhängig und mussten einen Langbogen für die Landesverteidigung haben.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/18-yeomen-free-not-noble.jpg', title: "Yeomen mit Langbogen" }] },
-
-    {
-      id: 'q6',
-      title: 'Quiz',
-      content: '',
-      duration: 2,
-      questions: [
-      { id: 'q-ntl-6-1-de', text: "Warum ist ein Prinz nicht automatisch Ritter?", type: 'multiple-choice', options: ["Gesetz verbot es","Geburt (Adel) und Rittertum (Beruf) sind getrennt","Prinzen konnten nicht reiten","Ritter nahmen keine Adeligen"], correctAnswer: 1, explanation: "Auch Königssöhne brauchten Ausbildung und Weihe." },
-      { id: 'q-ntl-6-2-de', text: "Wer war ein Squaire ursprünglich?", type: 'multiple-choice', options: ["Königlicher Richter","Waffenknecht (Schildträger) eines Ritters","Mönch","Kaufmann aus Flandern"], correctAnswer: 1, explanation: "Scutarius — viele blieben lebenslang Squaire wegen der Kosten." },
-      { id: 'q-ntl-6-3-de', text: "Wie unterschieden sich Yeomen vom Adel?", type: 'multiple-choice', options: ["Yeomen waren Sklaven","Freie Bauern mit Land und Langbogen, aber nicht adelig","Nur Kirchendienst","Ohne Land"], correctAnswer: 1, explanation: "Sie pflügten eigenes Land und waren zur Landesverteidigung verpflichtet." }
-      ]
-    },
-
-  { id: 'ntl19', title: "Wie Ämter zu Titeln wurden", content: "Früh wurden Graf- oder Vizegrafposten persönlich vergeben. Beamte übergaben sie bald an Söhne — warum dem König das Amt zurückgeben?", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/19-offices-became-titles.jpg', title: "Erbbare Ämter" }] },
-
-  { id: 'ntl20', title: "Privatisierung des Staates", content: "Könige akzeptierten es: Grafschaften, Baronien, Marken wurden Erbbesitz — übertragbar oder als Mitgift.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/20-privatization-of-state.jpg', title: "Erbliche Herrschaften" }] },
-
-  { id: 'ntl21', title: "Titel ohne Arbeit", content: "Mit dem Absolutismus kamen neue Beamte und stehende Heere. Alte Feudale waren überflüssig — der Graf sammelte keine Steuern mehr, der Herzog führte kein Stammesheer.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/21-title-without-work.jpg', title: "Titel ohne Funktion" }] },
-
-    {
-      id: 'q7',
-      title: 'Quiz',
-      content: '',
-      duration: 2,
-      questions: [
-      { id: 'q-ntl-7-1-de', text: "Wie wurden Ämter zu Titeln?", type: 'multiple-choice', options: ["König verbot Erbe","Beamte gaben Posten an Söhne weiter","Kirche benannte alles um","Bauern wählten Namen"], correctAnswer: 1, explanation: "Grafen/Vizegrafen «privatisierten» ihre Sitze." },
-      { id: 'q-ntl-7-2-de', text: "Was geschah mit Grafschaften und Baronien?", type: 'multiple-choice', options: ["Sie verschwanden über Nacht","Wurden Erbbesitz — vererbbar oder als Mitgift","Gingen nur an die Kirche","Wurden nur gewählt"], correctAnswer: 1, explanation: "Amt wurde Familien-Eigentum." },
-      { id: 'q-ntl-7-3-de', text: "Warum wurde der Titel «nur noch Rang» beim Absolutismus?", type: 'multiple-choice', options: ["Könige schafften alle Titel ab","Neue Beamte/Heere ersetzten alte Feudale — Funktionen weg","Adel gab Land auf","Titel nur für Frauen"], correctAnswer: 1, explanation: "Graf sammelte keine Steuern mehr — nur noch der Name blieb." }
-      ]
-    },
-
-  { id: 'ntl22', title: "Englischer Peer: was heißt das?", content: "Peer (lat. par — gleich) — Mitglied der höchsten britischen Aristokratie. Der König erkannte sie als seinesgleichen in Ehre, mit Recht, sich gegenseitig zu richten.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/22-english-peer-meaning.jpg', title: "Peer und Parlament" }] },
-
-  { id: 'ntl23', title: "Hierarchie der britischen Elite", content: "Oben: Herzog, Marquess, Earl, Viscount, Baron. Darunter Baronets und Ritter — adelig, aber keine Peers, kein House of Lords.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/23-british-nobility-hierarchy.jpg', title: "Adels-Hierarchie" }] },
-
-  { id: 'ntl24', title: "Baronet: gekaufter Titel", content: "König Jakob I. erfand 1611 den Baronet — verkauft an Reiche für den Irland-Krieg. Erblich mit «Sir», aber kein Peer.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/24-baronet-bought-title.jpg', title: "Baronet Jakobs I." }] },
-
-    {
-      id: 'q8',
-      title: 'Quiz',
-      content: '',
-      duration: 2,
-      questions: [
-      { id: 'q-ntl-8-1-de', text: "Warum heißt der Peer «gleich» (par)?", type: 'multiple-choice', options: ["Gleich den Bauern","König erkannte höchste Elite als seinesgleichen in Ehre","Alle Peers gleich arm","Übersetzung von «Parliament»"], correctAnswer: 1, explanation: "Herzöge bis Barone — «Peers» mit besonderem Ehrenrang." },
-      { id: 'q-ntl-8-2-de', text: "Wer ist Peer in Großbritannien?", type: 'multiple-choice', options: ["Baronet","Earl (Graf)","Ritter ohne Titel","Yeoman"], correctAnswer: 1, explanation: "Baronets und Ritter — adelig, aber keine Peers." },
-      { id: 'q-ntl-8-3-de', text: "Warum schuf Jakob I. 1611 Baronets?", type: 'multiple-choice', options: ["Nur für Krieger","Titelsverkauf für Geld — Irland-Krieg","Ersatz aller Herzöge","Parlamentsauftrag"], correctAnswer: 1, explanation: "Erblich mit «Sir», aber kein Peer." }
-      ]
-    },
-
-  { id: 'ntl25', title: "Lord: Sammelwort", content: "Lord (ahd. hlāford — Brot-Hüter) ist kein Titel, sondern Anrede für Barone bis Marquess und für Herzogssöhne. Ein Titel «Lord» existiert nicht.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/25-lord-collective-word.jpg', title: "Anrede «Lord»" }] },
-
-  { id: 'ntl26', title: "Seniorität innerhalb eines Titels", content: "Zwei Earls gleich? Nein — wer 1400 den Titel bekam, steht über dem von 1600. Ein alter Baronentitel kann prestigeträchtiger sein als ein neuer Herzogstitel.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/26-seniority-within-title.jpg', title: "Titelseniorenität" }] },
-
-  { id: 'ntl27', title: "Frühe Neuzeit: Titelsinflation", content: "Zur Musketeier-Zeit: Titelmarkt und Eitelkeit. Land passte nicht zum Rang — ein Marquis-Titel konnte eine Papierurkunde sein, während ein Intendant regierte.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/27-early-modern-title-inflation.jpg', title: "Titelsinflation" }] },
-
-    {
-      id: 'q9',
-      title: 'Quiz',
-      content: '',
-      duration: 2,
-      questions: [
-      { id: 'q-ntl-9-1-de', text: "«Lord» ist…", type: 'multiple-choice', options: ["Ein eigenständiger Höchsttitel","Höfliche Anrede, kein eigener Titel","Nur Titel für Königssöhne","Synonym für Bauer"], correctAnswer: 1, explanation: "Hlāford — Anrede für Barone bis Marquess und Herzogssöhne." },
-      { id: 'q-ntl-9-2-de', text: "Wie wird Seniorität zweier Earls bestimmt?", type: 'multiple-choice', options: ["Nach Körpergröße","Nach Datum der Titelschöpfung — älter = höher","Nach Burgenzahl","Alphabetisch"], correctAnswer: 1, explanation: "Alter Baronentitel kann prestigeträchtiger sein als neuer Herzogstitel." },
-      { id: 'q-ntl-9-3-de', text: "Was ist «Titelsinflation» in der Frühen Neuzeit?", type: 'multiple-choice', options: ["Titel wurden seltener","Rang ohne Land/Macht — Intendanten regierten","König verbot Marquis","Nur Frauentitel"], correctAnswer: 1, explanation: "XVII. Jh.: oft Papier und Eitelkeit statt echter Gewalt." }
-      ]
-    },
-
-  { id: 'ntl28', title: "Dumas’ berühmte Verwechslung", content: "Athos — Graf, Porthos — Baron. Im Frankreich des 17. Jh. bedeutete das vor allem Abstammung und Hofprivilegien — Porthos konnte reicher sein als Athos.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/28-duma-famous-confusion.jpg', title: "Athos und Porthos" }] },
-
-  { id: 'ntl29', title: "Vom Funktionalen zum Ästhetischen", content: "Titelgeschichte: Praktisches wird Luxus. Der blutige Markgraf an der Grenze wird zum pudrigen Marquis auf Absätzen.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/29-function-to-aesthetics.jpg', title: "Funktion und Luxus" }] },
-
-  { id: 'ntl30', title: "Das historische Paradox", content: "Alte Grafen und Barone würden ihre verweichlichten Nachfahren nicht verstehen. Im Mittelalter war ein Titel vor allem Arbeit: richten, Korn eintreiben, kämpfen, Garnison führen.", duration: 3, media: [{ type: 'image', url: '/media/medieval-noble-titles/30-noble-title-paradox.jpg', title: "Titel als Arbeit" }] },
-
-    {
-      id: 'q10',
-      title: 'Quiz',
-      content: '',
-      duration: 2,
-      questions: [
-      { id: 'q-ntl-10-1-de', text: "Was zeigt Athos und Porthos bei Dumas?", type: 'multiple-choice', options: ["Baron immer ärmer als Graf","Titel ≠ Reichtum und echte Macht","Grafen gab es in Frankreich nicht","Dumas schrieb Dokumentation"], correctAnswer: 1, explanation: "Titel = Abstammung; Porthos konnte reicher sein." },
-      { id: 'q-ntl-10-2-de', text: "Wie wird die Markgraf-Evolution beschrieben?", type: 'multiple-choice', options: ["Vom Dichter zum Mönch","Vom Grenzkommandanten zum pudrigen Marquis","Vom Bauer zum König in einem Jahr","Unverändert"], correctAnswer: 1, explanation: "Praktische Grenzfunktion wurde Luxus und Etikette." },
-      { id: 'q-ntl-10-3-de', text: "Was ist das historische Paradox der Titel?", type: 'multiple-choice', options: ["Titel waren von Anfang an dekorativ","Titel war Arbeit: richten, Korn, Krieg, Garnison","Adel diente nie dem König","Barone immer ärmer als Bauern"], correctAnswer: 1, explanation: "Adel bedeutete harte Arbeit für den König — nicht nur Glanz." }
-      ]
-    }
+  {
+    id: 'ntl1',
+    title: 'Adeliger — freier Diener',
+    content:
+      'Heute ist Freiheit ein selbstverständliches Recht. Im Mittelalter war es dagegen ein großes Privileg, niemandem zu gehören. Ein Adeliger war ursprünglich eine persönlich freie Person: Sie «arbeitete» nicht im üblichen Sinn, sondern diente ihrem Lehnsherrn — meist mit der Waffe in der Hand.',
+    duration: 3,
+    media: [img('01-noble-free-servant.jpg', 'Freier Diener')]
+  },
+  {
+    id: 'ntl2',
+    title: 'Aber es gab auch «unfreie» Adelige',
+    content:
+      'In Deutschland gab es ein Phänomen, das alle Vorstellungen sprengte: die Ministerialen. Das waren Ritter und Verwalter, die Waffen trugen, kämpften und Burgen besaßen — juristisch aber «unfrei» blieben, faktisch also Leibeigene des Königs oder des Bischofs.',
+    duration: 3,
+    media: [img('02-noble-serf-knights.jpg', 'Ministerialen')]
+  },
+  {
+    id: 'ntl3',
+    title: 'Ritter: Soldat, kein Romantiker',
+    content:
+      'Das Wort «Ritter» (englisch knight, von altenglisch cniht — Knappe, Diener, oder deutsch Ritter — Reiter) hatte zuerst nichts mit Turnieren und «schönen Damen» zu tun. Es bezeichnete einen schwerbewaffneten, berittenen Berufskrieger, der in einem Ritus als fähig für den Offiziersdienst anerkannt wurde.',
+    duration: 3,
+    media: [img('03-knight-soldier-not-romantic.jpg', 'Ritter als Soldat')]
+  },
+  {
+    id: 'q1',
+    title: 'Quiz',
+    content: '',
+    duration: 2,
+    questions: [
+      {
+        id: 'q-ntl-1-1-de',
+        text: 'Wer war der Adelige im Mittelalter ursprünglich?',
+        type: 'multiple-choice',
+        options: [
+          'Ein unabhängiger Handwerker',
+          'Eine persönlich freie Person, die dem Lehnsherrn diente — oft mit Waffe',
+          'Ein rechtloser Bauer',
+          'Nur ein Kirchenbeamter'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'Adel bedeutete: frei sein und dienen — nicht «arbeiten» im modernen Sinn des Wortes.'
+      },
+      {
+        id: 'q-ntl-1-2-de',
+        text: 'Wer waren die Ministerialen im mittelalterlichen Deutschland?',
+        type: 'multiple-choice',
+        options: [
+          'Unbewaffnete Mönche',
+          'Ritter und Verwalter, die juristisch «unfrei» waren',
+          'Nur die Söhne des Königs',
+          'Kaufleute aus Italien'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'Sie kämpften und hatten Burgen, blieben aber formell Leibeigene des Königs oder des Bischofs.'
+      },
+      {
+        id: 'q-ntl-1-3-de',
+        text: 'Was bedeutete das Wort «Ritter» ursprünglich?',
+        type: 'multiple-choice',
+        options: [
+          'Ein Hofdichter',
+          'Ein schwerbewaffneter, berittener Berufskrieger',
+          'Ein Turnierorganisator für Damen',
+          'Ein unbewaffneter Richter'
+        ],
+        correctAnswer: 1,
+        explanation: 'Knight, cniht, Ritter — Knappe, Diener, Reiter. Die Romantik kam erst später.'
+      }
+    ]
+  },
+  {
+    id: 'ntl4',
+    title: 'Bachelor-Ritter und Banneret',
+    content:
+      'Ein Bachelor-Ritter ist ein einfacher Ritter ohne eigenes Banner — auch wenn er selbst Diener hatte. Ein Banneret darf im Kampf sein eigenes Banner (Feldzeichen) tragen. Das war kein Prestige-Spiel, sondern eine echte Aufgabe: Es gab keine Funkgeräte, und das Banner zeigte den Soldaten in der Hitze der Schlacht, wohin sie laufen sollten.',
+    duration: 3,
+    media: [img('04-knight-bachelor-banneret.jpg', 'Banner und Bachelor')]
+  },
+  {
+    id: 'ntl5',
+    title: 'Woher kommen die Titel?',
+    content:
+      'Graf, Herzog, Baron — wir kennen diese Wörter aus Dumas-Romanen wie schöne Märchentitel. Im frühen Mittelalter war alles aber streng zweckmäßig: Es waren Namen für konkrete Ämter und militärische Aufgaben.',
+    duration: 3,
+    media: [img('05-where-titles-came-from.jpg', 'Praktische Titel')]
+  },
+  {
+    id: 'ntl6',
+    title: 'Baron: ein Mann mit Land',
+    content:
+      'Das Wort «Baron» stammt vom altfranzösischen und spätlateinischen baro — «Mann», «Söldner». Ein Baron ist Inhaber eines Lehens, einer Baronie: Land, das er direkt vom König erhielt, nicht von einem anderen Vasallen.',
+    duration: 3,
+    media: [img('06-baron-landholder.jpg', 'Baron und Baronie')]
+  },
+  {
+    id: 'q2',
+    title: 'Quiz',
+    content: '',
+    duration: 2,
+    questions: [
+      {
+        id: 'q-ntl-2-1-de',
+        text: 'Warum durfte ein Banneret sein eigenes Banner tragen?',
+        type: 'multiple-choice',
+        options: [
+          'Nur wegen der Schönheit bei Paraden',
+          'Damit die Soldaten im Kampf einen Orientierungspunkt hatten',
+          'Um auf dem Markt zu handeln',
+          'Um Bauern zu richten'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'Ohne Funkgeräte war das Banner in der Schlacht der Anker, an dem sich die Truppen orientierten.'
+      },
+      {
+        id: 'q-ntl-2-2-de',
+        text: 'Was waren Graf, Herzog und Baron im frühen Mittelalter?',
+        type: 'multiple-choice',
+        options: [
+          'Märchennamen ohne Funktion',
+          'Bezeichnungen für konkrete Ämter und militärische Aufgaben',
+          'Nur Kirchenämter',
+          'Namen von Städten'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'Die Titel begannen als praktische Ämter — nicht als «schöne» Romanbezeichnungen.'
+      },
+      {
+        id: 'q-ntl-2-3-de',
+        text: 'Wer ist ein Baron im Feudalsystem?',
+        type: 'multiple-choice',
+        options: [
+          'Inhaber eines Lehens direkt vom König',
+          'Ein landloser Bauer',
+          'Nur ein Stadtbürgermeister',
+          'Der gesetzliche Erbe eines Vizegrafen'
+        ],
+        correctAnswer: 0,
+        explanation:
+          'Der Baron hält eine Baronie, die er nicht von einem anderen Vasallen, sondern vom König erhält.'
+      }
+    ]
+  },
+  {
+    id: 'ntl7',
+    title: 'Warum Barone Königen Forderungen stellten',
+    content:
+      'Wenn wir die Geschichte lesen — etwa die Magna Carta — wundern wir uns: Warum stellten «Barone», die unterste Stufe der Elite, dem König Bedingungen? Damals bedeutete Baron vor allem keinen Titel, sondern einen Status: «direkter königlicher Vasall». Nur direkte Vasallen durften dem Monarchen Forderungen stellen.',
+    duration: 3,
+    media: [img('07-barons-dictated-to-kings.jpg', 'Barone und König')]
+  },
+  {
+    id: 'ntl8',
+    title: 'Graf: der alte «Buchhalter»',
+    content:
+      'Graf (englisch count, lateinisch comes — Gefährte des Kaisers) bezeichnete zuerst den königlichen Statthalter einer Region. Grob gesagt: ein Beamter, der Steuern eintrieb und vor Ort als Richter fungierte.',
+    duration: 3,
+    media: [img('08-count-ancient-accountant.jpg', 'Graf als Statthalter')]
+  },
+  {
+    id: 'ntl9',
+    title: 'Englische Besonderheit: Earl',
+    content:
+      'In England heißen Grafen nicht Count, sondern Earl — vom skandinavischen jarl, einem Stammes- oder Heerführer. Interessant: Die Ehefrauen nennt man Countess, weil es kein weibliches Wort für jarl gab.',
+    duration: 3,
+    media: [img('09-english-earl-anomaly.jpg', 'Earl und Countess')]
+  },
+  {
+    id: 'q3',
+    title: 'Quiz',
+    content: '',
+    duration: 2,
+    questions: [
+      {
+        id: 'q-ntl-3-1-de',
+        text: 'Warum stellten die «Barone» dem König in der Magna Carta Bedingungen?',
+        type: 'multiple-choice',
+        options: [
+          'Weil Baron der niedrigste Adelstitel war',
+          'Weil Baron damals der Status eines direkten königlichen Vasallen war',
+          'Weil der König ein Bauer war',
+          'Weil nur Barone Ritter sein durften'
+        ],
+        correctAnswer: 1,
+        explanation: 'Nur direkte Vasallen hatten das Recht, dem Monarchen Forderungen zu stellen.'
+      },
+      {
+        id: 'q-ntl-3-2-de',
+        text: 'Wer war der Graf (comes) ursprünglich?',
+        type: 'multiple-choice',
+        options: [
+          'Ein Hofdichter',
+          'Ein königlicher Statthalter, Steuereintreiber und Richter',
+          'Nur ein Flottenkommandant',
+          'Ein Mönch-Schreiber'
+        ],
+        correctAnswer: 1,
+        explanation: 'Comes — «Gefährte des Kaisers» — war in der Praxis ein regionaler Verwaltungsbeamter.'
+      },
+      {
+        id: 'q-ntl-3-3-de',
+        text: 'Was ist besonders am englischen Earl?',
+        type: 'multiple-choice',
+        options: [
+          'Earl stammt vom skandinavischen jarl',
+          'Earl steht immer unter dem Baron',
+          'Earl ist nur ein weiblicher Titel',
+          'Ein Earl hat keine Ehefrau'
+        ],
+        correctAnswer: 0,
+        explanation:
+          'In England sagt man Earl statt Count; die Ehefrau heißt Countess, weil es kein weibliches jarl gab.'
+      }
+    ]
+  },
+  {
+    id: 'ntl10',
+    title: 'Die Vielfalt der Grafen',
+    content:
+      'Mit der Zeit «vermehrten» sich die «Buchhalter». Der Pfalzgraf verwaltete den Königspfalz. Der Landgraf eine Provinz. Der Burggraf befehligte eine befestigte Stadt. Alle standen im Staatsdienst.',
+    duration: 3,
+    media: [img('10-variety-of-counts.jpg', 'Verschiedene Grafenämter')]
+  },
+  {
+    id: 'ntl11',
+    title: 'Markgraf: Grenzwächter mit Sonderrechten',
+    content:
+      'Marquis oder Markgraf leitet sich von «Mark» (march) ab — so nannte man gefährliche Grenzgebiete. Der Statthalter einer solchen Mark hatte mehr Truppen und Befugnisse als ein normaler Graf, weil er ständig Angriffe der Nachbarn abwehren musste.',
+    duration: 3,
+    media: [img('11-marquis-border-guard.jpg', 'Markgraf an der Grenze')]
+  },
+  {
+    id: 'ntl12',
+    title: 'Vizegraf: der Stellvertreter',
+    content:
+      'Vizegraf (englisch viscount, lateinisch vice-comes) heißt wörtlich «Stellvertreter des Grafen». Er führte die Amtsgeschäfte, während der Graf am Hof weilte oder im Krieg war.',
+    duration: 3,
+    media: [img('12-viscount-deputy.jpg', 'Vizegraf')]
+  },
+  {
+    id: 'q4',
+    title: 'Quiz',
+    content: '',
+    duration: 2,
+    questions: [
+      {
+        id: 'q-ntl-4-1-de',
+        text: 'Wer ist ein Burggraf?',
+        type: 'multiple-choice',
+        options: [
+          'Verwalter des Königspfalz',
+          'Kommandant einer befestigten Stadt',
+          'Eintreiber von Hafenzöllen',
+          'Sohn eines Herzogs ohne Titel'
+        ],
+        correctAnswer: 1,
+        explanation: 'Der Burggraf war der «Kommandant» einer befestigten Stadt.'
+      },
+      {
+        id: 'q-ntl-4-2-de',
+        text: 'Woher kommt das Wort Marquis oder Markgraf?',
+        type: 'multiple-choice',
+        options: [
+          'Vom Markt — der Handelsplatz',
+          'Von der «Mark» — einem gefährlichen Grenzgebiet',
+          'Vom Heiligen Markus',
+          'Vom französischen «marier» — heiraten'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'March bedeutet Grenzmark; dort brauchte man besondere Truppen und weitreichende Befugnisse.'
+      },
+      {
+        id: 'q-ntl-4-3-de',
+        text: 'Wer war der Vizegraf ursprünglich?',
+        type: 'multiple-choice',
+        options: [
+          'Der Stellvertreter des Grafen (vice-comes)',
+          'Der Sohn des Königs',
+          'Das Oberhaupt der Kirche',
+          'Der Kapitän eines Handelsschiffs'
+        ],
+        correctAnswer: 0,
+        explanation: 'Er übernahm die Pflichten des Grafen, solange dieser am Hof oder im Feld war.'
+      }
+    ]
+  },
+  {
+    id: 'ntl13',
+    title: 'Herzog: eine ganz andere Kategorie',
+    content:
+      'Der Herzog (lateinisch dux — Heerführer; englisch duke) war kein ernannter Beamter. Er war ein alter germanischer Stammesführer. Um diese Autoritäten zu besänftigen, mussten die Könige ihnen den höchsten Rang geben.',
+    duration: 3,
+    media: [img('13-duke-different-breed.jpg', 'Herzog als Stammesführer')]
+  },
+  {
+    id: 'ntl14',
+    title: 'Herzöge fast wie Könige',
+    content:
+      'Herzöge regierten riesige Gebiete — oft mit eigenen Völkern wie Bayern oder Sachsen — und waren weitgehend ihre eigenen Herren. Der erste englische Herzog war der Sohn Eduards III. im Jahr 1337; vorher gab es diesen Titel in England nicht.',
+    duration: 3,
+    media: [img('14-dukes-almost-kings.jpg', 'Herzog und Territorium')]
+  },
+  {
+    id: 'ntl15',
+    title: 'Prinz: der Erste unter Gleichen',
+    content:
+      'Prinz (lateinisch princeps — der Erste) bedeutete zuerst nicht «Sohn des Königs». In Rom so nannte man den Kaiser; im Mittelalter jeden unabhängigen Herrscher, dem niemand Befehle geben konnte.',
+    duration: 3,
+    media: [img('15-prince-first-among-equals.jpg', 'Prinz als Souverän')]
+  },
+  {
+    id: 'q5',
+    title: 'Quiz',
+    content: '',
+    duration: 2,
+    questions: [
+      {
+        id: 'q-ntl-5-1-de',
+        text: 'Wodurch unterschied sich der Herzog ursprünglich vom Grafen?',
+        type: 'multiple-choice',
+        options: [
+          'Herzog war Beamter, Graf war Stammesführer',
+          'Herzog war ein alter Stammesführer, nicht nur ein Beamter',
+          'Der Herzog stand immer unter dem Baron',
+          'Herzöge gab es nur in Frankreich'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'Dux bedeutet Heerführer; Könige sicherten sich die Loyalität dieser Männer mit hohem Rang.'
+      },
+      {
+        id: 'q-ntl-5-2-de',
+        text: 'Wann gab es den ersten englischen Herzog?',
+        type: 'multiple-choice',
+        options: ['1066', '1337 — Sohn Eduards III.', '1611', 'Nie'],
+        correctAnswer: 1,
+        explanation: 'Vor 1337 existierte der Titel Herzog in England nicht.'
+      },
+      {
+        id: 'q-ntl-5-3-de',
+        text: 'Wen nannte man im Mittelalter «Prinz»?',
+        type: 'multiple-choice',
+        options: [
+          'Nur den Sohn des Königs',
+          'Jeden unabhängigen Souverän, dem niemand Befehle gab',
+          'Nur den Bischof',
+          'Nur einen landlosen Ritter'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'Princeps — «der Erste»: im Mittelalter jeder Herrscher, der niemandem unterstand.'
+      }
+    ]
+  },
+  {
+    id: 'ntl16',
+    title: 'Warum Prinzen nicht von Geburt an Ritter sind',
+    content:
+      'Im Mittelalter waren Geburt (Adel) und Rittertum (Beruf) zwei verschiedene Dinge. Sogar Königssöhne wurden nur als Adelige geboren. Um Ritter zu werden, brauchten sie militärische Ausbildung und die Weihe.',
+    duration: 3,
+    media: [img('16-welsh-princes-not-knights.jpg', 'Geburt und Rittertum')]
+  },
+  {
+    id: 'ntl17',
+    title: 'Knappe: Waffenträger mit Ambitionen',
+    content:
+      'Knappe (lateinisch scutarius — Schildträger, französisch écuyer) war der Waffenträger eines Ritters. Die Ritterweihe wurde sehr teuer; viele reiche Grundbesitzer blieben ihr ganzes Leben lang Knappe — und machten daraus den Status eines adeligen Landholders.',
+    duration: 3,
+    media: [img('17-squire-ambitious-page.jpg', 'Knappe')]
+  },
+  {
+    id: 'ntl18',
+    title: 'Yeomen: frei, aber nicht adelig',
+    content:
+      'In England gab es die Yeomen — freie Bauern mit eigenem Land. Sie dienten nicht wie Ritter einem Lehnsherrn, bewirtschafteten aber selbstständig ihr Feld, waren unabhängig und mussten einen Langbogen für die Landesverteidigung besitzen.',
+    duration: 3,
+    media: [img('18-yeomen-free-not-noble.jpg', 'Yeomen mit Langbogen')]
+  },
+  {
+    id: 'q6',
+    title: 'Quiz',
+    content: '',
+    duration: 2,
+    questions: [
+      {
+        id: 'q-ntl-6-1-de',
+        text: 'Warum war ein Prinz nicht automatisch Ritter?',
+        type: 'multiple-choice',
+        options: [
+          'Das Gesetz verbot es',
+          'Adel durch Geburt und Rittertum als Beruf waren getrennt — Weihe nötig',
+          'Prinzen konnten nicht reiten',
+          'Ritter nahmen keine Adeligen auf'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'Auch der Sohn eines Königs wurde adelig geboren, aber erst durch Ausbildung und Weihe zum Ritter.'
+      },
+      {
+        id: 'q-ntl-6-2-de',
+        text: 'Wer war ein Knappe ursprünglich?',
+        type: 'multiple-choice',
+        options: [
+          'Ein königlicher Richter',
+          'Der Waffen- und Schildträger eines Ritters',
+          'Ein Mönch',
+          'Ein Kaufmann aus Flandern'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'Scutarius — Schildträger; viele blieben lebenslang Knappe, weil die Ritterweihe zu teuer war.'
+      },
+      {
+        id: 'q-ntl-6-3-de',
+        text: 'Wodurch unterschieden sich Yeomen vom Adel?',
+        type: 'multiple-choice',
+        options: [
+          'Yeomen waren Sklaven',
+          'Freie Bauern mit Land und Langbogen, aber ohne Adelstitel',
+          'Sie dienten nur in der Kirche',
+          'Sie hatten kein Land'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'Sie bewirtschafteten eigenes Land, waren frei und mussten zur Landesverteidigung einen Langbogen haben.'
+      }
+    ]
+  },
+  {
+    id: 'ntl19',
+    title: 'Wie Ämter zu Titeln wurden',
+    content:
+      'Im frühen Mittelalter wurde das Amt eines Grafen oder Vizegrafen einer Person persönlich übertragen. Die Beamten merkten schnell: Warum sollte man ein so einträgliches Amt an den König zurückgeben? Sie begannen, ihre Posten an die Söhne weiterzugeben.',
+    duration: 3,
+    media: [img('19-offices-became-titles.jpg', 'Erbliche Ämter')]
+  },
+  {
+    id: 'ntl20',
+    title: 'Die «Privatisierung» des Staates',
+    content:
+      'Die Könige mussten sich fügen. Grafschaften, Baronien und Marken wurden erbliche Besitztümer. Das Amt eines Beamten wurde endgültig zu privatem Eigentum — vererbbar oder als Mitgift für die Tochter.',
+    duration: 3,
+    media: [img('20-privatization-of-state.jpg', 'Erbliche Herrschaften')]
+  },
+  {
+    id: 'ntl21',
+    title: 'Titel ohne Arbeit',
+    content:
+      'Mit dem Absolutismus schufen die Könige neue Verwaltungsapparate und stehende Heere. Die alten Feudalherren waren überflüssig. Der Graf sammelte keine Steuern mehr, der Herzog führte kein Stammesheer in den Krieg. Das Amt wurde zum bloßen Ehrentitel.',
+    duration: 3,
+    media: [img('21-title-without-work.jpg', 'Titel ohne Funktion')]
+  },
+  {
+    id: 'q7',
+    title: 'Quiz',
+    content: '',
+    duration: 2,
+    questions: [
+      {
+        id: 'q-ntl-7-1-de',
+        text: 'Wie wurden Ämter zu erblichen Titeln?',
+        type: 'multiple-choice',
+        options: [
+          'Der König verbot die Vererbung',
+          'Beamte gaben ihre Posten an die Söhne weiter',
+          'Die Kirche benannte alles um',
+          'Bauern wählten neue Namen'
+        ],
+        correctAnswer: 1,
+        explanation: 'Grafen und Vizegrafen «privatisierten» ihre Ämter und gaben sie nicht mehr an den König zurück.'
+      },
+      {
+        id: 'q-ntl-7-2-de',
+        text: 'Was geschah mit Grafschaften und Baronien?',
+        type: 'multiple-choice',
+        options: [
+          'Sie verschwanden über Nacht',
+          'Sie wurden erbliche Besitztümer — vererbbar oder als Mitgift',
+          'Sie gingen nur an die Kirche',
+          'Man wählte sie nur für eine Amtszeit'
+        ],
+        correctAnswer: 1,
+        explanation: 'Das Amt wurde zum Familienbesitz.'
+      },
+      {
+        id: 'q-ntl-7-3-de',
+        text: 'Warum wurde der Titel beim Absolutismus «nur noch Rang»?',
+        type: 'multiple-choice',
+        options: [
+          'Könige schafften alle Titel ab',
+          'Neue Beamte und Armeen ersetzten alte Feudalherren — die Funktionen fielen weg',
+          'Der Adel gab sein Land auf',
+          'Titel wurden nur noch für Frauen vergeben'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'Der Graf sammelte keine Steuern mehr, der Herzog führte kein Heer — übrig blieb nur der Name.'
+      }
+    ]
+  },
+  {
+    id: 'ntl22',
+    title: 'Englischer Peer: was bedeutet das?',
+    content:
+      'Peer (lateinisch par — gleich) ist ein Mitglied der höchsten britischen Aristokratie. Warum «gleich»? Der König erkannte die oberste Elite — Herzöge, Marquesses, Grafen, Vizegrafen und Barone — als seinesgleichen in Ehre an, mit dem Recht, sich gegenseitig zu richten.',
+    duration: 3,
+    media: [img('22-english-peer-meaning.jpg', 'Peer und Parlament')]
+  },
+  {
+    id: 'ntl23',
+    title: 'Die Hierarchie der britischen Elite',
+    content:
+      'Die Ordnung wurde fest: ganz oben der Herzog, dann Marquess, Earl, Viscount und Baron. Darunter stehen Baronets und Ritter — sie sind adelig, aber keine Peers und kamen nicht ins House of Lords.',
+    duration: 3,
+    media: [img('23-british-nobility-hierarchy.jpg', 'Hierarchie der Elite')]
+  },
+  {
+    id: 'ntl24',
+    title: 'Baronet: der käufliche Titel',
+    content:
+      'König Jakob I. erfand 1611 den Baronet, um reichen Leuten Titel zu verkaufen und den Krieg in Irland zu finanzieren. Der Titel ist erblich und berechtigt zur Anrede «Sir», macht den Inhaber aber nicht zum Peer.',
+    duration: 3,
+    media: [img('24-baronet-bought-title.jpg', 'Baronet Jakobs I.')]
+  },
+  {
+    id: 'q8',
+    title: 'Quiz',
+    content: '',
+    duration: 2,
+    questions: [
+      {
+        id: 'q-ntl-8-1-de',
+        text: 'Warum heißt der Peer «gleich» (par)?',
+        type: 'multiple-choice',
+        options: [
+          'Weil er den Bauern gleichgestellt war',
+          'Weil der König die oberste Elite als seinesgleichen in Ehre anerkannte',
+          'Weil alle Peers gleich arm waren',
+          'Weil es die Übersetzung von «Parliament» ist'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'Peers — von Herzog bis Baron — galten dem König in Ehrenfragen als «Gleiche».'
+      },
+      {
+        id: 'q-ntl-8-2-de',
+        text: 'Wer von diesen ist ein Peer in Großbritannien?',
+        type: 'multiple-choice',
+        options: ['Baronet', 'Earl (Graf)', 'Ritter ohne Titel', 'Yeoman'],
+        correctAnswer: 1,
+        explanation: 'Baronets und Ritter sind adelig, aber keine Peers und nicht im House of Lords.'
+      },
+      {
+        id: 'q-ntl-8-3-de',
+        text: 'Warum schuf Jakob I. 1611 den Baronet?',
+        type: 'multiple-choice',
+        options: [
+          'Um nur Krieger zu belohnen',
+          'Um Titel zu verkaufen und Geld für den Irland-Krieg zu sammeln',
+          'Um alle Herzöge zu ersetzen',
+          'Auf Verlangen des Parlaments'
+        ],
+        correctAnswer: 1,
+        explanation: 'Baronet — erblich mit «Sir», aber kein Sitz im House of Lords.'
+      }
+    ]
+  },
+  {
+    id: 'ntl25',
+    title: 'Lord: ein Sammelwort',
+    content:
+      '«Lord» (altenglisch hlāford — Brot-Herr, «Hüter des Brotes») ist kein Titel, sondern eine höfliche Anrede für Barone, Vizegrafen, Grafen und Marquesses — sowie für die Söhne von Herzögen. Ein eigenständiger Titel «Lord» existiert nicht.',
+    duration: 3,
+    media: [img('25-lord-collective-word.jpg', 'Anrede «Lord»')]
+  },
+  {
+    id: 'ntl26',
+    title: 'Rang innerhalb desselben Titels',
+    content:
+      'Sind zwei Grafen gleichrangig? Nicht unbedingt. Wer seinen Titel 1400 erhielt, steht über dem von 1600. Es gilt als besonders prestigeträchtig, einen alten Titel zu haben — selbst einen baronischen — statt eines neu geschaffenen Herzogstitels.',
+    duration: 3,
+    media: [img('26-seniority-within-title.jpg', 'Rang der Titel')]
+  },
+  {
+    id: 'ntl27',
+    title: 'Frühe Neuzeit: Titelsinflation',
+    content:
+      'Zur Zeit der «Drei Musketiere» wurde alles zur Schaustellerei des Ehrgeizes. Land und Titel passten längst nicht mehr zusammen. Jemand konnte Marquis heißen, weil der Großvater ein Papier vom König kaufte — während ein Intendant ohne Adel die echte Macht in der Provinz hatte.',
+    duration: 3,
+    media: [img('27-early-modern-title-inflation.jpg', 'Titelsinflation')]
+  },
+  {
+    id: 'q9',
+    title: 'Quiz',
+    content: '',
+    duration: 2,
+    questions: [
+      {
+        id: 'q-ntl-9-1-de',
+        text: 'Was ist «Lord»?',
+        type: 'multiple-choice',
+        options: [
+          'Ein eigenständiger Höchsttitel',
+          'Eine höfliche Anrede, kein eigener Titel',
+          'Nur ein Titel für Königssöhne',
+          'Ein anderes Wort für Bauer'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'Hlāford — «Brot-Herr»; so spricht man Barone, Grafen und Söhne von Herzögen an.'
+      },
+      {
+        id: 'q-ntl-9-2-de',
+        text: 'Wie bestimmt man den Rang zweier Grafen?',
+        type: 'multiple-choice',
+        options: [
+          'Nach der Körpergröße',
+          'Nach dem Datum der Titelschöpfung — älter ist höher',
+          'Nach der Zahl der Burgen',
+          'Alphabetisch nach dem Nachnamen'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'Ein alter Baronentitel kann prestigeträchtiger sein als ein frisch geschaffener Herzogstitel.'
+      },
+      {
+        id: 'q-ntl-9-3-de',
+        text: 'Was bedeutet «Titelsinflation» in der Frühen Neuzeit?',
+        type: 'multiple-choice',
+        options: [
+          'Titel wurden seltener',
+          'Titel verloren an Wert: Land und Macht stimmten nicht mehr — Intendanten regierten',
+          'Der König verbot alle Marquis-Titel',
+          'Titel gab es nur noch für Frauen'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'Im 17. Jahrhundert war der Titel oft nur Papier und Eitelkeit, nicht echte Herrschaft.'
+      }
+    ]
+  },
+  {
+    id: 'ntl28',
+    title: 'Die berühmte Verwirrung bei Dumas',
+    content:
+      'Athos ist Graf de la Fère, Porthos Baron du Vallon. Im Frankreich des 17. Jahrhunderts sagte das vor allem etwas über Abstammung und Hofprivilegien aus — und Porthos konnte als «nur» Baron reicher sein als der Graf Athos.',
+    duration: 3,
+    media: [img('28-duma-famous-confusion.jpg', 'Athos und Porthos')]
+  },
+  {
+    id: 'ntl29',
+    title: 'Vom Zweck zur Ästhetik',
+    content:
+      'Die Geschichte der Titel zeigt, wie Praktisches zum Luxus wird. Der blutbefleckte Kommandant an der Grenzfestung — der Markgraf — wurde innerhalb weniger Jahrhunderte zum pudrigen Marquis auf hohen Absätzen.',
+    duration: 3,
+    media: [img('29-function-to-aesthetics.jpg', 'Funktion und Luxus')]
+  },
+  {
+    id: 'ntl30',
+    title: 'Das historische Paradox',
+    content:
+      'Die alten Grafen und Barone würden ihre «verweichlichten» Nachkommen nicht verstehen. Im Mittelalter war ein Titel vor allem Arbeit: richten, Korn eintreiben, kämpfen, eine Garnison befehligen. Adelig zu sein hieß von Anfang an, hart für den König zu arbeiten.',
+    duration: 3,
+    media: [img('30-noble-title-paradox.jpg', 'Titel als Arbeit')]
+  },
+  {
+    id: 'q10',
+    title: 'Quiz',
+    content: '',
+    duration: 2,
+    questions: [
+      {
+        id: 'q-ntl-10-1-de',
+        text: 'Was zeigt das Beispiel von Athos und Porthos bei Dumas?',
+        type: 'multiple-choice',
+        options: [
+          'Ein Baron ist immer ärmer als ein Graf',
+          'Titel bedeutet nicht automatisch Reichtum und echte Macht',
+          'Grafen gab es in Frankreich nicht',
+          'Dumas schrieb eine Dokumentation'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'Im 17. Jahrhundert sagte der Titel etwas über Abstammung aus — Porthos konnte reicher sein als Athos.'
+      },
+      {
+        id: 'q-ntl-10-2-de',
+        text: 'Wie wird die Entwicklung des Markgrafen beschrieben?',
+        type: 'multiple-choice',
+        options: [
+          'Vom Dichter zum Mönch',
+          'Vom Grenzkommandanten zum pudrigen Marquis',
+          'Vom Bauer zum König in einem Jahr',
+          'Er blieb unverändert'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'Die praktische Grenzfunktion wurde mit der Zeit zu Luxus und Hofetikette.'
+      },
+      {
+        id: 'q-ntl-10-3-de',
+        text: 'Was ist das historische Paradox der Titel?',
+        type: 'multiple-choice',
+        options: [
+          'Mittelalterliche Titel waren von Anfang an nur Dekoration',
+          'Ursprünglich war ein Titel Arbeit: richten, Korn, Krieg, Garnison',
+          'Adelige dienten dem König nie',
+          'Barone waren immer ärmer als Bauern'
+        ],
+        correctAnswer: 1,
+        explanation:
+          'Adelig zu sein hieß, schwer für den König zu arbeiten — nicht nur einen schönen Namen zu tragen.'
+      }
+    ]
+  }
 ]
+
+const quizQuestionsDE = medievalNobleTitlesSlidesDE.filter(
+  (s): s is Slide & { questions: NonNullable<Slide['questions']> } =>
+    !!s.questions && s.questions.length > 0
+).flatMap(s => s.questions)
 
 export const medievalNobleTitlesFinalQuizDE: QuizBlock = {
   id: 'quiz-medieval-noble-titles-de',
   title: 'Abschlussquiz: Adelstitel im Mittelalter',
-  questions: [
-    { id: 'q-ntl-f-1-de', text: "Wer war der Adelige im Mittelalter ursprünglich?", type: 'multiple-choice', options: ["Unabhängiger Handwerker","Persönlich freier Diener des Lehnsherrn, oft mit Waffe","Rechtlose*r Bauer","Nur Kirchenbeamte*r"], correctAnswer: 1, explanation: "Adel = frei und dienend — nicht «arbeiten» im modernen Sinn." },
-    { id: 'q-ntl-f-2-de', text: "Wer waren Ministerialen?", type: 'multiple-choice', options: ["Waffenlose Mönche","Ritter/Verwalter, juristisch «unfrei»","Nur Königssöhne","Italienische Kaufleute"], correctAnswer: 1, explanation: "Sie kämpften und hatten Burgen, blieben aber Leibeigene des Herrn." },
-    { id: 'q-ntl-f-3-de', text: "Was bedeutete «Ritter» ursprünglich?", type: 'multiple-choice', options: ["Hofdichter","Schwerbewaffneter Berufsreiter","Turnierorganisator für Damen","Richter ohne Waffe"], correctAnswer: 1, explanation: "Knight/cniht/Ritter — Diener, Junge, Reiter; Romantik kam später." },
-    { id: 'q-ntl-f-4-de', text: "Wozu durfte ein Banneret sein Banner tragen?", type: 'multiple-choice', options: ["Nur für Paradeschönheit","Als Orientierung für Soldaten im Kampf","Für Markthandel","Um Bauern zu richten"], correctAnswer: 1, explanation: "Ohne Funk war das Banner der Anker in der Schlacht." },
-    { id: 'q-ntl-f-5-de', text: "Was waren Graf/Herzog/Baron frühmittelalterlich?", type: 'multiple-choice', options: ["Märchennamen ohne Funktion","Konkrete Ämter und militärische Funktionen","Nur Kirchenämter","Stadtnamen"], correctAnswer: 1, explanation: "Titel begannen utilitaristisch, nicht als Roman-Schmuck." },
-    { id: 'q-ntl-f-6-de', text: "Wer ist ein Baron im Feudalsinn?", type: 'multiple-choice', options: ["Lehenshalter direkt vom König","Landloser Bauer","Nur Stadtbürgermeister","Gesetzlicher Erbe eines Vizegrafen"], correctAnswer: 0, explanation: "Baron = Baronie direkt vom König, nicht vom Vasallen." },
-    { id: 'q-ntl-f-7-de', text: "Warum diktierten «Barone» dem König in der Magna Carta?", type: 'multiple-choice', options: ["Weil Baron der niedrigste Titel war","Weil Baron damals direkter königlicher Vasall mit Status war","Weil der König Bauer war","Weil nur Barone Ritter waren"], correctAnswer: 1, explanation: "Nur direkte Vasallen durften Forderungen stellen." },
-    { id: 'q-ntl-f-8-de', text: "Wer war der Graf (comes) ursprünglich?", type: 'multiple-choice', options: ["Hofdichter","Königlicher Statthalter, Steuerer, Richter","Nur Flottenkommandant","Mönch-Schreiber"], correctAnswer: 1, explanation: "Comes = «Gefährte des Kaisers», regionaler Beamter." },
-    { id: 'q-ntl-f-9-de', text: "Was ist besonders am englischen Earl?", type: 'multiple-choice', options: ["Earl kommt von skandinav. jarl","Earl steht immer unter dem Baron","Earl ist nur ein Frauentitel","Earl hat keine Ehefrau"], correctAnswer: 0, explanation: "Earl statt Count; Ehefrau heißt Countess — kein weibl. jarl." },
-    { id: 'q-ntl-f-10-de', text: "Wer ist ein Burggraf?", type: 'multiple-choice', options: ["Verwalter des Pfalz","Kommandant einer befestigten Stadt","Meeressteuerer","Herzogssohn ohne Titel"], correctAnswer: 1, explanation: "Burggraf = «Stadt-Kommandant» mit Befestigung." },
-    { id: 'q-ntl-f-11-de', text: "Wovon kommt «Markgraf/Marquis»?", type: 'multiple-choice', options: ["Vom Markt — Handelsplatz","Von der «Mark» — gefährlicher Grenzland","Vom Heiligen Markus","Vom franz. «marier» — heiraten"], correctAnswer: 1, explanation: "March = Grenzmark mit Extra-Truppen und Befugnissen." },
-    { id: 'q-ntl-f-12-de', text: "Wer war der Vizegraf ursprünglich?", type: 'multiple-choice', options: ["Stellvertreter des Grafen (vice-comes)","Sohn des Königs","Kirchenoberhaupt","Handelsschiff-Kapitän"], correctAnswer: 0, explanation: "Er übernahm, während der Graf am Hof oder im Krieg war." },
-    { id: 'q-ntl-f-13-de', text: "Wie unterschied sich der Herzog vom Grafen?", type: 'multiple-choice', options: ["Herzog = Beamter, Graf = Stammesführer","Herzog = alter Stammesführer, nicht nur Beamter","Herzog stand immer unter dem Baron","Herzog gab es nur in Frankreich"], correctAnswer: 1, explanation: "Dux = Heerführer; Könige kauften Loyalität mit Rang." },
-    { id: 'q-ntl-f-14-de', text: "Wann gab es den ersten englischen Herzog?", type: 'multiple-choice', options: ["1066","1337 — Sohn Eduards III.","1611","Nie"], correctAnswer: 1, explanation: "Vor 1337 existierte der Titel in England nicht." },
-    { id: 'q-ntl-f-15-de', text: "Wen nannte man im Mittelalter «Prinz»?", type: 'multiple-choice', options: ["Nur den Königssohn","Jeden unabhängigen Souverän","Nur den Bischof","Nur landlosen Ritter"], correctAnswer: 1, explanation: "Princeps = «Erster» — Souverän, dem niemand befiehlt." },
-    { id: 'q-ntl-f-16-de', text: "Warum ist ein Prinz nicht automatisch Ritter?", type: 'multiple-choice', options: ["Gesetz verbot es","Geburt (Adel) und Rittertum (Beruf) sind getrennt","Prinzen konnten nicht reiten","Ritter nahmen keine Adeligen"], correctAnswer: 1, explanation: "Auch Königssöhne brauchten Ausbildung und Weihe." },
-    { id: 'q-ntl-f-17-de', text: "Wer war ein Squaire ursprünglich?", type: 'multiple-choice', options: ["Königlicher Richter","Waffenknecht (Schildträger) eines Ritters","Mönch","Kaufmann aus Flandern"], correctAnswer: 1, explanation: "Scutarius — viele blieben lebenslang Squaire wegen der Kosten." },
-    { id: 'q-ntl-f-18-de', text: "Wie unterschieden sich Yeomen vom Adel?", type: 'multiple-choice', options: ["Yeomen waren Sklaven","Freie Bauern mit Land und Langbogen, aber nicht adelig","Nur Kirchendienst","Ohne Land"], correctAnswer: 1, explanation: "Sie pflügten eigenes Land und waren zur Landesverteidigung verpflichtet." },
-    { id: 'q-ntl-f-19-de', text: "Wie wurden Ämter zu Titeln?", type: 'multiple-choice', options: ["König verbot Erbe","Beamte gaben Posten an Söhne weiter","Kirche benannte alles um","Bauern wählten Namen"], correctAnswer: 1, explanation: "Grafen/Vizegrafen «privatisierten» ihre Sitze." },
-    { id: 'q-ntl-f-20-de', text: "Was geschah mit Grafschaften und Baronien?", type: 'multiple-choice', options: ["Sie verschwanden über Nacht","Wurden Erbbesitz — vererbbar oder als Mitgift","Gingen nur an die Kirche","Wurden nur gewählt"], correctAnswer: 1, explanation: "Amt wurde Familien-Eigentum." },
-    { id: 'q-ntl-f-21-de', text: "Warum wurde der Titel «nur noch Rang» beim Absolutismus?", type: 'multiple-choice', options: ["Könige schafften alle Titel ab","Neue Beamte/Heere ersetzten alte Feudale — Funktionen weg","Adel gab Land auf","Titel nur für Frauen"], correctAnswer: 1, explanation: "Graf sammelte keine Steuern mehr — nur noch der Name blieb." },
-    { id: 'q-ntl-f-22-de', text: "Warum heißt der Peer «gleich» (par)?", type: 'multiple-choice', options: ["Gleich den Bauern","König erkannte höchste Elite als seinesgleichen in Ehre","Alle Peers gleich arm","Übersetzung von «Parliament»"], correctAnswer: 1, explanation: "Herzöge bis Barone — «Peers» mit besonderem Ehrenrang." },
-    { id: 'q-ntl-f-23-de', text: "Wer ist Peer in Großbritannien?", type: 'multiple-choice', options: ["Baronet","Earl (Graf)","Ritter ohne Titel","Yeoman"], correctAnswer: 1, explanation: "Baronets und Ritter — adelig, aber keine Peers." },
-    { id: 'q-ntl-f-24-de', text: "Warum schuf Jakob I. 1611 Baronets?", type: 'multiple-choice', options: ["Nur für Krieger","Titelsverkauf für Geld — Irland-Krieg","Ersatz aller Herzöge","Parlamentsauftrag"], correctAnswer: 1, explanation: "Erblich mit «Sir», aber kein Peer." },
-    { id: 'q-ntl-f-25-de', text: "«Lord» ist…", type: 'multiple-choice', options: ["Ein eigenständiger Höchsttitel","Höfliche Anrede, kein eigener Titel","Nur Titel für Königssöhne","Synonym für Bauer"], correctAnswer: 1, explanation: "Hlāford — Anrede für Barone bis Marquess und Herzogssöhne." },
-    { id: 'q-ntl-f-26-de', text: "Wie wird Seniorität zweier Earls bestimmt?", type: 'multiple-choice', options: ["Nach Körpergröße","Nach Datum der Titelschöpfung — älter = höher","Nach Burgenzahl","Alphabetisch"], correctAnswer: 1, explanation: "Alter Baronentitel kann prestigeträchtiger sein als neuer Herzogstitel." },
-    { id: 'q-ntl-f-27-de', text: "Was ist «Titelsinflation» in der Frühen Neuzeit?", type: 'multiple-choice', options: ["Titel wurden seltener","Rang ohne Land/Macht — Intendanten regierten","König verbot Marquis","Nur Frauentitel"], correctAnswer: 1, explanation: "XVII. Jh.: oft Papier und Eitelkeit statt echter Gewalt." },
-    { id: 'q-ntl-f-28-de', text: "Was zeigt Athos und Porthos bei Dumas?", type: 'multiple-choice', options: ["Baron immer ärmer als Graf","Titel ≠ Reichtum und echte Macht","Grafen gab es in Frankreich nicht","Dumas schrieb Dokumentation"], correctAnswer: 1, explanation: "Titel = Abstammung; Porthos konnte reicher sein." },
-    { id: 'q-ntl-f-29-de', text: "Wie wird die Markgraf-Evolution beschrieben?", type: 'multiple-choice', options: ["Vom Dichter zum Mönch","Vom Grenzkommandanten zum pudrigen Marquis","Vom Bauer zum König in einem Jahr","Unverändert"], correctAnswer: 1, explanation: "Praktische Grenzfunktion wurde Luxus und Etikette." },
-    { id: 'q-ntl-f-30-de', text: "Was ist das historische Paradox der Titel?", type: 'multiple-choice', options: ["Titel waren von Anfang an dekorativ","Titel war Arbeit: richten, Korn, Krieg, Garnison","Adel diente nie dem König","Barone immer ärmer als Bauern"], correctAnswer: 1, explanation: "Adel bedeutete harte Arbeit für den König — nicht nur Glanz." }
-  ]
+  questions: quizQuestionsDE.map((q, i) => ({
+    ...q,
+    id: `q-ntl-f-${i + 1}-de`
+  }))
 }

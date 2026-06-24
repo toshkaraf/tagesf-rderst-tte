@@ -463,12 +463,15 @@
 }
 
 .ki-main-chat .ki-suggestions {
+  flex: 1;
+  min-height: 0;
   width: min(960px, 100%);
   margin: 0 auto;
   padding: var(--touch-gap);
   padding-bottom: max(24px, env(safe-area-inset-bottom));
   box-sizing: border-box;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .ki-suggest-btn {

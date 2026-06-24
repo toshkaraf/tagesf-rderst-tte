@@ -180,12 +180,12 @@ export default function KiPage() {
   }, [speechRate])
 
   const startAutoSpeak = useCallback(
-    (messageId: string, text: string) => {
+    (messageId: string, text: string, includeFollowUpPrompt: boolean) => {
       if (messageId === lastSpokenMessageIdRef.current) return
       lastSpokenMessageIdRef.current = messageId
       setCurrentMessageId(messageId)
       currentPhraseRef.current = null
-      speechQueueRef.current = [text, FOLLOW_UP_PROMPT].filter(Boolean)
+      speechQueueRef.current = includeFollowUpPrompt ? [text, FOLLOW_UP_PROMPT] : [text]
       if ('speechSynthesis' in window) {
         manuallyStoppedRef.current = true
         window.speechSynthesis.cancel()
@@ -284,6 +284,10 @@ export default function KiPage() {
         }
         setChatFullTopicName(fullTopicName)
         setParentTopic(parent)
+        if (suggestions.length === 0) {
+          setError('Es konnten keine Auswahloptionen geladen werden. Bitte versuche es erneut.')
+          return
+        }
         setMessages([
           {
             id: uid(),
@@ -397,7 +401,7 @@ export default function KiPage() {
     }
 
     lastSpokenMessageIdRef.current = null
-    startAutoSpeak(lastAIMessage.id, lastAIMessage.text)
+    startAutoSpeak(lastAIMessage.id, lastAIMessage.text, hasUserMessages)
   }
 
   const repeatLastAiMessage = () => {
@@ -405,7 +409,7 @@ export default function KiPage() {
     if (!lastAIMessage) return
     cancelSpeech()
     lastSpokenMessageIdRef.current = null
-    window.setTimeout(() => startAutoSpeak(lastAIMessage.id, lastAIMessage.text), 0)
+    window.setTimeout(() => startAutoSpeak(lastAIMessage.id, lastAIMessage.text, hasUserMessages), 0)
   }
 
   const cycleSpeechRate = () => {
@@ -434,12 +438,13 @@ export default function KiPage() {
 
   useEffect(() => {
     if (!last || last.isUser || last.id === lastSpokenMessageIdRef.current) return
+    if (!last.suggestedResponses?.length) return
     if (hasUserMessages) setIsAnswerPlaybackPending(true)
     const timer = window.setTimeout(() => {
-      startAutoSpeak(last.id, last.text)
+      startAutoSpeak(last.id, last.text, hasUserMessages)
     }, 1000)
     return () => window.clearTimeout(timer)
-  }, [hasUserMessages, last?.id, last?.isUser, last?.text, startAutoSpeak])
+  }, [hasUserMessages, last?.id, last?.isUser, last?.suggestedResponses?.length, last?.text, startAutoSpeak])
 
   useEffect(() => {
     const visualActive = shouldShowWaiting || shouldShowAnswerVideo
@@ -587,6 +592,11 @@ export default function KiPage() {
           <section className="ki-list-section">
             <h2 className="ki-section-title">{topicLabel(parentTopic)}</h2>
             <p className="ki-hint">Wähle einen Aspekt — die KI erzählt mehr dazu.</p>
+            {error && (
+              <div className="ki-error" role="alert">
+                <p>{error}</p>
+              </div>
+            )}
             {loading ? (
               <div className="ki-waiting">
                 <div className="ki-spinner" aria-hidden />

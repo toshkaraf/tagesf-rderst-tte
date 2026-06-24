@@ -284,10 +284,6 @@ export default function KiPage() {
         }
         setChatFullTopicName(fullTopicName)
         setParentTopic(parent)
-        if (suggestions.length === 0) {
-          setError('Es konnten keine Auswahloptionen geladen werden. Bitte versuche es erneut.')
-          return
-        }
         setMessages([
           {
             id: uid(),

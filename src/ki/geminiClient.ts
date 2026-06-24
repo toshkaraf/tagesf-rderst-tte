@@ -25,21 +25,41 @@ async function extractTextFromResponse(response: Response): Promise<string> {
         'Das Kontingent der KI ist aufgebraucht. Bitte in 15–20 Sekunden erneut versuchen oder Plan prüfen.'
       )
     }
-    throw new Error(`API-Fehler: ${response.status}. Bitte später erneut versuchen.`)
+    let detail = ''
+    try {
+      const errJson = JSON.parse(bodyText) as { error?: { message?: string } | string }
+      if (typeof errJson.error === 'string') detail = errJson.error
+      else if (errJson.error?.message) detail = errJson.error.message
+    } catch {
+      detail = bodyText.slice(0, 200)
+    }
+    if (response.status === 503 && /GEMINI_API_KEY/i.test(detail)) {
+      throw new Error('KI-Schlüssel ist nicht konfiguriert (GEMINI_API_KEY).')
+    }
+    throw new Error(
+      detail
+        ? `API-Fehler: ${response.status}. ${detail}`
+        : `API-Fehler: ${response.status}. Bitte später erneut versuchen.`
+    )
   }
   try {
     const jsonResponse = JSON.parse(bodyText) as {
       candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>
     }
     const candidates = jsonResponse.candidates
-    if (!candidates?.length) return 'Antwort konnte nicht abgerufen werden'
+    if (!candidates?.length) {
+      throw new Error('Antwort konnte nicht abgerufen werden (keine Kandidaten).')
+    }
     const parts = candidates[0].content?.parts
-    if (!parts?.length) return 'Antwort konnte nicht abgerufen werden'
+    if (!parts?.length) {
+      throw new Error('Antwort konnte nicht abgerufen werden (leerer Inhalt).')
+    }
     const text = parts[0].text
     if (typeof text === 'string' && text.trim()) return text
-    return 'Antwort konnte nicht abgerufen werden'
+    throw new Error('Antwort konnte nicht abgerufen werden.')
   } catch (e) {
-    return `Fehler bei der Verarbeitung der Antwort: ${e}`
+    if (e instanceof Error) throw e
+    throw new Error(`Fehler bei der Verarbeitung der Antwort: ${e}`)
   }
 }
 
@@ -65,6 +85,37 @@ function looksLikeIntroLine(line: string): boolean {
   if (lower.includes('die neugierig machen') || lower.includes('neugierig machen sollen')) return true
   if (lower.includes('im bereich ') && lower.includes('die ')) return true
   return false
+}
+
+function looksLikeErrorResponse(text: string): boolean {
+  const markers = [
+    'Antwort konnte nicht abgerufen',
+    'API-Fehler',
+    'Fehler bei der Verarbeitung',
+    'Fehler bei der Verbindung',
+    'Kontingent der KI',
+    'GEMINI_API_KEY'
+  ]
+  return markers.some(m => text.includes(m))
+}
+
+function parseSuggestionLines(rawText: string): string[] {
+  if (!rawText.trim() || looksLikeErrorResponse(rawText)) return []
+
+  let lines = rawText.split(/\r?\n/).map(s => s.trim()).filter(Boolean)
+
+  if (lines.length === 1 && /\d+[.)]\s/.test(lines[0])) {
+    lines = lines[0]
+      .split(/(?=\d+[.)]\s)/)
+      .map(s => s.trim())
+      .filter(Boolean)
+  }
+
+  return lines
+    .map(cleanBulletLine)
+    .map(s => s.replace(/^\*+|\*+$/g, '').trim())
+    .filter(line => line && !looksLikeIntroLine(line))
+    .slice(0, 5)
 }
 
 function cleanBulletLine(line: string): string {
@@ -128,19 +179,16 @@ export async function generateInitialFactSuggestions(topic: string): Promise<str
     contents: [{ role: 'user', parts: [{ text: prompt }] }],
     generationConfig: { maxOutputTokens: 400 }
   }
-  try {
-    const response = await postGenerateContent(body)
-    const text = await extractTextFromResponse(response)
-    return text
-      .split('\n')
-      .map(s => s.trim())
-      .filter(Boolean)
-      .map(cleanBulletLine)
-      .filter(line => line && !looksLikeIntroLine(line))
-      .slice(0, 5)
-  } catch {
-    return []
+  const response = await postGenerateContent(body)
+  const text = await extractTextFromResponse(response)
+  const suggestions = parseSuggestionLines(text)
+  if (suggestions.length === 0) {
+    if (looksLikeErrorResponse(text)) {
+      throw new Error(text)
+    }
+    throw new Error('Es konnten keine Auswahloptionen geladen werden. Bitte versuche es erneut.')
   }
+  return suggestions
 }
 
 export async function generateFollowUpFactSuggestions(
@@ -160,13 +208,7 @@ export async function generateFollowUpFactSuggestions(
   try {
     const response = await postGenerateContent(body)
     const text = await extractTextFromResponse(response)
-    return text
-      .split('\n')
-      .map(s => s.trim())
-      .filter(Boolean)
-      .map(cleanBulletLine)
-      .filter(line => line && !looksLikeIntroLine(line))
-      .slice(0, 5)
+    return parseSuggestionLines(text)
   } catch {
     return []
   }

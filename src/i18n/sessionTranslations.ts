@@ -107,6 +107,41 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'linear-infantry-tactics': {
+    de: {
+      title: 'Lineartaktik: Warum Soldaten in der Linie standen',
+      description:
+        'Dreißig Folien zur Linieninfanterie des 17. Jahrhunderts: Salvenfeuer, Drill, Rauch, Fahnen, Pikeniere und Bajonette — warum dichte Formationen rational waren.',
+      category: 'Geschichte',
+      structure: {
+        greeting:
+          'Heute wirkt es wahnsinnig — Schulter an Schulter unter Salven zu stehen. Für die Musketenzeit war die Linie ein Weg, eine Masse in eine Waffe zu verwandeln.',
+        mainContent:
+          'Von Gründen für Linienformation und Salvenfeuer bis Gegenmarsch, Rauch, Drill, Kavallerie, Pike und Bajonett — und der Logik der Linienschlacht.',
+        interactive: 'Zehn Mini-Quizzes mit je drei Fragen und ein Abschlussquiz mit dreißig Fragen (Deutsch B1–B2).',
+        additional:
+          'Illustrationen nach IMAGE_LIST.html und IMAGE_LIST.md in public/media/linear-infantry-tactics/.',
+        closing:
+          'Lineartaktik war keine Dummheit, sondern eine rationale Antwort auf ungenaue Musketen, Rauch, Angst und die Notwendigkeit, Tausende zu führen.'
+      }
+    },
+    ru: {
+      title: 'Линейная тактика: зачем солдаты стояли в линию',
+      description:
+        'Тридцать слайдов о линейной тактике XVII века: залповый огонь, муштра, дым, знамёна, пики и штыки — почему плотный строй был рациональным решением.',
+      category: 'История',
+      structure: {
+        greeting:
+          'Сегодня кажется безумием — стоять плечом к плечу под залпами. Но для мушкетной эпохи линия была способом превратить толпу в оружие.',
+        mainContent:
+          'От причин линейного строя и залпового огня до контрмарша, дыма, муштры, кавалерии, пик и штыка — и главной логики линейной войны.',
+        interactive: 'Десять мини-викторин по три вопроса и итоговая викторина на тридцать вопросов.',
+        additional: 'Иллюстрации по IMAGE_LIST.html и IMAGE_LIST.md в public/media/linear-infantry-tactics/.',
+        closing:
+          'Линейная тактика — не глупость, а рациональный ответ на неточные мушкеты, дым, страх и необходимость управлять тысячами людей.'
+      }
+    }
+  },
   'medieval-noble-titles': {
     de: {
       title: 'Wie Adelstitel entstanden und wer diese Menschen ursprünglich waren',

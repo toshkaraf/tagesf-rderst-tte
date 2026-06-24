@@ -26,6 +26,7 @@ import { coldWarEspionageSessionRU } from './cold-war-espionage-session'
 import { americanCourtDisorderSessionRU } from './american-court-disorder-session'
 import { harariFutureThesesSessionRU } from './harari-future-theses-session'
 import { medievalNobleTitlesSessionRU } from './medieval-noble-titles-session'
+import { linearInfantryTacticsSessionRU } from './linear-infantry-tactics-session'
 
 // Примеры занятий - здесь будут храниться все занятия
 const sessionsData: Session[] = [
@@ -1382,6 +1383,7 @@ const sessionsData: Session[] = [
   americanCourtDisorderSessionRU,
   harariFutureThesesSessionRU,
   medievalNobleTitlesSessionRU,
+  linearInfantryTacticsSessionRU,
   {
     id: 'seven-wonders',
     title: 'Семь чудес света: экономика мегапроектов',

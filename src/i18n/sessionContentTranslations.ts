@@ -24,6 +24,10 @@ import { coldWarEspionageSlidesDE, coldWarEspionageFinalQuizDE } from './cold-wa
 import { americanCourtDisorderSlidesDE } from './american-court-disorder-content-de'
 import { harariFutureThesesSlidesDE, harariFutureThesesFinalQuizDE } from './harari-future-theses-content-de'
 import { medievalNobleTitlesSlidesDE, medievalNobleTitlesFinalQuizDE } from './medieval-noble-titles-content-de'
+import {
+  linearInfantryTacticsSlidesDE,
+  linearInfantryTacticsFinalQuizDE
+} from './linear-infantry-tactics-content-de'
 
 // Deutsche Übersetzungen (B2-Niveau) für die Turnier-Session
 const ritterturniereSlidesDE: Slide[] = [
@@ -3242,6 +3246,13 @@ export function getTranslatedSessionContent(sessionId: string, language: Languag
     return {
       slides: medievalNobleTitlesSlidesDE,
       quiz: medievalNobleTitlesFinalQuizDE
+    }
+  }
+
+  if (sessionId === 'linear-infantry-tactics' && language === 'de') {
+    return {
+      slides: linearInfantryTacticsSlidesDE,
+      quiz: linearInfantryTacticsFinalQuizDE
     }
   }
 

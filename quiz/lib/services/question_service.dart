@@ -38,6 +38,8 @@ class QuestionService {
       'lib/data/Fragen/Detailed/medieval_6801_6900.json',
       'lib/data/Fragen/Detailed/medieval_6901_7000.json',
       'lib/data/Fragen/Detailed/early_modern_7001_7047.json',
+      'lib/data/Fragen/Detailed/early_modern_7048_7147.json',
+      'lib/data/Fragen/Detailed/early_modern_7148_7247.json',
     ];
 
     for (final filePath in jsonFiles) {

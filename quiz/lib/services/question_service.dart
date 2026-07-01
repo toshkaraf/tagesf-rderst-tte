@@ -40,6 +40,7 @@ class QuestionService {
       'lib/data/Fragen/Detailed/early_modern_7001_7047.json',
       'lib/data/Fragen/Detailed/early_modern_7048_7147.json',
       'lib/data/Fragen/Detailed/early_modern_7148_7247.json',
+      'lib/data/Fragen/Detailed/early_modern_7248_7347.json',
     ];
 
     for (final filePath in jsonFiles) {

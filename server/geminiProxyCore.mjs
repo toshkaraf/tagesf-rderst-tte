@@ -1,8 +1,7 @@
 /**
  * Shared Gemini forwarder: reads GEMINI_API_KEY from process.env only (never from client).
  */
-const GEMINI_URL =
-  'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent'
+import { getGeminiGenerateContentUrl } from './geminiConfig.mjs'
 
 export async function readRequestBody(req) {
   const chunks = []
@@ -18,7 +17,7 @@ export async function forwardGeminiGenerateContent(bodyString, getApiKey = () =>
     err.statusCode = 503
     throw err
   }
-  const res = await fetch(GEMINI_URL, {
+  const res = await fetch(getGeminiGenerateContentUrl(), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

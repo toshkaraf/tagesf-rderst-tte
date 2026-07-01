@@ -3,8 +3,12 @@
  */
 import type { VercelRequest, VercelResponse } from '@vercel/node'
 
-const GEMINI_URL =
-  'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent'
+const DEFAULT_GEMINI_MODEL = 'gemini-2.5-flash'
+
+function getGeminiGenerateContentUrl(): string {
+  const model = process.env.GEMINI_MODEL?.trim() || DEFAULT_GEMINI_MODEL
+  return `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`
+}
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
@@ -26,7 +30,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         : JSON.stringify(req.body)
 
   try {
-    const r = await fetch(GEMINI_URL, {
+    const r = await fetch(getGeminiGenerateContentUrl(), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

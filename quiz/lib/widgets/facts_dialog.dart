@@ -1,8 +1,9 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_tts/flutter_tts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../services/tts_service.dart';
 
 /// Dialog mit scrollbarem Text, Vorlesen und optionalem Titel.
 class FactsDialog extends StatefulWidget {
@@ -15,14 +16,12 @@ class FactsDialog extends StatefulWidget {
     this.title = 'Interessant, dass …',
   });
 
-  /// Kurzform für Fakten-Dialoge.
   const FactsDialog.fact({
     super.key,
     required this.text,
     this.title = 'Interessant, dass …',
   });
 
-  /// Kurzform für Erklärungs-Dialoge nach falscher Antwort.
   const FactsDialog.explanation({
     super.key,
     required this.text,
@@ -35,7 +34,6 @@ class FactsDialog extends StatefulWidget {
 class _FactsDialogState extends State<FactsDialog> {
   static const _autoReadPrefKey = 'quiz.auto_read_dialogs';
 
-  final FlutterTts _flutterTts = FlutterTts();
   final ScrollController _scrollController = ScrollController();
   bool _isPlaying = false;
   bool _isPaused = false;
@@ -48,44 +46,9 @@ class _FactsDialogState extends State<FactsDialog> {
     _loadAutoReadPreference();
   }
 
-  Future<void> _loadAutoReadPreference() async {
-    final prefs = await SharedPreferences.getInstance();
-    final value = prefs.getBool(_autoReadPrefKey) ?? false;
-    if (!mounted) return;
-    setState(() {
-      _autoReadEnabled = value;
-    });
-    if (value) {
-      await _startPlayback();
-    }
-  }
-
-  Future<void> _setAutoReadEnabled(bool enabled) async {
-    setState(() {
-      _autoReadEnabled = enabled;
-    });
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool(_autoReadPrefKey, enabled);
-    if (enabled) {
-      await _startPlayback();
-    }
-  }
-
-  Future<void> _startPlayback() async {
-    final text = widget.text;
-    await _flutterTts.stop();
-    await _flutterTts.setLanguage('de-DE');
-    await _flutterTts.speak(text);
-    if (!mounted) return;
-    setState(() {
-      _isPlaying = true;
-      _isPaused = false;
-    });
-  }
-
   Future<void> _initTts() async {
-    await _flutterTts.setLanguage('de-DE');
-    _flutterTts.setCompletionHandler(() {
+    await TtsService.instance.initialize();
+    TtsService.instance.setCompletionHandler(() {
       if (mounted) {
         setState(() {
           _isPlaying = false;
@@ -95,27 +58,52 @@ class _FactsDialogState extends State<FactsDialog> {
     });
   }
 
-  @override
-  void dispose() {
-    _flutterTts.stop();
-    _scrollController.dispose();
-    super.dispose();
+  Future<void> _loadAutoReadPreference() async {
+    final prefs = await SharedPreferences.getInstance();
+    final value = prefs.getBool(_autoReadPrefKey) ?? false;
+    if (!mounted) return;
+    setState(() => _autoReadEnabled = value);
+    if (value) await _startPlayback();
+  }
+
+  Future<void> _setAutoReadEnabled(bool enabled) async {
+    setState(() => _autoReadEnabled = enabled);
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_autoReadPrefKey, enabled);
+    if (enabled) await _startPlayback();
+  }
+
+  Future<void> _startPlayback() async {
+    await TtsService.instance.stop();
+    try {
+      await TtsService.instance.speak(widget.text);
+      if (!mounted) return;
+      setState(() {
+        _isPlaying = true;
+        _isPaused = false;
+      });
+    } catch (_) {
+      // Safari may block autoplay without a user gesture – silently ignore.
+    }
   }
 
   Future<void> _togglePlayPause() async {
     if (_isPlaying && !_isPaused) {
-      await _flutterTts.pause();
-      setState(() {
-        _isPaused = true;
-      });
+      await TtsService.instance.pause();
+      setState(() => _isPaused = true);
     } else if (_isPlaying && _isPaused) {
       await _startPlayback();
-      setState(() {
-        _isPaused = false;
-      });
+      setState(() => _isPaused = false);
     } else {
       await _startPlayback();
     }
+  }
+
+  @override
+  void dispose() {
+    TtsService.instance.stop();
+    _scrollController.dispose();
+    super.dispose();
   }
 
   @override
@@ -161,8 +149,7 @@ class _FactsDialogState extends State<FactsDialog> {
                         color: Colors.blue,
                       ),
                       onPressed: _togglePlayPause,
-                      tooltip:
-                          _isPlaying && !_isPaused ? 'Pause' : 'Vorlesen',
+                      tooltip: _isPlaying && !_isPaused ? 'Pause' : 'Vorlesen',
                     ),
                     const SizedBox(width: 8),
                     Column(
@@ -195,10 +182,7 @@ class _FactsDialogState extends State<FactsDialog> {
                       padding: const EdgeInsets.only(right: 6, bottom: 4),
                       child: Text(
                         widget.text,
-                        style: const TextStyle(
-                          fontSize: 34,
-                          height: 1.45,
-                        ),
+                        style: const TextStyle(fontSize: 34, height: 1.45),
                         softWrap: true,
                       ),
                     ),

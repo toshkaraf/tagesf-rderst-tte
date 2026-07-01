@@ -1,8 +1,9 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_tts/flutter_tts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../services/tts_service.dart';
 
 class ExplanationDialog extends StatefulWidget {
   final String explanation;
@@ -21,7 +22,6 @@ class ExplanationDialog extends StatefulWidget {
 class _ExplanationDialogState extends State<ExplanationDialog> {
   static const _autoReadPrefKey = 'quiz.auto_read_dialogs';
 
-  final FlutterTts _flutterTts = FlutterTts();
   final ScrollController _scrollController = ScrollController();
   bool _isPlaying = false;
   bool _isPaused = false;
@@ -34,43 +34,9 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
     _loadAutoReadPreference();
   }
 
-  Future<void> _loadAutoReadPreference() async {
-    final prefs = await SharedPreferences.getInstance();
-    final value = prefs.getBool(_autoReadPrefKey) ?? false;
-    if (!mounted) return;
-    setState(() {
-      _autoReadEnabled = value;
-    });
-    if (value) {
-      await _startPlayback();
-    }
-  }
-
-  Future<void> _setAutoReadEnabled(bool enabled) async {
-    setState(() {
-      _autoReadEnabled = enabled;
-    });
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool(_autoReadPrefKey, enabled);
-    if (enabled) {
-      await _startPlayback();
-    }
-  }
-
-  Future<void> _startPlayback() async {
-    await _flutterTts.stop();
-    await _flutterTts.setLanguage('de-DE');
-    await _flutterTts.speak(currentExplanation);
-    if (!mounted) return;
-    setState(() {
-      _isPlaying = true;
-      _isPaused = false;
-    });
-  }
-
   Future<void> _initTts() async {
-    await _flutterTts.setLanguage('de-DE');
-    _flutterTts.setCompletionHandler(() {
+    await TtsService.instance.initialize();
+    TtsService.instance.setCompletionHandler(() {
       if (mounted) {
         setState(() {
           _isPlaying = false;
@@ -80,16 +46,42 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
     });
   }
 
-  String get currentExplanation => widget.explanation;
+  Future<void> _loadAutoReadPreference() async {
+    final prefs = await SharedPreferences.getInstance();
+    final value = prefs.getBool(_autoReadPrefKey) ?? false;
+    if (!mounted) return;
+    setState(() => _autoReadEnabled = value);
+    if (value) await _startPlayback();
+  }
+
+  Future<void> _setAutoReadEnabled(bool enabled) async {
+    setState(() => _autoReadEnabled = enabled);
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_autoReadPrefKey, enabled);
+    if (enabled) await _startPlayback();
+  }
+
+  Future<void> _startPlayback() async {
+    await TtsService.instance.stop();
+    try {
+      await TtsService.instance.speak(widget.explanation);
+      if (!mounted) return;
+      setState(() {
+        _isPlaying = true;
+        _isPaused = false;
+      });
+    } catch (_) {
+      // Safari may block autoplay without a user gesture – silently ignore.
+    }
+  }
 
   Future<void> _togglePlayPause() async {
     if (_isPlaying && !_isPaused) {
-      await _flutterTts.pause();
-      setState(() {
-        _isPaused = true;
-      });
+      await TtsService.instance.pause();
+      setState(() => _isPaused = true);
     } else if (_isPlaying && _isPaused) {
       await _startPlayback();
+      setState(() => _isPaused = false);
     } else {
       await _startPlayback();
     }
@@ -97,7 +89,7 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
 
   @override
   void dispose() {
-    _flutterTts.stop();
+    TtsService.instance.stop();
     _scrollController.dispose();
     super.dispose();
   }
@@ -145,8 +137,7 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
                         color: Colors.blue,
                       ),
                       onPressed: _togglePlayPause,
-                      tooltip:
-                          _isPlaying && !_isPaused ? 'Pause' : 'Vorlesen',
+                      tooltip: _isPlaying && !_isPaused ? 'Pause' : 'Vorlesen',
                     ),
                     const SizedBox(width: 8),
                     Column(
@@ -178,11 +169,8 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
                       physics: const BouncingScrollPhysics(),
                       padding: const EdgeInsets.only(right: 6, bottom: 4),
                       child: Text(
-                        currentExplanation,
-                        style: const TextStyle(
-                          fontSize: 34,
-                          height: 1.45,
-                        ),
+                        widget.explanation,
+                        style: const TextStyle(fontSize: 34, height: 1.45),
                         softWrap: true,
                       ),
                     ),

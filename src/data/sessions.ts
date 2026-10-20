@@ -27,6 +27,7 @@ import { americanCourtDisorderSessionRU } from './american-court-disorder-sessio
 import { harariFutureThesesSessionRU } from './harari-future-theses-session'
 import { medievalNobleTitlesSessionRU } from './medieval-noble-titles-session'
 import { linearInfantryTacticsSessionRU } from './linear-infantry-tactics-session'
+import { humanoidRobotsSession } from './humanoid-robots-session'
 
 // Примеры занятий - здесь будут храниться все занятия
 const sessionsData: Session[] = [
@@ -6273,6 +6274,7 @@ const sessionsData: Session[] = [
   hansaMonopolySessionRU,
   blackDeathEconomySessionRU,
   universitiesRiotsSessionRU,
+  humanoidRobotsSession,
   {
     id: 'google-earth',
     title: 'Google Earth: наша планета из космоса',

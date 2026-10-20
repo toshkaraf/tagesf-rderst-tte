@@ -34,3 +34,16 @@ Bilder noch nicht eingebunden. Zielordner: `public/media/humanoid-robots/`. Date
 | 28 | `f28.jpg` | Ein digitales Schloss-Symbol vor einem Wohnzimmer-Hintergrund für Datenschutz. |
 | 29 | `f29.jpg` | Ingenieure prüfen neue Materialien und Batterien im Entwicklungszentrum. |
 | 30 | `f30.jpg` | Mensch und humanoider Roboter stehen gemeinsam auf einer Aussichtsplattform. |
+
+## Bereits eingebunden (Wikimedia Commons, gefunden über Openverse)
+
+| Folie | Datei | Titel | Urheber | Lizenz | Quelle |
+|---|---|---|---|---|---|
+| 03 | `f03.jpg` | ASIMO 4.28.11 | Vanillase | CC BY-SA 3.0 | https://commons.wikimedia.org/w/index.php?curid=17300475 |
+| 04 | `f04.jpg` | Boston Dynamics Atlas (3) | Damian B Oh | CC BY-SA 4.0 | https://commons.wikimedia.org/w/index.php?curid=196272882 |
+| 06 | `f06.jpg` | NimbRo-OP2X Humanoid Soccer Robot at RoboCup 2018 in Montreal | Sven Behnke | CC BY-SA 4.0 | https://commons.wikimedia.org/w/index.php?curid=82467319 |
+| 07 | `f07.jpg` | Humanoid robot boxing exhibition | Jack145945 | CC BY-SA 4.0 | https://commons.wikimedia.org/w/index.php?curid=178823169 |
+| 13 | `f13.jpg` | Optimus Tesla | Benjamin Ceci | CC0 1.0 | https://commons.wikimedia.org/w/index.php?curid=137122475 |
+| 16 | `f16.jpg` | Vector3DHD autonomous mobile robot and EnZone wireless charging | PattyK33 | CC BY-SA 4.0 | https://commons.wikimedia.org/w/index.php?curid=92743879 |
+
+Folie 16: Das Bild zeigt einen mobilen Lagerroboter mit kabellosem Ladegerät (kein humanoider Roboter) – bei Bedarf ersetzen. Alle anderen Folien haben noch kein Bild.

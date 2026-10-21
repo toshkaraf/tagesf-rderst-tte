@@ -53,3 +53,8 @@ Folie 16: Das Bild zeigt einen mobilen Lagerroboter mit kabellosem Ladegerät (k
 | 18 | `f18.jpg` | Neural networks diagram | hikari_no_yume | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Neural_networks_diagram.png |
 
 Folie 07: Video-Link ersetzt (URKL: Ultimate Humanoid Robot Knockout League, https://www.youtube.com/watch?v=DUbbBdSGHE8).
+
+## Weitere eingebundene Bilder (Folien 05, 08, 10, 14, 15, 17, 20, 22, 23, 25, 28, 29)
+
+Urheber und Lizenz stehen jeweils im Bildtitel in `src/data/humanoid-robots-session.ts`. Teils nur Symbolbilder (08 Spielzeug-Boxroboter, 14 ANYmal, 17 Karten-Grafik, 20 Simulation, 15 Optimus statt Figure 02, 29 Roboter-Greifer).
+Noch ohne Bild: 09, 11, 12, 19, 21, 24, 26, 27, 30 (Flickr-Downloads wurden blockiert bzw. kein passendes Motiv). Folie 16 zeigt weiterhin einen Lagerroboter.

@@ -47,3 +47,9 @@ Bilder noch nicht eingebunden. Zielordner: `public/media/humanoid-robots/`. Date
 | 16 | `f16.jpg` | Vector3DHD autonomous mobile robot and EnZone wireless charging | PattyK33 | CC BY-SA 4.0 | https://commons.wikimedia.org/w/index.php?curid=92743879 |
 
 Folie 16: Das Bild zeigt einen mobilen Lagerroboter mit kabellosem Ladegerät (kein humanoider Roboter) – bei Bedarf ersetzen. Alle anderen Folien haben noch kein Bild.
+
+| 01 | `f01.jpg` | Robonaut and astronaut hand shake | Robert Markowitz (NASA) | Public Domain | https://commons.wikimedia.org/wiki/File:Robonaut_and_astronaut_hand_shake.jpg |
+| 02 | `f02.jpg` | Leonardo-Robot3 | Erik Möller | Public Domain | https://commons.wikimedia.org/wiki/File:Leonardo-Robot3.jpg |
+| 18 | `f18.jpg` | Neural networks diagram | hikari_no_yume | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Neural_networks_diagram.png |
+
+Folie 07: Video-Link ersetzt (URKL: Ultimate Humanoid Robot Knockout League, https://www.youtube.com/watch?v=DUbbBdSGHE8).

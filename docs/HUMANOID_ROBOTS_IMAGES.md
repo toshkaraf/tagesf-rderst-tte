@@ -57,4 +57,4 @@ Folie 07: Video-Link ersetzt (URKL: Ultimate Humanoid Robot Knockout League, htt
 ## Weitere eingebundene Bilder (Folien 05, 08, 10, 14, 15, 17, 20, 22, 23, 25, 28, 29)
 
 Urheber und Lizenz stehen jeweils im Bildtitel in `src/data/humanoid-robots-session.ts`. Teils nur Symbolbilder (08 Spielzeug-Boxroboter, 14 ANYmal, 17 Karten-Grafik, 20 Simulation, 15 Optimus statt Figure 02, 29 Roboter-Greifer).
-Noch ohne Bild: 09, 11, 12, 19, 21, 24, 26, 27, 30 (Flickr-Downloads wurden blockiert bzw. kein passendes Motiv). Folie 16 zeigt weiterhin einen Lagerroboter.
+Noch ohne Bild: 09, 11, 19, 21, 27 (kein passendes freies Motiv gefunden). Folien 12, 24, 26, 30 sind Symbolbilder (SXSW-Roboter, Optimus, Cronos, Halodi). Folie 16 zeigt weiterhin einen Lagerroboter.

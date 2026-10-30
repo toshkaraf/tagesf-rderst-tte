@@ -294,5 +294,5 @@ document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==
 var tx=null,ty=null;stage.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
 stage.addEventListener('touchend',function(e){if(tx===null)return;var dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;tx=null;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5){show(cur+(dx<0?1:-1))}},{passive:true});
 addEventListener('resize',fit);addEventListener('orientationchange',fit);
-var h=parseInt((location.hash||'').slice(1),10);fit();show(isNaN(h)?0:h-1);setTimeout(fit,100)})();
+window.__back=function(){if(cur>0){show(cur-1);return true}return false};var h=parseInt((location.hash||'').slice(1),10);fit();show(isNaN(h)?0:h-1);setTimeout(fit,100)})();
 </script></body></html>

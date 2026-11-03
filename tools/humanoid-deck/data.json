@@ -216,8 +216,8 @@
    "cat": "TECHNOLOGIE & KI",
    "text": "In Computersimulationen wie NVIDIA Isaac Sim trainieren Roboter Millionen Aufgaben im Zeitraffer. Was die KI virtuell gelernt hat, funktioniert anschließend sofort in der echten Welt.",
    "motif": "3D-Physiksimulation am Monitor zeigt Hunderte parallele virtuelle Trainingsroboter.",
-   "vlabel": "Simulate Robot Fleets in Digital Twins (NVIDIA Omniverse)",
-   "url": "https://www.youtube.com/watch?v=93Is26tQ07o",
+   "vlabel": "Narrowing the Sim2Real Gap with Isaac Sim (NVIDIA)",
+   "url": "https://www.youtube.com/watch?v=VW-dOMBFj7o",
    "fs": 28
   },
   {
@@ -238,8 +238,8 @@
    "cat": "TECHNOLOGIE & KI",
    "text": "Anstelle von schweren Ölschläuchen nutzen moderne Roboter kompakte Elektromotoren und effiziente Festkörperakkus für mehrstündige Einsätze. Beim Abbremsen speisen diese Antriebe wie bei einem Elektroauto Energie zurück in den Speicher.",
    "motif": "Querschnitt eines Elektromotors und ein modulares Akkupaket.",
-   "vlabel": "Humanoid Robot Can Swap Its Own Battery Pack (CNET)",
-   "url": "https://www.youtube.com/watch?v=ZQ4Sqihq_kQ",
+   "vlabel": "China’s humanoid robot that changes its own batteries (SCMP)",
+   "url": "https://www.youtube.com/watch?v=Suxf0bi9daA",
    "fs": 24
   },
   {
@@ -260,8 +260,8 @@
    "cat": "HAUSHALT & ZUKUNFT",
    "text": "Technologieunternehmen wie 1X entwickeln leise, textilgekleidete Roboter, die den Menschen im privaten Wohnbereich sicher unterstützen. Sie sollen als Roboter-Butler den Alltag spürbar erleichtern und bei schweren Routinetätigkeiten helfen.",
    "motif": "1X NEO im Wohnzimmer in gemütlicher Umgebung auf Augenhöhe mit den Bewohnern.",
-   "vlabel": "▶ 1X NEO: The Robot That Lives With You (< 5 Min.)",
-   "url": "https://www.youtube.com/watch?v=lS_z60kjVEk",
+   "vlabel": "1X Reveals NEO Gamma (CNET)",
+   "url": "https://www.youtube.com/watch?v=8FNwHSSaK5A",
    "fs": 24
   },
   {
@@ -293,8 +293,8 @@
    "cat": "HAUSHALT & ZUKUNFT",
    "text": "Bis 2030 könnten über 500.000 humanoide Roboter im Einsatz sein, von denen viele monatlich gemietet statt gekauft werden. Der Hersteller kümmert sich bei diesem Dienstleistungsmodell um alle Software-Updates und Reparaturen.",
    "motif": "Wachstumsdiagramm und eine Tablet-App für die Roboter-Miete.",
-   "vlabel": "Rentable humanoid robots (CBS Texas)",
-   "url": "https://www.youtube.com/watch?v=uw4CrEWjO2Y",
+   "vlabel": "Humanoid robot rental in China: $43 a day (SXE China)",
+   "url": "https://www.youtube.com/watch?v=A9aspgaZZ2U",
    "fs": 24
   },
   {
@@ -304,8 +304,8 @@
    "cat": "HAUSHALT & ZUKUNFT",
    "text": "Da Haushaltsroboter Kameras und Mikrofone besitzen, müssen persönliche Daten streng geschützt werden. Internationale Richtlinien stellen sicher, dass alle Aufnahmen privat auf dem Gerät bleiben.",
    "motif": "Ein digitales Schloss-Symbol vor einem Wohnzimmer-Hintergrund für Datenschutz.",
-   "vlabel": "I Tried the First Humanoid Home Robot (WSJ)",
-   "url": "https://www.youtube.com/watch?v=f3c4mQty_so",
+   "vlabel": "Humanoider Roboter putzt – Datenschutz im Zuhause (euronews)",
+   "url": "https://www.youtube.com/watch?v=2BirxrGh8jM",
    "fs": 27
   },
   {
@@ -357,15 +357,15 @@
   "8": "4rg2sB6ELtk",
   "10": "tF4DML7FIWk",
   "11": "fn3KWM1kuAw",
-  "20": "93Is26tQ07o",
+  "20": "VW-dOMBFj7o",
   "21": "rruX0RrnRcw",
-  "22": "ZQ4Sqihq_kQ",
+  "22": "Suxf0bi9daA",
   "23": "QSnv7bEbrac",
-  "24": "lS_z60kjVEk",
+  "24": "8FNwHSSaK5A",
   "25": "tckyf12vLE4",
   "26": "OO-yrowDiAo",
-  "27": "uw4CrEWjO2Y",
-  "28": "f3c4mQty_so",
+  "27": "A9aspgaZZ2U",
+  "28": "2BirxrGh8jM",
   "29": "KRyqxhB38JY",
   "30": "U1JJN1tEvJw"
  },
@@ -387,7 +387,12 @@
   "fn3KWM1kuAw": "Do You Love Me? | Boston Dynamics",
   "lS_z60kjVEk": "NEO is Starting to Learn on Its Own (1X)",
   "-e1_QhJ1EhQ": "Atlas Gets a Grip | Boston Dynamics",
-  "eCNVet_wXGA": "Tesla Optimus Is Learning Everyday Tasks!"
+  "eCNVet_wXGA": "Tesla Optimus Is Learning Everyday Tasks!",
+  "VW-dOMBFj7o": "Narrowing the Sim2Real Gap with Isaac Sim (NVIDIA)",
+  "Suxf0bi9daA": "China’s humanoid robot that changes its own batteries (SCMP)",
+  "8FNwHSSaK5A": "1X Reveals NEO Gamma (CNET)",
+  "A9aspgaZZ2U": "Humanoid robot rental in China: $43 a day (SXE China)",
+  "2BirxrGh8jM": "Humanoider Roboter putzt – Datenschutz im Zuhause (euronews)"
  },
  "credit": {
   "valkyrie": "Valkyrie (NASA)",

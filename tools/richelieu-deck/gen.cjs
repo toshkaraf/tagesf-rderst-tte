@@ -22,11 +22,11 @@ for (const d of D.slides) {
     const p = D.photo[d.n];
     const ph = Math.min(360, W / d.ar), py = 50 + (360 - ph) / 2;
     right = `<img class="abs" style="left:${X}px;top:${py}px;width:${W}px;height:${ph}px;object-fit:cover" src="${uri(p + '_c.jpg')}" alt="${esc(d.motif)}">
-    <div class="abs cap" style="left:${X}px;top:418px;width:${W}px">Bild: ${esc(D.credit[p])} / Wikimedia Commons</div>`;
+    <div class="abs cap" style="left:${X}px;top:${py + ph + 8}px;width:${W}px">Bild: ${esc(D.credit[p])} / Wikimedia Commons</div>`;
   } else if (D.yt[d.n]) {
     const h = W * 9 / 16;
     right = `<div class="abs thumb" style="left:${X}px;top:90px;width:${W}px;height:${h}px" data-go="${myIdx + 1}"><img src="${uri('ytc_' + ytid + '.jpg')}" alt="${esc(d.motif)}"><span class="play"></span></div>`;
-    right += `<div class="abs cap it" style="left:${X}px;top:${90 + h + 10}px;width:${W}px">${esc(d.motif)}</div>`;
+    if (false) right += `<div class="abs cap it" style="left:${X}px;top:${90 + h + 10}px;width:${W}px">${esc(d.motif)}</div>`;
   } else {
     right = `<div class="abs card" style="left:${X}px;top:90px;width:${W}px;height:290px"><b>${String(d.n).padStart(2, '0')}</b><i>${esc(d.motif)}</i></div>
     <div class="abs cap" style="left:${X}px;top:390px;width:${W}px;text-align:center">Bildmotiv (Platzhalter)</div>`;

@@ -23,7 +23,10 @@
    "cat": "TOD",
    "title": "4. Dezember 1642: Ein Mann stirbt",
    "text": "In Paris stirbt der Mann, vor dem ganz Europa Angst hatte. Richelieu ist erst 57 Jahre alt, aber krank und erschöpft. Bis zum letzten Tag diktiert er Befehle.",
-   "motif": "Der kranke Richelieu wird auf einem Boot die Rhône hinauf gebracht."
+   "motif": "Der kranke Richelieu wird auf einem Boot die Rhône hinauf gebracht.",
+   "img": "p2",
+   "credit": "Paul Delaroche (Gemälde, gemeinfrei)",
+   "ar": 1.501
   },
   {
    "n": 3,
@@ -31,7 +34,10 @@
    "cat": "TOD",
    "title": "Der Kopf des Kardinals (1793–1866)",
    "text": "1793 öffnen Revolutionäre sein Grab in der Kapelle der Sorbonne. Der Kopf des Kardinals wandert durch die Hände von Sammlern. Erst 1866 bekommt der Staat ihn zurück – mit Ehren und Protokoll.",
-   "motif": "Das Grabmal von Richelieu in der Sorbonne-Kapelle."
+   "motif": "Das Grabmal von Richelieu in der Sorbonne-Kapelle.",
+   "img": "p3",
+   "credit": "Charles Simonneau (Stich, gemeinfrei)",
+   "ar": 1.175
   },
   {
    "n": 4,
@@ -39,7 +45,10 @@
    "cat": "EINFÜHRUNG",
    "title": "Der Staat sucht den Kopf seines Ministers",
    "text": "Über 200 Jahre nach seinem Tod holt der Staat den Kopf seines Ministers zurück. Das ist das größte Werk von Richelieu: Er hat diesen Staat erfunden. Jetzt prüfen wir, ob die vier Titel stimmen.",
-   "motif": "Porträt des Kardinals von Philippe de Champaigne."
+   "motif": "Porträt des Kardinals von Philippe de Champaigne.",
+   "img": "p4",
+   "credit": "Philippe de Champaigne (Gemälde, gemeinfrei)",
+   "ar": 0.75
   },
   {
    "n": 5,
@@ -47,7 +56,10 @@
    "cat": "HINTERGRUND",
    "title": "Frankreich um 1624: Ein unruhiges Land",
    "text": "1624 wird Richelieu Erster Minister. Der Adel ist mächtig, die Religionskriege sind nicht vergessen, und die Habsburger sind starke Feinde. Der König braucht einen Mann, der Ordnung schafft.",
-   "motif": "König Ludwig XIII. von Frankreich."
+   "motif": "König Ludwig XIII. von Frankreich.",
+   "img": "p5",
+   "credit": "Philippe de Champaigne (Gemälde, CC0)",
+   "ar": 0.75
   },
   {
    "n": 6,
@@ -55,7 +67,10 @@
    "cat": "POLITIK",
    "title": "Der Tag der Betrogenen (November 1630)",
    "text": "Die Königinmutter Maria von Medici will Richelieu stürzen. Sie überzeugt ihren Sohn, Ludwig XIII., den Kardinal zu entlassen. Der Hof feiert schon, und alle laufen zu den vermeintlichen Siegern.",
-   "motif": "Königinmutter Maria von Medici."
+   "motif": "Königinmutter Maria von Medici.",
+   "img": "p6",
+   "credit": "Frans Pourbus d. J. (Gemälde, gemeinfrei)",
+   "ar": 0.75
   },
   {
    "n": 7,
@@ -63,7 +78,10 @@
    "cat": "POLITIK",
    "title": "Am Abend entscheidet der König",
    "text": "Am Abend ruft Ludwig XIII. den Kardinal zu sich nach Versailles. Er lässt ihn im Amt – noch zwölf Jahre, bis zu Richelieus Tod. Dieser Tag heißt „Journée des Dupes“, der Tag der Betrogenen.",
-   "motif": "Das kleine Jagdschloss von Ludwig XIII. in Versailles."
+   "motif": "Das kleine Jagdschloss von Ludwig XIII. in Versailles.",
+   "img": "p7",
+   "credit": "Israël Silvestre (Stich, gemeinfrei)",
+   "ar": 1.5
   },
   {
    "n": 8,
@@ -71,7 +89,10 @@
    "cat": "POLITIK",
    "title": "Überleben am Hof",
    "text": "In 18 Jahren gibt es Dutzende Verschwörungen gegen Richelieu. Alle Verschwörer enden schlechter als er. Aber sein wahres Talent liegt tiefer als diese Hofintrigen.",
-   "motif": "Die Hinrichtung von Cinq-Mars und de Thou."
+   "motif": "Die Hinrichtung von Cinq-Mars und de Thou.",
+   "img": "p8",
+   "credit": "Cinq-Mars (Gemälde, gemeinfrei)",
+   "ar": 0.755
   },
   {
    "n": 9,
@@ -79,7 +100,10 @@
    "cat": "POLITIK",
    "title": "Treue zu einer Idee",
    "text": "Vor Richelieu dient man einer Person: dem Herrn, dem König oder dem Papst. Die Treue ist persönlich, wie Freundschaft. Richelieu macht etwas Neues: Man soll einer Idee dienen, dem „Staat“.",
-   "motif": "Richelieu auf dem berühmten Dreifachporträt."
+   "motif": "Richelieu auf dem berühmten Dreifachporträt.",
+   "img": "p9",
+   "credit": "Philippe de Champaigne (Gemälde, gemeinfrei)",
+   "ar": 1.218
   },
   {
    "n": 10,
@@ -87,7 +111,10 @@
    "cat": "POLITIK",
    "title": "Staatsräson: Das Interesse des Staates",
    "text": "„Raison d’État“ bedeutet: Das Interesse des Staates steht über allem. Es steht über dem König, über der Kirche und sogar über Richelieu selbst. Heute finden wir das ganz normal.",
-   "motif": "Titelseite des „Politischen Testaments“."
+   "motif": "Titelseite des „Politischen Testaments“.",
+   "img": "p10",
+   "credit": "Philippe de Champaigne (Gemälde, gemeinfrei)",
+   "ar": 0.78
   },
   {
    "n": 11,
@@ -95,7 +122,10 @@
    "cat": "POLITIK",
    "title": "Der Staat hat keine Ewigkeit",
    "text": "Im „Politischen Testament“ schreibt Richelieu: Der Mensch ist unsterblich und wird in der Ewigkeit gerettet. Der Staat hat keine Ewigkeit, seine Rettung gibt es nur jetzt oder nie. So ein Satz von einem Kardinal ist neu.",
-   "motif": "Büste von Richelieu."
+   "motif": "Büste von Richelieu.",
+   "img": "p11",
+   "credit": "Gian Lorenzo Bernini (Büste, gemeinfrei)",
+   "ar": 0.75
   },
   {
    "n": 12,
@@ -103,7 +133,10 @@
    "cat": "VERWALTUNG",
    "title": "Die Intendanten: Beamte des Königs",
    "text": "Richelieu schickt „Intendanten“ in die Provinzen. Das sind Beamte, die direkt dem Zentrum gehorchen und nicht dem Adel vor Ort. Sie sind das Skelett der späteren französischen Bürokratie.",
-   "motif": "Karte der französischen Provinzen."
+   "motif": "Karte der französischen Provinzen.",
+   "img": "p12",
+   "credit": "Karte von Frankreich (gemeinfrei)",
+   "ar": 1.445
   },
   {
    "n": 13,
@@ -111,7 +144,10 @@
    "cat": "VERWALTUNG",
    "title": "Eine Flotte aus dem Nichts",
    "text": "1626 wird Richelieu Chef der Schifffahrt. Er baut für Frankreich fast von Null eine Kriegsflotte. Außerdem gründet er die „Kompanie der Hundert Teilhaber“, um Kanada zu besiedeln.",
-   "motif": "Das französische Kriegsschiff „La Couronne“."
+   "motif": "Das französische Kriegsschiff „La Couronne“.",
+   "img": "p13",
+   "credit": "„La Couronne“ (Stich, gemeinfrei)",
+   "ar": 1.134
   },
   {
    "n": 14,
@@ -119,7 +155,10 @@
    "cat": "VERWALTUNG",
    "title": "Die erste Zeitung: La Gazette (1631)",
    "text": "Im Mai 1631 gibt der Arzt Théophraste Renaudot die „Gazette“ heraus, die erste französische Zeitung. Sie steht unter dem Schutz des Kardinals. Richelieu schreibt selbst Artikel dafür.",
-   "motif": "Die erste Ausgabe der „Gazette“."
+   "motif": "Statuette von Théophraste Renaudot, dem Herausgeber der Gazette.",
+   "img": "p14",
+   "credit": "Statuette von Théophraste Renaudot (CC0)",
+   "ar": 0.75
   },
   {
    "n": 15,
@@ -127,7 +166,10 @@
    "cat": "VERWALTUNG",
    "title": "Die Pressestelle des Königs",
    "text": "Auch der König schreibt anonym für die Gazette, wie ein ganz normaler Kolumnist. Der erste Minister einer Großmacht leitet 1631 einen Nachrichtendienst. Das ist eine Staats-Pressestelle, 300 Jahre vor dem Wort.",
-   "motif": "Théophraste Renaudot, der Herausgeber der Gazette."
+   "motif": "Der Hof im Palais-Cardinal, 1641 (Stich).",
+   "img": "p15",
+   "credit": "Palais-Cardinal 1641 (Stich, gemeinfrei)",
+   "ar": 1.335
   },
   {
    "n": 16,
@@ -145,7 +187,10 @@
    "cat": "VERWALTUNG",
    "title": "Ein Heer, eine Steuer, eine Sprache",
    "text": "Ein Gascogner und ein Normanne verstehen sich damals kaum. Mit einem Standard wird Paris auch zur Hauptstadt der Sprache. Das Wörterbuch ist so nützlich wie Artillerie – es schießt nur langsamer und weiter.",
-   "motif": "Das erste Wörterbuch der Académie française (1694)."
+   "motif": "Titelbild des ersten Wörterbuchs der Académie française (1694).",
+   "img": "p17",
+   "credit": "Dictionnaire 1694 (gemeinfrei)",
+   "ar": 0.75
   },
   {
    "n": 18,
@@ -153,7 +198,10 @@
    "cat": "RELIGION",
    "title": "Ein Kardinal gegen die Protestanten",
    "text": "Richelieu belagert 14 Monate lang La Rochelle, die Hochburg der französischen Protestanten, der Hugenotten. Das sieht nach einem religiösen Fanatiker aus. Aber warten Sie ab.",
-   "motif": "Richelieu auf dem Deich vor La Rochelle (Gemälde von 1881)."
+   "motif": "Richelieu auf dem Deich vor La Rochelle (Gemälde von 1881).",
+   "img": "p18",
+   "credit": "Henri Motte (Gemälde, gemeinfrei)",
+   "ar": 0.75
   },
   {
    "n": 19,
@@ -171,7 +219,10 @@
    "cat": "RELIGION",
    "title": "Gnade für die Besiegten (1629)",
    "text": "Im „Gnadenedikt von Alès“ nimmt Richelieu den Hugenotten ihre Festungen und ihr Heer. Aber sie behalten die Religionsfreiheit. Sie dürfen glauben, was sie wollen.",
-   "motif": "Der Kettenturm im Hafen von La Rochelle."
+   "motif": "Der Kettenturm im Hafen von La Rochelle.",
+   "img": "p20",
+   "credit": "Tour de la Chaîne, La Rochelle (CC0)",
+   "ar": 0.833
   },
   {
    "n": 21,
@@ -179,7 +230,10 @@
    "cat": "RELIGION",
    "title": "Ein Kardinal bezahlt die Lutheraner",
    "text": "Im Januar 1631 schließt Richelieu den Vertrag von Bärwalde. Frankreich zahlt dem lutherischen Schweden etwa eine Million Livres pro Jahr. König Gustav Adolf soll damit die katholischen Habsburger bekämpfen.",
-   "motif": "König Gustav II. Adolf von Schweden."
+   "motif": "König Gustav II. Adolf von Schweden.",
+   "img": "p21",
+   "credit": "Jacob Hoefnagel (zugeschr., gemeinfrei)",
+   "ar": 0.752
   },
   {
    "n": 22,
@@ -197,7 +251,10 @@
    "cat": "RELIGION",
    "title": "Politik ohne Konfession",
    "text": "Richelieu trennt als Erster in Europa konsequent Politik und Glauben. Ein Untertan darf beten, wie er will, wenn er Steuern zahlt und keine Festung baut. Bündnispartner wählt man nach Interesse, nicht nach Religion.",
-   "motif": "Europa um 1648: Katholiken und Protestanten."
+   "motif": "Europa um 1648: Katholiken und Protestanten.",
+   "img": "p23",
+   "credit": "W. R. Shepherd (Karte, gemeinfrei)",
+   "ar": 0.96
   },
   {
    "n": 24,
@@ -225,7 +282,10 @@
    "cat": "PATRIOT",
    "title": "Wer bezahlt den Krieg?",
    "text": "Was war damals „Frankreich“? Unter Richelieu steigen die direkten Steuern nach Schätzungen von Historikern auf etwa das Dreifache. Den Krieg gegen die Habsburger bezahlen vor allem die Bauern mit der „Taille“.",
-   "motif": "Eine Bauernfamilie, Gemälde von Louis Le Nain."
+   "motif": "Eine Bauernfamilie, Gemälde von Louis Le Nain.",
+   "img": "p26",
+   "credit": "Le Nain (Gemälde, gemeinfrei)",
+   "ar": 1.426
   },
   {
    "n": 27,
@@ -233,7 +293,10 @@
    "cat": "PATRIOT",
    "title": "Aufstände der Bauern",
    "text": "1636–1637 revoltieren die „Croquants“ im Périgord, 1639 die „Barfüßigen“ in der Normandie. Die Armee schlägt die Aufstände nieder. An den Straßen stehen Galgen.",
-   "motif": "Der Galgenbaum, Radierung von Jacques Callot."
+   "motif": "Der Galgenbaum, Radierung von Jacques Callot.",
+   "img": "p27",
+   "credit": "Jacques Callot (Radierung, gemeinfrei)",
+   "ar": 1.5
   },
   {
    "n": 28,
@@ -251,7 +314,10 @@
    "cat": "PATRIOT",
    "title": "Der Staat zuerst, der Mensch danach",
    "text": "Richelieu hinterlässt das größte Privatvermögen seiner Zeit, viele Millionen Livres. Er sieht sich selbst als Teil der Infrastruktur des Staates. Die Menschen sind für ihn Posten im Haushalt. Nach seinem Tod sollen manche Bauern vor Freude getanzt haben.",
-   "motif": "Das Palais-Cardinal in Paris, später Palais-Royal."
+   "motif": "Das Palais-Cardinal in Paris, später Palais-Royal.",
+   "img": "p29",
+   "credit": "J. Boisseau (Stich, CC0)",
+   "ar": 1.347
   },
   {
    "n": 30,
@@ -259,7 +325,10 @@
    "cat": "FAZIT",
    "title": "Der Architekt unserer Welt",
    "text": "Wir zahlen Steuern, lesen Nachrichten und sagen „nationale Interessen“ – alles Ideen von Richelieu. 1866 holt der Staat seinen Kopf zurück: Die Maschine erinnert sich an ihren Mechaniker. Aber weiß sie noch, wozu man sie eingeschaltet hat?",
-   "motif": "Die Sorbonne-Kapelle, Ruhestätte des Kardinals."
+   "motif": "Die Sorbonne-Kapelle, Ruhestätte des Kardinals.",
+   "img": "p30",
+   "credit": "Sorbonne-Kapelle (CC0)",
+   "ar": 0.75
   }
  ]
 }

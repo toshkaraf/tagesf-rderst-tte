@@ -59,7 +59,7 @@ for (const d of slides) {
     const p = photo[d.n];
     const ph = Math.min(3.6, W / d.ar), py = 0.5 + (3.6 - ph) / 2;
     s.addImage({ path: IMG + p + '_c.jpg', x: X, y: py, w: W, h: ph, altText: d.motif, objectName: 'Foto' });
-    s.addText('Bild: ' + credit[p] + ' / Wikimedia Commons', { x: X, y: 4.18, w: W, h: 0.4, fontSize: 10, color: '7A6A5A', margin: 0, isTextBox: true });
+    s.addText('Bild: ' + credit[p] + ' / Wikimedia Commons', { x: X, y: py + ph + 0.08, w: W, h: 0.4, valign: 'top', fontSize: 10, color: '7A6A5A', margin: 0, isTextBox: true });
     note += ' | Bild: ' + credit[p] + ', Wikimedia Commons (Lizenz/Urheber vor Veröffentlichung prüfen).';
   } else if (yt[d.n]) {
     const h = W * 9 / 16;
@@ -72,7 +72,7 @@ for (const d of slides) {
       s.addShape(pres.ShapeType.triangle, { x: X + W / 2 - 0.1, y: 0.9 + h / 2 - 0.16, w: 0.28, h: 0.32, rotate: 90, fill: { color: 'FFFFFF' }, line: { color: 'FFFFFF', width: 0 }, objectName: 'Play-Dreieck', hyperlink: { slide: idx + 1 } });
 
     }
-    s.addText(d.motif, { x: X, y: 0.9 + h + 0.1, w: W, h: 0.6, fontSize: 11, italic: true, color: '7A6A5A', margin: 0, valign: 'top', isTextBox: true });
+    if (false) s.addText(d.motif, { x: X, y: 0.9 + h + 0.1, w: W, h: 0.6, fontSize: 11, italic: true, color: '7A6A5A', margin: 0, valign: 'top', isTextBox: true });
   } else {
     s.addShape(pres.ShapeType.roundRect, { x: X, y: 0.9, w: W, h: 2.9, rectRadius: 0.15, fill: { color: '5A1426' }, line: { color: '5A1426', width: 0 }, objectName: 'Bildplatzhalter' });
     s.addText(String(d.n).padStart(2, '0'), { x: X, y: 1.05, w: W, h: 0.9, fontSize: 54, bold: true, fontFace: 'Cambria', color: 'C9A227', align: 'center', margin: 0, isTextBox: true });
@@ -96,7 +96,7 @@ for (const d of slides) {
   }
 }
 require('fs').writeFileSync(__dirname + '/data.json', JSON.stringify({ slides, photo, yt, ytTitle, credit }, null, 1));
-const OUT = process.env.EMBED ? __dirname + '/out/Humanoide_Roboter_Videofolien.pptx' : __dirname + '/out/Humanoide_Roboter_gross.pptx';
+const OUT = process.env.EMBED ? __dirname + '/out/Richelieu_Videofolien.pptx' : __dirname + '/out/Richelieu_gross.pptx';
 (async () => {
   await pres.writeFile({ fileName: OUT });
   await applyTheme(OUT, THEME);

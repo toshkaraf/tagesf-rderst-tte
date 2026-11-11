@@ -20,7 +20,8 @@ for (const d of D.slides) {
   const X = 680, W = 275;
   if (D.photo[d.n] && !D.yt[d.n]) {
     const p = D.photo[d.n];
-    right = `<img class="abs" style="left:${X}px;top:50px;width:${W}px;height:360px;object-fit:cover" src="${uri(p + '_c.jpg')}" alt="${esc(d.motif)}">
+    const ph = Math.min(360, W / d.ar), py = 50 + (360 - ph) / 2;
+    right = `<img class="abs" style="left:${X}px;top:${py}px;width:${W}px;height:${ph}px;object-fit:cover" src="${uri(p + '_c.jpg')}" alt="${esc(d.motif)}">
     <div class="abs cap" style="left:${X}px;top:418px;width:${W}px">Bild: ${esc(D.credit[p])} / Wikimedia Commons</div>`;
   } else if (D.yt[d.n]) {
     const h = W * 9 / 16;
@@ -33,7 +34,7 @@ for (const d of D.slides) {
   let link = '';
   if (d.url) {
     const title = D.ytTitle[ytid] || d.vlabel;
-    const ly = D.photo[d.n] && !D.yt[d.n] ? 445 : (D.yt[d.n] ? 390 : 440);
+    const ly = D.photo[d.n] && !D.yt[d.n] ? 465 : (D.yt[d.n] ? 390 : 440);
     link = `<div class="abs vl" style="left:${X}px;top:${ly}px;width:${W}px"><a href="#" data-go="${myIdx + 1}">▶ Video ansehen (nächste Folie)</a><br><a class="yt" target="_blank" rel="noopener" href="${esc(d.url)}">${esc(title)}</a></div>`;
   }
   out.push(`<section class="s content" data-i="${myIdx}">

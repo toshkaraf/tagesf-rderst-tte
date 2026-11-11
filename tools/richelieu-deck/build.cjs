@@ -57,8 +57,9 @@ for (const d of slides) {
   const X = 6.8, W = 2.75;
   if (photo[d.n] && !yt[d.n]) {
     const p = photo[d.n];
-    s.addImage({ path: IMG + p + '_c.jpg', x: X, y: 0.5, w: W, h: 3.6, altText: d.motif, objectName: 'Foto' });
-    s.addText('Bild: ' + credit[p] + ' / Wikimedia Commons', { x: X, y: 4.18, w: W, h: 0.22, fontSize: 10, color: '7A6A5A', margin: 0, isTextBox: true });
+    const ph = Math.min(3.6, W / d.ar), py = 0.5 + (3.6 - ph) / 2;
+    s.addImage({ path: IMG + p + '_c.jpg', x: X, y: py, w: W, h: ph, altText: d.motif, objectName: 'Foto' });
+    s.addText('Bild: ' + credit[p] + ' / Wikimedia Commons', { x: X, y: 4.18, w: W, h: 0.4, fontSize: 10, color: '7A6A5A', margin: 0, isTextBox: true });
     note += ' | Bild: ' + credit[p] + ', Wikimedia Commons (Lizenz/Urheber vor Veröffentlichung prüfen).';
   } else if (yt[d.n]) {
     const h = W * 9 / 16;
@@ -80,7 +81,7 @@ for (const d of slides) {
   }
   if (d.url) {
     const title = ytTitle[ytid] || d.vlabel;
-    const by = photo[d.n] ? 4.45 : (yt[d.n] ? 3.9 : 4.4);
+    const by = photo[d.n] ? 4.65 : (yt[d.n] ? 3.9 : 4.4);
     s.addText([{ text: '▶ Video ansehen (nächste Folie)', options: { hyperlink: { slide: idx + 1 }, bold: true, color: C.accent1, underline: { style: 'sng' }, breakLine: true } }, { text: title, options: { fontSize: 11, color: C.accent3, hyperlink: { url: d.url, tooltip: 'Auf YouTube öffnen' } } }],
       { x: X, y: by, w: W, h: 0.55, fontSize: 13, margin: 0, valign: 'top', isTextBox: true, objectName: 'Video-Link' });
     note += ' | Video: ' + d.url + ' (' + title + '). ';

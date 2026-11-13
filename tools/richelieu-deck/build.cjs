@@ -12,6 +12,9 @@ const THEME = {
   name: 'Kardinal Richelieu', headFontFace: 'Cambria', bodyFontFace: 'Calibri',
   colors: { dk1: '2A0A12', lt1: 'FFFFFF', dk2: '5A1426', lt2: 'F6EFE3', accent1: 'C9A227', accent2: '8C2F39', accent3: '7A6A5A', accent4: 'E0B84A', accent5: '5A1426', accent6: 'D8C3A5', hlink: 'B8861B', folHlink: '8C6A1B' },
 };
+const QZ = process.env.QUIZ ? require('../common/quiz_pptx.cjs') : null;
+const QUIZ = QZ ? JSON.parse(fs.readFileSync(__dirname + '/quiz.json', 'utf8')) : null;
+const QT = { fg: 'F6EFE3', accent: 'C9A227', btn: '5A1426' };
 const pres = new pptxgen();
 pres.layout = 'LAYOUT_16x9';
 pres.theme = { headFontFace: THEME.headFontFace, bodyFontFace: THEME.bodyFontFace };
@@ -94,11 +97,40 @@ for (const d of slides) {
     v.addMedia({ type: 'online', link: 'https://www.youtube.com/embed/' + ytid, x: 0, y: 0, w: 10, h: 5.625, cover, objectName: 'Video' });
     v.addNotes('Video zu Folie ' + d.n + ': ' + d.url + ' (' + (ytTitle[ytid] || d.vlabel) + '). Falls es nicht abspielt: Link öffnen.');
   }
+  if (QZ) {
+    const g = QUIZ.groups.find((x) => x.after === d.n);
+    if (g) idx += QZ.addQuestions(pres, idx + 1, g.q, { label: 'QUIZ', theme: QT, masterName: 'DARK', section: d.part });
+  }
+}
+if (QZ) {
+  // final test: all questions, fixed pseudo-random order (PowerPoint cannot shuffle at runtime)
+  const all = QUIZ.groups.flatMap((g) => g.q);
+  let seed = 7; const rnd = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
+  for (let k = all.length - 1; k > 0; k--) { const j = Math.floor(rnd() * (k + 1)); [all[k], all[j]] = [all[j], all[k]]; }
+  pres.addSection({ title: 'Abschlusstest' });
+  const intro = pres.addSlide({ masterName: 'DARK', sectionTitle: 'Abschlusstest' }); idx++;
+  intro.addText('Abschlusstest', { x: 0.6, y: 1.2, w: 8.8, h: 1, fontSize: 44, bold: true, fontFace: 'Cambria', color: 'FFFFFF', margin: 0, isTextBox: true });
+  intro.addText(all.length + ' Fragen zu allen Themen. Klicke auf die Antwort und zähle deine grünen Antworten. Am Ende findest du die Auswertung in Prozent.', { x: 0.6, y: 2.4, w: 8.8, h: 1.4, fontSize: 24, color: QT.fg, valign: 'top', margin: 0, isTextBox: true });
+  intro.addText('Weiter mit Klick ▶', { x: 0.6, y: 4.3, w: 5, h: 0.4, fontSize: 16, color: QT.accent, bold: true, margin: 0, isTextBox: true });
+  idx += QZ.addQuestions(pres, idx + 1, all, { label: 'ABSCHLUSSTEST', theme: QT, masterName: 'DARK', section: 'Abschlusstest' });
+  const res = pres.addSlide({ masterName: 'DARK', sectionTitle: 'Abschlusstest' }); idx++;
+  res.addText('Ergebnis', { x: 0.6, y: 0.35, w: 8.8, h: 0.8, fontSize: 38, bold: true, fontFace: 'Cambria', color: 'FFFFFF', margin: 0, isTextBox: true });
+  res.addText('Zähle deine grünen Antworten (von ' + all.length + ') und lies hier dein Ergebnis ab:', { x: 0.6, y: 1.15, w: 8.8, h: 0.5, fontSize: 16, color: QT.fg, margin: 0, isTextBox: true });
+  const n = all.length, cols = 4, per = Math.ceil((n + 1) / cols);
+  for (let c = 0; c < cols; c++) {
+    const lines = [];
+    for (let r = c * per; r < Math.min(n + 1, (c + 1) * per); r++) lines.push(String(r).padStart(2, ' ') + ' richtig  →  ' + Math.round(r * 100 / n) + ' %');
+    res.addText(lines.join('\n'), { x: 0.6 + c * 2.25, y: 1.8, w: 2.2, h: 2.9, fontSize: 13, fontFace: 'Consolas', color: QT.accent, valign: 'top', margin: 0, isTextBox: true, paraSpaceAfter: 2 });
+  }
+  res.addShape(pres.ShapeType.roundRect, { x: 0.6, y: 4.75, w: 3.2, h: 0.55, rectRadius: 0.1, fill: { color: QT.btn }, line: { color: QT.accent, width: 2 } });
+  res.addText('Zur ersten Folie', { x: 0.6, y: 4.75, w: 3.2, h: 0.55, fontSize: 15, bold: true, color: 'FFFFFF', align: 'center', valign: 'middle', margin: 0, isTextBox: true });
+  res.addShape(pres.ShapeType.roundRect, { x: 0.6, y: 4.75, w: 3.2, h: 0.55, rectRadius: 0.1, fill: { color: 'FFFFFF', transparency: 100 }, line: { color: 'FFFFFF', transparency: 100, width: 0 }, hyperlink: { slide: 1 } });
 }
 require('fs').writeFileSync(__dirname + '/data.json', JSON.stringify({ slides, photo, yt, ytTitle, credit }, null, 1));
-const OUT = process.env.EMBED ? __dirname + '/out/Richelieu_Videofolien.pptx' : __dirname + '/out/Richelieu_gross.pptx';
+const OUT = process.env.QUIZ ? __dirname + '/out/Richelieu_Quiz.pptx' : process.env.EMBED ? __dirname + '/out/Richelieu_Videofolien.pptx' : __dirname + '/out/Richelieu_gross.pptx';
 (async () => {
   await pres.writeFile({ fileName: OUT });
   await applyTheme(OUT, THEME);
+  if (QZ) await QZ.post(OUT);
   console.log('ok');
 })();

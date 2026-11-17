@@ -53,6 +53,10 @@ export interface Session {
   slides?: Slide[]
   quiz?: QuizBlock
   media?: MediaItem[]
+  /** Standalone interactive deck (own HTML in /public), shown full-screen in an iframe instead of the generic slide viewer. */
+  embedUrl?: string
+  /** Per-deck look of the app bar around the embedded deck (every new deck has its own style). */
+  embedTheme?: { bg: string; fg: string; accent: string }
   structure: {
     greeting?: string
     mainContent: string

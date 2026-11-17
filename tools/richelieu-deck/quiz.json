@@ -1,0 +1,50 @@
+{
+ "title": "Kardinal Richelieu",
+ "groups": [
+  {"after": 4, "q": [
+   {"q": "Wann starb Kardinal Richelieu?", "a": ["1642", "1630", "1648", "1793"]},
+   {"q": "Was passierte 1793 mit Richelieus Grab?", "a": ["Revolutionäre öffneten das Grab.", "Der König besuchte das Grab.", "Das Grab wurde ein Museum.", "Das Grab wurde neu gebaut."]},
+   {"q": "Wann bekam der Staat den Kopf des Kardinals zurück?", "a": ["1866", "1793", "1830", "1914"]}
+  ]},
+  {"after": 8, "q": [
+   {"q": "Seit wann ist Richelieu Erster Minister?", "a": ["1624", "1610", "1618", "1630"]},
+   {"q": "Wie endet der „Tag der Betrogenen“ (1630)?", "a": ["Der König behält Richelieu im Amt.", "Richelieu muss gehen.", "Maria von Medici wird Königin.", "Der Hof flieht nach Versailles."]},
+   {"q": "Was passiert mit den Verschwörern gegen Richelieu?", "a": ["Sie enden schlechter als er.", "Sie werden Minister.", "Sie gewinnen die Macht.", "Sie werden Kardinäle."]}
+  ]},
+  {"after": 11, "q": [
+   {"q": "Wem dient man vor Richelieu?", "a": ["Einer Person, zum Beispiel dem König.", "Einer Idee.", "Dem Staat.", "Der Armee."]},
+   {"q": "Was bedeutet „Raison d’État“?", "a": ["Das Interesse des Staates steht über allem.", "Der König hat immer recht.", "Die Kirche entscheidet alles.", "Jeder darf frei wählen."]},
+   {"q": "Was schreibt Richelieu über den Staat?", "a": ["Er hat keine Ewigkeit, seine Rettung gibt es nur jetzt oder nie.", "Er ist unsterblich.", "Er gehört Gott.", "Er braucht keinen König."]}
+  ]},
+  {"after": 14, "q": [
+   {"q": "Was sind die „Intendanten“?", "a": ["Beamte, die direkt dem Zentrum gehorchen.", "Adlige in den Provinzen.", "Soldaten des Königs.", "Priester in Paris."]},
+   {"q": "Was baut Richelieu fast von Null?", "a": ["Eine Kriegsflotte.", "Eine Universität.", "Eine Brücke.", "Eine Kathedrale."]},
+   {"q": "Wann erscheint die erste „Gazette“?", "a": ["1631", "1610", "1648", "1700"]}
+  ]},
+  {"after": 17, "q": [
+   {"q": "Wer schreibt anonym für die Gazette?", "a": ["König Ludwig XIII.", "Der Papst", "Gustav Adolf", "Maria von Medici"]},
+   {"q": "Welche Aufgabe bekommt die Académie française (1635)?", "a": ["Ein Wörterbuch schreiben und eine einheitliche Sprache festlegen.", "Straßen bauen.", "Steuern eintreiben.", "Kriege planen."]},
+   {"q": "Womit vergleicht der Text das Wörterbuch?", "a": ["Mit Artillerie – nur langsamer und weiter.", "Mit einer Brücke.", "Mit einem Schiff.", "Mit einer Zeitung."]}
+  ]},
+  {"after": 20, "q": [
+   {"q": "Wie lange belagert Richelieu La Rochelle?", "a": ["14 Monate", "14 Tage", "4 Jahre", "2 Monate"]},
+   {"q": "Wie viele von 27 000 Einwohnern bleiben übrig?", "a": ["Etwa 5 000", "Etwa 500", "Etwa 15 000", "Etwa 25 000"]},
+   {"q": "Was bekommen die Hugenotten 1629?", "a": ["Sie verlieren Festungen und Heer, behalten aber die Religionsfreiheit.", "Sie müssen katholisch werden.", "Sie werden aus Frankreich vertrieben.", "Sie bekommen noch mehr Festungen."]}
+  ]},
+  {"after": 24, "q": [
+   {"q": "Wen bezahlt Frankreich im Vertrag von Bärwalde?", "a": ["Das lutherische Schweden", "Spanien", "England", "Den Papst"]},
+   {"q": "Wie wählt Richelieu seine Bündnispartner?", "a": ["Nach dem Interesse des Staates", "Nach der Religion", "Nach dem Alter", "Nach der Herkunft"]},
+   {"q": "Wann wird der Westfälische Frieden unterschrieben?", "a": ["1648", "1635", "1642", "1666"]}
+  ]},
+  {"after": 27, "q": [
+   {"q": "Warum ist Dumas’ Bild vom Bösewicht laut Text ungerecht?", "a": ["Richelieu arbeitete ohne Leidenschaft, wie eine Turbine.", "Richelieu war arm.", "Richelieu war kein Kardinal.", "Dumas kannte Frankreich nicht."]},
+   {"q": "Wer bezahlt vor allem den Krieg gegen die Habsburger?", "a": ["Die Bauern", "Der Adel", "Die Kirche", "Schweden"]},
+   {"q": "Was passiert 1636–1637 im Périgord?", "a": ["Die „Croquants“ revoltieren.", "Es gibt ein großes Fest.", "Es gibt eine Wahl.", "Ein Krieg gegen Spanien beginnt."]}
+  ]},
+  {"after": 30, "q": [
+   {"q": "Was verbietet das Edikt von 1626?", "a": ["Duelle", "Schiffe", "Zeitungen", "Gottesdienste"]},
+   {"q": "Was hinterlässt Richelieu?", "a": ["Das größte Privatvermögen seiner Zeit", "Nur Schulden", "Gar nichts", "Ein Schloss in Kanada"]},
+   {"q": "Welche Frage bleibt am Ende offen?", "a": ["Ob die Maschine noch weiß, wozu man sie eingeschaltet hat.", "Ob Frankreich den Krieg gewinnt.", "Ob der Kopf zurückkehrt.", "Wann Richelieu starb."]}
+  ]}
+ ]
+}

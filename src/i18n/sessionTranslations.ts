@@ -107,6 +107,32 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'richelieu-architect-state': {
+    de: {
+      title: 'Kardinal Richelieu: Architekt des modernen Staates',
+      description: 'Großer Politiker, guter Verwalter, Mann des Fortschritts und Patriot: Wir prüfen die vier Titel des Kardinals Richelieu. Präsentation in einfachem Deutsch (B1) mit Videos, 9 Mini-Quizzen mit je 3 Fragen und einem Abschlusstest mit Ergebnis in Prozent.',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über Kardinal Richelieu!',
+        mainContent: 'Dreißig Folien: Tod und Kopf des Kardinals, Politik, Verwaltung, Religion und Steuern',
+        interactive: 'Neun Mini-Quizze mit je drei Fragen und ein Abschlusstest mit 27 Fragen',
+        additional: 'Sieben kurze Videos (Deutsch und Englisch)',
+        closing: 'Abschlusstest mit Ergebnis in Prozent'
+      }
+    },
+    ru: {
+      title: 'Кардинал Ришелье: архитектор современного государства',
+      description: 'Великий политик, дельный администратор, прогрессивный деятель и патриот: проверяем четыре титула кардинала Ришелье. Презентация на немецком (B1), видео, 9 мини-викторин по 3 вопроса и итоговый тест с результатом в процентах.',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о кардинале Ришелье!',
+        mainContent: 'Тридцать слайдов: смерть и голова кардинала, политика, администрация, религия и налоги',
+        interactive: 'Девять мини-викторин по три вопроса и итоговый тест на 27 вопросов',
+        additional: 'Семь коротких видео (немецкий и английский)',
+        closing: 'Итоговый тест с результатом в процентах'
+      }
+    }
+  },
   'linear-infantry-tactics': {
     de: {
       title: 'Lineartaktik: Warum Soldaten in der Linie standen',

@@ -8,10 +8,11 @@ import QuizViewer from '../components/QuizViewer'
 import MediaViewer from '../components/MediaViewer'
 import LargeButton from '../components/LargeButton'
 import SpeechButton from '../components/SpeechButton'
+import EmbeddedDeckPage from './EmbeddedDeckPage'
 import { ArrowLeft, Play, SkipForward, SkipBack, Languages, ZoomIn, ZoomOut } from 'lucide-react'
 import './SessionPage.css'
 
-function SessionPage() {
+function SessionPageInner() {
   const { sessionId } = useParams<{ sessionId: string }>()
   const goBack = useGoBack('/')
   const { t, language, setLanguage } = useLanguage()
@@ -332,5 +333,13 @@ function SessionPage() {
   )
 }
 
-export default SessionPage
+/** Standalone interactive decks (embedUrl) get their own full-screen page; everything else uses the generic viewer. */
+function SessionPage() {
+  const { sessionId } = useParams<{ sessionId: string }>()
+  const { language } = useLanguage()
+  const session = sessionId ? getSessionById(sessionId, language) : undefined
+  if (session?.embedUrl) return <EmbeddedDeckPage session={session} />
+  return <SessionPageInner />
+}
 
+export default SessionPage

@@ -1,4 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [{ "source": "/((?!api/.*).*)", "destination": "/index.html" }]
+  "rewrites": [{ "source": "/((?!api/.*).*)", "destination": "/index.html" }],
+  "functions": {
+    "api/tts.py": {
+      "excludeFiles": "{public,quiz,tools,docs,scripts,src,node_modules,android-presentation,android-richelieu}/**"
+    },
+    "api/*.ts": {
+      "excludeFiles": "{public,quiz,tools,docs,scripts,src,android-presentation,android-richelieu}/**"
+    }
+  }
 }

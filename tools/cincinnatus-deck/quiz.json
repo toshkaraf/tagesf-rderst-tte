@@ -1,0 +1,50 @@
+{
+ "title": "Macht, die man zurückgibt",
+ "groups": [
+  {"after": 3, "q": [
+   {"q": "Was bedeutet der Beiname „Cincinnatus“?", "a": ["Der Lockige", "Der Starke", "Der Bauer", "Der Weise"]},
+   {"q": "Wie lange darf ein römischer Diktator höchstens im Amt sein?", "a": ["Sechs Monate", "Ein Jahr", "Zehn Jahre", "Ein Leben lang"]},
+   {"q": "Welches Volk greift Rom im Jahr 458 v. Chr. an?", "a": ["Die Aequer", "Die Gallier", "Die Griechen", "Die Karthager"]}
+  ]},
+  {"after": 7, "q": [
+   {"q": "Was macht Cincinnatus, als die Boten kommen?", "a": ["Er pflügt sein Feld.", "Er spricht im Senat.", "Er baut ein Schiff.", "Er schläft im Haus."]},
+   {"q": "Wie viele Tage dauert der Feldzug von Cincinnatus?", "a": ["16 Tage", "6 Tage", "60 Tage", "160 Tage"]},
+   {"q": "Was macht Cincinnatus nach dem Sieg mit dem Amt?", "a": ["Er legt es nieder.", "Er behält es für immer.", "Er verkauft es.", "Er gibt es seinem Sohn."]}
+  ]},
+  {"after": 10, "q": [
+   {"q": "Wann beginnt Washington als Oberbefehlshaber der Armee?", "a": ["1775", "1732", "1789", "1799"]},
+   {"q": "Wo gewinnt Washington 1781 eine wichtige Schlacht?", "a": ["Yorktown", "Annapolis", "Newburgh", "Mount Vernon"]},
+   {"q": "Was tut Washington am 23. Dezember 1783?", "a": ["Er legt sein Amt vor dem Kongress nieder.", "Er wird zum König gekrönt.", "Er beginnt einen neuen Krieg.", "Er reist nach Europa."]}
+  ]},
+  {"after": 13, "q": [
+   {"q": "Was stoppt Washington im März 1783 in Newburgh?", "a": ["Einen Putschplan der Offiziere", "Einen Angriff der Briten", "Ein Feuer im Lager", "Eine Wahl zum König"]},
+   {"q": "Wie wird Washington 1789 zum Präsidenten gewählt?", "a": ["Einstimmig", "Mit knapper Mehrheit", "Durch das Los", "Gar nicht, er wurde ernannt"]},
+   {"q": "Wohin geht Washington nach seiner Amtszeit?", "a": ["Auf sein Gut Mount Vernon", "Nach London", "Auf eine Insel", "In den Senat"]}
+  ]},
+  {"after": 16, "q": [
+   {"q": "Wie viele Freiwillige fahren 1860 mit Garibaldi nach Sizilien?", "a": ["Etwa 1000", "Etwa 100", "Etwa 10 000", "Etwa 100 000"]},
+   {"q": "Was tragen Garibaldis Freiwillige?", "a": ["Rote Hemden", "Blaue Mäntel", "Weiße Toga", "Grüne Helme"]},
+   {"q": "In wessen Namen handelt Garibaldi als Diktator von Sizilien?", "a": ["Viktor Emanuels II.", "Napoleons III.", "Des Papstes", "Seines Vaters"]}
+  ]},
+  {"after": 19, "q": [
+   {"q": "Wann zieht Garibaldi in Neapel ein?", "a": ["Am 7. September 1860", "Am 11. Mai 1860", "Am 17. März 1861", "Am 5. Mai 1882"]},
+   {"q": "Was tut Garibaldi in Teano?", "a": ["Er übergibt den Süden dem König.", "Er ruft sich zum König aus.", "Er verlässt Italien für immer.", "Er greift den König an."]},
+   {"q": "Wohin zieht sich Garibaldi nach der Mission zurück?", "a": ["Auf die Insel Caprera", "Nach Rom", "Nach Südamerika", "Auf ein Schloss"]}
+  ]},
+  {"after": 22, "q": [
+   {"q": "Wogegen kämpfte Mandela im ANC?", "a": ["Gegen die Apartheid", "Gegen die Steuern", "Gegen den König", "Gegen die Kirche"]},
+   {"q": "Wie lange war Mandela insgesamt im Gefängnis?", "a": ["27 Jahre", "7 Jahre", "17 Jahre", "47 Jahre"]},
+   {"q": "Wer bekam 1993 mit Mandela den Friedensnobelpreis?", "a": ["Präsident de Klerk", "Präsident Mbeki", "George Washington", "Erzbischof Tutu"]}
+  ]},
+  {"after": 25, "q": [
+   {"q": "Wann wird Mandela Präsident von Südafrika?", "a": ["Am 10. Mai 1994", "Am 11. Februar 1990", "Im Dezember 2013", "Im Juni 1964"]},
+   {"q": "Was soll die Wahrheitskommission nach 1996 erreichen?", "a": ["Täter sagen die Wahrheit, das Land versöhnt sich.", "Alle Täter kommen sofort ins Gefängnis.", "Das Land wird geteilt.", "Das Rugby-Team wird aufgelöst."]},
+   {"q": "Wer wird 1999 Mandelas Nachfolger?", "a": ["Thabo Mbeki", "F. W. de Klerk", "Desmond Tutu", "Winnie Mandela"]}
+  ]},
+  {"after": 30, "q": [
+   {"q": "Was ist das Besondere an Sulla im Vergleich zu Cincinnatus?", "a": ["Er ging, hatte aber viele Gegner töten lassen.", "Er blieb bis zum Tod an der Macht.", "Er war nie Diktator.", "Er lebte als einfacher Bauer."]},
+   {"q": "Wonach ist die Stadt Cincinnati in Ohio benannt?", "a": ["Nach der Gesellschaft der Cincinnati", "Nach einem Fluss in Italien", "Nach einem amerikanischen König", "Nach einem Schiff"]},
+   {"q": "Was ist die Kernidee der Präsentation?", "a": ["Wahre Macht heißt, sie rechtzeitig abzugeben.", "Starke Herrscher bleiben immer lange.", "Nur Römer waren selbstlos.", "Macht gehört nur dem Militär."]}
+  ]}
+ ]
+}

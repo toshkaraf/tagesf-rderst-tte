@@ -107,6 +107,32 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'cincinnatus-power-returned': {
+    de: {
+      title: 'Macht, die man zurückgibt: Cincinnatus, Washington, Garibaldi, Mandela',
+      description: 'Wie der Diktator Cincinnatus den Pflug stehen ließ, Rom in 16 Tagen rettete und wieder aufs Feld ging – und was Washington, Garibaldi und Mandela mit ihm verbindet. Präsentation in einfachem Deutsch (B1) mit Videos, 9 Mini-Quizzen mit je 3 Fragen und einem Abschlusstest mit Ergebnis in Prozent.',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über Menschen, die Macht zurückgaben!',
+        mainContent: 'Dreißig Folien: Cincinnatus, George Washington, Garibaldi, Nelson Mandela und ein gemeinsames Fazit',
+        interactive: 'Neun Mini-Quizze mit je drei Fragen und ein Abschlusstest mit 27 Fragen',
+        additional: 'Sieben kurze Videos (Deutsch und Englisch)',
+        closing: 'Abschlusstest mit Ergebnis in Prozent'
+      }
+    },
+    ru: {
+      title: 'Власть, которую возвращают: Цинциннат, Вашингтон, Гарибальди, Мандела',
+      description: 'Как диктатор Цинциннат оставил плуг, спас Рим за 16 дней и вернулся на поле — и чем на него похожи Вашингтон, Гарибальди и Мандела. Презентация на немецком (B1), видео, 9 мини-викторин по 3 вопроса и итоговый тест с результатом в процентах.',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о людях, которые отдали власть!',
+        mainContent: 'Тридцать слайдов: Цинциннат, Джордж Вашингтон, Гарибальди, Нельсон Мандела и общий вывод',
+        interactive: 'Девять мини-викторин по три вопроса и итоговый тест на 27 вопросов',
+        additional: 'Семь коротких видео (немецкий и английский)',
+        closing: 'Итоговый тест с результатом в процентах'
+      }
+    }
+  },
   'richelieu-architect-state': {
     de: {
       title: 'Kardinal Richelieu: Architekt des modernen Staates',

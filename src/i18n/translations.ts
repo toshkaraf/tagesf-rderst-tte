@@ -134,7 +134,7 @@ export const translations: Record<Language, Translations> = {
       tileKi: 'KI',
       tileKiSub: 'Künstliche Intelligenz — KI-LASZLO',
       tileHistoricalQuiz: 'Historisches Quiz',
-      tileHistoricalQuizSub: 'Geschichtsquiz zur Antike'
+      tileHistoricalQuizSub: 'Geschichtsquiz: Antike, Mittelalter, Neuzeit, 19. und 20. Jahrhundert'
     },
     home: {
       title: 'Das unbekannte Bekannte',
@@ -243,7 +243,7 @@ export const translations: Record<Language, Translations> = {
       tileKi: 'KI',
       tileKiSub: 'Künstliche Intelligenz — KI-LASZLO',
       tileHistoricalQuiz: 'Исторический квиз',
-      tileHistoricalQuizSub: 'Интерактивное приложение по истории'
+      tileHistoricalQuizSub: 'Квиз по истории: от античности до XX века'
     },
     home: {
       title: 'Неизвестное известное',

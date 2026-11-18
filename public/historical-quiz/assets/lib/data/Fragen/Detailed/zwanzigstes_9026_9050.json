@@ -1,0 +1,1032 @@
+[
+  {
+    "id": 9026,
+    "question_de": "Was war die Entdeckung des Penicillins (1928)?",
+    "question_ru": "Что такое открытие пенициллина (1928)?",
+    "correct_answer_de": "Alexander Fleming entdeckte zufällig, dass Schimmel Bakterien tötet",
+    "correct_answer_ru": "Александр Флеминг случайно обнаружил, что плесень убивает бактерии",
+    "wrong_answers_de": [
+      "Louis Pasteur entwickelte Penicillin als Heilmittel gegen Tuberkulose",
+      "Robert Koch isolierte Penicillin aus Bodenbakterien in Deutschland",
+      "Paul Ehrlich synthetisierte das erste Antibiotikum gegen Syphilis"
+    ],
+    "wrong_answers_ru": [
+      "Луи Пастер разработал пенициллин как лекарство от туберкулёза",
+      "Роберт Кох выделил пенициллин из почвенных бактерий в Германии",
+      "Пауль Эрлих синтезировал первый антибиотик против сифилиса"
+    ],
+    "explanation_de": "Fleming bemerkte 1928 in London, dass Schimmel Bakterien abtötet. Florey und Chain reinigten Penicillin 1939/40; im Krieg rettete es Millionen, 1945 erhielten alle drei den Nobelpreis.",
+    "explanation_ru": "Флеминг заметил в 1928 году в Лондоне, что плесень убивает бактерии. Флори и Чейн очистили пенициллин в 1939–1940 годах; он спас миллионы, в 1945-м все трое получили Нобелевскую премию.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1928 CE",
+    "tags": [
+      "Wissenschaft",
+      "England",
+      "Medizin"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Fleming vergaß, eine Petrischale zu reinigen – und die Schimmelpilzspoре flog durch ein offenes Fenster.",
+        "ru": "Флеминг забыл очистить чашку Петри — и споры плесени залетели через открытое окно."
+      },
+      {
+        "de": "Penicillin wurde zuerst durch Gärungstanks produziert – wie Bier. Das rettete die Alliierten im Krieg.",
+        "ru": "Пенициллин поначалу производили в ферментационных баках — как пиво. Это спасло союзников в войне."
+      },
+      {
+        "de": "Vor Penicillin starben Menschen an einem kleinen Kratzer – durch bakterielle Infektionen.",
+        "ru": "До пенициллина люди умирали от небольшой царапины — из-за бактериальных инфекций."
+      }
+    ]
+  },
+  {
+    "id": 9027,
+    "question_de": "Was war der Erste Weltkrieg für die Frauenemanzipation?",
+    "question_ru": "Каково было значение Первой мировой войны для женской эмансипации?",
+    "correct_answer_de": "Frauen übernahmen Männerjobs in Fabriken und Krankenpflege – danach erhielten viele das Wahlrecht",
+    "correct_answer_ru": "Женщины взяли на себя мужские работы на фабриках и в медицине — затем многие получили избирательное право",
+    "wrong_answers_de": [
+      "Der Krieg bremste die Frauenbewegung – Frauen wurden auf Kinder, Küche, Kirche beschränkt",
+      "Frauen dienten als Soldatinnen an der Front und erkämpften dort das Wahlrecht",
+      "Die Frauenbewegung stoppte den Krieg durch Massenstreiks und Friedensmärsche"
+    ],
+    "wrong_answers_ru": [
+      "Война затормозила женское движение — женщин ограничили детьми, кухней, церковью",
+      "Женщины служили солдатами на фронте и завоевали там избирательное право",
+      "Женское движение остановило войну массовыми забастовками и маршами мира"
+    ],
+    "explanation_de": "Millionen Männer standen an der Front, Frauen arbeiteten in Rüstungsfabriken und Lazaretten. England gab Frauen über 30 1918 das Wahlrecht, Deutschland und Österreich 1918, die USA 1920.",
+    "explanation_ru": "Миллионы мужчин были на фронте, женщины работали на оружейных заводах и в госпиталях. Англия дала женщинам старше 30 лет право голоса в 1918 году, США — в 1920-м.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1918 CE",
+    "tags": [
+      "Gesellschaft",
+      "Europa"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Militärische Helferinnenkorps (VAD in England) pflegten 80.000 Verwundete – ohne Soldatenstatus.",
+        "ru": "Женские вспомогательные корпуса (VAD в Англии) ухаживали за 80 000 ранеными — без воинского статуса."
+      },
+      {
+        "de": "Marie Curie baute 18 mobile Röntgenstationen ('Petites Curies') und rettete damit Hunderttausende.",
+        "ru": "Мари Кюри создала 18 мобильных рентгеновских станций («маленькие Кюри») и тем самым спасла сотни тысяч."
+      },
+      {
+        "de": "In Frankreich erhielten Frauen das Wahlrecht erst 1944 – trotz ihrer Kriegsleistungen.",
+        "ru": "Во Франции женщины получили право голоса лишь в 1944 году — несмотря на их заслуги в войне."
+      }
+    ]
+  },
+  {
+    "id": 9028,
+    "question_de": "Was war die Spanische Grippe (1918–1920) und wie gefährlich war sie?",
+    "question_ru": "Что такое «испанка» (1918–1920) и насколько она была опасна?",
+    "correct_answer_de": "Weltweite Grippepandemie mit 50–100 Millionen Toten",
+    "correct_answer_ru": "Всемирная пандемия гриппа с 50–100 миллионами погибших",
+    "wrong_answers_de": [
+      "Eine Epidemie, die nur spanischsprachige Länder traf",
+      "Eine Cholera-Pandemie nach dem Ersten Weltkrieg",
+      "Eine Beulenpest-Variante im Zweiten Weltkrieg"
+    ],
+    "wrong_answers_ru": [
+      "Эпидемия, затронувшая лишь испаноязычные страны",
+      "Пандемия холеры после Первой мировой войны",
+      "Разновидность бубонной чумы во Второй мировой войне"
+    ],
+    "explanation_de": "Der Name «Spanische Grippe» entstand, weil das neutrale Spanien offen berichtete, andere Länder schwiegen. Die Pandemie tötete 2,5–5 Prozent der Weltbevölkerung, besonders viele Junge.",
+    "explanation_ru": "Название «испанка» возникло потому, что нейтральная Испания писала о болезни открыто, а другие страны молчали. Пандемия унесла 2,5–5 процентов населения мира, особенно много молодых.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1918 CE",
+    "tags": [
+      "Gesellschaft",
+      "Wissenschaft"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Präsident Wilson erkrankte bei den Versailler Friedensverhandlungen an der Grippe – was seine Position schwächte.",
+        "ru": "Президент Вильсон заболел гриппом на Версальских мирных переговорах — что ослабило его позицию."
+      },
+      {
+        "de": "Die Spanische Grippe verbreitete sich durch Truppentransporte des Ersten Weltkriegs weltweit.",
+        "ru": "«Испанка» распространилась по всему миру через переброску войск в ходе Первой мировой войны."
+      },
+      {
+        "de": "Das Influenza-Virus der 1918er-Grippe wurde 2005 aus dem Permafrost rekonstruiert – um es zu erforschen.",
+        "ru": "Вирус гриппа 1918 года был реконструирован в 2005-м из вечной мерзлоты — для его изучения."
+      }
+    ]
+  },
+  {
+    "id": 9029,
+    "question_de": "Was war die NATO und warum wurde sie gegründet?",
+    "question_ru": "Что такое НАТО и зачем оно было создано?",
+    "correct_answer_de": "Nordatlantisches Verteidigungsbündnis (1949) – westliche Demokratien gegen sowjetische Bedrohung",
+    "correct_answer_ru": "Североатлантический оборонный альянс (1949) — западные демократии против советской угрозы",
+    "wrong_answers_de": [
+      "Ein wirtschaftliches Freihandelsbündnis der westlichen Demokratien nach 1945",
+      "Eine militärische Allianz der USA und Europas gegen Japan im Zweiten Weltkrieg",
+      "Ein Verteidigungsbündnis Westeuropas gegen Deutschland nach dem Zweiten Weltkrieg"
+    ],
+    "wrong_answers_ru": [
+      "Экономический союз свободной торговли западных демократий после 1945 года",
+      "Военный альянс США и Европы против Японии во Второй мировой войне",
+      "Оборонный союз Западной Европы против Германии после Второй мировой войны"
+    ],
+    "explanation_de": "Die NATO entstand 1949 nach der Berliner Blockade. Artikel 5 sagt: Ein Angriff auf einen ist ein Angriff auf alle. Das Gegenstück war der Warschauer Pakt von 1955.",
+    "explanation_ru": "НАТО возникла в 1949 году после блокады Берлина. Статья 5 гласит: нападение на одного — нападение на всех. Противовесом стал Варшавский договор 1955 года.",
+    "difficulty": "easy",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1949 CE",
+    "tags": [
+      "Politik",
+      "Amerika",
+      "Europa"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Deutschland (BRD) trat der NATO 1955 bei – was den Warschauer Pakt als Reaktion auslöste.",
+        "ru": "Германия (ФРГ) вступила в НАТО в 1955 году — что спровоцировало создание Варшавского договора в ответ."
+      },
+      {
+        "de": "Frankreich trat 1966 aus dem militärischen Kommando aus – und kehrte 2009 unter Sarkozy zurück.",
+        "ru": "Франция вышла из военного командования НАТО в 1966 году — и вернулась в 2009-м при Саркози."
+      },
+      {
+        "de": "Der Artikel 5 wurde erst einmal aktiviert – nach den Terroranschlägen vom 11. September 2001.",
+        "ru": "Статья 5 была активирована лишь один раз — после террористических атак 11 сентября 2001 года."
+      }
+    ]
+  },
+  {
+    "id": 9030,
+    "question_de": "Was war die Dekolonisierung Afrikas (1950–1980)?",
+    "question_ru": "Что такое деколонизация Африки (1950–1980)?",
+    "correct_answer_de": "Befreiung afrikanischer Länder von europäischer Kolonialherrschaft",
+    "correct_answer_ru": "Освобождение африканских стран от европейского колониального господства",
+    "wrong_answers_de": [
+      "Eine europäische Initiative, die afrikanischen Ländern Entwicklungshilfe anbot",
+      "Ein UNO-Programm, Afrikas Grenzen ethnisch neu zu ordnen",
+      "Eine Bewegung der weißen Siedler in Afrika für Unabhängigkeit von Europa"
+    ],
+    "wrong_answers_ru": [
+      "Европейская инициатива, предложившая африканским странам помощь в развитии",
+      "Программа ООН по этническому перекраиванию границ Африки",
+      "Движение белых поселенцев в Африке за независимость от Европы"
+    ],
+    "explanation_de": "1960 wurden 17 Länder unabhängig, das «Jahr Afrikas»; Ghana war 1957 vorangegangen. Algerien erkämpfte 1962 die Freiheit von Frankreich, Angola und Mosambik 1975 von Portugal, Südafrika 1994.",
+    "explanation_ru": "В 1960 году независимость получили 17 стран — «год Африки»; Гана стала первой в 1957-м. Алжир отвоевал свободу от Франции в 1962 году, Ангола и Мозамбик — в 1975-м.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1960 CE",
+    "tags": [
+      "Afrika",
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Frantz Fanon schrieb 'Die Verdammten dieser Erde' – ein philosophisches Manifest der Dekolonisierung.",
+        "ru": "Франц Фанон написал «Проклятьем заклеймённые» — философский манифест деколонизации."
+      },
+      {
+        "de": "In Kongo wurde Premier Lumumba 1961 von belgisch-amerikanischen Kräften ermordert – 6 Monate nach Unabhängigkeit.",
+        "ru": "В Конго премьер Лумумба был убит в 1961 году бельгийско-американскими силами — через 6 месяцев после независимости."
+      },
+      {
+        "de": "Die meisten afrikanischen Grenzen blieben kolonialen Ursprungs – was bis heute Konflikte verursacht.",
+        "ru": "Большинство африканских границ остались колониального происхождения — что по сей день порождает конфликты."
+      }
+    ]
+  },
+  {
+    "id": 9031,
+    "question_de": "Was war der Koreakrieg (1950–1953) und welches Ergebnis hatte er?",
+    "question_ru": "Что такое Корейская война (1950–1953) und каков её итог?",
+    "correct_answer_de": "Nordkorea (China, UdSSR) gegen Südkorea (USA, UNO) – Waffenstillstand",
+    "correct_answer_ru": "Северная Корея (Китай, СССР) против Южной (США, ООН) — перемирие",
+    "wrong_answers_de": [
+      "USA besiegten Nordkorea und vereinten Korea unter Südkorea",
+      "China und Sowjetunion besiegten USA und Südkorea – Korea wurde kommunistisch",
+      "Der Krieg endete 1953 mit einem Friedensvertrag und Wiedervereinigung Koreas"
+    ],
+    "wrong_answers_ru": [
+      "США победили Северную Корею и объединили Корею под руководством Южной Кореи",
+      "Китай и СССР победили США и Южную Корею — Корея стала коммунистической",
+      "Война завершилась в 1953 году мирным договором и воссоединением Кореи"
+    ],
+    "explanation_de": "Nordkorea überfiel 1950 den Süden; UNO-Truppen unter US-Führung griffen ein, China half dem Norden. 1953 endete der Krieg mit einem Waffenstillstand am 38. Breitengrad, Korea bleibt geteilt.",
+    "explanation_ru": "Северная Корея напала в 1950 году на Юг; войска ООН под руководством США вмешались, Китай помог Северу. В 1953 году война завершилась перемирием по 38-й параллели, Корея осталась разделённой.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1951 CE",
+    "tags": [
+      "Krieg",
+      "Amerika",
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Koreakrieg wird 'vergessener Krieg' genannt – weil er zwischen dem beliebten Zweiten Weltkrieg und Vietnam steht.",
+        "ru": "Корейскую войну называют «забытой войной» — она оказалась зажатой между популярной Второй мировой и Вьетнамом."
+      },
+      {
+        "de": "Macarthur wollte Atomwaffen gegen China einsetzen – Truman verhinderte den Dritten Weltkrieg durch Entlassung.",
+        "ru": "Макартур хотел применить ядерное оружие против Китая — Трумэн предотвратил Третью мировую его увольнением."
+      },
+      {
+        "de": "Südkorea ist heute eine der modernsten Volkswirtschaften der Welt – Nordkorea isoliert und arm.",
+        "ru": "Сегодня Южная Корея — одна из самых передовых экономик мира; Северная Корея — изолированная и бедная."
+      }
+    ]
+  },
+  {
+    "id": 9032,
+    "question_de": "Was war die Prager Revolution (Prager Frühling, 1968)?",
+    "question_ru": "Что такое Пражская весна (1968)?",
+    "correct_answer_de": "Ein Reformkommunismus in der Tschechoslowakei unter Dubček – brutal durch sowjetischen Einmarsch beendet",
+    "correct_answer_ru": "Реформаторский коммунизм в Чехословакии при Дубчеке — жестоко подавлен советским вторжением",
+    "wrong_answers_de": [
+      "Eine demokratische Revolution, die die Tschechoslowakei 1968 von der Sowjetherrschaft befreite",
+      "Ein Studentenaufstand in Prag, der von der tschechoslowakischen Armee niedergeschlagen wurde",
+      "Ein kommunistischer Putsch gegen die demokratische Regierung der Tschechoslowakei"
+    ],
+    "wrong_answers_ru": [
+      "Демократическая революция, освободившая Чехословакию от советского господства в 1968 году",
+      "Студенческое восстание в Праге, подавленное чехословацкой армией",
+      "Коммунистический переворот против демократического правительства Чехословакии"
+    ],
+    "explanation_de": "Dubček wollte «Sozialismus mit menschlichem Antlitz» mit Pressefreiheit und Reisefreiheit. Am 21. August 1968 marschierten Warschauer-Pakt-Truppen ein, Dubček wurde abgesetzt.",
+    "explanation_ru": "Дубчек хотел «социализма с человеческим лицом» со свободой печати и поездок. 21 августа 1968 года вошли войска Варшавского договора, Дубчека сместили.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1968 CE",
+    "tags": [
+      "Politik",
+      "Europa"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Jan Palach verbrannte sich 1969 in Prag aus Protest gegen die Besatzung – er wurde zur Ikone des Widerstands.",
+        "ru": "Ян Палах сжёг себя в 1969 году в Праге в знак протеста против оккупации — стал иконой сопротивления."
+      },
+      {
+        "de": "Die Breschnew-Doktrin rechtfertigte die Invasion: Kein sozialistisches Land darf die Gemeinschaft verlassen.",
+        "ru": "Доктрина Брежнева оправдала вторжение: ни одна социалистическая страна не может покинуть содружество."
+      },
+      {
+        "de": "Václav Havel, Schriftsteller, wurde ein Dissident – und 1989 erster demokratischer Präsident.",
+        "ru": "Вацлав Гавел, писатель, стал диссидентом — а в 1989 году первым демократическим президентом."
+      }
+    ]
+  },
+  {
+    "id": 9033,
+    "question_de": "Was war die Ölkrise (1973) und wie wirkte sie sich aus?",
+    "question_ru": "Что такое нефтяной кризис (1973) и как он проявился?",
+    "correct_answer_de": "OPEC-Länder stoppten Öl-Exporte in den Westen – Energiepreise stiegen, wirtschaftliche Rezession",
+    "correct_answer_ru": "Страны ОПЕК остановили экспорт нефти на Запад — цены на энергоносители выросли, экономическая рецессия",
+    "wrong_answers_de": [
+      "Eine technische Katastrophe, bei der Ölbohrtürme im Golf von Mexiko explodierten",
+      "Ein Wirtschaftskartell der USA, das Ölpreise für OPEC-Länder künstlich senkte",
+      "Eine Finanzkrise, die durch Ölspekulationen an der New Yorker Börse entstand"
+    ],
+    "wrong_answers_ru": [
+      "Техническая катастрофа: нефтяные вышки взрывались в Мексиканском заливе",
+      "Экономический картель США, искусственно снижавший цены на нефть для стран ОПЕК",
+      "Финансовый кризис, возникший из-за нефтяных спекуляций на нью-йоркской бирже"
+    ],
+    "explanation_de": "Nach dem Jom-Kippur-Krieg stoppten arabische Ölstaaten 1973 die Lieferungen an Westen. In Deutschland gab es autofreie Sonntage, der Ölpreis vervierfachte sich, Stagflation folgte.",
+    "explanation_ru": "После войны Судного дня арабские нефтедобывающие страны остановили в 1973 году поставки на Запад. В Германии вводили воскресенья без автомобилей, цена нефти выросла вчетверо, последовала стагфляция.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1973 CE",
+    "tags": [
+      "Wirtschaft",
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Ölschock führte zur Entwicklung von Kraftstoffsparvorschriften und Kleinwagen in den USA.",
+        "ru": "Нефтяной шок привёл к разработке норм экономии топлива и малолитражных автомобилей в США."
+      },
+      {
+        "de": "Norwegen begann in den 1970ern sein Nordseeöl zu fördern – und wurde dadurch reich.",
+        "ru": "В 1970-х Норвегия начала добывать нефть в Северном море — и тем самым разбогатела."
+      },
+      {
+        "de": "Deutschland, Niederlande und Belgien kannten 1973 autofreie Sonntage – Straßen wurden für Radfahrer genutzt.",
+        "ru": "В 1973 году Германия, Нидерланды и Бельгия ввели безавтомобильные воскресенья — дороги использовались велосипедистами."
+      }
+    ]
+  },
+  {
+    "id": 9034,
+    "question_de": "Was war die Iranische Revolution (1979)?",
+    "question_ru": "Что такое Иранская революция (1979)?",
+    "correct_answer_de": "Khomeinis islamische Revolution stürzte den prowestlichen Schah – Iran wurde Islamische Republik",
+    "correct_answer_ru": "Исламская революция Хомейни свергла прозападного шаха — Иран стал Исламской Республикой",
+    "wrong_answers_de": [
+      "Ein kommunistischer Aufstand stürzte den iranischen Schah und errichtete eine sozialistische Republik",
+      "Eine nationalistische Revolution richtete Irans Unabhängigkeit gegen Sowjetunion und USA gleichzeitig",
+      "Saddam Husseins Irak griff Iran 1979 an und löste die iranische Revolution aus"
+    ],
+    "wrong_answers_ru": [
+      "Коммунистический переворот сверг иранского шаха и установил социалистическую республику",
+      "Националистическая революция добилась независимости Ирана одновременно от СССР и США",
+      "Ирак Саддама Хусейна напал на Иран в 1979 году и спровоцировал иранскую революцию"
+    ],
+    "explanation_de": "Der prowestliche Schah wurde 1979 durch Khomeini gestürzt, der die Revolution aus dem Exil lenkte. 444 Tage hielten Geiselnehmer US-Diplomaten fest, was das Verhältnis dauerhaft belastete.",
+    "explanation_ru": "Прозападный шах был свергнут в 1979 году Хомейни, который руководил революцией из изгнания. 444 дня захватчики удерживали американских дипломатов, что надолго испортило отношения.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1979 CE",
+    "tags": [
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Khomeini kehrte aus dem Pariser Exil im Februar 1979 heim – empfangen von Millionen.",
+        "ru": "Хомейни вернулся из парижского изгнания в феврале 1979 года — встреченный миллионами."
+      },
+      {
+        "de": "Die USA hatten 1953 Irans demokratisch gewählten Premier Mosaddegh gestürzt – das nährte den Antiamerikanismus.",
+        "ru": "США в 1953 году свергли демократически избранного премьера Ирана Мосаддыка — что питало антиамериканизм."
+      },
+      {
+        "de": "Iranisch-irakischer Krieg (1980–1988) kostete 1 Million Leben – während USA beide Seiten bewaffneten.",
+        "ru": "Ирано-иракская война (1980–1988) унесла 1 миллион жизней — пока США вооружали обе стороны."
+      }
+    ]
+  },
+  {
+    "id": 9035,
+    "question_de": "Was war das Solidarność-Bewegung in Polen (1980)?",
+    "question_ru": "Что такое движение «Солидарность» в Польше (1980)?",
+    "correct_answer_de": "Unabhängige Gewerkschaft unter Wałęsa – erste freie Massenbewegung im Ostblock",
+    "correct_answer_ru": "Независимый профсоюз Валенсы — первое свободное массовое движение в Восточном блоке",
+    "wrong_answers_de": [
+      "Eine kommunistische Partei, die 1980 die polnische Regierung gegen Sowjetdruck stärkte",
+      "Ein militärischer Aufstand polnischer Offiziere gegen die sowjetische Besatzung",
+      "Eine religiöse Bewegung des Papstes Johannes Paul II. für polnische Unabhängigkeit"
+    ],
+    "wrong_answers_ru": [
+      "Коммунистическая партия, укрепившая в 1980 году польское правительство против советского давления",
+      "Военное восстание польских офицеров против советской оккупации",
+      "Религиозное движение Папы Иоанна Павла II за польскую независимость"
+    ],
+    "explanation_de": "Streiks in der Danziger Lenin-Werft brachten Lech Wałęsa an die Spitze der Solidarność mit 10 Millionen Mitgliedern. Nach dem Kriegsrecht 1981 überlebte sie im Untergrund und siegte 1989.",
+    "explanation_ru": "Забастовки на гданьской верфи вывели Леха Валенсу во главе «Солидарности» с 10 миллионами членов. После военного положения 1981 года она выжила в подполье и победила в 1989-м.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1980 CE",
+    "tags": [
+      "Politik",
+      "Europa"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Lech Wałęsa, ehemaliger Elektriker, erhielt 1983 den Friedensnobelpreis – und wurde 1990 Polens Präsident.",
+        "ru": "Лех Валенса, бывший электрик, получил в 1983 году Нобелевскую премию мира — а в 1990-м стал президентом Польши."
+      },
+      {
+        "de": "Papst Johannes Paul II. (Karol Wojtyła) kam aus Polen – sein erster Besuch 1979 war ein Massenereignis.",
+        "ru": "Папа Иоанн Павел II (Кароль Войтыла) был родом из Польши — его первый визит в 1979 году стал массовым событием."
+      },
+      {
+        "de": "Die Sowjetunion zog einen militärischen Einmarsch in Polen in Betracht – und entschied sich dagegen.",
+        "ru": "Советский Союз рассматривал возможность военного вторжения в Польшу — и отказался от него."
+      }
+    ]
+  },
+  {
+    "id": 9036,
+    "question_de": "Was war Tschernobyl (1986) und welche Folgen hatte die Katastrophe?",
+    "question_ru": "Что такое Чернобыль (1986) und каковы последствия катастрофы?",
+    "correct_answer_de": "Explosion im sowjetischen Atomkraftwerk – schlimmste Nuklearkatastrophe",
+    "correct_answer_ru": "Взрыв на советской атомной станции — худшая ядерная катастрофа",
+    "wrong_answers_de": [
+      "Ein nuklearer Testunfall in Sibirien, der nur lokale Auswirkungen hatte",
+      "Eine Gasexplosion in einer ukrainischen Chemiefabrik, die Kiew vergiftete",
+      "Ein Reaktorunfall in Weißrussland durch deutschen Ingenieurfehler"
+    ],
+    "wrong_answers_ru": [
+      "Ядерная авария в Сибири, имевшая лишь местные последствия",
+      "Взрыв газа на украинском химическом заводе, отравившем Киев",
+      "Авария реактора в Белоруссии из-за ошибки немецкого инженера"
+    ],
+    "explanation_de": "Am 26. April 1986 explodierte Reaktor 4 in Tschernobyl. Die Sowjetunion schwieg 36 Stunden, 50.000 Liquidatoren bekämpften den Brand. Die Katastrophe schwächte Gorbatschow und beschleunigte den Zerfall.",
+    "explanation_ru": "26 апреля 1986 года взорвался 4-й реактор в Чернобыле. СССР молчал 36 часов, 50 000 ликвидаторов боролись с пожаром. Катастрофа ослабила Горбачёва и ускорила распад.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1986 CE",
+    "tags": [
+      "Wissenschaft",
+      "Russland"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Die Liquidatoren, die den Reaktorbrand bekämpften, wussten oft nicht, was sie riskierten.",
+        "ru": "Ликвидаторы, тушившие пожар реактора, зачастую не знали, чем рискуют."
+      },
+      {
+        "de": "Die Sperrzone (30 km) ist heute ein unfreiwilliges Naturreservat – Wildtiere haben sich erholt.",
+        "ru": "Зона отчуждения (30 км) сегодня является непреднамеренным природным заповедником — дикая природа восстановилась."
+      },
+      {
+        "de": "Gorbatschow sagte später, Tschernobyl sei der wahre Auslöser des UdSSR-Zerfalls gewesen.",
+        "ru": "Горбачёв впоследствии сказал, что Чернобыль был настоящим спусковым крючком распада СССР."
+      }
+    ]
+  },
+  {
+    "id": 9037,
+    "question_de": "Was waren die Terroranschläge vom 11. September 2001?",
+    "question_ru": "Что такое теракты 11 сентября 2001 года?",
+    "correct_answer_de": "Al-Qaida entführte 4 Flugzeuge – 3000 Tote, «Krieg gegen den Terror»",
+    "correct_answer_ru": "«Аль-Каида» угнала 4 самолёта — 3000 погибших, «война с террором»",
+    "wrong_answers_de": [
+      "Irakische Terroristen sprengten das WTC – USA griffen Irak an",
+      "Nordkoreanische Raketen beschossen New York – NATO antwortete",
+      "Eine palästinensische Miliz entführte Flugzeuge – USA griffen Gaza an"
+    ],
+    "wrong_answers_ru": [
+      "Иракские террористы взорвали ВТЦ — США напали на Ирак",
+      "Северокорейские ракеты обстреляли Нью-Йорк — НАТО ответила",
+      "Палестинское ополчение угнало самолёты — США ударили по Газе"
+    ],
+    "explanation_de": "19 Terroristen, 15 davon Saudis, entführten vier Flugzeuge: zwei trafen das World Trade Center, eines das Pentagon, eines stürzte in Pennsylvania ab. Es folgten Kriege in Afghanistan und im Irak.",
+    "explanation_ru": "19 террористов, из них 15 саудовцев, угнали четыре самолёта: два врезались во Всемирный торговый центр, один в Пентагон, один упал в Пенсильвании. Последовали войны в Афганистане и Ираке.",
+    "difficulty": "easy",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "2001 CE",
+    "tags": [
+      "Krieg",
+      "Amerika",
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Das World Trade Center war das meistfotografierte Gebäude der Welt – die Wolkenkratzer wurden zum Symbol.",
+        "ru": "Всемирный торговый центр был самым фотографируемым зданием в мире — небоскрёбы стали символом."
+      },
+      {
+        "de": "Osama bin Laden wurde erst 2011 in Pakistan durch US-Spezialkräfte getötet – 10 Jahre später.",
+        "ru": "Усама бин Ладен был убит лишь в 2011 году в Пакистане американским спецназом — спустя 10 лет."
+      },
+      {
+        "de": "Die Patriot Act und NSA-Massenüberwachung veränderten das Verhältnis von Sicherheit und Freiheit dauerhaft.",
+        "ru": "Патриотический акт и массовая слежка АНБ навсегда изменили соотношение безопасности и свободы."
+      }
+    ]
+  },
+  {
+    "id": 9038,
+    "question_de": "Was war die Erfindung der Atomkraft und welche Länder nutzten sie friedlich?",
+    "question_ru": "Что такое изобретение атомной энергии и какие страны использовали её мирно?",
+    "correct_answer_de": "Nach dem Manhattan-Projekt wurden Atomreaktoren für Strom gebaut – das erste Kraftwerk 1954 in der UdSSR",
+    "correct_answer_ru": "После Манхэттенского проекта были построены атомные реакторы для выработки электроэнергии — первая электростанция в 1954 году в СССР",
+    "wrong_answers_de": [
+      "Das erste kommerzielle Atomkraftwerk wurde 1945 in den USA als Teil des Manhattan-Projekts gebaut",
+      "England baute 1950 das erste Atomkraftwerk – als Rüstungsinfrastruktur nach dem Zweiten Weltkrieg",
+      "Frankreich wurde das erste Land mit rein nuklearer Stromversorgung durch das Projekt 'Euratom'"
+    ],
+    "wrong_answers_ru": [
+      "Первая коммерческая атомная электростанция была построена в 1945 году в США в рамках Манхэттенского проекта",
+      "Англия построила первую атомную электростанцию в 1950 году — как военную инфраструктуру после Второй мировой войны",
+      "Франция стала первой страной с чисто ядерным энергоснабжением в рамках проекта «Евратом»"
+    ],
+    "explanation_de": "Das Manhattan-Projekt (1942–45) entwickelte die erste Atombombe. 1954 ging in Obninsk das erste Kernkraftwerk ans Netz; Frankreich bezieht heute über 70 Prozent Atomstrom, Deutschland stieg 2023 aus.",
+    "explanation_ru": "Манхэттенский проект (1942–1945) создал первую атомную бомбу. В 1954 году в Обнинске заработала первая АЭС; Франция получает сегодня свыше 70 процентов электроэнергии от атома, Германия вышла из неё в 2023-м.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1954 CE",
+    "tags": [
+      "Wissenschaft",
+      "Energie"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Robert Oppenheimer, 'Vater der Atombombe', zitierte nach dem Test die Bhagavad-Gita: 'Ich bin der Tod geworden.'",
+        "ru": "Роберт Оппенгеймер, «отец атомной бомбы», процитировал после испытания Бхагавад-гиту: «Я стал смертью»."
+      },
+      {
+        "de": "Der Unfall von Three Mile Island (1979) und Tschernobyl (1986) stoppten den westlichen Atomkraftausbau.",
+        "ru": "Авария на АЭС Три-Майл-Айленд (1979) и Чернобыль (1986) остановили западное развитие атомной энергетики."
+      },
+      {
+        "de": "Fukushima (2011) veranlasste Deutschland zum schnellen Atomausstieg – obwohl Deutschland 10.000 km von Japan entfernt ist.",
+        "ru": "Фукусима (2011) побудила Германию к быстрому ядерному отказу — хотя Германия находится в 10 000 км от Японии."
+      }
+    ]
+  },
+  {
+    "id": 9039,
+    "question_de": "Was war der Genozid in Ruanda (1994)?",
+    "question_ru": "Что такое геноцид в Руанде (1994)?",
+    "correct_answer_de": "Hutu-Extremisten ermordeten in 100 Tagen etwa 800.000 Tutsi",
+    "correct_answer_ru": "Экстремисты-хуту за 100 дней убили около 800 000 тутси",
+    "wrong_answers_de": [
+      "Bürgerkrieg zwischen Regierung und Rebellen mit 200.000 Toten",
+      "Eine Hungersnot durch Dürre und Krieg, die Ruanda 1994 verwüstete",
+      "Ein somalischer Bürgerkrieg griff auf Ruanda über"
+    ],
+    "wrong_answers_ru": [
+      "Гражданская война между правительством и повстанцами с 200 000 погибших",
+      "Голод из-за засухи и войны, опустошивший Руанду в 1994 году",
+      "Гражданская война в Сомали перекинулась на Руанду"
+    ],
+    "explanation_de": "Belgische Kolonisatoren hatten Hutu und Tutsi als «Rassen» eingeteilt. Nach dem Abschuss des Präsidentenflugzeugs 1994 ermordeten Extremisten in 100 Tagen 800.000 Menschen; UN-General Dallaire bat vergeblich um Verstärkung.",
+    "explanation_ru": "Бельгийские колонизаторы разделили хуту и тутси на «расы». После крушения президентского самолёта в 1994 году экстремисты за 100 дней убили 800 000 человек; генерал ООН Даллер тщетно просил подкрепления.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1994 CE",
+    "tags": [
+      "Afrika",
+      "Gesellschaft",
+      "Krieg"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Radio Mille Collines hetzte zum Mord auf – Technologie als Genozid-Instrument.",
+        "ru": "Радио «Тысяча холмов» подстрекало к убийствам — технология как инструмент геноцида."
+      },
+      {
+        "de": "USA-Präsident Clinton bezeichnete das Versagen in Ruanda als seinen größten Fehler.",
+        "ru": "Президент США Клинтон назвал бездействие в Руанде своей крупнейшей ошибкой."
+      },
+      {
+        "de": "Paul Rusesabagina rettete über 1.000 Menschen im Hotel des Mille Collines – verewigt im Film 'Hotel Ruanda'.",
+        "ru": "Поль Русесабагина спас более 1000 человек в отеле «Тысяча холмов» — увековеченный в фильме «Отель «Руанда»»."
+      }
+    ]
+  },
+  {
+    "id": 9040,
+    "question_de": "Was war das Weltraumprogramm der Sowjetunion und seine Errungenschaften?",
+    "question_ru": "Что такое советская космическая программа и каковы её достижения?",
+    "correct_answer_de": "Die UdSSR war zuerst im All: Sputnik, Gagarin, Tereschkowa",
+    "correct_answer_ru": "СССР был первым в космосе: Спутник, Гагарин, Терешкова",
+    "wrong_answers_de": [
+      "Die USA waren überall zuerst – Sowjets holten erst nach der Mondlandung auf",
+      "Sowjets und Amerikaner starteten alle Expeditionen gemeinsam",
+      "Sowjets landeten 1972 auf dem Mond – ein Jahr nach den Amerikanern"
+    ],
+    "wrong_answers_ru": [
+      "США были первыми везде — Советы догнали лишь после высадки на Луну",
+      "Советы и американцы вместе запускали все экспедиции",
+      "Советы высадились на Луне в 1972 году — через год после американцев"
+    ],
+    "explanation_de": "Chefingenieur Koroljow leitete das Programm im Geheimen, Juri Gagarin flog am 12. April 1961. Nach Koroljows Tod 1966 verpassten die Sowjets die Mondlandung; heute ist die ISS ein gemeinsames Projekt.",
+    "explanation_ru": "Главный конструктор Сергей Королёв руководил программой тайно, Юрий Гагарин полетел 12 апреля 1961 года. После смерти Королёва в 1966 году СССР упустил высадку на Луну; сегодня МКС — общий проект.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1961 CE",
+    "tags": [
+      "Wissenschaft",
+      "Russland"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Gagarins letzte Worte vor dem Start: 'Pojechali!' (Los geht's!) – wurde zum sowjetischen Symbol.",
+        "ru": "Последние слова Гагарина перед стартом: «Поехали!» — стали советским символом."
+      },
+      {
+        "de": "Korolyovs Name wurde erst nach seinem Tod 1966 enthüllt – als Staatsgeheimnis geführt.",
+        "ru": "Имя Королёва было раскрыто лишь после его смерти в 1966 году — оно было государственной тайной."
+      },
+      {
+        "de": "Valentina Tereschkowa war Textilarbeiterin und Hobby-Fallschirmspringerin – vor ihrer Weltraummission.",
+        "ru": "Валентина Терешкова была текстильщицей и любителем-парашютисткой — до своей космической миссии."
+      }
+    ]
+  },
+  {
+    "id": 9041,
+    "question_de": "Was war der Erste Golfkrieg (1990–1991) und wie endete er?",
+    "question_ru": "Что такое Первая война в Персидском заливе (1990–1991) и чем она закончилась?",
+    "correct_answer_de": "Irak besetzte Kuwait – eine Koalition unter US-Führung befreite es",
+    "correct_answer_ru": "Ирак оккупировал Кувейт — коалиция под руководством США освободила его",
+    "wrong_answers_de": [
+      "USA griffen Irak an, weil Saddam Hussein Massenvernichtungswaffen einsetzte",
+      "Iran und Irak kämpften um Ölfelder, bis die USA vermittelten",
+      "Israelische Streitkräfte befreiten Kuwait nach Saddam Husseins Invasion"
+    ],
+    "wrong_answers_ru": [
+      "США напали на Ирак, потому что Саддам Хусейн применил оружие массового уничтожения",
+      "Иран и Ирак воевали за нефть, пока США не вмешались как посредник",
+      "Израильские силы освободили Кувейт после вторжения Саддама Хусейна"
+    ],
+    "explanation_de": "Saddam Hussein besetzte 1990 Kuwait. Mit UNO-Resolution 678 griff eine Koalition aus 35 Staaten an: sechs Wochen Luftkrieg, 100 Stunden Bodenkrieg. Irak verlor, Saddam blieb an der Macht.",
+    "explanation_ru": "Саддам Хусейн занял в 1990 году Кувейт. По резолюции ООН 678 коалиция из 35 государств нанесла удар: шесть недель воздушной войны и 100 часов наземной. Саддам остался у власти.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1991 CE",
+    "tags": [
+      "Krieg",
+      "Amerika",
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "CNN übertrug den Krieg live – erste Live-Übertragung eines Krieges in Echtzeit.",
+        "ru": "CNN транслировал войну в прямом эфире — первая прямая трансляция войны в реальном времени."
+      },
+      {
+        "de": "Iraks Armee zündete 700 kuwaitische Ölfelder an – eine ökologische Katastrophe.",
+        "ru": "Армия Ирака подожгла 700 кувейтских нефтяных скважин — экологическая катастрофа."
+      },
+      {
+        "de": "Bush Senior entschied sich gegen einen Marsch auf Bagdad – sein Sohn Bush Junior würde das 2003 anders entscheiden.",
+        "ru": "Буш-старший отказался от похода на Багдад — его сын Буш-младший в 2003 году решит иначе."
+      }
+    ]
+  },
+  {
+    "id": 9042,
+    "question_de": "Was war die europäische Integration und wie entstand die EU?",
+    "question_ru": "Что такое европейская интеграция и как возник ЕС?",
+    "correct_answer_de": "Schrittweise Integration: Montanunion, EWG, EU (Maastricht 1993)",
+    "correct_answer_ru": "Постепенная интеграция: Объединение угля и стали, ЕЭС, ЕС (Маастрихт 1993)",
+    "wrong_answers_de": [
+      "Die NATO schuf 1949 die EU als politisches Gegenstück",
+      "De Gaulle und Adenauer gründeten 1963 die EU",
+      "Die UNO errichtete 1945 eine europäische Wirtschaftsunion"
+    ],
+    "wrong_answers_ru": [
+      "НАТО создала в 1949 году ЕС как политический противовес",
+      "Де Голль и Аденауэр основали в 1963 году ЕС",
+      "ООН создала в 1945 году европейский экономический союз"
+    ],
+    "explanation_de": "Monnet und Schuman gründeten 1952 die Montanunion, 1957 folgten die Römischen Verträge. 1993 entstand die EU, 1999 der Euro, 2004 traten zehn Länder bei, 2016 stimmte Großbritannien für den Brexit.",
+    "explanation_ru": "Моне и Шуман основали в 1952 году Объединение угля и стали, в 1957-м последовали Римские договоры. В 1993 году возник ЕС, в 1999-м евро, в 2004-м вступили десять стран.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1957 CE",
+    "tags": [
+      "Wirtschaft",
+      "Europa",
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Satz 'Nie wieder Krieg' trieb die europäische Integration an – Frankreich und Deutschland voran.",
+        "ru": "Лозунг «Никогда больше войны» двигал европейскую интеграцию — во главе Франция и Германия."
+      },
+      {
+        "de": "Der Euro ist die zweite Weltwährung nach dem Dollar – und die erste supranationale Währung der Geschichte.",
+        "ru": "Евро — вторая мировая валюта после доллара и первая наднациональная валюта в истории."
+      },
+      {
+        "de": "Großbritannien blieb dem Euro fern – und trat 2020 nach Brexit vollständig aus der EU aus.",
+        "ru": "Великобритания держалась в стороне от евро — и после Brexit в 2020 году полностью вышла из ЕС."
+      }
+    ]
+  },
+  {
+    "id": 9043,
+    "question_de": "Was war das Jugoslawien-Zerfall und die Balkankriege (1991–2001)?",
+    "question_ru": "Что такое распад Югославии и Балканские войны (1991–2001)?",
+    "correct_answer_de": "Nach Titos Tod zerfiel Jugoslawien in ethnischen Kriegen",
+    "correct_answer_ru": "После смерти Тито Югославия распалась в этнических войнах",
+    "wrong_answers_de": [
+      "Jugoslawien löste sich 1991 friedlich in 5 Staaten auf",
+      "Russland annektierte Serbien und Montenegro",
+      "Die NATO teilte Jugoslawien in Einflusszonen auf"
+    ],
+    "wrong_answers_ru": [
+      "Югославия мирно распалась в 1991 году на 5 государств",
+      "Россия аннексировала Сербию и Черногорию",
+      "НАТО разделила Югославию на зоны влияния"
+    ],
+    "explanation_de": "Tito hielt Jugoslawien zusammen; nach seinem Tod 1980 wuchsen die Spannungen. 1991 erklärten Slowenien und Kroatien ihre Unabhängigkeit; 1995 wurden in Srebrenica 8.000 bosnische Muslime ermordet.",
+    "explanation_ru": "Тито удерживал Югославию вместе; после его смерти в 1980 году напряжение росло. В 1991 году Словения и Хорватия объявили независимость; в 1995-м в Сребренице убили 8 000 боснийских мусульман.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1993 CE",
+    "tags": [
+      "Krieg",
+      "Europa",
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "In Srebrenica (1995) wurden in wenigen Tagen 8.000 muslimische Männer und Jungen ermordet – unter Augen der UNO.",
+        "ru": "В Сребренице (1995) за несколько дней было убито 8 000 мусульман мужчин и мальчиков — на глазах у ООН."
+      },
+      {
+        "de": "Slobodan Milošević war der erste amtierende Staatschef, der vor dem Internationalen Strafgerichtshof angeklagt wurde.",
+        "ru": "Слободан Милошевич стал первым действующим главой государства, обвинённым Международным уголовным трибуналом."
+      },
+      {
+        "de": "Jugoslawien hatte 6 Republiken, 5 Nationen, 4 Sprachen, 3 Religionen, 2 Alphabete und 1 Partei.",
+        "ru": "Югославия имела 6 республик, 5 наций, 4 языка, 3 религии, 2 алфавита и 1 партию."
+      }
+    ]
+  },
+  {
+    "id": 9044,
+    "question_de": "Was war das Menschliche Genomprojekt (2003)?",
+    "question_ru": "Что такое Проект «Геном человека» (2003)?",
+    "correct_answer_de": "Vollständige Entschlüsselung des menschlichen Genoms (3 Mrd. Basenpaare)",
+    "correct_answer_ru": "Полная расшифровка генома человека (3 млрд пар оснований)",
+    "wrong_answers_de": [
+      "Die Erstellung einer Genbank aller Tierarten für den Naturschutz",
+      "Das erste erfolgreiche Klonexperiment an menschlichen Zellen",
+      "Die Erfindung der CRISPR-Genschere als Werkzeug zur Genveränderung"
+    ],
+    "wrong_answers_ru": [
+      "Создание генного банка всех видов животных для охраны природы",
+      "Первый успешный эксперимент по клонированию человеческих клеток",
+      "Изобретение ножниц CRISPR как инструмента изменения генов"
+    ],
+    "explanation_de": "Das Projekt startete 1990 mit 15 Ländern und kostete rund 3 Milliarden Dollar. 2003 war das Genom entschlüsselt; es hat nur etwa 20.000 Gene und ermöglicht personalisierte Medizin und DNA-Forensik.",
+    "explanation_ru": "Проект стартовал в 1990 году с участием 15 стран и стоил около 3 миллиардов долларов. К 2003 году геном расшифровали; в нём около 20 000 генов.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "2003 CE",
+    "tags": [
+      "Wissenschaft",
+      "Medizin"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Craig Venter sequenzierte parallel in einem privaten Projekt das Genom – und versuchte es zu patentieren.",
+        "ru": "Крейг Вентер параллельно секвенировал геном в частном проекте — и попытался его запатентовать."
+      },
+      {
+        "de": "Ein einzelnes menschliches Genom als Text würde 3.000 Bücher mit je 1.000 Seiten füllen.",
+        "ru": "Один человеческий геном в виде текста заполнил бы 3 000 книг по 1 000 страниц каждая."
+      },
+      {
+        "de": "Heute kann ein Genom für 1000 Dollar sequenziert werden – 2003 kostete es Milliarden.",
+        "ru": "Сегодня секвенирование генома стоит 1000 долларов — в 2003-м оно стоило миллиарды."
+      }
+    ]
+  },
+  {
+    "id": 9045,
+    "question_de": "Was war der Zweite Irakkrieg (2003) und seine Folgen?",
+    "question_ru": "Что такое Вторая иракская война (2003) и её последствия?",
+    "correct_answer_de": "USA und Koalition griffen Irak an – die Massenvernichtungswaffen gab es nicht",
+    "correct_answer_ru": "США и коалиция напали на Ирак — оружия массового поражения не оказалось",
+    "wrong_answers_de": [
+      "USA griffen Irak nach dem Beweis von Atomwaffen an und entwaffneten das Land erfolgreich",
+      "Irak griff Kuwait erneut an – internationale Koalition befreite Kuwait zum zweiten Mal",
+      "Irak entwickelte Chemiewaffen und setzte sie gegen Kurden ein, was den Krieg auslöste"
+    ],
+    "wrong_answers_ru": [
+      "США напали на Ирак после доказательств наличия ядерного оружия и успешно разоружили страну",
+      "Ирак снова атаковал Кувейт — международная коалиция во второй раз освободила Кувейт",
+      "Ирак разработал химическое оружие и применил его против курдов, что спровоцировало войну"
+    ],
+    "explanation_de": "Bush und Blair behaupteten, Saddam besitze Massenvernichtungswaffen; Inspektoren fanden nichts. Die Invasion im März 2003 stürzte ihn, doch Instabilität führte zu Al-Qaida im Irak und zum IS ab 2013.",
+    "explanation_ru": "Буш и Блэр утверждали, что у Саддама есть оружие массового уничтожения; инспекторы ничего не нашли. Вторжение 2003 года его свергло, но нестабильность привела к «Аль-Каиде» в Ираке и ИГ.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "2003 CE",
+    "tags": [
+      "Krieg",
+      "Amerika",
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Colin Powell hielt vor dem UNO-Sicherheitsrat eine gefälschte Präsentation mit 'Beweisen' – er nannte es später seinen 'Makel'.",
+        "ru": "Колин Пауэлл выступил перед Советом Безопасности ООН с сфабрикованной презентацией «доказательств» — впоследствии назвал это своим «пятном»."
+      },
+      {
+        "de": "Frankreich und Deutschland lehnten den Krieg ab – was zu 'Freedom Fries' in den USA führte.",
+        "ru": "Франция и Германия отвергли войну — что привело в США к переименованию картошки фри в «картошку свободы»."
+      },
+      {
+        "de": "Saddam Hussein wurde 2003 in einem Erdloch versteckt gefunden – und 2006 hingerichtet.",
+        "ru": "Саддам Хусейн был найден в 2003 году, прячущимся в земляной яме — и казнён в 2006-м."
+      }
+    ]
+  },
+  {
+    "id": 9046,
+    "question_de": "Was war die Klimabewegung und das Kyoto-Protokoll (1997)?",
+    "question_ru": "Что такое климатическое движение и Киотский протокол (1997)?",
+    "correct_answer_de": "Abkommen zur Senkung der Treibhausgase mit ersten verbindlichen Zielen",
+    "correct_answer_ru": "Соглашение о снижении парниковых газов с первыми обязательными целями",
+    "wrong_answers_de": [
+      "Ein Abkommen zur Finanzierung erneuerbarer Energien in Entwicklungsländern",
+      "Ein Vertrag zur Abschaffung von FCKW zum Schutz der Ozonschicht",
+      "Ein UNO-Beschluss zur Reduzierung von Atommüll und nuklearen Altlasten"
+    ],
+    "wrong_answers_ru": [
+      "Соглашение о финансировании возобновляемой энергетики в развивающихся странах",
+      "Договор об отмене ХФУ для защиты озонового слоя",
+      "Решение ООН о сокращении ядерных отходов и ядерного наследия"
+    ],
+    "explanation_de": "Der IPCC belegte 1988 den Klimawandel durch CO2, die Rio-Konferenz folgte 1992. Kyoto 1997 verlangte von Industrieländern 5,2 Prozent weniger Emissionen, die USA ratifizierten nicht; 2015 kam Paris.",
+    "explanation_ru": "МГЭИК подтвердила в 1988 году изменение климата из-за CO2, в 1992-м прошла конференция в Рио. Киото 1997 года требовал снизить выбросы на 5,2 процента, США его не ратифицировали.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1997 CE",
+    "tags": [
+      "Wissenschaft",
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Greta Thunberg begann 2018 ihre Schulstreiks – als Schülerin wurde sie zur internationalen Klimaaktivistin.",
+        "ru": "Грета Тунберг начала школьные забастовки в 2018 году — как школьница стала международной климатической активисткой."
+      },
+      {
+        "de": "Kanada, einziges Land, das Kyoto ratifizierte und später wieder austrat (2011).",
+        "ru": "Канада — единственная страна, ратифицировавшая Киото и впоследствии вышедшая из него (2011)."
+      },
+      {
+        "de": "Das Ozonloch war das erste globale Umweltproblem, das erfolgreich gelöst wurde – Montrealer Protokoll 1987.",
+        "ru": "Озоновая дыра стала первой глобальной экологической проблемой, успешно решённой людьми — Монреальский протокол 1987 года."
+      }
+    ]
+  },
+  {
+    "id": 9047,
+    "question_de": "Was war Mao Zedong und was hinterließ er?",
+    "question_ru": "Кто такой Мао Цзэдун и каково его наследие?",
+    "correct_answer_de": "Chinesischer Revolutionär (1893–1976) – gründete 1949 die Volksrepublik China",
+    "correct_answer_ru": "Китайский революционер (1893–1976) — основал в 1949 году КНР",
+    "wrong_answers_de": [
+      "Chinesischer Kaiser, der nach Konfuzius regierte",
+      "Reformer Chinas, der die Marktwirtschaft einführte",
+      "General, der 1937 Japan besiegte und China zur Weltmacht machte"
+    ],
+    "wrong_answers_ru": [
+      "Китайский император, правивший по Конфуцию",
+      "Реформатор Китая, введший рыночную экономику",
+      "Генерал, победивший Японию в 1937 году и превративший Китай в мировую державу"
+    ],
+    "explanation_de": "Mao führte die Kommunisten im Langen Marsch und gründete 1949 die Volksrepublik. Der «Große Sprung» (1958–62) kostete 15–55 Millionen Menschen das Leben; es folgte die Kulturrevolution.",
+    "explanation_ru": "Мао вёл коммунистов в Великом походе и основал в 1949 году Китайскую Народную Республику. «Большой скачок» (1958–1962) унёс 15–55 миллионов жизней; затем последовала «культурная революция».",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1950 CE",
+    "tags": [
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Maos Bild hängt noch immer am Tiananmen-Tor in Peking – trotz seiner verheerenden Fehler.",
+        "ru": "Портрет Мао по-прежнему висит на воротах Тяньаньмэнь в Пекине — несмотря на его катастрофические ошибки."
+      },
+      {
+        "de": "Der Lange Marsch (12.000 km zu Fuß) wurde zur kommunistischen Gründungslegende Chinas.",
+        "ru": "Великий поход (12 000 км пешком) стал коммунистической основополагающей легендой Китая."
+      },
+      {
+        "de": "Nixon besuchte 1972 China – ein historischer Durchbruch, der Mao und Kissinger zusammenbrachte.",
+        "ru": "Никсон посетил Китай в 1972 году — исторический прорыв, сведший вместе Мао и Киссинджера."
+      }
+    ]
+  },
+  {
+    "id": 9048,
+    "question_de": "Was war die Hippiebewegung und die 68er-Revolte?",
+    "question_ru": "Что такое движение хиппи и революция 1968 года?",
+    "correct_answer_de": "Eine weltweite Jugendbewegung gegen Vietnamkrieg, Bürgerrechte, Kapitalismus und sexuelle Befreiung",
+    "correct_answer_ru": "Всемирное молодёжное движение против Вьетнамской войны, за гражданские права, против капитализма и за сексуальное освобождение",
+    "wrong_answers_de": [
+      "Eine politische Partei der Grünen, die ab 1968 in Europa für Umweltschutz kämpfte",
+      "Ein Musikstil (Rock'n'Roll), der durch Elvis und Beatles politischen Einfluss gewann",
+      "Eine religiöse Erweckungsbewegung, die traditionelle Werte gegen die Modernisierung verteidigte"
+    ],
+    "wrong_answers_ru": [
+      "Политическая партия зелёных, боровшаяся в Европе за охрану окружающей среды с 1968 года",
+      "Музыкальный стиль (рок-н-ролл), обретший политическое влияние через Элвиса и Beatles",
+      "Религиозное движение пробуждения, защищавшее традиционные ценности от модернизации"
+    ],
+    "explanation_de": "Im Mai 1968 streikten in Paris Studenten und Arbeiter gegen de Gaulle, in den USA wuchs der Protest gegen Vietnam. Langfristig förderte die Revolte Feminismus, Umweltbewegung und Individualisierung.",
+    "explanation_ru": "В мае 1968 года в Париже студенты и рабочие бастовали против де Голля, в США росли протесты против Вьетнама. В долгосрочной перспективе бунт способствовал феминизму, экологическому движению и индивидуализации.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1968 CE",
+    "tags": [
+      "Gesellschaft",
+      "Kultur"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Im Pariser Mai 68 war de Gaulle so geschockt, dass er heimlich in eine NATO-Basis in Deutschland floh.",
+        "ru": "В мае 68-го в Париже де Голль был настолько потрясён, что тайно бежал на базу НАТО в Германии."
+      },
+      {
+        "de": "Woodstock 1969: 400.000 Menschen – 3 Tage Musik, 2 Todesfälle, 3 Geburten.",
+        "ru": "Вудсток 1969: 400 000 человек — 3 дня музыки, 2 смерти, 3 рождения."
+      },
+      {
+        "de": "Die Beatles lösten sich 1970 auf – ihr Einfluss auf die 60er-Kultur war vergleichbar dem eines Mediums.",
+        "ru": "Beatles распались в 1970 году — их влияние на культуру 60-х сравнимо с влиянием средства массовой информации."
+      }
+    ]
+  },
+  {
+    "id": 9049,
+    "question_de": "Was war die Entdeckung des Schwarzen Lochs und die Allgemeine Relativitätstheorie?",
+    "question_ru": "Что такое открытие чёрной дыры и общая теория относительности?",
+    "correct_answer_de": "Einstein formulierte 1915 die Allgemeine Relativitätstheorie",
+    "correct_answer_ru": "Эйнштейн сформулировал в 1915 году общую теорию относительности",
+    "wrong_answers_de": [
+      "Hawking entdeckte 1974 das Schwarze Loch per Teleskop",
+      "Max Planck bewies 1900 Schwarze Löcher durch Quantenmechanik",
+      "Das erste Schwarze Loch fotografierte 2019 das Event Horizon Telescope"
+    ],
+    "wrong_answers_ru": [
+      "Хокинг открыл в 1974 году чёрную дыру телескопом",
+      "Макс Планк доказал в 1900 году чёрные дыры квантовой механикой",
+      "Первую чёрную дыру сфотографировал в 2019 году Event Horizon Telescope"
+    ],
+    "explanation_de": "Einstein entwickelte 1905 die Spezielle Relativitätstheorie mit E=mc², 1915 die Allgemeine: Gravitation krümmt Raum-Zeit. Schwarzschild berechnete 1916 Schwarze Löcher; 2019 entstand das erste Foto.",
+    "explanation_ru": "Эйнштейн создал в 1905 году специальную теорию относительности с E=mc², в 1915-м общую: гравитация искривляет пространство-время. Шварцшильд рассчитал в 1916 году чёрные дыры; в 2019-м получен первый снимок.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1915 CE",
+    "tags": [
+      "Wissenschaft"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Einstein floh 1933 vor den Nazis in die USA – und warnte Präsident Roosevelt vor der Atombombe.",
+        "ru": "Эйнштейн бежал от нацистов в США в 1933 году — и предупредил президента Рузвельта об атомной бомбе."
+      },
+      {
+        "de": "Einsteins Gehirn wurde 1955 ohne Erlaubnis entnommen – Forscher suchten nach dem Geheimnis seines Genies.",
+        "ru": "Мозг Эйнштейна был извлечён в 1955 году без разрешения — исследователи искали секрет его гения."
+      },
+      {
+        "de": "Das erste Schwarze-Loch-Foto (2019) entstand durch ein weltweites Teleskopnetzwerk – großartige internationale Zusammenarbeit.",
+        "ru": "Первое фото чёрной дыры (2019) было получено мировой телескопической сетью — выдающееся международное сотрудничество."
+      }
+    ]
+  },
+  {
+    "id": 9050,
+    "question_de": "Was war die indische Unabhängigkeit (1947) und wie verlief sie?",
+    "question_ru": "Что такое независимость Индии (1947) и как она происходила?",
+    "correct_answer_de": "Indien wurde am 15. August 1947 unabhängig – geteilt in zwei Staaten",
+    "correct_answer_ru": "Индия стала независимой 15 августа 1947 года — разделена на два государства",
+    "wrong_answers_de": [
+      "Indien wurde 1945 nach dem Ende des Zweiten Weltkriegs friedlich unabhängig",
+      "Gandhis Gewaltlosigkeit erzwang eine sofortige Unabhängigkeit 1942 ohne Teilung",
+      "Indien wurde 1950 nach gescheiterten Verfassungsgesprächen entlassen"
+    ],
+    "wrong_answers_ru": [
+      "Индия мирно стала независимой в 1945 году после окончания Второй мировой войны",
+      "Ненасилие Ганди принудило к немедленной независимости в 1942 году без раздела",
+      "Индию отпустили в 1950 году после провала конституционных переговоров"
+    ],
+    "explanation_de": "Kongress unter Gandhi und Muslim-Liga unter Jinnah forderten Selbstverwaltung, Mountbatten teilte Indien. Bei der Teilung flohen 14 Millionen Menschen, Hunderttausende starben; 1948 wurde Gandhi ermordet.",
+    "explanation_ru": "Конгресс под руководством Ганди и Мусульманская лига под руководством Джинны требовали самоуправления, Маунтбэттен разделил Индию. При разделе бежали 14 миллионов человек, сотни тысяч погибли; в 1948 году убили Ганди.",
+    "difficulty": "medium",
+    "category": "20. Jahrhundert",
+    "type": "factual",
+    "period": "1947 CE",
+    "tags": [
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Nehru sprach in seiner Rede: 'Um Mitternacht schlägt die Welt die Augen auf, Indien erwacht zum Leben.'",
+        "ru": "Неру произнёс в своей речи: «В полночь мир спит — Индия пробуждается к жизни»."
+      },
+      {
+        "de": "Pakistan wurde zweimal geteilt: 1947 (West- und Ostpakistan) und 1971 (Bangladesh).",
+        "ru": "Пакистан был разделён дважды: в 1947-м (Западный и Восточный Пакистан) и в 1971-м (Бангладеш)."
+      },
+      {
+        "de": "Indien und Pakistan führten seitdem 4 Kriege – und beide haben Atomwaffen.",
+        "ru": "С тех пор Индия и Пакистан провели 4 войны — и обе страны имеют ядерное оружие."
+      }
+    ]
+  }
+]

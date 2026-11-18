@@ -1,0 +1,1047 @@
+[
+  {
+    "id": 8126,
+    "question_de": "Was war die Entstehung der modernen Demokratie in England (Reformgesetze)?",
+    "question_ru": "Что такое возникновение современной демократии в Англии (реформенные законы)?",
+    "correct_answer_de": "Die Reform Acts (1832–1884) weiteten das Wahlrecht in Großbritannien aus",
+    "correct_answer_ru": "Акты о реформе (1832–1884) расширили избирательное право в Британии",
+    "wrong_answers_de": [
+      "Das Parlament wurde 1832 erstmals demokratisch gewählt",
+      "Die Reform Acts schafften das House of Lords ab und führten Volksabstimmungen ein",
+      "England führte das Frauenwahlrecht als erstes Land 1884 durch die Reform Acts ein"
+    ],
+    "wrong_answers_ru": [
+      "Парламент впервые был избран демократически в 1832 году",
+      "Реформенные акты упразднили Палату лордов и ввели референдумы",
+      "Англия ввела женское избирательное право первой в 1884 году через реформенные акты"
+    ],
+    "explanation_de": "Vor 1832 gab es «Rotten Boroughs» ohne Einwohner. Die Reform Acts von 1832, 1867 und 1884 erweiterten das Wahlrecht auf Mittelklasse, Stadtarbeiter und Landarbeiter, Frauen blieben ausgeschlossen.",
+    "explanation_ru": "До 1832 года существовали «гнилые местечки» без жителей. Реформы 1832, 1867 и 1884 годов расширили избирательное право на средний класс, городских и сельских рабочих, а женщины оставались исключены.",
+    "difficulty": "medium",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1850 CE",
+    "tags": [
+      "England",
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Old Sarum: ein Rotten Borough mit 11 Wählern wählte 2 Parlamentsabgeordnete – während Manchester keinen hatte.",
+        "ru": "Олд Сарум: гнилое местечко с 11 избирателями выбирало 2 депутата парламента — тогда как Манчестер не имел ни одного."
+      },
+      {
+        "de": "William Gladstone und Benjamin Disraeli rivalisierten ein Leben lang um die Reform – aus ganz verschiedenen Motiven.",
+        "ru": "Уильям Гладстон и Бенджамин Дизраэли всю жизнь соперничали в вопросах реформ — из совершенно разных побуждений."
+      },
+      {
+        "de": "Allgemeines Männerwahlrecht in England erst 1918 – zusammen mit ersten Frauen (ab 30 Jahren).",
+        "ru": "Всеобщее мужское избирательное право в Англии — лишь в 1918 году, вместе с первыми женщинами (с 30 лет)."
+      }
+    ]
+  },
+  {
+    "id": 8127,
+    "question_de": "Was war die Oper von Giuseppe Verdi und ihre nationale Bedeutung?",
+    "question_ru": "Что такое опера Джузеппе Верди и её национальное значение?",
+    "correct_answer_de": "Verdi wurde Italiens Nationalheld – «VERDI» als Akronym für Vittorio Emanuele",
+    "correct_answer_ru": "Верди стал национальным героем Италии — «VERDI» как акроним Виктора Эммануила",
+    "wrong_answers_de": [
+      "Verdi war ein österreichischer Komponist, der in Wien die romantische Oper begründete",
+      "Verdis Opern wurden erst nach seinem Tod berühmt – er lebte in relativer Armut",
+      "Verdi und Puccini schrieben gemeinsam die bekanntesten Opern der Romantik"
+    ],
+    "wrong_answers_ru": [
+      "Верди был австрийским композитором, основавшим романтическую оперу в Вене",
+      "Оперы Верди стали знамениты лишь после его смерти — при жизни он жил в относительной бедности",
+      "Верди и Пуччини совместно написали самые известные оперы романтизма"
+    ],
+    "explanation_de": "Verdis «Nabucco» (1842) wurde mit «Va, pensiero» zur Freiheitshymne. «Viva VERDI» stand im Risorgimento auch für «Viva Vittorio Emanuele Re d'Italia»; Verdi wurde Nationalikone.",
+    "explanation_ru": "«Набукко» Верди (1842) с хором «Va, pensiero» стал гимном свободы. «Viva VERDI» в Рисорджименто означало и «Да здравствует Виктор Эммануил, король Италии»; Верди стал национальной иконой.",
+    "difficulty": "medium",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1860 CE",
+    "tags": [
+      "Musik",
+      "Kunst",
+      "Italien"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Verdis erste Frau und beide Kinder starben, bevor er berühmt wurde – 'Nabucco' rettete ihn aus der Depression.",
+        "ru": "Первая жена Верди и оба ребёнка умерли до того, как он прославился — «Набукко» вытащил его из депрессии."
+      },
+      {
+        "de": "Bei Verdis Tod 1901 sangen Tausende auf den Straßen Mailands spontan 'Va, pensiero'.",
+        "ru": "Когда Верди умер в 1901 году, тысячи на улицах Милана стихийно запели «Va, pensiero»."
+      },
+      {
+        "de": "Verdi heiratete die Sopranistin Giuseppina Strepponi – gegen den Willen seiner konservativen Dorfgemeinde.",
+        "ru": "Верди женился на сопрано Джузеппине Стреппони — вопреки воле своей консервативной деревенской общины."
+      }
+    ]
+  },
+  {
+    "id": 8128,
+    "question_de": "Was war die Entstehung des modernen Zionismus (Theodor Herzl)?",
+    "question_ru": "Что такое возникновение современного сионизма (Теодор Герцль)?",
+    "correct_answer_de": "Herzl gründete 1897 nach der Dreyfus-Affäre den politischen Zionismus",
+    "correct_answer_ru": "Герцль основал в 1897 году после дела Дрейфуса политический сионизм",
+    "wrong_answers_de": [
+      "Zionismus entstand 1918 nach dem Ende des Osmanischen Reiches",
+      "Herzl wollte einen jüdischen Staat in Argentinien und nicht in Palästina gründen",
+      "Die erste Zionistenkonferenz tagte 1897 in Wien"
+    ],
+    "wrong_answers_ru": [
+      "Сионизм возник в 1918 году после конца Османской империи",
+      "Герцль хотел основать еврейское государство в Аргентине, а не в Палестине",
+      "Первая сионистская конференция прошла в 1897 году в Вене"
+    ],
+    "explanation_de": "Herzl erlebte als Reporter den Dreyfus-Prozess und schrieb 1896 «Der Judenstaat». 1897 rief er den Ersten Zionistenkongress in Basel ein; Israel entstand 1948, nach seinem Tod 1904.",
+    "explanation_ru": "Герцль наблюдал процесс Дрейфуса и написал в 1896 году «Еврейское государство». В 1897 году он созвал Первый сионистский конгресс в Базеле; Израиль возник в 1948-м.",
+    "difficulty": "medium",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1897 CE",
+    "tags": [
+      "Politik",
+      "Gesellschaft",
+      "Europa"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Herzl schrieb nach dem Kongress 1897 in sein Tagebuch: 'In Basel gründete ich den jüdischen Staat.'",
+        "ru": "Герцль написал после конгресса 1897 года в дневнике: «В Базеле я основал еврейское государство»."
+      },
+      {
+        "de": "Uganda-Plan: England bot 1903 Ostafrika als jüdischen Staat an – Herzl erwog es ernsthaft.",
+        "ru": "Угандский план: Англия в 1903 году предложила Восточную Африку для еврейского государства — Герцль всерьёз это рассматривал."
+      },
+      {
+        "de": "Balfour-Deklaration (1917): England versprach den Juden eine Heimstätte in Palästina – und den Arabern Unabhängigkeit.",
+        "ru": "Декларация Бальфура (1917): Англия обещала евреям национальный очаг в Палестине — и независимость арабам."
+      }
+    ]
+  },
+  {
+    "id": 8129,
+    "question_de": "Was war das indische Bildungssystem unter britischer Kolonialherrschaft?",
+    "question_ru": "Что такое индийская система образования при британском колониальном владычестве?",
+    "correct_answer_de": "Macaulays «Minute on Education» führte 1835 englische Bildung in Indien ein",
+    "correct_answer_ru": "«Записка об образовании» Маколея ввела в 1835 году английское образование в Индии",
+    "wrong_answers_de": [
+      "England förderte Sanskrit und indische Traditionen in der Verwaltung",
+      "Die britische Bildungspolitik verbannte englische Sprache zugunsten von Hindi in Indien",
+      "Mohandas Gandhi initiierte die englischsprachige Bildung in Indien als Reformprogramm"
+    ],
+    "wrong_answers_ru": [
+      "Англия поддерживала санскрит и индийские традиции в управлении",
+      "Британская образовательная политика изгнала английский язык в пользу хинди в Индии",
+      "Мохандас Ганди инициировал англоязычное образование в Индии как программу реформ"
+    ],
+    "explanation_de": "Macaulay verlangte 1835 Englisch statt Sanskrit und Arabisch, um eine Klasse zu schaffen, indisch an Blut, englisch im Geschmack. Diese Elite wurde Kern der Unabhängigkeitsbewegung.",
+    "explanation_ru": "Маколей потребовал в 1835 году английский вместо санскрита и арабского, чтобы создать слой, индийский по крови, английский по вкусам. Эта элита стала ядром движения за независимость.",
+    "difficulty": "hard",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1835 CE",
+    "tags": [
+      "England",
+      "Asien",
+      "Gesellschaft"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Indische Freiheitskämpfer (Gandhi, Nehru) studierten in England – und nutzten englische Werte gegen England.",
+        "ru": "Индийские борцы за свободу (Ганди, Неру) учились в Англии — и использовали английские ценности против Англии."
+      },
+      {
+        "de": "Englisch ist heute in Indien Amtssprache und Verbindungssprache zwischen den 22 offiziellen Landessprachen.",
+        "ru": "Сегодня английский является в Индии официальным и связующим языком между 22 официальными языками страны."
+      },
+      {
+        "de": "Macaulays Zitat gilt als eines der einflussreichsten – und umstrittensten – bildungspolitischen Statements der Geschichte.",
+        "ru": "Цитата Маколея считается одним из наиболее влиятельных — и спорных — высказываний об образовательной политике в истории."
+      }
+    ]
+  },
+  {
+    "id": 8130,
+    "question_de": "Was war die Entstehung des Feminismus als Begriff (John Stuart Mill, 1869)?",
+    "question_ru": "Что такое возникновение феминизма как понятия (Джон Стюарт Милль, 1869)?",
+    "correct_answer_de": "Mill argumentierte in 'Die Unterwerfung der Frauen' (1869) für vollständige Gleichheit der Geschlechter",
+    "correct_answer_ru": "Милль в «Подчинённости женщины» (1869) выступал за полное равенство полов",
+    "wrong_answers_de": [
+      "Mary Wollstonecraft schrieb 1869 die erste feministische Schrift und prägte den Begriff",
+      "Feminismus als Begriff wurde von Olympe de Gouges in der Französischen Revolution 1789 geprägt",
+      "Das Buch von Mill war gegen den Feminismus gerichtet und verteidigte die traditionelle Rolle der Frau"
+    ],
+    "wrong_answers_ru": [
+      "Мэри Уоллстонкрафт написала в 1869 году первый феминистский текст и ввела термин",
+      "Феминизм как термин был введён Олимп де Гуж в эпоху Французской революции 1789 года",
+      "Книга Милля была направлена против феминизма и защищала традиционную роль женщины"
+    ],
+    "explanation_de": "Wollstonecraft schrieb 1792 ihre «Verteidigung der Rechte der Frau», de Gouges starb 1793 auf dem Schafott. Mill lieferte 1869 das philosophische Argument; das Wort «Feminismus» kam um 1880 auf.",
+    "explanation_ru": "Уолстонкрафт написала в 1792 году «В защиту прав женщины», де Гуж погибла в 1793-м на эшафоте. Милль дал в 1869 году философский аргумент; слово «феминизм» появилось около 1880 года.",
+    "difficulty": "hard",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1869 CE",
+    "tags": [
+      "Philosophie",
+      "Gesellschaft",
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Olympe de Gouges wurde 1793 guillotiniert – weil sie Frauen politische Rechte forderte.",
+        "ru": "Олимп де Гуж была гильотинирована в 1793 году — за то, что требовала для женщин политических прав."
+      },
+      {
+        "de": "Mary Wollstonecraft starb mit 38 an Kindbettfieber – ihre Tochter Mary Shelley schrieb 'Frankenstein'.",
+        "ru": "Мэри Уоллстонкрафт умерла в 38 лет от родильной горячки — её дочь Мэри Шелли написала «Франкенштейна»."
+      },
+      {
+        "de": "Clara Zetkin war die erste, die den internationalen Frauentag (8. März) als sozialistischen Kampftag forderte.",
+        "ru": "Клара Цеткин первой потребовала Международного женского дня (8 марта) как социалистического дня борьбы."
+      }
+    ]
+  },
+  {
+    "id": 8131,
+    "question_de": "Was war die Entdeckung der Röntgenstrahlen (1895)?",
+    "question_ru": "Что такое открытие рентгеновских лучей (1895)?",
+    "correct_answer_de": "Röntgen entdeckte 1895 die X-Strahlen – Blick ins Körperinnere",
+    "correct_answer_ru": "Рентген открыл в 1895 году Х-лучи — взгляд внутрь тела",
+    "wrong_answers_de": [
+      "Marie Curie entdeckte die Röntgenstrahlen bei der Radioaktivitätsforschung",
+      "Röntgen entdeckte die Strahlen in den USA und patentierte sie",
+      "Edison entwickelte das Röntgengerät nach Röntgens Entdeckung zum Produkt"
+    ],
+    "wrong_answers_ru": [
+      "Мария Кюри открыла рентгеновские лучи при изучении радиоактивности",
+      "Рентген открыл лучи в США и запатентовал их",
+      "Эдисон превратил рентгеновский аппарат в продукт после открытия Рентгена"
+    ],
+    "explanation_de": "Am 8. November 1895 entdeckte Röntgen in Würzburg unsichtbare Strahlen; das erste Bild zeigte die Hand seiner Frau. Er verzichtete auf ein Patent und erhielt 1901 den ersten Physik-Nobelpreis.",
+    "explanation_ru": "8 ноября 1895 года Рентген в Вюрцбурге открыл невидимые лучи; первый снимок показал руку его жены. Он отказался от патента и получил в 1901 году первую Нобелевскую премию по физике.",
+    "difficulty": "easy",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1895 CE",
+    "tags": [
+      "Wissenschaft",
+      "Deutschland",
+      "Erfindungen"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Im frühen 20. Jh. gab es Röntgen-Schaumaschinen in Schuhgeschäften – Kinder betrachteten ihre eigenen Knochen.",
+        "ru": "В начале XX века в обувных магазинах стояли рентгеновские аттракционы — дети рассматривали собственные кости."
+      },
+      {
+        "de": "Marie Curie starb vermutlich an Strahlenexposition durch ihre Röntgengeräte im Ersten Weltkrieg.",
+        "ru": "Мари Кюри, по всей видимости, умерла от радиационного облучения рентгеновскими аппаратами в Первой мировой войне."
+      },
+      {
+        "de": "Röntgens Entdeckung verbreitete sich in 2 Wochen weltweit – die erste 'virale' wissenschaftliche Nachricht.",
+        "ru": "Открытие Рентгена распространилось по всему миру за 2 недели — первая «вирусная» научная новость."
+      }
+    ]
+  },
+  {
+    "id": 8132,
+    "question_de": "Was war die chinesische Taiping-Rebellion (1850–1864)?",
+    "question_ru": "Что такое восстание тайпинов в Китае (1850–1864)?",
+    "correct_answer_de": "Taiping-Rebellion: 20–30 Millionen Tote, größter Bürgerkrieg des Jahrhunderts",
+    "correct_answer_ru": "Тайпинское восстание: 20–30 миллионов погибших, крупнейшая гражданская война века",
+    "wrong_answers_de": [
+      "Aufstand des chinesischen Militärs gegen die Mandschu",
+      "Der Tai-ping-Bürgerkrieg war ein kurzer Konflikt mit 2 Millionen Opfern in Südchina",
+      "Die Rebellion entstand durch britische Politik und richtete sich gegen England"
+    ],
+    "wrong_answers_ru": [
+      "Восстание китайской армии против маньчжуров",
+      "Гражданская война тайпинов была коротким конфликтом с 2 миллионами жертв в Южном Китае",
+      "Восстание возникло из британской политики и было направлено против Англии"
+    ],
+    "explanation_de": "Hong Xiuquan hielt sich für den Bruder Jesu und gründete das «Himmlische Königreich des Großen Friedens». Nach 14 Jahren Krieg besiegte ihn 1864 auch die «Ever Victorious Army».",
+    "explanation_ru": "Хун Сюцюань считал себя братом Иисуса и основал «Небесное царство великого благоденствия». После 14 лет войны его победили в 1864 году, в том числе «Всегда побеждающая армия».",
+    "difficulty": "hard",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1857 CE",
+    "tags": [
+      "China",
+      "Krieg"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Die Taiping-Rebellion ist der blutigste Konflikt nach dem Zweiten Weltkrieg in der Geschichte der Welt.",
+        "ru": "Восстание тайпинов — самый кровавый конфликт в мировой истории после Второй мировой войны."
+      },
+      {
+        "de": "Taiping-Frauen kämpften in eigenen Bataillonen – außergewöhnlich für das 19. Jahrhundert.",
+        "ru": "Женщины тайпинов сражались в отдельных батальонах — исключительно для XIX века."
+      },
+      {
+        "de": "General 'Chinese Gordon' wurde 1885 in Khartum ermordet – und gilt als britischer Nationalheld.",
+        "ru": "Генерал «Китайский Гордон» был убит в 1885 году в Хартуме — и считается британским национальным героем."
+      }
+    ]
+  },
+  {
+    "id": 8133,
+    "question_de": "Was war das Konzept des Nationalismus im 19. Jahrhundert?",
+    "question_ru": "Что такое концепция национализма в XIX веке?",
+    "correct_answer_de": "Nationalismus: Jede Nation verdient einen eigenen Staat",
+    "correct_answer_ru": "Национализм: каждая нация заслуживает собственного государства",
+    "wrong_answers_de": [
+      "Nationalismus erfand Napoleon, um Völker zu einen",
+      "Nationalismus entstand erst nach 1918 durch Versailles",
+      "Nationalismus hieß im 19. Jahrhundert kulturelle Überlegenheit"
+    ],
+    "wrong_answers_ru": [
+      "Национализм придумал Наполеон, чтобы объединить народы",
+      "Национализм возник лишь после 1918 года благодаря Версалю",
+      "В XIX веке национализм означал культурное превосходство"
+    ],
+    "explanation_de": "Herder lehrte, jede Nation habe ihre Kultur. Der Nationalismus führte 1871 und 1870 zur Einigung Deutschlands und Italiens, zerstörte Vielvölkerreiche und radikalisierte sich im 20. Jahrhundert.",
+    "explanation_ru": "Гердер учил, что у каждой нации своя культура. Национализм привёл в 1871 и 1870 годах к объединению Германии и Италии, разрушил многонациональные империи и радикализировался в XX веке.",
+    "difficulty": "medium",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "conceptual",
+    "period": "1848 CE",
+    "tags": [
+      "Politik",
+      "Philosophie",
+      "Europa"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Ernest Renan (1882): 'Was ist eine Nation?' – Antwort: Ein tägliches Plebiszit des gemeinsamen Willens.",
+        "ru": "Эрнест Ренан (1882): «Что такое нация?» — Ответ: Ежедневный плебисцит общей воли."
+      },
+      {
+        "de": "Nationalismus schuf Staaten und Kriege gleichzeitig – eine zwiespältige Kraft der Moderne.",
+        "ru": "Национализм одновременно создавал государства и войны — двойственная сила современности."
+      },
+      {
+        "de": "Benedict Anderson nannte Nationen 'imagined communities' – sie existieren im Bewusstsein, nicht physisch.",
+        "ru": "Бенедикт Андерсон назвал нации «воображаемыми сообществами» — они существуют в сознании, а не физически."
+      }
+    ]
+  },
+  {
+    "id": 8134,
+    "question_de": "Was war der Sepoy-Aufstand in Indien (1857)?",
+    "question_ru": "Что такое восстание сипаев в Индии (1857)?",
+    "correct_answer_de": "Indische Sepoys der East India Company revoltierten gegen die Briten",
+    "correct_answer_ru": "Индийские сипаи Ост-Индской компании восстали против британцев",
+    "wrong_answers_de": [
+      "Aufstand britischer Kolonisten gegen Londons Steuerpolitik",
+      "Indische Fürsten besiegten 1857 die Briten dauerhaft",
+      "Gandhi leitete den Aufstand zur ersten Unabhängigkeit"
+    ],
+    "wrong_answers_ru": [
+      "Восстание британских колонистов против налоговой политики Лондона",
+      "Индийские князья в 1857 году окончательно победили британцев",
+      "Ганди возглавил восстание за первую независимость"
+    ],
+    "explanation_de": "Das Gerücht, Gewehrpatronen seien mit Schweine- und Rindertalg geschmiert, löste die Revolte der Sepoys aus. Nach blutiger Niederschlagung wurde 1858 die East India Company aufgelöst.",
+    "explanation_ru": "Слух, что патроны смазаны свиным и говяжьим жиром, вызвал мятеж сипаев. После кровавого подавления в 1858 году Ост-Индскую компанию распустили.",
+    "difficulty": "medium",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1857 CE",
+    "tags": [
+      "Asien",
+      "England",
+      "Krieg"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Die Rani von Jhansi (Lakshmibai) kämpfte im Aufstand an der Frontlinie und wurde zur Nationalheldin Indiens.",
+        "ru": "Рани Джансийская (Лакшмибай) сражалась в восстании на передовой и стала национальной героиней Индии."
+      },
+      {
+        "de": "Das Massaker von Cawnpore (Briten erschossen, Frauen und Kinder getötet) führte zu brutaler Vergeltung.",
+        "ru": "Резня в Канпуре (британцы расстреляны, женщины и дети убиты) привела к жестоким репрессиям."
+      },
+      {
+        "de": "Königin Victoria wurde 1858 zur Kaiserin von Indien ('Kaiserlich') – und Indien wurde 'Juwel der Krone'.",
+        "ru": "Королева Виктория в 1858 году стала «Императрицей Индии» — и Индия стала «бриллиантом короны»."
+      }
+    ]
+  },
+  {
+    "id": 8135,
+    "question_de": "Was war die Entwicklung der Psychoanalyse (Sigmund Freud)?",
+    "question_ru": "Что такое развитие психоанализа (Зигмунд Фрейд)?",
+    "correct_answer_de": "Freud entwickelte ab 1895 die Psychoanalyse: Unbewusstes und Verdrängung",
+    "correct_answer_ru": "Фрейд с 1895 года развивал психоанализ: бессознательное и вытеснение",
+    "wrong_answers_de": [
+      "Freud entwickelte die Psychoanalyse als biologische Gehirnforschung in Wien",
+      "Jung und Freud entwickelten die Psychoanalyse lebenslang gemeinsam",
+      "Freud basierte seine Theorie auf Tierversuchen – wie Pavlov mit seinen Hunden"
+    ],
+    "wrong_answers_ru": [
+      "Фрейд разработал психоанализ как биологическое исследование мозга в Вене",
+      "Юнг и Фрейд всю жизнь вместе развивали психоанализ",
+      "Фрейд основывал свою теорию на опытах с животными — как Павлов с собаками"
+    ],
+    "explanation_de": "Freud veröffentlichte 1895 «Studien über Hysterie», 1900 die «Traumdeutung» und entwickelte Es, Ich und Über-Ich. 1938 floh er vor den Nazis nach London und starb dort 1939.",
+    "explanation_ru": "Фрейд опубликовал в 1895 году «Исследования истерии», в 1900-м «Толкование сновидений» и описал Оно, Я и Сверх-Я. В 1938 году он бежал от нацистов в Лондон.",
+    "difficulty": "medium",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1900 CE",
+    "tags": [
+      "Wissenschaft",
+      "Philosophie",
+      "Österreich"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Freuds 4 Töchter Bücher wurden von den Nazis verbrannt – Freud: 'Welcher Fortschritt! Im Mittelalter hätten sie mich selbst verbrannt.'",
+        "ru": "4 книги дочери Фрейда были сожжены нацистами — Фрейд: «Какой прогресс! В средние века сожгли бы меня самого»."
+      },
+      {
+        "de": "Freud war Kokainabhängig und propagierte Kokain lange als Wundermittel.",
+        "ru": "Фрейд был зависим от кокаина и долго пропагандировал его как чудодейственное средство."
+      },
+      {
+        "de": "Carl Jung brach mit Freud über die Libido-Theorie und gründete die analytische Psychologie.",
+        "ru": "Карл Юнг порвал с Фрейдом из-за теории либидо и основал аналитическую психологию."
+      }
+    ]
+  },
+  {
+    "id": 8136,
+    "question_de": "Was war die Literatur des Realismus im 19. Jahrhundert?",
+    "question_ru": "Что такое литература реализма в XIX веке?",
+    "correct_answer_de": "Realismus: Literatur zeigt das Leben, wie es ist – Balzac, Flaubert, Tolstoi",
+    "correct_answer_ru": "Реализм: литература показывает жизнь как она есть — Бальзак, Флобер, Толстой",
+    "wrong_answers_de": [
+      "Realismus war eine Gegenbewegung zur Romantik mit Märchenstoffen",
+      "Naturalismus und Realismus entstanden gleichzeitig als identische Bewegungen in Europa",
+      "Dickens und Hugo begründeten den Realismus als Verherrlichung des Industriezeitalters"
+    ],
+    "wrong_answers_ru": [
+      "Реализм был противовесом романтизму со сказочными сюжетами",
+      "Натурализм и реализм возникли одновременно как идентичные движения в Европе",
+      "Диккенс и Гюго основали реализм как прославление индустриальной эпохи"
+    ],
+    "explanation_de": "Balzac, Flaubert, Dickens, Tolstoi, Dostojewski und Fontane beobachteten die Gesellschaft genau und übten Kritik. Zu ihren Werken zählen «Madame Bovary», «Anna Karenina» und «Effi Briest».",
+    "explanation_ru": "Бальзак, Флобер, Диккенс, Толстой, Достоевский и Фонтане внимательно наблюдали общество и критиковали его. Среди их книг — «Госпожа Бовари», «Анна Каренина» и «Эффи Брист».",
+    "difficulty": "medium",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1860 CE",
+    "tags": [
+      "Kunst",
+      "Kultur",
+      "Literatur"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Madame Bovary wurde verfolgt – Flaubert wegen Sittlichkeitsverstoß, freigesprochen.",
+        "ru": "«Мадам Бовари» была преследована — Флобер по обвинению в непристойности, оправдан."
+      },
+      {
+        "de": "Tolstoi verschenkte sein Vermögen und lebte als Bauer – Vorbild für Gandhi.",
+        "ru": "Толстой раздал своё состояние и жил как крестьянин — образец для Ганди."
+      },
+      {
+        "de": "Dostojewski wurde zum Tod verurteilt, begnadigt in letzter Minute und nach Sibirien verbannt.",
+        "ru": "Достоевский был приговорён к смерти, помилован в последнюю минуту и сослан в Сибирь."
+      }
+    ]
+  },
+  {
+    "id": 8137,
+    "question_de": "Was war das Konzept des Liberalismus im 19. Jahrhundert?",
+    "question_ru": "Что такое концепция либерализма в XIX веке?",
+    "correct_answer_de": "Liberalismus forderte individuelle Freiheit, Verfassung und Marktwirtschaft",
+    "correct_answer_ru": "Либерализм требовал личной свободы, конституции и рыночной экономики",
+    "wrong_answers_de": [
+      "Liberalismus im 19. Jh. war identisch mit dem heutigen politischen Sozialismus",
+      "Liberale Parteien setzten sich vor allem für Armenunterstützung ein",
+      "Liberalismus entstand als Antwort auf Industrialisierung und forderte Planwirtschaft"
+    ],
+    "wrong_answers_ru": [
+      "Либерализм XIX века был идентичен современному политическому социализму",
+      "Либеральные партии прежде всего занимались поддержкой бедных",
+      "Либерализм возник как ответ на индустриализацию и требовал плана"
+    ],
+    "explanation_de": "Liberale kämpften für Verfassungen, Pressefreiheit und Freihandel; Locke und Adam Smith lieferten die Grundlagen. Der Liberalismus spaltete sich später in sozialen Liberalismus und Laissez-faire.",
+    "explanation_ru": "Либералы боролись за конституции, свободу печати и свободную торговлю; основу дали Локк и Адам Смит. Позже либерализм разделился на социальный либерализм и политику невмешательства.",
+    "difficulty": "medium",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "conceptual",
+    "period": "1850 CE",
+    "tags": [
+      "Philosophie",
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Das Wort 'liberal' hat in Europa und USA fast entgegengesetzte Bedeutungen – in USA ist es linkes Schimpfwort.",
+        "ru": "Слово «либеральный» в Европе и США имеет почти противоположное значение — в США это левое ругательство."
+      },
+      {
+        "de": "Die meisten europäischen Verfassungen des 19. Jh. entstammen dem liberalen Gedankengut.",
+        "ru": "Большинство европейских конституций XIX века восходят к либеральной мысли."
+      },
+      {
+        "de": "John Locke schrieb, dass Regierungen ihr Recht verlieren, wenn sie Grundrechte verletzen – Legitimation für Revolution.",
+        "ru": "Джон Локк писал, что правительства теряют своё право, когда нарушают основные права — легитимация революции."
+      }
+    ]
+  },
+  {
+    "id": 8138,
+    "question_de": "Was war das Attentat auf Abraham Lincoln (1865)?",
+    "question_ru": "Что такое покушение на Авраама Линкольна (1865)?",
+    "correct_answer_de": "John Wilkes Booth erschoss 1865 Präsident Lincoln im Ford's Theatre",
+    "correct_answer_ru": "Джон Уилкс Бут застрелил в 1865 году президента Линкольна в театре Форда",
+    "wrong_answers_de": [
+      "Lincoln starb im Weißen Haus bei einem Anschlag eines Offiziers",
+      "Lincoln starb 1864 bei einem Attentat in Washington kurz vor Kriegsende",
+      "Lincolns Mörder war ein verurteilter Sklavenhalter des Südens"
+    ],
+    "wrong_answers_ru": [
+      "Линкольн погиб в Белом доме при покушении офицера",
+      "Линкольн погиб в 1864 году в результате покушения в Вашингтоне незадолго до конца войны",
+      "Убийца Линкольна был осуждённым рабовладельцем с Юга"
+    ],
+    "explanation_de": "Am 14. April 1865 erschoss der Schauspieler Booth Lincoln im Ford's Theatre; der Präsident starb am nächsten Tag. Sein Nachfolger Johnson war versöhnlicher, was die Rekonstruktion schwächte.",
+    "explanation_ru": "14 апреля 1865 года актёр Бут застрелил Линкольна в театре Форда; президент умер на следующий день. Преемник Джонсон был уступчивее, что ослабило Реконструкцию.",
+    "difficulty": "easy",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1865 CE",
+    "tags": [
+      "Amerika",
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Ford's Theatre ist heute ein Museum – der Stuhl, in dem Lincoln saß, steht noch dort.",
+        "ru": "Театр Форда сегодня является музеем — кресло, в котором сидел Линкольн, по-прежнему там."
+      },
+      {
+        "de": "Booth schrie 'Sic semper tyrannis!' (So soll es allen Tyrannen ergehen!) – und brach sich beim Sprung ein Bein.",
+        "ru": "Бут крикнул «Sic semper tyrannis!» (Так да будет со всеми тиранами!) — и при прыжке сломал ногу."
+      },
+      {
+        "de": "Lincolns Tod wird oft als Wendepunkt genannt: sein Kurs für den Süden wäre gnädiger gewesen.",
+        "ru": "Смерть Линкольна часто называют поворотным моментом: его курс для Юга был бы более милосердным."
+      }
+    ]
+  },
+  {
+    "id": 8139,
+    "question_de": "Was war die Gründung der Städte und Urbanisierung im 19. Jahrhundert?",
+    "question_ru": "Что такое основание городов и урбанизация в XIX веке?",
+    "correct_answer_de": "Millionen zogen vom Land in die Städte – London wuchs auf 6 Millionen",
+    "correct_answer_ru": "Миллионы переселились из деревни в города — Лондон вырос до 6 миллионов",
+    "wrong_answers_de": [
+      "Urbanisierung war vor allem Landflucht ohne Industrie",
+      "Städte wuchsen erst im 20. Jh. durch den Automobilverkehr und Suburbanisierung",
+      "Nur England urbanisierte, Deutschland blieb bis 1900 ländlich"
+    ],
+    "wrong_answers_ru": [
+      "Урбанизация была в основном бегством из деревни без промышленности",
+      "Города выросли лишь в XX веке благодаря автотранспорту и субурбанизации",
+      "Урбанизация шла лишь в Англии, Германия до 1900 года оставалась сельской"
+    ],
+    "explanation_de": "1800 lebten 3 Prozent der Menschen in Städten, 1900 schon 14. London wuchs von 1 auf 6 Millionen; Slums, Kanalisation und Haussmanns Paris entstanden.",
+    "explanation_ru": "В 1800 году в городах жили 3 процента людей, в 1900-м — уже 14. Лондон вырос с 1 до 6 миллионов; появились трущобы, канализация и Париж Османа.",
+    "difficulty": "medium",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1875 CE",
+    "tags": [
+      "Gesellschaft",
+      "Wirtschaft",
+      "Europa"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Londons 'Great Stink' (1858): Themse so verschmutzt, dass das Parlament floh – was die Kanalisation auslöste.",
+        "ru": "«Великое зловоние» Лондона (1858): Темза настолько загрязнена, что парламент сбежал — это запустило строительство канализации."
+      },
+      {
+        "de": "Haussmans Paris-Umbau vertrieb 350.000 Arme aus dem Zentrum – und schuf die eleganten Boulevards.",
+        "ru": "Перестройка Парижа Оссманом выселила 350 000 бедняков из центра — и создала элегантные бульвары."
+      },
+      {
+        "de": "Die erste U-Bahn der Welt fuhr 1863 in London – mit Dampflok.",
+        "ru": "Первое в мире метро появилось в 1863 году в Лондоне — с паровозом."
+      }
+    ]
+  },
+  {
+    "id": 8140,
+    "question_de": "Was war die erste Weltausstellung in London (1851)?",
+    "question_ru": "Что такое первая Всемирная выставка в Лондоне (1851)?",
+    "correct_answer_de": "Die Große Ausstellung 1851 im Kristallpalast – Symbol britischer Überlegenheit",
+    "correct_answer_ru": "Великая выставка 1851 года в Хрустальном дворце — символ британского превосходства",
+    "wrong_answers_de": [
+      "Die Weltausstellung 1851 fand in Paris statt – London folgte erst 1862",
+      "Kristallpalast war ein Betongebäude, das nach 2 Jahren abgerissen wurde",
+      "Die erste Weltausstellung zeigte hauptsächlich Kunstwerke und Gemälde aus Europa"
+    ],
+    "wrong_answers_ru": [
+      "Всемирная выставка 1851 года прошла в Париже — Лондон последовал лишь в 1862-м",
+      "Хрустальный дворец был бетонным зданием, снесённым через 2 года",
+      "Первая Всемирная выставка демонстрировала главным образом произведения искусства и картины из Европы"
+    ],
+    "explanation_de": "Joseph Paxtons Kristallpalast bedeckte 92.000 Quadratmeter aus Glas und Eisen. 6 Millionen Besucher sahen 1851 Exponate aus aller Welt; er wurde Vorbild für spätere Weltausstellungen.",
+    "explanation_ru": "Хрустальный дворец Джозефа Пакстона занимал 92 000 квадратных метров стекла и железа. В 1851 году 6 миллионов посетителей увидели экспонаты со всего мира; он стал образцом для будущих выставок.",
+    "difficulty": "medium",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1851 CE",
+    "tags": [
+      "Wirtschaft",
+      "England",
+      "Kultur"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Der Kristallpalast brannte 1936 ab – trotz des Namens kein Glashebel für Löschwasser.",
+        "ru": "Хрустальный дворец сгорел в 1936 году — несмотря на название, никакого стеклянного крана для воды не оказалось."
+      },
+      {
+        "de": "Der Eiffelturm (Paris 1889) und das Rad in Chicago (1893) entstanden als Aushängeschilder ihrer Weltausstellungen.",
+        "ru": "Эйфелева башня (Париж, 1889) и чёртово колесо в Чикаго (1893) были созданы как витрины своих всемирных выставок."
+      },
+      {
+        "de": "Indien (damals britische Kolonie) präsentierte den Koh-i-Noor-Diamanten – heute noch umstritten.",
+        "ru": "Индия (тогда британская колония) представила бриллиант Кох-и-Нур — его принадлежность по сей день оспаривается."
+      }
+    ]
+  },
+  {
+    "id": 8141,
+    "question_de": "Was war der Naturalismus in der Literatur (Zola, Ibsen)?",
+    "question_ru": "Что такое натурализм в литературе (Золя, Ибсен)?",
+    "correct_answer_de": "Naturalismus: Literatur schildert soziale Milieus wissenschaftlich genau",
+    "correct_answer_ru": "Натурализм: литература научно точно описывает социальные среды",
+    "wrong_answers_de": [
+      "Naturalismus war die Darstellung von Natur und Landschaft in der deutschen Romantik",
+      "Ibsen und Zola schrieben naturalistische Märchen für Kinder",
+      "Naturalismus folgte dem Realismus als rein stilistische, unpolitische Bewegung"
+    ],
+    "wrong_answers_ru": [
+      "Натурализм — изображение природы и пейзажа в немецком романтизме",
+      "Ибсен и Золя писали натуралистические сказки для детей",
+      "Натурализм последовал за реализмом как чисто стилистическое, неполитическое движение"
+    ],
+    "explanation_de": "Zolas «Germinal» (1885) schilderte Bergarbeiter, Ibsens «Nora» (1879) die Ehe, Hauptmanns «Die Weber» (1892) die Not. Naturalisten sahen Umwelt und Erbanlage als bestimmend.",
+    "explanation_ru": "«Жерминаль» Золя (1885) описал шахтёров, «Нора» Ибсена (1879) — брак, «Ткачи» Гауптмана (1892) — нужду. Натуралисты считали решающими среду и наследственность.",
+    "difficulty": "hard",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1885 CE",
+    "tags": [
+      "Literatur",
+      "Kunst",
+      "Frankreich"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Ibsens 'Nora' schockierte Europa: Frau verlässt Mann und Kinder – unerhört für 1879.",
+        "ru": "«Нора» Ибсена шокировала Европу: женщина уходит от мужа и детей — неслыханно для 1879 года."
+      },
+      {
+        "de": "Zola wurde nach 'J'accuse' angeklagt und floh nach England – sein Brief rettete Dreyfus.",
+        "ru": "Золя после «Я обвиняю» был привлечён к суду и бежал в Англию — его письмо спасло Дрейфуса."
+      },
+      {
+        "de": "Hauptmanns 'Die Weber' wurde in Preußen verboten – weil es Arbeiteraufstand glorifizierte.",
+        "ru": "«Ткачи» Гауптмана были запрещены в Пруссии — за прославление рабочего восстания."
+      }
+    ]
+  },
+  {
+    "id": 8142,
+    "question_de": "Was war die Abschaffung der Sklaverei in Brasilien (1888)?",
+    "question_ru": "Что такое отмена рабства в Бразилии (1888)?",
+    "correct_answer_de": "Brasilien schaffte als letztes westliches Land 1888 die Sklaverei ab",
+    "correct_answer_ru": "Бразилия отменила рабство в 1888 году последней в западном мире",
+    "wrong_answers_de": [
+      "Kuba schaffte 1898 als letztes Land die Sklaverei ab",
+      "Brasilien schaffte die Sklaverei schon 1865 mit den USA ab",
+      "Dom Pedro II. unterzeichnete das Goldene Gesetz persönlich"
+    ],
+    "wrong_answers_ru": [
+      "Куба отменила рабство в 1898 году последней",
+      "Бразилия отменила рабство уже в 1865 году вместе с США",
+      "Дом Педру II лично подписал Золотой закон"
+    ],
+    "explanation_de": "Brasilien hatte rund 5 Millionen afrikanische Sklaven eingeführt. Prinzessin Isabel unterschrieb am 13. Mai 1888 das «Lei Áurea»; verärgerte Sklavenhalter stürzten 1889 die Monarchie.",
+    "explanation_ru": "Бразилия ввезла около 5 миллионов африканских рабов. Принцесса Изабелла подписала 13 мая 1888 года «Золотой закон»; недовольные рабовладельцы свергли монархию в 1889 году.",
+    "difficulty": "hard",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1888 CE",
+    "tags": [
+      "Amerika",
+      "Gesellschaft",
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "13. Mai gilt in Brasilien als 'Tag der schwarzen Bewusstsein' – heute noch gefeiert.",
+        "ru": "13 мая в Бразилии отмечается как «День чёрного самосознания» — празднуется по сей день."
+      },
+      {
+        "de": "Brasiliens Sklavengesellschaft war so tief verwurzelt, dass freie Schwarze nach 1888 kaum Zugang zu Land und Bildung hatten.",
+        "ru": "Рабовладельческое общество Бразилии было настолько глубоко укоренившимся, что свободные чернокожие после 1888 года практически не имели доступа к земле и образованию."
+      },
+      {
+        "de": "Brasilien hat heute die größte Diaspora-Afrobrasilianer der Welt – 54 % der Bevölkerung sind afrobrasilian.",
+        "ru": "Бразилия сегодня имеет крупнейшую в мире диаспору афробразильцев — 54% населения являются афробразильцами."
+      }
+    ]
+  },
+  {
+    "id": 8143,
+    "question_de": "Was war das Konzept des Konservativismus im 19. Jahrhundert (Burke, Metternich)?",
+    "question_ru": "Что такое концепция консерватизма в XIX веке (Бёрк, Меттерних)?",
+    "correct_answer_de": "Konservativismus wollte Tradition, Kirche und Monarchie gegen Revolutionen schützen",
+    "correct_answer_ru": "Консерватизм хотел защитить традицию, церковь и монархию от революций",
+    "wrong_answers_de": [
+      "Konservativismus im 19. Jh. war identisch mit dem heutigen Rechtspopulismus und Nationalismus",
+      "Edmund Burke befürwortete die Französische Revolution als Vorbild für Großbritannien",
+      "Konservativismus entstand nach 1918 als Reaktion auf die Demokratie"
+    ],
+    "wrong_answers_ru": [
+      "Консерватизм XIX века был идентичен современному правому популизму и национализму",
+      "Эдмунд Бёрк поддерживал Французскую революцию как образец для Великобритании",
+      "Консерватизм возник после 1918 года как реакция на демократию"
+    ],
+    "explanation_de": "Burkes «Betrachtungen über die Revolution in Frankreich» (1790) begründeten den Konservativismus. Metternich schuf die Heilige Allianz; de Maistre sah Papst und Monarch als gottgegebene Ordnung.",
+    "explanation_ru": "«Размышления о революции во Франции» Бёрка (1790) заложили основы консерватизма. Меттерних создал Священный союз; де Местр видел в папе и монархе божественный порядок.",
+    "difficulty": "hard",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1820 CE",
+    "tags": [
+      "Philosophie",
+      "Politik",
+      "Europa"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Metternich regierte de facto Europa nach Napoleon – bis er 1848 selbst fliehen musste.",
+        "ru": "Меттерних де-факто управлял Европой после Наполеона — пока сам не был вынужден бежать в 1848 году."
+      },
+      {
+        "de": "Burkes konservative Theorie wurde im 20. Jahrhundert von Thatcher und Reagan als Grundlage genutzt.",
+        "ru": "Консервативная теория Бёрка в XX веке была использована Тэтчер и Рейганом как основа."
+      },
+      {
+        "de": "De Maistre sagte: 'Der Henker ist der Grundstein der Gesellschaft' – die extremste konservative Aussage.",
+        "ru": "Де Местр сказал: «Палач есть краеугольный камень общества» — наиболее экстремальное консервативное высказывание."
+      }
+    ]
+  },
+  {
+    "id": 8144,
+    "question_de": "Was war die Tätigkeit der Missionare im 19. Jahrhundert?",
+    "question_ru": "Что такое деятельность миссионеров в XIX веке?",
+    "correct_answer_de": "Europäische Missionare verbreiteten das Christentum und stützten oft die Kolonialherrschaft",
+    "correct_answer_ru": "Европейские миссионеры несли христианство и нередко поддерживали колониальную власть",
+    "wrong_answers_de": [
+      "Missionare kämpften gegen den Kolonialismus und schützten einheimische Bevölkerungen",
+      "Missionare beschränkten sich im 19. Jh. auf Lateinamerika und hatten keinen Einfluss in Afrika",
+      "David Livingstone war der erste Missionar, der den Sklavenhandel in Afrika aktiv unterstützte"
+    ],
+    "wrong_answers_ru": [
+      "Миссионеры боролись против колониализма и защищали коренное население",
+      "В XIX веке миссионеры ограничивались Латинской Америкой и не имели влияния в Африке",
+      "Дэвид Ливингстон был первым миссионером, активно поддерживавшим работорговлю в Африке"
+    ],
+    "explanation_de": "Livingstone entdeckte die Victoriafälle, bekämpfte den arabischen Sklavenhandel und kartographierte Afrika. Missionare bauten Schulen und Krankenhäuser, rechtfertigten aber oft die Kolonisierung als «Zivilisierung».",
+    "explanation_ru": "Ливингстон открыл водопад Виктория, боролся с арабской работорговлей и составлял карты Африки. Миссионеры строили школы и больницы, но часто оправдывали колонизацию как «цивилизацию».",
+    "difficulty": "medium",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1860 CE",
+    "tags": [
+      "Afrika",
+      "Gesellschaft",
+      "Religion"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Henry Morton Stanley fand Livingstone 1871 am Tanganjikasee – nach 2 Jahren Suche.",
+        "ru": "Генри Мортон Стэнли нашёл Ливингстона в 1871 году у озера Танганьика — после 2 лет поисков."
+      },
+      {
+        "de": "Livingstone weigerte sich, Afrika zu verlassen – er starb 1873 kniend beim Beten in einer Hütte in Sambia.",
+        "ru": "Ливингстон отказывался покидать Африку — он умер в 1873 году на коленях во время молитвы в хижине в Замбии."
+      },
+      {
+        "de": "Missionare vernichteten oft indigene Kulturen und Sprachen – und bauten gleichzeitig Wörterbücher dafür auf.",
+        "ru": "Миссионеры нередко уничтожали коренные культуры и языки — и одновременно составляли для них словари."
+      }
+    ]
+  },
+  {
+    "id": 8145,
+    "question_de": "Was war die irische Hungersnot (1845–1849)?",
+    "question_ru": "Что такое ирландский голод (1845–1849)?",
+    "correct_answer_de": "Die irische Kartoffelpest tötete 1 Million Menschen und trieb 1 Million zur Emigration",
+    "correct_answer_ru": "Ирландская картофельная болезнь убила миллион и вынудила миллион эмигрировать",
+    "wrong_answers_de": [
+      "Die Hungersnot kam von langem Winter und Dürre, nicht von Pflanzenkrankheit",
+      "England lieferte sofort Nahrungsmittel und verhinderte damit die schlimmsten Folgen der Hungersnot",
+      "Die irische Bevölkerung hat sich bis 1900 vollständig erholt von der Hungersnot"
+    ],
+    "wrong_answers_ru": [
+      "Голод вызвали долгая зима и засуха, а не болезнь растений",
+      "Англия немедленно поставила продовольствие и тем самым предотвратила худшие последствия голода",
+      "Ирландское население к 1900 году полностью восстановилось после голода"
+    ],
+    "explanation_de": "Ein Pilz vernichtete die Kartoffelernte, England exportierte weiter Getreide. Irlands Bevölkerung sank von 8 Millionen 1845 auf 4 Millionen 1900; die irische Diaspora in den USA entstand.",
+    "explanation_ru": "Гриб уничтожил урожай картофеля, Англия продолжала вывозить зерно. Население Ирландии сократилось с 8 миллионов в 1845 году до 4 миллионов в 1900-м; сложилась ирландская диаспора в США.",
+    "difficulty": "medium",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1847 CE",
+    "tags": [
+      "England",
+      "Gesellschaft",
+      "Katastrophe"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Irland ist bis heute das einzige Land Europas, das weniger Einwohner hat als 1840.",
+        "ru": "Ирландия по сей день является единственной страной Европы, имеющей меньше жителей, чем в 1840 году."
+      },
+      {
+        "de": "Die irische Diaspora in den USA blieb anti-britisch: Fenians finanzierten irische Unabhängigkeitskämpfer aus Amerika.",
+        "ru": "Ирландская диаспора в США оставалась антибританской: фении финансировали ирландских борцов за независимость из Америки."
+      },
+      {
+        "de": "Der Satz 'Irish Need Not Apply' in US-Stellenanzeigen spiegelte die Diskriminierung der irischen Einwanderer wider.",
+        "ru": "Фраза «Ирландцам не обращаться» в американских объявлениях о работе отражала дискриминацию ирландских иммигрантов."
+      }
+    ]
+  },
+  {
+    "id": 8146,
+    "question_de": "Was war die Entstehung der Gewerkschaften in England (Trade Unions)?",
+    "question_ru": "Что такое возникновение профсоюзов в Англии (тред-юнионы)?",
+    "correct_answer_de": "Britische Trade Unions kämpften ab 1850 für bessere Arbeitsbedingungen",
+    "correct_answer_ru": "Британские тред-юнионы с 1850 года боролись за лучшие условия труда",
+    "wrong_answers_de": [
+      "Trade Unions wurden in England erst nach dem Ersten Weltkrieg legalisiert",
+      "Gewerkschaften entstanden zuerst in Deutschland durch Bismarcks Sozialpolitik",
+      "Der erste Streik in England wurde 1900 durch die Labour Party organisiert"
+    ],
+    "wrong_answers_ru": [
+      "Профсоюзы были легализованы в Англии лишь после Первой мировой войны",
+      "Профсоюзы впервые возникли в Германии благодаря социальной политике Бисмарка",
+      "Первая забастовка в Англии была организована в 1900 году Лейбористской партией"
+    ],
+    "explanation_de": "Die Tolpuddle Martyrs wurden 1834 wegen ihrer Gewerkschaft deportiert. 1868 entstand der TUC, 1871 wurden Gewerkschaften legalisiert, 1884 folgte das Streikrecht; 1900 die Labour Party.",
+    "explanation_ru": "Мучеников из Толпаддла в 1834 году сослали за создание профсоюза. В 1868 году возник TUC, в 1871-м профсоюзы легализовали, в 1884-м получили право на забастовку; в 1900-м появилась Лейбористская партия.",
+    "difficulty": "medium",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1870 CE",
+    "tags": [
+      "Gesellschaft",
+      "England",
+      "Politik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Die Tolpuddle Martyrs wurden 1836 begnadigt – nach massiven Protesten in ganz England.",
+        "ru": "Мученики Толпаддла были помилованы в 1836 году — после массовых протестов по всей Англии."
+      },
+      {
+        "de": "Der Generalstreik 1926 in England brachte das Land zum Stillstand – und scheiterte nach 9 Tagen.",
+        "ru": "Всеобщая забастовка 1926 года в Англии парализовала страну — и провалилась через 9 дней."
+      },
+      {
+        "de": "Die TUC (Trades Union Congress) existiert noch heute mit 5,5 Millionen Mitgliedern.",
+        "ru": "ТУК (Конгресс тред-юнионов) существует по сей день с 5,5 миллионами членов."
+      }
+    ]
+  },
+  {
+    "id": 8147,
+    "question_de": "Was war die Entstehung der Romantik als kulturelle Bewegung?",
+    "question_ru": "Что такое возникновение романтизма как культурного движения?",
+    "correct_answer_de": "Romantik: Gegenbewegung zur Aufklärung – Gefühl, Natur, Mittelalter",
+    "correct_answer_ru": "Романтизм: противовес Просвещению — чувство, природа, Средневековье",
+    "wrong_answers_de": [
+      "Romantik war ein Kunststil des 18. Jh. mit antiken Motiven",
+      "Die Romantik entststand als Reaktion auf den Industrialismus erst nach 1850",
+      "Beethoven und Mozart waren beide Romantiker der Wiener Klassik"
+    ],
+    "wrong_answers_ru": [
+      "Романтизм был стилем XVIII века с античными мотивами",
+      "Романтизм возник как реакция на индустриализм лишь после 1850 года",
+      "Бетховен и Моцарт оба были романтиками венской классики"
+    ],
+    "explanation_de": "Goethe schrieb «Werther» und «Faust», Schiller «Die Räuber», Beethoven komponierte Eroica und Neunte. Die Romantik idealisierte Natur, Vergangenheit und Volk und prägte nationale Mythen.",
+    "explanation_ru": "Гёте написал «Вертера» и «Фауста», Шиллер — «Разбойников», Бетховен сочинил «Героическую» и Девятую симфонии. Романтизм идеализировал природу, прошлое и народ и создал национальные мифы.",
+    "difficulty": "medium",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1820 CE",
+    "tags": [
+      "Kunst",
+      "Kultur",
+      "Musik"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Goethes 'Werther' (1774) löste eine Welle von Nachahmungssuiziden aus – 'Werther-Effekt' genannte Erscheinung.",
+        "ru": "«Вертер» Гёте (1774) вызвал волну подражательных самоубийств — явление, названное «эффектом Вертера»."
+      },
+      {
+        "de": "Caspar David Friedrich malte den einsamen Wanderer im Nebel – Symbol romantischer Individualität.",
+        "ru": "Каспар Давид Фридрих написал одинокого странника в тумане — символ романтической индивидуальности."
+      },
+      {
+        "de": "Die Gebrüder Grimm sammelten Märchen als nationale kulturelle Identität – Romantik als politisches Programm.",
+        "ru": "Братья Гримм собирали сказки как национальную культурную идентичность — романтизм как политическая программа."
+      }
+    ]
+  },
+  {
+    "id": 8148,
+    "question_de": "Was war die Entdeckung Australiens und seine Besiedlung?",
+    "question_ru": "Что такое открытие Австралии и её заселение?",
+    "correct_answer_de": "England kolonisierte Australien ab 1788 als Strafkolonie",
+    "correct_answer_ru": "Англия колонизировала Австралию с 1788 года как место ссылки",
+    "wrong_answers_de": [
+      "Spanien kolonisierte Australien 1788, England kaufte es später",
+      "Die Aborigines wurden erst im 20. Jh. durch Krankheiten dezimiert",
+      "England nutzte Australien als Handelsposten ohne Siedler"
+    ],
+    "wrong_answers_ru": [
+      "Испания колонизировала Австралию в 1788 году, Англия купила позже",
+      "Аборигены сократились от болезней лишь в XX веке",
+      "Англия использовала Австралию как торговый пост без поселенцев"
+    ],
+    "explanation_de": "Cook kartierte 1770 die Ostküste, 1788 landete die Erste Flotte mit 1.500 Sträflingen und Bewachern. Die indigene Bevölkerung schrumpfte durch Krankheiten und Gewalt dramatisch; 1901 entstand der Commonwealth.",
+    "explanation_ru": "Кук нанёс на карту в 1770 году восточное побережье, в 1788-м прибыл Первый флот с 1 500 каторжниками и охраной. Коренное население резко сократилось из-за болезней и насилия.",
+    "difficulty": "medium",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1850 CE",
+    "tags": [
+      "England",
+      "Gesellschaft"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Australien hatte ursprünglich bis zu 500 verschiedene Sprachen der Aborigines – viele sind ausgestorben.",
+        "ru": "Первоначально в Австралии было до 500 различных языков аборигенов — многие вымерли."
+      },
+      {
+        "de": "'Stolen Generations': 1910–1970 wurden Tausende Aboriginal-Kinder zwangsweise von Familien getrennt.",
+        "ru": "«Украденные поколения»: в 1910–1970 годах тысячи детей аборигенов принудительно разлучали с семьями."
+      },
+      {
+        "de": "Australien wurde 1901 der erste Staat mit Frauenwahlrecht und Parlamentssitzen – außer für Aborigines.",
+        "ru": "В 1901 году Австралия стала первым государством с правом голоса и местами в парламенте для женщин — но не для аборигенов."
+      }
+    ]
+  },
+  {
+    "id": 8149,
+    "question_de": "Was war der Aufstieg Tschaikowskys in der russischen Musik?",
+    "question_ru": "Что такое возвышение Чайковского в русской музыке?",
+    "correct_answer_de": "Tschaikowsky schuf «Schwanensee» und «Nussknacker» – Russlands größter Komponist",
+    "correct_answer_ru": "Чайковский создал «Лебединое озеро» и «Щелкунчика» — крупнейший композитор России",
+    "wrong_answers_de": [
+      "Tschaikowsky war sowjetischer Komponist unter Stalin",
+      "Schostakowitsch und Tschaikowsky schrieben gemeinsam die bekanntesten russischen Ballette",
+      "Tschaikowskys Musik war eine Mischung aus Folklore und Klassik ohne westlichen Einfluss"
+    ],
+    "wrong_answers_ru": [
+      "Чайковский был советским композитором при Сталине",
+      "Шостакович и Чайковский совместно написали самые известные русские балеты",
+      "Музыка Чайковского была смесью фольклора и классики без западного влияния"
+    ],
+    "explanation_de": "Tschaikowsky schrieb «Schwanensee» (1876), «Dornröschen» (1889), «Nussknacker» (1892) und die Ouvertüre «1812» mit echter Kanone. Er starb 1893; die genaue Todesursache ist umstritten.",
+    "explanation_ru": "Чайковский создал «Лебединое озеро» (1876), «Спящую красавицу» (1889), «Щелкунчика» (1892) и увертюру «1812 год» с настоящей пушкой. Он умер в 1893 году; причина смерти остаётся спорной.",
+    "difficulty": "medium",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1880 CE",
+    "tags": [
+      "Musik",
+      "Russland",
+      "Kunst"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Die Ouvertüre '1812' wurde ursprünglich für den Bau einer Kathedrale in Moskau geschrieben – mit echten Glocken.",
+        "ru": "Увертюра «1812» была первоначально написана для освящения собора в Москве — с настоящими колоколами."
+      },
+      {
+        "de": "Tschaikowskys Todesdatum und Todesursache bleiben Rätsel der Musikgeschichte.",
+        "ru": "Дата и причина смерти Чайковского остаются загадкой истории музыки."
+      },
+      {
+        "de": "Der Nussknacker war bei der Uraufführung 1892 ein Misserfolg – heute ist es das meistgespielte Ballett der Welt.",
+        "ru": "«Щелкунчик» на премьере в 1892 году провалился — сегодня это самый исполняемый балет в мире."
+      }
+    ]
+  },
+  {
+    "id": 8150,
+    "question_de": "Was war das Frauenwahlrecht und die Suffragetten-Bewegung in England?",
+    "question_ru": "Что такое женское избирательное право и движение суфражисток в Англии?",
+    "correct_answer_de": "Suffragetten kämpften ab 1903 militant für das Frauenwahlrecht",
+    "correct_answer_ru": "Суфражистки с 1903 года воинственно боролись за избирательное право женщин",
+    "wrong_answers_de": [
+      "England gab Frauen 1900 das Wahlrecht als erstes Land Europas",
+      "Die Suffragetten blieben gewaltlos und siegten mit Petitionen",
+      "Das Frauenwahlrecht in England brachte der Erste Weltkrieg"
+    ],
+    "wrong_answers_ru": [
+      "Англия предоставила женщинам право голоса в 1900 году первой в Европе",
+      "Суфражистки отказались от насилия и победили петициями",
+      "Избирательное право женщин в Англии принесла Первая мировая война"
+    ],
+    "explanation_de": "Pankhurst gründete 1903 die WSPU. Suffragetten schlugen Scheiben ein und hungerten im Gefängnis; Emily Davison starb 1913 beim Derby. Frauen über 30 wählten ab 1918, gleichberechtigt ab 1928.",
+    "explanation_ru": "Панкхёрст основала в 1903 году WSPU. Суфражистки били стёкла и голодали в тюрьмах; Эмили Дэвисон погибла в 1913-м на скачках. Равное право голоса женщины получили в 1928 году.",
+    "difficulty": "medium",
+    "category": "Neuzeit (19. Jahrhundert)",
+    "type": "factual",
+    "period": "1905 CE",
+    "tags": [
+      "England",
+      "Politik",
+      "Gesellschaft"
+    ],
+    "interesting_facts": [
+      {
+        "de": "Emily Wilding Davison warf sich vor das königliche Pferd beim Derby 1913 – und starb 4 Tage später.",
+        "ru": "Эмили Уайлдинг Дэвисон бросилась под королевскую лошадь на Эпсомском дерби в 1913 году — и умерла 4 дня спустя."
+      },
+      {
+        "de": "Neuseeland war 1893 das erste Land der Welt mit Frauenwahlrecht – England folgte 25 Jahre später.",
+        "ru": "Новая Зеландия в 1893 году стала первой страной в мире с женским избирательным правом — Англия последовала через 25 лет."
+      },
+      {
+        "de": "Im WW1 stellten Suffragetten den Kampf ein – und leisteten Kriegsdienst. Das stärkte ihre Ansprüche.",
+        "ru": "В Первую мировую войну суфражистки прекратили борьбу — и несли военную службу. Это укрепило их притязания."
+      }
+    ]
+  }
+]

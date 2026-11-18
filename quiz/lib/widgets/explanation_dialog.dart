@@ -98,19 +98,19 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     final pad = MediaQuery.paddingOf(context);
-    final maxW = math.min(540.0, size.width - 24);
-    final maxH = math.min(640.0, size.height * 0.82);
+    final maxW = math.min(480.0, size.width - 16);
+    final maxH = math.min(520.0, size.height * 0.72);
 
     return Dialog(
-      insetPadding: EdgeInsets.fromLTRB(12, 16, 12, math.max(16, pad.bottom + 8)),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      insetPadding: EdgeInsets.fromLTRB(8, 12, 8, math.max(8, pad.bottom + 4)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       clipBehavior: Clip.antiAlias,
       child: ConstrainedBox(
         constraints: BoxConstraints(maxWidth: maxW, maxHeight: maxH),
         child: SafeArea(
-          minimum: const EdgeInsets.all(4),
+          minimum: const EdgeInsets.all(2),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(18, 14, 18, 10),
+            padding: const EdgeInsets.fromLTRB(12, 10, 12, 8),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -121,32 +121,32 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
                       child: Text(
                         'Erklärung',
                         style: TextStyle(
-                          fontSize: 36,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                     IconButton(
-                      constraints: const BoxConstraints(minWidth: 44, minHeight: 44),
+                      constraints: const BoxConstraints(minWidth: 36, minHeight: 36),
                       padding: EdgeInsets.zero,
                       icon: Icon(
                         _isPlaying && !_isPaused
                             ? Icons.pause_circle_filled
                             : Icons.volume_up,
-                        size: 38,
+                        size: 28,
                         color: Colors.blue,
                       ),
                       onPressed: _togglePlayPause,
                       tooltip: _isPlaying && !_isPaused ? 'Pause' : 'Vorlesen',
                     ),
-                    const SizedBox(width: 8),
+                    const SizedBox(width: 4),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         const Text(
-                          'Читать автоматически',
+                          'Automatisch vorlesen',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 10,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -159,7 +159,7 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 4),
                 Expanded(
                   child: Scrollbar(
                     controller: _scrollController,
@@ -167,27 +167,27 @@ class _ExplanationDialogState extends State<ExplanationDialog> {
                     child: SingleChildScrollView(
                       controller: _scrollController,
                       physics: const BouncingScrollPhysics(),
-                      padding: const EdgeInsets.only(right: 6, bottom: 4),
+                      padding: const EdgeInsets.only(right: 4, bottom: 2),
                       child: Text(
                         widget.explanation,
-                        style: const TextStyle(fontSize: 34, height: 1.45),
+                        style: const TextStyle(fontSize: 15, height: 1.35),
                         softWrap: true,
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 8),
                 FilledButton(
                   onPressed: () => Navigator.of(context).pop(),
                   style: FilledButton.styleFrom(
-                    minimumSize: const Size.fromHeight(54),
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                    minimumSize: const Size.fromHeight(42),
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                     textStyle: const TextStyle(
-                      fontSize: 26,
+                      fontSize: 15,
                       fontWeight: FontWeight.w600,
                     ),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                   child: const Text('Schließen'),

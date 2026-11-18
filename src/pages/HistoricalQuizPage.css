@@ -48,6 +48,7 @@
 }
 
 .historical-quiz-title {
+  color: #fff;
   margin: 0;
   font-size: var(--touch-font-heading-sm);
   font-weight: 800;

@@ -60,26 +60,6 @@ class QuestionHistoryService {
     }
   }
 
-  static Future<int?> _tryTakeFactIndexRemote(int questionId, int factCount) async {
-    if (!kIsWeb) return null;
-    try {
-      final uri = Uri.parse('$_apiBasePath?mode=fact-index');
-      final res = await http.post(
-        uri,
-        headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({'questionId': questionId, 'factCount': factCount}),
-      );
-      if (res.statusCode < 200 || res.statusCode >= 300) return null;
-      final body = jsonDecode(res.body) as Map<String, dynamic>;
-      final index = body['index'];
-      if (index is int) return index;
-      if (index is num) return index.toInt();
-      return null;
-    } catch (_) {
-      return null;
-    }
-  }
-
   static Future<bool> _tryClearRemote() async {
     if (!kIsWeb) return false;
     try {
@@ -178,6 +158,59 @@ class QuestionHistoryService {
     Map<String, dynamic> counters,
   ) async {
     await prefs.setString(_factRotationKey, jsonEncode(counters));
+  }
+
+  /// Nicht-leere Fakten ohne Wiederholungen (Reihenfolge bleibt erhalten).
+  static List<String> uniqueNonEmptyFacts(List<String> facts) {
+    final seen = <String>{};
+    final result = <String>[];
+    for (final raw in facts) {
+      final text = raw.trim();
+      if (text.isEmpty) continue;
+      final key = text.toLowerCase();
+      if (seen.add(key)) result.add(text);
+    }
+    return result;
+  }
+
+  /// Nächsten Fakt-Index nur ansehen (Zähler nicht erhöhen).
+  static Future<int> peekNextFactDisplayIndex(
+    int questionId,
+    int factCount,
+  ) async {
+    if (factCount <= 0) return 0;
+    await _ensureMigrated();
+    final prefs = await SharedPreferences.getInstance();
+    final m = _loadFactCounters(prefs);
+    final raw = m[questionId.toString()];
+    var counter = 0;
+    if (raw is int) {
+      counter = raw;
+    } else if (raw is num) {
+      counter = raw.toInt();
+    }
+    return counter % factCount;
+  }
+
+  /// Server-backed fact rotation on the web (shared across devices); null = unavailable → local counter.
+  static Future<int?> _tryTakeFactIndexRemote(int questionId, int factCount) async {
+    if (!kIsWeb) return null;
+    try {
+      final uri = Uri.parse('$_apiBasePath?mode=fact-index');
+      final res = await http.post(
+        uri,
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({'questionId': questionId, 'factCount': factCount}),
+      );
+      if (res.statusCode < 200 || res.statusCode >= 300) return null;
+      final body = jsonDecode(res.body) as Map<String, dynamic>;
+      final index = body['index'];
+      if (index is int) return index;
+      if (index is num) return index.toInt();
+      return null;
+    } catch (_) {
+      return null;
+    }
   }
 
   /// Nächsten Fakt-Slot für diese Frage: zeigt nacheinander Fakt 0, 1, 2, … und beginnt von vorn.

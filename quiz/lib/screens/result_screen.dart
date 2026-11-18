@@ -86,11 +86,9 @@ class ResultScreen extends StatelessWidget {
                       color: Colors.amber,
                     ),
                     onPressed: () async {
-                      final facts =
-                          question.facts
-                              .map((s) => s.trim())
-                              .where((s) => s.isNotEmpty)
-                              .toList();
+                      final facts = QuestionHistoryService.uniqueNonEmptyFacts(
+                        question.facts,
+                      );
                       if (facts.isEmpty || !context.mounted) return;
                       final idx =
                           await QuestionHistoryService.takeNextFactDisplayIndex(
@@ -98,10 +96,20 @@ class ResultScreen extends StatelessWidget {
                             facts.length,
                           );
                       if (!context.mounted) return;
-                      await showDialog<void>(
-                        context: context,
-                        barrierDismissible: false,
-                        builder: (context) => FactsDialog.fact(text: facts[idx]),
+                      await Navigator.of(context).push<void>(
+                        PageRouteBuilder<void>(
+                          opaque: true,
+                          barrierColor: Colors.white,
+                          transitionDuration: Duration.zero,
+                          reverseTransitionDuration: Duration.zero,
+                          pageBuilder: (context, animation, secondaryAnimation) {
+                            return FactsDialog.fact(text: facts[idx]);
+                          },
+                          transitionsBuilder:
+                              (context, animation, secondaryAnimation, child) {
+                            return child;
+                          },
+                        ),
                       );
                     },
                     tooltip: 'Interessante Fakten',

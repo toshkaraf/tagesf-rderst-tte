@@ -4,114 +4,170 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// Which TTS engine is currently active.
-enum TtsEngine { serverApi, browserSpeechApi }
+import 'german_tts_text.dart';
+import 'offline_piper_tts.dart';
 
-/// Singleton TTS service with two-level fallback.
+/// Which TTS engine is currently active.
+enum TtsEngine { offlinePiper, serverApi, systemVoice }
+
+/// Singleton TTS service with platform-aware fallback chain.
 ///
-/// Priority:
-///   1. Vercel serverless function at [same-origin]/api/tts
-///      → Microsoft de-DE-KatjaNeural (identical on every device/browser)
-///   2. Web Speech API via flutter_tts (browser/OS built-in voice)
-///      → Apple Anna (iPad), Microsoft Katja (Windows), Google Deutsch (Android)
+/// Default everywhere: system voice via flutter_tts (fast, no delay).
 ///
-/// The server endpoint is probed automatically with a fast health-check.
-/// If /api/tts is unreachable the service falls back to the browser voice
-/// instantly, with no visible delay for the user.
+/// Optional (opt-in): Offline Piper neural voice on Android/iOS (settings),
+/// and the Vercel `/api/tts` server voice on Web ([_useServerApi]).
 class TtsService {
   TtsService._();
   static final TtsService instance = TtsService._();
 
-  // ── Preference keys ────────────────────────────────────────────────────────
   static const _prefVoiceName = 'tts.voice_name';
   static const _prefVoiceLocale = 'tts.voice_locale';
   static const _prefSpeechRate = 'tts.speech_rate';
   static const _prefPitch = 'tts.pitch';
+  static const _prefUseOfflinePiper = 'tts.use_offline_piper';
 
-  // ── Internal state ─────────────────────────────────────────────────────────
-  final FlutterTts _webTts = FlutterTts();
+  final FlutterTts _systemTts = FlutterTts();
   final AudioPlayer _player = AudioPlayer();
 
   bool _initialized = false;
-  Map<String, String>? _activeWebVoice;
-  double _speechRate = 0.85;
-  double _pitch = 1.0;
+  Map<String, String>? _activeSystemVoice;
+  static const defaultSpeechRate = 0.68;
 
-  bool? _apiAvailable;       // null = not yet checked
+  double _speechRate = defaultSpeechRate;
+  double _pitch = 1.0;
+  bool _useOfflinePiper = false;
+
+  /// Web: Server-API (/api/tts) ist langsamer als die Browser-Stimme → aus.
+  static const _useServerApi = false;
+
+  bool? _apiAvailable;
   DateTime? _lastPingTime;
-  TtsEngine _lastEngine = TtsEngine.browserSpeechApi;
+  TtsEngine _lastEngine = TtsEngine.systemVoice;
 
   void Function()? _completionHandler;
 
-  // ── Getters ────────────────────────────────────────────────────────────────
-  Map<String, String>? get activeWebVoice => _activeWebVoice;
+  Map<String, String>? get activeWebVoice => _activeSystemVoice;
   double get speechRate => _speechRate;
   double get pitch => _pitch;
   bool? get apiAvailable => _apiAvailable;
   TtsEngine get lastEngine => _lastEngine;
-
-  // ── Initialisation ─────────────────────────────────────────────────────────
+  bool get useOfflinePiper => _useOfflinePiper;
+  bool get offlinePiperSupported => OfflinePiperTts.instance.isSupported;
+  bool get offlinePiperReady => OfflinePiperTts.instance.isReady;
+  bool get offlinePiperDownloading => OfflinePiperTts.instance.isDownloading;
+  double? get offlinePiperDownloadProgress =>
+      OfflinePiperTts.instance.downloadProgress;
+  String? get offlinePiperStatus => OfflinePiperTts.instance.statusMessage;
 
   Future<void> initialize() async {
     if (_initialized) return;
     _initialized = true;
 
     final prefs = await SharedPreferences.getInstance();
-    _speechRate = prefs.getDouble(_prefSpeechRate) ?? 0.85;
-    _pitch      = prefs.getDouble(_prefPitch)       ?? 1.0;
+    _speechRate = prefs.getDouble(_prefSpeechRate) ?? defaultSpeechRate;
+    _pitch = prefs.getDouble(_prefPitch) ?? 1.0;
+    // Standard: System-Stimme (schnell, ohne Synthese-Verzögerung).
+    // Piper ist nur noch per Opt-in in den Einstellungen aktiv.
+    _useOfflinePiper = prefs.getBool(_prefUseOfflinePiper) ?? false;
 
-    await _webTts.setLanguage('de-DE');
-    await _webTts.setSpeechRate(_speechRate);
-    await _webTts.setPitch(_pitch);
-    await _webTts.setVolume(1.0);
-    _webTts.setCompletionHandler(() => _completionHandler?.call());
+    await _systemTts.setLanguage('de-DE');
+    await _systemTts.setSpeechRate(_speechRate);
+    await _systemTts.setPitch(_pitch);
+    await _systemTts.setVolume(1.0);
+    _systemTts.setCompletionHandler(() => _completionHandler?.call());
 
     _player.onPlayerComplete.listen((_) {
       if (_lastEngine == TtsEngine.serverApi) _completionHandler?.call();
     });
 
-    // Restore or auto-pick browser voice (runs in background)
-    final savedName   = prefs.getString(_prefVoiceName);
+    OfflinePiperTts.instance.setCompletionHandler(() {
+      _completionHandler?.call();
+    });
+
+    final savedName = prefs.getString(_prefVoiceName);
     final savedLocale = prefs.getString(_prefVoiceLocale);
     if (savedName != null && savedLocale != null) {
-      unawaited(_applyWebVoice({'name': savedName, 'locale': savedLocale}));
+      unawaited(_applySystemVoice({'name': savedName, 'locale': savedLocale}));
     } else {
       unawaited(_autoSelectBestVoice());
     }
 
-    // Probe /api/tts in background
-    unawaited(pingApi());
+    if (kIsWeb) {
+      if (_useServerApi) unawaited(pingApi());
+    } else if (_useOfflinePiper && OfflinePiperTts.instance.isSupported) {
+      unawaited(OfflinePiperTts.instance.ensureReady());
+    }
   }
 
-  // ── Public API ─────────────────────────────────────────────────────────────
-
-  /// Speaks [text]. Tries /api/tts (Vercel) first, falls back to browser.
   Future<void> speak(String text) async {
     await _ensureInit();
     await stop();
-    if (await _tryServerApi(text)) return;
-    _lastEngine = TtsEngine.browserSpeechApi;
-    await _webTts.speak(text);
+    text = prepareGermanTts(text);
+
+    if (!kIsWeb && _useOfflinePiper) {
+      final ok = await OfflinePiperTts.instance.speak(
+        text,
+        speed: _mapRateToPiperSpeed(_speechRate),
+      );
+      if (ok) {
+        _lastEngine = TtsEngine.offlinePiper;
+        return;
+      }
+    }
+
+    if (kIsWeb && _useServerApi && await _tryServerApi(text)) return;
+
+    _lastEngine = TtsEngine.systemVoice;
+    await _systemTts.speak(text);
   }
 
-  /// Speaks [text] directly via the browser voice (bypasses /api/tts).
   Future<void> speakWithWebVoice(String text) async {
     await _ensureInit();
     await stop();
-    _lastEngine = TtsEngine.browserSpeechApi;
-    await _webTts.speak(text);
+    _lastEngine = TtsEngine.systemVoice;
+    await _systemTts.speak(prepareGermanTts(text));
+  }
+
+  Future<void> speakWithOfflinePiper(String text) async {
+    await _ensureInit();
+    await stop();
+    text = prepareGermanTts(text);
+    final ok = await OfflinePiperTts.instance.speak(
+      text,
+      speed: _mapRateToPiperSpeed(_speechRate),
+    );
+    if (ok) _lastEngine = TtsEngine.offlinePiper;
+  }
+
+  Future<void> ensureOfflinePiperReady({
+    void Function(double progress)? onProgress,
+  }) async {
+    await _ensureInit();
+    await OfflinePiperTts.instance.ensureReady(onProgress: onProgress);
+  }
+
+  Future<void> setUseOfflinePiper(bool value) async {
+    _useOfflinePiper = value;
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_prefUseOfflinePiper, value);
+    if (value && OfflinePiperTts.instance.isSupported) {
+      unawaited(OfflinePiperTts.instance.ensureReady());
+    }
   }
 
   Future<void> stop() async {
-    await _webTts.stop();
+    await _systemTts.stop();
     await _player.stop();
+    await OfflinePiperTts.instance.stop();
   }
 
   Future<void> pause() async {
     if (_lastEngine == TtsEngine.serverApi) {
       await _player.pause();
+    } else if (_lastEngine == TtsEngine.offlinePiper) {
+      await OfflinePiperTts.instance.pause();
     } else {
-      await _webTts.pause();
+      await _systemTts.pause();
     }
   }
 
@@ -119,8 +175,11 @@ class TtsService {
     _completionHandler = handler;
   }
 
-  /// Pings [same-origin]/api/tts and updates [apiAvailable].
   Future<bool> pingApi() async {
+    if (!kIsWeb) {
+      _apiAvailable = false;
+      return false;
+    }
     try {
       final resp = await http
           .get(_apiUri())
@@ -133,17 +192,16 @@ class TtsService {
     return _apiAvailable!;
   }
 
-  // ── Web voice helpers ──────────────────────────────────────────────────────
-
   Future<List<Map<String, String>>> getGermanVoices() async {
     await _ensureInit();
     try {
-      final all = await _webTts.getVoices as List<dynamic>;
+      final all = await _systemTts.getVoices as List<dynamic>;
       final de = all
           .cast<Map>()
-          .where((v) => (v['locale'] ?? '').toString().toLowerCase().startsWith('de'))
+          .where((v) =>
+              (v['locale'] ?? '').toString().toLowerCase().startsWith('de'))
           .map((v) => {
-                'name':   v['name']?.toString()   ?? '',
+                'name': v['name']?.toString() ?? '',
                 'locale': v['locale']?.toString() ?? 'de-DE',
               })
           .where((v) => v['name']!.isNotEmpty)
@@ -156,33 +214,30 @@ class TtsService {
   }
 
   Future<void> setWebVoice(Map<String, String> voice) async {
-    await _applyWebVoice(voice);
+    await _applySystemVoice(voice);
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_prefVoiceName,   voice['name']!);
+    await prefs.setString(_prefVoiceName, voice['name']!);
     await prefs.setString(_prefVoiceLocale, voice['locale'] ?? 'de-DE');
   }
 
   Future<void> setSpeechRate(double rate) async {
     _speechRate = rate;
-    await _webTts.setSpeechRate(rate);
+    await _systemTts.setSpeechRate(rate);
     final prefs = await SharedPreferences.getInstance();
     await prefs.setDouble(_prefSpeechRate, rate);
   }
 
   Future<void> setPitch(double p) async {
     _pitch = p;
-    await _webTts.setPitch(p);
+    await _systemTts.setPitch(p);
     final prefs = await SharedPreferences.getInstance();
     await prefs.setDouble(_prefPitch, p);
   }
-
-  // ── Private ────────────────────────────────────────────────────────────────
 
   Future<void> _ensureInit() async {
     if (!_initialized) await initialize();
   }
 
-  /// Constructs the /api/tts URL using the current page origin.
   Uri _apiUri({Map<String, String>? queryParameters}) {
     final b = Uri.base;
     return Uri(
@@ -195,9 +250,9 @@ class TtsService {
   }
 
   Future<bool> _tryServerApi(String text) async {
-    // Use cached "unavailable" status for 30 s to avoid repeated pings
     if (_apiAvailable == false && _lastPingTime != null) {
-      if (DateTime.now().difference(_lastPingTime!) < const Duration(seconds: 30)) {
+      if (DateTime.now().difference(_lastPingTime!) <
+          const Duration(seconds: 30)) {
         return false;
       }
     }
@@ -209,7 +264,7 @@ class TtsService {
 
     try {
       final uri = _apiUri(queryParameters: {
-        'text':  text,
+        'text': text,
         'voice': 'de-DE-KatjaNeural',
       });
       await _player.play(UrlSource(uri.toString()));
@@ -231,18 +286,23 @@ class TtsService {
       await Future<void>.delayed(const Duration(milliseconds: 500));
     }
     if (voices.isNotEmpty) {
-      await _applyWebVoice(voices.first);
-      debugPrint('TtsService: web voice → "${voices.first['name']}"');
+      await _applySystemVoice(voices.first);
+      debugPrint('TtsService: system voice → "${voices.first['name']}"');
     }
   }
 
-  Future<void> _applyWebVoice(Map<String, String> voice) async {
+  Future<void> _applySystemVoice(Map<String, String> voice) async {
     try {
-      await _webTts.setVoice(voice);
-      _activeWebVoice = voice;
+      await _systemTts.setVoice(voice);
+      _activeSystemVoice = voice;
     } catch (e) {
       debugPrint('TtsService: setVoice failed: $e');
     }
+  }
+
+  double _mapRateToPiperSpeed(double rate) {
+    // flutter_tts [defaultSpeechRate] ≈ normal; Piper uses 1.0 as normal.
+    return (rate / defaultSpeechRate).clamp(0.35, 2.0);
   }
 
   int _voiceScore(String name) {
@@ -251,12 +311,12 @@ class TtsService {
     if (n.contains('online') && (n.contains('katja') || n.contains('conrad'))) {
       return 80;
     }
-    if (n.contains('online'))   return 60;
-    if (n == 'anna'    || n.startsWith('anna '))    return 75;
-    if (n == 'markus'  || n.startsWith('markus '))  return 55;
+    if (n.contains('online')) return 60;
+    if (n == 'anna' || n.startsWith('anna ')) return 75;
+    if (n == 'markus' || n.startsWith('markus ')) return 55;
     if (n == 'yannick' || n.startsWith('yannick ')) return 50;
-    if (n == 'helena'  || n.startsWith('helena '))  return 45;
-    if (n.contains('google'))   return 40;
+    if (n == 'helena' || n.startsWith('helena ')) return 45;
+    if (n.contains('google')) return 40;
     if (n.contains('katja') || n.contains('conrad')) return 30;
     return 10;
   }

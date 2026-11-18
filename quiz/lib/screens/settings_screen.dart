@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../models/quiz_question.dart';
@@ -28,12 +29,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
   List<Map<String, String>> _availableVoices = [];
   Map<String, String>? _selectedVoice;
   bool _loadingVoices = false;
-  double _speechRate = 0.85;
+  double _speechRate = TtsService.defaultSpeechRate;
   double _pitch = 1.0;
 
-  // /api/tts status
+  // /api/tts status (web only)
   bool? _edgeTtsAvailable;
   bool _edgeTtsPinging = false;
+
+  // Offline Piper TTS (mobile)
+  bool _useOfflinePiper = true;
+  bool _offlinePiperDownloading = false;
+  double? _offlinePiperProgress;
+  String? _offlinePiperStatus;
 
   @override
   void initState() {
@@ -52,8 +59,38 @@ class _SettingsScreenState extends State<SettingsScreen> {
       _speechRate       = TtsService.instance.speechRate;
       _pitch            = TtsService.instance.pitch;
       _edgeTtsAvailable = TtsService.instance.apiAvailable;
+      _useOfflinePiper  = TtsService.instance.useOfflinePiper;
+      _offlinePiperDownloading = TtsService.instance.offlinePiperDownloading;
+      _offlinePiperProgress    = TtsService.instance.offlinePiperDownloadProgress;
+      _offlinePiperStatus      = TtsService.instance.offlinePiperStatus;
     });
     await _refreshVoices();
+  }
+
+  Future<void> _downloadOfflinePiper() async {
+    if (_offlinePiperDownloading) return;
+    setState(() {
+      _offlinePiperDownloading = true;
+      _offlinePiperProgress = 0;
+    });
+    await TtsService.instance.ensureOfflinePiperReady(
+      onProgress: (p) {
+        if (!mounted) return;
+        setState(() => _offlinePiperProgress = p);
+      },
+    );
+    if (!mounted) return;
+    setState(() {
+      _offlinePiperDownloading = TtsService.instance.offlinePiperDownloading;
+      _offlinePiperProgress    = TtsService.instance.offlinePiperDownloadProgress;
+      _offlinePiperStatus      = TtsService.instance.offlinePiperStatus;
+    });
+  }
+
+  Future<void> _previewOfflinePiper() async {
+    await TtsService.instance.speakWithOfflinePiper(
+      'Hallo! Dies ist die offline Neural-Stimme für Deutsch.',
+    );
   }
 
   Future<void> _pingEdgeTts() async {
@@ -295,11 +332,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
             SizedBox(
                 height: MediaQuery.of(context).size.width < 400 ? 12 : 16),
 
-            // ── edge-tts Server-Karte ──────────────────────────────────────
-            _buildEdgeTtsCard(context),
-            SizedBox(height: MediaQuery.of(context).size.width < 400 ? 12 : 16),
+            // ── TTS ────────────────────────────────────────────────────────
+            if (!kIsWeb && TtsService.instance.offlinePiperSupported) ...[
+              _buildOfflinePiperCard(context),
+              SizedBox(height: MediaQuery.of(context).size.width < 400 ? 12 : 16),
+            ],
+            if (kIsWeb) ...[
+              _buildEdgeTtsCard(context),
+              SizedBox(height: MediaQuery.of(context).size.width < 400 ? 12 : 16),
+            ],
 
-            // ── TTS-Stimme-Karte (Fallback) ────────────────────────────────
+            // ── System/Browser voice (Fallback) ───────────────────────────
             _buildVoiceCard(context),
 
             SizedBox(
@@ -327,6 +370,141 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
               ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildOfflinePiperCard(BuildContext context) {
+    final ready = TtsService.instance.offlinePiperReady;
+    final downloading = _offlinePiperDownloading;
+    final progress = _offlinePiperProgress;
+
+    Widget statusWidget;
+    if (downloading) {
+      statusWidget = Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            _offlinePiperStatus ?? 'Sprachmodell wird geladen …',
+            style: TextStyle(fontSize: 13, color: Colors.grey.shade600),
+          ),
+          const SizedBox(height: 8),
+          LinearProgressIndicator(value: progress),
+          if (progress != null)
+            Text(
+              '${(progress * 100).round()} %',
+              style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
+            ),
+        ],
+      );
+    } else if (ready) {
+      statusWidget = Row(
+        children: [
+          const Icon(Icons.check_circle, color: Colors.green, size: 16),
+          const SizedBox(width: 6),
+          Expanded(
+            child: Text(
+              _offlinePiperStatus ?? 'Bereit – Piper Neural (deutsch)',
+              style: TextStyle(
+                fontSize: 13,
+                color: Colors.green.shade700,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          TextButton.icon(
+            onPressed: _previewOfflinePiper,
+            icon: const Icon(Icons.play_arrow, size: 16),
+            label: const Text('Test'),
+          ),
+        ],
+      );
+    } else {
+      statusWidget = Text(
+        _offlinePiperStatus ??
+            'Noch nicht installiert (~20 MB, einmaliger Download)',
+        style: TextStyle(fontSize: 13, color: Colors.grey.shade600),
+      );
+    }
+
+    return Card(
+      elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                const Icon(Icons.offline_bolt, color: Colors.deepPurple),
+                const SizedBox(width: 8),
+                const Expanded(
+                  child: Text(
+                    'Offline Neural-Stimme (empfohlen)',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                if (ready && _useOfflinePiper)
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: Colors.green.shade100,
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    child: Text(
+                      'AKTIV',
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: Colors.green.shade800,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 4),
+            Text(
+              'Piper Neural TTS – deutlich natürlicher als die Standard-Android-Stimme.\n'
+              'Funktioniert komplett offline nach dem Download.',
+              style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
+            ),
+            const SizedBox(height: 12),
+            statusWidget,
+            const SizedBox(height: 12),
+            SwitchListTile(
+              contentPadding: EdgeInsets.zero,
+              title: const Text('Offline-Stimme verwenden'),
+              subtitle: const Text('Bevorzugt vor der System-Stimme'),
+              value: _useOfflinePiper,
+              onChanged: (v) async {
+                await TtsService.instance.setUseOfflinePiper(v);
+                if (!mounted) return;
+                setState(() => _useOfflinePiper = v);
+              },
+            ),
+            if (!ready)
+              ElevatedButton.icon(
+                onPressed: downloading ? null : _downloadOfflinePiper,
+                icon: downloading
+                    ? const SizedBox(
+                        width: 14,
+                        height: 14,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2,
+                          color: Colors.white,
+                        ),
+                      )
+                    : const Icon(Icons.download, size: 16),
+                label: Text(downloading ? 'Wird heruntergeladen …' : 'Sprachmodell laden'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepPurple,
+                  foregroundColor: Colors.white,
+                ),
+              ),
           ],
         ),
       ),
@@ -475,7 +653,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 const SizedBox(width: 8),
                 const Expanded(
                   child: Text(
-                    'Browser-Stimme (Fallback)',
+                    kIsWeb ? 'Browser-Stimme (Fallback)' : 'System-Stimme (Fallback)',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -493,7 +671,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             const SizedBox(height: 4),
             Text(
-              'Aktiv wenn Server nicht verfügbar: $activeName',
+              kIsWeb
+                  ? 'Aktiv wenn Server nicht verfügbar: $activeName'
+                  : 'Fallback wenn Offline-Stimme nicht verfügbar: $activeName',
               style: TextStyle(fontSize: 13, color: Colors.grey.shade600),
             ),
             const SizedBox(height: 12),
@@ -555,9 +735,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 const Text('Geschwindigkeit', style: TextStyle(fontSize: 14)),
                 const Spacer(),
                 Text(
-                  _speechRate == 0.85
+                  _speechRate == TtsService.defaultSpeechRate
                       ? 'Normal'
-                      : _speechRate < 0.85
+                      : _speechRate < TtsService.defaultSpeechRate
                           ? 'Langsam'
                           : 'Schnell',
                   style: TextStyle(
@@ -569,7 +749,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             Slider(
               value: _speechRate,
-              min: 0.4,
+              min: 0.25,
               max: 1.4,
               divisions: 10,
               label: _speechRate.toStringAsFixed(2),

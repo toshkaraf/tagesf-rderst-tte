@@ -10,13 +10,13 @@ const C = { ink: '#1E2B24', laurel: '#3F5B3A', terra: '#B4532A', terraLight: '#E
 const QTHEME = { bg: C.ink, fg: C.marble, accent: C.terraLight, btn: '#2F4A3A', btnHover: '#3F6049' };
 const uri = (f) => 'data:image/jpeg;base64,' + fs.readFileSync(IMG + f).toString('base64');
 const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-const out = [], ends = {};
+const out = [], ends = {}, missing = [];
 out.push(`<section class="s dark title" data-i="0">
  <div class="tl"><div class="kick">THEMATISCHE PRÄSENTATION · GESCHICHTE</div>
  <h1>Macht, die man zurückgibt</h1><div class="rule"></div>
  <p class="sub">Cincinnatus, Washington, Garibaldi, Mandela</p>
  <p class="meta">30 Folien · einfaches Deutsch (B1)<br>Tippen: nächste Folie · Video-Folien spielen direkt im Vortrag</p></div>
- <div class="arch big"><img src="${uri('title_t.jpg')}" alt="Cincinnatus"></div>
+ <div class="arch big">${fs.existsSync(IMG + 'title_t.jpg') ? `<img src="${uri('title_t.jpg')}" alt="Cincinnatus">` : ''}</div>
  <div class="cap tcap">Bild: ${esc(S.titleCredit || '')} / Wikimedia Commons</div></section>`);
 let idx = 1;
 for (const d of S.slides) {
@@ -28,8 +28,9 @@ for (const d of S.slides) {
     left = `<div class="thumb" data-go="+1"><img src="${uri('ytc_' + d.vid + '.jpg')}" alt="${esc(d.motif)}"><span class="play"></span></div>
     <div class="vl"><a href="#" data-go="+1">▶ Video ansehen (nächste Folie)</a><br><a class="yt" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=${d.vid}">${esc(v.title + ' (' + v.channel + ')')}</a></div>`;
   } else {
-    left = `<div class="arch"><img src="${uri('p' + d.n + '_c.jpg')}" alt="${esc(d.motif)}" style="object-position:${d.pos || 'center 25%'}"></div>
+    if (fs.existsSync(IMG + 'p' + d.n + '_c.jpg')) left = `<div class="arch"><img src="${uri('p' + d.n + '_c.jpg')}" alt="${esc(d.motif)}" style="object-position:${d.pos || 'center 25%'}"></div>
     <div class="cap">Bild: ${esc(d.credit)} / Wikimedia Commons</div>`;
+    else { missing.push(d.n); left = `<div class="arch card"><b>${String(d.n).padStart(2, '0')}</b><i>${esc(d.motif)}</i></div><div class="cap">Bildmotiv (Platzhalter)</div>`; }
   }
   out.push(`<section class="s content" data-i="${myIdx}">
  <div class="lp">${left}</div>
@@ -55,6 +56,7 @@ html,body{height:100%;background:#0f1713;overflow:hidden;font-family:var(--sans)
 .s.dark{background:var(--ink);color:var(--marble)}
 .content .lp{position:absolute;left:0;top:0;width:390px;height:562.5px;background:var(--ink)}
 .arch{position:absolute;left:45px;top:55px;width:300px;height:400px;border-radius:150px 150px 6px 6px;overflow:hidden;border:3px solid var(--terra);background:#2a3a31}
+.arch.card{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;color:#E9E4D6}.arch.card b{font:700 64px var(--serif);color:#E08B5B}.arch.card i{font-size:17px;margin-top:14px}
 .arch img{width:100%;height:100%;object-fit:cover;display:block}
 .lp .cap{position:absolute;left:45px;top:468px;width:300px;font-size:12.5px;line-height:1.3;color:#B9B5A4}
 .thumb{position:absolute;left:45px;top:150px;width:300px;height:169px;border-radius:6px;overflow:hidden;border:3px solid var(--terra);cursor:pointer;background:#000}
@@ -112,4 +114,4 @@ window.__back=function(){if(cur>0){show(cur-1);return true}return false};var h=p
 </script></body></html>`;
 fs.mkdirSync(__dirname + '/../../public/cincinnatus', { recursive: true });
 fs.writeFileSync(__dirname + '/../../public/cincinnatus/index.html', html);
-console.log('sections', total, 'bytes', html.length);
+console.log('missing images:', missing.join(',') || 'none'); console.log('sections', total, 'bytes', html.length);

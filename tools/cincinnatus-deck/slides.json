@@ -31,7 +31,8 @@
    "cat": "458 V. CHR.",
    "title": "Rom ist in großer Gefahr",
    "text": "Das Volk der Aequer greift an. Das Heer des Konsuls Minucius sitzt in einem Tal fest. Der Senat ernennt einen Diktator. Das ist ein Amt für Notzeiten: mit viel Macht, aber höchstens sechs Monate lang.",
-   "motif": "Der römische Senat berät."
+   "motif": "Der römische Senat berät.",
+   "credit": "Cesare Maccari (Gemälde, gemeinfrei)"
   },
   {
    "n": 4,
@@ -80,7 +81,8 @@
    "cat": "1775–1783",
    "title": "Acht Jahre Krieg",
    "text": "Die Armee hat wenig Geld, wenig Essen und kaum Schuhe. Im Winter 1777/78 frieren die Soldaten in Valley Forge. 1781 siegt Washington bei Yorktown. 1783 kommt der Frieden.",
-   "motif": "Soldaten im Winterlager von Valley Forge."
+   "motif": "Soldaten im Winterlager von Valley Forge.",
+   "credit": "John Ward Dunsmore (Gemälde, gemeinfrei)"
   },
   {
    "n": 10,
@@ -171,7 +173,8 @@
    "cat": "EINFÜHRUNG",
    "title": "Mandela: Vom Anwalt zum Häftling",
    "text": "Nelson Mandela wurde 1918 in Südafrika geboren. Er wurde Rechtsanwalt in Johannesburg. In Südafrika gab es Apartheid: Menschen wurden nach Hautfarbe getrennt. Mandela kämpfte im ANC dagegen.",
-   "motif": "Der junge Nelson Mandela."
+   "motif": "Der junge Nelson Mandela.",
+   "credit": "Unbekannt (Foto, gemeinfrei)"
   },
   {
    "n": 21,
@@ -187,7 +190,8 @@
    "cat": "11. FEBRUAR 1990",
    "title": "Frei nach 27 Jahren",
    "text": "Mandela kommt frei. Er verhandelt mit Präsident de Klerk über das Ende der Apartheid. Beide bekommen 1993 den Friedensnobelpreis. Mandela spricht nicht von Rache, sondern von Zusammenarbeit.",
-   "motif": "Mandela und de Klerk."
+   "motif": "Mandela und de Klerk.",
+   "credit": "World Economic Forum (Foto 1992, CC BY-SA 2.0)"
   },
   {
    "n": 23,
@@ -204,7 +208,7 @@
    "cat": "1995–1996",
    "title": "Versöhnung statt Rache",
    "text": "1995 trägt Mandela beim Rugby-Finale das Trikot der Springboks, das viele Weiße lieben. 1996 beginnt eine Wahrheitskommission. Täter sollen die Wahrheit sagen. Das Land soll sich nicht zerreißen.",
-   "motif": "Mandela beim Rugby-Finale 1995."
+   "motif": "Die Mandela-Statue in Johannesburg."
   },
   {
    "n": 25,
@@ -255,5 +259,6 @@
    "text": "Vieles an Cincinnatus ist Legende. Der Römer Livius schrieb seine Geschichte erst Jahrhunderte später. Aber die Idee ist klar. Frage zum Schluss: Wer gibt heute Macht zurück, wenn die Aufgabe erfüllt ist?",
    "motif": "Statue des Cincinnatus."
   }
- ]
+ ],
+ "titleCredit": "Giovanni Francesco Romanelli (Gemälde, CC BY 2.5)"
 }

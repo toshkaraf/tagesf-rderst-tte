@@ -23,7 +23,7 @@ CREDIT = {
  'p20': 'Unbekannt (Foto, gemeinfrei)',
  'p21': 'Moheen Reeyad (Foto, CC BY-SA 4.0)',
  'p22': 'World Economic Forum (Foto 1992, CC BY-SA 2.0)',
- 'p24': 'PLACEHOLDER',
+ 'p24': 'Mark Hillary (Mandela-Statue, CC BY 2.0)',
  'p25': 'South Africa The Good News (Foto, CC BY 2.0)',
  'p26': 'José Luiz (Foto, gemeinfrei)',
  'p27': 'Maciej Szczepańczyk (Foto, CC BY 3.0)',

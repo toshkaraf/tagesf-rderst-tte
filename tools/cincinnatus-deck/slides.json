@@ -23,7 +23,9 @@
    "cat": "HERKUNFT",
    "title": "Ein Adliger auf dem Acker",
    "text": "Lucius Quinctius Cincinnatus wurde um 519 v. Chr. geboren. Er kam aus der Adelsfamilie der Quinctier. „Cincinnatus“ bedeutet „der Lockige“. Er lebte einfach auf einem kleinen Hof am Tiber.",
-   "motif": "Ein Bauer pflügt sein Feld, im Stil der Antike."
+   "motif": "Ein Bauer pflügt sein Feld, im Stil der Antike.",
+   "ar": 0.75,
+   "credit": "Rudy Hertzog (Statue von Foyatier, CC BY-SA 4.0) / Wikimedia Commons"
   },
   {
    "n": 3,
@@ -32,7 +34,8 @@
    "title": "Rom ist in großer Gefahr",
    "text": "Das Volk der Aequer greift an. Das Heer des Konsuls Minucius sitzt in einem Tal fest. Der Senat ernennt einen Diktator. Das ist ein Amt für Notzeiten: mit viel Macht, aber höchstens sechs Monate lang.",
    "motif": "Der römische Senat berät.",
-   "credit": "Cesare Maccari (Gemälde, gemeinfrei)"
+   "credit": "Cesare Maccari (Gemälde, gemeinfrei) / Wikimedia Commons",
+   "ar": 1.536
   },
   {
    "n": 4,
@@ -40,7 +43,9 @@
    "cat": "DER RUF",
    "title": "„Lass den Pflug, Rom ruft dich!“",
    "text": "Die Boten des Senats finden ihn beim Pflügen. Zuerst sagt er: „Meine Ernte leidet, wenn ich gehe.“ Dann ruft er seiner Frau Racilia zu: „Bring mir meine Toga!“ Er lässt den Pflug stehen.",
-   "motif": "Senatoren treffen Cincinnatus auf dem Feld."
+   "motif": "Cincinnatus am Pflug, Bronzeplakette.",
+   "ar": 1.481,
+   "credit": "Filarete (Bronzeplakette, 15. Jh.) / The Met, Open Access"
   },
   {
    "n": 5,
@@ -57,7 +62,9 @@
    "cat": "SIEG",
    "title": "16 Tage bis zum Sieg",
    "text": "Die Aequer sind eingekreist und bitten um Gnade. Sie müssen unter einem „Joch“ aus drei Speeren durchkriechen. Die Beute gibt Cincinnatus seinen Soldaten. Er selbst nimmt nichts. Nach 16 Tagen legt er das Amt nieder.",
-   "motif": "Römische Soldaten und Speere."
+   "motif": "Zwei römische Soldaten (Zeichnung).",
+   "ar": 0.75,
+   "credit": "Augustin Pajou (Zeichnung) / The Met, Open Access"
   },
   {
    "n": 7,
@@ -65,7 +72,9 @@
    "cat": "439 V. CHR.",
    "title": "Noch einmal, mit 80 Jahren",
    "text": "Der reiche Spurius Maelius kauft Getreide auf. Man sagt: Er will König werden. Rom ruft den alten Cincinnatus wieder. Maelius stirbt, sein Haus wird abgerissen, sein Getreide billig verkauft. Nach wenigen Tagen geht Cincinnatus heim.",
-   "motif": "Ein alter Römer in der Toga."
+   "motif": "Römische Statue in der Toga.",
+   "ar": 0.832,
+   "credit": "Römische Togastatue, 1. Jh. n. Chr. / The Met, Open Access"
   },
   {
    "n": 8,
@@ -73,7 +82,9 @@
    "cat": "EINFÜHRUNG",
    "title": "George Washington, der „amerikanische Cincinnatus“",
    "text": "Washington wurde 1732 in Virginia geboren. Er war Farmer. 1775 übernahm er den Oberbefehl über die Armee der Kolonien. Er sagte, er fühle sich der Aufgabe kaum gewachsen.",
-   "motif": "Porträt von George Washington."
+   "motif": "Porträt von George Washington.",
+   "ar": 0.837,
+   "credit": "Gilbert Stuart (Gemälde, ab 1795) / The Met, Open Access"
   },
   {
    "n": 9,
@@ -82,7 +93,8 @@
    "title": "Acht Jahre Krieg",
    "text": "Die Armee hat wenig Geld, wenig Essen und kaum Schuhe. Im Winter 1777/78 frieren die Soldaten in Valley Forge. 1781 siegt Washington bei Yorktown. 1783 kommt der Frieden.",
    "motif": "Soldaten im Winterlager von Valley Forge.",
-   "credit": "John Ward Dunsmore (Gemälde, gemeinfrei)"
+   "credit": "John Ward Dunsmore (Gemälde, gemeinfrei) / Wikimedia Commons",
+   "ar": 1.262
   },
   {
    "n": 10,
@@ -99,7 +111,9 @@
    "cat": "MÄRZ 1783",
    "title": "Die Offiziere und der Putsch",
    "text": "Die Offiziere warten seit Monaten auf ihren Lohn. Einige drohen mit Gewalt gegen den Kongress. Washington hält in Newburgh eine kurze Rede und stoppt den Plan. Die Armee bleibt unter ziviler Führung.",
-   "motif": "Washington in seinem Hauptquartier in Newburgh."
+   "motif": "Washington in seinem Hauptquartier in Newburgh.",
+   "ar": 1.283,
+   "credit": "Unbekannt (Druck, 1850–1880) / Library of Congress"
   },
   {
    "n": 12,
@@ -107,7 +121,9 @@
    "cat": "1787–1789",
    "title": "Präsident – aber ungern",
    "text": "1787 leitet er die Verfassungskonferenz. 1789 wählt man ihn einstimmig zum ersten Präsidenten. Er schreibt, er wäre lieber auf seinem Hof geblieben. Er nimmt das Amt aus Pflichtgefühl an.",
-   "motif": "Washington legt den Amtseid ab."
+   "motif": "Washington als erster Präsident (Druck).",
+   "ar": 0.787,
+   "credit": "Unbekannt (Druck, 1899) / Library of Congress"
   },
   {
    "n": 13,
@@ -115,7 +131,9 @@
    "cat": "1796–1799",
    "title": "Zwei Amtszeiten sind genug",
    "text": "1796 sagt Washington: Ich kandidiere nicht noch einmal. Er hätte wohl wieder gewonnen. 1797 kehrt er auf sein Gut Mount Vernon zurück. Er stirbt dort am 14. Dezember 1799.",
-   "motif": "Das Herrenhaus Mount Vernon."
+   "motif": "Das Herrenhaus Mount Vernon.",
+   "ar": 1.538,
+   "credit": "Unbekannt (Foto, 1908–1948) / Library of Congress"
   },
   {
    "n": 14,
@@ -123,7 +141,9 @@
    "cat": "EINFÜHRUNG",
    "title": "Garibaldi: Der Held zweier Welten",
    "text": "Giuseppe Garibaldi wurde 1807 in Nizza geboren. Er war Seemann und Kämpfer, auch in Südamerika. Italien bestand damals aus vielen kleinen Staaten. Er träumte von einem Land für alle Italiener.",
-   "motif": "Porträt von Giuseppe Garibaldi."
+   "motif": "Porträt von Giuseppe Garibaldi.",
+   "ar": 0.75,
+   "credit": "Unbekannt (Foto, um 1861) / Library of Congress"
   },
   {
    "n": 15,
@@ -140,7 +160,9 @@
    "cat": "MAI 1860",
    "title": "Diktator im Namen des Königs",
    "text": "Auf Sizilien ernennt sich Garibaldi zum Diktator. Aber er handelt „im Namen von Viktor Emanuel II.“, dem König von Piemont. Ende Mai nimmt er die Hauptstadt Palermo ein.",
-   "motif": "Kämpfe in Palermo 1860."
+   "motif": "Bilderbogen mit Szenen aus Garibaldis Leben.",
+   "ar": 0.75,
+   "credit": "Juan Llorens (Bilderbogen, 1862) / The Met, Open Access"
   },
   {
    "n": 17,
@@ -148,7 +170,9 @@
    "cat": "SEPTEMBER 1860",
    "title": "Einzug in Neapel",
    "text": "Garibaldi geht aufs Festland. Am 7. September 1860 zieht er in Neapel ein, fast ohne Kampf. Der König von Neapel flieht. Im Süden gehört jetzt alles seinen Freiwilligen.",
-   "motif": "Garibaldi zieht in Neapel ein."
+   "motif": "Garibaldi zieht in Neapel ein.",
+   "ar": 0.803,
+   "credit": "Unbekannt (Grafik, um 1860) / Library of Congress"
   },
   {
    "n": 18,
@@ -165,7 +189,9 @@
    "cat": "NACH DER MISSION",
    "title": "Zurück auf die Insel Caprera",
    "text": "Garibaldi lehnt Titel und Geld ab. Er geht auf seine kleine Insel Caprera und arbeitet als Bauer. Er soll nur einen Sack Saatgut mitgenommen haben. Er stirbt dort 1882.",
-   "motif": "Garibaldis einfaches Haus auf Caprera."
+   "motif": "Garibaldi im Alter.",
+   "ar": 0.797,
+   "credit": "Unbekannt (Foto, 1869) / Library of Congress"
   },
   {
    "n": 20,
@@ -174,7 +200,8 @@
    "title": "Mandela: Vom Anwalt zum Häftling",
    "text": "Nelson Mandela wurde 1918 in Südafrika geboren. Er wurde Rechtsanwalt in Johannesburg. In Südafrika gab es Apartheid: Menschen wurden nach Hautfarbe getrennt. Mandela kämpfte im ANC dagegen.",
    "motif": "Der junge Nelson Mandela.",
-   "credit": "Unbekannt (Foto, gemeinfrei)"
+   "credit": "Unbekannt (Foto, gemeinfrei) / Wikimedia Commons",
+   "ar": 0.75
   },
   {
    "n": 21,
@@ -182,7 +209,9 @@
    "cat": "1964",
    "title": "Lebenslang",
    "text": "Im Rivonia-Prozess 1964 verurteilt man Mandela zu lebenslanger Haft. Vor Gericht sagt er, er sei bereit, für seine Idee zu sterben. Er sitzt viele Jahre auf der Gefängnisinsel Robben Island.",
-   "motif": "Das Gefängnis auf Robben Island."
+   "motif": "Plakat: Freiheit für die politischen Gefangenen im südlichen Afrika.",
+   "ar": 1.394,
+   "credit": "Plakat, 1965–1980 / Library of Congress"
   },
   {
    "n": 22,
@@ -191,7 +220,8 @@
    "title": "Frei nach 27 Jahren",
    "text": "Mandela kommt frei. Er verhandelt mit Präsident de Klerk über das Ende der Apartheid. Beide bekommen 1993 den Friedensnobelpreis. Mandela spricht nicht von Rache, sondern von Zusammenarbeit.",
    "motif": "Mandela und de Klerk.",
-   "credit": "World Economic Forum (Foto 1992, CC BY-SA 2.0)"
+   "credit": "World Economic Forum (Foto 1992, CC BY-SA 2.0) / Wikimedia Commons",
+   "ar": 1.28
   },
   {
    "n": 23,
@@ -208,7 +238,9 @@
    "cat": "1995–1996",
    "title": "Versöhnung statt Rache",
    "text": "1995 trägt Mandela beim Rugby-Finale das Trikot der Springboks, das viele Weiße lieben. 1996 beginnt eine Wahrheitskommission. Täter sollen die Wahrheit sagen. Das Land soll sich nicht zerreißen.",
-   "motif": "Die Mandela-Statue in Johannesburg."
+   "motif": "Mandela 1994 als Präsident.",
+   "ar": 1.413,
+   "credit": "Unbekannt (Foto, 1994) / Library of Congress"
   },
   {
    "n": 25,
@@ -216,7 +248,9 @@
    "cat": "1999–2013",
    "title": "Eine Amtszeit genügt",
    "text": "1999 tritt Mandela nicht noch einmal an. Er übergibt das Amt an Thabo Mbeki. Er hätte wohl gewonnen. Er arbeitet danach für Frieden und gegen Aids. Er stirbt am 5. Dezember 2013 mit 95 Jahren.",
-   "motif": "Nelson Mandela im Alter."
+   "motif": "Mandela bei einer Rede.",
+   "ar": 1.4,
+   "credit": "Unbekannt (Foto, 1991) / Library of Congress"
   },
   {
    "n": 26,
@@ -224,7 +258,9 @@
    "cat": "DAS GEGENBEISPIEL",
    "title": "Sulla: Er ging – aber blutig",
    "text": "Auch der Diktator Sulla gab 79 v. Chr. die Macht ab. Aber er hatte vorher Tausende Gegner auf Todeslisten gesetzt. Nur gehen reicht nicht. Wichtig ist auch, wie man vorher regiert.",
-   "motif": "Büste des römischen Diktators Sulla."
+   "motif": "Römische Porträtbüste (kein Bild von Sulla).",
+   "ar": 0.75,
+   "credit": "Römische Porträtbüste, 1. Jh. v. Chr. / The Met, Open Access"
   },
   {
    "n": 27,
@@ -232,7 +268,9 @@
    "cat": "DAS VORBILD",
    "title": "Washington folgt Cincinnatus",
    "text": "1783 gründen Offiziere der amerikanischen Armee eine „Gesellschaft der Cincinnati“. Sie sehen Cincinnatus als Vorbild. Washington wird ihr erster Präsident. Seine Zeitgenossen nennen ihn später „amerikanischen Cincinnatus“.",
-   "motif": "Das Abzeichen der Gesellschaft der Cincinnati."
+   "motif": "Das Abzeichen der Gesellschaft der Cincinnati.",
+   "ar": 0.802,
+   "credit": "Pierre Charles L'Enfant (Abzeichen, um 1783) / The Met, Open Access"
   },
   {
    "n": 28,
@@ -249,7 +287,9 @@
    "cat": "DAS MUSTER",
    "title": "Fünf Dinge verbinden alle vier",
    "text": "Sie wurden gerufen, sie wollten nicht selbst herrschen. Sie hatten eine klare Aufgabe. Sie nahmen keinen Reichtum. Sie gaben die Macht zurück. Und sie gingen nach Hause, auf Farm, Hof oder Insel.",
-   "motif": "Das römische Rutenbündel als Zeichen der Macht."
+   "motif": "Ein römischer Krieger mit Rutenbündel.",
+   "ar": 0.75,
+   "credit": "Leendert van der Cooghen (Radierung, 1666) / The Met, Open Access"
   },
   {
    "n": 30,
@@ -257,8 +297,10 @@
    "cat": "FAZIT",
    "title": "Die größte Macht: gehen können",
    "text": "Vieles an Cincinnatus ist Legende. Der Römer Livius schrieb seine Geschichte erst Jahrhunderte später. Aber die Idee ist klar. Frage zum Schluss: Wer gibt heute Macht zurück, wenn die Aufgabe erfüllt ist?",
-   "motif": "Statue des Cincinnatus."
+   "motif": "Washington legt sein Amt nieder (Stich von 1799).",
+   "ar": 0.75,
+   "credit": "Alexander Lawson (Stich, 1799) / The Met, Open Access"
   }
  ],
- "titleCredit": "Giovanni Francesco Romanelli (Gemälde, CC BY 2.5)"
+ "titleCredit": "Foto, 2016 / Library of Congress"
 }

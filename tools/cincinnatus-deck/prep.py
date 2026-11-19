@@ -6,46 +6,48 @@ D = os.path.dirname(os.path.abspath(__file__)) + '/'
 IMG = D + 'img/'
 AR = 0.75
 CREDIT = {
- 'p2': 'Rudy Hertzog (Statue von Foyatier, CC BY-SA 4.0)',
- 'p3': 'Cesare Maccari (Gemälde, gemeinfrei)',
- 'p4': 'Juan Antonio de Ribera (Gemälde, gemeinfrei)',
- 'p6': 'Rabax63 (Trajanssäule, CC BY-SA 4.0)',
- 'p7': 'Unbekannt (Zeichnung, gemeinfrei)',
- 'p8': 'Gilbert Stuart (Gemälde, gemeinfrei)',
- 'p9': 'John Ward Dunsmore (Gemälde, gemeinfrei)',
- 'p11': 'CaptJayRuffins (Foto, CC BY-SA 4.0)',
- 'p12': 'Ramon Elorriaga (Gemälde, gemeinfrei)',
- 'p13': 'Unbekannt (Bild von 1858, gemeinfrei)',
- 'p14': 'Fratelli Alinari (Foto 1866, gemeinfrei)',
- 'p16': 'Giovanni Fattori (Gemälde, gemeinfrei)',
- 'p17': 'Unbekannt (Grafik, gemeinfrei)',
- 'p19': 'Thomas Jones Barker (Stich, gemeinfrei)',
- 'p20': 'Unbekannt (Foto, gemeinfrei)',
- 'p21': 'Moheen Reeyad (Foto, CC BY-SA 4.0)',
- 'p22': 'World Economic Forum (Foto 1992, CC BY-SA 2.0)',
- 'p24': 'Mark Hillary (Mandela-Statue, CC BY 2.0)',
- 'p25': 'South Africa The Good News (Foto, CC BY 2.0)',
- 'p26': 'José Luiz (Foto, gemeinfrei)',
- 'p27': 'Maciej Szczepańczyk (Foto, CC BY 3.0)',
- 'p29': 'Unbekannt (Statuette, CC0)',
- 'p30': 'Chris Light (Foto, gemeinfrei)',
+ "p2": "Rudy Hertzog (Statue von Foyatier, CC BY-SA 4.0) / Wikimedia Commons",
+ "p3": "Cesare Maccari (Gemälde, gemeinfrei) / Wikimedia Commons",
+ "p4": "Filarete (Bronzeplakette, 15. Jh.) / The Met, Open Access",
+ "p6": "Augustin Pajou (Zeichnung) / The Met, Open Access",
+ "p7": "Römische Togastatue, 1. Jh. n. Chr. / The Met, Open Access",
+ "p8": "Gilbert Stuart (Gemälde, ab 1795) / The Met, Open Access",
+ "p9": "John Ward Dunsmore (Gemälde, gemeinfrei) / Wikimedia Commons",
+ "p11": "Unbekannt (Druck, 1850–1880) / Library of Congress",
+ "p12": "Unbekannt (Druck, 1899) / Library of Congress",
+ "p13": "Unbekannt (Foto, 1908–1948) / Library of Congress",
+ "p14": "Unbekannt (Foto, um 1861) / Library of Congress",
+ "p16": "Juan Llorens (Bilderbogen, 1862) / The Met, Open Access",
+ "p17": "Unbekannt (Grafik, um 1860) / Library of Congress",
+ "p19": "Unbekannt (Foto, 1869) / Library of Congress",
+ "p20": "Unbekannt (Foto, gemeinfrei) / Wikimedia Commons",
+ "p21": "Plakat, 1965–1980 / Library of Congress",
+ "p22": "World Economic Forum (Foto 1992, CC BY-SA 2.0) / Wikimedia Commons",
+ "p24": "Unbekannt (Foto, 1994) / Library of Congress",
+ "p25": "Unbekannt (Foto, 1991) / Library of Congress",
+ "p26": "Römische Porträtbüste, 1. Jh. v. Chr. / The Met, Open Access",
+ "p27": "Pierre Charles L'Enfant (Abzeichen, um 1783) / The Met, Open Access",
+ "p29": "Leendert van der Cooghen (Radierung, 1666) / The Met, Open Access",
+ "p30": "Alexander Lawson (Stich, 1799) / The Met, Open Access"
 }
-TITLE_CREDIT = 'Giovanni Francesco Romanelli (Gemälde, CC BY 2.5)'
+TITLE_CREDIT = 'Foto, 2016 / Library of Congress'
 FOCUS = {}  # e.g. {'p6': (0.3, 0.5)}
-def crop(src, dst, fx=0.5, fy=None):
+def crop(src, dst, fx=0.5, fy=None, lo=AR, hi=AR):
+    # clamps the aspect ratio into [lo, hi]; the deck shows tall images in an arch, wide ones in a landscape frame
     im = Image.open(src).convert('RGB'); w, h = im.size; ar = w / h
-    if ar > AR:
-        nw = round(h * AR); x = round((w - nw) * fx); im = im.crop((x, 0, x + nw, h))
-    else:
-        nh = round(w / AR); fy = 0.12 if fy is None else fy; y = round((h - nh) * fy); im = im.crop((0, y, w, y + nh))
-    im.thumbnail((900, 1200)); im.save(dst, quality=88)
+    t = min(max(ar, lo), hi)
+    if ar > t:
+        nw = round(h * t); x = round((w - nw) * fx); im = im.crop((x, 0, x + nw, h))
+    elif ar < t:
+        nh = round(w / t); fy = 0.12 if fy is None else fy; y = round((h - nh) * fy); im = im.crop((0, y, w, y + nh))
+    im.thumbnail((900, 1200)); im.save(dst, quality=88); return round(im.size[0] / im.size[1], 3)
 J = json.load(open(D + 'slides.json'))
 for s in J['slides']:
     k = 'p%d' % s['n']
     f = glob.glob(IMG + 'raw_' + k + '.*')
     if s.get('vid') or not f: continue
     fx, fy = FOCUS.get(k, (0.5, None))
-    crop(f[0], IMG + k + '_c.jpg', fx, fy); s['credit'] = CREDIT[k]
+    s['ar'] = crop(f[0], IMG + k + '_c.jpg', fx, fy, 0.75, 1.6); s['credit'] = CREDIT[k]
 J['titleCredit'] = TITLE_CREDIT
 f = glob.glob(IMG + 'raw_title.*')
 if f: crop(f[0], IMG + 'title_t.jpg', *FOCUS.get('title', (0.5, None)))

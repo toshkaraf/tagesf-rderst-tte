@@ -17,7 +17,7 @@ out.push(`<section class="s dark title" data-i="0">
  <p class="sub">Cincinnatus, Washington, Garibaldi, Mandela</p>
  <p class="meta">30 Folien · einfaches Deutsch (B1)<br>Tippen: nächste Folie · Video-Folien spielen direkt im Vortrag</p></div>
  <div class="arch big">${fs.existsSync(IMG + 'title_t.jpg') ? `<img src="${uri('title_t.jpg')}" alt="Cincinnatus">` : ''}</div>
- <div class="cap tcap">Bild: ${esc(S.titleCredit || '')} / Wikimedia Commons</div></section>`);
+ <div class="cap tcap">Bild: ${esc(S.titleCredit || '')}</div></section>`);
 let idx = 1;
 for (const d of S.slides) {
   const myIdx = idx++;
@@ -28,8 +28,8 @@ for (const d of S.slides) {
     left = `<div class="thumb" data-go="+1"><img src="${uri('ytc_' + d.vid + '.jpg')}" alt="${esc(d.motif)}"><span class="play"></span></div>
     <div class="vl"><a href="#" data-go="+1">▶ Video ansehen (nächste Folie)</a><br><a class="yt" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=${d.vid}">${esc(v.title + ' (' + v.channel + ')')}</a></div>`;
   } else {
-    if (fs.existsSync(IMG + 'p' + d.n + '_c.jpg')) left = `<div class="arch"><img src="${uri('p' + d.n + '_c.jpg')}" alt="${esc(d.motif)}" style="object-position:${d.pos || 'center 25%'}"></div>
-    <div class="cap">Bild: ${esc(d.credit)} / Wikimedia Commons</div>`;
+    if (fs.existsSync(IMG + 'p' + d.n + '_c.jpg')) left = `<div class="arch${d.ar >= 1.1 ? ' wide' : ''}" style="${d.ar >= 1.1 ? 'height:' + Math.round(300 / d.ar) + 'px;top:' + Math.round(255 - 150 / d.ar) + 'px' : ''}"><img src="${uri('p' + d.n + '_c.jpg')}" alt="${esc(d.motif)}" style="object-position:${d.pos || 'center 25%'}"></div>
+    <div class="cap"${d.ar >= 1.1 ? ' style="top:' + Math.round(255 + 150 / d.ar + 14) + 'px"' : ''}>Bild: ${esc(d.credit)}</div>`;
     else { missing.push(d.n); left = `<div class="arch card"><b>${String(d.n).padStart(2, '0')}</b><i>${esc(d.motif)}</i></div><div class="cap">Bildmotiv (Platzhalter)</div>`; }
   }
   out.push(`<section class="s content" data-i="${myIdx}">
@@ -58,6 +58,7 @@ html,body{height:100%;background:#0f1713;overflow:hidden;font-family:var(--sans)
 .arch{position:absolute;left:45px;top:55px;width:300px;height:400px;border-radius:150px 150px 6px 6px;overflow:hidden;border:3px solid var(--terra);background:#2a3a31}
 .arch.card{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;color:#E9E4D6}.arch.card b{font:700 64px var(--serif);color:#E08B5B}.arch.card i{font-size:17px;margin-top:14px}
 .arch img{width:100%;height:100%;object-fit:cover;display:block}
+.arch.wide{border-radius:26px}
 .lp .cap{position:absolute;left:45px;top:468px;width:300px;font-size:12.5px;line-height:1.3;color:#B9B5A4}
 .thumb{position:absolute;left:45px;top:150px;width:300px;height:169px;border-radius:6px;overflow:hidden;border:3px solid var(--terra);cursor:pointer;background:#000}
 .thumb img{width:100%;height:100%;object-fit:cover;display:block}

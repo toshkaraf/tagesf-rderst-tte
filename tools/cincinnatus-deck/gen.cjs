@@ -84,7 +84,9 @@ h1{margin-top:20px;font:700 60px/1.08 var(--serif);color:var(--marble)}
 .vwrap,.vwrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 #bar{position:fixed;left:0;right:0;bottom:0;display:flex;gap:6px;justify-content:center;align-items:center;padding:6px calc(8px + env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) 8px;background:rgba(10,18,14,.88);z-index:5;color:#E9E4D6;font-size:14px}
 #bar button,#bar a{background:${C.laurel};color:#fff;border:0;border-radius:8px;min-width:46px;height:38px;font-size:18px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;padding:0 12px}
-#bar a{font-size:14px;display:none}#bar.v a{display:inline-flex}
+#bar .nav{min-width:92px;height:76px;font-size:36px;border-radius:14px}
+#bar .corner{position:absolute;left:calc(8px + env(safe-area-inset-left));bottom:calc(6px + env(safe-area-inset-bottom));display:flex;gap:6px}
+#bar a{font-size:14px;display:none;position:absolute;right:calc(8px + env(safe-area-inset-right));bottom:calc(6px + env(safe-area-inset-bottom))}#bar.v a{display:inline-flex}
 #pos{min-width:56px;text-align:center}
 ${Q.css(QTHEME)}
 .qq,.qres .big,.qh{font-family:var(--serif)}.qh{font-family:var(--sans)}.qb{font-family:var(--sans)}
@@ -92,7 +94,7 @@ ${Q.css(QTHEME)}
 <div id="stage">
 ${Q.inject(out, ends, QUIZ, QTHEME).join('\n')}
 </div>
-<div id="bar"><button id="first" aria-label="Anfang">⏮</button><button id="prev" aria-label="Zurück">◀</button><span id="pos"></span><button id="next" aria-label="Weiter">▶</button><a id="yta" target="_blank" rel="noopener">YouTube</a><button id="fs" aria-label="Vollbild">⛶</button></div>
+<div id="bar"><div class="corner"><button id="first" aria-label="Anfang">⏮</button><button id="fs" aria-label="Vollbild">⛶</button></div><button id="prev" class="nav" aria-label="Zurück">◀</button><span id="pos"></span><button id="next" class="nav" aria-label="Weiter">▶</button><a id="yta" target="_blank" rel="noopener">YouTube</a></div>
 <script>
 (function(){
 var secs=[].slice.call(document.querySelectorAll('.s')),N=secs.length,cur=0,stage=document.getElementById('stage'),bar=document.getElementById('bar'),pos=document.getElementById('pos'),yta=document.getElementById('yta');

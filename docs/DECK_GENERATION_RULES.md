@@ -34,6 +34,11 @@
 - Не копировать оформление прежних презентаций (роботы: тёмно-синий/оранжевый; Ришелье: бордо `#2A0A12`/`#5A1426`, золото `#C9A227`, крем `#F6EFE3`, Cambria + Calibri). Для новой темы придумать палитру и шрифтовую пару, отвечающую эпохе/смыслу, и свою композицию титула.
 - Тема задаётся в `build.cjs` (THEME/master), `gen.cjs` (CSS) и в записи сессии `embedTheme {bg, fg, accent}`; цвета квиза (`QTHEME`) — из той же палитры.
 
+## 5a. Панель управления (для всех презентаций)
+- Кнопки перелистывания ◀ ▶ — крупные (≈ 92×76 px, в 2 раза больше обычных), по центру нижней полосы.
+- Кнопки «в начало» (⏮) и «на весь экран» (⛶) — маленькие, в левом нижнем углу полосы; ссылка «YouTube» (на видеослайдах) — в правом нижнем углу.
+- Образец: `tools/cincinnatus-deck/gen.cjs` (`#bar`, `.nav`, `.corner`).
+
 ## 6. Реализация и выдача
 1. `tools/<name>-deck/`: `slides.json`, `quiz.json`, `build.cjs` (pptx), `gen.cjs` (веб), `prep.py`, `img/`. Шаблон — `tools/richelieu-deck/`; общий код — `tools/common/`.
 2. Сборка: `PPTX_SKILL_DIR=/mnt/skills/public/pptx NODE_PATH=…(pptxgenjs, jszip) node build.cjs`, `node gen.cjs` → `public/<name>/index.html`.

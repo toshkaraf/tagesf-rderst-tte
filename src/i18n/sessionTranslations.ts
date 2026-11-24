@@ -107,6 +107,32 @@ export const sessionTranslations: Record<string, Record<Language, SessionTransla
       }
     }
   },
+  'sweden-social-engineering': {
+    de: {
+      title: 'Schweden: Kriegsmacht und Musterstaat',
+      description: 'Wie aus der gefürchteten Kriegsmacht des 17. Jahrhunderts ein Land mit Konsens, Transparenz und „Lagom“ wurde: Soldatenhöfe, Pastoren-Prüfungen, der Pakt von Saltsjöbaden, Staatsindividualismus, dunkle Kapitel und das Ende der Neutralität. Präsentation in einfachem Deutsch (B1) mit Videos, 9 Mini-Quizzen mit je 3 Fragen und einem Abschlusstest mit Ergebnis in Prozent.',
+      category: 'Geschichte',
+      structure: {
+        greeting: 'Willkommen zur Sitzung über Schweden!',
+        mainContent: 'Dreißig Folien: Kriegsmacht, Pastor und Lesen, Wirtschaft und Pakt von 1938, Mentalität, der Preis des Konsenses und der NATO-Beitritt',
+        interactive: 'Neun Mini-Quizze mit je drei Fragen und ein Abschlusstest mit 27 Fragen',
+        additional: 'Sieben kurze Videos (Deutsch und Englisch)',
+        closing: 'Abschlusstest mit Ergebnis in Prozent'
+      }
+    },
+    ru: {
+      title: 'Швеция: от военной державы к образцовому государству',
+      description: 'Как Швеция из грозной военной державы XVII века стала страной консенсуса, прозрачности и «лагома»: солдатские хутора, пасторские проверки грамотности, пакт Зальтшёбадена, государственный индивидуализм, тёмные страницы и конец нейтралитета. Презентация на немецком (B1), видео, 9 мини-викторин по 3 вопроса и итоговый тест с результатом в процентах.',
+      category: 'История',
+      structure: {
+        greeting: 'Добро пожаловать на занятие о Швеции!',
+        mainContent: 'Тридцать слайдов: военная держава, пастор и грамотность, экономика и пакт 1938 года, менталитет, цена консенсуса и вступление в НАТО',
+        interactive: 'Девять мини-викторин по три вопроса и итоговый тест на 27 вопросов',
+        additional: 'Семь коротких видео (немецкий и английский)',
+        closing: 'Итоговый тест с результатом в процентах'
+      }
+    }
+  },
   'cincinnatus-power-returned': {
     de: {
       title: 'Macht, die man zurückgibt: Cincinnatus, Washington, Garibaldi, Mandela',

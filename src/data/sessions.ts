@@ -29,6 +29,7 @@ import { medievalNobleTitlesSessionRU } from './medieval-noble-titles-session'
 import { linearInfantryTacticsSessionRU } from './linear-infantry-tactics-session'
 import { richelieuDeckSessionRU } from './richelieu-deck-session'
 import { cincinnatusDeckSessionRU } from './cincinnatus-deck-session'
+import { swedenDeckSessionRU } from './sweden-deck-session'
 
 // Примеры занятий - здесь будут храниться все занятия
 const sessionsData: Session[] = [
@@ -1388,6 +1389,7 @@ const sessionsData: Session[] = [
   linearInfantryTacticsSessionRU,
   richelieuDeckSessionRU,
   cincinnatusDeckSessionRU,
+  swedenDeckSessionRU,
   {
     id: 'seven-wonders',
     title: 'Семь чудес света: экономика мегапроектов',

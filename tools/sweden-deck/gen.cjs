@@ -34,7 +34,7 @@ for (const d of S.slides) {
     <div class="cap" style="top:${top + h + 20}px">Bild: ${esc(d.credit)}</div>`;
   } else {
     missing.push(d.n);
-    right = `<div class="frame card"><b class="${d.cat.length > 9 ? 'sm' : ''}">${esc(d.cat)}</b><i>${esc(d.motif)}</i></div><div class="cap" style="top:480px">Bildmotiv (Platzhalter)</div>`;
+    right = `<div class="frame card"><b class="${d.cat.length > 6 ? 'sm' : ''}">${esc(d.cat)}</b><i>${esc(d.motif)}</i></div><div class="cap" style="top:480px">Bildmotiv (Platzhalter)</div>`;
   }
   out.push(`<section class="s content" data-i="${myIdx}">
  <div class="redbar"></div>

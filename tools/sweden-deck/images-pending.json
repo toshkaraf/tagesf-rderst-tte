@@ -1,16 +1,6 @@
 {
- "note": "Wikimedia Commons images still to download (slide key -> file title or title prefix). Download 960px thumbs slowly (honest User-Agent, Retry-After), save as img/raw_<key>.jpg, then run: python3 build_slides.py && python3 prep.py && node gen.cjs. Add credits to CREDIT in prep.py.",
+ "note": "Wikimedia Commons image still to download for slide 13 (candidates: Luth&Rosén-arbetare.jpg, Örebro Skofabrik.jpg, Vinterviken 1900d.jpg). Save as img/raw_p13.jpg, add credit to CREDIT in prep.py, then: python3 build_slides.py && python3 prep.py && node gen.cjs",
  "pending": {
-  "p22": "File:PALME Olof, May Day, Stockholm, early 70s.jpg",
-  "p3": "File:Stora Kopparberget-1877.jpg",
-  "p4": "File:Soldattorp Västgöta Regemente Nr 98, Väsmestorps naturreservat 2022-01",
-  "p8": "File:Anders Montan-Husförhör.jpg",
-  "p10": "File:Sunne födda 1717 Pehr Wargentin.JPG",
-  "p11": "File:Pehr Wargentin.jpg",
-  "p12": "File:Angående Skrif- och Tryckfriheten.jpg",
-  "p13": "File:Luth&Rosén-arbetare.jpg",
-  "p23": "File:En ældre kvinde med hvid kyse.png",
-  "p25": "File:Edvard Munch - Separation - Google Art Project.jpg",
-  "p28": "File:Interior of the Riksdag 2.jpg"
+  "p13": "File:Luth&Rosén-arbetare.jpg"
  }
 }

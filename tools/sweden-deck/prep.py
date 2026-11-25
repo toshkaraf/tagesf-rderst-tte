@@ -8,7 +8,7 @@ AR = 0.75
 CREDIT = {
  "p2": "Sebastian Dadler (Medaille, 1632) / The Met, Open Access",
  "p3": "Carl Svante Hallbeck (Bild von 1877, gemeinfrei) / Wikimedia Commons",
- "p4": "Gunnar Creutz (Foto, CC BY-SA 4.0) / Wikimedia Commons",
+ "p4": "Bengt Oberger (Foto, CC BY-SA 4.0) / Wikimedia Commons",
  "p6": "Unbekannt (Druck, 1810) / Library of Congress",
  "p7": "Unbekannt (Stereofoto, 1905) / Library of Congress",
  "p8": "Anders Montan (Gemälde, gemeinfrei) / Wikimedia Commons",

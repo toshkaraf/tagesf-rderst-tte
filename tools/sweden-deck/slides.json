@@ -33,7 +33,9 @@
    "cat": "ROHSTOFFE",
    "title": "Eisen, Kupfer und Kanonen",
    "text": "Die Bergwerke von Falun und Bergslagen liefern Kupfer und Eisen. Schweden baut leichte Kanonen und gute Waffen. Seine Bauern sind frei und viele können lesen. Das macht die Armee stark.",
-   "motif": "Das Kupferbergwerk von Falun, 1877."
+   "motif": "Das Kupferbergwerk von Falun, 1877.",
+   "ar": 1.56,
+   "credit": "Carl Svante Hallbeck (Bild von 1877, gemeinfrei) / Wikimedia Commons"
   },
   {
    "n": 4,
@@ -41,7 +43,9 @@
    "cat": "DAS SYSTEM",
    "title": "Jeder Hof stellt einen Soldaten",
    "text": "Ab etwa 1680 teilen sich drei bis fünf Höfe einen Soldaten. Sie geben ihm ein rotes Häuschen, Land und eine Kuh. Im Frieden arbeitet er als Bauer. Im Krieg kämpft er mit seinen Nachbarn im selben Regiment.",
-   "motif": "Ein rotes Soldatenhäuschen (soldattorp)."
+   "motif": "Ein rotes Soldatenhäuschen (soldattorp).",
+   "ar": 1.51,
+   "credit": "Bengt Oberger (Foto, CC BY-SA 4.0) / Wikimedia Commons"
   },
   {
    "n": 5,
@@ -78,7 +82,9 @@
    "cat": "HAUSVERHÖR",
    "title": "Jedes Jahr eine Prüfung zu Hause",
    "text": "Im Winter besucht der Pastor jeden Hof. Alle müssen vorlesen und Fragen zum Katechismus beantworten: Bauer, Frau, Knechte und Kinder. Die Noten schreibt er in sein Buch.",
-   "motif": "Der Pastor prüft eine Familie."
+   "motif": "Der Pastor prüft eine Familie.",
+   "ar": 1.49,
+   "credit": "Anders Montan (Gemälde, gemeinfrei) / Wikimedia Commons"
   },
   {
    "n": 9,
@@ -95,7 +101,9 @@
    "cat": "ATTEST",
    "title": "Ohne Zeugnis kein Umzug",
    "text": "Wer umzieht, braucht ein Zeugnis vom Pastor. Darin stehen Lesen, Verhalten und Ruf. Ohne Zeugnis gilt man als Landstreicher. Schon früh weiß die Gemeinde fast alles über jeden.",
-   "motif": "Eintrag im Kirchenbuch von Sunne."
+   "motif": "Eintrag im Kirchenbuch von Sunne.",
+   "ar": 1.597,
+   "credit": "Svenska kyrkan (Kirchenbuch, gemeinfrei) / Wikimedia Commons"
   },
   {
    "n": 11,
@@ -103,7 +111,9 @@
    "cat": "1749",
    "title": "Eine der ältesten Statistiken der Welt",
    "text": "Seit 1749 zählt Schweden seine Einwohner genau: nach Alter, Beruf und Familie. Die Zahlen kommen aus den Büchern der Pastoren. Es ist eine der ältesten Bevölkerungsstatistiken der Welt.",
-   "motif": "Pehr Wargentin, Leiter der ersten Statistik."
+   "motif": "Pehr Wargentin, Leiter der ersten Statistik.",
+   "ar": 0.795,
+   "credit": "Carl Fredrik Brander (Gemälde, gemeinfrei) / Wikimedia Commons"
   },
   {
    "n": 12,
@@ -111,7 +121,9 @@
    "cat": "ÖFFENTLICHKEIT",
    "title": "Alles ist öffentlich",
    "text": "Seit 1766 gilt das Öffentlichkeitsprinzip. Jeder darf Akten der Behörden lesen. Auch Einkommen und Steuern anderer Menschen kann man einsehen. Transparenz ist in Schweden normal.",
-   "motif": "Druck zur Pressefreiheit von 1766."
+   "motif": "Druck zur Pressefreiheit von 1766.",
+   "ar": 1.241,
+   "credit": "Frihetstidens utskott (Druck, 18. Jh., gemeinfrei) / Wikimedia Commons"
   },
   {
    "n": 13,
@@ -205,7 +217,9 @@
    "cat": "1972",
    "title": "Unabhängig von allen",
    "text": "1972 wollen die Sozialdemokraten Menschen voneinander unabhängig machen: eigene Steuer für jede Person, Studienhilfe vom Staat, Pflege durch die Gemeinde. Forscher nennen das „Staatsindividualismus“.",
-   "motif": "Olof Palme und Krister Wickman."
+   "motif": "Olof Palme am 1. Mai.",
+   "ar": 1.393,
+   "credit": "Oiving (Foto, CC BY-SA 3.0) / Wikimedia Commons"
   },
   {
    "n": 23,
@@ -213,7 +227,9 @@
    "cat": "FOLGE",
    "title": "Frei – aber oft allein",
    "text": "Rund 40 Prozent der Haushalte sind Single-Haushalte. Man braucht niemanden zum Überleben. Dadurch werden Nachbarn und Verwandte weniger wichtig. Viele Menschen in Schweden fühlen sich einsam.",
-   "motif": "Eine Frau allein im Zimmer (Gemälde von Hammershøi)."
+   "motif": "Eine Frau allein im Zimmer (Gemälde von Hammershøi).",
+   "ar": 0.875,
+   "credit": "Vilhelm Hammershøi (Gemälde, gemeinfrei) / Wikimedia Commons"
   },
   {
    "n": 24,
@@ -231,7 +247,9 @@
    "cat": "AUSGRENZUNG",
    "title": "Statt Streit: Funkstille",
    "text": "Wer nicht zustimmt, wird nicht angeschrien. Man schneidet ihn: kein Blickkontakt, keine Einladung zum Mittagessen. Die Schweden nennen das „utfrysning“, Ausfrieren.",
-   "motif": "„Trennung“ (Gemälde von Edvard Munch)."
+   "motif": "„Trennung“ (Gemälde von Edvard Munch).",
+   "ar": 1.327,
+   "credit": "Edvard Munch (Gemälde, gemeinfrei) / Wikimedia Commons"
   },
   {
    "n": 26,
@@ -258,7 +276,9 @@
    "cat": "2010ER–2020ER",
    "title": "Streit über Gewalt und Integration",
    "text": "Seit etwa 2015 nehmen Bandengewalt und Schießereien zu. 2022 gibt es mit 62 Toten durch Schüsse einen Rekord. Lange ist das Thema schwer zu besprechen. Heute verschärft die Regierung die Gesetze.",
-   "motif": "Der Plenarsaal des schwedischen Reichstags."
+   "motif": "Die Kuppel im schwedischen Reichstagsgebäude.",
+   "ar": 1.5,
+   "credit": "Frankie Fouganthin (Foto, CC BY-SA 4.0) / Wikimedia Commons"
   },
   {
    "n": 29,
